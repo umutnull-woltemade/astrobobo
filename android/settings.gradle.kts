@@ -22,7 +22,7 @@ plugins {
     id("com.android.application") version "8.11.1" apply false
     id("org.jetbrains.kotlin.android") version "2.2.20" apply false
     id("org.gradle.toolchains.foojay-resolver-convention") version "0.9.0"
-    // Google/Firebase plugins removed — using Apple App Analytics instead
+
 }
 
 include(":app")

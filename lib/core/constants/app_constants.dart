@@ -38,7 +38,7 @@ class AppConstants {
   static const String monthlyProductId = 'monthly';
   static const String yearlyProductId = 'yearly';
   static const String lifetimeProductId = 'lifetime';
-  static const String entitlementId = 'innercycles_pro';
+  static const String entitlementId = 'com.venusone.innercycles Pro';
 
   // Pricing Experiment Product IDs
   static const String monthlyProductId799 = 'monthly_799';

@@ -68,6 +68,7 @@ _graveyard/
 # Stale Flutter web build artifacts
 web/main.dart.js
 web/flutter_service_worker.js
+web/canvaskit/
 
 # Orchestrator run artifacts
 .recovery_run/

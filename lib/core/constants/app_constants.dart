@@ -23,11 +23,14 @@ class AppConstants {
   static const String _revenueCatGoogleApiKeyEnv =
       String.fromEnvironment('REVENUECAT_GOOGLE_API_KEY');
 
-  // Test/sandbox API key — used when no --dart-define key is provided
+  // Production Apple API key (public, safe for client-side)
+  static const String _revenueCatAppleApiKeyDefault = 'appl_uYvcGQbFTMldVtZilDXPRKwzJrC';
+
+  // Test/sandbox API key — used for Google or when explicitly overridden
   static const String _revenueCatTestApiKey = 'test_DhLsHPPYcGYaPHRXHVYBczvPSgI';
 
   static String get revenueCatAppleApiKey =>
-      _revenueCatAppleApiKeyEnv.isNotEmpty ? _revenueCatAppleApiKeyEnv : _revenueCatTestApiKey;
+      _revenueCatAppleApiKeyEnv.isNotEmpty ? _revenueCatAppleApiKeyEnv : _revenueCatAppleApiKeyDefault;
   static String get revenueCatGoogleApiKey =>
       _revenueCatGoogleApiKeyEnv.isNotEmpty ? _revenueCatGoogleApiKeyEnv : _revenueCatTestApiKey;
 

@@ -346,6 +346,15 @@ class SyncService {
       return SyncResult(synced: 0, failed: 0, message: 'Offline');
     }
 
+    // Skip sync if user is not authenticated — operations will be retried after sign-in
+    try {
+      if (Supabase.instance.client.auth.currentUser == null) {
+        return SyncResult(synced: 0, failed: 0, message: 'Not authenticated');
+      }
+    } catch (_) {
+      return SyncResult(synced: 0, failed: 0, message: 'Supabase not available');
+    }
+
     final completer = Completer<SyncResult>();
     _syncCompleter = completer;
     _updateStatus(SyncStatus.syncing);

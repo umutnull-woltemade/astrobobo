@@ -40,8 +40,10 @@ CREATE TABLE IF NOT EXISTS bonds (
   dissolve_requested_by UUID,
   created_at TIMESTAMPTZ DEFAULT now(),
   updated_at TIMESTAMPTZ DEFAULT now(),
-  CONSTRAINT bonds_unique_pair UNIQUE (LEAST(user_a, user_b), GREATEST(user_a, user_b))
+  CONSTRAINT bonds_no_self CHECK (user_a <> user_b)
 );
+
+CREATE UNIQUE INDEX idx_bonds_unique_pair ON bonds (LEAST(user_a, user_b), GREATEST(user_a, user_b));
 
 ALTER TABLE bonds ENABLE ROW LEVEL SECURITY;
 

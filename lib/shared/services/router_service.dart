@@ -266,13 +266,6 @@ final routerProvider = Provider<GoRouter>((ref) {
                 path: Routes.moodTrends,
                 builder: (context, state) => const MoodTrendsScreen(),
               ),
-              GoRoute(
-                path: Routes.moodCompass,
-                pageBuilder: (context, state) => PageTransitions.fadeSlide(
-                  child: const MoodCompassScreen(),
-                  key: state.pageKey,
-                ),
-              ),
             ],
           ),
           // Tab 3: Notes
@@ -422,6 +415,13 @@ final routerProvider = Provider<GoRouter>((ref) {
       // ════════════════════════════════════════════════════════════════
       // INSIGHTS (sub-screens, outside shell)
       // ════════════════════════════════════════════════════════════════
+      GoRoute(
+        path: Routes.moodCompass,
+        pageBuilder: (context, state) => PageTransitions.fadeSlide(
+          child: const MoodCompassScreen(),
+          key: state.pageKey,
+        ),
+      ),
       GoRoute(
         path: Routes.calendarHeatmap,
         pageBuilder: (context, state) => PageTransitions.fadeSlide(

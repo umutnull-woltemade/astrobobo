@@ -960,12 +960,13 @@ class _QuickShortcutsRow extends StatelessWidget {
       (Icons.edit_note_rounded, isEn ? 'Journal' : 'Günlük', Routes.journal),
       (Icons.nights_stay_rounded, isEn ? 'Dreams' : 'Rüyalar', Routes.dreamInterpretation),
       (Icons.favorite_rounded, isEn ? 'Gratitude' : 'Şükran', Routes.gratitudeJournal),
+      (Icons.cake_rounded, isEn ? 'Birthdays' : 'Doğum Günleri', Routes.birthdayAgenda),
       (Icons.check_circle_outline_rounded, isEn ? 'Habits' : 'Alışkanlıklar', Routes.dailyHabits),
       (Icons.self_improvement_rounded, isEn ? 'Breathe' : 'Nefes', Routes.breathing),
     ];
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 4),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: shortcuts.map((s) {
@@ -983,8 +984,8 @@ class _QuickShortcutsRow extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Container(
-                  width: 44,
-                  height: 44,
+                  width: 40,
+                  height: 40,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: isDark

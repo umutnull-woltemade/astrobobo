@@ -35,6 +35,7 @@ import 'data/services/error_reporting_service.dart';
 import 'data/services/paywall_experiment_service.dart';
 import 'data/services/telemetry_service.dart';
 import 'data/services/progressive_unlock_service.dart';
+import 'data/services/demo_seed_service.dart';
 import 'data/providers/app_providers.dart';
 import 'data/services/premium_service.dart';
 import 'data/models/user_profile.dart';
@@ -206,6 +207,19 @@ class _AppInitializerState extends State<AppInitializer>
     } catch (e) {
       if (kDebugMode) {
         debugPrint('⚠️ Storage initialization failed: $e');
+      }
+    }
+
+    // Seed demo data for App Store screenshots (debug only, runs once)
+    if (kDebugMode) {
+      try {
+        final seeded = await DemoSeedService.isSeeded();
+        if (!seeded) {
+          await DemoSeedService.seed();
+          debugPrint('✓ Demo data seeded (Dalai Lama profile)');
+        }
+      } catch (e) {
+        debugPrint('⚠️ Demo seed failed: $e');
       }
     }
 

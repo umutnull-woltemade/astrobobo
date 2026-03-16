@@ -25,6 +25,7 @@ class AnalyticsService {
   final List<Map<String, dynamic>> _buffer = [];
   Timer? _flushTimer;
   bool _supabaseAvailable = false;
+  int _consecutiveFailures = 0;
 
   /// Initialize analytics — device ID gated behind ATT on iOS
   Future<void> initialize() async {
@@ -105,16 +106,21 @@ class AnalyticsService {
 
     try {
       await Supabase.instance.client.from('analytics_events').insert(batch);
+      _consecutiveFailures = 0;
       if (kDebugMode) {
         debugPrint('AnalyticsService: Flushed ${batch.length} events');
       }
     } catch (e) {
-      // Re-add failed events to buffer for retry (cap at 500 to avoid OOM)
-      if (_buffer.length + batch.length <= 500) {
+      _consecutiveFailures++;
+      // Re-add failed events to buffer for retry (cap at 200 to avoid OOM)
+      if (_consecutiveFailures <= 3 && _buffer.length + batch.length <= 200) {
         _buffer.insertAll(0, batch);
+      } else if (_consecutiveFailures > 3) {
+        // Stop retrying after 3 consecutive failures — drop events
+        _buffer.clear();
       }
-      if (kDebugMode) {
-        debugPrint('AnalyticsService: Flush failed - $e');
+      if (kDebugMode && _consecutiveFailures <= 3) {
+        debugPrint('AnalyticsService: Flush failed (attempt $_consecutiveFailures) - $e');
       }
     }
   }

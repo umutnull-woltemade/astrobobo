@@ -24,6 +24,7 @@ import 'data/services/notification_lifecycle_service.dart';
 import 'data/services/daily_hook_service.dart';
 import 'data/services/journal_service.dart';
 import 'data/services/admin_auth_service.dart';
+import 'data/services/auth_service.dart';
 import 'data/services/admin_analytics_service.dart';
 import 'data/services/analytics_service.dart';
 import 'data/services/web_error_service.dart';
@@ -861,11 +862,15 @@ class _InnerCyclesAppState extends ConsumerState<InnerCyclesApp>
       MethodChannel('com.venusone.innercycles/quickactions');
   static const _deepLinkChannel =
       MethodChannel('com.venusone.innercycles/deeplink');
+  StreamSubscription<AuthState>? _authSubscription;
 
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
+
+    // Sync RevenueCat identity with Supabase auth state
+    _setupRevenueCatAuthSync();
 
     // Set global error widget builder ONCE (not on every rebuild)
     ErrorWidget.builder = (FlutterErrorDetails details) {
@@ -946,8 +951,34 @@ class _InnerCyclesAppState extends ConsumerState<InnerCyclesApp>
     }
   }
 
+  /// Sync RevenueCat user identity whenever Supabase auth state changes
+  void _setupRevenueCatAuthSync() {
+    try {
+      if (!AuthService.isSupabaseInitialized) return;
+      // If user is already logged in, identify to RevenueCat
+      final currentUser = AuthService.currentUser;
+      if (currentUser != null) {
+        ref.read(premiumProvider.notifier).loginUser(currentUser.id);
+      }
+      // Listen for future auth changes
+      _authSubscription = AuthService.authStateChanges.listen((authState) {
+        final event = authState.event;
+        if (event == AuthChangeEvent.signedIn && authState.session?.user != null) {
+          ref.read(premiumProvider.notifier).loginUser(authState.session!.user.id);
+        } else if (event == AuthChangeEvent.signedOut) {
+          ref.read(premiumProvider.notifier).logoutUser();
+        }
+      });
+    } catch (e) {
+      if (kDebugMode) {
+        debugPrint('RevenueCat auth sync setup failed: $e');
+      }
+    }
+  }
+
   @override
   void dispose() {
+    _authSubscription?.cancel();
     WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }

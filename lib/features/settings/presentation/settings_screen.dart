@@ -781,6 +781,8 @@ class SettingsScreen extends ConsumerWidget {
       // Clear sync queue before sign-out to prevent cross-user contamination
       await SyncService.clearQueue();
       await StorageService.clearAllData();
+      // Log out of RevenueCat before Supabase sign-out
+      await ref.read(premiumProvider.notifier).logoutUser();
       await Supabase.instance.client.auth.signOut();
     } catch (e) {
       if (kDebugMode) debugPrint('Sign out error: $e');

@@ -209,6 +209,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.3.1"
+  equatable:
+    dependency: transitive
+    description:
+      name: equatable
+      sha256: "3e0141505477fd8ad55d6eb4e7776d3fe8430be8e497ccb1521370c3f21a3e2b"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.8"
   fake_async:
     dependency: transitive
     description:
@@ -429,14 +437,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  freezed_annotation:
-    dependency: transitive
-    description:
-      name: freezed_annotation
-      sha256: c2e2d632dd9b8a2b7751117abcfc2b4888ecfe181bd9fca7170d9ef02e595fe2
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.4.4"
   functions_client:
     dependency: transitive
     description:
@@ -961,18 +961,18 @@ packages:
     dependency: "direct main"
     description:
       name: purchases_flutter
-      sha256: "8d34712aa3201f675eeccaacf45c0b7b025575fc9d0378b2619bb61246e76064"
+      sha256: "88bd00ac44273d4782abc09453dffd8314be39764bc8f67f68a26325ea68b91f"
       url: "https://pub.dev"
     source: hosted
-    version: "8.11.0"
+    version: "9.14.0"
   purchases_ui_flutter:
     dependency: "direct main"
     description:
       name: purchases_ui_flutter
-      sha256: "883caecc6065d3e079d2cf62c2b72c54b909668bd4c95ea51691f9708dea0dc6"
+      sha256: edb15ab48fca177af0bd949aa20939aeafcaf90719903d52f3015ed1414a87f7
       url: "https://pub.dev"
     source: hosted
-    version: "8.11.0"
+    version: "9.14.0"
   qr:
     dependency: transitive
     description:

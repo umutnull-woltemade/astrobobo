@@ -17,10 +17,19 @@ class AppConstants {
 
   // RevenueCat API Keys — loaded from --dart-define at compile time (not bundled in app)
   // Build: flutter build ios --dart-define=REVENUECAT_APPLE_API_KEY=appl_xxx
-  static const String revenueCatAppleApiKey =
+  // Falls back to test key for development when no --dart-define is provided
+  static const String _revenueCatAppleApiKeyEnv =
       String.fromEnvironment('REVENUECAT_APPLE_API_KEY');
-  static const String revenueCatGoogleApiKey =
+  static const String _revenueCatGoogleApiKeyEnv =
       String.fromEnvironment('REVENUECAT_GOOGLE_API_KEY');
+
+  // Test/sandbox API key — used when no --dart-define key is provided
+  static const String _revenueCatTestApiKey = 'test_DhLsHPPYcGYaPHRXHVYBczvPSgI';
+
+  static String get revenueCatAppleApiKey =>
+      _revenueCatAppleApiKeyEnv.isNotEmpty ? _revenueCatAppleApiKeyEnv : _revenueCatTestApiKey;
+  static String get revenueCatGoogleApiKey =>
+      _revenueCatGoogleApiKeyEnv.isNotEmpty ? _revenueCatGoogleApiKeyEnv : _revenueCatTestApiKey;
 
   // RevenueCat Product IDs
   static const String monthlyProductId = 'monthly';

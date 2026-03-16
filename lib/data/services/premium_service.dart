@@ -221,13 +221,21 @@ class PremiumNotifier extends Notifier<PremiumState> {
         return;
       }
 
+      // Enable debug logging in debug builds (must be set before configure)
+      if (kDebugMode) {
+        await Purchases.setLogLevel(LogLevel.debug);
+      }
+
       // Configure RevenueCat with modern options
-      final configuration = PurchasesConfiguration(apiKey);
+      final configuration = PurchasesConfiguration(apiKey)
+        ..entitlementVerificationMode = EntitlementVerificationMode.informational
+        ..diagnosticsEnabled = true;
       await Purchases.configure(configuration);
       _isInitialized = true;
 
       if (kDebugMode) {
-        debugPrint('RevenueCat: SDK initialized successfully');
+        final isTestKey = apiKey == 'test_DhLsHPPYcGYaPHRXHVYBczvPSgI';
+        debugPrint('RevenueCat: SDK initialized (${isTestKey ? "TEST/sandbox" : "production"} key)');
       }
 
       // Listen for customer info updates
@@ -537,9 +545,11 @@ class PremiumNotifier extends Notifier<PremiumState> {
         throw Exception('Product not found: ${tier.productId}');
       }
 
-      // Make purchase
-      final customerInfo = await Purchases.purchasePackage(packageToPurchase);
-      _handleCustomerInfoUpdate(customerInfo);
+      // Make purchase (v9: purchase() returns PurchaseResult with customerInfo)
+      final purchaseResult = await Purchases.purchase(
+        PurchaseParams.package(packageToPurchase),
+      );
+      _handleCustomerInfoUpdate(purchaseResult.customerInfo);
 
       // Log analytics
       _analytics.logPurchase(

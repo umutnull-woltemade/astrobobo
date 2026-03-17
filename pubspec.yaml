@@ -58,8 +58,8 @@ dependencies:
   flutter_dotenv: ^6.0.0
 
   # Notifications
-  flutter_local_notifications: ^20.1.0
-  timezone: ^0.10.0
+  flutter_local_notifications: ^21.0.0
+  timezone: ^0.11.0
 
   # Voice Input
   speech_to_text: ^7.0.0

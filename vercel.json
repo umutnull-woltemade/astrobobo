@@ -43,8 +43,6 @@
     { "source": "/robots.txt", "destination": "/api/robots" }
   ],
   "env": {
-    "DATABASE_URL": "@astrobobo_database_url",
-    "NEXT_PUBLIC_SITE_URL": "https://astrobobo.com",
-    "CONTENT_REVALIDATE_SECRET": "@astrobobo_revalidate_secret"
+    "NEXT_PUBLIC_SITE_URL": "https://astrobobo.com"
   }
 }

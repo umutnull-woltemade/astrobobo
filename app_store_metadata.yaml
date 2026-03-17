@@ -83,7 +83,7 @@ description: |
   • Apple Watch: Quick mood logging from your wrist
   • Beautiful dark and light themes with pastel aesthetics
   • Your data, your control — private by default
-  • Available in English, Turkish, German, and French
+  • Available in English and Turkish
 
   — WHY INNERCYCLES? —
   Unlike simple diary apps, InnerCycles uses pattern recognition to help you understand your cycles — emotional, creative, social, and personal. Past entries suggest trends. You notice what matters. Growth happens naturally.
@@ -169,20 +169,6 @@ tr:
 
     Gizlilik Politikası: https://umutnull-woltemade.github.io/innercycles/privacy.html
     Kullanım Koşulları: https://umutnull-woltemade.github.io/innercycles/terms.html
-
-# ── LOCALIZED METADATA (German) ──────────────────────────────────────────
-de:
-  title: "InnerCycles - Tagebuch"  # 22 chars
-  subtitle: "Stimmungstracker & Tagebuch"  # 28 chars
-  keywords: "Traum,Serie,Wellness,Achtsamkeit,Muster,Gewohnheit,Gefühle,Einsicht,Schreiben,Gesundheit,Ruhe,Schlaf"
-  # 100 chars — removed "Tagebuch" (in title+subtitle), "Dankbarkeit", "Meditation". Added "Schlaf" (sleep)
-
-# ── LOCALIZED METADATA (French) ──────────────────────────────────────────
-fr:
-  title: "InnerCycles - Journal Intime"  # 29 chars — captures "journal intime" compound
-  subtitle: "Suivi d'Humeur & Bien-Être"  # 27 chars — captures "humeur", "bien-être"
-  keywords: "rêve,série,schéma,gratitude,habitude,émotion,écriture,santé,calme,sommeil,privé,vie,pensée,routine"
-  # 97 chars — removed "journal intime" (in title), "bien-être" (in subtitle). Added "sommeil,privé,vie,pensée,routine"
 
 # ── APP STORE CONNECT PRIVACY NUTRITION LABELS ────────────────────────────
 # Paste these values into App Store Connect → App Privacy → Data Types

@@ -1,8 +1,12 @@
-/* App Store Screenshot Captions — English */
+/* App Store Screenshot Captions — English (OCR-indexed) */
 
-"01_today_feed" = "Your daily journal,\nbeautifully organized";
-"02_journal_entry" = "Write freely.\nDiscover patterns.";
-"03_mood_trends" = "See your emotional\npatterns emerge";
-"04_dream_journal" = "Record and interpret\nyour dreams";
-"05_streak_stats" = "Build consistency\nwith streaks & badges";
-"06_community_challenge" = "Join weekly challenges\nwith the community";
+"01_today_feed" = "Your emotions have patterns —\na personal journal that helps you see them";
+"02_streak_stats" = "Daily journaling streaks —\ntrack progress, celebrate milestones";
+"03_dream_journal" = "Dream journal — record,\nsearch, and decode your dreams";
+"04_insights" = "Personalized reflections —\ndiscover what your mood patterns reveal";
+"05_mood_trends" = "Mood tracker visualized —\nspot emotional trends across weeks and months";
+"06_widgets" = "Home Screen widgets — your streak,\ndaily prompt, and mood at a glance";
+"07_dark_theme" = "Dark and light themes —\na calm, private diary designed around you";
+"08_birthday_agenda" = "Birthday agenda — never forget\nimportant dates, get reminders";
+"09_apple_watch" = "Apple Watch mood log —\ntrack how you feel, right from your wrist";
+"10_settings" = "Private and secure —\nyour journal, your data, your control";

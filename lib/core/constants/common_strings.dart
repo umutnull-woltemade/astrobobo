@@ -4,7 +4,7 @@ import '../../data/services/l10n_service.dart';
 /// Centralized common UI strings that were previously duplicated
 /// across 20+ screens as inline `L10nService.get('core.constants.common_strings.text', isEn ? AppLanguage.en : AppLanguage.tr)` ternaries.
 ///
-/// All keys resolve through [L10nService] so DE/FR are also covered.
+/// All keys resolve through [L10nService].
 /// Usage:
 ///   CommonStrings.somethingWentWrong(language)
 abstract final class CommonStrings {
@@ -92,5 +92,15 @@ abstract final class CommonStrings {
   static List<String> monthsFull(AppLanguage lang) =>
       lang == AppLanguage.en ? monthsFullEn : monthsFullTr;
 
-  /// Get short month name by 1-based month index.
+  /// Get short month name by 1-based month index (clamped to 1–12).
+  static String monthShort(int month, AppLanguage lang) {
+    final i = (month - 1).clamp(0, 11);
+    return monthsShort(lang)[i];
+  }
+
+  /// Get full month name by 1-based month index (clamped to 1–12).
+  static String monthFull(int month, AppLanguage lang) {
+    final i = (month - 1).clamp(0, 11);
+    return monthsFull(lang)[i];
+  }
 }

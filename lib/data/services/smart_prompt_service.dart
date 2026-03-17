@@ -13,6 +13,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import '../providers/app_providers.dart';
 import 'journal_service.dart';
+import 'network_retry.dart';
 import 'pattern_engine_service.dart';
 
 class SmartPromptService {
@@ -74,15 +75,19 @@ class SmartPromptService {
         }
       }
 
-      final response = await client.functions.invoke(
-        'smart-prompt',
-        body: {
-          'recentEntries': recentEntries,
-          'weakestArea': weakestArea,
-          'currentStreak': currentStreak,
-          'language': language == AppLanguage.en ? 'en' : 'tr',
-        },
-      ).timeout(const Duration(seconds: 15));
+      final response = await retryWithBackoff(
+        () => client.functions.invoke(
+          'smart-prompt',
+          body: {
+            'recentEntries': recentEntries,
+            'weakestArea': weakestArea,
+            'currentStreak': currentStreak,
+            'language': language == AppLanguage.en ? 'en' : 'tr',
+          },
+        ),
+        maxAttempts: 2,
+        timeout: const Duration(seconds: 15),
+      );
 
       if (response.status != 200) {
         if (kDebugMode) {

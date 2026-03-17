@@ -13,6 +13,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import '../models/dream_interpretation_models.dart';
 import '../content/dream_symbols_database.dart';
 import '../providers/app_providers.dart';
+import 'network_retry.dart';
 import 'dream_interpretation_service.dart';
 import 'moon_phase_service.dart' as lunar;
 
@@ -62,19 +63,23 @@ class AIDreamService {
       final moonData = lunar.MoonPhaseService.calculate(DateTime.now());
       final modelPhase = _mapMoonPhase(moonData.phase);
 
-      final response = await client.functions.invoke(
-        'dream-analysis',
-        body: {
-          'dreamText': dreamText,
-          'emotion': emotion ?? '',
-          'wakingFeeling': wakingFeeling ?? '',
-          'isRecurring': isRecurring,
-          'recurringCount': recurringCount,
-          'moonPhase': '${modelPhase.label} ${modelPhase.emoji}',
-          'detectedSymbols': symbolNames,
-          'language': language == AppLanguage.en ? 'en' : 'tr',
-        },
-      ).timeout(const Duration(seconds: 20));
+      final response = await retryWithBackoff(
+        () => client.functions.invoke(
+          'dream-analysis',
+          body: {
+            'dreamText': dreamText,
+            'emotion': emotion ?? '',
+            'wakingFeeling': wakingFeeling ?? '',
+            'isRecurring': isRecurring,
+            'recurringCount': recurringCount,
+            'moonPhase': '${modelPhase.label} ${modelPhase.emoji}',
+            'detectedSymbols': symbolNames,
+            'language': language == AppLanguage.en ? 'en' : 'tr',
+          },
+        ),
+        maxAttempts: 2,
+        timeout: const Duration(seconds: 20),
+      );
 
       if (response.status != 200) {
         if (kDebugMode) {

@@ -18,12 +18,10 @@ void main() {
         expect(L10nService.currentLanguage, equals(AppLanguage.en));
       });
 
-      test('supportedLanguages contains all 4 languages', () {
-        expect(L10nService.supportedLanguages.length, equals(4));
+      test('supportedLanguages contains EN and TR', () {
+        expect(L10nService.supportedLanguages.length, equals(2));
         expect(L10nService.supportedLanguages.contains(AppLanguage.en), isTrue);
         expect(L10nService.supportedLanguages.contains(AppLanguage.tr), isTrue);
-        expect(L10nService.supportedLanguages.contains(AppLanguage.de), isTrue);
-        expect(L10nService.supportedLanguages.contains(AppLanguage.fr), isTrue);
       });
     });
 
@@ -44,17 +42,16 @@ void main() {
 
       test('returns different translations for different languages', () async {
         await L10nService.init(AppLanguage.en);
-        await L10nService.init(AppLanguage.de);
+        await L10nService.init(AppLanguage.tr);
 
         final enResult = L10nService.get('common.back', AppLanguage.en);
-        final deResult = L10nService.get('common.back', AppLanguage.de);
+        final trResult = L10nService.get('common.back', AppLanguage.tr);
 
         expect(enResult, isNotEmpty);
-        expect(deResult, isNotEmpty);
-        // The actual values might be same or different depending on content
-        // but both should be valid (not placeholders)
+        expect(trResult, isNotEmpty);
+        // Both should be valid (not placeholders)
         expect(enResult, isNot(contains('[common.back]')));
-        expect(deResult, isNot(contains('[common.back]')));
+        expect(trResult, isNot(contains('[common.back]')));
       });
 
       test('handles nested keys correctly', () async {
@@ -69,14 +66,11 @@ void main() {
     group('getWithParams', () {
       test('replaces parameters in translation', () async {
         await L10nService.init(AppLanguage.en);
-        // Assuming there's a key with {name} parameter
-        // If not, this test will still pass with placeholder
         final result = L10nService.getWithParams(
           'test.param.key',
           AppLanguage.en,
           params: {'name': 'TestUser'},
         );
-        // Should either have the replacement or be a placeholder
         expect(result, isA<String>());
       });
     });
@@ -85,8 +79,6 @@ void main() {
       test('returns list of strings', () async {
         await L10nService.init(AppLanguage.en);
         final result = L10nService.getList('common.months', AppLanguage.en);
-        // If the key exists, it should return a list
-        // If not, it returns an empty list
         expect(result, isA<List<String>>());
       });
     });
@@ -95,8 +87,6 @@ void main() {
       test('returns map of strings', () async {
         await L10nService.init(AppLanguage.en);
         final result = L10nService.getMap('test.map.key', AppLanguage.en);
-        // If the key exists, it should return a map
-        // If not, it returns an empty map
         expect(result, isA<Map<String, String>>());
       });
     });
@@ -113,8 +103,8 @@ void main() {
       });
 
       test('language getter returns bound language', () {
-        final localizedL10n = LocalizedL10n(AppLanguage.de);
-        expect(localizedL10n.language, equals(AppLanguage.de));
+        final localizedL10n = LocalizedL10n(AppLanguage.tr);
+        expect(localizedL10n.language, equals(AppLanguage.tr));
       });
     });
 
@@ -123,7 +113,6 @@ void main() {
         await L10nService.init(AppLanguage.en);
 
         // If a key exists only in Turkish, English should return placeholder
-        // This tests strict isolation
         final result = L10nService.get('unique.turkish.only.key', AppLanguage.en);
         expect(result, contains('['));
       });
@@ -131,8 +120,6 @@ void main() {
 
     group('Exception handling', () {
       test('UnsupportedLanguageException has correct message', () {
-        // Can't directly test this since we can't create unsupported language
-        // but we can verify the exception class exists
         expect(() => throw UnsupportedLanguageException(AppLanguage.en),
                throwsA(isA<UnsupportedLanguageException>()));
       });

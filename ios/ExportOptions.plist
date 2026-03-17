@@ -13,7 +13,9 @@
     <key>provisioningProfiles</key>
     <dict>
         <key>com.venusone.innercycles</key>
-        <string>Venus One Distribution</string>
+        <string>InnerCycles AppStore</string>
+        <key>com.venusone.innercycles.VenusWidget</key>
+        <string>VenusWidget AppStore</string>
     </dict>
     <key>signingStyle</key>
     <string>manual</string>

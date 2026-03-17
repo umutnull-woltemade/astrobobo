@@ -24,6 +24,7 @@ import '../../../data/services/paywall_service.dart';
 import '../../../data/services/app_lock_service.dart';
 import '../../../data/services/auth_service.dart';
 import '../../../data/services/sync_service.dart';
+import '../../../data/services/backup_restore_service.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import '../../../shared/providers/sync_status_provider.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -227,7 +228,7 @@ class SettingsScreen extends ConsumerWidget {
                                                 .state =
                                             lang;
                                         StorageService.saveLanguage(lang);
-                                        ref.read(analyticsServiceProvider).logEvent('language_changed', {'language': lang == AppLanguage.en ? 'en' : 'tr'});
+                                        ref.read(analyticsServiceProvider).logEvent('language_changed', {'language': lang.name});
                                       },
                                       child: Container(
                                         padding: const EdgeInsets.symmetric(
@@ -542,6 +543,15 @@ class SettingsScreen extends ConsumerWidget {
                               isDark: isDark,
                               onTap: () => context.push(Routes.exportData),
                             ),
+                            _GroupedSeparator(isDark: isDark),
+                            _GroupedTile(
+                              icon: Icons.backup_outlined,
+                              title: language == AppLanguage.en
+                                  ? 'Backup & Restore'
+                                  : 'Yedekle & Geri Yükle',
+                              isDark: isDark,
+                              onTap: () => _showBackupDialog(context, language),
+                            ),
                           ],
                         ),
                       ),
@@ -760,6 +770,77 @@ class SettingsScreen extends ConsumerWidget {
     if (context.mounted) {
       context.go(Routes.onboarding);
     }
+  }
+
+  Future<void> _showBackupDialog(
+    BuildContext context,
+    AppLanguage language,
+  ) async {
+    final isEn = language == AppLanguage.en;
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.transparent,
+      builder: (ctx) => Container(
+        padding: const EdgeInsets.all(24),
+        decoration: BoxDecoration(
+          color: Theme.of(context).brightness == Brightness.dark
+              ? AppColors.deepSpace
+              : Colors.white,
+          borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              isEn ? 'Backup & Restore' : 'Yedekle & Geri Yükle',
+              style: AppTypography.displayFont.copyWith(
+                fontSize: 20,
+                fontWeight: FontWeight.w700,
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? AppColors.textPrimary
+                    : AppColors.lightTextPrimary,
+              ),
+            ),
+            const SizedBox(height: 16),
+            ListTile(
+              leading: const Icon(Icons.cloud_upload_outlined, color: AppColors.amethyst),
+              title: Text(isEn ? 'Create Backup' : 'Yedek Oluştur'),
+              subtitle: Text(isEn
+                  ? 'Export all journal data as a file'
+                  : 'Tüm günlük verilerini dosya olarak dışa aktar'),
+              onTap: () async {
+                Navigator.pop(ctx);
+                if (!context.mounted) return;
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text(isEn ? 'Creating backup...' : 'Yedek oluşturuluyor...')),
+                );
+                final result = await BackupRestoreService.createBackup();
+                if (!context.mounted) return;
+                if (result.success && result.filePath != null) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(isEn
+                          ? 'Backup created (${result.metadata?.entryCount ?? 0} entries)'
+                          : 'Yedek oluşturuldu (${result.metadata?.entryCount ?? 0} kayıt)'),
+                      action: SnackBarAction(
+                        label: isEn ? 'Share' : 'Paylaş',
+                        onPressed: () => BackupRestoreService.shareBackup(result.filePath!),
+                      ),
+                    ),
+                  );
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text(isEn ? 'Backup failed' : 'Yedekleme başarısız')),
+                  );
+                }
+              },
+            ),
+            const SizedBox(height: 8),
+            SafeArea(child: SizedBox(height: 8)),
+          ],
+        ),
+      ),
+    );
   }
 
   Future<void> _showSignOutDialog(

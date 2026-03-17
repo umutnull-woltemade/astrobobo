@@ -382,6 +382,15 @@ class SyncService {
             continue;
           }
 
+          // Exponential backoff: skip items that aren't ready for retry yet
+          if (item.retryCount > 0) {
+            final backoffSeconds = _calculateBackoff(item.retryCount);
+            final nextRetryAt = item.createdAt.add(Duration(seconds: backoffSeconds));
+            if (DateTime.now().isBefore(nextRetryAt)) {
+              continue; // Not ready for retry yet
+            }
+          }
+
           final success = await _executeOperation(item);
 
           if (success) {
@@ -391,7 +400,7 @@ class SyncService {
             // Update retry count
             final updated = item.copyWith(
               retryCount: item.retryCount + 1,
-              lastError: 'Sync failed',
+              lastError: 'Sync failed at ${DateTime.now().toIso8601String()}',
             );
             await box.put(key, jsonEncode(updated.toJson()));
             failed++;
@@ -472,6 +481,15 @@ class SyncService {
       }
       return false;
     }
+  }
+
+  /// Calculate exponential backoff delay in seconds for a given retry count.
+  /// Retry 1: 10s, Retry 2: 40s, Retry 3: 90s, Retry 4: 160s (capped at 5 min)
+  static int _calculateBackoff(int retryCount) {
+    const baseDelay = 10;
+    const maxDelay = 300; // 5 minutes
+    final delay = baseDelay * retryCount * retryCount;
+    return delay > maxDelay ? maxDelay : delay;
   }
 
   static void _updateStatus(SyncStatus status) {

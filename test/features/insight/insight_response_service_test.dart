@@ -281,32 +281,15 @@ void main() {
     });
 
     group('Language Support', () {
-      test('generates responses in German', () {
+      test('generates responses in Turkish', () {
         final response = service.generateResponse(
-          userMessage: 'I had a strange dream',
+          userMessage: 'Garip bir rüya gördüm',
           insightType: InsightType.dreamReflection,
-          language: AppLanguage.de,
+          language: AppLanguage.tr,
         );
 
         expect(response, isNotEmpty);
-        // Should be German text (not English)
-        final _ = [
-          L10nService.get('insight.responses.dream_general_1', AppLanguage.en),
-          L10nService.get('insight.responses.dream_general_2', AppLanguage.en),
-        ];
-        // If German translations differ from English, this should work
-        // If same, it still validates the response is generated
         expect(response.isNotEmpty, isTrue);
-      });
-
-      test('generates responses in French', () {
-        final response = service.generateResponse(
-          userMessage: 'I feel anxious',
-          insightType: InsightType.emotionalExplore,
-          language: AppLanguage.fr,
-        );
-
-        expect(response, isNotEmpty);
       });
     });
   });

@@ -6,8 +6,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'core/theme/app_colors.dart';
 import 'core/theme/app_theme.dart';
@@ -15,31 +13,18 @@ import 'core/theme/app_typography.dart';
 import 'shared/widgets/gradient_text.dart';
 import 'shared/services/router_service.dart';
 import 'shared/widgets/app_error_widget.dart';
-import 'data/services/ad_service.dart';
-import 'data/services/storage_service.dart';
 import 'package:go_router/go_router.dart';
 import 'core/constants/routes.dart';
-import 'data/services/notification_service.dart';
-import 'data/services/notification_lifecycle_service.dart';
-import 'data/services/daily_hook_service.dart';
-import 'data/services/journal_service.dart';
-import 'data/services/admin_auth_service.dart';
 import 'data/services/auth_service.dart';
-import 'data/services/admin_analytics_service.dart';
-import 'data/services/analytics_service.dart';
+import 'data/services/notification_service.dart' show navigatorKey;
 import 'data/services/web_error_service.dart';
-import 'data/services/l10n_service.dart';
 import 'data/services/sync_service.dart';
-import 'data/services/data_migration_service.dart';
-import 'data/services/birthday_contact_service.dart';
 import 'data/services/error_reporting_service.dart';
-import 'data/services/paywall_experiment_service.dart';
-import 'data/services/telemetry_service.dart';
-import 'data/services/progressive_unlock_service.dart';
-import 'data/services/demo_seed_service.dart';
 import 'data/providers/app_providers.dart';
 import 'data/services/premium_service.dart';
 import 'data/models/user_profile.dart';
+import 'core/app_initializer_service.dart';
+import 'data/services/performance_monitor_service.dart';
 
 // ═══════════════════════════════════════════════════════════════════════════
 // SAFE STARTUP PATTERN - Prevents white screen on Flutter Web
@@ -48,6 +33,9 @@ import 'data/models/user_profile.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Track startup performance
+  PerformanceMonitorService.markAppStart();
 
   // Setup error handling FIRST
   _setupGlobalErrorHandling();
@@ -116,425 +104,13 @@ class _AppInitializerState extends State<AppInitializer>
   }
 
   Future<_InitResult> _initializeApp() async {
-    if (kDebugMode) {
-      debugPrint('🚀 InnerCycles: Starting initialization...');
-    }
-
-    // Load .env (optional - may not exist on web)
-    try {
-      await dotenv.load(fileName: 'assets/.env');
-      if (kDebugMode) {
-        debugPrint('✓ Environment variables loaded');
-      }
-    } catch (e) {
-      if (kDebugMode) {
-        debugPrint('⚠️ Warning: Could not load .env file: $e');
-      }
-    }
-
-    // Initialize Supabase (ALL PLATFORMS)
-    try {
-      final supabaseUrl = dotenv.env['SUPABASE_URL'] ?? '';
-      final supabaseKey = dotenv.env['SUPABASE_ANON_KEY'] ?? '';
-
-      if (supabaseUrl.isNotEmpty && !supabaseUrl.contains('placeholder')) {
-        await Supabase.initialize(
-          url: supabaseUrl,
-          anonKey: supabaseKey,
-          authOptions: const FlutterAuthClientOptions(
-            authFlowType: AuthFlowType.pkce,
-          ),
-          // Deep link for Apple Sign In callback (iOS native)
-          // Uses bundle ID as scheme: com.venusone.innercycles://
-        ).timeout(
-          const Duration(seconds: 15),
-        ); // Extended for iPad/slow networks
-        if (kDebugMode) {
-          debugPrint('✓ Supabase initialized');
-        }
-      } else {
-        if (kDebugMode) {
-          debugPrint('⚠️ Supabase: No valid URL configured');
-        }
-      }
-    } catch (e) {
-      if (kDebugMode) {
-        debugPrint('⚠️ Supabase initialization failed: $e');
-      }
-    }
-
-    // Initialize analytics (after Supabase so it can detect the connection)
-    try {
-      await AnalyticsService().initialize();
-    } catch (e) {
-      if (kDebugMode) {
-        debugPrint('⚠️ AnalyticsService init failed: $e');
-      }
-    }
-
-    // Initialize error reporting service
-    try {
-      await ErrorReportingService.initialize();
-      if (kDebugMode) {
-        debugPrint('✓ ErrorReportingService initialized');
-      }
-    } catch (e) {
-      if (kDebugMode) {
-        debugPrint('⚠️ ErrorReportingService init failed: $e');
-      }
-    }
-
-    // Glossary cache disabled for 4.3(b) compliance
-    // if (!kIsWeb) {
-    //   Future.microtask(() => GlossaryCache().initialize());
-    // }
-
-    // Initialize Hive FIRST — all Hive-dependent services need this
-    if (!kIsWeb) {
-      try {
-        await Hive.initFlutter();
-        if (kDebugMode) debugPrint('✓ Hive initialized');
-      } catch (e) {
-        if (kDebugMode) debugPrint('⚠️ Hive init failed: $e');
-      }
-    }
-
-    // Initialize storage (opens encrypted Hive boxes)
-    try {
-      await StorageService.initialize().timeout(const Duration(seconds: 5));
-      if (kDebugMode) {
-        debugPrint('✓ Storage initialized');
-      }
-    } catch (e) {
-      if (kDebugMode) {
-        debugPrint('⚠️ Storage initialization failed: $e');
-      }
-    }
-
-    // Seed demo data for App Store screenshots (debug only, runs once)
-    if (kDebugMode) {
-      try {
-        final seeded = await DemoSeedService.isSeeded();
-        if (!seeded) {
-          await DemoSeedService.seed();
-          debugPrint('✓ Demo data seeded (Dalai Lama profile)');
-        }
-      } catch (e) {
-        debugPrint('⚠️ Demo seed failed: $e');
-      }
-    }
-
-    // Initialize admin services (MOBILE ONLY, depends on Hive)
-    if (!kIsWeb) {
-      try {
-        await AdminAuthService.initialize().timeout(const Duration(seconds: 5));
-      } catch (e) {
-        if (kDebugMode) {
-          debugPrint('⚠️ AdminAuthService init failed: $e');
-        }
-      }
-      try {
-        await AdminAnalyticsService.initialize().timeout(
-          const Duration(seconds: 5),
-        );
-      } catch (e) {
-        if (kDebugMode) {
-          debugPrint('⚠️ AdminAnalyticsService init failed: $e');
-        }
-      }
-    }
-
-    // Load saved settings
-    var savedLanguage = StorageService.loadLanguage();
-    final savedThemeMode = StorageService.loadThemeMode();
-    final savedOnboardingComplete = StorageService.loadOnboardingComplete();
-    final savedProfile = StorageService.loadUserProfile();
-
-    // Auto-detect device language on first launch
-    if (!StorageService.hasExplicitLanguage()) {
-      final deviceLocale = PlatformDispatcher.instance.locale;
-      final detected = L10nService.supportedLanguages.firstWhere(
-        (lang) => lang.locale.languageCode == deviceLocale.languageCode,
-        orElse: () => AppLanguage.en,
-      );
-      savedLanguage = detected;
-      StorageService.saveLanguage(savedLanguage);
-    }
-
-    // Ensure language is supported
-    if (!L10nService.supportedLanguages.contains(savedLanguage)) {
-      savedLanguage = AppLanguage.en;
-      StorageService.saveLanguage(savedLanguage);
-    }
-
-    // Initialize L10nService
-    try {
-      await L10nService.init(savedLanguage);
-      if (kDebugMode) {
-        debugPrint('✓ L10nService initialized for ${savedLanguage.name}');
-      }
-    } catch (e) {
-      if (kDebugMode) {
-        debugPrint('⚠️ L10nService failed for ${savedLanguage.name}: $e');
-      }
-      // Fallback to English
-      try {
-        await L10nService.init(AppLanguage.en);
-        savedLanguage = AppLanguage.en;
-        if (kDebugMode) {
-          debugPrint('✓ L10nService fallback to English');
-        }
-      } catch (e2) {
-        if (kDebugMode) {
-          debugPrint('⚠️ L10nService English fallback also failed: $e2');
-        }
-      }
-    }
-
-    // Preload all supported languages so runtime switching is instant
-    // (runs in background, non-blocking for the primary language)
-    L10nService.preloadAll();
-
-    // Initialize notifications (MOBILE ONLY)
-    if (!kIsWeb) {
-      try {
-        await NotificationService().initialize();
-
-        // Refresh daily notification with personalized hook message
-        final notifService = NotificationService();
-        final isDailyEnabled = await notifService.isDailyReflectionEnabled();
-        if (isDailyEnabled) {
-          final dailyTime = await notifService.getDailyReflectionTime();
-          if (dailyTime != null) {
-            final hookService = await DailyHookService.init();
-            final hookMessage = hookService.getMorningHook(
-              language: savedLanguage,
-            );
-            await notifService.scheduleDailyReflection(
-              hour: dailyTime.hour,
-              minute: dailyTime.minute,
-              personalizedMessage: hookMessage,
-            );
-          }
-        }
-      } catch (e) {
-        if (kDebugMode) {
-          debugPrint('⚠️ NotificationService init failed: $e');
-        }
-      }
-
-      // Reschedule birthday notifications on app launch
-      try {
-        final birthdayService = await BirthdayContactService.init();
-        final allContacts = birthdayService.getAllContacts();
-        if (allContacts.isNotEmpty) {
-          await NotificationService().rescheduleAllBirthdayNotifications(
-            allContacts,
-          );
-        }
-      } catch (e) {
-        if (kDebugMode) {
-          debugPrint('⚠️ Birthday notification reschedule failed: $e');
-        }
-      }
-
-      // Schedule streak-at-risk, streak-recovery, and "On This Day" notifications
-      // (Single JournalService.init() for all notification scheduling)
-      try {
-        final journalSvc = await JournalService.init();
-        final notif = NotificationService();
-
-        // Streak notifications
-        if (!journalSvc.hasLoggedToday()) {
-          final streak = journalSvc.getCurrentStreak();
-          if (streak >= 2) {
-            // Active streak at risk — remind at 8:30 PM
-            await notif.scheduleStreakAtRisk(currentStreak: streak);
-          } else if (streak == 0 && journalSvc.entryCount >= 3) {
-            // Streak just broke — gentle recovery nudge tomorrow 10 AM
-            await notif.scheduleStreakRecovery(
-              lostStreak: journalSvc.entryCount > 30 ? 7 : 3,
-            );
-          }
-        } else {
-          // Already journaled today — cancel pending streak alerts
-          await notif.cancelStreakAtRisk();
-          await notif.cancelStreakRecovery();
-        }
-
-        // "On This Day" memory anniversary check
-        final allEntries = journalSvc.getAllEntries();
-        final now = DateTime.now();
-        int? yearsAgo;
-        for (final entry in allEntries) {
-          if (entry.date.month == now.month &&
-              entry.date.day == now.day &&
-              entry.date.year < now.year) {
-            yearsAgo = now.year - entry.date.year;
-            break; // Use the most recent anniversary
-          }
-        }
-        if (yearsAgo != null) {
-          await notif.scheduleOnThisDayMemory(yearsAgo: yearsAgo);
-        }
-
-        // Monthly recap notification (scheduled for 1st of next month)
-        final lastMonthEntries = allEntries
-            .where((e) => e.date.month == now.month && e.date.year == now.year)
-            .length;
-        await notif.scheduleMonthlyRecapNotification(
-          lastMonthEntryCount: lastMonthEntries,
-        );
-      } catch (e) {
-        if (kDebugMode) {
-          debugPrint('⚠️ Streak/OnThisDay notification scheduling failed: $e');
-        }
-      }
-
-      // Initialize notification lifecycle service (MOBILE ONLY)
-      try {
-        final lifecycleService = await NotificationLifecycleService.init();
-        final journalService = await JournalService.init();
-        await lifecycleService
-            .recordActivity(); // Record app open for re-engagement timer
-        await lifecycleService.evaluate(journalService);
-        if (kDebugMode) {
-          debugPrint('✓ NotificationLifecycleService initialized');
-        }
-      } catch (e) {
-        if (kDebugMode) {
-          debugPrint('⚠️ NotificationLifecycleService init failed: $e');
-        }
-      }
-    }
-
-    // Initialize ads (MOBILE ONLY) — ATT is now requested inside AdService
-    // only for free-tier users, right before first ad load
-    if (!kIsWeb) {
-      try {
-        final adService = AdService();
-        await adService.initialize();
-      } catch (e) {
-        if (kDebugMode) {
-          debugPrint('⚠️ AdService init failed: $e');
-        }
-      }
-    }
-
-    // Initialize sync service (MOBILE ONLY - web uses session storage)
-    if (!kIsWeb) {
-      try {
-        await SyncService.initialize();
-        SyncService.registerMergeHandler(
-          'user_profiles',
-          StorageService.mergeRemoteProfiles,
-        );
-        if (kDebugMode) {
-          debugPrint('✓ SyncService initialized');
-        }
-
-        // Run one-time data migration if user is logged in
-        // (only if Supabase was initialized — requires valid URL in .env)
-        try {
-          final supabaseUrl = dotenv.env['SUPABASE_URL'] ?? '';
-          final currentUser =
-              (supabaseUrl.isNotEmpty && !supabaseUrl.contains('placeholder'))
-              ? Supabase.instance.client.auth.currentUser
-              : null;
-          if (currentUser != null &&
-              await DataMigrationService.needsMigration()) {
-            if (kDebugMode) {
-              debugPrint('🔄 Starting data migration to Supabase...');
-            }
-            final result = await DataMigrationService.migrateAllLocalData(
-              userId: currentUser.id,
-              onProgress: (current, total, table) {
-                if (kDebugMode) {
-                  debugPrint('  Migration ($current/$total): $table');
-                }
-              },
-            );
-            if (kDebugMode) {
-              debugPrint(
-                '✓ Data migration complete: ${result.migrated} records'
-                '${result.hasErrors ? ', ${result.errors.length} errors' : ''}',
-              );
-            }
-          }
-        } catch (e) {
-          if (kDebugMode) {
-            debugPrint('⚠️ DataMigration failed: $e');
-          }
-        }
-      } catch (e) {
-        if (kDebugMode) {
-          debugPrint('⚠️ SyncService init failed: $e');
-        }
-      }
-    }
-
-    // Initialize paywall experiment and increment session
-    try {
-      final experiment = await PaywallExperimentService.init();
-      experiment.incrementSession();
-      if (kDebugMode) {
-        debugPrint(
-          '✓ PaywallExperiment: pricing=${experiment.pricingVariant.name}, '
-          'timing=${experiment.timingVariant.name}, '
-          'session=${experiment.sessionCount}',
-        );
-      }
-    } catch (e) {
-      if (kDebugMode) {
-        debugPrint('⚠️ PaywallExperimentService init failed: $e');
-      }
-    }
-
-    // Initialize telemetry service
-    TelemetryService? telemetryInstance;
-    try {
-      telemetryInstance = await TelemetryService.init();
-      await telemetryInstance.appOpened(
-        sessionCount: telemetryInstance.sessionCount,
-      );
-      if (kDebugMode) {
-        debugPrint(
-          '✓ TelemetryService initialized (session #${telemetryInstance.sessionCount})',
-        );
-      }
-    } catch (e) {
-      if (kDebugMode) {
-        debugPrint('⚠️ TelemetryService init failed: $e');
-      }
-    }
-
-    // Initialize progressive unlock service
-    try {
-      final unlockService = await ProgressiveUnlockService.init();
-      if (kDebugMode) {
-        debugPrint(
-          '✓ ProgressiveUnlockService: ${unlockService.entryCount} entries, '
-          '${unlockService.nextUnlockMessage}',
-        );
-      }
-    } catch (e) {
-      if (kDebugMode) {
-        debugPrint('⚠️ ProgressiveUnlockService init failed: $e');
-      }
-    }
-
-    if (kDebugMode) {
-      debugPrint('✅ InnerCycles: Initialization complete!');
-    }
-
-    final savedFontSizeScale = StorageService.loadFontSizeScale();
-
+    final result = await AppInitializerService.initialize();
     return _InitResult(
-      language: savedLanguage,
-      themeMode: savedThemeMode,
-      fontSizeScale: savedFontSizeScale,
-      onboardingComplete: savedOnboardingComplete,
-      profile: savedProfile,
+      language: result.language,
+      themeMode: result.themeMode,
+      fontSizeScale: result.fontSizeScale,
+      onboardingComplete: result.onboardingComplete,
+      profile: result.profile,
     );
   }
 
@@ -597,9 +173,8 @@ class _AppInitializerState extends State<AppInitializer>
         // Show app if splash has fully faded out
         if (_initDone && _cachedResult != null) {
           final result = _cachedResult!;
-          if (kDebugMode) {
-            debugPrint('🎨 Launching InnerCycles with providers...');
-          }
+          PerformanceMonitorService.markAppReady();
+          PerformanceMonitorService.startFrameMonitoring();
           AppLanguage.setCurrent(result.language);
           return ProviderScope(
             overrides: [
@@ -721,9 +296,9 @@ class _CinematicSplashState extends State<_CinematicSplash>
               child: Container(
                 width: 80,
                 height: 80,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   shape: BoxShape.circle,
-                  gradient: const LinearGradient(
+                  gradient: LinearGradient(
                     colors: [AppColors.amethyst, AppColors.starGold],
                   ),
                 ),
@@ -792,7 +367,7 @@ class _CinematicSplashState extends State<_CinematicSplash>
             const SizedBox(height: 48),
 
             // Loading indicator
-            SizedBox(
+            const SizedBox(
               width: 22,
               height: 22,
               child: CircularProgressIndicator(

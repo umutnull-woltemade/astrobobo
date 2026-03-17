@@ -1,8 +1,12 @@
-/* App Store Ekran Görüntüsü Başlıkları — Türkçe */
+/* App Store Ekran Görüntüsü Başlıkları — Türkçe (OCR-indexed) */
 
-"01_today_feed" = "Günlüğün,\ngüzelce düzenlenmiş";
-"02_journal_entry" = "Özgürce yaz.\nÖrüntüleri keşfet.";
-"03_mood_trends" = "Duygusal örüntülerinin\northaya çıkışını gör";
-"04_dream_journal" = "Rüyalarını kaydet\nve yorumla";
-"05_streak_stats" = "Seri ve rozetlerle\ntutarlılık oluştur";
-"06_community_challenge" = "Toplulukla haftalık\ngörevlere katıl";
+"01_today_feed" = "Duygularının örüntüleri var —\nonları görmenize yardımcı kişisel günlük";
+"02_streak_stats" = "Günlük yazma serileri —\nilerlemeyi takip et, kilometre taşlarını kutla";
+"03_dream_journal" = "Rüya günlüğü — rüyalarını\nkaydet, ara ve çöz";
+"04_insights" = "Kişiselleştirilmiş yansımalar —\nruh hali örüntülerinin ne ortaya koyduğunu keşfet";
+"05_mood_trends" = "Görselleştirilmiş ruh hali takibi —\nhaftalar ve aylar boyunca duygusal eğilimleri gör";
+"06_widgets" = "Ana Ekran widget'ları — serin,\ngünlük ilham ve ruh halin bir bakışta";
+"07_dark_theme" = "Karanlık ve aydınlık temalar —\nsenin için tasarlanmış sakin, özel günlük";
+"08_birthday_agenda" = "Doğum günü ajandası — önemli\ntarihleri unutma, hatırlatma al";
+"09_apple_watch" = "Apple Watch ruh hali kaydı —\nnasıl hissettiğini bileğinden takip et";
+"10_settings" = "Özel ve güvenli —\nsenin günlüğün, senin verin, senin kontrolün";

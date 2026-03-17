@@ -87,6 +87,12 @@ class _LifecycleNotificationIds {
 // ════════════════════════════════════════════════════════════════════════════
 
 class NotificationLifecycleService {
+  // Quiet hours: notifications only between these hours
+  static const int _quietHoursStart = 22; // 10 PM
+  static const int _quietHoursEnd = 7; // 7 AM
+  static const int _defaultMorningHour = 9; // Fallback for too-early hours
+  static const int _defaultEveningHour = 20; // Fallback for too-late hours
+
   // SharedPreferences keys
   static const String _keyLastActivity = 'nlc_last_activity_date';
   static const String _keyJournalingHours = 'nlc_journaling_hours';
@@ -219,8 +225,8 @@ class NotificationLifecycleService {
 
   /// Ensure the hour is within allowed notification window (7 AM - 10 PM).
   int _clampToAllowedHours(int hour) {
-    if (hour < 7) return 9; // Too early -> default 9 AM
-    if (hour >= 22) return 20; // Too late -> default 8 PM
+    if (hour < _quietHoursEnd) return _defaultMorningHour;
+    if (hour >= _quietHoursStart) return _defaultEveningHour;
     return hour;
   }
 

@@ -15,12 +15,10 @@ devices([
   "iPad Pro 13-inch (M4)", # 13" iPad (required for universal)
 ])
 
-# Languages matching our ASO metadata
+# Languages matching our ASO metadata (de-DE, fr-FR removed)
 languages([
   "en-US",
   "tr",
-  "de-DE",
-  "fr-FR",
   "es-MX",
 ])
 

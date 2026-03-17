@@ -1,117 +1,189 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
   <defs>
-    <!-- ═══════════════════════════════════════════════════════════════ -->
-    <!-- INNERCYCLES - Premium App Icon v3                              -->
-    <!-- Concentric gradient arcs with luminous center orb              -->
-    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- INNERCYCLES - Premium App Icon v4 (Warm Terracotta Edition) -->
 
-    <!-- Background radial gradient -->
-    <radialGradient id="bg" cx="50%" cy="50%" r="72%">
-      <stop offset="0%" stop-color="#100C22"/>
-      <stop offset="100%" stop-color="#060510"/>
+    <!-- Background radial gradient - deep warm brown -->
+    <radialGradient id="bg" cx="50%" cy="48%" r="75%">
+      <stop offset="0%" stop-color="#241E19"/>
+      <stop offset="55%" stop-color="#1E1714"/>
+      <stop offset="100%" stop-color="#110E0B"/>
     </radialGradient>
 
-    <!-- Outer arc gradient (purple/lavender) -->
+    <!-- Vignette -->
+    <radialGradient id="vignette" cx="50%" cy="50%" r="50%">
+      <stop offset="60%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.4"/>
+    </radialGradient>
+
+    <!-- Outer arc gradient (warm amber/bronze) -->
     <linearGradient id="outerArc" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#64559B" stop-opacity="0.47"/>
-      <stop offset="100%" stop-color="#9E8AD2" stop-opacity="0.84"/>
+      <stop offset="0%" stop-color="#8B6F5E" stop-opacity="0.45"/>
+      <stop offset="40%" stop-color="#A08574" stop-opacity="0.75"/>
+      <stop offset="75%" stop-color="#BF8D6A" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#D4A07A" stop-opacity="0.6"/>
     </linearGradient>
 
-    <!-- Middle arc gradient (rose gold) -->
+    <!-- Middle arc gradient (terracotta hero) -->
     <linearGradient id="middleArc" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#B4804E" stop-opacity="0.55"/>
-      <stop offset="100%" stop-color="#EEB682" stop-opacity="1"/>
+      <stop offset="0%" stop-color="#C8553D" stop-opacity="0.55"/>
+      <stop offset="30%" stop-color="#D4704A" stop-opacity="0.9"/>
+      <stop offset="65%" stop-color="#FF6B35" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#D4704A" stop-opacity="0.65"/>
     </linearGradient>
 
-    <!-- Inner arc gradient (warm gold/cream) -->
+    <!-- Inner arc gradient (warm gold/champagne) -->
     <linearGradient id="innerArc" x1="100%" y1="100%" x2="0%" y2="0%">
-      <stop offset="0%" stop-color="#C6AF80" stop-opacity="0.59"/>
-      <stop offset="100%" stop-color="#F8E4B6" stop-opacity="1"/>
+      <stop offset="0%" stop-color="#BF8D6A" stop-opacity="0.55"/>
+      <stop offset="45%" stop-color="#D4A07A" stop-opacity="0.9"/>
+      <stop offset="80%" stop-color="#E8D5C4" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#F5EDE6" stop-opacity="0.8"/>
+    </linearGradient>
+
+    <!-- Outermost ring gradient -->
+    <linearGradient id="outerRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5A4A3E" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="#8B6F5E" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#5A4A3E" stop-opacity="0.1"/>
     </linearGradient>
 
     <!-- Center orb glow -->
     <radialGradient id="orbGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#FFF8EC" stop-opacity="1"/>
-      <stop offset="25%" stop-color="#FFE8C0" stop-opacity="0.45"/>
-      <stop offset="60%" stop-color="#FFD4A0" stop-opacity="0.12"/>
-      <stop offset="100%" stop-color="#FFC880" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#FBF7F4" stop-opacity="1"/>
+      <stop offset="20%" stop-color="#F5EDE6" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#E8D5C4" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#D4A07A" stop-opacity="0"/>
     </radialGradient>
 
-    <!-- Bloom glow -->
+    <!-- Ambient bloom -->
     <radialGradient id="bloom" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#FFD4A0" stop-opacity="0.07"/>
-      <stop offset="100%" stop-color="#FFD4A0" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#D4A07A" stop-opacity="0.08"/>
+      <stop offset="50%" stop-color="#BF8D6A" stop-opacity="0.03"/>
+      <stop offset="100%" stop-color="#8B6F5E" stop-opacity="0"/>
     </radialGradient>
 
-    <!-- Glow filter -->
-    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="8" result="blur"/>
+    <!-- Terracotta bloom -->
+    <radialGradient id="terraBloom" cx="50%" cy="50%" r="38%">
+      <stop offset="0%" stop-color="#D4704A" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#D4704A" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Glow filter for center orb -->
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="12" result="blur1"/>
+      <feGaussianBlur stdDeviation="4" result="blur2"/>
       <feMerge>
-        <feMergeNode in="blur"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="blur2"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
 
-    <!-- Arc glow filter -->
-    <filter id="arcGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="6"/>
+    <!-- Soft arc glow filter -->
+    <filter id="arcGlow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+
+    <!-- Wide glow -->
+    <filter id="wideGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+
+    <!-- Tight glow for crisp edges -->
+    <filter id="tightGlow" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur stdDeviation="5"/>
     </filter>
   </defs>
 
   <!-- Background -->
-  <rect width="512" height="512" fill="url(#bg)"/>
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+  <rect width="1024" height="1024" fill="url(#vignette)"/>
 
-  <!-- Ambient center warmth -->
-  <circle cx="256" cy="256" r="200" fill="url(#bloom)"/>
+  <!-- Ambient warmth -->
+  <circle cx="512" cy="512" r="420" fill="url(#bloom)"/>
+  <circle cx="512" cy="512" r="300" fill="url(#terraBloom)"/>
 
-  <!-- ═══ ARC GLOWS (behind sharp arcs) ═══ -->
+  <!-- ═══ OUTERMOST SUBTLE RING ═══ -->
+  <!-- r=400, gap at upper-left ~230°-270° (40° gap, 320° arc) -->
+  <!-- 270°: (512, 112), 230°: (512+400*cos230, 512+400*sin230) = (255, 205.6) -->
+  <path d="M 512,112 A 400,400 0 1,1 255.1,205.6"
+        fill="none" stroke="url(#outerRing)"
+        stroke-width="5" stroke-linecap="round" opacity="0.6"/>
 
-  <!-- Outer arc glow -->
-  <path d="M 168.8 92.2 A 200 200 0 1 1 131.5 129.5"
-        fill="none" stroke="#786AAA" stroke-opacity="0.14"
-        stroke-width="28" stroke-linecap="round"
+  <!-- ═══ ARC GLOWS ═══ -->
+
+  <!-- Outer arc glow: r=340, gap ~220°-280° -->
+  <!-- 280°: (571, 177.2), 220°: (251.6, 280.6) -->
+  <path d="M 571,177.2 A 340,340 0 1,1 251.6,280.6"
+        fill="none" stroke="#A08574" stroke-opacity="0.1"
+        stroke-width="44" stroke-linecap="round"
+        filter="url(#wideGlow)"/>
+
+  <!-- Middle arc glow: r=230, gap ~30°-100° -->
+  <!-- 100°: (472, 738.5), 30°: (711.2, 627) -->
+  <path d="M 472,738.5 A 230,230 0 1,1 711.2,627"
+        fill="none" stroke="#D4704A" stroke-opacity="0.16"
+        stroke-width="50" stroke-linecap="round"
         filter="url(#arcGlow)"/>
 
-  <!-- Middle arc glow -->
-  <path d="M 408.5 157.5 A 144 144 0 1 1 354.3 122.8"
-        fill="none" stroke="#DCA060" stroke-opacity="0.2"
-        stroke-width="32" stroke-linecap="round"
-        filter="url(#arcGlow)"/>
-
-  <!-- Inner arc glow -->
-  <path d="M 187.8 340.2 A 94 94 0 1 1 164.5 296"
-        fill="none" stroke="#ECCC9E" stroke-opacity="0.18"
-        stroke-width="24" stroke-linecap="round"
+  <!-- Inner arc glow: r=140, gap ~160°-240° -->
+  <!-- 240°: (442, 390.8), 160°: (380.4, 559.9) -->
+  <path d="M 442,390.8 A 140,140 0 1,1 380.4,559.9"
+        fill="none" stroke="#E8D5C4" stroke-opacity="0.12"
+        stroke-width="36" stroke-linecap="round"
         filter="url(#arcGlow)"/>
 
   <!-- ═══ SHARP ARCS ═══ -->
 
-  <!-- Outer arc - ethereal purple (gap at ~140°, sweep 290°) -->
-  <path d="M 168.8 92.2 A 200 200 0 1 1 131.5 129.5"
+  <!-- Outer arc - warm bronze/amber: r=340, gap ~220°-280° (300° sweep) -->
+  <path d="M 571,177.2 A 340,340 0 1,1 251.6,280.6"
         fill="none" stroke="url(#outerArc)"
-        stroke-width="13" stroke-linecap="round"/>
+        stroke-width="20" stroke-linecap="round"/>
 
-  <!-- Middle arc - rose gold hero (gap at ~320°, sweep 278°) -->
-  <path d="M 408.5 157.5 A 144 144 0 1 1 354.3 122.8"
+  <!-- Outer arc highlight -->
+  <path d="M 571,177.2 A 340,340 0 1,1 251.6,280.6"
+        fill="none" stroke="#D4A07A" stroke-opacity="0.1"
+        stroke-width="24" stroke-linecap="round"
+        filter="url(#tightGlow)"/>
+
+  <!-- Middle arc - terracotta hero: r=230, gap ~30°-100° (290° sweep) -->
+  <path d="M 472,738.5 A 230,230 0 1,1 711.2,627"
         fill="none" stroke="url(#middleArc)"
-        stroke-width="19" stroke-linecap="round"/>
+        stroke-width="28" stroke-linecap="round"/>
 
-  <!-- Inner arc - warm gold (gap at ~220°, sweep 284°) -->
-  <path d="M 187.8 340.2 A 94 94 0 1 1 164.5 296"
+  <!-- Middle arc glow highlight -->
+  <path d="M 472,738.5 A 230,230 0 1,1 711.2,627"
+        fill="none" stroke="#FF6B35" stroke-opacity="0.08"
+        stroke-width="32" stroke-linecap="round"
+        filter="url(#tightGlow)"/>
+
+  <!-- Inner arc - warm gold/champagne: r=140, gap ~160°-240° (280° sweep) -->
+  <path d="M 442,390.8 A 140,140 0 1,1 380.4,559.9"
         fill="none" stroke="url(#innerArc)"
-        stroke-width="14" stroke-linecap="round"/>
+        stroke-width="22" stroke-linecap="round"/>
+
+  <!-- Inner arc shimmer -->
+  <path d="M 442,390.8 A 140,140 0 1,1 380.4,559.9"
+        fill="none" stroke="#F5EDE6" stroke-opacity="0.06"
+        stroke-width="26" stroke-linecap="round"
+        filter="url(#tightGlow)"/>
 
   <!-- ═══ CENTER ORB ═══ -->
 
   <!-- Wide bloom -->
-  <circle cx="256" cy="256" r="52" fill="url(#orbGlow)" opacity="0.6"/>
+  <circle cx="512" cy="512" r="90" fill="url(#orbGlow)" opacity="0.45"/>
 
-  <!-- Orb glow -->
-  <circle cx="256" cy="256" r="30" fill="#FFE4BE" opacity="0.3" filter="url(#glow)"/>
+  <!-- Medium glow -->
+  <circle cx="512" cy="512" r="55" fill="#E8D5C4" opacity="0.12" filter="url(#glow)"/>
+
+  <!-- Warm halo -->
+  <circle cx="512" cy="512" r="36" fill="#F5EDE6" opacity="0.2" filter="url(#glow)"/>
 
   <!-- Solid orb -->
-  <circle cx="256" cy="256" r="14" fill="#FFFAEE"/>
+  <circle cx="512" cy="512" r="22" fill="#FBF7F4"/>
 
-  <!-- Orb highlight -->
-  <circle cx="254" cy="253" r="7" fill="#FFFFF8" opacity="0.7"/>
+  <!-- Specular highlight -->
+  <circle cx="509" cy="508" r="11" fill="#FFFFFF" opacity="0.7"/>
+
+  <!-- Hot spot -->
+  <circle cx="507" cy="506" r="4.5" fill="#FFFFFF" opacity="0.85"/>
 </svg>

@@ -60,8 +60,6 @@ class L10nService {
   static const Set<AppLanguage> supportedLanguages = {
     AppLanguage.en,
     AppLanguage.tr,
-    AppLanguage.de,
-    AppLanguage.fr,
   };
 
   /// Check if service is initialized

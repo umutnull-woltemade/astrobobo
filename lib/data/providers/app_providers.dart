@@ -84,6 +84,7 @@ import '../services/monthly_theme_service.dart';
 import '../services/fear_inventory_service.dart';
 import '../services/dream_journal_correlation_service.dart';
 import '../services/dream_memory_service.dart';
+import '../services/feature_flag_service.dart';
 
 // =============================================================================
 // USER PROFILE PROVIDERS
@@ -168,15 +169,7 @@ final onboardingCompleteProvider = StateProvider<bool>((ref) => false);
 
 enum AppLanguage {
   en, // English
-  tr, // Türkçe
-  el, // Ελληνικά (Greek)
-  bg, // Български (Bulgarian)
-  ru, // Русский (Russian)
-  zh, // 中文 (Chinese)
-  fr, // Français (French)
-  de, // Deutsch (German)
-  es, // Español (Spanish)
-  ar; // العربية (Arabic - RTL)
+  tr; // Türkçe
 
   /// Tracks the actual current language set by the user.
   static AppLanguage _current = en;
@@ -194,22 +187,6 @@ extension AppLanguageExtension on AppLanguage {
         return 'English';
       case AppLanguage.tr:
         return 'Türkçe';
-      case AppLanguage.el:
-        return 'Ελληνικά';
-      case AppLanguage.bg:
-        return 'Български';
-      case AppLanguage.ru:
-        return 'Русский';
-      case AppLanguage.zh:
-        return '中文';
-      case AppLanguage.fr:
-        return 'Français';
-      case AppLanguage.de:
-        return 'Deutsch';
-      case AppLanguage.es:
-        return 'Español';
-      case AppLanguage.ar:
-        return 'العربية';
     }
   }
 
@@ -219,39 +196,18 @@ extension AppLanguageExtension on AppLanguage {
         return '🇬🇧';
       case AppLanguage.tr:
         return '🇹🇷';
-      case AppLanguage.el:
-        return '🇬🇷';
-      case AppLanguage.bg:
-        return '🇧🇬';
-      case AppLanguage.ru:
-        return '🇷🇺';
-      case AppLanguage.zh:
-        return '🇨🇳';
-      case AppLanguage.fr:
-        return '🇫🇷';
-      case AppLanguage.de:
-        return '🇩🇪';
-      case AppLanguage.es:
-        return '🇪🇸';
-      case AppLanguage.ar:
-        return '🇸🇦';
     }
   }
 
   bool get isEn => this == AppLanguage.en;
 
-  bool get isRTL => this == AppLanguage.ar;
+  bool get isRTL => false;
 
   /// Languages with complete translations and strict isolation support
-  bool get hasStrictIsolation {
-    return this == AppLanguage.en ||
-        this == AppLanguage.tr ||
-        this == AppLanguage.de ||
-        this == AppLanguage.fr;
-  }
+  bool get hasStrictIsolation => true;
 
   /// Languages that are fully available for selection
-  bool get isFullyAvailable => hasStrictIsolation;
+  bool get isFullyAvailable => true;
 
   Locale get locale {
     switch (this) {
@@ -259,22 +215,6 @@ extension AppLanguageExtension on AppLanguage {
         return const Locale('en', 'US');
       case AppLanguage.tr:
         return const Locale('tr', 'TR');
-      case AppLanguage.el:
-        return const Locale('el', 'GR');
-      case AppLanguage.bg:
-        return const Locale('bg', 'BG');
-      case AppLanguage.ru:
-        return const Locale('ru', 'RU');
-      case AppLanguage.zh:
-        return const Locale('zh', 'CN');
-      case AppLanguage.fr:
-        return const Locale('fr', 'FR');
-      case AppLanguage.de:
-        return const Locale('de', 'DE');
-      case AppLanguage.es:
-        return const Locale('es', 'ES');
-      case AppLanguage.ar:
-        return const Locale('ar', 'SA');
     }
   }
 }
@@ -1109,5 +1049,15 @@ final privateJournalEntriesProvider = FutureProvider<List<JournalEntry>>((
 final privateNotesProvider = FutureProvider<List<NoteToSelf>>((ref) async {
   final service = await ref.watch(notesToSelfServiceProvider.future);
   return service.getPrivateNotes();
+});
+
+// =============================================================================
+// FEATURE FLAG PROVIDER
+// =============================================================================
+
+final featureFlagServiceProvider = FutureProvider<FeatureFlagService>((
+  ref,
+) async {
+  return await FeatureFlagService.init();
 });
 

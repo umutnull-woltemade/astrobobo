@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import '../../../../data/services/network_retry.dart';
 import '../../../../core/constants/routes.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_typography.dart';
@@ -81,17 +82,21 @@ class _OnThisDayBannerState extends ConsumerState<OnThisDayBanner> {
       } catch (_) {}
 
       final client = Supabase.instance.client;
-      final response = await client.functions.invoke(
-        'on-this-day-reflection',
-        body: {
-          'pastNote': entry.note ?? '',
-          'pastFocusArea': entry.focusArea.name,
-          'pastRating': entry.overallRating,
-          'yearsAgo': yearsAgo,
-          'currentFocusArea': currentFocus,
-          'currentMoodTrend': currentTrend,
-          'language': langCode,
-        },
+      final response = await retryWithBackoff(
+        () => client.functions.invoke(
+          'on-this-day-reflection',
+          body: {
+            'pastNote': entry.note ?? '',
+            'pastFocusArea': entry.focusArea.name,
+            'pastRating': entry.overallRating,
+            'yearsAgo': yearsAgo,
+            'currentFocusArea': currentFocus,
+            'currentMoodTrend': currentTrend,
+            'language': langCode,
+          },
+        ),
+        maxAttempts: 2,
+        timeout: const Duration(seconds: 15),
       ).timeout(const Duration(seconds: 5));
 
       if (response.status == 200 && mounted) {

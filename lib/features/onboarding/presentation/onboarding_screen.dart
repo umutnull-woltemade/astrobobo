@@ -11,6 +11,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../../core/constants/app_constants.dart';
 import '../../../core/constants/routes.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_typography.dart';
@@ -79,6 +80,8 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
 
   void _goToPage(int page) {
     HapticFeedback.lightImpact();
+    // Track onboarding step for funnel analytics
+    AnalyticsService().logOnboardingStepCompleted(step: page);
     _pageController.animateToPage(
       page,
       duration: const Duration(milliseconds: 550),
@@ -2441,7 +2444,7 @@ class _WelcomePage extends StatelessWidget {
             ),
             const SizedBox(height: 4),
             GestureDetector(
-              onTap: () => launchUrl(Uri.parse('https://umutnull-woltemade.github.io/innercycles/privacy.html')),
+              onTap: () => launchUrl(Uri.parse(AppConstants.privacyPolicyUrl)),
               child: Text(
                 L10nService.get('onboarding.onboarding.privacy_policy_link', language),
                 textAlign: TextAlign.center,

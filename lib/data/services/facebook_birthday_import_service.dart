@@ -6,6 +6,7 @@
 // ════════════════════════════════════════════════════════════════════════════
 
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:uuid/uuid.dart';
 import '../models/birthday_contact.dart';
 
@@ -63,7 +64,10 @@ class FacebookBirthdayImportService {
       }
 
       return contacts;
-    } catch (_) {
+    } catch (e) {
+      if (kDebugMode) {
+        debugPrint('FacebookBirthdayImportService: JSON parse failed: $e');
+      }
       return [];
     }
   }

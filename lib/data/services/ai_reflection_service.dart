@@ -13,6 +13,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import '../models/journal_entry.dart';
 import '../providers/app_providers.dart';
 import 'journal_service.dart';
+import 'network_retry.dart';
 
 class AIReflectionService {
   static const String _weeklyCountKey = 'ai_reflection_weekly_count';
@@ -61,19 +62,23 @@ class AIReflectionService {
               })
           .toList();
 
-      final response = await client.functions.invoke(
-        'personalized-reflection',
-        body: {
-          'entry': {
-            'focusArea': entry.focusArea.name,
-            'rating': entry.overallRating,
-            'note': entry.note ?? '',
+      final response = await retryWithBackoff(
+        () => client.functions.invoke(
+          'personalized-reflection',
+          body: {
+            'entry': {
+              'focusArea': entry.focusArea.name,
+              'rating': entry.overallRating,
+              'note': entry.note ?? '',
+            },
+            'recentEntries': recentEntries,
+            'language': language == AppLanguage.en ? 'en' : 'tr',
+            'userName': userName,
           },
-          'recentEntries': recentEntries,
-          'language': language == AppLanguage.en ? 'en' : 'tr',
-          'userName': userName,
-        },
-      ).timeout(const Duration(seconds: 15));
+        ),
+        maxAttempts: 2,
+        timeout: const Duration(seconds: 15),
+      );
 
       if (response.status != 200) {
         if (kDebugMode) {

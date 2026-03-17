@@ -147,8 +147,8 @@ void main() {
   });
 
   group('SyncService static config', () {
-    test('syncTables contains all 9 tables', () {
-      expect(SyncService.syncTables.length, 9);
+    test('syncTables contains all 10 tables', () {
+      expect(SyncService.syncTables.length, 10);
       expect(SyncService.syncTables, contains('user_profiles'));
       expect(SyncService.syncTables, contains('journal_entries'));
       expect(SyncService.syncTables, contains('dream_entries'));
@@ -158,6 +158,7 @@ void main() {
       expect(SyncService.syncTables, contains('life_events'));
       expect(SyncService.syncTables, contains('cycle_period_logs'));
       expect(SyncService.syncTables, contains('birthday_contacts'));
+      expect(SyncService.syncTables, contains('bond_privacy'));
     });
 
     test('registerMergeHandler stores handler', () {

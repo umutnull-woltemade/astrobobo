@@ -7,39 +7,24 @@ import 'package:flutter_test/flutter_test.dart';
 ///
 /// These tests ensure STRICT LANGUAGE ISOLATION:
 /// - No Turkish characters in English locale
-/// - No German characters in Turkish locale
-/// - No French characters in German locale
-/// - etc.
+/// - No foreign script characters in either locale
 ///
 /// ANY violation FAILS the build.
 void main() {
   // Character patterns for each language
-  // Note: ö and ü exist in BOTH Turkish and German, so we exclude them from cross-checks
-  // Turkish UNIQUE chars: ç, ğ, ı, İ, ş (not ö, ü)
-  // German UNIQUE chars: ä, ß, Ä (not ö, ü)
-  final turkishUniqueChars = RegExp(r'[çğıİşÇĞŞ]'); // Turkish-only characters
-  final germanUniqueChars = RegExp(r'[äßÄ]'); // German-only characters (ä, ß, Ä)
   final turkishChars = RegExp(r'[çğıİöşüÇĞÖŞÜ]'); // Full Turkish charset (for non-Turkish locales)
-  final germanChars = RegExp(r'[äöüßÄÖÜ]'); // Full German charset (for non-German locales)
-  // ignore: unused_local_variable - reserved for future tests
-  final frenchChars = RegExp(r'[àâçéèêëîïôùûüÿœæÀÂÇÉÈÊËÎÏÔÙÛÜŸŒÆ«»]');
+  final germanChars = RegExp(r'[äöüßÄÖÜ]'); // German chars (should not appear in EN or TR)
   final cyrillicChars = RegExp(r'[\u0400-\u04FF]');
   final arabicChars = RegExp(r'[\u0600-\u06FF]');
-  // ignore: unused_local_variable - reserved for future tests
-  final greekChars = RegExp(r'[\u0370-\u03FF]');
   final chineseChars = RegExp(r'[\u4E00-\u9FFF]');
 
   late Map<String, dynamic> enContent;
   late Map<String, dynamic> trContent;
-  late Map<String, dynamic> deContent;
-  late Map<String, dynamic> frContent;
 
   setUpAll(() async {
     // Load all locale files
     enContent = await _loadLocaleFile('en');
     trContent = await _loadLocaleFile('tr');
-    deContent = await _loadLocaleFile('de');
-    frContent = await _loadLocaleFile('fr');
   });
 
   group('English Locale Purity', () {
@@ -101,6 +86,7 @@ void main() {
 
   group('Turkish Locale Purity', () {
     test('TR contains no German-unique characters (ä, ß)', () {
+      final germanUniqueChars = RegExp(r'[äßÄ]');
       final strings = _extractAllStrings(trContent);
       for (final str in strings) {
         // Note: ö and ü are valid in Turkish, only check German-unique chars
@@ -135,87 +121,11 @@ void main() {
     });
   });
 
-  group('German Locale Purity', () {
-    test('DE contains no Turkish-unique characters (ç, ğ, ı, İ, ş)', () {
-      final strings = _extractAllStrings(deContent);
-      for (final str in strings) {
-        // Note: ö and ü are valid in German, only check Turkish-unique chars
-        expect(
-          turkishUniqueChars.hasMatch(str),
-          isFalse,
-          reason: 'German locale contains Turkish-unique character in: "$str"',
-        );
-      }
-    });
-
-    test('DE contains no Cyrillic characters', () {
-      final strings = _extractAllStrings(deContent);
-      for (final str in strings) {
-        expect(
-          cyrillicChars.hasMatch(str),
-          isFalse,
-          reason: 'German locale contains Cyrillic character in: "$str"',
-        );
-      }
-    });
-
-    test('DE contains no Arabic characters', () {
-      final strings = _extractAllStrings(deContent);
-      for (final str in strings) {
-        expect(
-          arabicChars.hasMatch(str),
-          isFalse,
-          reason: 'German locale contains Arabic character in: "$str"',
-        );
-      }
-    });
-  });
-
-  group('French Locale Purity', () {
-    test('FR contains no Turkish-unique characters (ç excluded - valid in French)', () {
-      // Note: ç is valid in French (garçon, français), so we only check ğ, ı, İ, ş
-      final turkishOnlyForFrench = RegExp(r'[ğıİşĞŞ]');
-      final strings = _extractAllStrings(frContent);
-      for (final str in strings) {
-        expect(
-          turkishOnlyForFrench.hasMatch(str),
-          isFalse,
-          reason: 'French locale contains Turkish-only character in: "$str"',
-        );
-      }
-    });
-
-    test('FR contains no German umlaut ß', () {
-      final strings = _extractAllStrings(frContent);
-      for (final str in strings) {
-        expect(
-          str.contains('ß'),
-          isFalse,
-          reason: 'French locale contains German ß in: "$str"',
-        );
-      }
-    });
-
-    test('FR contains no Cyrillic characters', () {
-      final strings = _extractAllStrings(frContent);
-      for (final str in strings) {
-        expect(
-          cyrillicChars.hasMatch(str),
-          isFalse,
-          reason: 'French locale contains Cyrillic character in: "$str"',
-        );
-      }
-    });
-  });
-
   group('Key Consistency', () {
-    test('All locales have identical key sets', () {
+    test('EN and TR have identical key sets', () {
       final enKeys = _extractAllKeys(enContent);
       final trKeys = _extractAllKeys(trContent);
-      final deKeys = _extractAllKeys(deContent);
-      final frKeys = _extractAllKeys(frContent);
 
-      // Check EN vs TR
       final missingInTr = enKeys.difference(trKeys);
       final extraInTr = trKeys.difference(enKeys);
       expect(
@@ -227,34 +137,6 @@ void main() {
         extraInTr,
         isEmpty,
         reason: 'Extra keys in TR: $extraInTr',
-      );
-
-      // Check EN vs DE
-      final missingInDe = enKeys.difference(deKeys);
-      final extraInDe = deKeys.difference(enKeys);
-      expect(
-        missingInDe,
-        isEmpty,
-        reason: 'Keys missing in DE: $missingInDe',
-      );
-      expect(
-        extraInDe,
-        isEmpty,
-        reason: 'Extra keys in DE: $extraInDe',
-      );
-
-      // Check EN vs FR
-      final missingInFr = enKeys.difference(frKeys);
-      final extraInFr = frKeys.difference(enKeys);
-      expect(
-        missingInFr,
-        isEmpty,
-        reason: 'Keys missing in FR: $missingInFr',
-      );
-      expect(
-        extraInFr,
-        isEmpty,
-        reason: 'Extra keys in FR: $extraInFr',
       );
     });
   });
@@ -278,28 +160,6 @@ void main() {
           str.contains(RegExp(r'\[\w+\]')),
           isFalse,
           reason: 'TR contains placeholder key: "$str"',
-        );
-      }
-    });
-
-    test('DE has no placeholder keys', () {
-      final strings = _extractAllStrings(deContent);
-      for (final str in strings) {
-        expect(
-          str.contains(RegExp(r'\[\w+\]')),
-          isFalse,
-          reason: 'DE contains placeholder key: "$str"',
-        );
-      }
-    });
-
-    test('FR has no placeholder keys', () {
-      final strings = _extractAllStrings(frContent);
-      for (final str in strings) {
-        expect(
-          str.contains(RegExp(r'\[\w+\]')),
-          isFalse,
-          reason: 'FR contains placeholder key: "$str"',
         );
       }
     });
@@ -348,52 +208,6 @@ void main() {
           (archetypeContent[key] as String).isNotEmpty,
           isTrue,
           reason: 'TR archetype name is empty for $key',
-        );
-      }
-    });
-
-    test('DE has archetype names for all 12 archetypes', () {
-      final archetypeKeys = [
-        'pioneer', 'builder', 'communicator', 'nurturer', 'performer', 'analyst',
-        'harmonizer', 'transformer', 'explorer', 'achiever', 'visionary', 'dreamer'
-      ];
-      final archetypeContent = deContent['archetype'] as Map<String, dynamic>?;
-      expect(archetypeContent, isNotNull,
-        reason: 'DE locale must have an "archetype" section');
-
-      for (final key in archetypeKeys) {
-        expect(
-          archetypeContent!.containsKey(key),
-          isTrue,
-          reason: 'DE missing archetype key: $key',
-        );
-        expect(
-          (archetypeContent[key] as String).isNotEmpty,
-          isTrue,
-          reason: 'DE archetype name is empty for $key',
-        );
-      }
-    });
-
-    test('FR has archetype names for all 12 archetypes', () {
-      final archetypeKeys = [
-        'pioneer', 'builder', 'communicator', 'nurturer', 'performer', 'analyst',
-        'harmonizer', 'transformer', 'explorer', 'achiever', 'visionary', 'dreamer'
-      ];
-      final archetypeContent = frContent['archetype'] as Map<String, dynamic>?;
-      expect(archetypeContent, isNotNull,
-        reason: 'FR locale must have an "archetype" section');
-
-      for (final key in archetypeKeys) {
-        expect(
-          archetypeContent!.containsKey(key),
-          isTrue,
-          reason: 'FR missing archetype key: $key',
-        );
-        expect(
-          (archetypeContent[key] as String).isNotEmpty,
-          isTrue,
-          reason: 'FR archetype name is empty for $key',
         );
       }
     });

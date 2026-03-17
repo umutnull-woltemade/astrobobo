@@ -1,0 +1,687 @@
+import { ZodiacSign } from "./types";
+
+export const zodiacSignsTr: ZodiacSign[] = [
+  {
+    slug: "aries",
+    name: "Koç",
+    symbol: "\u2648",
+    dateRange: "21 Mart - 19 Nisan",
+    element: "Fire",
+    modality: "Cardinal",
+    rulingPlanet: "Mars",
+    keywords: [
+      "inisiyatif",
+      "cesaret",
+      "özgünlük",
+      "öncü ruh",
+      "doğrudan eylem",
+      "kendini keşif",
+    ],
+    overview:
+      "Koç, Öncü arketipini temsil eder -- 'Ben varım ve harekete geçiyorum' diyen bilincin ilk kıvılcımı. Mitolojik açıdan bu, yolun nereye varacağını bilmeden yolculuğa çıkan kahramanın enerjisidir. Koç arketipi, herhangi bir şeye başlamak için gereken ham cesareti taşır: bir konuşma, yaratıcı bir proje, köklü bir yaşam değişikliği. Bu pervasız bir enerji değildir, ancak acil hissedilebilir. Özünde Koç, bireyleşme dürtüsünün psikolojik yansımasıdır -- kolektiften ayrılma ve size özgü olanı keşfetme güdüsü. Bu arketiple rezonansa giren insanlar, kendilerini sıklıkla bir ilk hamle yapan birini gerektiren durumlarda bulurlar; başkaları tereddüt ederken harekete geçmeye istekli biri. Koç sembolü olarak Koç burcu, kararlılığı ve ileri momentumu ifade eder, ama aynı zamanda başıyla yol açmanın kırılganlığını da -- hem literal hem mecazi anlamda. Koç enerjisi, cesur olmanın ne anlama geldiği ve cesaretile sabrın bir arada var olup olamayacağı üzerine derinlemesine düşünmeye davet eder. Bu arketip, harekete geçme kapasitesinin bir armağan olduğunu ama her hareketin bilinçli bir yönelim gerektirdiğini hatırlatır. Koç enerjisiyle çalışmak, dürtüsellik ile kararlılık arasındaki ince çizgiyi keşfetmek anlamına gelir.",
+    personality:
+      "Koç arketipiyle özdeşleşen kişiler, yaşamda belirgin bir doğrudanlıkla hareket etme eğilimindedir. İletişim kurmalarında, karar vermelerinde ve sorunlarla ilgilenmelerinde genellikle bir aciliyete rastlanır -- uzun müzakereler yerine eylemi tercih eden bir yaklaşım. Bu, ilişkilerde ferahlatıcı bir dürüstlük, yeni girişimler başlatma eğilimi ve karmaşıklığın içinden özü bulma içgüdüsü olarak kendini gösterebilir. Günlük yaşamda, Koç rezonansına sahip bireyler genellikle toplantılarda ilk konuşan, tanımadıkları zorluklar için gönüllü olan ve rutinler fazla öngörülebilir hale geldiğinde huzursuz hisseden kişilerdir. Bu arketipin sıklıkla fiziksel bir niteliği vardır -- hareket etme, zihinsel enerjiyi beden aracılığıyla kanalize etme ihtiyacı, ister egzersiz, ister inşa etme, ister el işi olsun. Duygusal olarak Koç kalıbı, yoğunluk ardından hızlı çözüme yönelir. Hayal kırıklığı hızla gelir ve hızla gider. Bu, şikayetlerin nadiren içten içe kaynaması açısından bir güçtür, ancak daha derin duygusal akıntıların incelenmeden kalması anlamına da gelebilir. Bu arketipin büyüme noktası, yavaşlamanın durmakla aynı şey olmadığını ve dinlemenin kendi başına cesur bir eylem biçimi olabileceğini öğrenmektedir. İlişkilerde Koç enerjisi genellikle sıcaklık, koruyuculuk ve sevdikleri insanları savunma arzusu getirir. Koç arketipinin derinliklerine inmek, dürtünün arkasındaki motivasyonu anlamak ve tepki ile yanıt arasındaki farkı keşfetmek anlamına gelir.",
+    strengths: [
+      "Harekete geçme ve ataleti kırma konusunda doğal yetenek",
+      "Güven inşa eden dürüst ve doğrudan iletişim tarzı",
+      "Aksiliklere karşı dayanıklılık -- hızla toparlanma ve yeniden deneme kapasitesi",
+      "Başkalarını kendi risklerini almaya ilham veren içgüdüsel cesaret",
+      "Durumlar netlik gerektirdiğinde kararlı liderlik kapasitesi",
+      "İşbirlikçi projeleri canlandıran gerçek bir coşku",
+      "Başkalarını savunma ve doğru hissedilen şey için ayağa kalkma istekliliği",
+    ],
+    growthThemes: [
+      "Sabrı pasiflik olarak yorumlamadan geliştirmek",
+      "Yanıt formüle etmeden önce tam olarak dinlemeyi öğrenmek",
+      "Tepki vermek ile yanıt vermek arasındaki farkı keşfetmek",
+      "Belirsizliğe ve çözümlenmemiş durumlara tolerans geliştirmek",
+      "Kırılganlığın ve gücün zıtlar olmadığını fark etmek",
+    ],
+    reflectionPrompts: [
+      "En son ne zaman harekete geçmeden önce durdunuz ve o duraklamada ne fark ettiniz?",
+      "Bugün sizin için cesaret neye benziyor -- ileri itmek mi yoksa yerinde kalmak mı?",
+      "Yakın zamandaki bir çatışmayı düşünün: bir şey için mi savaşıyordunuz, yoksa bir şeye karşı mı?",
+      "Başka birinin liderlik etmesine izin vermek nasıl hissettirirdi ve bu düşüncede içinizde ne beliriyor?",
+      "Sağlıklı atılganlık ile bir sonucu kontrol etme dürtüsü arasını nasıl ayırt ediyorsunuz?",
+    ],
+    compatibilityNotes:
+      "Koç enerjisi, doğrudanlığı takdir eden ve macera tutkusunu paylaşan kişilerle doğal olarak rezonansa girme eğilimindedir. Ateş ve Hava arketipleri genellikle canlı, uyarıcı dinamikler yaratır. Toprak arketipleri, Koç'un dengeleyici bulduğu bir zemin sunabilir, ancak tempo farkı bilinçli bir yönetim gerektirebilir. Su arketipleri, Koç'u daha derin duygusal topraklara davet edebilir ve her iki taraf da açık kaldığında bu son derece zenginleştirici olabilir. Koç için en ilginç bağlantılar genellikle, yoğunluklarından ne korkan ne de onu eşleştirmeye zorlanan biriyle kurulur -- bir ayna değil, bir tamamlayıcı.",
+    dailyInspiration: [
+      "Başlama isteğiniz, başlı başına bir yaratma eylemidir.",
+      "Güç, bugün kendinize karşı nazik olma cesaretini de içerir.",
+      "Her savaş zırhınızı gerektirmez -- bazıları sadece varlığınızı ister.",
+      "Bugün yapabileceğiniz en cesur şey, derinden dinlemek olabilir.",
+      "Ateşiniz bir armağandır. Onu nereye yönlendirdiğinizi düşünün.",
+    ],
+    cosmicExplanation:
+      "Geleneksel burç çarkında Koç ilk konumu işgal eder ve Kuzey Yarımküre'deki ilkbahar ekinoksunu -- gün ışığının karanlığı geçmeye başladığı anı -- işaret eder. Bu astronomik konumlanma, Koç'u ortaya çıkış, yeni döngüler ve baharın ham enerjisi temalarına bağlar. Yönetici gezegen Mars, Roma savaş tanrısının adını taşır, ancak daha erken tarımsal geleneklerde Mars, toprağı kırma ve ekin ekme için gereken canlılıkla da ilişkilendirilmiştir. Kardinal modalite, Koç'un bir mevsimin başlangıcındaki konumunu yansıtarak başlatıcı enerji taşır. Ateş elementi, dönüşüm, aydınlanma ve bilinç kıvılcımı ile bağlantılıdır. Bu sembolik katmanları anlamak, öz-düşünmeyi derinleştirebilir: Koç yalnızca saldırganlık ya da hız değil, varlığa çıkma ve kendini dünyada var olarak ilan etme cesareti ile ilgilidir.",
+  },
+  {
+    slug: "taurus",
+    name: "Boğa",
+    symbol: "\u2649",
+    dateRange: "20 Nisan - 20 Mayıs",
+    element: "Earth",
+    modality: "Fixed",
+    rulingPlanet: "Venüs",
+    keywords: [
+      "kararlılık",
+      "duyusal farkındalık",
+      "sabır",
+      "maddi bilgelik",
+      "bedensellik",
+      "adanmışlık",
+    ],
+    overview:
+      "Boğa, İnşa Eden arketipini temsil eder -- ham inisiyatifi alıp ona biçim, öz ve süreklilik veren güç. Önceki arketip 'Ben başlıyorum' derken, Boğa 'Ben sürdürüyorum' der. Psikolojik açıdan bu, bedenselleşme enerjisidir: fiziksel dünyayı tam olarak içselleştirmeyi, duyular aracılığıyla anlam bulmayı ve kalıcı yapılar oluşturmayı öğrenmek. Boğa sembolü çifte anlam taşır -- güneşli bir tarlada otlayan nazik yaratık ve doğasına karşı itilemeyecek sarsılmaz güç. Boğa, kişinin maddi dünyayla ilişkisi üzerine düşünmeye davet eder: yalnızca para ve mülkiyet değil, bedenin kendisi, yediğimiz yemekler, kendimizi çevrelediğimiz dokular ve günlerimizi yaşadığımız tempo. Bu arketip, yavaşlıkta bilgelik, bedende zeka ve şimdiki anda tam olarak var olma eyleminde manevi derinlik olduğunu ileri sürer. Boğa enerjisi, güvenilirliğin ve tutarlılığın yaratıcılık kadar değerli olduğunu ve gerçek zenginliğin hayatı tüm duyularıyla deneyimleme kapasitesinde yattığını hatırlatır.",
+    personality:
+      "Boğa arketipiyle rezonansa giren insanlar, başkalarının sakinleştirici bulduğu belirgin bir yerleşiklik sergiler. Kararlarında genellikle kasıtlı bir nitelik vardır -- soyut muhakeme yerine doğrudan deneyim yoluyla bilgi toplamayı tercih ederler. Bu, önemli bir seçim üzerinde uyumak isteyen, mantıksal argüman kadar içgüdüsel hissine güvenen ve hem kendilerinde hem başkalarında tutarlılığa değer veren biri gibi görünebilir. Günlük yaşamda, Boğa rezonansına sahip bireyler sıklıkla güçlü estetik duyarlılıklar gösterir. Çevrelerine karşı seçici olabilirler -- nicelik yerine niteliğe, yenilik yerine konfora, modaya uygun olan yerine iyi yapılmış olana çekilen. Yemek, doğa, müzik veya diğer duyusal deneyimlerle sıradan zevkin ötesine geçen, neredeyse adanmışlık boyutuna varan derin bir ilişki vardır. Duygusal olarak Boğa kalıbı, uzun bir fitili olan istikrara yönelir. Dengelerini bozmak için sürekli baskı gerekir, ancak bu eşik aşıldığında tepki şaşırtıcı derecede yoğun olabilir. Bu arketip duyguları dürtüsel olarak değil, yavaşça ve kapsamlı bir şekilde işleme eğilimindedir. İlişkilerde Boğa enerjisi genellikle sadakat, fiziksel şefkat ve birlikte somut bir şey inşa etme arzusu olarak kendini gösterir. Büyüme noktası, bağlılığın ve sevginin aynı şey olmadığını ve değişimin rahatsız edici olsa da her zaman kayıp anlamına gelmediğini öğrenmeyi içerir. Esneklik göstermek, özden vazgeçmek değil, güçlü köklerin yeni dallara izin vermesidir.",
+    strengths: [
+      "Uzun vadeli projeleri tamamlama konusunda olağanüstü azim",
+      "Duyusal zeka -- fiziksel ve sezgisel ipuçlarıyla durumları okuma yeteneği",
+      "Güzellik, konfor ve davetkar ortamlar yaratma konusunda doğal yetenek",
+      "Takımların, ailelerin ve dostlukların omurgasını oluşturan güvenilirlik",
+      "Zaman içinde sürekli dikkat gerektiren süreçlere karşı sabır",
+      "Başkalarının güvende ve yerleşik hissetmesine yardımcı olan topraklayıcı varlık",
+      "Fiziksel dünyayla güçlü ilişki -- beden farkındalığı, zanaat ustalığı, maddi beceri",
+    ],
+    growthThemes: [
+      "Sağlıklı istikrar ile gerekli değişime direnç arasındaki farkı ayırt etmek",
+      "Sahiplenmenin bir kayıp korkusunu maskeleyip maskelemediğini keşfetmek",
+      "Temel kimliğin tehdit altında olduğunu hissetmeden esneklik pratiği yapmak",
+      "Amacına hizmet etmiş olanı kederle değil şükranla bırakmayı öğrenmek",
+      "Konfor alanlarının değerli olsa da aynı zamanda kafes haline de gelebileceğini fark etmek",
+    ],
+    reflectionPrompts: [
+      "Şu anda sizi geri tutabilecek neye tutunuyorsunuz?",
+      "En son ne zaman tamamen yabancı bir şey denediniz ve bedeniniz bu deneyim hakkında size ne söyledi?",
+      "Hayatınızda inatçılığın güçle karıştırıldığı bir alan var mı?",
+      "Gerçek güvenlik sizin için neye benziyor -- dış şeylerde mi yoksa içsel bir şeyde mi bulunur?",
+      "İstikrar ihtiyacınızı onurlandırırken büyümeye nasıl yer bırakabilirsiniz?",
+    ],
+    compatibilityNotes:
+      "Boğa enerjisi, kararlılığı takdir eden ve hayatın somut zevklerine duyulan sevgiyi paylaşanlarla uyumlu dinamikler yaratma eğilimindedir. Toprak ve Su arketipleri genellikle Boğa'nın derinlik, güvenlik ve anlamlı bağlılık takdirine doğal bir ritim bulur; yavaşça derinleşen ve kalıcı olan bağlantılar kurar. Hava arketipleri, Boğa'nın gerçekliğe oturttuğu uyarıcı fikirler getirebilir, ancak farklı tempolar her iki tarafta da sabır gerektirebilir. Ateş arketipleri, Boğa'nın ılımlı dozlarda canlandırıcı bulduğu heyecan ve kendiliğindenlik getirebilir. Boğa için en tatmin edici bağlantılar, bağlılığa değer veren ama nazikçe katılığa eğilimi sorgulayan biriyle kurulur.",
+    dailyInspiration: [
+      "Bugün bedeninizde bilgelik var -- bir an durup dinleyin.",
+      "Güzel bir şey inşa etmek zaman alır. Size doğru gelen tempoyu onurlandırın.",
+      "Konfor, kayıtsızlık değildir. Kendinize suçluluk duymadan dinlenme izni verin.",
+      "Bugün neyi beslediğinizi düşünün -- bedeninizi, ilişkilerinizi, hayallerinizi.",
+      "Durgunluk boşluk değildir. En derin çalışmaların bazıları sessizken gerçekleşir.",
+    ],
+    cosmicExplanation:
+      "Boğa, burç çarkında ikinci konumu işgal eder ve Kuzey Yarımküre'de baharın tam olarak yerleştiği zamana denk gelir -- verimlilik, büyüme ve toprağın bolluk zamanı. Yönetici gezegen Venüs, Boğa'yı güzellik, değer, haz ve çekim temalarına bağlar. Antik geleneklerde Venüs yalnızca romantik aşkla değil, uyum ilkesinin kendisiyle -- şeyleri hoş düzenlemeler içinde bir araya getiren güçle -- de ilişkilendirilmiştir. Sabit modalite, Boğa'nın bahar mevsiminin dengeleyicisi rolünü yansıtır; sürdüren ve koruyan enerji. Toprak elementi bu arketipi deneyimin fiziksel, maddi boyutuna yerleştirir. Bu katmanları anlamak, Boğa'nın yalnızca inatçılık ya da maddi birikim değil, bedensel varoluşta güzellik, anlam ve istikrar bulma konusundaki derin insani ihtiyaçla ilgili olduğunu ortaya koyar.",
+  },
+  {
+    slug: "gemini",
+    name: "İkizler",
+    symbol: "\u264A",
+    dateRange: "21 Mayıs - 20 Haziran",
+    element: "Air",
+    modality: "Mutable",
+    rulingPlanet: "Merkür",
+    keywords: [
+      "merak",
+      "iletişim",
+      "ikilik",
+      "uyum sağlama",
+      "zihinsel çeviklik",
+      "bağlantı",
+    ],
+    overview:
+      "İkizler, Haberci arketipini temsil eder -- dünyayı dil, sorular ve fikir alışverişi yoluyla keşfeden bilinç. Mitolojik açıdan bu, dünyalar arası gezgin Hermes'in enerjisidir; farklı anlayış alanları arasında hareket eden tercüman. İkizler sembolü, ikiyüzlülüğü değil çoğulluğu yansıtır: her insanın birden fazla bakış açısı, birden fazla ses, birden fazla anlama biçimi içerdiğinin farkına varış. İkizler, düşünme hakkında nasıl düşündüğümüz üzerine derinlemesine yansıtmaya davet eder -- anlattığımız hikayeler, sorduğumuz sorular, dilimizde gizli varsayımlar. Bu arketip, zekanın sabit bir miktar değil canlı bir süreç olduğunu ve karmaşıklığa verilen en dürüst yanıtın çoğunlukla erken bir cevaptan ziyade bir başka soru olduğunu ileri sürer. Bu arketipe çekilen insanlar, durumları aynı anda birden fazla açıdan görme konusunda olağandışı bir yeteneğe sahip olma eğilimindedir; bu hem bilişsel bir armağan hem de duygusal bir zorluktur. İkizler enerjisi, merakın bir pusula olduğunu ve zihni açık tutmanın cesaret gerektirdiğini hatırlatır.",
+    personality:
+      "İkizler arketipiyle özdeşleşenler, yaşamda belirgin bir zihinsel çabukluk ve sosyal akıcılıkla hareket etme eğilimindedir. Genellikle huzursuz bir entelektüel enerji vardır -- yeni bilgiye, yeni sohbetlere ve günlük deneyimde çeşitliliğe duyulan bir ihtiyaç. Bu, oburca okuma alışkanlıkları, geniş ve çeşitli bir sosyal çevre, yeni becerileri hızla edinme yeteneği ve konular arasında çevik bir şekilde hareket eden bir sohbet tarzı olarak kendini gösterebilir. Günlük yaşamda, İkizler rezonansına sahip bireyler genellikle insanları birbirine bağlayan, jargonu anlaşılır dile çeviren ve görünüşte ilgisiz alanlar arasında örüntüler fark eden kişilerdir. Bu arketipin sıklıkla sözel veya yazılı bir niteliği vardır -- kelimelerle doğal bir yakınlık, ister yazı, ister öğretme, ister hikaye anlatma, isterse sadece iyi bir sohbetin zevki olsun. Duygusal olarak İkizler kalıbı hızlı işlemeye yönelir. Duygular genellikle ifade yoluyla anlaşılır -- bir deneyim hakkında konuşmak veya yazmak, onu anlamlandırmaya yardımcı olur. Bu, duygusal durumların bastırılmak yerine incelendiği anlamında bir güçtür, ancak duyguları entelektüelleştirmenin onları tam olarak yaşamaktan kaçınmanın bir yolu haline gelebileceği anlamına da gelebilir. Büyüme noktası, her şeyin gerçek olması için adlandırılması gerekmediğini ve bazen belirsizlikle oturmanın onu açıklamaktan daha dürüst olduğunu öğrenmektedir. İlişkilerde İkizler enerjisi oyunculuk, entelektüel uyarım ve karşıdaki kişinin iç dünyasına duyulan gerçek ilgi getirir.",
+    strengths: [
+      "Karmaşık fikirleri erişilebilir dilde ifade etme konusunda olağanüstü yetenek",
+      "Yeni durumlara ve bilgilere hızla uyum sağlayan zihinsel esneklik",
+      "Yaşam boyu öğrenmeyi ve gelişmeyi sürdüren doğal merak",
+      "Sosyal zeka -- ortamları okuma, insanları birbirine bağlama, farklılıkları köprüleme",
+      "Erken yargıya varmadan birden fazla bakış açısını tutabilme kapasitesi",
+      "Zor durumları hafifleten hazırcevaplık ve mizah",
+      "Çeşitli roller ve bağlamlarda başarılı olmayı sağlayan çok yönlülük",
+      "Yeni anlayışlar açan sorular sorma yeteneği",
+    ],
+    growthThemes: [
+      "Genişliğin yanında derinlik geliştirmek -- bir şeyle yeterince uzun kalarak ustalaşmak",
+      "Gerçek esneklik ile bağlılıktan kaçınma arasındaki farkı ayırt etmeyi öğrenmek",
+      "Zihin bir sonraki şeye koşmak istediğinde şimdiki anda kalma pratiği yapmak",
+      "Bir duyguyu anlamak ile onu gerçekten hissetmek arasındaki farkı keşfetmek",
+      "Yenilik çağırdığında bile tutarlılık yoluyla güven inşa etmek",
+    ],
+    reflectionPrompts: [
+      "Hangi konuşmadan kaçınıyorsunuz ve bu, sizin için en çok neyin önemli olduğu hakkında ne ortaya koyabilir?",
+      "Zihninizin konular arasında koşuşturduğunu fark ettiğinizde, neden uzaklaşıyor?",
+      "Hayatınızda şu anda daha geniş keşif yerine daha derin dikkat hak eden bir şey var mı?",
+      "Sessizlikte kendinizi nasıl hissediyorsunuz -- ve bu konudaki rahatsızlığınız ya da rahatlığınız size ne söylüyor?",
+      "Güçlü bir şekilde savunduğunuz bir inancı düşünün: ona karşı en güçlü argümanı dile getirebilir misiniz?",
+    ],
+    compatibilityNotes:
+      "İkizler enerjisi, sohbetten hoşlanan, zekayı takdir eden ve zihinsel uyarıma ihtiyaç duyan bir partnerle rahat olan kişilerle gelişme eğilimindedir. Hava ve Ateş arketipleri genellikle enerjik, dinamik alışverişler yaratır. Toprak arketipleri, İkizler'in odaklanmasına yardımcı olan dengeleyici bir istikrar sunabilir, ancak tempo farkı karşılıklı anlayış gerektirebilir. Su arketipleri, İkizler'i genellikle üzerinden geçtiği duygusal derinliklere davet ederek tipik olarak serebral yaklaşımlarını zenginleştirebilir. İkizler için en ilginç bağlantılar genellikle meraklarını paylaşan ama farklı bir zeka türü getiren biriyle kurulur -- duygusal, fiziksel veya sezgisel.",
+    dailyInspiration: [
+      "Merakınız bir pusuladadır. Bugün nereyi gösterdiğine dikkat edin.",
+      "Her düşüncenin bir sohbete dönüşmesi gerekmez. Bazıları sadece sizin içindir.",
+      "Bugün öğreneceğiniz en ilginç şey, sormaktan değil dinlemekten gelebilir.",
+      "Her iki tarafı da görme yeteneğiniz bir armağandır. Onu köprüler kurmak için kullanın, kararlardan kaçınmak için değil.",
+      "Bugün bir sohbetin daha geniş değil, daha derin gitmesine izin verin.",
+    ],
+    cosmicExplanation:
+      "İkizler, burç çarkında üçüncü konumu işgal eder ve Kuzey Yarımküre'de doğal dünyanın hareket, tozlaşma ve türler arası iletişimle canlı olduğu geç bahara denk gelir. Yönetici gezegen Merkür, Roma haberci tanrısının adını taşır ve çıplak gözle görülebilen en hızlı hareket eden gezegendir; yörüngesini yalnızca 88 günde tamamlar. Bu astronomik hız, İkizler'in hızlı düşünme ve zihinsel çeviklik çağrışımına bağlanır. Değişken modalite, İkizler'in mevsimler arası geçişteki konumunu yansıtarak uyarlanabilir, değişken enerji taşır. Hava elementi bu arketipi düşünce, dil ve sosyal bağlantı alanına bağlar. Takımyıldızın kendisi ikizleri tasvir eder ve biri ölümlü, biri tanrısal olan Kastor ile Polluks'un Yunan mitinden esinlenir -- benliğin farklı yönleri arasındaki sürekli diyalogu işaret eder.",
+  },
+  {
+    slug: "cancer",
+    name: "Yengeç",
+    symbol: "\u264B",
+    dateRange: "21 Haziran - 22 Temmuz",
+    element: "Water",
+    modality: "Cardinal",
+    rulingPlanet: "Ay",
+    keywords: [
+      "besleyicilik",
+      "duygusal zeka",
+      "hafıza",
+      "koruma",
+      "sezgi",
+      "aidiyet",
+    ],
+    overview:
+      "Yengeç, Besleyici arketipini temsil eder -- dünyayı öncelikle duygu, hafıza ve bakım bağları aracılığıyla anlayan bilinç. Mitolojik açıdan bu, Büyük Ana'nın enerjisidir; cinsiyetle sınırlı olmayıp koruma, besleme ve yaşamın büyüyebileceği güvenli alanlar yaratma evrensel ihtiyacını ifade eder. Yengeç sembolü olarak yengeç, temel bir paradoksu yakalar: sert bir dış kabukla korunan yumuşak, derinden duyarlı bir iç dünya. Yengeç, kırılganlık ve güç arasındaki ilişki, özel duygusal dünya ile sunduğumuz kamusal benlik arasındaki ilişki üzerine düşünmeye davet eder. Bu arketip, duygusal hafızanın bir zeka biçimi olduğunu, başkalarının neye ihtiyaç duyduğunu sezme yeteneğinin gerçek bir beceri olduğunu ve bir yuva duygusu yaratmanın -- ister fiziksel bir mekanda, ister bir ilişkide, isterse kendi içinde -- bir insanın üstlenebileceği en anlamlı eylemlerden biri olduğunu ileri sürer. Bu arketipe çekilen insanlar genellikle, dışarıya yansıttıkları soğukkanlılığın düşündürdüğünden çok daha karmaşık zengin bir iç dünya taşırlar.",
+    personality:
+      "Yengeç arketipiyle rezonansa giren insanlar, yaşamda belirgin bir duygusal dikkatle hareket etme eğilimindedir. Durumları okumalarında genellikle sezgisel bir nitelik vardır -- kimse konuşmadan bir odanın ruh halini hissetme, söylenmeyeni fark etme ve başkalarının tamamen gözden kaçırdığı duygusal alt akıntılara yanıt verme. Günlük yaşamda, Yengeç rezonansına sahip bireyler, bilinçli olarak seçmiş olsunlar ya da olmasınlar, sıklıkla kendilerini bakım verme rollerinde bulurlar. Doğum günlerini hatırlayan, zor zamanlardan geçen arkadaşları arayan ve grupları bir arada tutan ritüelleri ve gelenekleri yaratan kişi olabilirler. Genellikle geçmişle güçlü bir bağlantı vardır -- salt nostalji değil, hafızanın anlam taşıdığına, nereden geldiğimizin kim olduğumuzu şekillendirdiğine dair gerçek bir his. Duygusal olarak Yengeç kalıbı, tıpkı Ay'ın evreleri gibi derinlik ve döngüsellikle karakterize edilir. Ruh halleri, başkalarını şaşırtsa bile içsel olarak tutarlı bir ritimle değişebilir. Duygular yüzeysel olarak deneyimlenmez; absorbe edilir, işlenir ve zaman içinde bütünleştirilir. Büyüme noktası, kendini korumanın ve kendini kapatmanın farklı şeyler olduğunu ve beslemenin en derin biçiminin bazen başkalarının kendi başlarına mücadele etmesine ve büyümesine izin vermek anlamına geldiğini öğrenmektedir. Sınırlar koymak sevgiden vazgeçmek değil, sevgiyi sürdürülebilir kılmaktır.",
+    strengths: [
+      "Durumların yüzeyinin altını okuyan derin duygusal zeka",
+      "Başkaları için güvenlik ve aidiyet duygusu yaratma konusunda doğal yetenek",
+      "Mantıksal analizin ötesinde rehberlik sağlayan güçlü sezgi",
+      "Derinden önemli olan insanlara ve davalara karşı inatçı sadakat",
+      "Duygusal derinlikle beslenen zengin hayal gücü ve yaratıcı kapasite",
+      "Başkalarının acısını düzeltmeye çalışmadan onlara alan tutma yeteneği",
+      "Anlamlı gelenekleri ve bağlantıları koruyan derin hafıza",
+    ],
+    growthThemes: [
+      "Başkalarına bakma ile onların ihtiyaçlarında kendini kaybetme arasındaki farkı ayırt etmek",
+      "İhtiyaçları ima etmek ve ummak yerine doğrudan ifade etmeyi öğrenmek",
+      "Koruyucu duvarların hapishaneye dönüşüp dönüşmediğini keşfetmek",
+      "Artık büyümeye hizmet etmeyen eski duygusal kalıpları bırakma pratiği yapmak",
+      "Başkalarına bağımsızlık tanımanın da bir sevgi eylemi olduğunu fark etmek",
+      "Yalnızca vermekle kalmayıp bakım almaya da rahatlık geliştirmek",
+    ],
+    reflectionPrompts: [
+      "Geçmişinizden hala taşıdığınız hangi duygusal kalıp var ve hala size hizmet ediyor mu?",
+      "Kabuğunuza çekildiğinizde, neyi koruyorsunuz -- ve neden?",
+      "Bakım vermenizin diğer kişinin büyümesini engelleyebileceği bir ilişki var mı?",
+      "Fiziksel bir mekanın ötesinde 'yuva' sizin için ne anlam ifade ediyor?",
+      "Başkalarına sunduğunuz aynı özveriyle kendinizi nasıl besleyebilirsiniz?",
+    ],
+    compatibilityNotes:
+      "Yengeç enerjisi, duygusal dürüstlüğe değer veren ve zaman içinde güven inşa etmeye yatırım yapmaya istekli olanlarla derin bağlantılar yaratma eğilimindedir. Su ve Toprak arketipleri genellikle Yengeç'in derinlik, güvenlik ve anlamlı bağlılık takdirini paylaşır. Hava arketipleri, Yengeç'in duygusal bunalımdan kaçınmasına yardımcı olan bir hafiflik ve perspektif getirebilir, ancak duygusal erişilebilirlik farklılık gösterebilir. Ateş arketipleri, duygusal duyarlılıkla eşleştirildiğinde Yengeç'in canlandırıcı bulduğu sıcaklık ve canlılık sunabilir. Yengeç için en besleyici bağlantılar genellikle hem güçlü hem kırılgan olabilen -- Yengeç'in derinden hisseden tek kişi olmasını gerektirmeyen biriyle kurulur.",
+    dailyInspiration: [
+      "Duyarlılığınız bir zayıflık değil. Dünyayı böyle anlıyorsunuz.",
+      "Bugün, vermeye getirdiğiniz aynı zarafetle almayı pratik edin.",
+      "Her duygu bir yanıt gerektirmez. Bazılarının sadece hissedilmesi gerekir.",
+      "İçinizde taşıdığınız yuva, nerede olursanız olun her zaman mevcuttur.",
+      "Sezginiz, hayatta kaldığınız her deneyim tarafından şekillendirilmiştir. Ona güvenin.",
+    ],
+    cosmicExplanation:
+      "Yengeç, burç çarkında dördüncü konumu işgal eder ve Kuzey Yarımküre'deki yaz gündönümüne -- en uzun güne, ardından ışığın yavaş geri çekilişine -- denk gelir. Bu astronomik dönüm noktası, Yengeç'i içsellik, özel alan ve eve ve iç yaşama çekilme temalarına bağlar. Yönetici gök cismi Ay, Dünya'ya en yakın gök cismidir ve gel-gitleri yönetir; bu arketipi duygusal ritimlere, döngülere ve bilinçdışına bağlar. Kardinal modalite, Yengeç'in başlatıcı enerjisini yansıtır, ancak bu başlatma dışa değil içe yöneliktir -- duygusal süreçleri başlatma, temeller oluşturma, kök salma. Su elementi, Yengeç'i duygu, sezgi ve duygusal gerçekliğin akışkan doğası alanına yerleştirir. Yengeç takımyıldızı, antik geleneklerde ruhların insan enkarnasyonuna indiği kapıyla -- kozmik ve kişisel arasındaki eşikle -- ilişkilendirilmiştir.",
+  },
+  {
+    slug: "leo",
+    name: "Aslan",
+    symbol: "\u264C",
+    dateRange: "23 Temmuz - 22 Ağustos",
+    element: "Fire",
+    modality: "Fixed",
+    rulingPlanet: "Güneş",
+    keywords: [
+      "kendini ifade",
+      "yaratıcılık",
+      "cömertlik",
+      "onur",
+      "parlaklık",
+      "kalp merkezli yaşam",
+    ],
+    overview:
+      "Aslan, Hükümdar arketipini temsil eder -- yaratıcı kendini ifade ve görülme cesareti yoluyla kendini keşfeden bilinç. Mitolojik açıdan bu, otoritesini tahakkümden değil, varlığının özgünlüğünden alan parlak hükümdarın enerjisidir. Aslan sembolü hem ihtiramdan hem sıcaklıktan söz eder: sürünün hem şiddetli koruyucusu hem cömert kalbi. Aslan, ego ve benlik arasındaki ilişki -- sergilediğimiz persona ile altındaki özgün kimlik -- üzerine düşünmeye davet eder. Bu arketip, yaratma eyleminde manevi bir önem olduğunu, kendini ifadenin gösteriş değil bir cömertlik biçimi olduğunu ve dünyanın gerçekten her bireyin sunacaklarına ihtiyaç duyduğunu ileri sürer. Bu arketipe çekilen insanlar genellikle, tanınma arzuları ile herhangi bir performansın altında gerçekten kim olduklarının sevilmesi isteği arasında içsel bir gerilim taşırlar. Aslan enerjisi, özgünlüğün cesaret gerektirdiğini ve gerçek liderliğin kalpten geldiğini hatırlatır.",
+    personality:
+      "Aslan arketipiyle özdeşleşenler, yaşamda belirgin bir sıcaklık ve ifade gücüyle hareket etme eğilimindedir. Genellikle doğal bir manyetizma vardır -- zorunlu olarak yüksek ses değil, sessiz anlarda bile dikkat çeken bir varlık niteliği. Bu, yaratıcı özgüven, hikaye anlatma yeteneği, coşku yoluyla ilham veren liderlik ve başkalarını özel hissettirmekten gerçekten keyif alan bir cömertlik olarak kendini gösterebilir. Günlük yaşamda, Aslan rezonansına sahip bireyler sıklıkla kutlamaları organize eden, başkalarının yeteneklerini savunan ve girdikleri her odaya enerji getiren kişilerdir. Bu arketipin genellikle yaratıcı veya performatif bir boyutu vardır -- bir şeyler yapma, projelere kişisel damgasını vurma, iç deneyimi görünür, somut biçimlerde ifade etme ihtiyacı. Duygusal olarak Aslan kalıbı açıklık ve sıcaklığa yönelir; sadakat ve adanmışlık için gerçek bir kapasite taşır. Ancak göz ardı edilme, küçümsenme veya takdir edilmeme duygusuna karşı derin bir hassasiyet olabilir ve bu, yalnızca özgüvenli dışı gören kişileri şaşırtabilir. Bu arketip reddi derinden işler ve gurur gibi görünen şey aslında görülmeme duygusuna karşı koruyucu bir tepki olabilir. Büyüme noktası, gerçek özgüvenin dış onay gerektirmediğini ve kendini ifadenin en güçlü biçiminin bireysel egodan daha büyük bir şeye hizmet eden biçim olduğunu öğrenmektedir. İlişkilerde Aslan enerjisi romantizm, oyunculuk, şiddetli sadakat ve sevdikleri insanları kraliyet gibi hissettirme arzusu getirir.",
+    strengths: [
+      "Özgün kendini ifade yoluyla başkalarını ilham verme ve yükseltme konusunda doğal kapasite",
+      "Yaratıcı cesaret -- özgün çalışmayı dünyaya sunma istekliliği",
+      "Başkalarının başarısını gerçekten kutlayan ruh cömertliği",
+      "İnsanları değerli ve görülmüş hissettiren sıcak liderlik tarzı",
+      "Aksiliklerin ardından onurla toparlanan dirençli benlik duygusu",
+      "Sıradan anlara neşe, kutlama ve anlam getirme yeteneği",
+      "Sevdiklerine karşı şiddetli sadakat ve koruyuculuk",
+      "Başkalarındaki potansiyeli görme ve onaylama yeteneği",
+    ],
+    growthThemes: [
+      "Takdir ihtiyacı ile alkış ihtiyacı arasındaki farkı ayırt etmek",
+      "Yalnızca tanınma için değil, yaratmanın kendisi için yaratmayı öğrenmek",
+      "Sahneyi paylaşmanın kendini küçültmeden nasıl mümkün olduğunu keşfetmek",
+      "Bazen sıradan olmakla rahatlık geliştirmek -- anonimlikte huzur bulmak",
+      "Gururun gerçek özgüveni ifade etmek yerine bir yarayı koruduğu zamanları fark etmek",
+    ],
+    reflectionPrompts: [
+      "Kimsenin asla görmeyeceğini bilseniz ne yaratırdınız?",
+      "Tanınma ihtiyacı hissettiğinizde, altındaki daha derin ihtiyaç nedir?",
+      "Sizi aşmış olan kendinizin bir versiyonunu oynuyor olabilir misiniz?",
+      "Beklediğiniz ilgiyi başka biri aldığında nasıl tepki veriyorsunuz?",
+      "En sessiz, en etkileyici olmayan anlarınızda kim olduğunuz için sevilmek nasıl hissettiriyor?",
+    ],
+    compatibilityNotes:
+      "Aslan enerjisi, gerçek, onaylamada cömert ve gölgede kalmış hissetmeyecek kadar kendine güvenen kişilerle gelişme eğilimindedir. Ateş ve Hava arketipleri genellikle yaratıcılık ve sosyal enerjiyle dolu canlı, uyarıcı dinamikler yaratır. Toprak arketipleri, Aslan'ın takdir ettiği dengeleyici bir istikrar ve yaratıcı vizyonlar için pratik destek sunabilir. Su arketipleri, Aslan'ın özgüvenli dışın altında gizlice arzuladığı duygusal derinlik ve özgün yakınlığı sunabilir. Aslan için en tatmin edici bağlantılar, performansın ötesinde gerçek insanı gören -- ve her ikisini de seven biriyle kurulur.",
+    dailyInspiration: [
+      "Işığınız başka kimsenin ışığını azaltmaz. Özür dilemeden parlayın.",
+      "Bugün sadece kendiniz için bir şey yaratın -- izleyici gerekmez.",
+      "Cömertlik doğanızdır. Kendi vermenize kendinizi de dahil ettiğinizden emin olun.",
+      "Başkalarından aradığınız tanınma, kendinize borçlu olduğunuz tanınma olabilir.",
+      "Gerçek özgüven sessizdir. Bugün çalışmanızın konuşmasına izin verin.",
+    ],
+    cosmicExplanation:
+      "Aslan, burç çarkında beşinci konumu işgal eder ve Kuzey Yarımküre'de Güneş'in en güçlü ifadesine ulaştığı yazın zirvesine denk gelir. Güneş'in kendisi tarafından yönetilen tek burçtur ve Aslan'ı kimlik, canlılık, yaratıcı güç ve benliğin merkezi örgütleyici ilkesi temalarına bağlar. Eski Mısır'da, Güneş'in Aslan burcundan geçişi sırasında Sirius'un doğuşu Nil'in yaşam veren taşkınıyla aynı zamana denk gelir; bu arketip ile bolluk, cömertlik ve kalbin sürdürücü gücü arasındaki çağrışımları pekiştirir. Sabit modalite, Aslan'ın yazın dengeleyicisi rolünü yansıtır -- mevsimin dolgunluğunu sürdüren ve koruyan enerji. Ateş elementi, kendini ifade, tutku ve bireysel bilinç kıvılcımıyla bağlantılıdır. Aslan takımyıldızı, kültürler arası olarak egemenlik, cesaret ve kutsal kalbin sembolü olarak tanınmıştır.",
+  },
+  {
+    slug: "virgo",
+    name: "Başak",
+    symbol: "\u264D",
+    dateRange: "23 Ağustos - 22 Eylül",
+    element: "Earth",
+    modality: "Mutable",
+    rulingPlanet: "Merkür",
+    keywords: [
+      "ayırt edicilik",
+      "hizmet",
+      "inceleme",
+      "analiz",
+      "zanaat",
+      "şifa",
+    ],
+    overview:
+      "Başak, Şifacı-Zanaatkar arketipini temsil eder -- dikkatli ilgi, becerili hizmet ve günlük yaşamda mükemmellik arayışı yoluyla anlam bulan bilinç. Mitolojik açıdan bu, kutsal zanaatkarın veya tapınak bekçisinin enerjisidir: ilahinın yalnızca büyük vahiylerde değil, sıradan görevlere uygulanan titiz özenle de bulunduğunu anlayan biri. Başak sembolü olarak Bakire, cinselliğe değil bütünlüğe ve kendine sahip olma haline işaret eder -- kendi başına tam olan, kendi bütünlük standardına adanmış bir bilinç. Başak, mükemmelliyetçilik ile gerçek kalite arasındaki, eleştiri ile ayırt edicilik arasındaki, başkalarına hizmet etmek ile hizmet eyleminde kendini kaybetmek arasındaki ilişki üzerine düşünmeye davet eder. Bu arketip, yakından dikkat etmenin başlı başına bir sevgi biçimi olduğunu, zaman içinde geliştirilen becerinin bir tür adanmışlık olduğunu ve bedenin ruhtan ayrı olmayıp onun en samimi ifadesi olduğunu ileri sürer.",
+    personality:
+      "Başak arketipiyle rezonansa giren insanlar, yaşamda ayrıntılara ve süreçlere yönelik belirgin bir dikkatle hareket etme eğilimindedir. Genellikle iş başında pratik bir zeka vardır -- neyin geliştirilmesi gerektiğini, neyin optimal çalışmadığını ve sistemlerin nasıl iyileştirilebileceğini görme yeteneği. Bu, zanaatkarlıkta kalite gözü, karmaşık bilgiyi düzenleme yeteneği, sağlık ve esenliğe adanmışlık ve salt üretkenlik yerine gerçek özenle temellenen bir iş ahlakı olarak kendini gösterebilir. Günlük yaşamda, Başak rezonansına sahip bireyler sıklıkla başkalarının gözden kaçırdığını fark eder: küçük verimsizlik, dile getirilmemiş ihtiyaç, daha sonra sorunlara yol açabilecek ince hata. Bu arketipin genellikle sessizce kahramanca olan bir hizmet yönelimi vardır -- kredi veya dikkat aramadan hayati işler yapmak. Duygusal olarak Başak kalıbı içselleştirme ve öz-analize yönelir. Duygular yansıtma yoluyla, genellikle özel olarak işlenir ve kişinin kendisine, başkalarına uygulandığında makul görünmeyecek standartlar dayatma eğilimi olabilir. Başak rezonansına sahip birindeki iç eleştirmen amansız olabilir ve benliği, başkalarına uygulanması halinde aşırı görünecek standartlara göre değerlendirir. Bu eleştirel yeti, dışa yönlendirildiğinde ayırt edicilik ve yararlı analiz olarak kendini gösterir, ancak içe döndüğünde kaygı ve özgüven eksikliğinin kaynağı olabilir. Büyüme noktası, kusurun başarısızlık olmadığını, 'yeterince iyi'nin bazen gerçekten yeterli olduğunu ve bedenin bilgeliğinin bazen zihnin analizini aştığını öğrenmektedir.",
+    strengths: [
+      "Başkalarının kaçırdığını yakalayan olağanüstü ayrıntı dikkati",
+      "Sistemleri ve süreçleri iyileştiren pratik problem çözme becerileri",
+      "Zanaata ve ustalığın sabırlı gelişimine adanmışlık",
+      "Hizmet etme konusunda gerçek arzu -- spesifik ve yararlı yardım",
+      "Karmaşıklığı netliğe dönüştürebilen analitik zihin",
+      "Başkalarının güvenebileceği güvenilirlik ve tutarlılık",
+      "Sağlık, esenlik ve bedenin zekasıyla derin bağlantı",
+    ],
+    growthThemes: [
+      "Yararlı ayırt edicilik ile yıkıcı öz-eleştiri arasındaki farkı öğrenmek",
+      "Öz-şefkati diğer görevlere uygulanan beceriyle pratik etmek",
+      "Bazı şeylerin kusurlu olması gerektiği olasılığını keşfetmek",
+      "Yalnızca yardım sunmakla kalmayıp yardım almaktan da rahatlık geliştirmek",
+      "Mükemmellik arayışının aslında tamamlamaktan kaçınma olduğu zamanları fark etmek",
+      "Kendiliğindenliği sorumsuzluk olarak yorumlamadan buna izin vermek",
+    ],
+    reflectionPrompts: [
+      "Şu anda kendinize uyguladığınız standart nedir ve bu standardı aslen kim belirledi?",
+      "Bir kusur fark ettiğinizde -- kendinizde, çalışmanızda, başkalarında -- bedeninizde ne olur?",
+      "Mükemmelleştirdiğiniz ama aslında bırakılmaya hazır olan bir görev var mı?",
+      "Bugün başkalarına sunduğunuz aynı özenle kendinize nasıl hizmet edebilirsiniz?",
+      "Eğer 'yeterli' gerçekten yeterli hissetseydi hayatınız nasıl görünürdü?",
+    ],
+    compatibilityNotes:
+      "Başak enerjisi, düşünceliği takdir eden, büyüme taahhüdünü paylaşan ve yardımı zarifçe kabul edebilen kişilerle güçlü bağlantılar kurma eğilimindedir. Toprak ve Su arketipleri genellikle Başak'ın pratik özeni ve anlamlı derinlik arzusuyla iyi uyum sağlar. Hava arketipleri, Başak'ın Merkür yönetimli zihninin keyif aldığı entelektüel uyarımı getirebilir, ancak düzene farklı yaklaşımlar müzakere gerektirebilir. Ateş arketipleri, Başak'ın kontrol üzerindeki tutuşunu gevşetmesine yardımcı olan kendiliğindenlik ve cesaret getirebilir. Başak için en ödüllendirici bağlantılar, yardımsever dışın ötesindeki kırılgan kişiyi gören ve nazikçe iç eleştirmeni sorgulayan biriyle kurulur.",
+    dailyInspiration: [
+      "Ayrıntılara gösterdiğiniz dikkat bir sevgi eylemidir. Bunun bir kısmını bugün kendinize yönlendirin.",
+      "Kırık olan her şeyin şu anda tamir edilmesi gerekmez. Bazılarının sadece tanık olunması gerekir.",
+      "Perde arkasında yaptığınız çalışma, kendinize verdiğiniz krediden daha fazla önem taşır.",
+      "Mükemmellik bir yön, bir varış noktası değil. Zaten yeterlisiniz.",
+      "Bedeniniz bugün size mesajlar gönderiyor. Yargılamadan dinlemek için bir an ayırın.",
+    ],
+    cosmicExplanation:
+      "Başak, burç çarkında altıncı konumu işgal eder ve Kuzey Yarımküre'de yazın sonu ve hasat mevsiminin yaklaşmasına denk gelir -- mahsullere gösterilen dikkatli ilginin gelecek kışta neyin yaşamı sürdüreceğini belirlediği zaman. İkizler ile paylaşılan Merkür, Başak'ı farklı bir şekilde yönetir: burada iletişimden çok analiz, sınıflandırma ve zekanın pratik uygulaması ön plandadır. Değişken modalite, Başak'ın mevsim geçişindeki konumunu yansıtarak hazırlık ve incelemeye odaklanan uyarlanabilir enerji taşır. Toprak elementi bu arketipi varoluşun fiziksel ve pratik boyutlarına yerleştirir. Takımyıldız, Demeter ve Ceres gibi tahıl tanrıçalarıyla antik çağrışımlara sahiptir ve Başak'ı beslenme, hasat ve ekilmiş olanı koruma kutsal sorumluluğu temalarına bağlar.",
+  },
+  {
+    slug: "libra",
+    name: "Terazi",
+    symbol: "\u264E",
+    dateRange: "23 Eylül - 22 Ekim",
+    element: "Air",
+    modality: "Cardinal",
+    rulingPlanet: "Venüs",
+    keywords: [
+      "uyum",
+      "adalet",
+      "ilişki",
+      "denge",
+      "estetik",
+      "diplomasi",
+    ],
+    overview:
+      "Terazi, Arabulucu arketipini temsil eder -- kendini ilişki yoluyla keşfeden, güzelliği bir hakikat biçimi olarak arayan ve adalet ile uyumun lüks değil zorunluluk olduğunu anlayan bilinç. Mitolojik açıdan bu, ilahi yargıcın ve kutsal sanatçının enerjisidir: zorla değil, adaletin dikkatli bir şekilde geliştirilmesiyle denge yaratan biri. Terazi sembolü olarak terazi, temel ayırt etme eylemini yansıtır -- iki gerçeği aynı anda tutabilme ve aralarındaki denge noktasını bulabilme yeteneği. Terazi, ilişkilerin doğası üzerine düşünmeye davet eder: kendimizi başkaları aracılığıyla nasıl tanımladığımız, kendi ihtiyaçlarımız ile ortaklığın talepleri arasında nasıl müzakere ettiğimiz ve aradığımız barışın gerçek uyum mu yoksa yalnızca çatışmadan kaçınma mı olduğu. Bu arketip, güzelliğin yüzeysel olmadığını, adaletin cesaret gerektirdiğini ve ilişki kurma sanatının bir insanın geliştirebileceği en karmaşık becerilerden biri olduğunu ileri sürer.",
+    personality:
+      "Terazi arketipiyle özdeşleşenler, yaşamda ilişkisel alana yönelik belirgin bir farkındalıkla hareket etme eğilimindedir. Genellikle sosyal dinamiklere doğal bir uyum vardır -- gerilimi hissetme, güç dengesini okuma ve herkesin duyulduğu koşullar yaratma içgüdüsüyle çalışma. Bu, diplomatik beceri, estetik duyarlılık, herhangi bir konunun birden fazla tarafını görme yeteneği ve herhangi bir biçimdeki adaletsizlik veya çirkinlikle gerçek bir rahatsızlık olarak kendini gösterebilir. Günlük yaşamda, Terazi rezonansına sahip bireyler sıklıkla resmi veya gayri resmi olarak arabuluculuk rollerinde bulunurlar. Arkadaşların çatışma sırasında perspektif için başvurduğu, bir mekanın davet edici olmadığını fark eden veya başkalarının yalnızca karşıtlık gördüğü yerde uzlaşı kuran meslektaş olabilirler. Genellikle rafine bir estetik duyarlılık vardır -- tasarım, moda, görsel uyum veya sosyal zarafetin ince sanatına duyulan ilgi. Duygusal olarak Terazi kalıbı, bazen kişisel bir bedelle gelen güçlü bir denge arzusuyla karakterize edilir. Uyumu önceliklendirme eğilimi, kendi duygularını bastırmaya, gerekli yüzleşmelerden kaçınmaya veya adalete o kadar odaklanmaya yol açabilir ki kararlar felç edici derecede zorlaşır. Büyüme noktası, gerçek dengenin bazen dengesizlik gerektirdiğini -- kendi gerçeğinin arkasında sağlam durmanın, geçici bir uyumsuzluk yaratsa bile, başlı başına bir adalet eylemi olduğunu öğrenmektedir. İlişkilerde Terazi enerjisi düşüncelilik, romantik duyarlılık, gerçek ortaklık ve birlikte güzel bir şey yaratma arzusu getirir.",
+    strengths: [
+      "Diplomasi ve çatışma çözümü konusunda doğal yetenek",
+      "Tüm bağlamlarda adalet için savunuculuk yapan güçlü adalet duygusu",
+      "Ortamları ve deneyimleri zenginleştiren estetik zeka",
+      "Birden fazla perspektifi görme ve ifade etme yeteneği",
+      "Başkalarını rahat ettiren ve güven inşa eden sosyal zarafet",
+      "Rekabet yerine ortaklığa gerçekten değer veren işbirlikçi ruh",
+      "Fikirler, kültür ve sanatlar hakkında entelektüel merak",
+      "Ruhu besleyen güzellik yaratma yeteneği",
+    ],
+    growthThemes: [
+      "Tüm seçenekler mükemmel bir şekilde dengelenmemiş olsa bile seçim yapma cesaretini geliştirmek",
+      "Daha derin hakikat adına geçici uyumsuzluğu tolere etmeyi öğrenmek",
+      "Gerçek uzlaşma ile kendinden vazgeçme arasındaki farkı ayırt etmek",
+      "Bir ilişki bağlamından bağımsız olarak kendi kimliğini ve arzularını keşfetmek",
+      "'Hayır' demenin 'evet' demek kadar sevgi dolu olabileceğini fark etmek",
+    ],
+    reflectionPrompts: [
+      "En önemli ilişkinizde, kimin ihtiyaçları öncelik kazanıyor -- ve bu gerçekten kendi seçiminiz mi?",
+      "'Mükemmel' seçeneği bulamadığınız için ertelediğiniz bir karar var mı?",
+      "Uyum yarattığınızda, bu gerçek bir barış mı yoksa gerekli bir konuşmadan kaçınma mı?",
+      "Başkalarının nasıl tepki vereceğini düşünmeseydiniz ne yapardınız, yaratırdınız veya söylerdiniz?",
+      "Hayatınızda biraz güzel karmaşanın aslında dengeye hizmet edebileceği bir yer neresi?",
+    ],
+    compatibilityNotes:
+      "Terazi enerjisi, düşünceli sohbetten hoşlanan, adalete değer veren ve güzelliği hem görünür hem ince biçimleriyle takdir edenlerle gelişme eğilimindedir. Hava ve Ateş arketipleri genellikle dinamik, sosyal olarak aktif ortaklıklar yaratır. Toprak arketipleri, Terazi'nin müzakereden eyleme geçmesine yardımcı olan kararlılık ve zemin sunabilir. Su arketipleri, Terazi'yi entelektüelin ötesine ve ilişki kurmanın hissedilen deneyimine davet eden duygusal derinlik getirebilir. Terazi için en zenginleştirici bağlantılar, onları dürüstlüğün barışı bozduğu zaman bile sevecek kadar seven biriyle kurulur -- yalnızca uyumda değil, hakikatte de bir partner.",
+    dailyInspiration: [
+      "Denge statik bir durum değildir. Bugün kendinize sallanma izni verin.",
+      "Görüşünüz önemlidir. Teraziyi eğitse bile söyleyin.",
+      "Güzellik bir lüks değil -- dünyayı anlamlandırma biçiminizdir.",
+      "Bugün, yalnızca hoş olanın yerine doğru olanı seçin.",
+      "Her denklemin iki tarafını da taşımanıza gerek yok. Birini bırakın.",
+    ],
+    cosmicExplanation:
+      "Terazi, burç çarkında yedinci konumu işgal eder ve Kuzey Yarımküre'deki sonbahar ekinoksuna -- gece ile gündüzün mükemmel dengesinin olduğu, ardından karanlığın yavaş yavaş ışığı geçtiği ana -- denk gelir. Bu astronomik olay, Terazi'yi denge, dönüm noktaları ve zıtlar arasındaki ilişki temalarına bağlar. Venüs, Terazi'yi Boğa'dakinden farklı bir ifadeyle yönetir: burada Venüs, fikirlerdeki güzelliği, sosyal uyumu ve insan bağlantısı sanatını yönetir. Kardinal modalite, Terazi'nin sonbaharın başlangıcındaki konumunu yansıtarak yeni bir mevsim başlatır -- ancak bu başlatma bireysel eylem yerine ilişki ve işbirliği yoluyla gerçekleşir. Hava elementi, Terazi'yi zihin, iletişim ve sosyal farkındalık alanına yerleştirir. Terazi, burç kuşağında tek cansız sembol olarak benzersizdir ve Terazi'nin kaygılarının kişiseli aştığını ve evrensel adalet ve orantı ilkelerine dokunduğunu ileri sürer.",
+  },
+  {
+    slug: "scorpio",
+    name: "Akrep",
+    symbol: "\u264F",
+    dateRange: "23 Ekim - 21 Kasım",
+    element: "Water",
+    modality: "Fixed",
+    rulingPlanet: "Plüton (geleneksel: Mars)",
+    keywords: [
+      "dönüşüm",
+      "derinlik",
+      "yoğunluk",
+      "yenilenme",
+      "hakikat arayışı",
+      "duygusal güç",
+    ],
+    overview:
+      "Akrep, Simyacı arketipini temsil eder -- yüzeyin altındaki hakikati arayan, gizli olana, tabuya ve dönüştürücü olana çekilen bilinç. Mitolojik açıdan bu, yeraltı dünyası yolculuğunun enerjisidir: derin bir yenilenmeyi önceleyen karanlığa iniş. Akrep sembolü olarak akrep, tehlike ve şifanın paradoksunu taşır -- zehri hem yıkabilecek hem de homeopatik gelenekte iyileştirebilecek yaratık. Akrep, gücün doğası üzerine düşünmeye davet eder: kimin elinde, nasıl kullanıldığı ve dürüstçe yüzleşildiğinde ne olduğu. Bu arketip, gerçek dönüşümün çoğu insanın kaçındığı şeyle yüzleşme istekliliğini gerektirdiğini, en derin derinliğine götürülen duygusal dürüstlüğün radikal bir eylem olduğunu ve kendimizin ve dünyamızın gölgede sakladığımız parçalarının yalnızca tehlike değil, muazzam yaratıcı potansiyel de içerdiğini ileri sürer. Bu arketipe çekilen insanlar genellikle, ne kadar bilinçli yönlendirildiğine bağlı olarak derinden iyileştirici veya derinden bunaltıcı olabilen bir yoğunluk taşırlar.",
+    personality:
+      "Akrep arketipiyle rezonansa giren insanlar, yaşamda belirgin bir yoğunluk ve algı derinliğiyle hareket etme eğilimindedir. Genellikle farkındalıklarında keskin bir nitelik vardır -- gizli motivasyonları, söylenmemiş duyguları ve herhangi bir durumun yüzeyinin altında işleyen güç dinamiklerini sezme yeteneği. Bu, psikolojik içgörü, araştırmacı azim, yüzeysel açıklamaları kabul etmeyi reddetme ve başkalarının fazla rahatsız edici bulduğu yerlere gitme duygusal cesareti olarak kendini gösterebilir. Günlük yaşamda, Akrep rezonansına sahip bireyler sıklıkla insanların kendilerine ya güçlü bir şekilde çekildiğini ya da incelikle temkinli olduğunu fark eder -- nadiren kayıtsızlık vardır. Başkalarının en derin sırlarını paylaştığı, herkesin düşündüğü soruyu soran veya kusurlu bir sürecin sorgulanmadan geçmesine izin vermeyen meslektaş olabilirler. Bu arketipin genellikle özel bir niteliği vardır -- seçici olarak ve yalnızca zaman içinde güven kazananlara açılan zengin bir iç dünya. Duygusal olarak Akrep kalıbı derinlik, sadakat ve kısmi değil total olan bir bağlanma kapasitesi ile karakterize edilir. Akrep rezonansına sahip insanlar sevdiğinde tamamen severler; incindiğinde hücresel düzeyde hissederler. Bu yoğunluk ilişkilerde dönüştürücü olabilir ama aynı zamanda talepkar da olabilir. Büyüme noktası, kontrolün güvenlikle aynı şey olmadığını, uygun insanlarla kırılganlığın bir güç biçimi olduğunu ve her derinliği araştırma dürtüsüne bazen yüzeye çıkıp ışıkta dinlenerek hizmet edilebileceğini öğrenmektedir.",
+    strengths: [
+      "Başkalarının göremediği veya görmek istemediğini algılayan psikolojik derinlik",
+      "Zor gerçeklerle doğrudan yüzleşme duygusal cesareti",
+      "Krizi büyümeye dönüştürme kapasitesi -- dönüştürücü güç",
+      "Yakın ilişkilerde şiddetli sadakat ve koruyuculuk",
+      "Herhangi bir konuyu derinlemesine kavrayabilen konsantrasyon ve odaklanma",
+      "Gerçek zorluklar aracılığıyla şekillenmiş dayanıklılık",
+      "Güç dinamikleri ve insan motivasyonunu sezgisel olarak anlama",
+    ],
+    growthThemes: [
+      "Tam kesinlik veya kontrol gerektirmeden güvenmeyi öğrenmek",
+      "Duygusal yoğunluğun bir zırh olarak kullanılıp kullanılmadığını keşfetmek",
+      "Başkaları için değil, kendi için affetme kapasitesini geliştirmek",
+      "Derinlik ve ciddiyet yanında hafiflik ve oyunculuk pratiği yapmak",
+      "Bir şeyi dönüştürme arzusunun onu kontrol etme arzusuna dönüştüğü zamanları fark etmek",
+      "Bazı gizemlerin çözümsüz kalmasına izin vermek",
+    ],
+    reflectionPrompts: [
+      "Güvendiğiniz biriyle paylaşılırsa daha hafif olabilecek ne saklıyorsunuz?",
+      "Bir durumu kontrol etme ihtiyacı hissettiğinizde, bu dürtüyü hangi korku yönlendiriyor?",
+      "Kimliğinizin bir parçası haline gelmiş taşıdığınız bir kin var mı?",
+      "Kendinize veya bir başkasına gerçek affetme, neyi bırakmanızı gerektirir?",
+      "Acı yoluyla dönüştüğünüz bir zamanı düşünün: neyi kaybettiniz ve ne kazandınız?",
+    ],
+    compatibilityNotes:
+      "Akrep enerjisi, özgünlüğe değer veren, duygusal yoğunluktan korkmayan ve kırılganlığı kendi kırılganlıklarıyla karşılayabilen kişilerle en derin bağları kurma eğilimindedir. Su ve Toprak arketipleri genellikle Akrep'in derinlik ve bağlılık takdirini paylaşarak olağanüstü güven bağlantıları kurar. Hava arketipleri, Akrep'in nefes almasına yardımcı olan bir hafiflik ve perspektif getirebilir, ancak duygusal erişilebilirlik müzakere gerektirebilir. Ateş arketipleri, Akrep'in tutkusunu karşılayabilir ve meydan okusa bile saygı duyulan bir doğrudanlık sunabilir. Akrep için en dönüştürücü bağlantılar, ne Akrep'in yoğunluğu tarafından tüketilen ne de onu iten biriyle kurulur -- her şeyi tutabilecek alan yaratabilecek biri.",
+    dailyInspiration: [
+      "Derinliğiniz bir armağandır. Bugün herkesin hepsini görmesine gerek yok.",
+      "Dönüşüm her zaman yıkım gerektirmez. Bazen naziklikle başlar.",
+      "Aradığınız hakikat, dikkatinizi bekleyerek zaten içinizde olabilir.",
+      "Bugün birini içeri alın. Sonuna kadar değil -- sadece her zamankinden bir kapı daha ötesine.",
+      "Kendiniz üzerindeki güç, kalıcı olan tek güçtür. Onu nazikçe pratik edin.",
+    ],
+    cosmicExplanation:
+      "Akrep, burç çarkında sekizinci konumu işgal eder ve Kuzey Yarımküre'de doğal dünyanın en dramatik ölüm ve çürüme evresine girdiği sonbaharın ortasına denk gelir -- çürüyen maddeyi gelecek büyümenin verimli toprağına dönüştüren biyolojik simya. Modern yönetici gezegen Plüton, yeraltı dünyası tanrısının adını taşır ve ölüm, yeniden doğuş, gizli zenginlik ve bilinçdışı temalarıyla ilişkilendirilir. Geleneksel yönetici Mars, stratejik irade ve duygusal cesaret boyutu ekler. Sabit modalite, Akrep'in su elementinin en derin, en sürekli ifadesi rolünü yansıtır -- bir nehir gibi akmayan, bir yeraltı kaynağı gibi yoğunlaşan. Su elementi, duygu, sezgi ve ruhun bilinçdışı derinliklerine bağlanır. Akrep takımyıldızı Samanyolu'nun merkezine yakın yer alır ve antik gelenekler bu bölgeyi yaşam ve ölüm arasındaki geçit kapısıyla ilişkilendirmiştir.",
+  },
+  {
+    slug: "sagittarius",
+    name: "Yay",
+    symbol: "\u2650",
+    dateRange: "22 Kasım - 21 Aralık",
+    element: "Fire",
+    modality: "Mutable",
+    rulingPlanet: "Jüpiter",
+    keywords: [
+      "keşif",
+      "anlam",
+      "felsefe",
+      "genişleme",
+      "iyimserlik",
+      "hakikat arayışı",
+    ],
+    overview:
+      "Yay, Arayan arketipini temsil eder -- anlam arayışı, keşif sevgisi ve her zaman keşfedilecek daha fazla şey olduğuna duyulan inanç tarafından yönlendirilen bilinç. Mitolojik açıdan bu, filozof-maceracının, hayvansal içgüdü ile insani bilgeliği köprüleyen kentaurún enerjisidir. Okçu sembolü temel jesti yakalar: uzak bir hedefe nişan alma, güvenle bırakma ve yörüngeye güvenme. Yay, inancın doğası üzerine düşünmeye davet eder -- dünya görüşümüzü nasıl inşa ettiğimiz, hakikat peşinde neyi riske atmaya istekli olduğumuz ve yolculuğun kendisinin varış noktası olup olmadığı. Bu arketip, anlamın bir kere bulunup sonsuza kadar tutulacak bir şey olmadığını, süregelen bir genişleme süreci olduğunu, mizahın meşru bir bilgelik biçimi olduğunu ve entelektüel dürüstlüğün kişinin kendi inançlarını aşma istekliliğini gerektirdiğini ileri sürer. Bu arketipe çekilen insanlar genellikle, şaşırtıcı derecede derin felsefi sorgulamayla bir arada var olan bulaşıcı bir yaşam coşkusu taşırlar.",
+    personality:
+      "Yay arketipiyle özdeşleşenler, yaşamda belirgin bir canlılık ve ileri momentumla hareket etme eğilimindedir. Genellikle doğal bir iyimserlik vardır -- zorluğun naif inkârı değil, anlayışın mümkün olduğuna, büyümenin erişilebilir olduğuna ve bir sonraki ufkun keşfedilmeye değer bir şey barındırdığına duyulan gerçek bir inanç. Bu, seyahat sevgisi (fiziksel veya entelektüel), öğretme yeteneği, büyük resmi görme armağanı ve saldırganlıktan değil yapmacıklığa karşı dürüst bir sabırsızlıktan gelen bir doğrudanlık olarak kendini gösterebilir. Günlük yaşamda, Yay rezonansına sahip bireyler sıklıkla kendilerini grubun filozofu, komedyeni veya moral kaynağı rolünde bulurlar. Tatmin edici bir cevaba ulaşana kadar 'ama neden?' diye soran, maceralar planlayan veya bir aksaklığı öyle samimi bir şekilde öğrenme fırsatı olarak yeniden çerçeveleyen kişi olabilirler ki başkaları gerçekten cesaretlenmiş hisseder. Genellikle bilimsel veya pedagojik bir boyut vardır -- kültürleri, disiplinleri ve gelenekleri kapsayan bir öğrenme sevgisi. Duygusal olarak Yay kalıbı açıklık ve dayanıklılığa yönelir. Aksilikler yeniden çerçeveleme ve ileri hareket yoluyla işlenir. Bu, umutsuzluğun nadiren kalıcı olması açısından bir güçtür, ancak yas, kayıp veya hayal kırıklığının tam olarak hissedilmeden önce fazla hızlı işlenebileceği, pozitiflikle örtülebileceği anlamına da gelebilir. Büyüme noktası, derinliğin ve genişliğin her ikisinin de gerekli olduğunu, bir yola bağlılığın tutsaklık anlamına gelmediğini ve en derin yolculuğun bazen tam olarak bulunduğunuz yerde kalmayı içerdiğini öğrenmektedir.",
+    strengths: [
+      "Başkalarının sınırlama gördüğü yerde olasılıklar gören geniş perspektif",
+      "Başkalarını ilham veren ve motive eden doğal coşku",
+      "Çeşitli deneyimlerde anlam bulma yeteneği -- felsefi zeka",
+      "En iyi haliyle ferahlatıcı bir netlik yaratan dürüstlük ve doğrudanlık",
+      "Yabancı ortamlarda ve kültürlerde gelişme konusunda uyum sağlama yeteneği",
+      "Hakikati aydınlatan ve farklılıklar arasında köprüler kuran mizah",
+      "Ruh cömertliği ve başkalarının potansiyeline duyulan gerçek inanç",
+    ],
+    growthThemes: [
+      "İlk heyecan geçtikten sonra taahhütleri yerine getirme disiplinini geliştirmek",
+      "Bir alanda derinliğin birçoğundaki genişlik kadar zenginleştirici olabileceğini öğrenmek",
+      "Konuşmaya getirilen aynı enerjiyle dinleme sanatını pratik etmek",
+      "Aralıksız iyimserliğin bazen meşru acıdan kaçınıp kaçınmadığını keşfetmek",
+      "Özgürlük ve sorumluluğun zıtlar değil ortaklar olduğunu fark etmek",
+    ],
+    reflectionPrompts: [
+      "Son zamanlarda hangi inancınızı aştınız ve onu ne değiştiriyor?",
+      "Bir şeye doğru mu koşuyorsunuz -- yoksa bir şeyden mi?",
+      "En son ne zaman gümüş astarını bulmaya çalışmak yerine üzüntüyle oturdunuz?",
+      "Şu anda genişliği tercih ettiğiniz hayatınızın bir alanında 'derinlik' neye benzerdi?",
+      "Gerçek iyimserlik ile rahat kaçınma arasındaki farkı nasıl ayırt ediyorsunuz?",
+    ],
+    compatibilityNotes:
+      "Yay enerjisi, öğrenmeyi seven, bağımsızlığa değer veren ve fikirleri ve yerleri keşfetme coşkularını karşılayabilen kişilerle neşeli bağlantılar yaratma eğilimindedir. Ateş ve Hava arketipleri genellikle Yay'ın dinamik alışveriş ve entelektüel macera sevgisini paylaşır. Toprak arketipleri, Yay vizyonlarını gerçeğe dönüştüren dengeleme ve takip gücü sağlayabilir, ancak tempo farkları sabır gerektirebilir. Su arketipleri, Yay'ı bazen üzerinden kaydığı duygusal derinliklere davet ederek daha zengin ve eksiksiz bir deneyim yaratabilir. Yay için en canlandırıcı bağlantılar, hayranlık duygusunu paylaşan ama aynı zamanda sevgiyle taahhütlerinden sorumlu tutan biriyle kurulur.",
+    dailyInspiration: [
+      "Aradığınız cevap bir sonraki varış noktasında olmayabilir. Durduğunuz yeri kontrol edin.",
+      "İyimserliğiniz bir ışıktır. Gerçek olanı da aydınlattığından emin olun.",
+      "Bugün yeni bir şeye uzanmak yerine zaten bildiğiniz bir şeye daha derinden girin.",
+      "Özgürlük paylaşıldığında en anlamlıdır. Kiminle keşif yapıyorsunuz?",
+      "En büyük macera, kalmanızı ve inşa etmenizi gerektiren macera olabilir.",
+    ],
+    cosmicExplanation:
+      "Yay, burç çarkında dokuzuncu konumu işgal eder ve Kuzey Yarımküre'de hasadın tamamlandığı ve toplulukların geleneksel olarak hikaye anlatma, felsefe ve düşünceli kış aylarına hazırlığa yöneldiği geç sonbahara denk gelir. Yönetici gezegen Jüpiter, güneş sistemimizdeki en büyük gezegendir -- yerçekimi tüm gezegen sistemini etkileyen bir gaz devi; bu, Yay'ı genişleme, bolluk, koruma ve bilgelik temalarına bağlar. Değişken modalite, Yay'ın mevsim geçişindeki konumunu yansıtarak sentez ve anlam yaratmaya yönlendirilmiş uyarlanabilir enerji taşır. Ateş elementi bu arketipi ilham, vizyon ve anlayışın yaratıcı kıvılcımına bağlar. Kentaur takımyıldızı, hayvansal ve insani alemleri köprüler ve Yay'ın kalbindeki felsefi soruyu somutlaştırır: içgüdüsel doğamızı en yüksek özlemlerimizle nasıl bütünleştiririz?",
+  },
+  {
+    slug: "capricorn",
+    name: "Oğlak",
+    symbol: "\u2651",
+    dateRange: "22 Aralık - 19 Ocak",
+    element: "Earth",
+    modality: "Cardinal",
+    rulingPlanet: "Satürn",
+    keywords: [
+      "hırs",
+      "disiplin",
+      "ustalık",
+      "sorumluluk",
+      "bütünlük",
+      "dayanıklılık",
+    ],
+    overview:
+      "Oğlak, Bilge arketipini temsil eder -- zamanın ağırlığını, disiplinin değerini ve kalıcı bir şey inşa etmenin sessiz onurunu anlayan bilinç. Mitolojik açıdan bu, deneyim yoluyla otorite kazanmış bilge hükümdarın, alkış için değil zirve orada olduğu için tırmanan dağ keçisinin enerjisidir. Antik sembol olarak Deniz Keçisi, keçinin karasal hırsını balığın duygusal ve manevi derinliğiyle birleştirir ve Oğlak'ın başarı güdüsünün salt dünyevi başarıdan çok daha karmaşık bir şeyde kök saldığını ileri sürer. Bu arketip, hırsın doğası üzerine düşünmeye davet eder: korku mu yoksa amaç tarafından mı besleniyor? Olgunluğun duygunun yokluğu değil, onun disiplinli kanalize edilmesi olduğunu, bütünlüğün gücün en dayanıklı biçimi olduğunu ve dış dünyada inşa ettiğimiz yapıların kaçınılmaz olarak değerlerimizin iç mimarisini yansıttığını ileri sürer.",
+    personality:
+      "Oğlak arketipiyle rezonansa giren insanlar, yaşamda belirgin bir amaç duygusu ve öz-disiplinle hareket etme eğilimindedir. Genellikle mizahsızlık değil, niyetlilik niteliğinde bir ciddiyet vardır -- işleri hızlı değil iyi yapmayı, gösteriş yerine özü, kolay popülerlik yerine kazanılmış saygıyı tercih etme. Bu, mesleki hırs, stratejik düşünme, kuru espri ve o kadar tutarlı olan bir güvenilirlik olarak kendini gösterebilir ki görünmez hale gelir. Günlük yaşamda, Oğlak rezonansına sahip bireyler, bazen şaşırtıcı derecede genç yaştan itibaren akranlarından daha fazla sorumluluk taşırlar. Aile lojistiğini yöneten, kriz sırasında sessizce bir ekibi bir arada tutan veya rahatsız edici olsa bile dürüst ve pratik olduğu için tavsiyesi aranan arkadaş olabilirler. Bu arketipin genellikle yalın bir güzelliği vardır -- yakından dikkat edildiğinde derinlik ortaya çıkaran bir ifade minimalizmi. Duygusal olarak Oğlak kalıbı, ketum ve gecikmeli ifade ile karakterize edilir. Duygular tam olarak yaşanır ama seçici olarak ve genellikle iyice işlendikten sonra gösterilir. Bu, yanıltıcı bir soğukluk izlenimi yaratabilir; sakin dışın altında sıklıkla zengin bir duygusal yaşam ve hizmet ve güvenilirlik eylemleri yoluyla ifade edilebilecek derin bir bağlantı özlemi vardır. Büyüme noktası, yardım istemenin zayıflık olmadığını, dinlenmenin tembellik olmadığını ve koruma için inşa edilen duvarların yakınlığa da bariyer olabileceğini öğrenmektedir.",
+    strengths: [
+      "Uzun vadeli hedeflerde olağanüstü disiplin ve takip gücü",
+      "Etkili planlama yapan ve engelleri öngören stratejik zeka",
+      "Kalıcı güvenin temelini oluşturan bütünlük ve güvenilirlik",
+      "Şaşırtıcı derinlik ortaya koyan kuru, sofistike mizah",
+      "Başkalarının bocladığı baskı altında işlev görme yeteneği",
+      "Daha hızlı yaklaşımların başaramayacağını başaran sabırlı kararlılık",
+      "Sistemler, yapılar ve organizasyonel dinamiklerin doğal anlayışı",
+      "Kanıtlanmış yeterlilik yoluyla kazanılmış sessiz otorite",
+    ],
+    growthThemes: [
+      "Kırılganlığın bir güç biçimi olduğunu, disiplinde bir sapma olmadığını öğrenmek",
+      "Dinlenme ve oyunun kazanılması gereken değil zorunlu şeyler olma olasılığını keşfetmek",
+      "Sağlıklı hırs ile başarısız görünme korkusu arasındaki farkı ayırt etmek",
+      "Borçlu hissetmeden destek alma yeteneğini geliştirmek",
+      "İç amirin bir rehber yerine tirana dönüştüğü zamanları fark etmek",
+      "İlişkilerin yalnızca güvenilirlik değil, yumuşaklık alanları olmasına izin vermek",
+    ],
+    reflectionPrompts: [
+      "Başarısızlık bir olasılık olmasaydı neyi farklı yapardınız?",
+      "Hiçbir şey başarmadığınızda siz kimsiniz -- ve bu kişi sizin için kabul edilebilir mi?",
+      "Gerçekten size ait olmayan bir sorumluluk taşıyor olabilir misiniz?",
+      "En son ne zaman suçluluk duymadan kendinize dinlenme izni verdiniz?",
+      "Değerinizi başarılarınız dışında bir şeyle ölçmek nasıl görünürdü?",
+    ],
+    compatibilityNotes:
+      "Oğlak enerjisi, bağlılığa saygı duyan, bütünlüğe değer veren ve güvenin zaman içinde tutarlı eylem yoluyla inşa edildiğini anlayan kişilerle kalıcı bağlantılar kurma eğilimindedir. Toprak ve Su arketipleri genellikle Oğlak'ın derinlik, güvenilirlik ve anlamlı yatırım takdirini paylaşır. Hava arketipleri, Oğlak'ın aralıksız üretkenlik döngüsünden çıkmasına yardımcı olan hafiflik, sosyal bağlantı ve yeni perspektifler getirebilir. Ateş arketipleri, hayatın yalnızca yönetilmek için değil, tadına varılmak için olduğunu hatırlatan sıcaklık ve kendiliğindenlik sunabilir. Oğlak için en tatmin edici bağlantılar, soğukkanlılığın altındaki şefkati gören ve onun güvenle ortaya çıkması için alan yaratan biriyle kurulur.",
+    dailyInspiration: [
+      "Kendinize verdiğiniz krediden daha fazlasını başardınız. Durun ve fark edin.",
+      "Şefkatsiz disiplin cezaya dönüşür. Bugün kendinize nazik olun.",
+      "Dağ hiçbir yere gitmiyor. Tırmanırken dinlenmenize izin var.",
+      "Değeriniz çıktınız değil. Hareketsiz olduğunuzda da önemlisiniz.",
+      "Bugün birinin, kontrol altında olmayan tarafınızı görmesine izin verin. O, en insani benliğinizdir.",
+    ],
+    cosmicExplanation:
+      "Oğlak, burç çarkında onuncu konumu işgal eder ve Kuzey Yarımküre'deki kış gündönümüne -- en uzun geceye, ardından ışığın yavaşça geri dönmeye başlamasına -- denk gelir. Bu astronomik an, Oğlak'ı karanlıkta dayanma, kararlılık yoluyla yenilenme vaadi ve yalnızca sabrın öğretebileceği bilgelik temalarına bağlar. Yönetici gezegen Satürn, çıplak gözle görülebilen en uzak gezegendir ve Güneş etrafında yaklaşık 29,5 yılda yörünge çizer; bu, Oğlak'ı zaman, olgunluk, yapı ve yalnızca sabrın öğretebileceği dersler temalarına bağlar. Kardinal modalite, Oğlak'ın başlatıcı enerjisini yansıtır, ancak bu başlatma kasıtlı ve stratejiktir. Toprak elementi arketipi başarı ve somut sonuçların maddi dünyasına yerleştirir. Antik Deniz Keçisi sembolü Yunan burcunu önceler ve Sümer geleneğinde bilgelik ve su tanrısı Enki olarak görünür; Oğlak'ın hırsının her zaman manevi derinlikle iç içe olduğunu ileri sürer.",
+  },
+  {
+    slug: "aquarius",
+    name: "Kova",
+    symbol: "\u2652",
+    dateRange: "20 Ocak - 18 Şubat",
+    element: "Air",
+    modality: "Fixed",
+    rulingPlanet: "Uranüs (geleneksel: Satürn)",
+    keywords: [
+      "yenilikçilik",
+      "insanseverlik",
+      "bağımsızlık",
+      "vizyon",
+      "topluluk",
+      "özgünlük",
+    ],
+    overview:
+      "Kova, Vizyoner arketipini temsil eder -- dünyayı yalnızca olduğu gibi değil, olabileceği haliyle algılayan bilinç. Mitolojik açıdan bu, kişisel kazanç için değil, bilginin herkese ait olduğu için insanlığa ateşi getiren Prometheus'un enerjisidir. Su Taşıyıcı sembolü bir su burcu değil, bilgi ve yenilik sularını kolektif akışa döken bir hava burcu tasvir eder. Kova, bireysellik ve topluluk arasındaki gerilim üzerine düşünmeye davet eder: bir kişi gerçekten benzersiz olurken aynı zamanda ortak iyiliğe derinden bağlı nasıl olabilir. Bu arketip, ilerlemenin mevcut çerçevelerin dışında düşünmeye istekli olanları gerektirdiğini, kopukluğun soğukluk yerine bir şefkat biçimi olabileceğini ve geleceğin bugünü kaçınılmaz olarak kabul etmeyi reddeden insanlar tarafından şekillendirildiğini ileri sürer. Bu arketipe çekilen insanlar genellikle hem bir bütün olarak insanlığa derinden bağlı hissetme hem de bireysel ilişkilerden garip bir şekilde kopuk olma paradoksunu deneyimlerler.",
+    personality:
+      "Kova arketipiyle özdeşleşenler, yaşamda belirgin bir düşünce bağımsızlığıyla hareket etme eğilimindedir. Genellikle eğrinin biraz önünde olma niteliği vardır -- ortaya çıkmadan önce trendleri görme, başkalarının sorgulamadan kabul ettiği normları sorgulama ve başlangıçta eksantrik olarak reddedilen, ardından ileri görüşlü olarak tanınan fikirler üretme. Bu, teknolojik akıcılık, sosyal aktivizm, alışılmadık yaşam tarzı seçimleri ve samimi olmadan arkadaşça ve eşitlikçi olan bir sosyal tarz olarak kendini gösterebilir. Günlük yaşamda, Kova rezonansına sahip bireyler sıklıkla grup ortamlarında varsayımları sorgulayan, yeterince temsil edilmeyen perspektifleri savunan ve kimsenin düşünmediği çözümler öneren kişilerdir. Bu arketipin genellikle paradoksal bir niteliği vardır: insan refahıyla derinden ilgilenen ama bazen bire bir ilişkilerde duygusal olarak uzak; şiddetle bağımsız ama işbirlikçi topluluklara çekilen; entelektüel olarak devrimci ama kendi inançlarında şaşırtıcı derecede inatçı. Duygusal olarak Kova kalıbı rasyonelleştirmeye yönelir. Duygular fikirler aracılığıyla işlenir -- içgüdüsel olarak hissedilmeden önce (veya yerine) kavramsal olarak anlaşılır. Bu, duygusal tepkiselliğin minimize edilmesi açısından bir güçtür, ancak duygusal yakınlığın Kova'nın çok değer verdiği özerkliği tehdit edici hissettirmesi anlamına da gelebilir. Büyüme noktası, duygusal kırılganlığın bir özgürlük kaybı olmadığını, birine ait olmanın sahiplenilmekten farklı olduğunu ve insanseverlik vizyonunun en özgün haliyle tam önünüzdeki bireyler için gerçek sıcaklık içerdiğinde olduğunu öğrenmektedir.",
+    strengths: [
+      "Yeni çözümler ve perspektifler üreten özgün düşünme",
+      "Kolektif refah ve sosyal adalet için gerçek kaygı",
+      "Yerleşik normları ve sistemleri sorgulama entelektüel cesareti",
+      "Duygusal olarak yüklü durumlarda nesnelliği sürdürme yeteneği",
+      "Ağlar, sistemler ve değişimin nasıl yayıldığını doğal olarak anlama",
+      "Statüden bağımsız olarak tüm insanlara eşit davranan demokratik ruh",
+      "Daha iyi bir gelecek tasarlama ve bunun için çalışma kapasitesi",
+    ],
+    growthThemes: [
+      "Duygusal yakınlığın bağımsızlığa bir tehdit olmadığını öğrenmek",
+      "Entelektüel kopukluğun bazen duygusal kaçınmayı maskeleyip maskelemediğini keşfetmek",
+      "Bir bütün olarak insanlık kaygısının yanında bireysel ilişkilerde sıcaklık geliştirmek",
+      "Farklı olmanın üstün olmakla aynı şey olmadığını fark etmek",
+      "Yenilerini tasarlarken mevcut sistemler içinde çalışma sabrını pratik etmek",
+      "Kırılganlığı entelektüelleştirmeden izin vermek",
+    ],
+    reflectionPrompts: [
+      "Duygusal olarak katılmak yerine gözlemlemek için geri çekildiğinizde, neyi koruyorsunuz?",
+      "Hayatınızda şu anda fikirlerinizden çok varlığınıza ihtiyaç duyan biri var mı?",
+      "Birine ihtiyaç duymak -- teorik olarak değil, gerçekten -- nasıl hissettirirdi?",
+      "Güçlü bir şekilde savunduğunuz bir inancı düşünün: büyümenize mi hizmet ediyor, yoksa bir duvar mı oldu?",
+      "İnsanlık için hissettiğiniz şefkati en yakın ilişkilerinize nasıl taşıyabilirsiniz?",
+    ],
+    compatibilityNotes:
+      "Kova enerjisi, bağımsızlığa değer veren, entelektüel alışverişten hoşlanan ve ilişkiye alışılmadık yaklaşımlarla rahat olan kişilerle uyarıcı bağlantılar yaratma eğilimindedir. Hava ve Ateş arketipleri genellikle Kova'nın fikirler, özgürlük ve ileri düşünme sevgisini paylaşır. Toprak arketipleri, Kova'nın vizyonlarını somut biçimde hayata geçirmesine yardımcı olan pratik zemin sunabilir, ancak duygusal ifade tarzları farklılık gösterebilir. Su arketipleri, Kova'yı analitik zihninin bazen atladığı duygu alanına davet ederek gerçek duygusal büyüme fırsatları yaratabilir. Kova için en ilginç bağlantılar, özgürlük ihtiyaçlarına saygı duyan ama nazikçe ve ısrarla daha derin duygusal bağlantıya davet eden biriyle kurulur.",
+    dailyInspiration: [
+      "Vizyonunuz önemlidir. Şu anda önünüzde duran kişi de.",
+      "Bağımsızlık izolasyon değildir. Bugün birini dünyanıza alın.",
+      "Hayal ettiğiniz gelecek, şimdiki zamanda kurduğunuz bağlantılarla başlar.",
+      "Farklı olmak tüm kimliğiniz değil. Sadece ait olmanıza da izin verilir.",
+      "Zihniniz olağanüstü. Bugün bir süre kalbinizin liderlik etmesine izin verin.",
+    ],
+    cosmicExplanation:
+      "Kova, burç çarkında on birinci konumu işgal eder ve Kuzey Yarımküre'de tarihsel olarak topluluk buluşmaları, paylaşılan kaynaklar ve toplumları en soğuk aylardan geçiren kolektif hayatta kalma stratejileriyle ilişkilendirilen kış ortasına denk gelir. Modern yönetici gezegen Uranüs, devrimler çağında 1781'de keşfedilmiştir ve Kova'yı ani değişim, kurtuluş ve eski yapıların yıkılması temalarına bağlar. Geleneksel yönetici Satürn, devrimci dürtüye bir disiplin ve sistematik düşünme boyutu ekler. Sabit modalite, bu kadar yenilikçi bir burç için şaşırtıcı görünebilir, ancak Kova'nın vizyonuna kararlı ısrarını yansıtır. Hava elementi, zihne, iletişime ve sosyal ağlara bağlanır. Su Taşıyıcı takımyıldızı, Babil astronomisinde bilgelik ve uygarlık sularını dünyaya döken tanrı Ea ile ilişkilendirildiği antik köklere sahiptir.",
+  },
+  {
+    slug: "pisces",
+    name: "Balık",
+    symbol: "\u2653",
+    dateRange: "19 Şubat - 20 Mart",
+    element: "Water",
+    modality: "Mutable",
+    rulingPlanet: "Neptün (geleneksel: Jüpiter)",
+    keywords: [
+      "şefkat",
+      "hayal gücü",
+      "aşkınlık",
+      "empati",
+      "maneviyat",
+      "yaratıcı vizyon",
+    ],
+    overview:
+      "Balık, Mistik arketipini temsil eder -- benlik ve öteki arasındaki, maddi ve manevi arasındaki, uyanık yaşam ve rüya arasındaki sınırları çözen bilinç. Mitolojik açıdan bu, ilahi sanatçının, başkalarının acısını üstlenen şifacının, dilin ötesinde var olana dil veren şairin enerjisidir. Zıt yönlerde yüzen İki Balık, temel Balık deneyimini simgeler: aynı anda aşkın olana ve dünyevi olana, çözülmeye ve biçime, özverili hizmete ve kendini koruma ihtiyacına doğru çekilme. Balık, şefkatin doğası ve gölgesi üzerine düşünmeye davet eder -- empatinin nasıl hem bir armağan hem bir yara olabileceğini, hayal gücünün hakikati nasıl aydınlatabileceğini veya kaçışa nasıl olanak sağlayabileceğini ve manevi teslimiyet ile psikolojik kaçınma arasındaki sınırın nerede yattığını. Bu arketip, en derin hakikatlerin kanıtlanmak yerine hissedildiğini, sanat ve müziğin mantığın erişemeyeceği gerçeklik boyutlarına dokunduğunu ve daha büyük bir şeyle birleşme dürtüsünün en derin insani ihtiyaçlardan biri olduğunu ileri sürer.",
+    personality:
+      "Balık arketipiyle rezonansa giren insanlar, yaşamda etraflarındaki duygusal ve enerjetik ortama karşı belirgin bir geçirgenlikle hareket etme eğilimindedir. Genellikle sıradan duyarlılığın ötesine geçen empatik bir nitelik vardır -- başkalarının ruh hallerini, acılarını ve sevinçlerini bu duygular kendilerininmiş gibi absorbe etme. Bu, sanatsal yetenek, şifa yeteneği, manevi içgörü, başkalarının neye ihtiyaç duyduğunu sezme içgüdüsü ve bazen öz-bakıma çok az yer bırakan bir şefkat olarak kendini gösterebilir. Günlük yaşamda, Balık rezonansına sahip bireyler sıklıkla yaratıcı, yardımcı veya manevi mesleklere çekilirler. Filmler sırasında ağlayan (ve bundan utanmayan), bir arkadaşın söylenmemiş sıkıntısını sezen veya yaratıcı çalışması kişisel deneyiminin ötesinde bir şeyi kanalize ediyor gibi görünen kişi olabilirler. Bu arketipin genellikle rüyamsı bir niteliği vardır -- imgeler, duygular ve günlük gerçekliğin somut diline çevirmeyi zorlaştıran izlenimlerle dolu zengin bir iç yaşam. Duygusal olarak Balık kalıbı derinlik, akışkanlık ve belirli bir gözeneklilik ile karakterize edilir. Benlik ve öteki arasındaki sınırlar gerçekten belirsiz olabilir; bu, hem Balık'ın en büyük armağanının (empati) hem de en büyük zorluğunun (başkalarının deneyiminde kendini kaybetme) kaynağıdır. Bu arketip duyguları yaratıcı ifade, manevi pratik veya yalnız inziva dönemleri yoluyla işleyebilir. Büyüme noktası, sağlıklı sınırların şefkate engel değil, onu sürdürmenin ön koşulu olduğunu, 'Bunu senin için taşıyamam' demenin bazen söylenebilecek en sevgi dolu şey olduğunu ve rüya dünyasının kutsal olsa da tam ifade edilmesi için maddi gerçeklikle etkileşim gerektirdiğini öğrenmektedir.",
+    strengths: [
+      "Farklılıklar arasında gerçek anlayış yaratan derin empati",
+      "Başkalarını derinden etkileyen sanat, müzik, yazı veya şifa üreten yaratıcı hayal gücü",
+      "Maddinin ötesindeki deneyim boyutlarına manevi duyarlılık ve açıklık",
+      "Görülemeyen veya ölçülemeyen şeyi sezen sezgisel algı",
+      "Doğal olarak marjinalize edilmiş ve unutulmuş olanlara uzanan şefkat",
+      "Başkalarının bastırdığı veya kaçındığı şeyleri hissetme duygusal cesareti",
+      "Belirsiz veya akışkan durumları yönetmede uyum yeteneği ve zarafet",
+      "Acıda ve geçicilikte güzellik ve anlam bulma kapasitesi",
+    ],
+    growthThemes: [
+      "Şefkati azalttığını hissetmeden sağlıklı sınırlar geliştirmek",
+      "Empati ile iç içe geçmişlik arasındaki farkı ayırt etmeyi öğrenmek",
+      "Yaratıcı ve manevi armağanları destekleyen pratik yapılar inşa etmek",
+      "Fanteziye kaçışın gerçeklikle gerekli etkileşimden kaçınma olduğu zamanları fark etmek",
+      "Hangi acıyı absorbe edeceğine ve hangisini mesafeden tanık olacağına dair ayırt etme pratiği yapmak",
+      "Başkalarına duyulan şefkatin temeli olarak öz-şefkati geliştirmek",
+    ],
+    reflectionPrompts: [
+      "Şu anda kimin duygularını taşıyorsunuz ki aslında size ait değiller?",
+      "Rüya görmenin yapmanın yerini aldığı bir alan var mı hayatınızda -- ve bu kaçınma neyi koruyor?",
+      "Yaratıcı veya manevi yaşamınızın ihmal ettiğiniz hangi pratik desteğe ihtiyacı var?",
+      "Kaçma dürtüsü hissettiğinizde, neden kaçıyorsunuz -- ve bununla başa çıkmanın daha nazik bir yolu var mı?",
+      "Duyarlılığınızı onurlandırırken aynı zamanda enerjinizi nasıl koruyabilirsiniz?",
+    ],
+    compatibilityNotes:
+      "Balık enerjisi, duygusal derinliğe değer veren, iç yaşamı takdir eden ve duyarlılığı küçümsemeden onurlandırabilen kişilerle derin bağlantılar yaratma eğilimindedir. Su ve Toprak arketipleri genellikle Balık'ın anlamlı, bağlı bağlantı arzusunu paylaşır ve Balık'ın daha akışkan doğasını destekleyen zemin sağlar. Hava arketipleri, Balık'ın kendi duygularını absorbe edilmiş olanlardan ayırt etmesine yardımcı olan netlik ve nesnellik getirebilir, ancak duygusal dalga boyları farklılık gösterebilir. Ateş arketipleri, Balık'ın bazen dünyayla daha tam etkileşim kurması için ihtiyaç duyduğu canlılık, yön ve koruyucu enerji sunabilir. Balık için en iyileştirici bağlantılar, nazik olmaya yetecek kadar güçlü olan -- Balık'ın uçsuz bucaksız duygusal dünyası için bunalmadan güvenli bir kap yaratan biriyle kurulur.",
+    dailyInspiration: [
+      "Duyarlılığınız bilgeliğinizdir. Onu kutsal olan herhangi bir şeyi korur gibi koruyun.",
+      "Karşılaştığınız her duygu size ait değil. Size ait olmayanı nazikçe geri verin.",
+      "Rüya önemlidir. Uyanmak ve onunla bir şey inşa etmek de.",
+      "Kendinize duyduğunuz şefkat bencillik değil. Verdiğiniz her şeyin temelidir.",
+      "Kenarlarınızın olmasına izin verilir. Sınırlar, sevginin kendini sürdürme biçimidir.",
+    ],
+    cosmicExplanation:
+      "Balık, burç çarkında on ikinci ve son konumu işgal eder ve Kuzey Yarımküre'de kışın sonuna -- buzun erimeye başladığı, kara ve su arasındaki sınırların çözüldüğü ve döngünün baharla yeniden başlamaya hazırlandığı eşik dönemine -- denk gelir. Modern yönetici gezegen Neptün, okyanusun kavranılmaz derinliklerini yönetir ve deniz tanrısının adını taşır; Balık'ı uçsuzluk, çözülme, rüyalar ve bilinçdışı temalarına bağlar. Geleneksel yönetici Jüpiter, inanç, genişleme ve anlam arayışı boyutu ekler. Değişken modalite, Balık'ın bir mevsimin sonundaki -- ve tüm burç döngüsünün sonundaki -- konumunu yansıtarak geçiş, bırakma ve yeniden doğuşa hazırlık enerjisi taşır. Su elementi en rafine ifadesine burada ulaşır: Yengeç'in koruyucu suları veya Akrep'in yoğunlaşmış derinlikleri değil, tüm sınırların çözüldüğü evrensel okyanus. İki Balık takımyıldızı, bilinen en eski yıldız kataloglarında yer alır ve kültürler arası olarak balıklar, ruhun enkarnasyon suları boyunca yolculuğunu simgelemiştir.",
+  },
+];
+
+export const zodiacSignsTrBySlug: Record<string, ZodiacSign> = Object.fromEntries(
+  zodiacSignsTr.map((sign) => [sign.slug, sign])
+);
+
+export function getZodiacSignTr(slug: string): ZodiacSign | undefined {
+  return zodiacSignsTrBySlug[slug];
+}
+
+export function getAllZodiacSlugsTr(): string[] {
+  return zodiacSignsTr.map((sign) => sign.slug);
+}

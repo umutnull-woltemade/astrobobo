@@ -1,0 +1,687 @@
+import { ZodiacSign } from "./types";
+
+export const zodiacSigns: ZodiacSign[] = [
+  {
+    slug: "aries",
+    name: "Aries",
+    symbol: "\u2648",
+    dateRange: "March 21 - April 19",
+    element: "Fire",
+    modality: "Cardinal",
+    rulingPlanet: "Mars",
+    keywords: [
+      "initiative",
+      "courage",
+      "authenticity",
+      "pioneering spirit",
+      "direct action",
+      "self-discovery",
+    ],
+    overview:
+      "Aries represents the archetype of the Pioneer -- the first spark of consciousness that says 'I exist, and I act.' In mythological terms, this is the energy of the hero setting out on the journey before knowing where the road leads. The Aries archetype carries the raw courage required to begin anything: a conversation, a creative project, a fundamental life change. This is not reckless energy, though it can feel urgent. At its core, Aries reflects the psychological impulse toward individuation -- the drive to separate from the collective and discover what is uniquely yours. People who resonate with this archetype often find themselves drawn to situations that require a first mover, someone willing to act when others hesitate. The Ram as a symbol speaks to determination and forward momentum, but also to the vulnerability of leading with one's head -- literally and figuratively. Aries energy invites reflection on what it means to be brave, and whether courage and patience can coexist.",
+    personality:
+      "Those who identify with the Aries archetype tend to move through life with a distinctive directness. There is often an immediacy to how they communicate, make decisions, and engage with problems -- a preference for action over prolonged deliberation. This can manifest as refreshing honesty in relationships, a bias toward starting new ventures, and an instinct for cutting through complexity to find the essential point. In daily life, Aries-resonant individuals often notice they are the ones who speak first in meetings, who volunteer for unfamiliar challenges, and who feel restless when routines become too predictable. There is frequently a physical quality to this archetype -- a need to move, to channel mental energy through the body, whether through exercise, building, or hands-on work. Emotionally, the Aries pattern tends toward intensity followed by quick resolution. Frustration arrives fast and departs fast. This can be a strength in that grievances rarely fester, but it may also mean that deeper emotional currents go unexamined. The growth edge for this archetype lies in learning that slowing down is not the same as stopping, and that listening can be its own form of courageous action. In relationships, Aries energy often brings warmth, protectiveness, and a desire to champion the people they care about.",
+    strengths: [
+      "Natural ability to initiate action and break through inertia",
+      "Honest and direct communication style that builds trust",
+      "Resilience in the face of setbacks -- quick to recover and try again",
+      "Instinctive courage that inspires others to take their own risks",
+      "Capacity for decisive leadership when situations require clarity",
+      "Genuine enthusiasm that energizes collaborative projects",
+      "Willingness to defend others and stand up for what feels right",
+    ],
+    growthThemes: [
+      "Developing patience without interpreting it as passivity",
+      "Learning to listen fully before formulating a response",
+      "Exploring the difference between reacting and responding",
+      "Building tolerance for ambiguity and unresolved situations",
+      "Recognizing that vulnerability and strength are not opposites",
+    ],
+    reflectionPrompts: [
+      "When was the last time you paused before acting, and what did you notice in that pause?",
+      "What does courage look like for you today -- is it about pushing forward or about staying still?",
+      "Consider a recent conflict: were you fighting for something, or fighting against something?",
+      "What would it feel like to let someone else lead, and what comes up for you in that thought?",
+      "How do you distinguish between healthy assertiveness and the impulse to control an outcome?",
+    ],
+    compatibilityNotes:
+      "Aries energy tends to resonate naturally with those who appreciate directness and share a taste for adventure. Fire and Air archetypes often create lively, stimulating dynamics. Earth archetypes may offer grounding that Aries finds stabilizing, though the pace difference can require conscious navigation. Water archetypes may invite Aries into deeper emotional territory, which can be profoundly enriching when both parties remain open. The most interesting connections for Aries often involve someone who is neither intimidated by their intensity nor compelled to match it -- a complement rather than a mirror.",
+    dailyInspiration: [
+      "Your willingness to begin is itself an act of creation.",
+      "Strength includes the courage to be gentle with yourself today.",
+      "Not every battle requires your armor -- some only need your presence.",
+      "The most daring thing you can do today might be to listen deeply.",
+      "Your fire is a gift. Consider where you direct it.",
+    ],
+    cosmicExplanation:
+      "In the traditional zodiac wheel, Aries occupies the first position, marking the vernal equinox in the Northern Hemisphere -- the moment when daylight begins to overtake darkness. This astronomical placement connects Aries to themes of emergence, new cycles, and the raw energy of spring. Mars, the ruling planet, is named for the Roman god of war, but in earlier agricultural traditions, Mars was also associated with the vigor needed to break ground and plant crops. The cardinal modality reflects Aries' position at the start of a season, carrying initiating energy. The fire element connects to transformation, illumination, and the spark of consciousness. Understanding these symbolic layers can deepen self-reflection: Aries is not simply about aggression or speed, but about the primal courage to emerge into being and declare oneself present in the world.",
+  },
+  {
+    slug: "taurus",
+    name: "Taurus",
+    symbol: "\u2649",
+    dateRange: "April 20 - May 20",
+    element: "Earth",
+    modality: "Fixed",
+    rulingPlanet: "Venus",
+    keywords: [
+      "steadfastness",
+      "sensory awareness",
+      "patience",
+      "material wisdom",
+      "embodiment",
+      "devotion",
+    ],
+    overview:
+      "Taurus represents the archetype of the Builder -- the force that takes raw initiative and gives it form, substance, and duration. Where the previous archetype says 'I begin,' Taurus says 'I sustain.' In psychological terms, this is the energy of embodiment: learning to inhabit the physical world fully, to find meaning through the senses, and to create structures that endure. The Bull as a symbol carries dual meaning -- both the gentle creature grazing in a sunlit field and the immovable force that cannot be pushed against its nature. Taurus invites reflection on one's relationship with the material world: not just money and possessions, but the body itself, the food we eat, the textures we surround ourselves with, the pace at which we move through our days. This archetype suggests that there is wisdom in slowness, intelligence in the body, and spiritual depth in the act of fully arriving in the present moment.",
+    personality:
+      "People who resonate with the Taurus archetype often exhibit a distinctive groundedness that others find calming. There is typically a deliberate quality to their decisions -- they prefer to gather information through direct experience rather than abstract reasoning. This can look like someone who needs to sleep on a major choice, who trusts their gut feeling as much as any logical argument, and who values consistency in both themselves and others. In daily life, Taurus-resonant individuals frequently show strong aesthetic sensibilities. They may be particular about their environment -- drawn to quality over quantity, comfort over novelty, the well-made over the trendy. There is often a deep relationship with food, nature, music, or other sensory experiences that goes beyond casual enjoyment into something almost devotional. Emotionally, the Taurus pattern tends toward stability with a long fuse. It takes sustained pressure to disrupt their equilibrium, but when that threshold is crossed, the response can be surprisingly intense. This archetype tends to process emotions slowly and thoroughly rather than impulsively. In relationships, Taurus energy often manifests as loyalty, physical affection, and a desire to build something tangible together. The growth edge involves learning that attachment and love are not the same thing, and that change, while uncomfortable, does not always mean loss.",
+    strengths: [
+      "Remarkable persistence that sees long-term projects through to completion",
+      "Sensory intelligence -- an ability to read situations through physical and intuitive cues",
+      "Natural talent for creating beauty, comfort, and welcoming environments",
+      "Reliability that forms the backbone of teams, families, and friendships",
+      "Patience with processes that require sustained attention over time",
+      "Grounded presence that helps others feel safe and settled",
+      "Strong relationship with the physical world -- body awareness, craftsmanship, material skill",
+    ],
+    growthThemes: [
+      "Distinguishing between healthy stability and resistance to necessary change",
+      "Exploring where possessiveness may be masking a fear of loss",
+      "Practicing flexibility without feeling that core identity is threatened",
+      "Learning to release what has served its purpose with gratitude rather than grief",
+      "Recognizing that comfort zones, while valuable, can also become cages",
+    ],
+    reflectionPrompts: [
+      "What are you holding onto right now that may be holding you back?",
+      "When did you last try something completely unfamiliar, and what did your body tell you about the experience?",
+      "Is there an area of your life where stubbornness is being confused with strength?",
+      "What does true security feel like to you -- is it found in external things or in something internal?",
+      "How might you honor your need for stability while still leaving room for growth?",
+    ],
+    compatibilityNotes:
+      "Taurus energy tends to create harmonious dynamics with those who appreciate steadiness and share a love of life's tangible pleasures. Earth and Water archetypes often find natural rhythm together, building connections that deepen slowly and last. Air archetypes may introduce stimulating ideas that Taurus grounds into reality, though differing paces can require patience on both sides. Fire archetypes may bring excitement and spontaneity that Taurus finds enlivening in moderate doses. The most fulfilling connections for Taurus often involve someone who values commitment but also gently challenges the tendency toward rigidity.",
+    dailyInspiration: [
+      "There is wisdom in your body today -- take a moment to listen.",
+      "Building something beautiful takes time. Honor the pace that feels true to you.",
+      "Comfort is not complacency. Let yourself rest without guilt.",
+      "Consider what you are nourishing today -- your body, your relationships, your dreams.",
+      "Stillness is not emptiness. Some of the deepest work happens when you are quiet.",
+    ],
+    cosmicExplanation:
+      "Taurus occupies the second position in the zodiac, arriving when spring has fully established itself in the Northern Hemisphere -- a time of fertility, growth, and the earth's abundance. Venus, the ruling planet, connects Taurus to themes of beauty, value, pleasure, and attraction. In ancient traditions, Venus was associated not only with romantic love but with the principle of harmony itself -- the force that draws things together into pleasing arrangements. The fixed modality reflects Taurus' role as the stabilizer of the spring season, the energy that sustains and maintains. The earth element grounds this archetype in the physical, material dimension of experience. Understanding these layers reveals that Taurus is not simply about stubbornness or material accumulation, but about the deep human need to find beauty, meaning, and stability in embodied existence.",
+  },
+  {
+    slug: "gemini",
+    name: "Gemini",
+    symbol: "\u264A",
+    dateRange: "May 21 - June 20",
+    element: "Air",
+    modality: "Mutable",
+    rulingPlanet: "Mercury",
+    keywords: [
+      "curiosity",
+      "communication",
+      "duality",
+      "adaptability",
+      "mental agility",
+      "connection",
+    ],
+    overview:
+      "Gemini represents the archetype of the Messenger -- the consciousness that discovers the world through language, questions, and the exchange of ideas. In mythological terms, this is the energy of Hermes, the traveler between worlds, the translator who moves between different realms of understanding. The Twins as a symbol reflect not duplicity but multiplicity: the recognition that every person contains more than one perspective, more than one voice, more than one way of understanding. Gemini invites reflection on how we think about thinking itself -- the stories we tell, the questions we ask, the assumptions hidden in our language. This archetype suggests that intelligence is not a fixed quantity but a living process, and that the most honest response to complexity is often another question rather than a premature answer. People drawn to this archetype frequently possess an unusual ability to see situations from multiple angles simultaneously, which is both a cognitive gift and an emotional challenge.",
+    personality:
+      "Those who identify with the Gemini archetype typically move through life with a distinctive mental quickness and social fluency. There is often a restless intellectual energy -- a need for new information, novel conversations, and variety in daily experience. This can manifest as voracious reading habits, a wide and diverse social circle, an ability to pick up new skills rapidly, and a conversational style that moves nimbly between topics. In daily life, Gemini-resonant individuals often notice they are the ones who connect people, translate jargon into plain language, and spot patterns across seemingly unrelated domains. There is frequently a verbal or written quality to this archetype -- a natural affinity for words, whether through writing, teaching, storytelling, or simply the pleasure of a good conversation. Emotionally, the Gemini pattern tends toward rapid processing. Feelings are often understood through articulation -- talking or writing about an experience helps make sense of it. This can be a strength in that emotional states are examined rather than suppressed, but it may also mean that intellectualizing feelings becomes a way to avoid fully inhabiting them. The growth edge lies in learning that not everything needs to be named to be real, and that sometimes sitting with uncertainty is more honest than explaining it away. In relationships, Gemini energy brings playfulness, intellectual stimulation, and genuine interest in the other person's inner world.",
+    strengths: [
+      "Exceptional ability to communicate complex ideas in accessible language",
+      "Mental flexibility that adapts quickly to new situations and information",
+      "Natural curiosity that keeps learning and growing throughout life",
+      "Social intelligence -- reading rooms, connecting people, bridging differences",
+      "Capacity to hold multiple perspectives without premature judgment",
+      "Quick wit and humor that lightens difficult situations",
+      "Versatility that allows thriving across diverse roles and contexts",
+      "Gift for asking questions that open up new understanding",
+    ],
+    growthThemes: [
+      "Developing depth alongside breadth -- staying with one thing long enough to master it",
+      "Learning to distinguish between genuine flexibility and avoidance of commitment",
+      "Practicing presence when the mind wants to race ahead to the next thing",
+      "Exploring the difference between understanding an emotion and actually feeling it",
+      "Building trust through consistency, even when novelty calls",
+    ],
+    reflectionPrompts: [
+      "What conversation have you been avoiding, and what might it reveal about what matters most to you?",
+      "When you notice your mind racing between topics, what is it moving away from?",
+      "Is there something in your life right now that deserves deeper attention rather than broader exploration?",
+      "How do you feel in silence -- and what does your discomfort or comfort with it tell you?",
+      "Consider a belief you hold strongly: can you articulate the strongest argument against it?",
+    ],
+    compatibilityNotes:
+      "Gemini energy tends to thrive with those who enjoy conversation, appreciate wit, and are comfortable with a partner who needs mental stimulation. Air and Fire archetypes often create energizing, dynamic exchanges. Earth archetypes may offer a grounding stability that helps Gemini focus, though the difference in pace can require mutual understanding. Water archetypes may draw Gemini into emotional depths that enrich their typically cerebral approach. The most interesting connections for Gemini often involve someone who matches their curiosity but brings a different kind of intelligence to the table -- emotional, physical, or intuitive.",
+    dailyInspiration: [
+      "Your curiosity is a compass. Notice where it points today.",
+      "Not every thought needs to become a conversation. Some are just for you.",
+      "The most interesting thing you learn today might come from listening, not asking.",
+      "Your ability to see both sides is a gift. Use it to build bridges, not avoid decisions.",
+      "Let one conversation go deeper today instead of wider.",
+    ],
+    cosmicExplanation:
+      "Gemini occupies the third position in the zodiac, corresponding to late spring in the Northern Hemisphere when the natural world is alive with movement, pollination, and communication between species. Mercury, the ruling planet, is named for the Roman messenger god and is the fastest-moving planet visible to the naked eye, completing its orbit in just 88 days. This astronomical speed connects to Gemini's association with quick thinking and mental agility. The mutable modality reflects Gemini's position at the transition between seasons, carrying adaptive, changeable energy. The air element links this archetype to the realm of thought, language, and social connection. The constellation itself depicts twins, drawing from the Greek myth of Castor and Pollux -- one mortal, one divine -- suggesting the perpetual dialogue between different aspects of the self.",
+  },
+  {
+    slug: "cancer",
+    name: "Cancer",
+    symbol: "\u264B",
+    dateRange: "June 21 - July 22",
+    element: "Water",
+    modality: "Cardinal",
+    rulingPlanet: "Moon",
+    keywords: [
+      "nurturing",
+      "emotional intelligence",
+      "memory",
+      "protection",
+      "intuition",
+      "belonging",
+    ],
+    overview:
+      "Cancer represents the archetype of the Nurturer -- the consciousness that understands the world primarily through feeling, memory, and the bonds of care. In mythological terms, this is the energy of the Great Mother, not limited to gender but expressing the universal need to protect, nourish, and create safe spaces where life can grow. The Crab as a symbol captures the essential paradox: a soft, deeply sensitive interior protected by a hard exterior shell. Cancer invites reflection on the relationship between vulnerability and strength, between the private emotional world and the public self we present. This archetype suggests that emotional memory is a form of intelligence, that the ability to sense what others need is a genuine skill, and that creating a sense of home -- whether in a physical space, a relationship, or within oneself -- is among the most meaningful acts a person can undertake. Those drawn to this archetype often carry a rich inner life that is far more complex than their outward composure suggests.",
+    personality:
+      "People who resonate with the Cancer archetype tend to move through life with a distinctive emotional attentiveness. There is often an intuitive quality to how they read situations -- sensing the mood of a room before anyone has spoken, picking up on what is not being said, and responding to emotional undercurrents that others miss entirely. In daily life, Cancer-resonant individuals frequently find themselves in caretaking roles, whether or not they consciously chose them. They may be the person who remembers birthdays, checks in on friends going through difficult times, and creates the rituals and traditions that hold groups together. There is often a strong connection to the past -- not mere nostalgia, but a genuine sense that memory carries meaning, that where we came from shapes who we are. Emotionally, the Cancer pattern is characterized by depth and cyclicity, much like the Moon's phases. Moods may shift with a rhythm that is internally consistent even when it puzzles others. Feelings are not experienced superficially; they are absorbed, processed, and integrated over time. This can be a tremendous strength in that emotional experiences are honored rather than discarded, but it may also mean that old wounds take longer to heal. The growth edge involves learning that protecting oneself and closing oneself off are different things, and that the deepest form of nurturing sometimes means allowing others to struggle and grow on their own.",
+    strengths: [
+      "Profound emotional intelligence that reads beneath the surface of situations",
+      "Natural ability to create safety and belonging for others",
+      "Strong intuition that provides guidance beyond logical analysis",
+      "Tenacious loyalty to people and causes that matter deeply",
+      "Rich imagination and creative capacity fed by emotional depth",
+      "Ability to hold space for others' pain without trying to fix it",
+      "Deep memory that preserves meaningful traditions and connections",
+    ],
+    growthThemes: [
+      "Distinguishing between caring for others and losing oneself in their needs",
+      "Learning to express needs directly rather than hinting and hoping",
+      "Exploring whether protective walls have become prisons",
+      "Practicing the release of old emotional patterns that no longer serve growth",
+      "Recognizing that allowing others independence is also an act of love",
+      "Developing comfort with receiving care, not only giving it",
+    ],
+    reflectionPrompts: [
+      "What emotional pattern from your past are you still carrying, and does it still serve you?",
+      "When you retreat into your shell, what are you protecting -- and from what?",
+      "Is there a relationship where your caretaking might be preventing the other person from growing?",
+      "What does 'home' mean to you beyond a physical place?",
+      "How might you nurture yourself with the same devotion you offer to others?",
+    ],
+    compatibilityNotes:
+      "Cancer energy tends to create deep connections with those who value emotional honesty and are willing to invest in building trust over time. Water and Earth archetypes often share Cancer's appreciation for depth, security, and meaningful commitment. Air archetypes may bring a lightness and perspective that helps Cancer avoid emotional overwhelm, though emotional availability can differ. Fire archetypes may offer warmth and vitality that Cancer finds invigorating when paired with emotional sensitivity. The most nourishing connections for Cancer often involve someone who can be both strong and vulnerable -- who does not need Cancer to be the only one who feels deeply.",
+    dailyInspiration: [
+      "Your sensitivity is not a weakness. It is how you understand the world.",
+      "Today, practice receiving with the same grace you bring to giving.",
+      "Not every feeling requires a response. Some just need to be felt.",
+      "The home you carry within you is always available, wherever you are.",
+      "Your intuition has been shaped by every experience you have survived. Trust it.",
+    ],
+    cosmicExplanation:
+      "Cancer occupies the fourth position in the zodiac, coinciding with the summer solstice in the Northern Hemisphere -- the longest day, after which the light begins its slow retreat. This astronomical turning point connects Cancer to themes of interiority, the private realm, and the pull toward home and inner life. The Moon, Cancer's ruling body, is the closest celestial object to Earth and governs the tides, connecting this archetype to emotional rhythms, cycles, and the unconscious. The cardinal modality reflects Cancer's initiating energy, though it initiates inward rather than outward -- starting emotional processes, creating foundations, establishing roots. The water element places Cancer in the realm of feeling, intuition, and the fluid nature of emotional reality. The Crab constellation itself was associated in ancient traditions with the gate through which souls descended into human incarnation -- the threshold between the cosmic and the personal.",
+  },
+  {
+    slug: "leo",
+    name: "Leo",
+    symbol: "\u264C",
+    dateRange: "July 23 - August 22",
+    element: "Fire",
+    modality: "Fixed",
+    rulingPlanet: "Sun",
+    keywords: [
+      "self-expression",
+      "creativity",
+      "generosity",
+      "dignity",
+      "radiance",
+      "heart-centered living",
+    ],
+    overview:
+      "Leo represents the archetype of the Sovereign -- the consciousness that discovers itself through creative self-expression and the courage to be seen. In mythological terms, this is the energy of the radiant ruler whose authority comes not from domination but from the authenticity of their presence. The Lion as a symbol speaks to both majesty and warmth: the fierce protector who is also the generous heart of the pride. Leo invites reflection on the relationship between the ego and the self -- between the persona we perform and the authentic identity beneath it. This archetype suggests that there is spiritual significance in the act of creating, that self-expression is not vanity but a form of generosity, and that the world genuinely needs what each individual has to offer. People drawn to this archetype often carry an internal tension between their desire for recognition and their deeper wish to be loved for who they truly are beneath any performance.",
+    personality:
+      "Those who identify with the Leo archetype tend to move through life with a distinctive warmth and expressiveness. There is often a natural magnetism -- not necessarily loudness, but a quality of presence that draws attention even in quiet moments. This can manifest as creative confidence, a flair for storytelling, leadership that inspires through enthusiasm, and a generosity that genuinely delights in making others feel special. In daily life, Leo-resonant individuals frequently notice they are the ones who organize celebrations, champion others' talents, and bring energy to any room they enter. There is often a creative or performative dimension to this archetype -- a need to make something, to put a personal stamp on projects, to express inner experience in visible, tangible ways. Emotionally, the Leo pattern tends toward openness and warmth, with a genuine capacity for loyalty and devotion. However, there can be a profound sensitivity to feeling overlooked, dismissed, or unappreciated that may surprise those who see only the confident exterior. This archetype processes rejection deeply, and what looks like pride may actually be a protective response to feeling unseen. The growth edge lies in learning that true confidence does not require external validation, and that the most powerful form of self-expression is one that serves something larger than the individual ego. In relationships, Leo energy brings romance, playfulness, fierce loyalty, and a desire to make the people they love feel like royalty.",
+    strengths: [
+      "Natural capacity to inspire and uplift others through authentic self-expression",
+      "Creative courage -- willingness to put original work into the world",
+      "Generosity of spirit that genuinely celebrates others' success",
+      "Warm leadership style that makes people feel valued and seen",
+      "Resilient sense of self that recovers from setbacks with dignity",
+      "Ability to bring joy, celebration, and meaning to ordinary moments",
+      "Fierce loyalty and protectiveness toward loved ones",
+      "Talent for seeing and affirming the potential in others",
+    ],
+    growthThemes: [
+      "Distinguishing between the need for appreciation and the need for applause",
+      "Learning to create for the sake of creation, not only for recognition",
+      "Exploring how to share the spotlight without feeling diminished",
+      "Developing comfort with being ordinary sometimes -- finding peace in anonymity",
+      "Recognizing when pride is protecting a wound rather than expressing genuine confidence",
+    ],
+    reflectionPrompts: [
+      "What would you create if you knew no one would ever see it?",
+      "When you feel the need for recognition, what is the deeper need beneath it?",
+      "Is there a way you are performing a version of yourself that has outgrown you?",
+      "How do you respond when someone else receives the attention you expected?",
+      "What does it feel like to be loved for who you are in your quietest, most unimpressive moments?",
+    ],
+    compatibilityNotes:
+      "Leo energy tends to flourish with those who are genuine, generous with affirmation, and confident enough in themselves not to feel overshadowed. Fire and Air archetypes often create vibrant, stimulating dynamics full of creativity and social energy. Earth archetypes may bring a grounding stability that Leo appreciates, along with practical support for creative visions. Water archetypes may offer the emotional depth and authentic intimacy that Leo secretly craves beneath the confident exterior. The most fulfilling connections for Leo often involve someone who sees past the performance to the real person underneath -- and loves both.",
+    dailyInspiration: [
+      "Your light does not diminish anyone else's. Shine without apology.",
+      "Today, create something just for yourself -- no audience required.",
+      "Generosity is your nature. Make sure you are included in your own giving.",
+      "The recognition you seek from others may be the recognition you owe yourself.",
+      "True confidence is quiet. Let your work speak today.",
+    ],
+    cosmicExplanation:
+      "Leo occupies the fifth position in the zodiac, corresponding to the height of summer in the Northern Hemisphere when the Sun reaches its most powerful expression. It is the only sign ruled by the Sun itself, connecting Leo to themes of identity, vitality, creative force, and the central organizing principle of the self. In ancient Egypt, the heliacal rising of Sirius during the Sun's passage through Leo coincided with the Nile's life-giving flood, reinforcing associations between this archetype and abundance, generosity, and the sustaining power of the heart. The fixed modality reflects Leo's role as the stabilizer of summer -- the energy that sustains and maintains the fullness of the season. The fire element connects to self-expression, passion, and the spark of individual consciousness. The Lion constellation has been recognized across cultures as a symbol of sovereignty, courage, and the sacred heart.",
+  },
+  {
+    slug: "virgo",
+    name: "Virgo",
+    symbol: "\u264D",
+    dateRange: "August 23 - September 22",
+    element: "Earth",
+    modality: "Mutable",
+    rulingPlanet: "Mercury",
+    keywords: [
+      "discernment",
+      "service",
+      "refinement",
+      "analysis",
+      "craft",
+      "healing",
+    ],
+    overview:
+      "Virgo represents the archetype of the Healer-Craftsperson -- the consciousness that finds meaning through careful attention, skilled service, and the pursuit of excellence in daily life. In mythological terms, this is the energy of the sacred artisan or the temple keeper: one who understands that the divine is found not only in grand revelations but in the meticulous care applied to ordinary tasks. The Virgin as a symbol does not refer to sexuality but to wholeness and self-possession -- a consciousness that is complete in itself, dedicated to its own standard of integrity. Virgo invites reflection on the relationship between perfectionism and genuine quality, between criticism and discernment, between serving others and losing oneself in the act of service. This archetype suggests that paying close attention is itself a form of love, that skill developed over time is a kind of devotion, and that the body is not separate from the spirit but its most intimate expression.",
+    personality:
+      "People who resonate with the Virgo archetype tend to move through life with a distinctive attentiveness to detail and process. There is often a practical intelligence at work -- an ability to see what needs to be improved, what is not functioning optimally, and how systems can be refined. This can manifest as an eye for quality in craftsmanship, a talent for organizing complex information, a dedication to health and well-being, and a work ethic grounded in genuine care rather than mere productivity. In daily life, Virgo-resonant individuals frequently notice what others overlook: the small inefficiency, the unspoken need, the subtle error that could cause problems later. There is often a service orientation to this archetype that is quietly heroic -- doing essential work without seeking credit or attention. Emotionally, the Virgo pattern tends toward internalization and self-analysis. Feelings are processed through reflection, often privately, and there can be a tendency to be far harder on oneself than on anyone else. The inner critic in a Virgo-resonant person can be relentless, holding the self to standards that would seem unreasonable if applied to others. This critical faculty, when directed outward, manifests as discernment and helpful analysis, but when turned inward, it can become a source of anxiety and self-doubt. The growth edge lies in learning that imperfection is not failure, that 'good enough' is sometimes truly good enough, and that the body's wisdom sometimes surpasses the mind's analysis.",
+    strengths: [
+      "Exceptional attention to detail that catches what others miss",
+      "Practical problem-solving skills that improve systems and processes",
+      "Dedication to craft and the patient development of mastery",
+      "Genuine desire to be of service -- help that is specific and useful",
+      "Analytical mind that can distill complexity into clarity",
+      "Reliability and follow-through that others can depend upon",
+      "Deep connection to health, wellness, and the body's intelligence",
+    ],
+    growthThemes: [
+      "Learning to distinguish between helpful discernment and destructive self-criticism",
+      "Practicing self-compassion with the same skill applied to other tasks",
+      "Exploring the possibility that some things are meant to be imperfect",
+      "Developing comfort with receiving help, not only offering it",
+      "Recognizing when the pursuit of perfection is actually avoidance of completion",
+      "Allowing spontaneity without interpreting it as irresponsibility",
+    ],
+    reflectionPrompts: [
+      "What standard are you holding yourself to right now, and who originally set that standard?",
+      "When you notice a flaw -- in yourself, in your work, in others -- what happens in your body?",
+      "Is there a task you have been perfecting that is actually ready to be released?",
+      "How might you serve yourself today with the same care you offer to others?",
+      "What would your life look like if 'enough' truly felt like enough?",
+    ],
+    compatibilityNotes:
+      "Virgo energy tends to build strong connections with those who appreciate thoughtfulness, share a commitment to growth, and can accept help gracefully. Earth and Water archetypes often align well with Virgo's practical care and desire for meaningful depth. Air archetypes may offer the intellectual stimulation that Virgo's Mercury-ruled mind enjoys, though different approaches to order can need negotiation. Fire archetypes may bring the spontaneity and boldness that helps Virgo loosen their grip on control. The most rewarding connections for Virgo often involve someone who sees through the helpful exterior to the vulnerable person within -- and who gently challenges the inner critic.",
+    dailyInspiration: [
+      "Your attention to detail is an act of love. Direct some of it toward yourself today.",
+      "Not everything broken needs to be fixed right now. Some things just need to be witnessed.",
+      "The work you do behind the scenes matters more than you give yourself credit for.",
+      "Perfection is a direction, not a destination. You are already enough.",
+      "Your body is sending you messages today. Take a moment to listen without judgment.",
+    ],
+    cosmicExplanation:
+      "Virgo occupies the sixth position in the zodiac, corresponding to the end of summer and the approach of harvest in the Northern Hemisphere -- the time when careful attention to crops determines what will sustain life through the coming winter. Mercury, shared with Gemini, rules Virgo but expresses differently here: less about communication and more about analysis, categorization, and the practical application of intelligence. The mutable modality reflects Virgo's position at the season's transition, carrying adaptive energy focused on preparation and refinement. The earth element grounds this archetype in the physical and practical dimensions of existence. The constellation has ancient associations with grain goddesses like Demeter and Ceres, connecting Virgo to themes of nourishment, harvest, and the sacred responsibility of tending what has been planted.",
+  },
+  {
+    slug: "libra",
+    name: "Libra",
+    symbol: "\u264E",
+    dateRange: "September 23 - October 22",
+    element: "Air",
+    modality: "Cardinal",
+    rulingPlanet: "Venus",
+    keywords: [
+      "harmony",
+      "justice",
+      "relationship",
+      "balance",
+      "aesthetics",
+      "diplomacy",
+    ],
+    overview:
+      "Libra represents the archetype of the Mediator -- the consciousness that discovers itself through relationship, seeks beauty as a form of truth, and understands that justice and harmony are not luxuries but necessities. In mythological terms, this is the energy of the divine judge and the sacred artist: one who weighs, measures, and creates balance not through force but through the careful cultivation of fairness. The Scales as a symbol reflect the fundamental act of discernment -- the ability to hold two truths simultaneously and find the point of equilibrium between them. Libra invites reflection on the nature of relationships: how we define ourselves through others, how we negotiate between our own needs and the demands of partnership, and whether the peace we seek is genuine harmony or merely the avoidance of conflict. This archetype suggests that beauty is not superficial, that fairness requires courage, and that the art of relating is among the most complex skills a person can develop.",
+    personality:
+      "Those who identify with the Libra archetype tend to move through life with a distinctive awareness of the relational field. There is often a natural attunement to social dynamics -- sensing tension, reading the balance of power, and instinctively working to create conditions where everyone feels heard. This can manifest as diplomatic skill, aesthetic sensitivity, a talent for seeing multiple sides of any issue, and a genuine discomfort with injustice or ugliness in any form. In daily life, Libra-resonant individuals frequently find themselves in mediating roles, whether formally or informally. They may be the person friends turn to for perspective during conflicts, the one who notices when a space is unwelcoming, or the colleague who builds consensus where others see only opposition. There is often a refined aesthetic sensibility -- an eye for design, fashion, visual harmony, or the subtle art of social grace. Emotionally, the Libra pattern is characterized by a strong desire for equilibrium that can sometimes come at a personal cost. The tendency to prioritize harmony may lead to suppressing one's own feelings, avoiding necessary confrontations, or becoming so focused on fairness that decisions become paralyzingly difficult. The growth edge involves learning that true balance sometimes requires imbalance -- that standing firmly for one's own truth, even when it creates temporary disharmony, is itself an act of justice. In relationships, Libra energy brings thoughtfulness, romantic sensibility, genuine partnership, and a desire to create something beautiful together.",
+    strengths: [
+      "Natural talent for diplomacy and conflict resolution",
+      "Strong sense of justice that advocates for fairness in all contexts",
+      "Aesthetic intelligence that enhances environments and experiences",
+      "Ability to see and articulate multiple perspectives",
+      "Social grace that puts others at ease and builds trust",
+      "Collaborative spirit that genuinely values partnership over competition",
+      "Intellectual curiosity about ideas, culture, and the arts",
+      "Gift for creating beauty that nourishes the soul",
+    ],
+    growthThemes: [
+      "Developing the courage to choose, even when not all options are perfectly balanced",
+      "Learning to tolerate temporary disharmony in service of deeper truth",
+      "Distinguishing between genuine compromise and self-abandonment",
+      "Exploring one's own identity and desires independent of a relationship context",
+      "Recognizing that saying 'no' can be as loving as saying 'yes'",
+    ],
+    reflectionPrompts: [
+      "In your most important relationship, whose needs tend to take priority -- and is that truly by choice?",
+      "What decision have you been postponing because you cannot find the 'perfect' option?",
+      "When you create harmony, is it genuine peace or the avoidance of a necessary conversation?",
+      "What would you do, create, or say if you were not concerned about how others would react?",
+      "Where in your life might a little beautiful disruption actually serve balance?",
+    ],
+    compatibilityNotes:
+      "Libra energy tends to flourish with those who enjoy thoughtful conversation, value fairness, and appreciate beauty in both its visible and subtle forms. Air and Fire archetypes often create dynamic, socially engaged partnerships. Earth archetypes may offer the decisiveness and grounding that helps Libra move from deliberation to action. Water archetypes may bring emotional depth that invites Libra beyond the intellectual and into the felt experience of relating. The most enriching connections for Libra often involve someone who loves them enough to be honest even when honesty disrupts the peace -- a partner in truth, not just in harmony.",
+    dailyInspiration: [
+      "Balance is not a static state. Let yourself sway today.",
+      "Your opinion matters. Speak it, even if it tips the scales.",
+      "Beauty is not a luxury -- it is how you make sense of the world.",
+      "Today, choose something that is right over something that is merely pleasant.",
+      "You do not need to carry both sides of every equation. Put one down.",
+    ],
+    cosmicExplanation:
+      "Libra occupies the seventh position in the zodiac, coinciding with the autumn equinox in the Northern Hemisphere -- the moment of perfect balance between day and night, after which darkness gradually overtakes light. This astronomical event connects Libra to themes of equilibrium, turning points, and the relationship between opposites. Venus rules Libra with a different expression than in Taurus: here, Venus governs the beauty found in ideas, social harmony, and the art of human connection. The cardinal modality reflects Libra's position at the start of autumn, initiating a new season -- but this initiation is through relationship and collaboration rather than individual action. The air element places Libra in the realm of intellect, communication, and social awareness. The Scales are unique in the zodiac as the only inanimate symbol, suggesting that Libra's concerns transcend the personal and touch upon universal principles of justice and proportion.",
+  },
+  {
+    slug: "scorpio",
+    name: "Scorpio",
+    symbol: "\u264F",
+    dateRange: "October 23 - November 21",
+    element: "Water",
+    modality: "Fixed",
+    rulingPlanet: "Pluto (traditional: Mars)",
+    keywords: [
+      "transformation",
+      "depth",
+      "intensity",
+      "regeneration",
+      "truth-seeking",
+      "emotional power",
+    ],
+    overview:
+      "Scorpio represents the archetype of the Alchemist -- the consciousness that seeks truth beneath the surface, that is drawn to the hidden, the taboo, and the transformative. In mythological terms, this is the energy of the underworld journey: the descent into darkness that precedes profound renewal. The Scorpion as a symbol carries the paradox of danger and healing -- the creature whose venom can both destroy and, in homeopathic tradition, cure. Scorpio invites reflection on the nature of power: who holds it, how it is used, and what happens when it is confronted honestly. This archetype suggests that genuine transformation requires willingness to face what most people avoid, that emotional honesty taken to its fullest depth is a radical act, and that the parts of ourselves and our world that we hide in shadow contain not only danger but enormous creative potential. People drawn to this archetype often carry an intensity that can be profoundly healing or profoundly overwhelming, depending on how consciously it is directed.",
+    personality:
+      "People who resonate with the Scorpio archetype tend to move through life with a distinctive intensity and depth of perception. There is often a penetrating quality to their awareness -- an ability to sense hidden motives, unspoken feelings, and the power dynamics operating beneath the surface of any situation. This can manifest as psychological insight, investigative tenacity, a refusal to accept superficial explanations, and an emotional courage that goes to places others find too uncomfortable. In daily life, Scorpio-resonant individuals frequently notice that people either feel strongly drawn to them or subtly wary -- there is rarely indifference. They may be the person others confide in with their deepest secrets, the one who asks the question everyone else is thinking, and the colleague who refuses to let a flawed process go unchallenged. There is often a private quality to this archetype -- a rich internal world that is revealed selectively and only to those who have earned trust over time. Emotionally, the Scorpio pattern is characterized by depth, loyalty, and a capacity for attachment that is total rather than partial. When Scorpio-resonant people love, they love completely; when they are hurt, they feel it at a cellular level. This intensity can be transformative in relationships but also demanding. The growth edge lies in learning that control is not the same as safety, that vulnerability with appropriate people is a form of strength, and that the impulse to probe every depth can sometimes be served by surfacing and resting in the light.",
+    strengths: [
+      "Psychological depth that perceives what others cannot or will not see",
+      "Emotional courage to face difficult truths directly",
+      "Transformative capacity -- the ability to transmute crisis into growth",
+      "Fierce loyalty and protectiveness in close relationships",
+      "Concentration and focus that can master any subject in depth",
+      "Resilience that has been forged through genuine adversity",
+      "Intuitive understanding of power dynamics and human motivation",
+    ],
+    growthThemes: [
+      "Learning to trust without requiring complete certainty or control",
+      "Exploring whether emotional intensity is being used as armor",
+      "Developing the capacity to forgive -- not for others, but for oneself",
+      "Practicing lightness and play alongside depth and seriousness",
+      "Recognizing when the desire to transform something has become the desire to control it",
+      "Allowing some mysteries to remain unsolved",
+    ],
+    reflectionPrompts: [
+      "What are you holding in secret that might be lighter if shared with someone you trust?",
+      "When you feel the need to control a situation, what fear is driving that impulse?",
+      "Is there a grudge you are carrying that has become part of your identity?",
+      "What would genuine forgiveness -- of yourself or another -- require you to release?",
+      "Consider a time you transformed through pain: what did you lose, and what did you gain?",
+    ],
+    compatibilityNotes:
+      "Scorpio energy tends to form the deepest bonds with those who value authenticity, are not afraid of emotional intensity, and can meet vulnerability with their own. Water and Earth archetypes often share Scorpio's appreciation for depth and commitment, building connections of remarkable trust. Air archetypes may bring a levity and perspective that helps Scorpio breathe, though emotional availability may need negotiation. Fire archetypes may match Scorpio's passion and offer a directness that Scorpio respects, even when it challenges them. The most transformative connections for Scorpio often involve someone who is neither consumed by Scorpio's intensity nor repelled by it -- someone who can hold space for all of it.",
+    dailyInspiration: [
+      "Your depth is a gift. Not everyone needs to see all of it today.",
+      "Transformation does not always require destruction. Sometimes it begins with gentleness.",
+      "The truth you are seeking may already be inside you, waiting for your attention.",
+      "Let someone in today. Not all the way -- just one door further than usual.",
+      "Power over yourself is the only power that lasts. Practice it kindly.",
+    ],
+    cosmicExplanation:
+      "Scorpio occupies the eighth position in the zodiac, corresponding to the heart of autumn in the Northern Hemisphere when the natural world enters its most dramatic phase of death and decomposition -- the biological alchemy that transforms decaying matter into the fertile soil of future growth. Pluto, the modern ruling planet, was named for the god of the underworld and is associated with themes of death, rebirth, hidden wealth, and the unconscious. Mars, the traditional ruler, adds a dimension of strategic will and emotional courage. The fixed modality reflects Scorpio's role as the deepest, most sustained expression of the water element -- not flowing like a river but concentrated like an underground spring. The water element connects to emotion, intuition, and the unconscious depths of the psyche. The Scorpion constellation lies near the center of the Milky Way, and ancient traditions associated this region with the gateway between life and death.",
+  },
+  {
+    slug: "sagittarius",
+    name: "Sagittarius",
+    symbol: "\u2650",
+    dateRange: "November 22 - December 21",
+    element: "Fire",
+    modality: "Mutable",
+    rulingPlanet: "Jupiter",
+    keywords: [
+      "exploration",
+      "meaning",
+      "philosophy",
+      "expansion",
+      "optimism",
+      "truth-seeking",
+    ],
+    overview:
+      "Sagittarius represents the archetype of the Seeker -- the consciousness that is driven by the search for meaning, the love of exploration, and the faith that there is always something more to discover. In mythological terms, this is the energy of the philosopher-adventurer, the centaur who bridges animal instinct and human wisdom. The Archer as a symbol captures the essential gesture: aiming at a distant target, releasing with confidence, and trusting the trajectory. Sagittarius invites reflection on the nature of belief -- how we construct our worldview, what we are willing to risk in pursuit of truth, and whether the journey itself is the destination. This archetype suggests that meaning is not something found once and held forever but an ongoing process of expansion, that humor is a legitimate form of wisdom, and that intellectual honesty requires the willingness to outgrow one's own convictions. People drawn to this archetype often carry an infectious enthusiasm for life that coexists with surprisingly deep philosophical questioning.",
+    personality:
+      "Those who identify with the Sagittarius archetype tend to move through life with a distinctive buoyancy and forward momentum. There is often a natural optimism -- not naive denial of difficulty, but a genuine belief that understanding is possible, that growth is available, and that the next horizon holds something worth discovering. This can manifest as a love of travel (physical or intellectual), a talent for teaching, a gift for seeing the bigger picture, and a directness that comes not from aggression but from an honest impatience with pretense. In daily life, Sagittarius-resonant individuals frequently find themselves in the role of the group's philosopher, comedian, or morale booster. They may be the person who asks 'but why?' until they reach a satisfying answer, who plans the adventure, or who reframes a setback as a learning opportunity with such sincerity that others genuinely feel encouraged. There is often a scholarly or pedagogical dimension -- a love of learning that spans cultures, disciplines, and traditions. Emotionally, the Sagittarius pattern tends toward openness and resilience. Setbacks are processed through reframing and forward movement. This can be a strength in that despair rarely lingers, but it may also mean that grief, loss, or disappointment are processed too quickly, papered over with positivity before they have been fully felt. The growth edge involves learning that depth and breadth are both necessary, that commitment to one path does not mean imprisonment, and that the most profound journey sometimes involves staying exactly where you are.",
+    strengths: [
+      "Expansive perspective that sees possibilities where others see limitations",
+      "Natural enthusiasm that inspires and motivates others",
+      "Philosophical intelligence -- the ability to find meaning in diverse experiences",
+      "Honesty and directness that, at its best, creates refreshing clarity",
+      "Adaptability that thrives in unfamiliar environments and cultures",
+      "Humor that illuminates truth and builds bridges across differences",
+      "Generosity of spirit and a genuine belief in others' potential",
+    ],
+    growthThemes: [
+      "Developing the discipline to follow through on commitments after the initial excitement fades",
+      "Learning that depth in one area can be as enriching as breadth across many",
+      "Practicing the art of listening with the same energy brought to speaking",
+      "Exploring whether relentless optimism sometimes avoids legitimate pain",
+      "Recognizing that freedom and responsibility are partners, not opposites",
+    ],
+    reflectionPrompts: [
+      "What belief have you outgrown recently, and what is replacing it?",
+      "Is there something you are running toward -- or something you are running from?",
+      "When was the last time you sat with sadness instead of trying to find its silver lining?",
+      "What would 'depth' look like in one area of your life where you currently prefer breadth?",
+      "How do you know the difference between genuine optimism and comfortable avoidance?",
+    ],
+    compatibilityNotes:
+      "Sagittarius energy tends to create joyful connections with those who love learning, value independence, and can match their enthusiasm for exploring ideas and places. Fire and Air archetypes often share Sagittarius' love of dynamic exchange and intellectual adventure. Earth archetypes may provide the grounding and follow-through that turns Sagittarian visions into reality, though pace differences can require patience. Water archetypes may invite Sagittarius into the emotional depths they sometimes skate over, creating a richer and more complete experience. The most enlivening connections for Sagittarius often involve someone who shares their sense of wonder but also lovingly holds them accountable to their commitments.",
+    dailyInspiration: [
+      "The answer you are seeking may not be at the next destination. Check where you stand.",
+      "Your optimism is a light. Make sure it is also illuminating what is real.",
+      "Today, go deeper into something you already know instead of reaching for something new.",
+      "Freedom is most meaningful when it is shared. Who are you exploring with?",
+      "The greatest adventure might be the one that requires you to stay and build.",
+    ],
+    cosmicExplanation:
+      "Sagittarius occupies the ninth position in the zodiac, corresponding to late autumn in the Northern Hemisphere when the harvest is complete and communities traditionally turned to storytelling, philosophy, and preparation for the reflective winter months. Jupiter, the ruling planet, is the largest in our solar system -- a gas giant whose gravity influences the entire planetary system, connecting Sagittarius to themes of expansion, abundance, protection, and wisdom. The mutable modality reflects Sagittarius' position at the season's transition, carrying adaptive energy directed toward synthesis and meaning-making. The fire element links this archetype to inspiration, vision, and the creative spark of understanding. The Centaur constellation bridges the animal and human realms, embodying the philosophical question at the heart of Sagittarius: how do we integrate our instinctual nature with our highest aspirations?",
+  },
+  {
+    slug: "capricorn",
+    name: "Capricorn",
+    symbol: "\u2651",
+    dateRange: "December 22 - January 19",
+    element: "Earth",
+    modality: "Cardinal",
+    rulingPlanet: "Saturn",
+    keywords: [
+      "ambition",
+      "discipline",
+      "mastery",
+      "responsibility",
+      "integrity",
+      "endurance",
+    ],
+    overview:
+      "Capricorn represents the archetype of the Elder -- the consciousness that understands the weight of time, the value of discipline, and the quiet dignity of building something that lasts. In mythological terms, this is the energy of the wise ruler who has earned authority through experience, the mountain goat who climbs not for applause but because the summit is there. The Sea-Goat as an ancient symbol combines the goat's terrestrial ambition with the fish's emotional and spiritual depth, suggesting that Capricorn's drive for achievement is rooted in something far more complex than mere worldly success. This archetype invites reflection on the nature of ambition: is it fueled by fear or by purpose? It suggests that maturity is not the absence of feeling but the disciplined channeling of it, that integrity is the most durable form of power, and that the structures we build in the outer world inevitably reflect the inner architecture of our values.",
+    personality:
+      "People who resonate with the Capricorn archetype tend to move through life with a distinctive sense of purpose and self-discipline. There is often a seriousness that is not humorlessness but rather a quality of intentionality -- a preference for doing things well over doing them quickly, for substance over style, for earned respect over easy popularity. This can manifest as professional ambition, strategic thinking, dry wit, and a reliability so consistent it becomes invisible. In daily life, Capricorn-resonant individuals frequently carry more responsibility than their peers, sometimes from a surprisingly young age. They may be the person who manages the family logistics, the one who quietly holds a team together during crisis, or the friend whose advice is sought because it is honest and practical, even when uncomfortable. There is often an austere beauty to this archetype -- a minimalism of expression that reveals depth upon closer attention. Emotionally, the Capricorn pattern is characterized by restraint and delayed expression. Feelings are experienced fully but shown selectively, often only after they have been thoroughly processed. This can create an impression of coldness that is profoundly misleading; beneath the composed exterior, there is frequently a rich emotional life and a deep longing for connection that may be expressed through acts of service and reliability rather than words. The growth edge lies in learning that asking for help is not weakness, that rest is not laziness, and that the walls built for protection can also become barriers to intimacy.",
+    strengths: [
+      "Remarkable discipline and follow-through on long-term goals",
+      "Strategic intelligence that plans effectively and anticipates obstacles",
+      "Integrity and reliability that form the foundation of lasting trust",
+      "Dry, sophisticated humor that reveals surprising depth",
+      "Ability to function under pressure when others falter",
+      "Patient persistence that achieves what quicker approaches cannot",
+      "Natural understanding of systems, structures, and organizational dynamics",
+      "Quiet authority earned through demonstrated competence",
+    ],
+    growthThemes: [
+      "Learning that vulnerability is a form of strength, not a lapse in discipline",
+      "Exploring the possibility that rest and play are not earned but necessary",
+      "Distinguishing between healthy ambition and the fear of being seen as a failure",
+      "Developing the ability to receive support without feeling indebted",
+      "Recognizing when the inner taskmaster has become a tyrant rather than a guide",
+      "Allowing relationships to be spaces of softness, not only reliability",
+    ],
+    reflectionPrompts: [
+      "What would you do differently if failure were not a possibility?",
+      "Who are you when you are not achieving anything -- and is that person acceptable to you?",
+      "Is there a responsibility you are carrying that was never truly yours to bear?",
+      "When was the last time you allowed yourself to rest without guilt?",
+      "What would it look like to measure your worth by something other than your accomplishments?",
+    ],
+    compatibilityNotes:
+      "Capricorn energy tends to build enduring connections with those who respect commitment, value integrity, and understand that trust is built through consistent action over time. Earth and Water archetypes often share Capricorn's appreciation for depth, reliability, and meaningful investment. Air archetypes may bring lightness, social connection, and new perspectives that help Capricorn step outside the relentless cycle of productivity. Fire archetypes may offer warmth, spontaneity, and the reminder that life is meant to be enjoyed, not only managed. The most fulfilling connections for Capricorn often involve someone who sees the tenderness beneath the composure and creates space for it to emerge safely.",
+    dailyInspiration: [
+      "You have already accomplished more than you give yourself credit for. Pause and notice.",
+      "Discipline without compassion becomes punishment. Be gentle with yourself today.",
+      "The mountain is not going anywhere. You are allowed to rest on the way up.",
+      "Your worth is not your output. You matter when you are still.",
+      "Let someone see the part of you that is not in control today. It is your most human self.",
+    ],
+    cosmicExplanation:
+      "Capricorn occupies the tenth position in the zodiac, coinciding with the winter solstice in the Northern Hemisphere -- the longest night, after which light slowly begins its return. This astronomical moment connects Capricorn to themes of endurance through darkness, the promise of renewal through persistence, and the wisdom that comes from surviving the most difficult passage. Saturn, the ruling planet, is the outermost planet visible to the naked eye and takes approximately 29.5 years to orbit the Sun, connecting Capricorn to themes of time, maturity, structure, and the lessons that only patience can teach. The cardinal modality reflects Capricorn's initiating energy, though this initiation is deliberate and strategic. The earth element grounds the archetype in the material world of achievement and tangible results. The ancient Sea-Goat symbol predates the Greek zodiac, appearing in Sumerian tradition as Enki, the god of wisdom and water, suggesting that Capricorn's ambition has always been intertwined with spiritual depth.",
+  },
+  {
+    slug: "aquarius",
+    name: "Aquarius",
+    symbol: "\u2652",
+    dateRange: "January 20 - February 18",
+    element: "Air",
+    modality: "Fixed",
+    rulingPlanet: "Uranus (traditional: Saturn)",
+    keywords: [
+      "innovation",
+      "humanitarianism",
+      "independence",
+      "vision",
+      "community",
+      "originality",
+    ],
+    overview:
+      "Aquarius represents the archetype of the Visionary -- the consciousness that perceives the world not only as it is but as it could become. In mythological terms, this is the energy of Prometheus, who brought fire to humanity not for personal gain but because knowledge belongs to everyone. The Water Bearer as a symbol depicts not a water sign but an air sign pouring the waters of knowledge and innovation into the collective stream. Aquarius invites reflection on the tension between individuality and community: how one can be genuinely unique while also deeply committed to the common good. This archetype suggests that progress requires those willing to think outside existing frameworks, that detachment can be a form of compassion rather than coldness, and that the future is shaped by people who refuse to accept the present as inevitable. People drawn to this archetype often experience the paradox of feeling both deeply connected to humanity as a whole and oddly detached from individual relationships.",
+    personality:
+      "Those who identify with the Aquarius archetype tend to move through life with a distinctive independence of thought. There is often a quality of being slightly ahead of the curve -- seeing trends before they emerge, questioning norms that others accept without examination, and generating ideas that are initially dismissed as eccentric before being recognized as prescient. This can manifest as technological fluency, social activism, unconventional lifestyle choices, and a social style that is friendly and egalitarian without being particularly intimate. In daily life, Aquarius-resonant individuals frequently notice they are the ones who challenge assumptions in group settings, champion underrepresented perspectives, and propose solutions that no one else considered. There is often a paradoxical quality to this archetype: deeply concerned with human welfare yet sometimes emotionally distant in one-on-one relationships; fiercely independent yet drawn to collaborative communities; intellectually revolutionary yet surprisingly stubborn in their own convictions. Emotionally, the Aquarius pattern tends toward rationalization. Feelings are processed through ideas -- understood conceptually before (or instead of) being felt viscerally. This can be a strength in that emotional reactivity is minimized, but it may also mean that emotional intimacy feels threatening to the autonomy that Aquarius values so deeply. The growth edge lies in learning that emotional vulnerability is not a loss of freedom, that belonging to someone is different from being owned by them, and that the humanitarian vision is most authentic when it includes genuine warmth for the individuals right in front of you.",
+    strengths: [
+      "Original thinking that generates novel solutions and perspectives",
+      "Genuine concern for collective welfare and social justice",
+      "Intellectual courage to challenge established norms and systems",
+      "Ability to maintain objectivity in emotionally charged situations",
+      "Natural understanding of networks, systems, and how change propagates",
+      "Democratic spirit that treats all people as equals regardless of status",
+      "Capacity to envision and work toward a better future",
+    ],
+    growthThemes: [
+      "Learning that emotional intimacy is not a threat to independence",
+      "Exploring whether intellectual detachment sometimes masks emotional avoidance",
+      "Developing warmth in individual relationships alongside concern for humanity at large",
+      "Recognizing that being different is not the same as being superior",
+      "Practicing the patience to work within existing systems while envisioning new ones",
+      "Allowing vulnerability without intellectualizing it away",
+    ],
+    reflectionPrompts: [
+      "When you step back to observe rather than participate emotionally, what are you protecting?",
+      "Is there someone in your life who needs your presence more than your ideas right now?",
+      "What would it feel like to need someone -- genuinely, not theoretically?",
+      "Consider a conviction you hold strongly: is it serving your growth, or has it become a wall?",
+      "How might you bring the compassion you feel for humanity into your closest relationships?",
+    ],
+    compatibilityNotes:
+      "Aquarius energy tends to create stimulating connections with those who value independence, enjoy intellectual exchange, and are comfortable with unconventional approaches to relationship. Air and Fire archetypes often share Aquarius' love of ideas, freedom, and forward thinking. Earth archetypes may offer the practical grounding that helps Aquarius manifest their visions in tangible form, though emotional expression styles may differ. Water archetypes may invite Aquarius into the feeling realm that their analytical mind sometimes bypasses, creating opportunities for genuine emotional growth. The most interesting connections for Aquarius often involve someone who respects their need for freedom while gently, persistently inviting them into deeper emotional connection.",
+    dailyInspiration: [
+      "Your vision matters. So does the person standing in front of you right now.",
+      "Independence is not isolation. Let someone into your world today.",
+      "The future you imagine begins with the connections you make in the present.",
+      "Being different is not your whole identity. You are also allowed to simply belong.",
+      "Your mind is extraordinary. Today, let your heart lead for a while.",
+    ],
+    cosmicExplanation:
+      "Aquarius occupies the eleventh position in the zodiac, corresponding to mid-winter in the Northern Hemisphere -- a time historically associated with community gatherings, shared resources, and the collective survival strategies that carry societies through the coldest months. Uranus, the modern ruling planet, was discovered in 1781 during the era of revolutions, connecting Aquarius to themes of sudden change, liberation, and the breaking of old structures. Saturn, the traditional ruler, adds a dimension of discipline and systematic thinking to the revolutionary impulse. The fixed modality may seem surprising for such an innovative sign, but it reflects Aquarius' determined persistence in holding to their vision. The air element connects to intellect, communication, and social networks. The Water Bearer constellation has ancient roots in Babylonian astronomy, where it was associated with the god Ea, who poured the waters of wisdom and civilization into the world.",
+  },
+  {
+    slug: "pisces",
+    name: "Pisces",
+    symbol: "\u2653",
+    dateRange: "February 19 - March 20",
+    element: "Water",
+    modality: "Mutable",
+    rulingPlanet: "Neptune (traditional: Jupiter)",
+    keywords: [
+      "compassion",
+      "imagination",
+      "transcendence",
+      "empathy",
+      "spirituality",
+      "creative vision",
+    ],
+    overview:
+      "Pisces represents the archetype of the Mystic -- the consciousness that dissolves boundaries between self and other, between the material and the spiritual, between waking life and the dream. In mythological terms, this is the energy of the divine artist, the healer who takes on others' pain, the poet who gives language to what exists beyond language. The Two Fish swimming in opposite directions symbolize the essential Piscean experience: being pulled simultaneously toward the transcendent and the earthly, toward dissolution and form, toward selfless service and the need for self-preservation. Pisces invites reflection on the nature of compassion and its shadow -- how empathy can be both a gift and a wound, how imagination can illuminate truth or enable escape, and where the boundary lies between spiritual surrender and psychological avoidance. This archetype suggests that the most profound truths are felt rather than proven, that art and music touch dimensions of reality that logic cannot reach, and that the impulse to merge with something greater is one of the deepest human needs.",
+    personality:
+      "People who resonate with the Pisces archetype tend to move through life with a distinctive permeability to the emotional and energetic environment around them. There is often an empathic quality that goes beyond ordinary sensitivity -- absorbing the moods, pain, and joy of others as if these feelings were their own. This can manifest as artistic talent, healing ability, spiritual insight, an instinct for knowing what others need, and a compassion so broad that it sometimes leaves little room for self-care. In daily life, Pisces-resonant individuals frequently find themselves drawn to creative, helping, or spiritual vocations. They may be the person who cries during movies (and is not embarrassed), who intuits a friend's unspoken distress, or whose creative work seems to channel something beyond their personal experience. There is often a dreamlike quality to this archetype -- a rich inner life populated by images, feelings, and impressions that may be difficult to translate into the concrete language of everyday reality. Emotionally, the Pisces pattern is characterized by depth, fluidity, and a certain porousness. Boundaries between self and other can be genuinely unclear, which is the source of both Pisces' greatest gift (empathy) and greatest challenge (losing oneself in others' experience). This archetype may process emotions through creative expression, spiritual practice, or periods of solitary retreat. The growth edge involves learning that healthy boundaries are not barriers to compassion but prerequisites for sustaining it, that saying 'I cannot carry this for you' is sometimes the most loving thing one can say, and that the dream world, while sacred, requires engagement with material reality to be fully expressed.",
+    strengths: [
+      "Profound empathy that creates genuine understanding across differences",
+      "Creative imagination that produces art, music, writing, or healing that moves others deeply",
+      "Spiritual sensitivity and openness to dimensions of experience beyond the material",
+      "Intuitive perception that senses what cannot be seen or measured",
+      "Compassion that naturally extends to the marginalized and forgotten",
+      "Emotional courage to feel what others suppress or avoid",
+      "Adaptability and grace in navigating ambiguous or fluid situations",
+      "Capacity to find beauty and meaning in suffering and impermanence",
+    ],
+    growthThemes: [
+      "Developing healthy boundaries without feeling they diminish compassion",
+      "Learning to distinguish between empathy and enmeshment",
+      "Building practical structures that support creative and spiritual gifts",
+      "Recognizing when escape into fantasy is avoiding necessary engagement with reality",
+      "Practicing discernment about which pain to absorb and which to witness from a distance",
+      "Cultivating self-compassion as a foundation for compassion toward others",
+    ],
+    reflectionPrompts: [
+      "Whose emotions are you carrying right now that are not actually yours?",
+      "Is there an area of your life where dreaming has replaced doing -- and what is that avoidance protecting?",
+      "What practical support does your creative or spiritual life need that you have been neglecting?",
+      "When you feel the urge to escape, what are you escaping from -- and is there a gentler way to address it?",
+      "How might you honor your sensitivity while also protecting your energy?",
+    ],
+    compatibilityNotes:
+      "Pisces energy tends to create profound connections with those who value emotional depth, appreciate the inner life, and can honor sensitivity without dismissing it. Water and Earth archetypes often share Pisces' desire for meaningful, committed connection and provide the grounding that supports Pisces' more fluid nature. Air archetypes may bring the clarity and objectivity that helps Pisces distinguish their own feelings from absorbed ones, though emotional wavelengths may differ. Fire archetypes may offer the vitality, direction, and protective energy that Pisces sometimes needs to engage more fully with the world. The most healing connections for Pisces often involve someone who is strong enough to be gentle -- who creates a safe container for Pisces' vast emotional world without being overwhelmed by it.",
+    dailyInspiration: [
+      "Your sensitivity is your wisdom. Protect it as you would anything sacred.",
+      "Not every feeling you encounter belongs to you. Gently return what is not yours.",
+      "The dream is important. So is waking up and building something with it.",
+      "Compassion for yourself is not selfish. It is the foundation for everything you give.",
+      "You are allowed to have edges. Boundaries are how love sustains itself.",
+    ],
+    cosmicExplanation:
+      "Pisces occupies the twelfth and final position in the zodiac, corresponding to the end of winter in the Northern Hemisphere -- the liminal period when ice begins to melt, boundaries between land and water dissolve, and the cycle prepares to begin again with spring. Neptune, the modern ruling planet, governs the ocean's unfathomable depths and is named for the god of the sea, connecting Pisces to themes of vastness, dissolution, dreams, and the unconscious. Jupiter, the traditional ruler, adds a dimension of faith, expansion, and the search for meaning. The mutable modality reflects Pisces' position at the ending of a season -- and the ending of the entire zodiac cycle -- carrying the energy of transition, release, and preparation for rebirth. The water element reaches its most refined expression here: not the protective waters of Cancer or the concentrated depths of Scorpio, but the universal ocean in which all boundaries dissolve. The Two Fish constellation appears in the oldest known star catalogs, and across cultures, fish have symbolized the soul's journey through the waters of incarnation.",
+  },
+];
+
+export const zodiacSignsBySlug: Record<string, ZodiacSign> = Object.fromEntries(
+  zodiacSigns.map((sign) => [sign.slug, sign])
+);
+
+export function getZodiacSign(slug: string): ZodiacSign | undefined {
+  return zodiacSignsBySlug[slug];
+}
+
+export function getAllZodiacSlugs(): string[] {
+  return zodiacSigns.map((sign) => sign.slug);
+}

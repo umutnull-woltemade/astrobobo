@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { locales, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { getZodiacSigns } from "@/content/zodiac";
+import SignPicker from "@/components/zodiac/sign-picker";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -15,6 +16,18 @@ export default async function HomePage({ params }: PageProps) {
   const signs = getZodiacSigns(locale as Locale);
   const isEn = locale === "en";
   const localePath = isEn ? "" : `/${locale}`;
+
+  // Serialize sign data for the client component
+  const signsForPicker = signs.map((s) => ({
+    slug: s.slug,
+    name: s.name,
+    symbol: s.symbol,
+    dateRange: s.dateRange,
+    element: s.element,
+    overview: s.overview,
+    dailyInspiration: s.dailyInspiration,
+    keywords: s.keywords,
+  }));
 
   return (
     <div className="min-h-screen">
@@ -37,30 +50,21 @@ export default async function HomePage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* Zodiac Grid */}
-      <section className="max-w-7xl mx-auto px-4 py-16">
-        <h2 className="cosmic-heading text-3xl text-center mb-12">
-          {dict.home.zodiacHeading}
-        </h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {signs.map((sign) => (
-            <a
-              key={sign.slug}
-              href={`${localePath}/zodiac/${sign.slug}`}
-              className="cosmic-card text-center group"
-            >
-              <div className="text-5xl mb-3">{sign.symbol}</div>
-              <h3 className="text-cosmic-text font-display text-lg group-hover:text-cosmic-accent transition-colors">
-                {sign.name}
-              </h3>
-              <p className="text-cosmic-muted text-sm mt-1">{sign.dateRange}</p>
-              <span className={`zodiac-${sign.element.toLowerCase()} zodiac-badge mt-3`}>
-                {dict.elements[sign.element]}
-              </span>
-            </a>
-          ))}
-        </div>
-      </section>
+      {/* Sign Picker - personalized zodiac section */}
+      <SignPicker
+        signs={signsForPicker}
+        localePath={localePath}
+        dict={{
+          pickYourSign: dict.home.pickYourSign,
+          yourSign: dict.home.yourSign,
+          browseOthers: dict.home.browseOthers,
+          todayInspiration: dict.home.todayInspiration,
+          readFullProfile: dict.home.readFullProfile,
+          changeSign: dict.home.changeSign,
+          selectBelow: dict.home.selectBelow,
+          elements: dict.elements,
+        }}
+      />
 
       {/* Featured Content */}
       <section className="bg-cosmic-surface py-16 px-4">

@@ -33,9 +33,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
           "cosmic self-discovery", "archetype psychology", "zodiac personality",
         ]
       : [
-          "astroloji", "burclar", "dogum haritasi", "burc yorumu",
-          "natal harita", "burc uyumu", "astroloji egitimi",
-          "kozmik kendini kesfetme", "arketip psikolojisi", "burc kisilik",
+          "astroloji", "burçlar", "doğum haritası", "burç yorumu",
+          "natal harita", "burç uyumu", "astroloji eğitimi",
+          "kozmik kendini keşfetme", "arketip psikolojisi", "burç kişilik",
         ],
     authors: [{ name: "Astrobobo" }],
     creator: "Astrobobo",
@@ -82,9 +82,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
         "tr-TR": "https://astrobobo.com/tr",
       },
     },
-    verification: {
-      google: "GOOGLE_VERIFICATION_ID",
-    },
   };
 }
 
@@ -112,6 +109,8 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
               <a href={`${localePath}/`} className="text-cosmic-accent font-display text-xl font-bold">
                 Astrobobo
               </a>
+
+              {/* Desktop Nav */}
               <div className="hidden md:flex items-center space-x-8">
                 <a href={`${localePath}/zodiac`} className="text-cosmic-muted hover:text-cosmic-text transition-colors">
                   {dict.nav.zodiacSigns}
@@ -119,13 +118,25 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
                 <a href={`${localePath}/articles`} className="text-cosmic-muted hover:text-cosmic-text transition-colors">
                   {dict.nav.articles}
                 </a>
-                <a href={`${localePath}/archetype`} className="text-cosmic-muted hover:text-cosmic-text transition-colors">
-                  {dict.nav.archetypes}
-                </a>
-                {/* Language Switcher */}
                 <a
                   href={isEn ? "/tr" : "/"}
                   className="text-cosmic-muted hover:text-cosmic-accent transition-colors text-sm border border-cosmic-border rounded-md px-2 py-1"
+                >
+                  {isEn ? "TR" : "EN"}
+                </a>
+              </div>
+
+              {/* Mobile Nav Toggle + Links */}
+              <div className="flex md:hidden items-center space-x-4">
+                <a href={`${localePath}/zodiac`} className="text-cosmic-muted hover:text-cosmic-text transition-colors text-sm">
+                  {dict.nav.zodiacSigns}
+                </a>
+                <a href={`${localePath}/articles`} className="text-cosmic-muted hover:text-cosmic-text transition-colors text-sm">
+                  {dict.nav.articles}
+                </a>
+                <a
+                  href={isEn ? "/tr" : "/"}
+                  className="text-cosmic-muted hover:text-cosmic-accent transition-colors text-xs border border-cosmic-border rounded-md px-2 py-1"
                 >
                   {isEn ? "TR" : "EN"}
                 </a>
@@ -146,7 +157,6 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
                 <ul className="space-y-2 text-sm text-cosmic-muted">
                   <li><a href={`${localePath}/zodiac`} className="hover:text-cosmic-text">{dict.nav.zodiacSigns}</a></li>
                   <li><a href={`${localePath}/articles`} className="hover:text-cosmic-text">{dict.nav.articles}</a></li>
-                  <li><a href={`${localePath}/archetype`} className="hover:text-cosmic-text">{dict.nav.archetypes}</a></li>
                 </ul>
               </div>
               <div>
@@ -154,7 +164,6 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
                 <ul className="space-y-2 text-sm text-cosmic-muted">
                   <li><a href={`${localePath}/privacy`} className="hover:text-cosmic-text">{dict.footer.privacy}</a></li>
                   <li><a href={`${localePath}/terms`} className="hover:text-cosmic-text">{dict.footer.terms}</a></li>
-                  <li><a href={`${localePath}/editorial-policy`} className="hover:text-cosmic-text">{dict.footer.editorial}</a></li>
                 </ul>
               </div>
             </div>

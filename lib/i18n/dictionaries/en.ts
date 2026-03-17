@@ -50,6 +50,13 @@ const en = {
     howToUse: "How to Use This Resource",
     howToUseP:
       "Browse zodiac profiles to explore personality archetypes. Read educational articles about planetary symbolism, elemental wisdom, and cosmic cycles. Use reflection prompts as journaling inspiration. Consider what resonates with your experience and what invites further exploration.",
+    pickYourSign: "What's Your Sign?",
+    yourSign: "Your Sign",
+    browseOthers: "Explore Other Signs",
+    todayInspiration: "Today's Inspiration",
+    readFullProfile: "Read full profile",
+    changeSign: "Change sign",
+    selectBelow: "Select your zodiac sign to get personalized cosmic insights.",
   },
   zodiac: {
     pageTitle: "All 12 Zodiac Signs - Personality, Traits & Cosmic Insights",

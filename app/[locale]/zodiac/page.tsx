@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { locales, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { getZodiacSigns } from "@/content/zodiac";
+import ElementFilter from "@/components/zodiac/element-filter";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -33,7 +34,16 @@ export default async function ZodiacIndexPage({ params }: PageProps) {
   const isEn = locale === "en";
   const localePath = isEn ? "" : `/${locale}`;
 
-  const elementKeys = ["All", "Fire", "Earth", "Air", "Water"] as const;
+  const signsData = signs.map((s) => ({
+    slug: s.slug,
+    name: s.name,
+    symbol: s.symbol,
+    dateRange: s.dateRange,
+    element: s.element,
+    modality: s.modality,
+    overview: s.overview,
+    keywords: s.keywords,
+  }));
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-12">
@@ -46,61 +56,15 @@ export default async function ZodiacIndexPage({ params }: PageProps) {
         </p>
       </div>
 
-      {/* Element Filter */}
-      <div className="flex justify-center gap-4 mb-12">
-        {elementKeys.map((el) => (
-          <span
-            key={el}
-            className={`zodiac-badge cursor-pointer ${
-              el === "All"
-                ? "bg-cosmic-accent/10 text-cosmic-accent border-cosmic-accent/30"
-                : `zodiac-${el.toLowerCase()}`
-            }`}
-          >
-            {el === "All" ? dict.zodiac.all : dict.elements[el]}
-          </span>
-        ))}
-      </div>
-
-      {/* Signs Grid */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {signs.map((sign) => (
-          <a
-            key={sign.slug}
-            href={`${localePath}/zodiac/${sign.slug}`}
-            className="cosmic-card group"
-          >
-            <div className="flex items-start justify-between mb-4">
-              <div>
-                <span className="text-4xl">{sign.symbol}</span>
-                <h2 className="text-xl font-display text-cosmic-text group-hover:text-cosmic-accent transition-colors mt-2">
-                  {sign.name}
-                </h2>
-                <p className="text-cosmic-muted text-sm">{sign.dateRange}</p>
-              </div>
-              <div className="flex flex-col gap-2 items-end">
-                <span className={`zodiac-${sign.element.toLowerCase()} zodiac-badge`}>
-                  {dict.elements[sign.element]}
-                </span>
-                <span className="text-cosmic-muted text-xs">{dict.modalities[sign.modality]}</span>
-              </div>
-            </div>
-            <p className="text-cosmic-muted text-sm line-clamp-3">
-              {sign.overview}
-            </p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {sign.keywords.slice(0, 4).map((kw) => (
-                <span
-                  key={kw}
-                  className="text-xs bg-cosmic-surface px-2 py-1 rounded-md text-cosmic-muted"
-                >
-                  {kw}
-                </span>
-              ))}
-            </div>
-          </a>
-        ))}
-      </div>
+      <ElementFilter
+        signs={signsData}
+        localePath={localePath}
+        dict={{
+          all: dict.zodiac.all,
+          elements: dict.elements,
+          modalities: dict.modalities,
+        }}
+      />
 
       {/* SEO Content */}
       <section className="mt-20 max-w-3xl mx-auto article-prose">

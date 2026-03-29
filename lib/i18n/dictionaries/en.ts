@@ -89,6 +89,15 @@ const en = {
     subtitle:
       "Educational explorations of astrological concepts, planetary symbolism, and archetypal psychology for self-reflection and growth.",
     minRead: "min read",
+    categories: {
+      zodiac: "Zodiac",
+      planets: "Planets",
+      elements: "Elements",
+      houses: "Houses",
+      aspects: "Aspects",
+      education: "Education",
+      reflection: "Reflection",
+    },
   },
   elements: {
     Fire: "Fire",

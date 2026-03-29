@@ -2,7 +2,15 @@ import { notFound } from "next/navigation";
 import { locales, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { getZodiacSigns } from "@/content/zodiac";
+import { getPersonalTransits } from "@/content/transits";
+import type { ZodiacSlug } from "@/content/transits/types";
 import SignPicker from "@/components/zodiac/sign-picker";
+import TransitBanner from "@/components/transit-banner";
+
+const ALL_SIGNS: ZodiacSlug[] = [
+  "aries", "taurus", "gemini", "cancer", "leo", "virgo",
+  "libra", "scorpio", "sagittarius", "capricorn", "aquarius", "pisces",
+];
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -16,6 +24,14 @@ export default async function HomePage({ params }: PageProps) {
   const signs = getZodiacSigns(locale as Locale);
   const isEn = locale === "en";
   const localePath = isEn ? "" : `/${locale}`;
+
+  // Pre-compute transits for all signs (server-side)
+  const allSignTransits: Record<string, ReturnType<typeof serializeTransits>> = {};
+  for (const sign of ALL_SIGNS) {
+    allSignTransits[sign] = serializeTransits(sign);
+  }
+  // Default to Aries for users who haven't picked a sign yet
+  const defaultTransits = allSignTransits["aries"];
 
   // Serialize sign data for the client component
   const signsForPicker = signs.map((s) => ({
@@ -31,6 +47,13 @@ export default async function HomePage({ params }: PageProps) {
 
   return (
     <div className="min-h-screen">
+      {/* Personalized Transit Banner */}
+      <TransitBanner
+        transits={defaultTransits}
+        allSignTransits={allSignTransits}
+        isEn={isEn}
+      />
+
       {/* Hero */}
       <section className="relative py-24 px-4 text-center bg-cosmic-gradient overflow-hidden">
         <div className="absolute inset-0 opacity-20">
@@ -116,4 +139,23 @@ export default async function HomePage({ params }: PageProps) {
       </section>
     </div>
   );
+}
+
+function serializeTransits(sign: ZodiacSlug) {
+  const transits = getPersonalTransits(sign);
+  return transits.map((t) => ({
+    planet: t.transit.planet,
+    sign: t.transit.sign,
+    house: t.house,
+    houseThemeEn: t.houseTheme.en,
+    houseThemeTr: t.houseTheme.tr,
+    titleEn: t.interpretation.titleEn,
+    titleTr: t.interpretation.titleTr,
+    bodyEn: t.interpretation.bodyEn,
+    bodyTr: t.interpretation.bodyTr,
+    keywordsEn: t.interpretation.keywordsEn,
+    keywordsTr: t.interpretation.keywordsTr,
+    durationEn: t.interpretation.durationEn,
+    durationTr: t.interpretation.durationTr,
+  }));
 }

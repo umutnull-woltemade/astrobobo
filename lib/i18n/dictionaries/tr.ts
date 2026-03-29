@@ -91,6 +91,15 @@ const tr: Dictionary = {
     subtitle:
       "Öz yansıtma ve büyüme için astrolojik kavramların, gezegen sembolizminin ve arketipsel psikolojinin eğitici incelemeleri.",
     minRead: "dk okuma",
+    categories: {
+      zodiac: "Burçlar",
+      planets: "Gezegenler",
+      elements: "Elementler",
+      houses: "Evler",
+      aspects: "Açılar",
+      education: "Eğitim",
+      reflection: "Yansıma",
+    },
   },
   elements: {
     Fire: "Ateş",

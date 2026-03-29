@@ -74,7 +74,7 @@ export default async function ZodiacSignPage({ params }: PageProps) {
       <article className="max-w-4xl mx-auto px-4 py-12">
         {/* Header */}
         <header className="text-center mb-12">
-          <div className="text-7xl mb-4">{sign.symbol}</div>
+          <div className="text-7xl mb-4" role="img" aria-label={sign.name}>{sign.symbol}</div>
           <h1 className="text-4xl md:text-5xl font-display text-cosmic-accent mb-2">
             {sign.name}
           </h1>
@@ -179,24 +179,23 @@ export default async function ZodiacSignPage({ params }: PageProps) {
           <p className="text-cosmic-text/90 leading-relaxed">{sign.cosmicExplanation}</p>
         </section>
 
-        {/* Navigation */}
+        {/* Navigation - Circular */}
         <nav className="mt-12 flex justify-between text-sm">
           {signs.map((s, i) => {
             if (s.slug === sign.slug) {
-              const prev = signs[i - 1];
-              const next = signs[i + 1];
+              const prev = signs[(i - 1 + signs.length) % signs.length];
+              const next = signs[(i + 1) % signs.length];
               return (
                 <div key={s.slug} className="flex justify-between w-full">
-                  {prev ? (
-                    <a href={`${localePath}/zodiac/${prev.slug}`} className="text-cosmic-accent hover:underline">
-                      &larr; {prev.name}
-                    </a>
-                  ) : <span />}
-                  {next ? (
-                    <a href={`${localePath}/zodiac/${next.slug}`} className="text-cosmic-accent hover:underline">
-                      {next.name} &rarr;
-                    </a>
-                  ) : <span />}
+                  <a href={`${localePath}/zodiac/${prev.slug}`} className="text-cosmic-accent hover:underline">
+                    &larr; {prev.name}
+                  </a>
+                  <a href={`${localePath}/zodiac`} className="text-cosmic-muted hover:text-cosmic-text">
+                    {dict.zodiac.all}
+                  </a>
+                  <a href={`${localePath}/zodiac/${next.slug}`} className="text-cosmic-accent hover:underline">
+                    {next.name} &rarr;
+                  </a>
                 </div>
               );
             }

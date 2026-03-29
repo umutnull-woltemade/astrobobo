@@ -68,30 +68,31 @@ export default async function ArticlePage({ params }: PageProps) {
 
   // Simple markdown-to-sections converter
   const sections = article.content.split("\n\n").map((block, i) => {
+    const key = `block-${i}`;
     if (block.startsWith("### ")) {
-      return <h3 key={i} className="text-cosmic-text font-display text-xl mt-6 mb-3">{block.slice(4)}</h3>;
+      return <h3 key={key} className="text-cosmic-text font-display text-xl mt-6 mb-3">{block.slice(4)}</h3>;
     }
     if (block.startsWith("## ")) {
-      return <h2 key={i} className="text-cosmic-accent font-display text-2xl mt-8 mb-4">{block.slice(3)}</h2>;
+      return <h2 key={key} className="text-cosmic-accent font-display text-2xl mt-8 mb-4">{block.slice(3)}</h2>;
     }
     if (block.startsWith("- ")) {
       const items = block.split("\n").filter((l) => l.startsWith("- "));
       return (
-        <ul key={i} className="list-disc list-inside mb-4 space-y-1">
-          {items.map((item, j) => (
-            <li key={j}>{item.slice(2)}</li>
+        <ul key={key} className="list-disc list-inside mb-4 space-y-1">
+          {items.map((item) => (
+            <li key={item}>{item.slice(2)}</li>
           ))}
         </ul>
       );
     }
     if (block.startsWith("> ")) {
       return (
-        <blockquote key={i} className="border-l-4 border-cosmic-accent/50 pl-4 italic text-cosmic-muted my-4">
+        <blockquote key={key} className="border-l-4 border-cosmic-accent/50 pl-4 italic text-cosmic-muted my-4">
           {block.slice(2)}
         </blockquote>
       );
     }
-    return <p key={i} className="mb-4">{block}</p>;
+    return <p key={key} className="mb-4">{block}</p>;
   });
 
   return (

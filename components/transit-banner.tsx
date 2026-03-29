@@ -144,9 +144,9 @@ export default function TransitBanner({
           {/* Transit dots (pagination) */}
           {transits.length > 1 && (
             <div className="flex gap-1.5">
-              {transits.map((_, i) => (
+              {transits.map((t, i) => (
                 <button
-                  key={i}
+                  key={`${t.planet}-${t.sign}`}
                   onClick={() => {
                     setActiveIndex(i);
                     setExpanded(false);
@@ -243,8 +243,11 @@ export default function TransitBanner({
 }
 
 function getOrdinalSuffix(n: number): string {
-  if (n === 1) return "st";
-  if (n === 2) return "nd";
-  if (n === 3) return "rd";
+  const mod100 = n % 100;
+  if (mod100 >= 11 && mod100 <= 13) return "th";
+  const mod10 = n % 10;
+  if (mod10 === 1) return "st";
+  if (mod10 === 2) return "nd";
+  if (mod10 === 3) return "rd";
   return "th";
 }

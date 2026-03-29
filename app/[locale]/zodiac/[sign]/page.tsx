@@ -115,8 +115,8 @@ export default async function ZodiacSignPage({ params }: PageProps) {
         <section className="cosmic-card mb-8">
           <h2 className="cosmic-heading text-2xl mb-4">{dict.zodiac.strengths}</h2>
           <ul className="grid md:grid-cols-2 gap-3">
-            {sign.strengths.map((s, i) => (
-              <li key={i} className="flex items-start gap-3 text-cosmic-text/90">
+            {sign.strengths.map((s) => (
+              <li key={s} className="flex items-start gap-3 text-cosmic-text/90">
                 <span className="text-cosmic-accent mt-1">&#x2726;</span>
                 <span>{s}</span>
               </li>
@@ -128,8 +128,8 @@ export default async function ZodiacSignPage({ params }: PageProps) {
         <section className="cosmic-card mb-8">
           <h2 className="cosmic-heading text-2xl mb-4">{dict.zodiac.growthThemes}</h2>
           <ul className="space-y-3">
-            {sign.growthThemes.map((g, i) => (
-              <li key={i} className="flex items-start gap-3 text-cosmic-text/90">
+            {sign.growthThemes.map((g) => (
+              <li key={g} className="flex items-start gap-3 text-cosmic-text/90">
                 <span className="text-cosmic-purple mt-1">&#x27A4;</span>
                 <span>{g}</span>
               </li>
@@ -142,7 +142,7 @@ export default async function ZodiacSignPage({ params }: PageProps) {
           <h2 className="cosmic-heading text-2xl mb-4">{dict.zodiac.reflectionPrompts}</h2>
           <ol className="space-y-4">
             {sign.reflectionPrompts.map((p, i) => (
-              <li key={i} className="flex items-start gap-4">
+              <li key={p} className="flex items-start gap-4">
                 <span className="text-cosmic-accent font-display text-lg min-w-[2rem]">
                   {i + 1}.
                 </span>
@@ -162,9 +162,9 @@ export default async function ZodiacSignPage({ params }: PageProps) {
         <section className="cosmic-card mb-8">
           <h2 className="cosmic-heading text-2xl mb-4">{dict.zodiac.dailyInspiration}</h2>
           <div className="space-y-3">
-            {sign.dailyInspiration.map((d, i) => (
+            {sign.dailyInspiration.map((d) => (
               <blockquote
-                key={i}
+                key={d}
                 className="border-l-4 border-cosmic-accent/50 pl-4 text-cosmic-text/80 italic"
               >
                 {d}

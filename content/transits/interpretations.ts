@@ -347,4 +347,408 @@ export const transitInterpretations: Partial<
     durationEn: "12-20 years",
     durationTr: "12-20 yıl",
   },
+  pluto_4: {
+    titleEn: "Pluto in Your 4th House — Root Transformation",
+    titleTr: "Plüton 4. Evinde — Kök Dönüşümü",
+    bodyEn:
+      "Pluto transiting your fourth house digs into the deepest layers of your emotional foundation. Family secrets may surface, your relationship to home transforms radically, and you confront inherited patterns that have shaped you unconsciously. This is the demolition and rebuilding of your inner world — painful but ultimately liberating.",
+    bodyTr:
+      "Plüton dördüncü evinizden geçerken duygusal temelinizin en derin katmanlarını kazıyor. Aile sırları yüzeye çıkabilir, ev ile ilişkiniz kökten dönüşür ve sizi bilinçsizce şekillendiren kalıtsal kalıplarla yüzleşirsiniz. Bu, iç dünyanızın yıkılıp yeniden inşası — acı verici ama nihayetinde özgürleştirici.",
+    keywordsEn: ["family secrets", "emotional depth", "ancestral patterns", "home transformation"],
+    keywordsTr: ["aile sırları", "duygusal derinlik", "atalardan gelen kalıplar", "ev dönüşümü"],
+    durationEn: "12-20 years",
+    durationTr: "12-20 yıl",
+  },
+  pluto_5: {
+    titleEn: "Pluto in Your 5th House — Creative Rebirth",
+    titleTr: "Plüton 5. Evinde — Yaratıcı Yeniden Doğuş",
+    bodyEn:
+      "Pluto in your fifth house transforms your creative expression, your experience of romance, and your relationship with joy itself. Creative projects become obsessions that reshape you. Romantic relationships are intense, magnetic, and sometimes all-consuming. You discover what truly brings you alive — and what was only performing happiness.",
+    bodyTr:
+      "Plüton beşinci evinizde yaratıcı ifadenizi, romantizm deneyiminizi ve sevinçle ilişkinizi dönüştürüyor. Yaratıcı projeler sizi yeniden şekillendiren takıntılara dönüşür. Romantik ilişkiler yoğun, manyetik ve bazen her şeyi kapsayıcı olur. Sizi gerçekten neyin canlandırdığını keşfedersiniz.",
+    keywordsEn: ["creative obsession", "intense romance", "authentic joy", "self-discovery"],
+    keywordsTr: ["yaratıcı tutku", "yoğun romantizm", "otantik sevinç", "kendini keşif"],
+    durationEn: "12-20 years",
+    durationTr: "12-20 yıl",
+  },
+  pluto_6: {
+    titleEn: "Pluto in Your 6th House — Work & Health Overhaul",
+    titleTr: "Plüton 6. Evinde — İş ve Sağlık Revizyonu",
+    bodyEn:
+      "Pluto transiting your sixth house transforms your daily existence — work, health, and routines undergo complete overhaul. You may experience health crises that force total lifestyle change, or power dynamics at work that push you to reclaim your authority. The mundane becomes the arena of your deepest transformation.",
+    bodyTr:
+      "Plüton altıncı evinizden geçerken günlük varoluşunuzu dönüştürüyor — iş, sağlık ve rutinler tamamen revize ediliyor. Tamamen yaşam tarzı değişikliği zorlayan sağlık krizleri veya otoritenizi geri almanızı gerektiren iş yerindeki güç dinamikleri yaşayabilirsiniz.",
+    keywordsEn: ["health crisis", "work power dynamics", "lifestyle overhaul", "daily transformation"],
+    keywordsTr: ["sağlık krizi", "iş güç dinamikleri", "yaşam tarzı revizyonu", "günlük dönüşüm"],
+    durationEn: "12-20 years",
+    durationTr: "12-20 yıl",
+  },
+  pluto_7: {
+    titleEn: "Pluto in Your 7th House — Relationship Metamorphosis",
+    titleTr: "Plüton 7. Evinde — İlişki Metamorfozu",
+    bodyEn:
+      "Pluto in your seventh house transforms partnerships at the most fundamental level. Relationships become arenas for power dynamics, deep intimacy, and personal evolution. You may attract powerful partners or need to confront control issues. The partnerships that survive this transit become unbreakable — those that don't were built on illusion.",
+    bodyTr:
+      "Plüton yedinci evinizde ortaklıkları en temel düzeyde dönüştürüyor. İlişkiler güç dinamikleri, derin yakınlık ve kişisel evrim arenalarına dönüşüyor. Güçlü partnerler çekebilir veya kontrol sorunlarıyla yüzleşmeniz gerekebilir. Bu transitten sağ çıkan ortaklıklar kırılmaz olur.",
+    keywordsEn: ["power in relationships", "deep intimacy", "partnership evolution", "shadow work"],
+    keywordsTr: ["ilişkilerde güç", "derin yakınlık", "ortaklık evrimi", "gölge çalışması"],
+    durationEn: "12-20 years",
+    durationTr: "12-20 yıl",
+  },
+  pluto_8: {
+    titleEn: "Pluto in Your 8th House — Phoenix Rising",
+    titleTr: "Plüton 8. Evinde — Anka Kuşu Yükselişi",
+    bodyEn:
+      "Pluto is in its natural house, making this one of the most intense transits possible. Themes of death and rebirth — literal or metaphorical — dominate. Financial entanglements, inheritance, sexuality, and psychological depth reach extremes. You descend into the underworld of your psyche and return transformed. Nothing superficial survives this transit.",
+    bodyTr:
+      "Plüton doğal evinde, bu onu olası en yoğun transitlerden biri yapıyor. Ölüm ve yeniden doğuş temaları — gerçek veya metaforik — hakimdir. Mali bağlar, miras, cinsellik ve psikolojik derinlik uç noktalara ulaşır. Psişenizin yeraltı dünyasına inersiniz ve dönüşmüş olarak geri dönersiniz.",
+    keywordsEn: ["death and rebirth", "extreme transformation", "psychological depth", "power"],
+    keywordsTr: ["ölüm ve yeniden doğuş", "uç dönüşüm", "psikolojik derinlik", "güç"],
+    durationEn: "12-20 years",
+    durationTr: "12-20 yıl",
+  },
+  pluto_9: {
+    titleEn: "Pluto in Your 9th House — Belief System Overthrow",
+    titleTr: "Plüton 9. Evinde — İnanç Sistemi Devrimi",
+    bodyEn:
+      "Pluto transiting your ninth house demolishes belief systems that no longer serve your evolution. Your worldview, philosophy, and relationship with truth undergo radical transformation. Travel to foreign lands may trigger profound inner changes. You emerge with convictions forged in fire rather than inherited by default.",
+    bodyTr:
+      "Plüton dokuzuncu evinizden geçerken evriminize artık hizmet etmeyen inanç sistemlerini yıkıyor. Dünya görüşünüz, felsefeniz ve hakikatle ilişkiniz radikal bir dönüşümden geçiyor. Yabancı ülkelere seyahat derin iç değişimler tetikleyebilir.",
+    keywordsEn: ["belief transformation", "philosophical depth", "truth seeking", "worldview shift"],
+    keywordsTr: ["inanç dönüşümü", "felsefi derinlik", "hakikat arayışı", "dünya görüşü değişimi"],
+    durationEn: "12-20 years",
+    durationTr: "12-20 yıl",
+  },
+  pluto_10: {
+    titleEn: "Pluto in Your 10th House — Power & Legacy",
+    titleTr: "Plüton 10. Evinde — Güç ve Miras",
+    bodyEn:
+      "Pluto in your tenth house transforms your career, public image, and relationship with authority. You may rise to positions of great power or face power struggles with those above you. Your ambitions become all-consuming. The question is not whether you'll be powerful — it's whether you'll use that power wisely. This transit forges leaders.",
+    bodyTr:
+      "Plüton onuncu evinizde kariyerinizi, kamusal imajınızı ve otoriteyle ilişkinizi dönüştürüyor. Büyük güç pozisyonlarına yükselebilir veya üstünüzdekilerle güç mücadeleleriyle yüzleşebilirsiniz. Hırslarınız her şeyi kapsar hale gelir. Bu transit liderler yaratır.",
+    keywordsEn: ["career power", "authority", "legacy", "ambition"],
+    keywordsTr: ["kariyer gücü", "otorite", "miras", "hırs"],
+    durationEn: "12-20 years",
+    durationTr: "12-20 yıl",
+  },
+  pluto_11: {
+    titleEn: "Pluto in Your 11th House — Social Revolution",
+    titleTr: "Plüton 11. Evinde — Sosyal Devrim",
+    bodyEn:
+      "Pluto transiting your eleventh house transforms your relationship with groups, friendships, and your vision for the future. Some friendships end dramatically; new alliances form around deeper shared purpose. Your hopes and dreams are purged of what was never truly yours. You discover the difference between belonging and conforming.",
+    bodyTr:
+      "Plüton on birinci evinizden geçerken gruplar, arkadaşlıklar ve gelecek vizyonunuzla ilişkinizi dönüştürüyor. Bazı arkadaşlıklar dramatik şekilde biter; daha derin ortak amaç etrafında yeni ittifaklar oluşur. Ait olmak ile uymak arasındaki farkı keşfedersiniz.",
+    keywordsEn: ["social transformation", "group power", "future vision", "authentic belonging"],
+    keywordsTr: ["sosyal dönüşüm", "grup gücü", "gelecek vizyonu", "otantik aidiyet"],
+    durationEn: "12-20 years",
+    durationTr: "12-20 yıl",
+  },
+  pluto_12: {
+    titleEn: "Pluto in Your 12th House — The Great Dissolution",
+    titleTr: "Plüton 12. Evinde — Büyük Çözülme",
+    bodyEn:
+      "Pluto in your twelfth house is the most mysterious and profound of all transits. The subconscious becomes a battlefield and a temple simultaneously. Hidden enemies, self-undoing patterns, and spiritual crises surface for final resolution. Dreams become vivid and prophetic. You are being prepared — emptied — for a complete rebirth when Pluto crosses your ascendant.",
+    bodyTr:
+      "Plüton on ikinci evinizde tüm transitlerin en gizemli ve derini. Bilinçaltı aynı anda bir savaş alanı ve tapınak olur. Gizli düşmanlar, kendi kendini sabote eden kalıplar ve manevi krizler nihai çözüm için yüzeye çıkar. Rüyalar canlı ve kehanet niteliğinde olur. Plüton yükseleninizi geçtiğinde tam bir yeniden doğuş için hazırlanıyorsunuz.",
+    keywordsEn: ["subconscious purge", "spiritual crisis", "hidden depths", "preparation for rebirth"],
+    keywordsTr: ["bilinçaltı arınma", "manevi kriz", "gizli derinlikler", "yeniden doğuşa hazırlık"],
+    durationEn: "12-20 years",
+    durationTr: "12-20 yıl",
+  },
+
+  // ═══════════════════════════════════════
+  // NEPTUNE TRANSITS (long-term ~14 years per sign)
+  // ═══════════════════════════════════════
+  neptune_1: {
+    titleEn: "Neptune in Your 1st House — Dissolving the Mask",
+    titleTr: "Neptün 1. Evinde — Maskeyi Çözmek",
+    bodyEn:
+      "Neptune transiting your first house dissolves the boundaries of your identity. You may feel less certain about who you are, more sensitive to others' energy, and drawn to artistic or spiritual expression. The ego softens. This is a profoundly creative but also confusing time — you're learning to exist without rigid definitions of self.",
+    bodyTr:
+      "Neptün birinci evinizden geçerken kimliğinizin sınırlarını çözüyor. Kim olduğunuz konusunda daha az emin, başkalarının enerjisine daha duyarlı ve sanatsal veya manevi ifadeye çekilmiş hissedebilirsiniz. Ego yumuşar. Son derece yaratıcı ama aynı zamanda kafa karıştırıcı bir zaman.",
+    keywordsEn: ["identity dissolution", "sensitivity", "spiritual awakening", "artistic flow"],
+    keywordsTr: ["kimlik çözülmesi", "hassasiyet", "manevi uyanış", "sanatsal akış"],
+    durationEn: "~14 years",
+    durationTr: "~14 yıl",
+  },
+  neptune_2: {
+    titleEn: "Neptune in Your 2nd House — Financial Fog",
+    titleTr: "Neptün 2. Evinde — Mali Sis",
+    bodyEn:
+      "Neptune in your second house creates confusion around money and values. Financial boundaries become blurred — you may be overly generous, fall for scams, or simply lose track of spending. The deeper work is redefining what true wealth means to you. Material security gives way to spiritual richness as your primary value system.",
+    bodyTr:
+      "Neptün ikinci evinizde para ve değerler etrafında kafa karışıklığı yaratıyor. Mali sınırlar bulanıklaşır — aşırı cömert olabilir, dolandırıcılıklara düşebilir veya harcamalarınızı takip edemeyebilirsiniz. Derin çalışma, gerçek zenginliğin sizin için ne anlama geldiğini yeniden tanımlamaktır.",
+    keywordsEn: ["financial confusion", "values shift", "generosity", "spiritual wealth"],
+    keywordsTr: ["mali kafa karışıklığı", "değer kayması", "cömertlik", "manevi zenginlik"],
+    durationEn: "~14 years",
+    durationTr: "~14 yıl",
+  },
+  neptune_3: {
+    titleEn: "Neptune in Your 3rd House — Intuitive Mind",
+    titleTr: "Neptün 3. Evinde — Sezgisel Zihin",
+    bodyEn:
+      "Neptune transiting your third house makes your mind more intuitive, imaginative, and poetic — but also prone to confusion and miscommunication. You may struggle with details while excelling at creative writing, music, or artistic expression. Your thinking becomes less logical and more visionary. Trust your hunches, but double-check the facts.",
+    bodyTr:
+      "Neptün üçüncü evinizden geçerken zihninizi daha sezgisel, hayalci ve şiirsel yapıyor — ama aynı zamanda kafa karışıklığı ve yanlış iletişime de yatkın. Detaylarla zorlanırken yaratıcı yazarlık, müzik veya sanatsal ifadede parlayabilirsiniz.",
+    keywordsEn: ["intuition", "creative communication", "poetic mind", "confusion"],
+    keywordsTr: ["sezgi", "yaratıcı iletişim", "şiirsel zihin", "kafa karışıklığı"],
+    durationEn: "~14 years",
+    durationTr: "~14 yıl",
+  },
+  neptune_4: {
+    titleEn: "Neptune in Your 4th House — Ancestral Dreams",
+    titleTr: "Neptün 4. Evinde — Atalardan Gelen Rüyalar",
+    bodyEn:
+      "Neptune in your fourth house dissolves the foundations of your sense of home and belonging. Family illusions shatter. You may idealize your past or feel unmoored from your roots. The invitation is to build an inner home — a spiritual foundation that doesn't depend on external circumstances. Your ancestors speak through dreams during this transit.",
+    bodyTr:
+      "Neptün dördüncü evinizde ev ve aidiyet duygunuzun temellerini çözüyor. Aile yanılsamaları kırılır. Geçmişinizi idealleştirebilir veya köklerinizden kopmuş hissedebilirsiniz. Davet, dış koşullara bağlı olmayan manevi bir temel — bir iç ev — inşa etmektir.",
+    keywordsEn: ["home dissolution", "ancestral healing", "inner foundation", "family illusions"],
+    keywordsTr: ["ev çözülmesi", "ata iyileşmesi", "iç temel", "aile yanılsamaları"],
+    durationEn: "~14 years",
+    durationTr: "~14 yıl",
+  },
+  neptune_5: {
+    titleEn: "Neptune in Your 5th House — Divine Creativity",
+    titleTr: "Neptün 5. Evinde — İlahi Yaratıcılık",
+    bodyEn:
+      "Neptune transiting your fifth house floods your creative life with inspiration and imagination. Art becomes transcendent. Romance becomes idealized — beautiful but sometimes deceptive. You may fall in love with an illusion or create the most inspired work of your life. The line between fantasy and reality blurs in matters of the heart and art.",
+    bodyTr:
+      "Neptün beşinci evinizden geçerken yaratıcı hayatınızı ilham ve hayal gücüyle dolduruyor. Sanat aşkın hale gelir. Romantizm idealleştirilir — güzel ama bazen aldatıcı. Kalp ve sanat meselelerinde fantezi ile gerçeklik arasındaki çizgi bulanıklaşır.",
+    keywordsEn: ["divine inspiration", "idealized romance", "transcendent art", "creative fantasy"],
+    keywordsTr: ["ilahi ilham", "idealleştirilmiş romantizm", "aşkın sanat", "yaratıcı fantezi"],
+    durationEn: "~14 years",
+    durationTr: "~14 yıl",
+  },
+  neptune_6: {
+    titleEn: "Neptune in Your 6th House — Healing Through Surrender",
+    titleTr: "Neptün 6. Evinde — Teslimiyetle İyileşme",
+    bodyEn:
+      "Neptune in your sixth house creates mystery around health and work. Illnesses may be hard to diagnose, symptoms may be psychosomatic, and traditional medicine may not have answers. The healing path is often alternative — acupuncture, energy work, meditation. At work, boundaries dissolve: you may serve others selflessly or be exploited. Discernment is the lesson.",
+    bodyTr:
+      "Neptün altıncı evinizde sağlık ve iş etrafında gizem yaratıyor. Hastalıklar teşhis edilmesi zor olabilir, semptomlar psikosomatik olabilir. İyileşme yolu genellikle alternatiftir — akupunktur, enerji çalışması, meditasyon. İşte sınırlar çözülür: başkalarına özverili hizmet edebilir veya istismar edilebilirsiniz.",
+    keywordsEn: ["mysterious health", "alternative healing", "service", "boundaries at work"],
+    keywordsTr: ["gizemli sağlık", "alternatif iyileşme", "hizmet", "işte sınırlar"],
+    durationEn: "~14 years",
+    durationTr: "~14 yıl",
+  },
+  neptune_7: {
+    titleEn: "Neptune in Your 7th House — Soul Mate or Illusion",
+    titleTr: "Neptün 7. Evinde — Ruh Eşi mi Yanılsama mı",
+    bodyEn:
+      "Neptune transiting your seventh house dissolves the clarity of partnerships. You may meet someone who feels like a soul mate — or project your fantasies onto a partner who can't possibly live up to them. Existing relationships become more spiritual but also more confusing. The lesson: see partners as they truly are, not as you wish them to be.",
+    bodyTr:
+      "Neptün yedinci evinizden geçerken ortaklıkların netliğini çözüyor. Ruh eşi gibi hissettiren biriyle tanışabilirsiniz — veya fantezilerinizi asla karşılayamayacak bir partnere yansıtabilirsiniz. Mevcut ilişkiler daha manevi ama aynı zamanda daha kafa karıştırıcı hale gelir.",
+    keywordsEn: ["idealized partnerships", "soul connections", "romantic fog", "projection"],
+    keywordsTr: ["idealleştirilmiş ortaklıklar", "ruh bağlantıları", "romantik sis", "yansıtma"],
+    durationEn: "~14 years",
+    durationTr: "~14 yıl",
+  },
+  neptune_8: {
+    titleEn: "Neptune in Your 8th House — Mystical Depths",
+    titleTr: "Neptün 8. Evinde — Mistik Derinlikler",
+    bodyEn:
+      "Neptune in your eighth house opens portals to the mystical and unseen. Your intuition about hidden matters is heightened but can also deceive. Financial dealings with others become murky — be cautious with shared investments, insurance, and debts. Sexually and psychologically, boundaries dissolve into oceanic intimacy or dangerous merging.",
+    bodyTr:
+      "Neptün sekizinci evinizde mistik ve görünmeyene portallar açıyor. Gizli konulardaki sezginiz güçleniyor ama aldatıcı da olabiliyor. Başkalarıyla mali ilişkiler bulanıklaşır — ortak yatırımlar, sigorta ve borçlarda dikkatli olun.",
+    keywordsEn: ["mysticism", "hidden finances", "psychic depth", "boundary dissolution"],
+    keywordsTr: ["mistisizm", "gizli mali konular", "psişik derinlik", "sınır çözülmesi"],
+    durationEn: "~14 years",
+    durationTr: "~14 yıl",
+  },
+  neptune_9: {
+    titleEn: "Neptune in Your 9th House — Spiritual Pilgrimage",
+    titleTr: "Neptün 9. Evinde — Manevi Hac",
+    bodyEn:
+      "Neptune transiting your ninth house dissolves rigid belief systems and opens you to spiritual seeking. You may be drawn to pilgrimage, ashrams, or mystical traditions. Higher education in arts, healing, or spiritual subjects calls to you. Be careful not to follow false gurus — your own inner compass is the ultimate teacher.",
+    bodyTr:
+      "Neptün dokuzuncu evinizden geçerken katı inanç sistemlerini çözüyor ve sizi manevi arayışa açıyor. Hac, manevi merkezler veya mistik geleneklere çekilebilirsiniz. Sanat, iyileşme veya manevi konularda yüksek eğitim sizi çağırıyor.",
+    keywordsEn: ["spiritual seeking", "pilgrimage", "dissolving beliefs", "mystical education"],
+    keywordsTr: ["manevi arayış", "hac", "inançları çözme", "mistik eğitim"],
+    durationEn: "~14 years",
+    durationTr: "~14 yıl",
+  },
+  neptune_10: {
+    titleEn: "Neptune in Your 10th House — The Dream Career",
+    titleTr: "Neptün 10. Evinde — Rüya Kariyer",
+    bodyEn:
+      "Neptune in your tenth house blurs your career direction and public image. You may feel lost about your professional path or be drawn to artistic, healing, or spiritual vocations. Your public image becomes more glamorous but also more vulnerable to misperception. The invitation is to align your career with your soul's purpose rather than society's expectations.",
+    bodyTr:
+      "Neptün onuncu evinizde kariyer yönünüzü ve kamusal imajınızı bulanıklaştırıyor. Profesyonel yolunuz hakkında kaybolmuş hissedebilir veya sanatsal, şifa veya manevi mesleklere çekilebilirsiniz. Davet, kariyerinizi toplumun beklentileri yerine ruhunuzun amacıyla hizalamaktır.",
+    keywordsEn: ["career confusion", "artistic vocation", "glamour", "soul purpose"],
+    keywordsTr: ["kariyer kafa karışıklığı", "sanatsal meslek", "cazibe", "ruh amacı"],
+    durationEn: "~14 years",
+    durationTr: "~14 yıl",
+  },
+  neptune_11: {
+    titleEn: "Neptune in Your 11th House — Collective Dreams",
+    titleTr: "Neptün 11. Evinde — Kolektif Rüyalar",
+    bodyEn:
+      "Neptune transiting your eleventh house dissolves the boundaries between you and groups. You may be drawn to spiritual communities, artistic collectives, or charitable organizations. Friendships become more soulful but also more confusing — some friends may deceive you. Your dreams for the future become more idealistic and compassionate.",
+    bodyTr:
+      "Neptün on birinci evinizden geçerken siz ve gruplar arasındaki sınırları çözüyor. Manevi topluluklara, sanatsal kolektiflere veya hayır kuruluşlarına çekilebilirsiniz. Arkadaşlıklar daha ruhani ama aynı zamanda daha kafa karıştırıcı hale gelir.",
+    keywordsEn: ["spiritual community", "idealistic hopes", "collective service", "friendship fog"],
+    keywordsTr: ["manevi topluluk", "idealist umutlar", "kolektif hizmet", "arkadaşlık sisi"],
+    durationEn: "~14 years",
+    durationTr: "~14 yıl",
+  },
+  neptune_12: {
+    titleEn: "Neptune in Your 12th House — The Mystic's Transit",
+    titleTr: "Neptün 12. Evinde — Mistiğin Transiti",
+    bodyEn:
+      "Neptune is at home in your twelfth house — this is the most spiritually potent transit possible. The veil between worlds becomes paper-thin. Dreams are vivid, psychic experiences are common, and you have direct access to the collective unconscious. This can be a time of profound spiritual awakening or complete escapism. The choice is yours.",
+    bodyTr:
+      "Neptün on ikinci evinizde evinde — bu olası en güçlü manevi transit. Dünyalar arasındaki perde kağıt inceliğine gelir. Rüyalar canlıdır, psişik deneyimler yaygındır ve kolektif bilinçdışına doğrudan erişiminiz vardır. Derin manevi uyanış veya tam kaçış zamanı olabilir.",
+    keywordsEn: ["spiritual awakening", "psychic ability", "collective unconscious", "transcendence"],
+    keywordsTr: ["manevi uyanış", "psişik yetenek", "kolektif bilinçdışı", "aşkınlık"],
+    durationEn: "~14 years",
+    durationTr: "~14 yıl",
+  },
+
+  // ═══════════════════════════════════════
+  // URANUS TRANSITS (~7 years per sign)
+  // ═══════════════════════════════════════
+  uranus_1: {
+    titleEn: "Uranus in Your 1st House — Electric Reinvention",
+    titleTr: "Uranüs 1. Evinde — Elektriksel Yeniden İcat",
+    bodyEn:
+      "Uranus transiting your first house electrifies your identity. You crave freedom, authenticity, and radical change. Your appearance, personality, and life direction may shift suddenly and dramatically. Others may be shocked by the new you. This is liberation from every version of yourself that was designed to please others.",
+    bodyTr:
+      "Uranüs birinci evinizden geçerken kimliğinizi elektrikliyor. Özgürlük, otantiklik ve radikal değişim arzularsınız. Görünüşünüz, kişiliğiniz ve yaşam yönünüz aniden ve dramatik şekilde değişebilir. Bu, başkalarını memnun etmek için tasarlanmış her versiyonunuzdan kurtuluştur.",
+    keywordsEn: ["radical change", "freedom", "authenticity", "sudden shifts"],
+    keywordsTr: ["radikal değişim", "özgürlük", "otantiklik", "ani değişimler"],
+    durationEn: "~7 years",
+    durationTr: "~7 yıl",
+  },
+  uranus_2: {
+    titleEn: "Uranus in Your 2nd House — Financial Revolution",
+    titleTr: "Uranüs 2. Evinde — Mali Devrim",
+    bodyEn:
+      "Uranus in your second house brings sudden changes to your financial situation and values. Income may become unpredictable — windfalls and losses come without warning. You may discover unconventional ways to earn money or completely redefine what you value. Financial freedom becomes more important than financial security.",
+    bodyTr:
+      "Uranüs ikinci evinizde mali durumunuzda ve değerlerinizde ani değişiklikler getiriyor. Gelir öngörülmez hale gelebilir — beklenmedik kazançlar ve kayıplar gelir. Paranın alışılmadık yollarını keşfedebilir veya neye değer verdiğinizi tamamen yeniden tanımlayabilirsiniz.",
+    keywordsEn: ["financial surprises", "unconventional income", "value revolution", "freedom"],
+    keywordsTr: ["mali sürprizler", "alışılmadık gelir", "değer devrimi", "özgürlük"],
+    durationEn: "~7 years",
+    durationTr: "~7 yıl",
+  },
+  uranus_3: {
+    titleEn: "Uranus in Your 3rd House — Mind Lightning",
+    titleTr: "Uranüs 3. Evinde — Zihin Şimşeği",
+    bodyEn:
+      "Uranus transiting your third house electrifies your mind with brilliant insights, unconventional ideas, and restless curiosity. You may take up coding, astrology, or avant-garde subjects. Communication becomes more direct and surprising. Your neighborhood or daily environment may change unexpectedly. Siblings bring surprises.",
+    bodyTr:
+      "Uranüs üçüncü evinizden geçerken zihninizi parlak içgörüler, alışılmadık fikirler ve dinmeyen merakla elektrikliyor. Kodlama, astroloji veya avangard konulara yönelebilirsiniz. İletişim daha doğrudan ve şaşırtıcı hale gelir.",
+    keywordsEn: ["brilliant ideas", "unconventional learning", "restless mind", "surprises"],
+    keywordsTr: ["parlak fikirler", "alışılmadık öğrenme", "huzursuz zihin", "sürprizler"],
+    durationEn: "~7 years",
+    durationTr: "~7 yıl",
+  },
+  uranus_4: {
+    titleEn: "Uranus in Your 4th House — Home Revolution",
+    titleTr: "Uranüs 4. Evinde — Ev Devrimi",
+    bodyEn:
+      "Uranus in your fourth house disrupts your domestic life and sense of security. Sudden moves, family upheavals, or a radical reimagining of what 'home' means to you are possible. You may break free from family patterns or create a completely unconventional living situation. Freedom within your private life is the theme.",
+    bodyTr:
+      "Uranüs dördüncü evinizde ev hayatınızı ve güvenlik duygunuzu altüst ediyor. Ani taşınmalar, aile sarsıntıları veya 'ev'in sizin için ne anlama geldiğinin radikal bir yeniden tasarımı mümkün. Aile kalıplarından kurtulabilir veya tamamen alışılmadık bir yaşam durumu yaratabilirsiniz.",
+    keywordsEn: ["sudden moves", "family disruption", "domestic freedom", "breaking patterns"],
+    keywordsTr: ["ani taşınmalar", "aile sarsıntısı", "ev özgürlüğü", "kalıpları kırma"],
+    durationEn: "~7 years",
+    durationTr: "~7 yıl",
+  },
+  uranus_5: {
+    titleEn: "Uranus in Your 5th House — Creative Lightning",
+    titleTr: "Uranüs 5. Evinde — Yaratıcı Şimşek",
+    bodyEn:
+      "Uranus transiting your fifth house brings sudden creative breakthroughs, unexpected romances, and a fierce need for authentic self-expression. Your creative style becomes more experimental and rebellious. Love affairs begin and end suddenly. If you have children, they may surprise you with their independence. Play becomes revolution.",
+    bodyTr:
+      "Uranüs beşinci evinizden geçerken ani yaratıcı atılımlar, beklenmedik romantizmler ve otantik kendini ifade için şiddetli bir ihtiyaç getiriyor. Yaratıcı tarzınız daha deneysel ve isyankar hale gelir. Aşk ilişkileri aniden başlar ve biter.",
+    keywordsEn: ["creative breakthroughs", "sudden romance", "rebellion", "experimentation"],
+    keywordsTr: ["yaratıcı atılımlar", "ani romantizm", "isyan", "deneysellik"],
+    durationEn: "~7 years",
+    durationTr: "~7 yıl",
+  },
+  uranus_6: {
+    titleEn: "Uranus in Your 6th House — Work Revolution",
+    titleTr: "Uranüs 6. Evinde — İş Devrimi",
+    bodyEn:
+      "Uranus in your sixth house revolutionizes your work and health routines. You may quit a conventional job for freelancing, discover biohacking, or adopt radically different health practices. The 9-to-5 becomes unbearable. Your body demands change — listen to it. Technology may transform how you work daily.",
+    bodyTr:
+      "Uranüs altıncı evinizde iş ve sağlık rutinlerinizi devrimleştiriyor. Geleneksel bir işi bırakıp serbest çalışmaya geçebilir, biyohacking keşfedebilir veya radikal farklı sağlık uygulamaları benimseyebilirsiniz. Bedeniniz değişim talep ediyor — onu dinleyin.",
+    keywordsEn: ["work disruption", "health innovation", "routine revolution", "technology"],
+    keywordsTr: ["iş sarsıntısı", "sağlık yeniliği", "rutin devrimi", "teknoloji"],
+    durationEn: "~7 years",
+    durationTr: "~7 yıl",
+  },
+  uranus_7: {
+    titleEn: "Uranus in Your 7th House — Relationship Earthquake",
+    titleTr: "Uranüs 7. Evinde — İlişki Depremi",
+    bodyEn:
+      "Uranus transiting your seventh house shakes up partnerships. Relationships that restrict your freedom may end suddenly. You may attract unusual, eccentric, or freedom-loving partners. Existing partnerships need to evolve or risk breaking. The key is creating relationships that honor both connection and individual freedom.",
+    bodyTr:
+      "Uranüs yedinci evinizden geçerken ortaklıkları sarsıyor. Özgürlüğünüzü kısıtlayan ilişkiler aniden bitebilir. Sıra dışı, eksantrik veya özgürlükçü partnerler çekebilirsiniz. Mevcut ortaklıkların evrilmesi gerekiyor yoksa kırılma riski var.",
+    keywordsEn: ["sudden separations", "unconventional partners", "freedom in love", "evolution"],
+    keywordsTr: ["ani ayrılıklar", "alışılmadık partnerler", "aşkta özgürlük", "evrim"],
+    durationEn: "~7 years",
+    durationTr: "~7 yıl",
+  },
+  uranus_8: {
+    titleEn: "Uranus in Your 8th House — Sudden Transformation",
+    titleTr: "Uranüs 8. Evinde — Ani Dönüşüm",
+    bodyEn:
+      "Uranus in your eighth house brings sudden changes in shared finances, sexuality, and psychological depth. Unexpected inheritances, tax surprises, or financial upheavals through others are possible. Your sexuality may evolve in unexpected directions. Psychologically, breakthroughs come like lightning — sudden insights that change everything.",
+    bodyTr:
+      "Uranüs sekizinci evinizde ortak mali konularda, cinsellikte ve psikolojik derinlikte ani değişiklikler getiriyor. Beklenmedik miraslar, vergi sürprizleri veya başkaları aracılığıyla mali sarsıntılar mümkün. Psikolojik atılımlar şimşek gibi gelir — her şeyi değiştiren ani içgörüler.",
+    keywordsEn: ["sudden financial shifts", "psychological breakthroughs", "sexual evolution", "upheaval"],
+    keywordsTr: ["ani mali değişimler", "psikolojik atılımlar", "cinsel evrim", "sarsıntı"],
+    durationEn: "~7 years",
+    durationTr: "~7 yıl",
+  },
+  uranus_9: {
+    titleEn: "Uranus in Your 9th House — Worldview Shock",
+    titleTr: "Uranüs 9. Evinde — Dünya Görüşü Şoku",
+    bodyEn:
+      "Uranus transiting your ninth house shatters your existing worldview and replaces it with something more expansive. You may suddenly travel to unexpected places, discover astrology or quantum physics, or have experiences that make your old beliefs impossible to maintain. Higher education takes unconventional forms. You become the heretic with the correct answer.",
+    bodyTr:
+      "Uranüs dokuzuncu evinizden geçerken mevcut dünya görüşünüzü parçalıyor ve daha geniş bir şeyle değiştiriyor. Aniden beklenmedik yerlere seyahat edebilir, astroloji veya kuantum fiziği keşfedebilir veya eski inançlarınızı sürdürmeyi imkansız kılan deneyimler yaşayabilirsiniz.",
+    keywordsEn: ["worldview revolution", "unconventional education", "sudden travel", "paradigm shift"],
+    keywordsTr: ["dünya görüşü devrimi", "alışılmadık eğitim", "ani seyahat", "paradigma değişimi"],
+    durationEn: "~7 years",
+    durationTr: "~7 yıl",
+  },
+  uranus_10: {
+    titleEn: "Uranus in Your 10th House — Career Disruption",
+    titleTr: "Uranüs 10. Evinde — Kariyer Sarsıntısı",
+    bodyEn:
+      "Uranus in your tenth house disrupts your career and public image. Sudden job changes, unexpected fame, or complete career pivots are characteristic. You can no longer tolerate doing work that doesn't reflect your authentic self. The corporate ladder breaks — you build your own staircase. Your reputation becomes associated with innovation and originality.",
+    bodyTr:
+      "Uranüs onuncu evinizde kariyerinizi ve kamusal imajınızı altüst ediyor. Ani iş değişiklikleri, beklenmedik şöhret veya tam kariyer dönüşleri karakteristiktir. Artık otantik benliğinizi yansıtmayan iş yapmaya tahammül edemezsiniz. İtibarınız yenilik ve özgünlükle ilişkilendirilir.",
+    keywordsEn: ["career pivot", "unexpected fame", "innovation", "authenticity at work"],
+    keywordsTr: ["kariyer dönüşü", "beklenmedik şöhret", "yenilik", "işte otantiklik"],
+    durationEn: "~7 years",
+    durationTr: "~7 yıl",
+  },
+  uranus_11: {
+    titleEn: "Uranus in Your 11th House — Social Awakening",
+    titleTr: "Uranüs 11. Evinde — Sosyal Uyanış",
+    bodyEn:
+      "Uranus is at home in your eleventh house, making this a powerful time for social revolution. Your friend group transforms radically — you attract visionaries, rebels, and innovators. Old social circles may feel suffocating. Your hopes for the future become more radical and humanitarian. You discover your role in the collective awakening.",
+    bodyTr:
+      "Uranüs on birinci evinizde evinde, bu onu sosyal devrim için güçlü bir zaman yapıyor. Arkadaş grubunuz radikal şekilde dönüşür — vizyonerler, isyancılar ve yenilikçiler çekersiniz. Gelecek umutlarınız daha radikal ve insancıl hale gelir. Kolektif uyanıştaki rolünüzü keşfedersiniz.",
+    keywordsEn: ["social revolution", "visionary friends", "humanitarian ideals", "awakening"],
+    keywordsTr: ["sosyal devrim", "vizyoner arkadaşlar", "insancıl idealler", "uyanış"],
+    durationEn: "~7 years",
+    durationTr: "~7 yıl",
+  },
+  uranus_12: {
+    titleEn: "Uranus in Your 12th House — Subconscious Liberation",
+    titleTr: "Uranüs 12. Evinde — Bilinçaltı Kurtuluşu",
+    bodyEn:
+      "Uranus transiting your twelfth house liberates your subconscious mind. Hidden aspects of yourself surface unexpectedly — sudden spiritual awakenings, psychic experiences, or the breaking of self-imposed prisons. You may be drawn to meditation, lucid dreaming, or consciousness exploration. What was repressed demands freedom. This transit prepares you for radical reinvention when Uranus crosses your ascendant.",
+    bodyTr:
+      "Uranüs on ikinci evinizden geçerken bilinçaltınızı özgürleştiriyor. Kendinizin gizli yönleri beklenmedik şekilde yüzeye çıkar — ani manevi uyanışlar, psişik deneyimler veya kendi kendinize kurduğunuz hapishanelerin yıkılması. Bastırılan özgürlük talep ediyor.",
+    keywordsEn: ["subconscious awakening", "spiritual liberation", "psychic breakthroughs", "hidden freedom"],
+    keywordsTr: ["bilinçaltı uyanışı", "manevi kurtuluş", "psişik atılımlar", "gizli özgürlük"],
+    durationEn: "~7 years",
+    durationTr: "~7 yıl",
+  },
 };

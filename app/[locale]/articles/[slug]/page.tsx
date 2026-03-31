@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { locales, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { getArticles } from "@/content/articles";
+import { getZodiacSigns } from "@/content/zodiac";
 
 interface PageProps {
   params: Promise<{ locale: string; slug: string }>;
@@ -50,6 +51,8 @@ export default async function ArticlePage({ params }: PageProps) {
 
   const isEn = locale === "en";
   const localePath = isEn ? "" : `/${locale}`;
+  const signs = getZodiacSigns(locale as Locale);
+  const signNameMap = Object.fromEntries(signs.map((s) => [s.slug, s.name]));
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -104,7 +107,7 @@ export default async function ArticlePage({ params }: PageProps) {
       <article className="max-w-3xl mx-auto px-4 py-12">
         <header className="mb-10">
           <span className="zodiac-badge bg-cosmic-surface border-cosmic-border text-cosmic-muted text-xs capitalize mb-4 inline-block">
-            {article.category}
+            {(dict.articles.categories as Record<string, string>)[article.category] ?? article.category}
           </span>
           <h1 className="text-3xl md:text-4xl font-display text-cosmic-accent mb-4">
             {article.title}
@@ -137,7 +140,7 @@ export default async function ArticlePage({ params }: PageProps) {
                   href={`${localePath}/zodiac/${sign}`}
                   className="text-cosmic-accent hover:underline capitalize"
                 >
-                  {sign}
+                  {signNameMap[sign] ?? sign}
                 </a>
               ))}
             </div>

@@ -156,7 +156,7 @@ export default function TransitBanner({
                       ? "bg-cosmic-accent w-6"
                       : "bg-cosmic-border hover:bg-cosmic-muted"
                   }`}
-                  aria-label={`Transit ${i + 1}`}
+                  aria-label={isEn ? `Transit ${i + 1}` : `Transit ${i + 1}`}
                 />
               ))}
             </div>

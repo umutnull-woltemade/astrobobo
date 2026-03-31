@@ -1,9 +1,11 @@
 import { NextResponse } from "next/server";
-import { articles } from "@/content/articles";
+import { articles, getArticles } from "@/content/articles";
+import { isValidLocale } from "@/lib/i18n/config";
 
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
+    const lang = searchParams.get("lang") || "en";
     const category = searchParams.get("category");
     const tag = searchParams.get("tag");
     const parsedLimit = parseInt(searchParams.get("limit") || "20", 10);
@@ -11,7 +13,7 @@ export async function GET(request: Request) {
     const limit = Number.isNaN(parsedLimit) ? 20 : Math.max(1, Math.min(parsedLimit, 100));
     const offset = Number.isNaN(parsedOffset) ? 0 : Math.max(0, parsedOffset);
 
-    let filtered = articles;
+    let filtered = isValidLocale(lang) ? getArticles(lang) : articles;
 
     if (category) {
       filtered = filtered.filter((a) => a.category === category);
@@ -22,7 +24,7 @@ export async function GET(request: Request) {
       );
     }
 
-    const sorted = filtered.sort(
+    const sorted = [...filtered].sort(
       (a, b) =>
         new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
     );

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { locales, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import "@/styles/globals.css";
+import LanguageSwitcher from "@/components/language-switcher";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -64,7 +65,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
           url: "/images/og/og-default.png",
           width: 1200,
           height: 630,
-          alt: "Astrobobo - Cosmic Self-Discovery",
+          alt: isEn ? "Astrobobo - Cosmic Self-Discovery" : "Astrobobo - Kozmik Kendini Keşfetme",
         },
       ],
     },
@@ -118,12 +119,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
                 <a href={`${localePath}/articles`} className="text-cosmic-muted hover:text-cosmic-text transition-colors">
                   {dict.nav.articles}
                 </a>
-                <a
-                  href={isEn ? "/tr" : "/"}
-                  className="text-cosmic-muted hover:text-cosmic-accent transition-colors text-sm border border-cosmic-border rounded-md px-2 py-1"
-                >
-                  {isEn ? "TR" : "EN"}
-                </a>
+                <LanguageSwitcher isEn={isEn} />
               </div>
 
               {/* Mobile Nav Toggle + Links */}
@@ -134,12 +130,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
                 <a href={`${localePath}/articles`} className="text-cosmic-muted hover:text-cosmic-text transition-colors text-sm">
                   {dict.nav.articles}
                 </a>
-                <a
-                  href={isEn ? "/tr" : "/"}
-                  className="text-cosmic-muted hover:text-cosmic-accent transition-colors text-xs border border-cosmic-border rounded-md px-2 py-1"
-                >
-                  {isEn ? "TR" : "EN"}
-                </a>
+                <LanguageSwitcher isEn={isEn} small />
               </div>
             </div>
           </div>

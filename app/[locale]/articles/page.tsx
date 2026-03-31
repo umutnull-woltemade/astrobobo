@@ -52,7 +52,7 @@ export default async function ArticlesPage({ params }: PageProps) {
             key={cat}
             className="zodiac-badge bg-cosmic-surface border-cosmic-border text-cosmic-muted cursor-pointer hover:border-cosmic-accent/30 capitalize"
           >
-            {cat}
+            {(dict.articles.categories as Record<string, string>)[cat] ?? cat}
           </span>
         ))}
       </div>
@@ -66,7 +66,7 @@ export default async function ArticlesPage({ params }: PageProps) {
             className="cosmic-card group flex flex-col"
           >
             <span className="zodiac-badge bg-cosmic-surface border-cosmic-border text-cosmic-muted text-xs w-fit capitalize mb-3">
-              {article.category}
+              {(dict.articles.categories as Record<string, string>)[article.category] ?? article.category}
             </span>
             <h2 className="text-lg font-display text-cosmic-text group-hover:text-cosmic-accent transition-colors mb-2">
               {article.title}

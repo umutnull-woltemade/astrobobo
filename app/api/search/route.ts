@@ -1,17 +1,24 @@
 import { NextResponse } from "next/server";
-import { zodiacSigns } from "@/content/zodiac/signs";
-import { articles } from "@/content/articles";
+import { getZodiacSigns } from "@/content/zodiac";
+import { getArticles } from "@/content/articles";
+import { isValidLocale, type Locale } from "@/lib/i18n/config";
 
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
     const q = searchParams.get("q")?.toLowerCase();
+    const lang = searchParams.get("lang") || "en";
+    const locale: Locale = isValidLocale(lang) ? lang : "en";
     const parsedLimit = parseInt(searchParams.get("limit") || "20", 10);
     const limit = Number.isNaN(parsedLimit) ? 20 : Math.max(1, Math.min(parsedLimit, 100));
+    const localePath = locale === "en" ? "" : `/${locale}`;
 
     if (!q || q.length < 2) {
       return NextResponse.json({ error: "Query must be at least 2 characters" }, { status: 400 });
     }
+
+    const zodiacSigns = getZodiacSigns(locale);
+    const articles = getArticles(locale);
 
     const signResults = zodiacSigns
       .filter(
@@ -26,7 +33,7 @@ export async function GET(request: Request) {
         slug: s.slug,
         title: s.name,
         description: s.overview.slice(0, 150),
-        url: `/zodiac/${s.slug}`,
+        url: `${localePath}/zodiac/${s.slug}`,
       }));
 
     const articleResults = articles
@@ -41,7 +48,7 @@ export async function GET(request: Request) {
         slug: a.slug,
         title: a.title,
         description: a.description,
-        url: `/articles/${a.slug}`,
+        url: `${localePath}/articles/${a.slug}`,
       }));
 
     const results = [...signResults, ...articleResults].slice(0, limit);

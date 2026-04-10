@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import '../../core/runtime_flags.dart';
 import '../models/user_profile.dart';
 import '../providers/app_providers.dart';
 import 'package:flutter/material.dart';
@@ -32,6 +33,15 @@ class StorageService {
 
   /// Initialize Hive and open boxes
   static Future<void> initialize() async {
+    // In widget test environment avoid initializing Hive (which depends on
+    // platform paths). Tests that need storage should initialize Hive with a
+    // test path or mock StorageService directly. Skipping here prevents
+    // HiveError during general widget tests.
+    if (isRunningTests) {
+      if (kDebugMode) debugPrint('StorageService.initialize skipped in tests');
+      return;
+    }
+
     try {
       await Hive.initFlutter();
 

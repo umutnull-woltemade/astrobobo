@@ -137,98 +137,105 @@ class KarmicDebtScreen extends StatelessWidget {
             colors: [color.withValues(alpha: 0.4), Colors.transparent],
           ),
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            // Number with chain symbol
-            Stack(
-              alignment: Alignment.center,
-              children: [
-                Container(
-                  width: 100,
-                  height: 100,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    gradient: LinearGradient(
-                      colors: [color, color.withValues(alpha: 0.6)],
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: color.withValues(alpha: 0.5),
-                        blurRadius: 30,
-                        spreadRadius: 5,
-                      ),
-                    ],
-                  ),
-                  child: Center(
-                    child: Text(
-                      debtNumber.toString(),
-                      style: Theme.of(context).textTheme.displayMedium
-                          ?.copyWith(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
-                    ),
-                  ),
-                ),
-                // Chain icon
-                Positioned(
-                  bottom: -5,
-                  right: -5,
-                  child: Container(
-                    padding: const EdgeInsets.all(6),
+        child: SingleChildScrollView(
+          physics: const NeverScrollableScrollPhysics(),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              // Number with chain symbol
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  Container(
+                    width: 100,
+                    height: 100,
                     decoration: BoxDecoration(
-                      color: AppColors.surfaceDark,
                       shape: BoxShape.circle,
-                      border: Border.all(color: color, width: 2),
+                      gradient: LinearGradient(
+                        colors: [color, color.withValues(alpha: 0.6)],
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: color.withValues(alpha: 0.5),
+                          blurRadius: 30,
+                          spreadRadius: 5,
+                        ),
+                      ],
                     ),
-                    child: Text(
-                      content.symbol,
-                      style: const TextStyle(fontSize: 16),
+                    child: Center(
+                      child: Text(
+                        debtNumber.toString(),
+                        style: Theme.of(context).textTheme.displayMedium
+                            ?.copyWith(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                      ),
                     ),
                   ),
+                  // Chain icon
+                  Positioned(
+                    bottom: -5,
+                    right: -5,
+                    child: Container(
+                      padding: const EdgeInsets.all(6),
+                      decoration: BoxDecoration(
+                        color: AppColors.surfaceDark,
+                        shape: BoxShape.circle,
+                        border: Border.all(color: color, width: 2),
+                      ),
+                      child: Text(
+                        content.symbol,
+                        style: const TextStyle(fontSize: 16),
+                      ),
+                    ),
+                  ),
+                ],
+              ).animate().scale(duration: 400.ms, curve: Curves.elasticOut),
+              const SizedBox(height: 16),
+              // Karmic Debt badge
+              Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 4,
                 ),
-              ],
-            ).animate().scale(duration: 400.ms, curve: Curves.elasticOut),
-            const SizedBox(height: 16),
-            // Karmic Debt badge
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-              decoration: BoxDecoration(
-                color: AppColors.error.withValues(alpha: 0.2),
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(
-                  color: AppColors.error.withValues(alpha: 0.5),
+                decoration: BoxDecoration(
+                  color: AppColors.error.withValues(alpha: 0.2),
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(
+                    color: AppColors.error.withValues(alpha: 0.5),
+                  ),
                 ),
-              ),
-              child: const Text(
-                'KARMİK BORÇ',
-                style: TextStyle(
-                  color: AppColors.error,
-                  fontSize: 10,
+                child: const Text(
+                  'KARMİK BORÇ',
+                  style: TextStyle(
+                    color: AppColors.error,
+                    fontSize: 10,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 1,
+                  ),
+                ),
+              ).animate().fadeIn(delay: 200.ms),
+              const SizedBox(height: 8),
+              // Title
+              Text(
+                content.title,
+                style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                  color: AppColors.textPrimary,
                   fontWeight: FontWeight.bold,
-                  letterSpacing: 1,
                 ),
-              ),
-            ).animate().fadeIn(delay: 200.ms),
-            const SizedBox(height: 8),
-            // Title
-            Text(
-              content.title,
-              style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                color: AppColors.textPrimary,
-                fontWeight: FontWeight.bold,
-              ),
-            ).animate().fadeIn(delay: 300.ms),
-            const SizedBox(height: 4),
-            Text(
-              '${content.reducesTo} sayısına indirgenir • ${content.archetype}',
-              style: Theme.of(
-                context,
-              ).textTheme.bodySmall?.copyWith(color: AppColors.textMuted),
-            ).animate().fadeIn(delay: 400.ms),
-            const SizedBox(height: 20),
-          ],
+              ).animate().fadeIn(delay: 300.ms),
+              const SizedBox(height: 4),
+              Text(
+                '${content.reducesTo} sayısına indirgenir • ${content.archetype}',
+                style: Theme.of(
+                  context,
+                ).textTheme.bodySmall?.copyWith(color: AppColors.textMuted),
+              ).animate().fadeIn(delay: 400.ms),
+              const SizedBox(height: 20),
+            ],
+          ),
         ),
       ),
     );

@@ -1,4 +1,4 @@
-import 'dart:io' show Platform;
+import 'package:astrology_app/core/platform_compat.dart';
 import 'package:flutter/foundation.dart' show kIsWeb, debugPrint;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -26,7 +26,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
   bool get _showAppleSignIn {
     if (kIsWeb) return true; // Web'de her zaman goster
     try {
-      return Platform.isIOS || Platform.isMacOS;
+      return PlatformCompat.isIOS || PlatformCompat.isMacOS;
     } catch (_) {
       return false;
     }

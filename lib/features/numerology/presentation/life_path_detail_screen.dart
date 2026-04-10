@@ -316,93 +316,100 @@ class LifePathDetailScreen extends StatelessWidget {
             colors: [color.withValues(alpha: 0.3), Colors.transparent],
           ),
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            // AI-QUOTABLE: H1 Soru formatı
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: AppConstants.spacingLg,
+        child: SingleChildScrollView(
+          physics: const NeverScrollableScrollPhysics(),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              // AI-QUOTABLE: H1 Soru formatı
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: AppConstants.spacingLg,
+                ),
+                child: Text(
+                  'Yaşam yolu ${content.number} ne demek?',
+                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                    color: AppColors.textPrimary,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
               ),
-              child: Text(
-                'Yaşam yolu ${content.number} ne demek?',
+              const SizedBox(height: 8),
+              // Brand tag
+              Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 4,
+                ),
+                decoration: BoxDecoration(
+                  color: color.withValues(alpha: 0.15),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Text(
+                  'Numeroloji',
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: color,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
+              // Number Circle
+              Container(
+                width: 80,
+                height: 80,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  gradient: LinearGradient(
+                    colors: [
+                      _getColorForNumber(content.number),
+                      _getColorForNumber(content.number).withValues(alpha: 0.6),
+                    ],
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: _getColorForNumber(
+                        content.number,
+                      ).withValues(alpha: 0.5),
+                      blurRadius: 20,
+                      spreadRadius: 5,
+                    ),
+                  ],
+                ),
+                child: Center(
+                  child: Text(
+                    content.number.toString(),
+                    style: Theme.of(context).textTheme.displayMedium?.copyWith(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ).animate().scale(duration: 400.ms, curve: Curves.elasticOut),
+              const SizedBox(height: 12),
+              // Title
+              Text(
+                'Yaşam Yolu ${content.number}: ${content.title}',
                 style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                   color: AppColors.textPrimary,
                   fontWeight: FontWeight.bold,
                 ),
-                textAlign: TextAlign.center,
-              ),
-            ),
-            const SizedBox(height: 8),
-            // Brand tag
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-              decoration: BoxDecoration(
-                color: color.withValues(alpha: 0.15),
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Text(
-                'Numeroloji',
-                style: TextStyle(
-                  fontSize: 12,
-                  color: color,
-                  fontWeight: FontWeight.w500,
+              ).animate().fadeIn(delay: 200.ms),
+              const SizedBox(height: 4),
+              // Archetype
+              Text(
+                content.archetype,
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  color: AppColors.textSecondary,
+                  fontStyle: FontStyle.italic,
                 ),
-              ),
-            ),
-            const SizedBox(height: 16),
-            // Number Circle
-            Container(
-              width: 80,
-              height: 80,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                gradient: LinearGradient(
-                  colors: [
-                    _getColorForNumber(content.number),
-                    _getColorForNumber(content.number).withValues(alpha: 0.6),
-                  ],
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: _getColorForNumber(
-                      content.number,
-                    ).withValues(alpha: 0.5),
-                    blurRadius: 20,
-                    spreadRadius: 5,
-                  ),
-                ],
-              ),
-              child: Center(
-                child: Text(
-                  content.number.toString(),
-                  style: Theme.of(context).textTheme.displayMedium?.copyWith(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ).animate().scale(duration: 400.ms, curve: Curves.elasticOut),
-            const SizedBox(height: 12),
-            // Title
-            Text(
-              'Yaşam Yolu ${content.number}: ${content.title}',
-              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                color: AppColors.textPrimary,
-                fontWeight: FontWeight.bold,
-              ),
-            ).animate().fadeIn(delay: 200.ms),
-            const SizedBox(height: 4),
-            // Archetype
-            Text(
-              content.archetype,
-              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                color: AppColors.textSecondary,
-                fontStyle: FontStyle.italic,
-              ),
-            ).animate().fadeIn(delay: 300.ms),
-            const SizedBox(height: 20),
-          ],
+              ).animate().fadeIn(delay: 300.ms),
+              const SizedBox(height: 20),
+            ],
+          ),
         ),
       ),
     );

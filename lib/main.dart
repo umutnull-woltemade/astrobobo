@@ -13,6 +13,7 @@ import 'shared/services/router_service.dart';
 import 'shared/widgets/interpretive_text.dart';
 import 'data/services/ad_service.dart';
 import 'data/services/storage_service.dart';
+import 'core/runtime_flags.dart';
 import 'data/services/notification_service.dart';
 import 'data/services/admin_auth_service.dart';
 import 'data/services/admin_analytics_service.dart';
@@ -73,21 +74,28 @@ void main() async {
   if (kDebugMode) {
     debugPrint('⏳ Initializing Supabase...');
   }
+
   try {
-    await Supabase.initialize(
-      url: dotenv.env['SUPABASE_URL'] ?? 'https://placeholder.supabase.co',
-      anonKey: dotenv.env['SUPABASE_ANON_KEY'] ?? 'placeholder-key',
-    ).timeout(
-      const Duration(seconds: 5),
-      onTimeout: () {
-        if (kDebugMode) {
-          debugPrint('⚠️ Warning: Supabase initialization timed out');
-        }
-        throw TimeoutException('Supabase timeout');
-      },
-    );
-    if (kDebugMode) {
-      debugPrint('✓ Supabase initialized');
+    if (!isRunningTests) {
+      await Supabase.initialize(
+        url: dotenv.env['SUPABASE_URL'] ?? 'https://placeholder.supabase.co',
+        anonKey: dotenv.env['SUPABASE_ANON_KEY'] ?? 'placeholder-key',
+      ).timeout(
+        const Duration(seconds: 5),
+        onTimeout: () {
+          if (kDebugMode) {
+            debugPrint('⚠️ Warning: Supabase initialization timed out');
+          }
+          throw TimeoutException('Supabase timeout');
+        },
+      );
+      if (kDebugMode) {
+        debugPrint('✓ Supabase initialized');
+      }
+    } else {
+      if (kDebugMode) {
+        debugPrint('⚠️ Supabase initialization skipped in tests');
+      }
     }
   } catch (e) {
     if (kDebugMode) {

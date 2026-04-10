@@ -1,8 +1,9 @@
-import 'dart:io';
+import 'package:astrology_app/core/platform_compat.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:in_app_review/in_app_review.dart';
 import 'package:url_launcher/url_launcher.dart';
+
 import '../../core/constants/app_constants.dart';
 import 'analytics_service.dart';
 
@@ -106,7 +107,7 @@ class UrlLauncherService {
       final InAppReview inAppReview = InAppReview.instance;
 
       String? appStoreId;
-      if (Platform.isIOS) {
+      if (PlatformCompat.isIOS) {
         appStoreId = AppConstants.appStoreId;
       }
 
@@ -129,13 +130,13 @@ class UrlLauncherService {
     if (kIsWeb) {
       // Web doesn't have a store
       return false;
-    } else if (Platform.isIOS) {
+    } else if (PlatformCompat.isIOS) {
       if (AppConstants.appStoreId.isNotEmpty) {
         storeUrl = 'https://apps.apple.com/app/id${AppConstants.appStoreId}';
       } else {
         return false;
       }
-    } else if (Platform.isAndroid) {
+    } else if (PlatformCompat.isAndroid) {
       storeUrl =
           'https://play.google.com/store/apps/details?id=${AppConstants.playStoreId}';
     } else {
@@ -147,9 +148,9 @@ class UrlLauncherService {
 
   /// Share app link
   Future<String> getAppShareLink() async {
-    if (Platform.isIOS && AppConstants.appStoreId.isNotEmpty) {
+    if (PlatformCompat.isIOS && AppConstants.appStoreId.isNotEmpty) {
       return 'https://apps.apple.com/app/id${AppConstants.appStoreId}';
-    } else if (Platform.isAndroid) {
+    } else if (PlatformCompat.isAndroid) {
       return 'https://play.google.com/store/apps/details?id=${AppConstants.playStoreId}';
     }
     return 'https://venusone.com';

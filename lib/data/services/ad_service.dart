@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
 import '../../core/constants/app_constants.dart';
 import 'analytics_service.dart';
 
@@ -18,28 +19,34 @@ class AdConfig {
 
   static String get bannerId {
     if (isTestMode) return testBannerId;
-    if (defaultTargetPlatform == TargetPlatform.android)
+    if (defaultTargetPlatform == TargetPlatform.android) {
       return AppConstants.admobBannerIdAndroid;
-    if (defaultTargetPlatform == TargetPlatform.iOS)
+    }
+    if (defaultTargetPlatform == TargetPlatform.iOS) {
       return AppConstants.admobBannerIdIos;
+    }
     return testBannerId;
   }
 
   static String get interstitialId {
     if (isTestMode) return testInterstitialId;
-    if (defaultTargetPlatform == TargetPlatform.android)
+    if (defaultTargetPlatform == TargetPlatform.android) {
       return AppConstants.admobInterstitialIdAndroid;
-    if (defaultTargetPlatform == TargetPlatform.iOS)
+    }
+    if (defaultTargetPlatform == TargetPlatform.iOS) {
       return AppConstants.admobInterstitialIdIos;
+    }
     return testInterstitialId;
   }
 
   static String get rewardedId {
     if (isTestMode) return testRewardedId;
-    if (defaultTargetPlatform == TargetPlatform.android)
+    if (defaultTargetPlatform == TargetPlatform.android) {
       return AppConstants.admobRewardedIdAndroid;
-    if (defaultTargetPlatform == TargetPlatform.iOS)
+    }
+    if (defaultTargetPlatform == TargetPlatform.iOS) {
       return AppConstants.admobRewardedIdIos;
+    }
     return testRewardedId;
   }
 }

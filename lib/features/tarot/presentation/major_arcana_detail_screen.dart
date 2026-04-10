@@ -139,80 +139,88 @@ class MajorArcanaDetailScreen extends StatelessWidget {
             colors: [color.withValues(alpha: 0.4), Colors.transparent],
           ),
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            // Card Visual
-            Container(
-              width: 120,
-              height: 180,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [color.withValues(alpha: 0.3), AppColors.surfaceDark],
-                ),
-                borderRadius: BorderRadius.circular(16),
-                border: Border.all(color: color, width: 3),
-                boxShadow: [
-                  BoxShadow(
-                    color: color.withValues(alpha: 0.5),
-                    blurRadius: 30,
-                    spreadRadius: 5,
+        child: SingleChildScrollView(
+          physics: const NeverScrollableScrollPhysics(),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              // Card Visual
+              Container(
+                width: 120,
+                height: 180,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
+                      color.withValues(alpha: 0.3),
+                      AppColors.surfaceDark,
+                    ],
                   ),
-                ],
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    _getRomanNumeral(cardNumber),
-                    style: Theme.of(context).textTheme.displayMedium?.copyWith(
-                      color: color,
-                      fontWeight: FontWeight.bold,
+                  borderRadius: BorderRadius.circular(16),
+                  border: Border.all(color: color, width: 3),
+                  boxShadow: [
+                    BoxShadow(
+                      color: color.withValues(alpha: 0.5),
+                      blurRadius: 30,
+                      spreadRadius: 5,
                     ),
-                  ),
-                  const SizedBox(height: 8),
-                  Icon(_getCardIcon(cardNumber), color: color, size: 32),
-                ],
-              ),
-            ).animate().scale(duration: 400.ms, curve: Curves.elasticOut),
-            const SizedBox(height: 16),
-            // Card Name
-            Text(
-              content.nameTr,
-              style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                color: AppColors.textPrimary,
-                fontWeight: FontWeight.bold,
-              ),
-            ).animate().fadeIn(delay: 200.ms),
-            const SizedBox(height: 4),
-            Text(
-              content.name,
-              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                color: AppColors.textMuted,
-                fontStyle: FontStyle.italic,
-              ),
-            ).animate().fadeIn(delay: 300.ms),
-            const SizedBox(height: 8),
-            // Archetype Badge
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-              decoration: BoxDecoration(
-                color: color.withValues(alpha: 0.2),
-                borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: color.withValues(alpha: 0.5)),
-              ),
-              child: Text(
-                content.archetype,
-                style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                  color: color,
-                  fontWeight: FontWeight.w500,
+                  ],
                 ),
-              ),
-            ).animate().fadeIn(delay: 400.ms),
-            const SizedBox(height: 20),
-          ],
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      _getRomanNumeral(cardNumber),
+                      style: Theme.of(context).textTheme.displayMedium
+                          ?.copyWith(color: color, fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(height: 8),
+                    Icon(_getCardIcon(cardNumber), color: color, size: 32),
+                  ],
+                ),
+              ).animate().scale(duration: 400.ms, curve: Curves.elasticOut),
+              const SizedBox(height: 16),
+              // Card Name
+              Text(
+                content.nameTr,
+                style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                  color: AppColors.textPrimary,
+                  fontWeight: FontWeight.bold,
+                ),
+              ).animate().fadeIn(delay: 200.ms),
+              const SizedBox(height: 4),
+              Text(
+                content.name,
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  color: AppColors.textMuted,
+                  fontStyle: FontStyle.italic,
+                ),
+              ).animate().fadeIn(delay: 300.ms),
+              const SizedBox(height: 8),
+              // Archetype Badge
+              Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 6,
+                ),
+                decoration: BoxDecoration(
+                  color: color.withValues(alpha: 0.2),
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(color: color.withValues(alpha: 0.5)),
+                ),
+                child: Text(
+                  content.archetype,
+                  style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                    color: color,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ).animate().fadeIn(delay: 400.ms),
+              const SizedBox(height: 20),
+            ],
+          ),
         ),
       ),
     );

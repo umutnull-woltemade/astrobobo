@@ -6,6 +6,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
+import '../../../core/runtime_flags.dart' as runtime_flags;
+
 import '../../../core/constants/app_constants.dart';
 import '../../../core/constants/routes.dart';
 import '../../../core/theme/app_colors.dart';
@@ -212,7 +214,10 @@ class _WelcomePageState extends State<_WelcomePage>
     _glowController = AnimationController(
       duration: const Duration(seconds: 3),
       vsync: this,
-    )..repeat(reverse: true);
+    );
+    if (!runtime_flags.disableAnimations) {
+      _glowController.repeat(reverse: true);
+    }
 
     // OAuth callback'lerini dinle (web'de sayfa yeniden yüklendiğinde)
     _authStateStream = AuthService.authStateChanges;
@@ -1815,7 +1820,10 @@ class _CosmicWelcomeOverlayState extends State<_CosmicWelcomeOverlay>
     _starController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 3),
-    )..repeat();
+    );
+    if (!runtime_flags.disableAnimations) {
+      _starController.repeat();
+    }
 
     _textController = AnimationController(
       vsync: this,

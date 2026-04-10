@@ -8,6 +8,7 @@ import '../../../../core/theme/app_colors.dart';
 import '../../../../data/models/zodiac_sign.dart';
 import '../../../../data/providers/app_providers.dart';
 import '../../../../data/services/moon_service.dart';
+import '../../../../core/runtime_flags.dart' as runtime_flags;
 import '../../../../shared/widgets/cosmic_background.dart';
 import '../../../../shared/widgets/page_bottom_navigation.dart';
 
@@ -159,51 +160,44 @@ class _QuickDiscoveryBar extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         border: Border.all(color: Colors.white.withOpacity(0.08)),
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+      child: Wrap(
+        alignment: WrapAlignment.center,
+        spacing: 24,
+        runSpacing: 12,
         children: [
           _QuickDiscoveryItem(
             icon: '⭐',
             label: 'Burç Yorumu',
             route: Routes.horoscope,
           ),
-          const SizedBox(width: 24),
           _QuickDiscoveryItem(
             icon: '🗺️',
             label: 'Doğum Haritası',
             route: Routes.birthChart,
           ),
-          const SizedBox(width: 24),
           _QuickDiscoveryItem(
             icon: '🧠',
             label: 'Theta Healing',
             route: Routes.thetaHealing,
           ),
-          const SizedBox(width: 24),
           _QuickDiscoveryItem(
             icon: '🌍',
             label: 'Astrokartografi',
             route: Routes.astroCartography,
           ),
-          const SizedBox(width: 24),
           _QuickDiscoveryItem(icon: '🙏', label: 'Reiki', route: Routes.reiki),
-          const SizedBox(width: 24),
           _QuickDiscoveryItem(icon: '🔮', label: 'Tarot', route: Routes.tarot),
-          const SizedBox(width: 24),
           _QuickDiscoveryItem(
             icon: '🔢',
             label: 'Numeroloji',
             route: Routes.numerology,
           ),
-          const SizedBox(width: 24),
           _QuickDiscoveryItem(
             icon: '💜',
             label: 'Çakra',
             route: Routes.chakraAnalysis,
           ),
-          const SizedBox(width: 24),
           _QuickDiscoveryItem(icon: '✨', label: 'Aura', route: Routes.aura),
-          const SizedBox(width: 24),
           _QuickDiscoveryItem(
             icon: '🕯️',
             label: 'Tantra',
@@ -656,7 +650,10 @@ class _AnimatedZodiacSymbolState extends State<_AnimatedZodiacSymbol>
     _controller = AnimationController(
       duration: const Duration(seconds: 10),
       vsync: this,
-    )..repeat();
+    );
+    if (!runtime_flags.disableAnimations) {
+      _controller.repeat();
+    }
   }
 
   @override
@@ -1955,7 +1952,10 @@ class _AllServicesButtonState extends State<_AllServicesButton>
     _controller = AnimationController(
       duration: const Duration(seconds: 3),
       vsync: this,
-    )..repeat();
+    );
+    if (!runtime_flags.disableAnimations) {
+      _controller.repeat();
+    }
   }
 
   @override
@@ -2108,7 +2108,10 @@ class _VenusOneLogoState extends State<_VenusOneLogo>
     _controller = AnimationController(
       duration: const Duration(seconds: 2),
       vsync: this,
-    )..repeat();
+    );
+    if (!runtime_flags.disableAnimations) {
+      _controller.repeat();
+    }
   }
 
   @override
@@ -2287,7 +2290,10 @@ class _KozmozHeaderButtonState extends State<_KozmozHeaderButton>
     _glowController = AnimationController(
       duration: const Duration(milliseconds: 1500),
       vsync: this,
-    )..repeat(reverse: true);
+    );
+    if (!runtime_flags.disableAnimations) {
+      _glowController.repeat(reverse: true);
+    }
   }
 
   @override
@@ -2383,7 +2389,10 @@ class _DreamHeaderButtonState extends State<_DreamHeaderButton>
     _moonController = AnimationController(
       duration: const Duration(milliseconds: 2000),
       vsync: this,
-    )..repeat(reverse: true);
+    );
+    if (!runtime_flags.disableAnimations) {
+      _moonController.repeat(reverse: true);
+    }
   }
 
   @override
@@ -2479,7 +2488,10 @@ class _HoroscopeHeaderButtonState extends State<_HoroscopeHeaderButton>
     _starController = AnimationController(
       duration: const Duration(milliseconds: 1800),
       vsync: this,
-    )..repeat(reverse: true);
+    );
+    if (!runtime_flags.disableAnimations) {
+      _starController.repeat(reverse: true);
+    }
   }
 
   @override

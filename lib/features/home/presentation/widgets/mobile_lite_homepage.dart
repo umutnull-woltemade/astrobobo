@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/constants/routes.dart';
 import '../../../../core/theme/app_colors.dart';
+import '../../../../core/design_system/inner_cycles_icons.dart';
 import '../../../../data/models/zodiac_sign.dart';
 import '../../../../data/providers/app_providers.dart';
 
@@ -185,69 +186,96 @@ class _AboveTheFold extends StatelessWidget {
 
           const SizedBox(height: 16),
 
-          // Quick discovery chips - Kozmik araçlara hızlı erişim
+          // Quick discovery chips — custom icons, no emojis
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
               children: [
                 _QuickDiscoveryChip(
-                  icon: '🌙',
+                  iconWidget: InnerCyclesIcons.dreamEye(
+                    size: 16,
+                    color: isDark ? AppColors.starGold : AppColors.lightStarGold,
+                  ),
                   label: 'Rüya',
                   onTap: () => context.push(Routes.dreamInterpretation),
                   isDark: isDark,
                 ),
                 const SizedBox(width: 8),
                 _QuickDiscoveryChip(
-                  icon: '🌌',
+                  iconWidget: InnerCyclesIcons.kozmoz(
+                    size: 16,
+                    color: isDark ? AppColors.starGold : AppColors.lightStarGold,
+                  ),
                   label: 'Kozmoz İzi',
                   onTap: () => context.push(Routes.kozmoz),
                   isDark: isDark,
                 ),
                 const SizedBox(width: 8),
                 _QuickDiscoveryChip(
-                  icon: '🗺️',
+                  iconWidget: InnerCyclesIcons.birthChart(
+                    size: 16,
+                    color: isDark ? AppColors.starGold : AppColors.lightStarGold,
+                  ),
                   label: 'Doğum Haritası',
                   onTap: () => context.push(Routes.birthChart),
                   isDark: isDark,
                 ),
                 const SizedBox(width: 8),
                 _QuickDiscoveryChip(
-                  icon: '🧠',
+                  iconWidget: InnerCyclesIcons.chakra(
+                    size: 16,
+                    color: isDark ? AppColors.starGold : AppColors.lightStarGold,
+                  ),
                   label: 'Theta Healing',
                   onTap: () => context.push(Routes.thetaHealing),
                   isDark: isDark,
                 ),
                 const SizedBox(width: 8),
                 _QuickDiscoveryChip(
-                  icon: '🌍',
+                  iconWidget: InnerCyclesIcons.insights(
+                    size: 16,
+                    color: isDark ? AppColors.starGold : AppColors.lightStarGold,
+                  ),
                   label: 'Astrokartografi',
                   onTap: () => context.push(Routes.astroCartography),
                   isDark: isDark,
                 ),
                 const SizedBox(width: 8),
                 _QuickDiscoveryChip(
-                  icon: '🙏',
+                  iconWidget: InnerCyclesIcons.cosmicShare(
+                    size: 16,
+                    color: isDark ? AppColors.starGold : AppColors.lightStarGold,
+                  ),
                   label: 'Reiki',
                   onTap: () => context.push(Routes.reiki),
                   isDark: isDark,
                 ),
                 const SizedBox(width: 8),
                 _QuickDiscoveryChip(
-                  icon: '🔮',
+                  iconWidget: InnerCyclesIcons.tarotCards(
+                    size: 16,
+                    color: isDark ? AppColors.starGold : AppColors.lightStarGold,
+                  ),
                   label: 'Tarot',
                   onTap: () => context.push(Routes.tarot),
                   isDark: isDark,
                 ),
                 const SizedBox(width: 8),
                 _QuickDiscoveryChip(
-                  icon: '⭐',
+                  iconWidget: InnerCyclesIcons.dailySun(
+                    size: 16,
+                    color: isDark ? AppColors.starGold : AppColors.lightStarGold,
+                  ),
                   label: 'Burç',
                   onTap: () => context.push(Routes.horoscope),
                   isDark: isDark,
                 ),
                 const SizedBox(width: 8),
                 _QuickDiscoveryChip(
-                  icon: '🕯️',
+                  iconWidget: InnerCyclesIcons.compatibility(
+                    size: 16,
+                    color: isDark ? AppColors.starGold : AppColors.lightStarGold,
+                  ),
                   label: 'Tantra',
                   onTap: () => context.push(Routes.tantra),
                   isDark: isDark,
@@ -519,9 +547,9 @@ class _BelowTheFold extends StatelessWidget {
 
           const SizedBox(height: 16),
 
-          // Entry points list
+          // Entry points list — custom icons
           _EntryPointTile(
-            icon: Icons.wb_sunny_outlined,
+            iconWidget: (Color c) => InnerCyclesIcons.dailySun(size: 22, color: c),
             title: 'Günlük Burç Yorumu',
             subtitle: 'Bugünün kozmik enerjileri',
             route: Routes.horoscope,
@@ -529,7 +557,7 @@ class _BelowTheFold extends StatelessWidget {
           ),
 
           _EntryPointTile(
-            icon: Icons.calendar_month_outlined,
+            iconWidget: (Color c) => InnerCyclesIcons.weeklyMoon(size: 22, color: c),
             title: 'Haftalık Yorum',
             subtitle: 'Bu hafta seni neler bekliyor',
             route: Routes.weeklyHoroscope,
@@ -537,7 +565,7 @@ class _BelowTheFold extends StatelessWidget {
           ),
 
           _EntryPointTile(
-            icon: Icons.auto_awesome_outlined,
+            iconWidget: (Color c) => InnerCyclesIcons.cosmicShare(size: 22, color: c),
             title: 'Kozmik Paylaşım',
             subtitle: 'Kişisel kozmik mesajını paylaş',
             route: Routes.cosmicShare,
@@ -546,7 +574,7 @@ class _BelowTheFold extends StatelessWidget {
           ),
 
           _EntryPointTile(
-            icon: Icons.style_outlined,
+            iconWidget: (Color c) => InnerCyclesIcons.tarotCards(size: 22, color: c),
             title: 'Tarot Falı',
             subtitle: 'Kartlar ne diyor?',
             route: Routes.tarot,
@@ -554,7 +582,7 @@ class _BelowTheFold extends StatelessWidget {
           ),
 
           _EntryPointTile(
-            icon: Icons.favorite_border_outlined,
+            iconWidget: (Color c) => InnerCyclesIcons.compatibility(size: 22, color: c),
             title: 'Burç Uyumu',
             subtitle: 'İlişki uyumunu keşfet',
             route: Routes.compatibility,
@@ -562,7 +590,7 @@ class _BelowTheFold extends StatelessWidget {
           ),
 
           _EntryPointTile(
-            icon: Icons.pie_chart_outline,
+            iconWidget: (Color c) => InnerCyclesIcons.birthChart(size: 22, color: c),
             title: 'Doğum Haritası',
             subtitle: 'Kozmik haritanı incele',
             route: Routes.birthChart,
@@ -586,7 +614,7 @@ class _BelowTheFold extends StatelessWidget {
           const SizedBox(height: 16),
 
           _EntryPointTile(
-            icon: Icons.numbers_outlined,
+            iconWidget: (Color c) => InnerCyclesIcons.numerology(size: 22, color: c),
             title: 'Numeroloji',
             subtitle: 'Sayıların gizemi',
             route: Routes.numerology,
@@ -594,7 +622,7 @@ class _BelowTheFold extends StatelessWidget {
           ),
 
           _EntryPointTile(
-            icon: Icons.nights_stay_outlined,
+            iconWidget: (Color c) => InnerCyclesIcons.dreamEye(size: 22, color: c),
             title: 'Rüya İzi',
             subtitle: 'Rüyalarının anlamı',
             route: Routes.dreamInterpretation,
@@ -602,7 +630,7 @@ class _BelowTheFold extends StatelessWidget {
           ),
 
           _EntryPointTile(
-            icon: Icons.blur_circular_outlined,
+            iconWidget: (Color c) => InnerCyclesIcons.chakra(size: 22, color: c),
             title: 'Chakra Analizi',
             subtitle: 'Enerji merkezlerin',
             route: Routes.chakraAnalysis,
@@ -610,7 +638,7 @@ class _BelowTheFold extends StatelessWidget {
           ),
 
           _EntryPointTile(
-            icon: Icons.all_inclusive_outlined,
+            iconWidget: (Color c) => InnerCyclesIcons.explore(size: 22, color: c),
             title: 'Tüm Burçlar',
             subtitle: '12 burcu keşfet',
             route: Routes.horoscope,
@@ -643,23 +671,18 @@ class _BelowTheFold extends StatelessWidget {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════
-// ENTRY POINT TILE
-// Simple, clean, no animations
-// ═══════════════════════════════════════════════════════════════════════════
-
-// ═══════════════════════════════════════════════════════════════════════════
 // QUICK DISCOVERY CHIP
 // Compact chip for above-fold quick access
 // ═══════════════════════════════════════════════════════════════════════════
 
 class _QuickDiscoveryChip extends StatelessWidget {
-  final String icon;
+  final Widget iconWidget;
   final String label;
   final VoidCallback onTap;
   final bool isDark;
 
   const _QuickDiscoveryChip({
-    required this.icon,
+    required this.iconWidget,
     required this.label,
     required this.onTap,
     required this.isDark,
@@ -688,7 +711,7 @@ class _QuickDiscoveryChip extends StatelessWidget {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text(icon, style: const TextStyle(fontSize: 16)),
+              SizedBox(width: 16, height: 16, child: iconWidget),
               const SizedBox(width: 6),
               Text(
                 label,
@@ -714,7 +737,7 @@ class _QuickDiscoveryChip extends StatelessWidget {
 // ═══════════════════════════════════════════════════════════════════════════
 
 class _EntryPointTile extends StatelessWidget {
-  final IconData icon;
+  final Widget Function(Color color) iconWidget;
   final String title;
   final String subtitle;
   final String route;
@@ -722,7 +745,7 @@ class _EntryPointTile extends StatelessWidget {
   final bool isHighlighted;
 
   const _EntryPointTile({
-    required this.icon,
+    required this.iconWidget,
     required this.title,
     required this.subtitle,
     required this.route,
@@ -732,6 +755,10 @@ class _EntryPointTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final iconColor = isHighlighted
+        ? (isDark ? AppColors.starGold : AppColors.lightStarGold)
+        : (isDark ? AppColors.auroraStart : AppColors.lightAuroraStart);
+
     return Padding(
       padding: const EdgeInsets.only(bottom: 8),
       child: Material(
@@ -759,7 +786,7 @@ class _EntryPointTile extends StatelessWidget {
             ),
             child: Row(
               children: [
-                // Icon
+                // Custom icon in container
                 Container(
                   width: 44,
                   height: 44,
@@ -769,16 +796,8 @@ class _EntryPointTile extends StatelessWidget {
                         : AppColors.lightSurfaceVariant,
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: Icon(
-                    icon,
-                    size: 22,
-                    color: isHighlighted
-                        ? (isDark
-                              ? AppColors.starGold
-                              : AppColors.lightStarGold)
-                        : (isDark
-                              ? AppColors.auroraStart
-                              : AppColors.lightAuroraStart),
+                  child: Center(
+                    child: iconWidget(iconColor),
                   ),
                 ),
 

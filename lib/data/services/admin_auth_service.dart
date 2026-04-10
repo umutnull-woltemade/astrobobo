@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:crypto/crypto.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import '../../core/runtime_flags.dart';
 
 /// Admin authentication service with PIN-based access and rate limiting
 /// PIN is read from environment or defaults to 4848
@@ -24,6 +25,11 @@ class AdminAuthService {
 
   /// Initialize admin storage
   static Future<void> initialize() async {
+    if (isRunningTests) {
+      // Skip admin storage during widget tests
+      return;
+    }
+
     _adminBox = await Hive.openBox(_adminBoxName);
   }
 

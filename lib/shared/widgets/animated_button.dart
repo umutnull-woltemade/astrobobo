@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+
 import '../../core/theme/app_colors.dart';
 
 /// Animated gradient button with press effects
@@ -80,8 +81,9 @@ class _AnimatedGradientButtonState extends State<AnimatedGradientButton>
   }
 
   void _onTap() {
-    if (widget.isDisabled || widget.isLoading || widget.onPressed == null)
+    if (widget.isDisabled || widget.isLoading || widget.onPressed == null) {
       return;
+    }
     if (widget.hapticFeedback) {
       HapticFeedback.mediumImpact();
     }

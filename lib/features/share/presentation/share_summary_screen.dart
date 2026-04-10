@@ -7,7 +7,7 @@ import 'package:go_router/go_router.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'dart:io';
+import 'package:astrology_app/core/io_compat.dart';
 import '../../../core/theme/mystical_colors.dart';
 import '../../../data/models/zodiac_sign.dart' as zodiac;
 import '../../../data/providers/app_providers.dart';

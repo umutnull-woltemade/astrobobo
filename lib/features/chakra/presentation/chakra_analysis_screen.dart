@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import '../../../core/constants/app_constants.dart';
 import '../../../core/theme/app_colors.dart';
-import '../../../data/providers/app_providers.dart';
 import '../../../data/models/zodiac_sign.dart';
+import '../../../data/providers/app_providers.dart';
 import '../../../shared/widgets/cosmic_background.dart';
-import '../../../shared/widgets/next_blocks.dart';
-import '../../../shared/widgets/kadim_not_card.dart';
 import '../../../shared/widgets/entertainment_disclaimer.dart';
+import '../../../shared/widgets/kadim_not_card.dart';
+import '../../../shared/widgets/next_blocks.dart';
 
 /// Chakra Analysis Screen - Personalized chakra reading based on natal chart
 class ChakraAnalysisScreen extends ConsumerStatefulWidget {
@@ -1257,8 +1258,9 @@ class _ChakraAnalysisScreenState extends ConsumerState<ChakraAnalysisScreen>
   }
 
   IconData _getActivityIcon(String activity) {
-    if (activity.toLowerCase().contains('meditasyon'))
+    if (activity.toLowerCase().contains('meditasyon')) {
       return Icons.self_improvement;
+    }
     if (activity.toLowerCase().contains('yoga')) return Icons.sports_gymnastics;
     if (activity.toLowerCase().contains('nefes')) return Icons.air;
     if (activity.toLowerCase().contains('yuru')) return Icons.directions_walk;

@@ -1,17 +1,19 @@
 import 'dart:math' show Random, pi, sin;
+
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+
 import '../../../core/constants/app_constants.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../data/models/zodiac_sign.dart';
 import '../../../data/providers/app_providers.dart';
 import '../../../data/services/moon_service.dart';
 import '../../../shared/widgets/cosmic_background.dart';
+import '../../../shared/widgets/entertainment_disclaimer.dart';
 import '../../../shared/widgets/kadim_not_card.dart';
 import '../../../shared/widgets/next_blocks.dart';
-import '../../../shared/widgets/entertainment_disclaimer.dart';
 
 class TimingScreen extends ConsumerStatefulWidget {
   const TimingScreen({super.key});
@@ -232,8 +234,9 @@ class _TimingScreenState extends ConsumerState<TimingScreen> {
     int score = 70;
     if (vocStatus.isVoid) score -= 20;
     if (retrogrades.contains('mercury')) score -= 10;
-    if (moonPhase.name.contains('full') || moonPhase.name.contains('new'))
+    if (moonPhase.name.contains('full') || moonPhase.name.contains('new')) {
       score += 10;
+    }
     score = score.clamp(0, 100);
 
     final Color scoreColor = score >= 70
@@ -1584,8 +1587,9 @@ class TimingService {
     // Love recommendations
     if (category == TimingCategory.all || category == TimingCategory.love) {
       int loveRating = 3 + random.nextInt(2);
-      if (moonSign == MoonSign.libra || moonSign == MoonSign.taurus)
+      if (moonSign == MoonSign.libra || moonSign == MoonSign.taurus) {
         loveRating++;
+      }
       if (vocStatus.isVoid) loveRating--;
       if (retrogrades.contains('venus')) loveRating--;
       loveRating = loveRating.clamp(1, 5);
@@ -1609,8 +1613,9 @@ class TimingService {
     // Career recommendations
     if (category == TimingCategory.all || category == TimingCategory.career) {
       int careerRating = 3 + random.nextInt(2);
-      if (moonSign == MoonSign.capricorn || moonSign == MoonSign.virgo)
+      if (moonSign == MoonSign.capricorn || moonSign == MoonSign.virgo) {
         careerRating++;
+      }
       if (vocStatus.isVoid) careerRating -= 2;
       if (retrogrades.contains('mercury')) careerRating--;
       careerRating = careerRating.clamp(1, 5);
@@ -1634,8 +1639,9 @@ class TimingService {
     // Money recommendations
     if (category == TimingCategory.all || category == TimingCategory.money) {
       int moneyRating = 3 + random.nextInt(2);
-      if (moonSign == MoonSign.taurus || moonSign == MoonSign.scorpio)
+      if (moonSign == MoonSign.taurus || moonSign == MoonSign.scorpio) {
         moneyRating++;
+      }
       if (vocStatus.isVoid) moneyRating--;
       moneyRating = moneyRating.clamp(1, 5);
 
@@ -1654,8 +1660,9 @@ class TimingService {
     // Health recommendations
     if (category == TimingCategory.all || category == TimingCategory.health) {
       int healthRating = 3 + random.nextInt(2);
-      if (moonSign == MoonSign.virgo || moonSign == MoonSign.pisces)
+      if (moonSign == MoonSign.virgo || moonSign == MoonSign.pisces) {
         healthRating++;
+      }
       healthRating = healthRating.clamp(1, 5);
 
       allRecommendations.add(
@@ -1673,8 +1680,9 @@ class TimingService {
     // Travel recommendations
     if (category == TimingCategory.all || category == TimingCategory.travel) {
       int travelRating = 3 + random.nextInt(2);
-      if (moonSign == MoonSign.sagittarius || moonSign == MoonSign.gemini)
+      if (moonSign == MoonSign.sagittarius || moonSign == MoonSign.gemini) {
         travelRating++;
+      }
       if (retrogrades.contains('mercury')) travelRating -= 2;
       travelRating = travelRating.clamp(1, 5);
 
@@ -1693,8 +1701,9 @@ class TimingService {
     // Creative recommendations
     if (category == TimingCategory.all || category == TimingCategory.creative) {
       int creativeRating = 3 + random.nextInt(2);
-      if (moonSign == MoonSign.leo || moonSign == MoonSign.pisces)
+      if (moonSign == MoonSign.leo || moonSign == MoonSign.pisces) {
         creativeRating++;
+      }
       creativeRating = creativeRating.clamp(1, 5);
 
       allRecommendations.add(
@@ -1762,10 +1771,12 @@ class TimingService {
     bool voc,
     List<String> retros,
   ) {
-    if (voc)
+    if (voc) {
       return 'Boş seyir nedeniyle duygusal kararlar ertelenmeli. Mevcut ilişkilere odaklanın.';
-    if (retros.contains('venus'))
+    }
+    if (retros.contains('venus')) {
       return 'Venüs retrosu eski aşklar hakkında düşündürür. Yeni başlangıçlar için beklemeniz uygun.';
+    }
 
     switch (moon) {
       case MoonSign.libra:
@@ -1786,10 +1797,12 @@ class TimingService {
     bool voc,
     List<String> retros,
   ) {
-    if (voc)
+    if (voc) {
       return 'Önemli iş kararları ertelenmeli. Mevcut projelere devam edin.';
-    if (retros.contains('mercury'))
+    }
+    if (retros.contains('mercury')) {
       return 'İletişim hatalarına dikkat. Sözleşmeleri dikkatli inceleyin.';
+    }
 
     switch (moon) {
       case MoonSign.capricorn:
@@ -1804,8 +1817,9 @@ class TimingService {
   }
 
   static String _getMoneyDescription(MoonSign moon, bool voc) {
-    if (voc)
+    if (voc) {
       return 'Büyük finansal kararlar ertelenmeli. Araştırma ve planlama için kullanın.';
+    }
 
     switch (moon) {
       case MoonSign.taurus:
@@ -1835,8 +1849,9 @@ class TimingService {
   }
 
   static String _getTravelDescription(MoonSign moon, List<String> retros) {
-    if (retros.contains('mercury'))
+    if (retros.contains('mercury')) {
       return 'Seyahat aksaklıklarına hazırlıklı olun. Plan B hazır tutun.';
+    }
 
     switch (moon) {
       case MoonSign.sagittarius:

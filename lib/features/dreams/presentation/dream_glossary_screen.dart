@@ -13,6 +13,7 @@ import '../../../core/theme/spacing.dart';
 import '../../../data/models/dream_interpretation_models.dart';
 import '../../../data/content/dream_symbols_database.dart';
 import '../../../shared/widgets/cosmic_background.dart';
+import '../../../core/runtime_flags.dart';
 
 // ============================================================================
 // SCREEN
@@ -1459,6 +1460,15 @@ class PersonalDictionaryService {
   List<PersonalSymbolEntry> _entries = [];
 
   Future<void> init() async {
+    // In tests we avoid trying to initialize Hive (which requires a path).
+    // Tests that need personal dictionary should mock or initialize Hive in
+    // their setup. Using `runtime_flags.isRunningTests` prevents exceptions
+    // during general widget tests.
+    if (isRunningTests) {
+      _entries = [];
+      return;
+    }
+
     _box = await Hive.openBox(_boxName);
     _loadEntries();
   }

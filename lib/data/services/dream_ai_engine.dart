@@ -13,17 +13,17 @@ library;
 
 import 'dart:convert';
 import 'dart:math';
+
 import 'package:uuid/uuid.dart';
 
+import '../content/dream_content_expanded.dart';
+import '../content/dream_symbols_database.dart';
+import '../models/birth_chart.dart';
 import '../models/dream_interpretation_models.dart';
 import '../models/dream_memory.dart';
-import '../models/user_profile.dart' as profile_model;
-import '../models/birth_chart.dart';
 import '../models/planet.dart' as planet_model;
+import '../models/user_profile.dart' as profile_model;
 import '../models/zodiac_sign.dart';
-import '../content/dream_symbols_database.dart';
-import '../content/dream_content_expanded.dart';
-
 import 'dream_interpretation_service.dart';
 
 // ════════════════════════════════════════════════════════════════════════════
@@ -1430,18 +1430,23 @@ JSON çıktısı da ekle.
 
   static String _detectArchetype(String text) {
     final lowercaseText = text.toLowerCase();
-    if (lowercaseText.contains('gölge') || lowercaseText.contains('shadow'))
+    if (lowercaseText.contains('gölge') || lowercaseText.contains('shadow')) {
       return 'Gölge';
+    }
     if (lowercaseText.contains('anima')) return 'Anima';
     if (lowercaseText.contains('animus')) return 'Animus';
-    if (lowercaseText.contains('kahraman') || lowercaseText.contains('hero'))
+    if (lowercaseText.contains('kahraman') || lowercaseText.contains('hero')) {
       return 'Kahraman';
-    if (lowercaseText.contains('bilge') || lowercaseText.contains('wise'))
+    }
+    if (lowercaseText.contains('bilge') || lowercaseText.contains('wise')) {
       return 'Bilge Yaşlı';
-    if (lowercaseText.contains('anne') || lowercaseText.contains('mother'))
+    }
+    if (lowercaseText.contains('anne') || lowercaseText.contains('mother')) {
       return 'Büyük Anne';
-    if (lowercaseText.contains('çocuk') || lowercaseText.contains('child'))
+    }
+    if (lowercaseText.contains('çocuk') || lowercaseText.contains('child')) {
       return 'Çocuk';
+    }
     return 'Gölge';
   }
 

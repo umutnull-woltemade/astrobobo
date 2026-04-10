@@ -1596,8 +1596,9 @@ class TimingService {
         final challenging = <String>[];
 
         if (!isVoid) favorable.add('Ay bosaltmada degil');
-        if (isVoid)
+        if (isVoid) {
           challenging.add('Ay boslukta - yeni baslangiclari erteleyin');
+        }
 
         if (moonPhase.phase <= 4) {
           favorable.add('Buyuyen Ay - baslangiclara uygun');

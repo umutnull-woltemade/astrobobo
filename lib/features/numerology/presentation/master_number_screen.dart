@@ -147,114 +147,126 @@ class MasterNumberScreen extends StatelessWidget {
             ],
           ),
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            // Master Number with glow
-            Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    // Glow effect
-                    Container(
-                      width: 120,
-                      height: 120,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        boxShadow: [
-                          BoxShadow(
-                            color: color.withValues(alpha: 0.6),
-                            blurRadius: 40,
-                            spreadRadius: 10,
+        child: SingleChildScrollView(
+          physics: const NeverScrollableScrollPhysics(),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              // Master Number with glow
+              Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      // Glow effect
+                      Container(
+                        width: 120,
+                        height: 120,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                              color: color.withValues(alpha: 0.6),
+                              blurRadius: 40,
+                              spreadRadius: 10,
+                            ),
+                          ],
+                        ),
+                      ),
+                      // Number circle
+                      Container(
+                        width: 90,
+                        height: 90,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          gradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [color, color.withValues(alpha: 0.7)],
                           ),
-                        ],
-                      ),
-                    ),
-                    // Number circle
-                    Container(
-                      width: 90,
-                      height: 90,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: [color, color.withValues(alpha: 0.7)],
+                          border: Border.all(
+                            color: Colors.white.withValues(alpha: 0.3),
+                            width: 2,
+                          ),
                         ),
-                        border: Border.all(
-                          color: Colors.white.withValues(alpha: 0.3),
-                          width: 2,
-                        ),
-                      ),
-                      child: Center(
-                        child: Text(
-                          number.toString(),
-                          style: Theme.of(context).textTheme.displayMedium
-                              ?.copyWith(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                shadows: [
-                                  Shadow(
-                                    color: Colors.black.withValues(alpha: 0.3),
-                                    blurRadius: 4,
-                                  ),
-                                ],
-                              ),
+                        child: Center(
+                          child: Text(
+                            number.toString(),
+                            style: Theme.of(context).textTheme.displayMedium
+                                ?.copyWith(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  shadows: [
+                                    Shadow(
+                                      color: Colors.black.withValues(
+                                        alpha: 0.3,
+                                      ),
+                                      blurRadius: 4,
+                                    ),
+                                  ],
+                                ),
+                          ),
                         ),
                       ),
-                    ),
-                    // Decorative ring
-                    Container(
-                      width: 110,
-                      height: 110,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                          color: color.withValues(alpha: 0.5),
-                          width: 1,
+                      // Decorative ring
+                      Container(
+                        width: 110,
+                        height: 110,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: color.withValues(alpha: 0.5),
+                            width: 1,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
-                )
-                .animate()
-                .fadeIn(duration: 400.ms)
-                .scale(begin: const Offset(0.8, 0.8), curve: Curves.elasticOut),
-            const SizedBox(height: 16),
-            // Title
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-              decoration: BoxDecoration(
-                color: color.withValues(alpha: 0.2),
-                borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: color.withValues(alpha: 0.4)),
-              ),
-              child: Text(
-                'MASTER SAYI',
-                style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                  color: color,
-                  letterSpacing: 2,
+                    ],
+                  )
+                  .animate()
+                  .fadeIn(duration: 400.ms)
+                  .scale(
+                    begin: const Offset(0.8, 0.8),
+                    curve: Curves.elasticOut,
+                  ),
+              const SizedBox(height: 16),
+              // Title
+              Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 6,
+                ),
+                decoration: BoxDecoration(
+                  color: color.withValues(alpha: 0.2),
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(color: color.withValues(alpha: 0.4)),
+                ),
+                child: Text(
+                  'MASTER SAYI',
+                  style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                    color: color,
+                    letterSpacing: 2,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ).animate().fadeIn(delay: 200.ms),
+              const SizedBox(height: 8),
+              Text(
+                content.title,
+                style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                  color: AppColors.textPrimary,
                   fontWeight: FontWeight.bold,
                 ),
-              ),
-            ).animate().fadeIn(delay: 200.ms),
-            const SizedBox(height: 8),
-            Text(
-              content.title,
-              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                color: AppColors.textPrimary,
-                fontWeight: FontWeight.bold,
-              ),
-            ).animate().fadeIn(delay: 300.ms),
-            const SizedBox(height: 4),
-            Text(
-              content.archetype,
-              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                color: AppColors.textSecondary,
-                fontStyle: FontStyle.italic,
-              ),
-            ).animate().fadeIn(delay: 400.ms),
-            const SizedBox(height: 20),
-          ],
+              ).animate().fadeIn(delay: 300.ms),
+              const SizedBox(height: 4),
+              Text(
+                content.archetype,
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  color: AppColors.textSecondary,
+                  fontStyle: FontStyle.italic,
+                ),
+              ).animate().fadeIn(delay: 400.ms),
+              const SizedBox(height: 20),
+            ],
+          ),
         ),
       ),
     );

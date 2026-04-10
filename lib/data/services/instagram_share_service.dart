@@ -1,4 +1,5 @@
-import 'dart:io';
+import 'package:astrology_app/core/io_compat.dart';
+import 'package:astrology_app/core/platform_compat.dart';
 import 'dart:ui' as ui;
 
 import 'package:flutter/foundation.dart';
@@ -60,9 +61,9 @@ class InstagramShareService {
         );
       }
 
-      if (Platform.isIOS) {
+      if (PlatformCompat.isIOS) {
         return await _shareOnIOS(file, shareText, hashtags);
-      } else if (Platform.isAndroid) {
+      } else if (PlatformCompat.isAndroid) {
         return await _shareOnAndroid(file, shareText, hashtags);
       } else {
         return await _shareGeneric(file, shareText, hashtags);

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:timezone/timezone.dart' as tz;
 import 'package:timezone/data/latest.dart' as tz_data;
+import '../../core/runtime_flags.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/zodiac_sign.dart';
 
@@ -41,6 +42,9 @@ class NotificationService {
   Future<void> initialize() async {
     if (_isInitialized) return;
     if (kIsWeb) return; // Notifications not supported on web
+
+    // Skip initializing platform notification channels during widget tests.
+    if (isRunningTests) return;
 
     // Initialize timezone
     tz_data.initializeTimeZones();

@@ -118,63 +118,70 @@ class PersonalYearScreen extends StatelessWidget {
             colors: [color.withValues(alpha: 0.3), Colors.transparent],
           ),
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            // Year Circle
-            Container(
-              width: 80,
-              height: 80,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                gradient: LinearGradient(
-                  colors: [color, color.withValues(alpha: 0.6)],
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: color.withValues(alpha: 0.5),
-                    blurRadius: 20,
-                    spreadRadius: 5,
+        child: SingleChildScrollView(
+          physics: const NeverScrollableScrollPhysics(),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              // Year Circle
+              Container(
+                width: 80,
+                height: 80,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  gradient: LinearGradient(
+                    colors: [color, color.withValues(alpha: 0.6)],
                   ),
-                ],
-              ),
-              child: Center(
+                  boxShadow: [
+                    BoxShadow(
+                      color: color.withValues(alpha: 0.5),
+                      blurRadius: 20,
+                      spreadRadius: 5,
+                    ),
+                  ],
+                ),
+                child: Center(
+                  child: Text(
+                    year.toString(),
+                    style: Theme.of(context).textTheme.displayMedium?.copyWith(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ).animate().scale(duration: 400.ms, curve: Curves.elasticOut),
+              const SizedBox(height: 12),
+              // Label
+              Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 4,
+                ),
+                decoration: BoxDecoration(
+                  color: color.withValues(alpha: 0.2),
+                  borderRadius: BorderRadius.circular(12),
+                ),
                 child: Text(
-                  year.toString(),
-                  style: Theme.of(context).textTheme.displayMedium?.copyWith(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
+                  'Kişisel Yıl',
+                  style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                    color: color,
+                    letterSpacing: 1,
                   ),
                 ),
-              ),
-            ).animate().scale(duration: 400.ms, curve: Curves.elasticOut),
-            const SizedBox(height: 12),
-            // Label
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-              decoration: BoxDecoration(
-                color: color.withValues(alpha: 0.2),
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Text(
-                'Kişisel Yıl',
-                style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                  color: color,
-                  letterSpacing: 1,
+              ).animate().fadeIn(delay: 200.ms),
+              const SizedBox(height: 8),
+              // Title
+              Text(
+                content.title,
+                style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                  color: AppColors.textPrimary,
+                  fontWeight: FontWeight.bold,
                 ),
-              ),
-            ).animate().fadeIn(delay: 200.ms),
-            const SizedBox(height: 8),
-            // Title
-            Text(
-              content.title,
-              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                color: AppColors.textPrimary,
-                fontWeight: FontWeight.bold,
-              ),
-            ).animate().fadeIn(delay: 300.ms),
-            const SizedBox(height: 20),
-          ],
+              ).animate().fadeIn(delay: 300.ms),
+              const SizedBox(height: 20),
+            ],
+          ),
         ),
       ),
     );

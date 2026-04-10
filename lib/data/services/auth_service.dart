@@ -6,6 +6,8 @@ import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
+import '../../core/runtime_flags.dart' as runtime_flags;
+
 /// Kullanici bilgileri - tum auth metodlari icin ortak
 class AuthUserInfo {
   final String uid;
@@ -52,17 +54,30 @@ enum AuthProvider { apple, email }
 class AuthService {
   static SupabaseClient get _supabase => Supabase.instance.client;
 
+  // In tests we avoid accessing Supabase.instance directly because the
+  // supabase client may not be initialized in the test environment. Tests
+  // should either mock AuthService or rely on the behavior below (empty
+  // streams / null users) via the `runtime_flags.isRunningTests` flag.
+
   // ==================== Current User ====================
 
   /// Mevcut kullanici
-  static User? get currentUser => _supabase.auth.currentUser;
+  static User? get currentUser {
+    if (runtime_flags.isRunningTests) return null;
+    return _supabase.auth.currentUser;
+  }
 
   /// Kullanici oturum acmis mi?
-  static bool get isSignedIn => _supabase.auth.currentUser != null;
+  static bool get isSignedIn {
+    if (runtime_flags.isRunningTests) return false;
+    return _supabase.auth.currentUser != null;
+  }
 
   /// Auth state degisikliklerini dinle
-  static Stream<AuthState> get authStateChanges =>
-      _supabase.auth.onAuthStateChange;
+  static Stream<AuthState> get authStateChanges {
+    if (runtime_flags.isRunningTests) return const Stream.empty();
+    return _supabase.auth.onAuthStateChange;
+  }
 
   /// Mevcut kullanici bilgilerini al
   static AuthUserInfo? getCurrentUserInfo() {

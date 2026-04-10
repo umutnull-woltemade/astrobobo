@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:hive_flutter/hive_flutter.dart';
+import '../../core/runtime_flags.dart';
 
 /// Admin analytics service for tracking growth events
 /// Tracks page views, clicks, shares, and custom events
@@ -12,6 +13,11 @@ class AdminAnalyticsService {
 
   /// Initialize analytics storage
   static Future<void> initialize() async {
+    if (isRunningTests) {
+      // Skip analytics storage initialization during widget tests
+      return;
+    }
+
     _analyticsBox = await Hive.openBox(_analyticsBoxName);
   }
 

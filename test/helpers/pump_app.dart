@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:go_router/go_router.dart';
+import 'package:astrology_app/core/runtime_flags.dart' as runtime_flags;
 
 import 'package:astrology_app/data/providers/app_providers.dart';
 import 'package:astrology_app/data/models/user_profile.dart';
@@ -54,6 +55,10 @@ extension PumpApp on WidgetTester {
     AppLanguage language = AppLanguage.tr,
   }) async {
     final profile = userProfile ?? fakeUserProfile();
+
+    // Set test flags to avoid long-running animations and platform integrations
+    runtime_flags.disableAnimations = true;
+    runtime_flags.isRunningTests = true;
 
     await pumpWidget(
       ProviderScope(

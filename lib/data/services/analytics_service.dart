@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../core/runtime_flags.dart';
 
 /// Analytics service for tracking events and user behavior
 /// Supports Firebase Analytics with graceful fallback
@@ -12,6 +13,7 @@ class AnalyticsService {
 
   /// Initialize analytics
   Future<void> initialize() async {
+    if (isRunningTests) return;
     if (_isInitialized) return;
 
     try {

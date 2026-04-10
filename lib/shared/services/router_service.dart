@@ -81,6 +81,8 @@ import '../../features/admin/presentation/admin_dashboard_screen.dart';
 import '../../features/quiz/presentation/quiz_screen.dart';
 import '../../data/services/admin_auth_service.dart';
 import '../../data/services/storage_service.dart';
+import '../../core/design_system/inner_cycles_bottom_nav.dart';
+import '../../core/design_system/icon_showcase.dart';
 
 final routerProvider = Provider<GoRouter>((ref) {
   return GoRouter(
@@ -116,16 +118,43 @@ final routerProvider = Provider<GoRouter>((ref) {
         path: Routes.onboarding,
         builder: (context, state) => const OnboardingScreen(),
       ),
-      GoRoute(
-        path: Routes.home,
-        // DUAL HOMEPAGE SYSTEM: ResponsiveHomeScreen detects device type
-        // Mobile (<768px): MobileLiteHomepage - fast, no heavy effects
-        // Desktop (>=768px): DesktopRichHomepage - visual, immersive
-        builder: (context, state) => const ResponsiveHomeScreen(),
+
+      // ════════════════════════════════════════════════════════════════
+      // MAIN SHELL — Persistent floating bottom navigation
+      // 5 primary tabs: Home, Keşfet, Kozmoz, İçgörü, Profil
+      // ════════════════════════════════════════════════════════════════
+      ShellRoute(
+        builder: (context, state, child) {
+          return InnerCyclesAppShell(child: child);
+        },
+        routes: [
+          GoRoute(
+            path: Routes.home,
+            builder: (context, state) => const ResponsiveHomeScreen(),
+          ),
+          GoRoute(
+            path: Routes.allServices,
+            builder: (context, state) => const AllServicesScreen(),
+          ),
+          GoRoute(
+            path: Routes.kozmoz,
+            builder: (context, state) => const KozmozScreen(),
+          ),
+          GoRoute(
+            path: Routes.horoscope,
+            builder: (context, state) => const HoroscopeScreen(),
+          ),
+          GoRoute(
+            path: Routes.profile,
+            builder: (context, state) => const ProfileScreen(),
+          ),
+        ],
       ),
+
+      // Dev: Icon system showcase
       GoRoute(
-        path: Routes.horoscope,
-        builder: (context, state) => const HoroscopeScreen(),
+        path: '/dev/icons',
+        builder: (context, state) => const IconShowcase(),
       ),
       GoRoute(
         path: Routes.horoscopeDetail,
@@ -215,10 +244,7 @@ final routerProvider = Provider<GoRouter>((ref) {
         path: Routes.settings,
         builder: (context, state) => const SettingsScreen(),
       ),
-      GoRoute(
-        path: Routes.profile,
-        builder: (context, state) => const ProfileScreen(),
-      ),
+      // Routes.profile is now inside the ShellRoute (bottom nav tab)
       GoRoute(
         path: Routes.shareSummary,
         // SIMPLIFIED SHARE SCREEN: Tek fullscreen görsel, screenshot-ready
@@ -499,16 +525,7 @@ final routerProvider = Provider<GoRouter>((ref) {
         path: Routes.comparison,
         builder: (context, state) => const ComparisonScreen(),
       ),
-      // Kozmoz - Tüm özellikler
-      GoRoute(
-        path: Routes.kozmoz,
-        builder: (context, state) => const KozmozScreen(),
-      ),
-      // Tüm Çözümlemeler - Ana katalog sayfası
-      GoRoute(
-        path: Routes.allServices,
-        builder: (context, state) => const AllServicesScreen(),
-      ),
+      // Routes.kozmoz and Routes.allServices are now inside the ShellRoute
 
       // ════════════════════════════════════════════════════════════════
       // KOZMİK KEŞİF - Viral & Felsefi İçerikler (Özel Ekranlar)

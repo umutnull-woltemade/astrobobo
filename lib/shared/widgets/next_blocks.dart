@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/constants/routes.dart';
+import '../../core/design_system/icon_mapping.dart';
 
 /// NEXT BLOCKS WIDGET
 ///
@@ -1044,6 +1045,21 @@ class _NextBlockCard extends StatelessWidget {
 
   const _NextBlockCard({required this.block, required this.isDark});
 
+  Widget _buildIcon(_NextBlock block, bool isDark) {
+    final color = block.isHighlighted
+        ? (isDark ? AppColors.starGold : AppColors.lightStarGold)
+        : (isDark ? AppColors.auroraStart : AppColors.lightAuroraStart);
+
+    // Try custom icon first, fall back to Material Icon
+    final customIcon = IconMapping.fromMaterialIcon(
+      block.icon,
+      size: 20,
+      color: color,
+    );
+    if (customIcon != null) return customIcon;
+    return Icon(block.icon, size: 20, color: color);
+  }
+
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
@@ -1087,16 +1103,8 @@ class _NextBlockCard extends StatelessWidget {
                         : AppColors.lightSurfaceVariant,
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: Icon(
-                    block.icon,
-                    size: 20,
-                    color: block.isHighlighted
-                        ? (isDark
-                              ? AppColors.starGold
-                              : AppColors.lightStarGold)
-                        : (isDark
-                              ? AppColors.auroraStart
-                              : AppColors.lightAuroraStart),
+                  child: Center(
+                    child: _buildIcon(block, isDark),
                   ),
                 ),
                 const SizedBox(width: 12),

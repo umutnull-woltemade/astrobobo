@@ -5,6 +5,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/constants/routes.dart';
 import '../../../../core/theme/app_colors.dart';
+import '../../../../core/design_system/icon_mapping.dart';
 import '../../../../data/models/zodiac_sign.dart';
 import '../../../../data/providers/app_providers.dart';
 import '../../../../data/services/moon_service.dart';
@@ -166,40 +167,40 @@ class _QuickDiscoveryBar extends StatelessWidget {
         runSpacing: 12,
         children: [
           _QuickDiscoveryItem(
-            icon: '⭐',
+            icon: '★',
             label: 'Burç Yorumu',
             route: Routes.horoscope,
           ),
           _QuickDiscoveryItem(
-            icon: '🗺️',
+            icon: '◇',
             label: 'Doğum Haritası',
             route: Routes.birthChart,
           ),
           _QuickDiscoveryItem(
-            icon: '🧠',
+            icon: '✧',
             label: 'Theta Healing',
             route: Routes.thetaHealing,
           ),
           _QuickDiscoveryItem(
-            icon: '🌍',
+            icon: '◆',
             label: 'Astrokartografi',
             route: Routes.astroCartography,
           ),
-          _QuickDiscoveryItem(icon: '🙏', label: 'Reiki', route: Routes.reiki),
-          _QuickDiscoveryItem(icon: '🔮', label: 'Tarot', route: Routes.tarot),
+          _QuickDiscoveryItem(icon: '✦', label: 'Reiki', route: Routes.reiki),
+          _QuickDiscoveryItem(icon: '◆', label: 'Tarot', route: Routes.tarot),
           _QuickDiscoveryItem(
-            icon: '🔢',
+            icon: '∞',
             label: 'Numeroloji',
             route: Routes.numerology,
           ),
           _QuickDiscoveryItem(
-            icon: '💜',
+            icon: '●',
             label: 'Çakra',
             route: Routes.chakraAnalysis,
           ),
-          _QuickDiscoveryItem(icon: '✨', label: 'Aura', route: Routes.aura),
+          _QuickDiscoveryItem(icon: '☆', label: 'Aura', route: Routes.aura),
           _QuickDiscoveryItem(
-            icon: '🕯️',
+            icon: '♡',
             label: 'Tantra',
             route: Routes.tantra,
           ),
@@ -1230,7 +1231,7 @@ class _DiscoverySection extends StatelessWidget {
           // BURÇ & YORUMLAR
           // ═══════════════════════════════════════════════════════════════
           _DiscoveryCategoryHeader(
-            title: '⭐ Burç Yorumları',
+            title: '★ Burç Yorumları',
             color: const Color(0xFFFFD700),
           ),
           const SizedBox(height: 12),
@@ -1501,7 +1502,7 @@ class _DiscoverySection extends StatelessWidget {
           // İLERİ SEVİYE ASTROLOJİ
           // ═══════════════════════════════════════════════════════════════
           _DiscoveryCategoryHeader(
-            title: '🔮 İleri Seviye Astroloji',
+            title: '✦ İleri Seviye Astroloji',
             color: const Color(0xFFFFD700),
           ),
           const SizedBox(height: 12),
@@ -1577,7 +1578,7 @@ class _DiscoverySection extends StatelessWidget {
           // RÜYA YORUMLARI
           // ═══════════════════════════════════════════════════════════════
           _DiscoveryCategoryHeader(
-            title: '🌙 Rüya Yorumları',
+            title: '☽ Rüya Yorumları',
             color: const Color(0xFF5C6BC0),
           ),
           const SizedBox(height: 12),
@@ -1672,7 +1673,7 @@ class _DiscoverySection extends StatelessWidget {
           // MİSTİK KEŞİFLER
           // ═══════════════════════════════════════════════════════════════
           _DiscoveryCategoryHeader(
-            title: '🔮 Mistik Keşifler',
+            title: '✧ Mistik Keşifler',
             color: const Color(0xFF9D4EDD),
           ),
           const SizedBox(height: 12),
@@ -1888,6 +1889,12 @@ class _DiscoveryCard extends StatefulWidget {
 class _DiscoveryCardState extends State<_DiscoveryCard> {
   bool _isHovered = false;
 
+  Widget _resolveIcon(IconData icon, Color color) {
+    final custom = IconMapping.fromMaterialIcon(icon, size: 22, color: color);
+    if (custom != null) return custom;
+    return Icon(icon, color: color, size: 22);
+  }
+
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
@@ -1912,7 +1919,7 @@ class _DiscoveryCardState extends State<_DiscoveryCard> {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(widget.icon, color: widget.color, size: 22),
+              _resolveIcon(widget.icon, widget.color),
               const SizedBox(width: 10),
               Text(
                 widget.title,
@@ -2191,14 +2198,14 @@ class _VenusOneLogoState extends State<_VenusOneLogo>
                     },
                   ),
                   // Kedi emoji
-                  const Text('🐱', style: TextStyle(fontSize: 26)),
-                  // Sihirli değnek - kedinin elinde
+                  const Text('♀', style: TextStyle(fontSize: 26)),
+                  // Sparkle accent
                   Positioned(
                     right: -2,
                     bottom: 0,
                     child: Transform.rotate(
-                      angle: -0.4, // Hafif eğik
-                      child: const Text('✨', style: TextStyle(fontSize: 12)),
+                      angle: -0.4,
+                      child: const Text('✦', style: TextStyle(fontSize: 12)),
                     ),
                   ),
                 ],
@@ -2254,7 +2261,7 @@ class _VenusOneLogoState extends State<_VenusOneLogo>
                     angle: _isHovered
                         ? 0.1 * math.sin(_controller.value * 4 * math.pi)
                         : 0,
-                    child: const Text('🪄', style: TextStyle(fontSize: 18)),
+                    child: const Text('✧', style: TextStyle(fontSize: 18)),
                   );
                 },
               ),
@@ -2344,7 +2351,7 @@ class _KozmozHeaderButtonState extends State<_KozmozHeaderButton>
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   // AI ikonu
-                  const Text('🌌', style: TextStyle(fontSize: 16)),
+                  const Text('✦', style: TextStyle(fontSize: 16)),
                   const SizedBox(width: 6),
                   const Text(
                     'Kozmoz İzi',
@@ -2443,7 +2450,7 @@ class _DreamHeaderButtonState extends State<_DreamHeaderButton>
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   // Rüya ikonu
-                  const Text('🌙', style: TextStyle(fontSize: 16)),
+                  const Text('☽', style: TextStyle(fontSize: 16)),
                   const SizedBox(width: 6),
                   const Text(
                     'Rüya İzi',
@@ -2542,7 +2549,7 @@ class _HoroscopeHeaderButtonState extends State<_HoroscopeHeaderButton>
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   // Burç ikonu
-                  const Text('⭐', style: TextStyle(fontSize: 16)),
+                  const Text('★', style: TextStyle(fontSize: 16)),
                   const SizedBox(width: 6),
                   const Text(
                     'Burç Yorumu',

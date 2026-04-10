@@ -321,7 +321,7 @@ class _AllServicesScreenState extends State<AllServicesScreen>
   static final List<Map<String, dynamic>> _categories = [
     {
       'name': 'Burç Yorumları',
-      'icon': '⭐',
+      'icon': '★',
       'color': AppColors.starGold,
       'services': [
         {'name': 'Günlük', 'route': Routes.horoscope},
@@ -334,7 +334,7 @@ class _AllServicesScreenState extends State<AllServicesScreen>
     },
     {
       'name': 'Harita Analizleri',
-      'icon': '🗺️',
+      'icon': '◇',
       'color': AppColors.cosmicPurple,
       'services': [
         {'name': 'Doğum Haritası', 'route': Routes.birthChart},
@@ -348,7 +348,7 @@ class _AllServicesScreenState extends State<AllServicesScreen>
     },
     {
       'name': 'Zamanlama',
-      'icon': '⏰',
+      'icon': '☽',
       'color': AppColors.auroraEnd,
       'services': [
         {'name': 'Transitler', 'route': Routes.transits},
@@ -363,7 +363,7 @@ class _AllServicesScreenState extends State<AllServicesScreen>
     },
     {
       'name': 'Numeroloji',
-      'icon': '🔢',
+      'icon': '∞',
       'color': AppColors.fireElement,
       'services': [
         {'name': 'Genel Analiz', 'route': Routes.numerology},
@@ -375,7 +375,7 @@ class _AllServicesScreenState extends State<AllServicesScreen>
     },
     {
       'name': 'Ruhsal Pratikler',
-      'icon': '🧘',
+      'icon': '✧',
       'color': AppColors.tantraCrimson,
       'services': [
         {'name': 'Tantra', 'route': Routes.tantra},
@@ -389,7 +389,7 @@ class _AllServicesScreenState extends State<AllServicesScreen>
     },
     {
       'name': 'Tarot',
-      'icon': '🃏',
+      'icon': '◆',
       'color': AppColors.mystic,
       'services': [
         {'name': 'Tarot Falı', 'route': Routes.tarot},
@@ -401,7 +401,7 @@ class _AllServicesScreenState extends State<AllServicesScreen>
     },
     {
       'name': 'Rüya',
-      'icon': '💭',
+      'icon': '☽',
       'color': AppColors.waterElement,
       'services': [
         {'name': 'Rüya İzi', 'route': Routes.dreamInterpretation},
@@ -413,7 +413,7 @@ class _AllServicesScreenState extends State<AllServicesScreen>
     },
     {
       'name': 'İlişki',
-      'icon': '💑',
+      'icon': '♡',
       'color': const Color(0xFFE91E63),
       'services': [
         {'name': 'Uyum Analizi', 'route': Routes.compatibility},
@@ -424,7 +424,7 @@ class _AllServicesScreenState extends State<AllServicesScreen>
     },
     {
       'name': 'Kozmik Keşif',
-      'icon': '🔭',
+      'icon': '✦',
       'color': AppColors.cosmic,
       'services': [
         {'name': 'Günün Özeti', 'route': Routes.dailySummary},
@@ -455,7 +455,7 @@ class _AllServicesScreenState extends State<AllServicesScreen>
     },
     {
       'name': 'Referans',
-      'icon': '📚',
+      'icon': '○',
       'color': AppColors.earthElement,
       'services': [
         {'name': 'Sözlük', 'route': Routes.glossary},

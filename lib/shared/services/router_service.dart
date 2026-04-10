@@ -882,7 +882,7 @@ class _NotFoundScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text('🔮', style: TextStyle(fontSize: 80)),
+                const Text('✦', style: TextStyle(fontSize: 80)),
                 const SizedBox(height: 24),
                 Text(
                   '404',
@@ -987,7 +987,7 @@ class _SplashScreenState extends ConsumerState<_SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('✨', style: TextStyle(fontSize: 64)),
+            const Text('✦', style: TextStyle(fontSize: 64)),
             const SizedBox(height: 24),
             Text(
               'Venus One',

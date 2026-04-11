@@ -49,14 +49,11 @@
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
   <link rel="manifest" href="manifest.json">
 
-  <!-- Performance: preload critical Flutter assets in parallel with HTML parse -->
-  <link rel="preload" href="flutter_bootstrap.js" as="script" crossorigin>
-  <link rel="preload" href="main.dart.js" as="script" crossorigin>
-  <link rel="preload" href="canvaskit/canvaskit.js" as="script" crossorigin>
-  <link rel="preload" href="canvaskit/canvaskit.wasm" as="fetch" type="application/wasm" crossorigin>
-  <link rel="preload" href="assets/AssetManifest.bin" as="fetch" crossorigin>
-  <link rel="preload" href="assets/FontManifest.json" as="fetch" type="application/json" crossorigin>
-  <!-- DNS prefetch + preconnect to gstatic CanvasKit CDN (used as fallback) -->
+  <!-- Performance hints — DNS prefetch only.
+       Preload <link>s for main.dart.js, canvaskit.* etc. were tried but Flutter
+       loads them through its own request paths (different credentials mode),
+       causing "preloaded but not used" warnings. Brotli + Vercel cache headers
+       already give us most of the gain. -->
   <link rel="dns-prefetch" href="https://www.gstatic.com">
   <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
 

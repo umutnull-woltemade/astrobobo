@@ -3,11 +3,12 @@ name: White Screen Guard
 on:
   pull_request:
   push:
-    branches: [main, develop]
+    branches: [main, develop, astrobobo-restore]
 
 jobs:
-  white-screen-test:
-    name: White Screen Detection
+  # ─── Local build smoke test ────────────────────────────────────────────
+  local-build-test:
+    name: Local Build & White Screen
     runs-on: ubuntu-latest
     timeout-minutes: 25
 
@@ -25,46 +26,82 @@ jobs:
         run: flutter pub get
 
       - name: Build Flutter Web
-        run: flutter build web --release --no-tree-shake-icons
+        run: flutter build web --release
+
+      - name: Copy SEO + custom static files into build
+        run: |
+          for f in sitemap.xml robots.txt vercel.json llms.txt llms-full.txt; do
+            [ -f "web/$f" ] && cp "web/$f" "build/web/$f" || true
+          done
+          for d in r admin .well-known; do
+            [ -d "web/$d" ] && cp -r "web/$d" "build/web/$d" || true
+          done
+          [ -f web/index.html ] && cp web/index.html build/web/index.html || true
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      - name: Install Playwright
+      - name: Install dependencies
         run: |
-          npm init -y
-          npm install @playwright/test
+          npm ci || npm install
           npx playwright install chromium --with-deps
 
       - name: Start local server
         run: |
           cd build/web
           python3 -m http.server 8080 &
-          sleep 5
-          # Verify server is running
+          sleep 3
           curl -f http://localhost:8080 || exit 1
 
-      - name: Run White Screen Tests
-        run: npx playwright test e2e/white-screen.spec.ts --reporter=html
+      - name: Run white-screen test
+        run: npx playwright test e2e/white-screen.spec.ts --reporter=list
         env:
           BASE_URL: http://localhost:8080
 
-      - name: Upload test results
+      - name: Upload artifacts on failure
         uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: playwright-report
+          name: local-test-artifacts
           path: |
             playwright-report/
             test-results/
           retention-days: 7
 
-      - name: Upload screenshots on failure
+  # ─── Production smoke test (only on push to main branches) ─────────────
+  production-smoke-test:
+    name: Production Routes Smoke Test
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    if: github.event_name == 'push'
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: |
+          npm ci || npm install
+          npx playwright install chromium --with-deps
+
+      - name: Run all-routes smoke test against astrobobo.com
+        run: npx playwright test e2e/all-routes.spec.ts --reporter=list
+        env:
+          BASE_URL: https://astrobobo.com
+
+      - name: Upload artifacts on failure
         uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: failure-screenshots
-          path: test-results/**/*.png
+          name: prod-test-artifacts
+          path: |
+            playwright-report/
+            test-results/
           retention-days: 7

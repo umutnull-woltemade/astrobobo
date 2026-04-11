@@ -1,7 +1,6 @@
 {
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/api/health", "destination": "/api/health.json" },
     { "source": "/r/:lang/:slug", "destination": "/r/:lang/:slug.html" },
     { "source": "/birth-chart", "destination": "/index.html" },
     { "source": "/horoscope", "destination": "/index.html" },

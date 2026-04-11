@@ -484,16 +484,27 @@
       var ogTitle = document.querySelector('meta[property="og:title"]');
       var ogDesc = document.querySelector('meta[property="og:description"]');
       var ogUrl = document.querySelector('meta[property="og:url"]');
+      var ogImage = document.querySelector('meta[property="og:image"]');
       var twTitle = document.querySelector('meta[name="twitter:title"]');
       var twDesc = document.querySelector('meta[name="twitter:description"]');
       var twUrl = document.querySelector('meta[name="twitter:url"]');
+      var twImage = document.querySelector('meta[name="twitter:image"]');
+
+      // Build dynamic OG image URL — short title (truncate at " | "), short subtitle
+      var shortTitle = meta.title.split(' | ')[0].split(' — ')[0].slice(0, 80);
+      var shortDesc = meta.description.slice(0, 120);
+      var ogImageUrl = baseUrl + '/api/og?' +
+        'title=' + encodeURIComponent(shortTitle) +
+        '&subtitle=' + encodeURIComponent(shortDesc);
 
       if (ogTitle) ogTitle.setAttribute('content', meta.title);
       if (ogDesc) ogDesc.setAttribute('content', meta.description);
       if (ogUrl) ogUrl.setAttribute('content', path ? baseUrl + '/' + path : baseUrl + '/');
+      if (ogImage) ogImage.setAttribute('content', ogImageUrl);
       if (twTitle) twTitle.setAttribute('content', meta.title);
       if (twDesc) twDesc.setAttribute('content', meta.description);
       if (twUrl) twUrl.setAttribute('content', path ? baseUrl + '/' + path : baseUrl + '/');
+      if (twImage) twImage.setAttribute('content', ogImageUrl);
 
       // Generate dynamic Schema.org markup
       var pageSchemas = {

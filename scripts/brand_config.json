@@ -1,0 +1,38 @@
+{
+  "name": "Astrobobo",
+  "legalName": "Astrobobo",
+  "url": "https://astrobobo.com",
+  "logo": "https://astrobobo.com/icons/Icon-512.png",
+  "image": "https://astrobobo.com/icons/Icon-512.png",
+  "description": "Astrobobo — astrology, dream interpretation, and personal exploration. Definition-first content with Swiss Ephemeris precision.",
+  "foundingDate": "2024",
+  "knowsAbout": [
+    "astrology",
+    "natal chart interpretation",
+    "dream interpretation",
+    "zodiac signs",
+    "tarot",
+    "numerology",
+    "Swiss Ephemeris",
+    "synastry",
+    "transits"
+  ],
+  "areaServed": "Worldwide",
+  "availableLanguage": ["tr", "en", "es", "de", "fr", "it", "pt-br", "ru", "ar"],
+  "sameAs": [
+    "https://twitter.com/astrobobo",
+    "https://x.com/astrobobo",
+    "https://instagram.com/astrobobo",
+    "https://www.tiktok.com/@astrobobo",
+    "https://www.threads.net/@astrobobo",
+    "https://github.com/astrobobo",
+    "https://www.youtube.com/@astrobobo"
+  ],
+  "contactPoint": {
+    "type": "ContactPoint",
+    "email": "bildirim@astrobobo.com",
+    "contactType": "customer support",
+    "availableLanguage": ["tr", "en"]
+  },
+  "_note_to_human": "Update sameAs URLs as social accounts are created. Wikidata QID will be added once the entity is approved (see docs/WIKIDATA_SUBMIT.md). Each URL listed here is a sameAs claim that strengthens entity recognition for AI engines like ChatGPT, Perplexity, and Google Knowledge Graph."
+}

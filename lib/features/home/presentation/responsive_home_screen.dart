@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'widgets/mobile_lite_homepage.dart';
-import 'widgets/desktop_rich_homepage.dart';
+import 'widgets/cinematic_portal_homepage.dart';
 
 /// RESPONSIVE HOME SCREEN ROUTER
 ///
@@ -26,11 +26,17 @@ class ResponsiveHomeScreen extends StatelessWidget {
         final screenWidth = constraints.maxWidth;
         final isMobile = _shouldUseMobileLayout(context, screenWidth);
 
-        // Return appropriate homepage
+        // Return appropriate homepage.
+        //
+        // Desktop now serves the cinematic portal (CinematicPortalHomepage):
+        // an interactive "entry into a living AI universe" that replaces
+        // the previous informational DesktopRichHomepage. The old rich
+        // homepage file is preserved in-tree for reference and can be
+        // restored by swapping the import if we ever need to revert.
         if (isMobile) {
           return const MobileLiteHomepage();
         } else {
-          return const DesktopRichHomepage();
+          return const CinematicPortalHomepage();
         }
       },
     );

@@ -1,0 +1,88 @@
+name: SEO Build (content → static pages)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/**/*.md'
+      - 'scripts/generate_seo_pages.dart'
+      - '.github/workflows/seo-build.yml'
+  workflow_dispatch:
+
+# Prevent infinite loop: seo-build commits HTML back; skip on its own commits
+concurrency:
+  group: seo-build
+  cancel-in-progress: false
+
+jobs:
+  build:
+    # Skip if this push came from seo-build itself
+    if: "!contains(github.event.head_commit.message, '[seo-build]')"
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          token: ${{ secrets.SEO_PUSH_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Setup Dart
+        uses: dart-lang/setup-dart@v1
+        with:
+          sdk: stable
+
+      - name: Generate SEO HTML pages
+        run: |
+          mkdir -p web/r
+          dart run scripts/generate_seo_pages.dart
+
+      - name: Generate sitemap.xml
+        run: dart run scripts/generate_sitemap.dart
+
+      - name: Generate llms.txt + llms-full.txt
+        run: dart run scripts/generate_llms_txt.dart
+
+      - name: Show diff
+        run: |
+          git status
+          git diff --stat || true
+
+      - name: Commit static pages
+        env:
+          GH_TOKEN: ${{ secrets.SEO_PUSH_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name  "astrobobo-seo-bot"
+          git config user.email "seo-bot@astrobobo.com"
+          git add web/r web/sitemap.xml web/llms.txt web/llms-full.txt || true
+          if git diff --cached --quiet; then
+            echo "No static page changes"
+            exit 0
+          fi
+          git commit -m "[seo-build] regen static pages + sitemap"
+          git push origin main
+
+      - name: Ping IndexNow
+        if: ${{ env.INDEXNOW_KEY != '' }}
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+          SITE_ORIGIN: ${{ vars.SITE_ORIGIN || 'https://astrobobo.com' }}
+        run: |
+          # Extract changed slugs from the triggering commit
+          CHANGED=$(git diff --name-only HEAD^ HEAD -- 'content/**/*.md' | grep -E 'content/[a-z\-]+/.+\.md$' || true)
+          if [ -z "$CHANGED" ]; then
+            echo "No content changes to ping"
+            exit 0
+          fi
+
+          URLS=$(echo "$CHANGED" | sed -E "s|content/([a-z\-]+)/(.+)\.md|\"$SITE_ORIGIN/r/\1/\2\"|g" | paste -sd, -)
+          HOST=$(echo "$SITE_ORIGIN" | sed -E 's|https?://||')
+
+          curl -sS -X POST https://api.indexnow.org/IndexNow \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "{\"host\":\"$HOST\",\"key\":\"$INDEXNOW_KEY\",\"keyLocation\":\"$SITE_ORIGIN/$INDEXNOW_KEY.txt\",\"urlList\":[$URLS]}"
+
+      - name: Trigger Vercel deploy hook
+        if: ${{ secrets.VERCEL_DEPLOY_HOOK_URL != '' }}
+        run: curl -sS -X POST "${{ secrets.VERCEL_DEPLOY_HOOK_URL }}"

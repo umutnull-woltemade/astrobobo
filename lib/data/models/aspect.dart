@@ -3,100 +3,154 @@ import 'planet.dart';
 
 /// Types of astrological aspects
 enum AspectType {
-  conjunction,   // 0°
-  opposition,    // 180°
-  trine,         // 120°
-  square,        // 90°
-  sextile,       // 60°
-  quincunx,      // 150°
-  semisextile,   // 30°
-  semisquare,    // 45°
-  sesquisquare,  // 135°
+  conjunction, // 0°
+  opposition, // 180°
+  trine, // 120°
+  square, // 90°
+  sextile, // 60°
+  quincunx, // 150°
+  semisextile, // 30°
+  semisquare, // 45°
+  sesquisquare, // 135°
 }
 
 extension AspectTypeExtension on AspectType {
   String get name {
     switch (this) {
-      case AspectType.conjunction: return 'Conjunction';
-      case AspectType.opposition: return 'Opposition';
-      case AspectType.trine: return 'Trine';
-      case AspectType.square: return 'Square';
-      case AspectType.sextile: return 'Sextile';
-      case AspectType.quincunx: return 'Quincunx';
-      case AspectType.semisextile: return 'Semi-sextile';
-      case AspectType.semisquare: return 'Semi-square';
-      case AspectType.sesquisquare: return 'Sesquisquare';
+      case AspectType.conjunction:
+        return 'Conjunction';
+      case AspectType.opposition:
+        return 'Opposition';
+      case AspectType.trine:
+        return 'Trine';
+      case AspectType.square:
+        return 'Square';
+      case AspectType.sextile:
+        return 'Sextile';
+      case AspectType.quincunx:
+        return 'Quincunx';
+      case AspectType.semisextile:
+        return 'Semi-sextile';
+      case AspectType.semisquare:
+        return 'Semi-square';
+      case AspectType.sesquisquare:
+        return 'Sesquisquare';
     }
   }
 
   String get nameTr {
     switch (this) {
-      case AspectType.conjunction: return 'Kavuşum';
-      case AspectType.opposition: return 'Karşıt';
-      case AspectType.trine: return 'Üçgen';
-      case AspectType.square: return 'Kare';
-      case AspectType.sextile: return 'Sekstil';
-      case AspectType.quincunx: return 'Quincunx';
-      case AspectType.semisextile: return 'Yarı Sekstil';
-      case AspectType.semisquare: return 'Yarı Kare';
-      case AspectType.sesquisquare: return 'Sesquikare';
+      case AspectType.conjunction:
+        return 'Kavuşum';
+      case AspectType.opposition:
+        return 'Karşıt';
+      case AspectType.trine:
+        return 'Üçgen';
+      case AspectType.square:
+        return 'Kare';
+      case AspectType.sextile:
+        return 'Sekstil';
+      case AspectType.quincunx:
+        return 'Quincunx';
+      case AspectType.semisextile:
+        return 'Yarı Sekstil';
+      case AspectType.semisquare:
+        return 'Yarı Kare';
+      case AspectType.sesquisquare:
+        return 'Sesquikare';
     }
   }
 
   String get symbol {
     switch (this) {
-      case AspectType.conjunction: return '☌';
-      case AspectType.opposition: return '☍';
-      case AspectType.trine: return '△';
-      case AspectType.square: return '□';
-      case AspectType.sextile: return '⚹';
-      case AspectType.quincunx: return '⚻';
-      case AspectType.semisextile: return '⚺';
-      case AspectType.semisquare: return '∠';
-      case AspectType.sesquisquare: return '⚼';
+      case AspectType.conjunction:
+        return '☌';
+      case AspectType.opposition:
+        return '☍';
+      case AspectType.trine:
+        return '△';
+      case AspectType.square:
+        return '□';
+      case AspectType.sextile:
+        return '⚹';
+      case AspectType.quincunx:
+        return '⚻';
+      case AspectType.semisextile:
+        return '⚺';
+      case AspectType.semisquare:
+        return '∠';
+      case AspectType.sesquisquare:
+        return '⚼';
     }
   }
 
   double get angle {
     switch (this) {
-      case AspectType.conjunction: return 0;
-      case AspectType.opposition: return 180;
-      case AspectType.trine: return 120;
-      case AspectType.square: return 90;
-      case AspectType.sextile: return 60;
-      case AspectType.quincunx: return 150;
-      case AspectType.semisextile: return 30;
-      case AspectType.semisquare: return 45;
-      case AspectType.sesquisquare: return 135;
+      case AspectType.conjunction:
+        return 0;
+      case AspectType.opposition:
+        return 180;
+      case AspectType.trine:
+        return 120;
+      case AspectType.square:
+        return 90;
+      case AspectType.sextile:
+        return 60;
+      case AspectType.quincunx:
+        return 150;
+      case AspectType.semisextile:
+        return 30;
+      case AspectType.semisquare:
+        return 45;
+      case AspectType.sesquisquare:
+        return 135;
     }
   }
 
   /// Orb (tolerance) in degrees for this aspect
   double get orb {
     switch (this) {
-      case AspectType.conjunction: return 10;
-      case AspectType.opposition: return 10;
-      case AspectType.trine: return 8;
-      case AspectType.square: return 8;
-      case AspectType.sextile: return 6;
-      case AspectType.quincunx: return 3;
-      case AspectType.semisextile: return 3;
-      case AspectType.semisquare: return 3;
-      case AspectType.sesquisquare: return 3;
+      case AspectType.conjunction:
+        return 10;
+      case AspectType.opposition:
+        return 10;
+      case AspectType.trine:
+        return 8;
+      case AspectType.square:
+        return 8;
+      case AspectType.sextile:
+        return 6;
+      case AspectType.quincunx:
+        return 3;
+      case AspectType.semisextile:
+        return 3;
+      case AspectType.semisquare:
+        return 3;
+      case AspectType.sesquisquare:
+        return 3;
     }
   }
 
   Color get color {
     switch (this) {
-      case AspectType.conjunction: return const Color(0xFFFFD700);
-      case AspectType.opposition: return const Color(0xFFDC143C);
-      case AspectType.trine: return const Color(0xFF32CD32);
-      case AspectType.square: return const Color(0xFFFF4500);
-      case AspectType.sextile: return const Color(0xFF4169E1);
-      case AspectType.quincunx: return const Color(0xFF9370DB);
-      case AspectType.semisextile: return const Color(0xFF87CEEB);
-      case AspectType.semisquare: return const Color(0xFFFF6347);
-      case AspectType.sesquisquare: return const Color(0xFFFF8C00);
+      case AspectType.conjunction:
+        return const Color(0xFFFFD700);
+      case AspectType.opposition:
+        return const Color(0xFFDC143C);
+      case AspectType.trine:
+        return const Color(0xFF32CD32);
+      case AspectType.square:
+        return const Color(0xFFFF4500);
+      case AspectType.sextile:
+        return const Color(0xFF4169E1);
+      case AspectType.quincunx:
+        return const Color(0xFF9370DB);
+      case AspectType.semisextile:
+        return const Color(0xFF87CEEB);
+      case AspectType.semisquare:
+        return const Color(0xFFFF6347);
+      case AspectType.sesquisquare:
+        return const Color(0xFFFF8C00);
     }
   }
 

@@ -39,84 +39,301 @@ class _DreamInterpretationScreenState
   // Önerilen rüya paylaşım örnekleri - MEGA GELİŞTİRİLMİŞ
   final List<Map<String, dynamic>> _suggestedDreamPrompts = [
     // 🌊 SU & DOĞA RÜYALARI
-    {'emoji': '🌊', 'text': 'Denizde yüzüyordum ama suyun altında nefes alabiliyordum', 'category': 'su'},
-    {'emoji': '🌧️', 'text': 'Şiddetli yağmur altında koşuyordum ama ıslanmıyordum', 'category': 'su'},
-    {'emoji': '🏊', 'text': 'Derin bir göle dalıyordum ve dibinde ışık görüyordum', 'category': 'su'},
-    {'emoji': '🌈', 'text': 'Şelalenin arkasında gizli bir geçit keşfettim', 'category': 'su'},
+    {
+      'emoji': '🌊',
+      'text': 'Denizde yüzüyordum ama suyun altında nefes alabiliyordum',
+      'category': 'su',
+    },
+    {
+      'emoji': '🌧️',
+      'text': 'Şiddetli yağmur altında koşuyordum ama ıslanmıyordum',
+      'category': 'su',
+    },
+    {
+      'emoji': '🏊',
+      'text': 'Derin bir göle dalıyordum ve dibinde ışık görüyordum',
+      'category': 'su',
+    },
+    {
+      'emoji': '🌈',
+      'text': 'Şelalenin arkasında gizli bir geçit keşfettim',
+      'category': 'su',
+    },
 
     // 🐍 HAYVAN RÜYALARI
-    {'emoji': '🐍', 'text': 'Yılan gördüm, bana doğru yaklaşıyordu ama korkmadım', 'category': 'hayvan'},
-    {'emoji': '🦅', 'text': 'Bir kartalın sırtında uçuyordum ve şehri görüyordum', 'category': 'hayvan'},
-    {'emoji': '🐺', 'text': 'Kurt sürüsü beni takip ediyordu ama bana zarar vermediler', 'category': 'hayvan'},
-    {'emoji': '🦋', 'text': 'Kelebeklerin içinden geçtim ve kendimi dönüşmüş hissettim', 'category': 'hayvan'},
-    {'emoji': '🐱', 'text': 'Konuşan bir kedi bana önemli bir şey söyledi', 'category': 'hayvan'},
+    {
+      'emoji': '🐍',
+      'text': 'Yılan gördüm, bana doğru yaklaşıyordu ama korkmadım',
+      'category': 'hayvan',
+    },
+    {
+      'emoji': '🦅',
+      'text': 'Bir kartalın sırtında uçuyordum ve şehri görüyordum',
+      'category': 'hayvan',
+    },
+    {
+      'emoji': '🐺',
+      'text': 'Kurt sürüsü beni takip ediyordu ama bana zarar vermediler',
+      'category': 'hayvan',
+    },
+    {
+      'emoji': '🦋',
+      'text': 'Kelebeklerin içinden geçtim ve kendimi dönüşmüş hissettim',
+      'category': 'hayvan',
+    },
+    {
+      'emoji': '🐱',
+      'text': 'Konuşan bir kedi bana önemli bir şey söyledi',
+      'category': 'hayvan',
+    },
 
     // ✈️ UÇMA & DÜŞME RÜYALARI
-    {'emoji': '🦸', 'text': 'Uçuyordum ve çok özgür hissediyordum', 'category': 'ucmak'},
-    {'emoji': '⬇️', 'text': 'Yüksekten düşüyordum ama yere çarpmadan önce uyandım', 'category': 'dusmek'},
-    {'emoji': '🎈', 'text': 'Balonlarla havada süzülüyordum ve aşağıdaki insanları izliyordum', 'category': 'ucmak'},
-    {'emoji': '🪂', 'text': 'Paraşütle atlıyordum ama paraşüt açılmıyordu', 'category': 'dusmek'},
+    {
+      'emoji': '🦸',
+      'text': 'Uçuyordum ve çok özgür hissediyordum',
+      'category': 'ucmak',
+    },
+    {
+      'emoji': '⬇️',
+      'text': 'Yüksekten düşüyordum ama yere çarpmadan önce uyandım',
+      'category': 'dusmek',
+    },
+    {
+      'emoji': '🎈',
+      'text':
+          'Balonlarla havada süzülüyordum ve aşağıdaki insanları izliyordum',
+      'category': 'ucmak',
+    },
+    {
+      'emoji': '🪂',
+      'text': 'Paraşütle atlıyordum ama paraşüt açılmıyordu',
+      'category': 'dusmek',
+    },
 
     // 🏃 KAÇIŞ & KOVALANMA RÜYALARI
-    {'emoji': '🏃', 'text': 'Bir şeyden kaçıyordum ama bacaklarım hareket etmiyordu', 'category': 'kovalanmak'},
-    {'emoji': '👤', 'text': 'Tanımadığım biri beni takip ediyordu, yüzünü göremiyordum', 'category': 'kovalanmak'},
-    {'emoji': '🚪', 'text': 'Koridorda koşuyordum ama kapılar sürekli kayboluyordu', 'category': 'kovalanmak'},
-    {'emoji': '🌑', 'text': 'Karanlıkta saklanan bir şeyden kaçıyordum', 'category': 'kovalanmak'},
+    {
+      'emoji': '🏃',
+      'text': 'Bir şeyden kaçıyordum ama bacaklarım hareket etmiyordu',
+      'category': 'kovalanmak',
+    },
+    {
+      'emoji': '👤',
+      'text': 'Tanımadığım biri beni takip ediyordu, yüzünü göremiyordum',
+      'category': 'kovalanmak',
+    },
+    {
+      'emoji': '🚪',
+      'text': 'Koridorda koşuyordum ama kapılar sürekli kayboluyordu',
+      'category': 'kovalanmak',
+    },
+    {
+      'emoji': '🌑',
+      'text': 'Karanlıkta saklanan bir şeyden kaçıyordum',
+      'category': 'kovalanmak',
+    },
 
     // 🏠 EV & MEKAN RÜYALARI
-    {'emoji': '🏠', 'text': 'Evimde hiç görmediğim gizli odalar keşfettim', 'category': 'ev'},
-    {'emoji': '🏚️', 'text': 'Çocukluk evimdeydim ama her şey farklıydı', 'category': 'ev'},
-    {'emoji': '🏰', 'text': 'Bir sarayda kaybolmuştum ve çıkışı bulamıyordum', 'category': 'ev'},
-    {'emoji': '🛗', 'text': 'Asansör sürekli yanlış katlara gidiyordu', 'category': 'ev'},
+    {
+      'emoji': '🏠',
+      'text': 'Evimde hiç görmediğim gizli odalar keşfettim',
+      'category': 'ev',
+    },
+    {
+      'emoji': '🏚️',
+      'text': 'Çocukluk evimdeydim ama her şey farklıydı',
+      'category': 'ev',
+    },
+    {
+      'emoji': '🏰',
+      'text': 'Bir sarayda kaybolmuştum ve çıkışı bulamıyordum',
+      'category': 'ev',
+    },
+    {
+      'emoji': '🛗',
+      'text': 'Asansör sürekli yanlış katlara gidiyordu',
+      'category': 'ev',
+    },
 
     // 👥 İNSAN & İLİŞKİ RÜYALARI
-    {'emoji': '👨‍👩‍👧', 'text': 'Ölen bir yakınımı gördüm, benimle konuştu', 'category': 'insan'},
-    {'emoji': '💔', 'text': 'Eski sevgilimi gördüm ama tanımadığım biriymiş gibi davrandı', 'category': 'insan'},
-    {'emoji': '👶', 'text': 'Kucağımda bir bebek vardı ama kimin bebeği bilmiyordum', 'category': 'bebek'},
-    {'emoji': '👰', 'text': 'Düğünümü gördüm ama damat/gelin yüzü bulanıktı', 'category': 'gelin'},
-    {'emoji': '👯', 'text': 'Kendimi dışarıdan izliyordum, iki tane bendim', 'category': 'insan'},
+    {
+      'emoji': '👨‍👩‍👧',
+      'text': 'Ölen bir yakınımı gördüm, benimle konuştu',
+      'category': 'insan',
+    },
+    {
+      'emoji': '💔',
+      'text': 'Eski sevgilimi gördüm ama tanımadığım biriymiş gibi davrandı',
+      'category': 'insan',
+    },
+    {
+      'emoji': '👶',
+      'text': 'Kucağımda bir bebek vardı ama kimin bebeği bilmiyordum',
+      'category': 'bebek',
+    },
+    {
+      'emoji': '👰',
+      'text': 'Düğünümü gördüm ama damat/gelin yüzü bulanıktı',
+      'category': 'gelin',
+    },
+    {
+      'emoji': '👯',
+      'text': 'Kendimi dışarıdan izliyordum, iki tane bendim',
+      'category': 'insan',
+    },
 
     // 🦷 BEDEN RÜYALARI
-    {'emoji': '🦷', 'text': 'Dişlerim dökülüyordu ve durduramıyordum', 'category': 'dis'},
-    {'emoji': '💇', 'text': 'Saçlarım bir anda uzadı veya döküldü', 'category': 'beden'},
-    {'emoji': '👁️', 'text': 'Aynaya baktım ama başka birini gördüm', 'category': 'beden'},
-    {'emoji': '🫀', 'text': 'Vücudumun bir kısmı hareket etmiyordu', 'category': 'beden'},
+    {
+      'emoji': '🦷',
+      'text': 'Dişlerim dökülüyordu ve durduramıyordum',
+      'category': 'dis',
+    },
+    {
+      'emoji': '💇',
+      'text': 'Saçlarım bir anda uzadı veya döküldü',
+      'category': 'beden',
+    },
+    {
+      'emoji': '👁️',
+      'text': 'Aynaya baktım ama başka birini gördüm',
+      'category': 'beden',
+    },
+    {
+      'emoji': '🫀',
+      'text': 'Vücudumun bir kısmı hareket etmiyordu',
+      'category': 'beden',
+    },
 
     // 🔥 ELEMENT RÜYALARI
-    {'emoji': '🔥', 'text': 'Her yer yanıyordu ama ben yanmıyordum', 'category': 'ates'},
-    {'emoji': '⚡', 'text': 'Yıldırım çarpıyordu ve bir güç hissettim', 'category': 'element'},
-    {'emoji': '🌪️', 'text': 'Kasırganın içindeydim ama sakin hissediyordum', 'category': 'element'},
-    {'emoji': '❄️', 'text': 'Her yer donmuştu ve buzda yürüyordum', 'category': 'element'},
+    {
+      'emoji': '🔥',
+      'text': 'Her yer yanıyordu ama ben yanmıyordum',
+      'category': 'ates',
+    },
+    {
+      'emoji': '⚡',
+      'text': 'Yıldırım çarpıyordu ve bir güç hissettim',
+      'category': 'element',
+    },
+    {
+      'emoji': '🌪️',
+      'text': 'Kasırganın içindeydim ama sakin hissediyordum',
+      'category': 'element',
+    },
+    {
+      'emoji': '❄️',
+      'text': 'Her yer donmuştu ve buzda yürüyordum',
+      'category': 'element',
+    },
 
     // 📚 SINAV & PERFORMANS RÜYALARI
-    {'emoji': '📝', 'text': 'Sınava hazırlıksız girdim, hiçbir şey bilmiyordum', 'category': 'sinav'},
-    {'emoji': '🎤', 'text': 'Sahnede konuşmam gerekiyordu ama sesim çıkmıyordu', 'category': 'sinav'},
-    {'emoji': '🏃‍♂️', 'text': 'Yarışıyordum ama koşamıyordum', 'category': 'sinav'},
-    {'emoji': '🎭', 'text': 'Rol yapmam gerekiyordu ama repliklerimi unutmuştum', 'category': 'sinav'},
+    {
+      'emoji': '📝',
+      'text': 'Sınava hazırlıksız girdim, hiçbir şey bilmiyordum',
+      'category': 'sinav',
+    },
+    {
+      'emoji': '🎤',
+      'text': 'Sahnede konuşmam gerekiyordu ama sesim çıkmıyordu',
+      'category': 'sinav',
+    },
+    {
+      'emoji': '🏃‍♂️',
+      'text': 'Yarışıyordum ama koşamıyordum',
+      'category': 'sinav',
+    },
+    {
+      'emoji': '🎭',
+      'text': 'Rol yapmam gerekiyordu ama repliklerimi unutmuştum',
+      'category': 'sinav',
+    },
 
     // 💀 ÖLÜM & DÖNÜŞÜM RÜYALARI
-    {'emoji': '💀', 'text': 'Öldüğümü gördüm ama ruhum izliyordu', 'category': 'olum'},
-    {'emoji': '⚰️', 'text': 'Cenaze törenimdeydim, herkes ağlıyordu', 'category': 'olum'},
-    {'emoji': '🔄', 'text': 'Öldüm ama başka bir bedende uyandım', 'category': 'olum'},
-    {'emoji': '👻', 'text': 'Hayalet olmuştum ve kimse beni göremiyordu', 'category': 'olum'},
+    {
+      'emoji': '💀',
+      'text': 'Öldüğümü gördüm ama ruhum izliyordu',
+      'category': 'olum',
+    },
+    {
+      'emoji': '⚰️',
+      'text': 'Cenaze törenimdeydim, herkes ağlıyordu',
+      'category': 'olum',
+    },
+    {
+      'emoji': '🔄',
+      'text': 'Öldüm ama başka bir bedende uyandım',
+      'category': 'olum',
+    },
+    {
+      'emoji': '👻',
+      'text': 'Hayalet olmuştum ve kimse beni göremiyordu',
+      'category': 'olum',
+    },
 
     // 💰 PARA & BOLLUK RÜYALARI
-    {'emoji': '💰', 'text': 'Yerde altınlar buldum ama toplayamıyordum', 'category': 'para'},
-    {'emoji': '🏆', 'text': 'Piyango kazandım ama bilet kayboldu', 'category': 'para'},
-    {'emoji': '💎', 'text': 'Mücevherlerle dolu bir hazine sandığı açtım', 'category': 'para'},
+    {
+      'emoji': '💰',
+      'text': 'Yerde altınlar buldum ama toplayamıyordum',
+      'category': 'para',
+    },
+    {
+      'emoji': '🏆',
+      'text': 'Piyango kazandım ama bilet kayboldu',
+      'category': 'para',
+    },
+    {
+      'emoji': '💎',
+      'text': 'Mücevherlerle dolu bir hazine sandığı açtım',
+      'category': 'para',
+    },
 
     // 🚗 ARAÇ & YOLCULUK RÜYALARI
-    {'emoji': '🚗', 'text': 'Araba kullanıyordum ama frenler tutmuyordu', 'category': 'araba'},
-    {'emoji': '✈️', 'text': 'Uçak düşüyordu ama sakin hissediyordum', 'category': 'yolculuk'},
-    {'emoji': '🚂', 'text': 'Treni kaçırdım ve bir daha gelmeyeceğini biliyordum', 'category': 'yolculuk'},
-    {'emoji': '🛤️', 'text': 'Sonu görünmeyen bir yolda yürüyordum', 'category': 'yolculuk'},
+    {
+      'emoji': '🚗',
+      'text': 'Araba kullanıyordum ama frenler tutmuyordu',
+      'category': 'araba',
+    },
+    {
+      'emoji': '✈️',
+      'text': 'Uçak düşüyordu ama sakin hissediyordum',
+      'category': 'yolculuk',
+    },
+    {
+      'emoji': '🚂',
+      'text': 'Treni kaçırdım ve bir daha gelmeyeceğini biliyordum',
+      'category': 'yolculuk',
+    },
+    {
+      'emoji': '🛤️',
+      'text': 'Sonu görünmeyen bir yolda yürüyordum',
+      'category': 'yolculuk',
+    },
 
     // 🔮 MİSTİK & SPİRİTÜEL RÜYALAR
-    {'emoji': '🔮', 'text': 'Geleceği gördüm ve bir şey değişiyordu', 'category': 'mistik'},
-    {'emoji': '👼', 'text': 'Bir melek veya ışık varlığı gördüm', 'category': 'mistik'},
-    {'emoji': '🌙', 'text': 'Ay çok büyüktü ve bana mesaj veriyordu', 'category': 'mistik'},
-    {'emoji': '⭐', 'text': 'Yıldızlara yükseliyordum ve evren açıldı', 'category': 'mistik'},
-    {'emoji': '🪬', 'text': 'Bir portal açıldı ve başka bir dünyaya geçtim', 'category': 'mistik'},
+    {
+      'emoji': '🔮',
+      'text': 'Geleceği gördüm ve bir şey değişiyordu',
+      'category': 'mistik',
+    },
+    {
+      'emoji': '👼',
+      'text': 'Bir melek veya ışık varlığı gördüm',
+      'category': 'mistik',
+    },
+    {
+      'emoji': '🌙',
+      'text': 'Ay çok büyüktü ve bana mesaj veriyordu',
+      'category': 'mistik',
+    },
+    {
+      'emoji': '⭐',
+      'text': 'Yıldızlara yükseliyordum ve evren açıldı',
+      'category': 'mistik',
+    },
+    {
+      'emoji': '🪬',
+      'text': 'Bir portal açıldı ve başka bir dünyaya geçtim',
+      'category': 'mistik',
+    },
   ];
 
   @override
@@ -144,16 +361,18 @@ class _DreamInterpretationScreenState
     final sign = userProfile?.sunSign ?? zodiac.ZodiacSign.aries;
 
     setState(() {
-      _messages.add(ChatMessage(
-        text:
-            'Merhaba, ben Rüya İzi. ${sign.nameTr} burcunun kozmik enerjisiyle sana rehberlik etmek için buradayım.\n\n'
-            'Gördüğün rüyayı detaylı bir şekilde anlat. Ne gördün? Neler hissettin? '
-            'Rüyandaki semboller, renkler ve duygular hakkında ne kadar çok bilgi verirsen, '
-            'kozmik yorumum o kadar derin olacak.\n\n'
-            '⚠️ ${DisclaimerTexts.dreams}',
-        isUser: false,
-        timestamp: DateTime.now(),
-      ));
+      _messages.add(
+        ChatMessage(
+          text:
+              'Merhaba, ben Rüya İzi. ${sign.nameTr} burcunun kozmik enerjisiyle sana rehberlik etmek için buradayım.\n\n'
+              'Gördüğün rüyayı detaylı bir şekilde anlat. Ne gördün? Neler hissettin? '
+              'Rüyandaki semboller, renkler ve duygular hakkında ne kadar çok bilgi verirsen, '
+              'kozmik yorumum o kadar derin olacak.\n\n'
+              '⚠️ ${DisclaimerTexts.dreams}',
+          isUser: false,
+          timestamp: DateTime.now(),
+        ),
+      );
     });
   }
 
@@ -162,11 +381,9 @@ class _DreamInterpretationScreenState
     if (text.isEmpty) return;
 
     setState(() {
-      _messages.add(ChatMessage(
-        text: text,
-        isUser: true,
-        timestamp: DateTime.now(),
-      ));
+      _messages.add(
+        ChatMessage(text: text, isUser: true, timestamp: DateTime.now()),
+      );
       _isTyping = true;
     });
 
@@ -199,17 +416,21 @@ class _DreamInterpretationScreenState
       _contextAnswers.clear();
 
       // Add acknowledgment message
-      final acknowledgment = aiService.getDreamAcknowledgment(session.dreamSymbol);
+      final acknowledgment = aiService.getDreamAcknowledgment(
+        session.dreamSymbol,
+      );
 
       await Future.delayed(const Duration(milliseconds: 800));
 
       setState(() {
         _isTyping = false;
-        _messages.add(ChatMessage(
-          text: acknowledgment,
-          isUser: false,
-          timestamp: DateTime.now(),
-        ));
+        _messages.add(
+          ChatMessage(
+            text: acknowledgment,
+            isUser: false,
+            timestamp: DateTime.now(),
+          ),
+        );
       });
       _scrollToBottom();
 
@@ -217,12 +438,14 @@ class _DreamInterpretationScreenState
       if (session.contextQuestions.isNotEmpty) {
         await Future.delayed(const Duration(milliseconds: 1000));
         setState(() {
-          _messages.add(ChatMessage(
-            text: session.contextQuestions[0],
-            isUser: false,
-            timestamp: DateTime.now(),
-            isQuestion: true,
-          ));
+          _messages.add(
+            ChatMessage(
+              text: session.contextQuestions[0],
+              isUser: false,
+              timestamp: DateTime.now(),
+              isQuestion: true,
+            ),
+          );
           _awaitingAnswer = true;
         });
         _scrollToBottom();
@@ -233,11 +456,13 @@ class _DreamInterpretationScreenState
     } catch (e) {
       setState(() {
         _isTyping = false;
-        _messages.add(ChatMessage(
-          text: 'Bir sorun olustu. Lutfen tekrar dene.',
-          isUser: false,
-          timestamp: DateTime.now(),
-        ));
+        _messages.add(
+          ChatMessage(
+            text: 'Bir sorun olustu. Lutfen tekrar dene.',
+            isUser: false,
+            timestamp: DateTime.now(),
+          ),
+        );
       });
     }
   }
@@ -255,12 +480,14 @@ class _DreamInterpretationScreenState
       setState(() {
         _isTyping = false;
         _currentQuestionIndex++;
-        _messages.add(ChatMessage(
-          text: _currentSession!.contextQuestions[_currentQuestionIndex],
-          isUser: false,
-          timestamp: DateTime.now(),
-          isQuestion: true,
-        ));
+        _messages.add(
+          ChatMessage(
+            text: _currentSession!.contextQuestions[_currentQuestionIndex],
+            isUser: false,
+            timestamp: DateTime.now(),
+            isQuestion: true,
+          ),
+        );
       });
       _scrollToBottom();
     } else {
@@ -294,32 +521,34 @@ class _DreamInterpretationScreenState
 
       setState(() {
         _isTyping = false;
-        _messages.add(ChatMessage(
-          text: interpretedSession.interpretation ?? 'Yorum olusturulamadi.',
-          isUser: false,
-          timestamp: DateTime.now(),
-          isInterpretation: true,
-        ));
+        _messages.add(
+          ChatMessage(
+            text: interpretedSession.interpretation ?? 'Yorum olusturulamadi.',
+            isUser: false,
+            timestamp: DateTime.now(),
+            isInterpretation: true,
+          ),
+        );
       });
       _scrollToBottom();
 
       // Add follow-up message
       await Future.delayed(const Duration(milliseconds: 1500));
       setState(() {
-        _messages.add(ChatMessage(
-          text: 'Baska bir ruya paylasmak istersen, dinlemeye hazirim.',
-          isUser: false,
-          timestamp: DateTime.now(),
-        ));
+        _messages.add(
+          ChatMessage(
+            text: 'Baska bir ruya paylasmak istersen, dinlemeye hazirim.',
+            isUser: false,
+            timestamp: DateTime.now(),
+          ),
+        );
       });
       _scrollToBottom();
-
     } catch (e) {
       // Fallback to local interpretation
       _generateInterpretation(_currentSession!.dreamSymbol);
     }
   }
-
 
   void _generateInterpretation(String dreamText) {
     final userProfile = ref.read(userProfileProvider);
@@ -330,11 +559,13 @@ class _DreamInterpretationScreenState
 
     setState(() {
       _isTyping = false;
-      _messages.add(ChatMessage(
-        text: interpretation,
-        isUser: false,
-        timestamp: DateTime.now(),
-      ));
+      _messages.add(
+        ChatMessage(
+          text: interpretation,
+          isUser: false,
+          timestamp: DateTime.now(),
+        ),
+      );
     });
 
     _scrollToBottom();
@@ -427,7 +658,9 @@ class _DreamInterpretationScreenState
       // Generic interpretation based on zodiac
       buffer.writeln(_getGenericInterpretation(sign, dreamText));
     } else {
-      buffer.writeln('${sign.symbol} ${sign.nameTr} burcunun kozmik perspektifinden ruya yorumun:\n');
+      buffer.writeln(
+        '${sign.symbol} ${sign.nameTr} burcunun kozmik perspektifinden ruya yorumun:\n',
+      );
 
       for (final entry in themes.entries) {
         buffer.writeln(entry.value);
@@ -442,7 +675,8 @@ class _DreamInterpretationScreenState
 
   String _getWaterInterpretation(zodiac.ZodiacSign sign) {
     final interpretations = {
-      zodiac.ZodiacSign.aries: '''🌊 SU RÜYASI - ${sign.nameTr.toUpperCase()} YORUMU
+      zodiac.ZodiacSign.aries:
+          '''🌊 SU RÜYASI - ${sign.nameTr.toUpperCase()} YORUMU
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 💧 TEMEL ANLAM
@@ -462,7 +696,8 @@ Mesaj: Sadece koşmak değil, bazen duraksayıp hissetmek de gerekir
 • Gözyaşlarına izin ver
 • Duygularını yazıya dök''',
 
-      zodiac.ZodiacSign.taurus: '''🌊 SU RÜYASI - ${sign.nameTr.toUpperCase()} YORUMU
+      zodiac.ZodiacSign.taurus:
+          '''🌊 SU RÜYASI - ${sign.nameTr.toUpperCase()} YORUMU
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 💧 TEMEL ANLAM
@@ -482,7 +717,8 @@ Mesaj: Duygusal zenginlik maddi zenginliği çeker
 • Finansal akışı görselleştir
 • Rahatlama ve konfor önceliğin olsun''',
 
-      zodiac.ZodiacSign.cancer: '''🌊 SU RÜYASI - ${sign.nameTr.toUpperCase()} YORUMU
+      zodiac.ZodiacSign.cancer:
+          '''🌊 SU RÜYASI - ${sign.nameTr.toUpperCase()} YORUMU
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 💧 KENDİ ELEMENTİN - ÇOK GÜÇLÜ!
@@ -503,7 +739,8 @@ Mesaj: Eve dön - iç evine, ruhsal evine
 • Ev temizliği yap - enerjiyi yenile
 • Annevi figürlerle bağlantı kur''',
 
-      zodiac.ZodiacSign.scorpio: '''🌊 SU RÜYASI - ${sign.nameTr.toUpperCase()} YORUMU
+      zodiac.ZodiacSign.scorpio:
+          '''🌊 SU RÜYASI - ${sign.nameTr.toUpperCase()} YORUMU
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 💧 KENDİ ELEMENTİN - TRANSFORMASYON!
@@ -524,7 +761,8 @@ Mesaj: Karanlıktan korkmak yerine, onu aydınlat
 • Plutonyen dönüşümü kucakla
 • Terapi veya danışmanlık düşün''',
 
-      zodiac.ZodiacSign.pisces: '''🌊 SU RÜYASI - ${sign.nameTr.toUpperCase()} YORUMU
+      zodiac.ZodiacSign.pisces:
+          '''🌊 SU RÜYASI - ${sign.nameTr.toUpperCase()} YORUMU
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 💧 KENDİ ELEMENTİN - SPİRİTÜEL BAĞLANTI!
@@ -543,11 +781,12 @@ Mesaj: Sen sudan ötesin - okyanussun
 • Deniz veya göl kenarında meditasyon
 • Lucid rüya pratikleri
 • Şifa çalışmaları
-• Spiritüel rehberliğe açık ol'''
+• Spiritüel rehberliğe açık ol''',
     };
 
     // Default interpretation for other signs
-    return interpretations[sign] ?? '''🌊 SU RÜYASI - ${sign.nameTr.toUpperCase()} YORUMU
+    return interpretations[sign] ??
+        '''🌊 SU RÜYASI - ${sign.nameTr.toUpperCase()} YORUMU
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 💧 TEMEL ANLAM
@@ -979,9 +1218,7 @@ ${_getZodiacAdvice(sign)}''';
           child: Column(
             children: [
               _buildHeader(context),
-              Expanded(
-                child: _buildChatArea(),
-              ),
+              Expanded(child: _buildChatArea()),
               _buildInputArea(),
             ],
           ),
@@ -997,17 +1234,17 @@ ${_getZodiacAdvice(sign)}''';
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          colors: [
-            AppColors.mystic.withOpacity(0.3),
-            Colors.transparent,
-          ],
+          colors: [AppColors.mystic.withOpacity(0.3), Colors.transparent],
         ),
       ),
       child: Row(
         children: [
           IconButton(
             onPressed: () => context.pop(),
-            icon: const Icon(Icons.arrow_back_ios, color: AppColors.textPrimary),
+            icon: const Icon(
+              Icons.arrow_back_ios,
+              color: AppColors.textPrimary,
+            ),
           ),
           const SizedBox(width: 8),
           // Animated dream icon
@@ -1019,14 +1256,18 @@ ${_getZodiacAdvice(sign)}''';
                 decoration: BoxDecoration(
                   gradient: RadialGradient(
                     colors: [
-                      AppColors.mystic.withOpacity(0.5 + _pulseController.value * 0.3),
+                      AppColors.mystic.withOpacity(
+                        0.5 + _pulseController.value * 0.3,
+                      ),
                       AppColors.nebulaPurple.withOpacity(0.3),
                     ],
                   ),
                   shape: BoxShape.circle,
                   boxShadow: [
                     BoxShadow(
-                      color: AppColors.mystic.withOpacity(0.4 * _pulseController.value),
+                      color: AppColors.mystic.withOpacity(
+                        0.4 * _pulseController.value,
+                      ),
                       blurRadius: 15,
                       spreadRadius: 2,
                     ),
@@ -1047,15 +1288,15 @@ ${_getZodiacAdvice(sign)}''';
                 Text(
                   'Ruya Yorumcusu',
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        color: AppColors.textPrimary,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    color: AppColors.textPrimary,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 Text(
                   'Ruyalarinin gizemini coz',
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: AppColors.textSecondary,
-                      ),
+                    color: AppColors.textSecondary,
+                  ),
                 ),
               ],
             ),
@@ -1075,13 +1316,17 @@ ${_getZodiacAdvice(sign)}''';
     return ListView.builder(
       controller: _scrollController,
       padding: const EdgeInsets.all(16),
-      itemCount: _messages.length + (_isTyping ? 1 : 0) + (_messages.length == 1 ? 1 : 0),
+      itemCount:
+          _messages.length +
+          (_isTyping ? 1 : 0) +
+          (_messages.length == 1 ? 1 : 0),
       itemBuilder: (context, index) {
         // Show suggested prompts after welcome message
         if (_messages.length == 1 && index == 1 && !_isTyping) {
           return _buildSuggestedDreamPrompts();
         }
-        if (index == _messages.length + (_messages.length == 1 ? 1 : 0) && _isTyping) {
+        if (index == _messages.length + (_messages.length == 1 ? 1 : 0) &&
+            _isTyping) {
           return _buildTypingIndicator();
         }
         if (index < _messages.length) {
@@ -1128,59 +1373,65 @@ ${_getZodiacAdvice(sign)}''';
               itemBuilder: (context, index) {
                 final prompt = _suggestedDreamPrompts[index];
                 return Padding(
-                  padding: const EdgeInsets.only(right: 10),
-                  child: InkWell(
-                    onTap: () {
-                      _dreamController.text = prompt['text'];
-                      _sendMessage();
-                    },
-                    borderRadius: BorderRadius.circular(14),
-                    child: Container(
-                      width: 180,
-                      padding: const EdgeInsets.all(12),
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: [
-                            AppColors.mystic.withOpacity(0.25),
-                            AppColors.nebulaPurple.withOpacity(0.15),
-                          ],
-                        ),
+                      padding: const EdgeInsets.only(right: 10),
+                      child: InkWell(
+                        onTap: () {
+                          _dreamController.text = prompt['text'];
+                          _sendMessage();
+                        },
                         borderRadius: BorderRadius.circular(14),
-                        border: Border.all(
-                          color: AppColors.mystic.withOpacity(0.35),
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: AppColors.mystic.withOpacity(0.1),
-                            blurRadius: 8,
-                            offset: const Offset(0, 2),
-                          ),
-                        ],
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(prompt['emoji'], style: const TextStyle(fontSize: 22)),
-                          const SizedBox(height: 8),
-                          Expanded(
-                            child: Text(
-                              prompt['text'],
-                              style: const TextStyle(
-                                fontSize: 11,
-                                color: AppColors.textPrimary,
-                                height: 1.3,
-                              ),
-                              maxLines: 3,
-                              overflow: TextOverflow.ellipsis,
+                        child: Container(
+                          width: 180,
+                          padding: const EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
+                              colors: [
+                                AppColors.mystic.withOpacity(0.25),
+                                AppColors.nebulaPurple.withOpacity(0.15),
+                              ],
                             ),
+                            borderRadius: BorderRadius.circular(14),
+                            border: Border.all(
+                              color: AppColors.mystic.withOpacity(0.35),
+                            ),
+                            boxShadow: [
+                              BoxShadow(
+                                color: AppColors.mystic.withOpacity(0.1),
+                                blurRadius: 8,
+                                offset: const Offset(0, 2),
+                              ),
+                            ],
                           ),
-                        ],
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                prompt['emoji'],
+                                style: const TextStyle(fontSize: 22),
+                              ),
+                              const SizedBox(height: 8),
+                              Expanded(
+                                child: Text(
+                                  prompt['text'],
+                                  style: const TextStyle(
+                                    fontSize: 11,
+                                    color: AppColors.textPrimary,
+                                    height: 1.3,
+                                  ),
+                                  maxLines: 3,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
-                ).animate().fadeIn(duration: 300.ms, delay: (50 * index).ms).slideX(begin: 0.1, end: 0);
+                    )
+                    .animate()
+                    .fadeIn(duration: 300.ms, delay: (50 * index).ms)
+                    .slideX(begin: 0.1, end: 0);
               },
             ),
           ),
@@ -1204,118 +1455,134 @@ ${_getZodiacAdvice(sign)}''';
     final isUser = message.isUser;
 
     return Padding(
-      padding: const EdgeInsets.only(bottom: 12),
-      child: Row(
-        mainAxisAlignment:
-            isUser ? MainAxisAlignment.end : MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          if (!isUser) ...[
-            Container(
-              padding: const EdgeInsets.all(8),
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    AppColors.mystic.withOpacity(0.5),
-                    AppColors.nebulaPurple.withOpacity(0.3),
-                  ],
-                ),
-                shape: BoxShape.circle,
-              ),
-              child: const Text('\u{1F319}', style: TextStyle(fontSize: 18)),
-            ),
-            const SizedBox(width: 8),
-          ],
-          Flexible(
-            child: Container(
-              padding: const EdgeInsets.all(14),
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: isUser
-                      ? [
-                          AppColors.cosmicPurple.withOpacity(0.4),
-                          AppColors.nebulaPurple.withOpacity(0.3),
-                        ]
-                      : [
-                          AppColors.mystic.withOpacity(0.2),
-                          const Color(0xFF1A1A2E).withOpacity(0.8),
-                        ],
-                ),
-                borderRadius: BorderRadius.only(
-                  topLeft: const Radius.circular(18),
-                  topRight: const Radius.circular(18),
-                  bottomLeft: Radius.circular(isUser ? 18 : 4),
-                  bottomRight: Radius.circular(isUser ? 4 : 18),
-                ),
-                border: Border.all(
-                  color: isUser
-                      ? AppColors.cosmicPurple.withOpacity(0.3)
-                      : AppColors.mystic.withOpacity(0.2),
-                  width: 1,
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: (isUser ? AppColors.cosmicPurple : AppColors.mystic)
-                        .withOpacity(0.1),
-                    blurRadius: 8,
-                    offset: const Offset(0, 2),
+          padding: const EdgeInsets.only(bottom: 12),
+          child: Row(
+            mainAxisAlignment: isUser
+                ? MainAxisAlignment.end
+                : MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              if (!isUser) ...[
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        AppColors.mystic.withOpacity(0.5),
+                        AppColors.nebulaPurple.withOpacity(0.3),
+                      ],
+                    ),
+                    shape: BoxShape.circle,
                   ),
-                ],
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  if (message.isInterpretation) ...[
-                    Row(
-                      children: [
-                        const Text('\u{2728}', style: TextStyle(fontSize: 14)),
-                        const SizedBox(width: 6),
-                        Text(
-                          'RUYA YORUMU',
-                          style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                            color: AppColors.starGold,
-                            fontWeight: FontWeight.w600,
-                            letterSpacing: 1,
-                          ),
-                        ),
-                      ],
+                  child: const Text(
+                    '\u{1F319}',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ),
+                const SizedBox(width: 8),
+              ],
+              Flexible(
+                child: Container(
+                  padding: const EdgeInsets.all(14),
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: isUser
+                          ? [
+                              AppColors.cosmicPurple.withOpacity(0.4),
+                              AppColors.nebulaPurple.withOpacity(0.3),
+                            ]
+                          : [
+                              AppColors.mystic.withOpacity(0.2),
+                              const Color(0xFF1A1A2E).withOpacity(0.8),
+                            ],
                     ),
-                    const SizedBox(height: 8),
-                  ],
-                  if (message.isQuestion) ...[
-                    Row(
-                      children: [
-                        const Text('\u{2753}', style: TextStyle(fontSize: 12)),
-                        const SizedBox(width: 4),
-                        Text(
-                          'SORU',
-                          style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                            color: AppColors.mystic,
-                            fontWeight: FontWeight.w600,
-                            letterSpacing: 1,
-                          ),
-                        ),
-                      ],
+                    borderRadius: BorderRadius.only(
+                      topLeft: const Radius.circular(18),
+                      topRight: const Radius.circular(18),
+                      bottomLeft: Radius.circular(isUser ? 18 : 4),
+                      bottomRight: Radius.circular(isUser ? 4 : 18),
                     ),
-                    const SizedBox(height: 4),
-                  ],
-                  Text(
-                    message.text,
-                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                    border: Border.all(
+                      color: isUser
+                          ? AppColors.cosmicPurple.withOpacity(0.3)
+                          : AppColors.mystic.withOpacity(0.2),
+                      width: 1,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color:
+                            (isUser ? AppColors.cosmicPurple : AppColors.mystic)
+                                .withOpacity(0.1),
+                        blurRadius: 8,
+                        offset: const Offset(0, 2),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      if (message.isInterpretation) ...[
+                        Row(
+                          children: [
+                            const Text(
+                              '\u{2728}',
+                              style: TextStyle(fontSize: 14),
+                            ),
+                            const SizedBox(width: 6),
+                            Text(
+                              'RUYA YORUMU',
+                              style: Theme.of(context).textTheme.labelSmall
+                                  ?.copyWith(
+                                    color: AppColors.starGold,
+                                    fontWeight: FontWeight.w600,
+                                    letterSpacing: 1,
+                                  ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 8),
+                      ],
+                      if (message.isQuestion) ...[
+                        Row(
+                          children: [
+                            const Text(
+                              '\u{2753}',
+                              style: TextStyle(fontSize: 12),
+                            ),
+                            const SizedBox(width: 4),
+                            Text(
+                              'SORU',
+                              style: Theme.of(context).textTheme.labelSmall
+                                  ?.copyWith(
+                                    color: AppColors.mystic,
+                                    fontWeight: FontWeight.w600,
+                                    letterSpacing: 1,
+                                  ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 4),
+                      ],
+                      Text(
+                        message.text,
+                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                           color: AppColors.textPrimary,
                           height: 1.5,
                         ),
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
-            ),
+              if (isUser) const SizedBox(width: 8),
+            ],
           ),
-          if (isUser) const SizedBox(width: 8),
-        ],
-      ),
-    ).animate().fadeIn(duration: 300.ms, delay: (50 * index).ms).slideX(
+        )
+        .animate()
+        .fadeIn(duration: 300.ms, delay: (50 * index).ms)
+        .slideX(
           begin: isUser ? 0.2 : -0.2,
           end: 0,
           duration: 300.ms,
@@ -1347,20 +1614,19 @@ ${_getZodiacAdvice(sign)}''';
             decoration: BoxDecoration(
               color: AppColors.mystic.withOpacity(0.15),
               borderRadius: BorderRadius.circular(18),
-              border: Border.all(
-                color: AppColors.mystic.withOpacity(0.2),
-              ),
+              border: Border.all(color: AppColors.mystic.withOpacity(0.2)),
             ),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: List.generate(3, (index) {
                 return Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 2),
-                  child: const Text('\u{2728}', style: TextStyle(fontSize: 14)),
-                )
-                    .animate(
-                      onComplete: (controller) => controller.repeat(),
+                      margin: const EdgeInsets.symmetric(horizontal: 2),
+                      child: const Text(
+                        '\u{2728}',
+                        style: TextStyle(fontSize: 14),
+                      ),
                     )
+                    .animate(onComplete: (controller) => controller.repeat())
                     .fadeIn(duration: 400.ms, delay: (200 * index).ms)
                     .then()
                     .fadeOut(duration: 400.ms, delay: 400.ms);
@@ -1379,10 +1645,7 @@ ${_getZodiacAdvice(sign)}''';
         gradient: LinearGradient(
           begin: Alignment.bottomCenter,
           end: Alignment.topCenter,
-          colors: [
-            AppColors.nebulaPurple.withOpacity(0.5),
-            Colors.transparent,
-          ],
+          colors: [AppColors.nebulaPurple.withOpacity(0.5), Colors.transparent],
         ),
       ),
       child: Column(
@@ -1391,87 +1654,88 @@ ${_getZodiacAdvice(sign)}''';
           // Quick answer buttons when awaiting context answer
           if (_awaitingAnswer && _currentSession != null) _buildQuickAnswers(),
           Row(
-        children: [
-          Expanded(
-            child: Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    AppColors.mystic.withOpacity(0.15),
-                    const Color(0xFF1A1A2E).withOpacity(0.9),
-                  ],
-                ),
-                borderRadius: BorderRadius.circular(24),
-                border: Border.all(
-                  color: AppColors.mystic.withOpacity(0.3),
-                ),
-              ),
-              child: RawKeyboardListener(
-                focusNode: FocusNode(),
-                onKey: (event) {
-                  if (event.isKeyPressed(LogicalKeyboardKey.enter) &&
-                      !event.isShiftPressed) {
-                    _sendMessage();
-                  }
-                },
-                child: TextField(
-                  controller: _dreamController,
-                  style: const TextStyle(color: AppColors.textPrimary),
-                  maxLines: 5,
-                  minLines: 1,
-                  textInputAction: TextInputAction.send,
-                  decoration: InputDecoration(
-                    hintText: 'Rüyanı detaylı anlat... (Enter ile gönder, Shift+Enter yeni satır)',
-                    hintStyle: TextStyle(color: AppColors.textSecondary.withOpacity(0.6)),
-                    border: InputBorder.none,
-                    contentPadding: const EdgeInsets.symmetric(
-                      horizontal: 18,
-                      vertical: 12,
+            children: [
+              Expanded(
+                child: Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        AppColors.mystic.withOpacity(0.15),
+                        const Color(0xFF1A1A2E).withOpacity(0.9),
+                      ],
+                    ),
+                    borderRadius: BorderRadius.circular(24),
+                    border: Border.all(
+                      color: AppColors.mystic.withOpacity(0.3),
                     ),
                   ),
-                  onSubmitted: (_) => _sendMessage(),
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(width: 10),
-          GestureDetector(
-            onTap: _sendMessage,
-            child: Container(
-              padding: const EdgeInsets.all(14),
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    AppColors.mystic,
-                    AppColors.cosmicPurple,
-                  ],
-                ),
-                shape: BoxShape.circle,
-                boxShadow: [
-                  BoxShadow(
-                    color: AppColors.mystic.withOpacity(0.4),
-                    blurRadius: 12,
-                    spreadRadius: 1,
+                  child: RawKeyboardListener(
+                    focusNode: FocusNode(),
+                    onKey: (event) {
+                      if (event.isKeyPressed(LogicalKeyboardKey.enter) &&
+                          !event.isShiftPressed) {
+                        _sendMessage();
+                      }
+                    },
+                    child: TextField(
+                      controller: _dreamController,
+                      style: const TextStyle(color: AppColors.textPrimary),
+                      maxLines: 5,
+                      minLines: 1,
+                      textInputAction: TextInputAction.send,
+                      decoration: InputDecoration(
+                        hintText:
+                            'Rüyanı detaylı anlat... (Enter ile gönder, Shift+Enter yeni satır)',
+                        hintStyle: TextStyle(
+                          color: AppColors.textSecondary.withOpacity(0.6),
+                        ),
+                        border: InputBorder.none,
+                        contentPadding: const EdgeInsets.symmetric(
+                          horizontal: 18,
+                          vertical: 12,
+                        ),
+                      ),
+                      onSubmitted: (_) => _sendMessage(),
+                    ),
                   ),
-                ],
+                ),
               ),
-              child: const Icon(
-                Icons.send_rounded,
-                color: Colors.white,
-                size: 22,
-              ),
-            ),
-          )
-              .animate(
-                onComplete: (controller) => controller.repeat(reverse: true),
-              )
-              .scale(
-                begin: const Offset(1, 1),
-                end: const Offset(1.05, 1.05),
-                duration: 1500.ms,
-              ),
-        ],
-      ),
+              const SizedBox(width: 10),
+              GestureDetector(
+                    onTap: _sendMessage,
+                    child: Container(
+                      padding: const EdgeInsets.all(14),
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [AppColors.mystic, AppColors.cosmicPurple],
+                        ),
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                            color: AppColors.mystic.withOpacity(0.4),
+                            blurRadius: 12,
+                            spreadRadius: 1,
+                          ),
+                        ],
+                      ),
+                      child: const Icon(
+                        Icons.send_rounded,
+                        color: Colors.white,
+                        size: 22,
+                      ),
+                    ),
+                  )
+                  .animate(
+                    onComplete: (controller) =>
+                        controller.repeat(reverse: true),
+                  )
+                  .scale(
+                    begin: const Offset(1, 1),
+                    end: const Offset(1.05, 1.05),
+                    duration: 1500.ms,
+                  ),
+            ],
+          ),
         ],
       ),
     );
@@ -1479,11 +1743,14 @@ ${_getZodiacAdvice(sign)}''';
 
   /// Quick answer buttons for context questions - ENHANCED
   Widget _buildQuickAnswers() {
-    if (_currentSession == null || _currentQuestionIndex >= _currentSession!.contextQuestions.length) {
+    if (_currentSession == null ||
+        _currentQuestionIndex >= _currentSession!.contextQuestions.length) {
       return const SizedBox.shrink();
     }
 
-    final currentQuestion = _currentSession!.contextQuestions[_currentQuestionIndex].toLowerCase();
+    final currentQuestion = _currentSession!
+        .contextQuestions[_currentQuestionIndex]
+        .toLowerCase();
     List<Map<String, String>> quickAnswers = [];
 
     // Generate rich contextual quick answers based on question type
@@ -1500,9 +1767,9 @@ ${_getZodiacAdvice(sign)}''';
         {'emoji': '😤', 'text': 'Öfke ve kızgınlık'},
       ];
     } else if (currentQuestion.contains('ortam') ||
-               currentQuestion.contains('nerede') ||
-               currentQuestion.contains('mekan') ||
-               currentQuestion.contains('yer')) {
+        currentQuestion.contains('nerede') ||
+        currentQuestion.contains('mekan') ||
+        currentQuestion.contains('yer')) {
       quickAnswers = [
         {'emoji': '🏠', 'text': 'Evimde veya tanıdık bir mekanda'},
         {'emoji': '🌳', 'text': 'Doğada, ormanda veya bahçede'},
@@ -1512,9 +1779,9 @@ ${_getZodiacAdvice(sign)}''';
         {'emoji': '❓', 'text': 'Tanımadığım garip bir yer'},
       ];
     } else if (currentQuestion.contains('kim') ||
-               currentQuestion.contains('biri') ||
-               currentQuestion.contains('kişi') ||
-               currentQuestion.contains('başka')) {
+        currentQuestion.contains('biri') ||
+        currentQuestion.contains('kişi') ||
+        currentQuestion.contains('başka')) {
       quickAnswers = [
         {'emoji': '🚶', 'text': 'Tamamen yalnızdım'},
         {'emoji': '👨‍👩‍👧', 'text': 'Ailemden biri vardı'},
@@ -1524,7 +1791,7 @@ ${_getZodiacAdvice(sign)}''';
         {'emoji': '😶', 'text': 'Vardı ama yüzünü göremedim'},
       ];
     } else if (currentQuestion.contains('renk') ||
-               currentQuestion.contains('görün')) {
+        currentQuestion.contains('görün')) {
       quickAnswers = [
         {'emoji': '⚫', 'text': 'Karanlık, siyah tonlar'},
         {'emoji': '⚪', 'text': 'Parlak, beyaz ve aydınlık'},
@@ -1534,9 +1801,9 @@ ${_getZodiacAdvice(sign)}''';
         {'emoji': '🌫️', 'text': 'Sisli, bulanık görüntüler'},
       ];
     } else if (currentQuestion.contains('doğru') ||
-               currentQuestion.contains('sana') ||
-               currentQuestion.contains('yaklaş') ||
-               currentQuestion.contains('hareket')) {
+        currentQuestion.contains('sana') ||
+        currentQuestion.contains('yaklaş') ||
+        currentQuestion.contains('hareket')) {
       quickAnswers = [
         {'emoji': '➡️', 'text': 'Evet, bana doğru geliyordu'},
         {'emoji': '⬅️', 'text': 'Hayır, benden uzaklaşıyordu'},
@@ -1546,8 +1813,8 @@ ${_getZodiacAdvice(sign)}''';
         {'emoji': '❓', 'text': 'Tam hatırlamıyorum'},
       ];
     } else if (currentQuestion.contains('ses') ||
-               currentQuestion.contains('konuş') ||
-               currentQuestion.contains('duy')) {
+        currentQuestion.contains('konuş') ||
+        currentQuestion.contains('duy')) {
       quickAnswers = [
         {'emoji': '🔇', 'text': 'Sessizlik vardı'},
         {'emoji': '🗣️', 'text': 'Sesler ve konuşmalar duydum'},
@@ -1557,8 +1824,8 @@ ${_getZodiacAdvice(sign)}''';
         {'emoji': '❓', 'text': 'Hatırlamıyorum'},
       ];
     } else if (currentQuestion.contains('son') ||
-               currentQuestion.contains('bit') ||
-               currentQuestion.contains('uyan')) {
+        currentQuestion.contains('bit') ||
+        currentQuestion.contains('uyan')) {
       quickAnswers = [
         {'emoji': '😰', 'text': 'Korkuyla uyandım'},
         {'emoji': '😊', 'text': 'Huzurla, yavaşça uyandım'},
@@ -1582,49 +1849,59 @@ ${_getZodiacAdvice(sign)}''';
         spacing: 8,
         runSpacing: 8,
         alignment: WrapAlignment.center,
-        children: quickAnswers.map((answer) => InkWell(
-          onTap: () {
-            _dreamController.text = answer['text']!;
-            _sendMessage();
-          },
-          borderRadius: BorderRadius.circular(20),
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  AppColors.cosmicPurple.withOpacity(0.3),
-                  AppColors.mystic.withOpacity(0.2),
-                ],
-              ),
-              borderRadius: BorderRadius.circular(20),
-              border: Border.all(
-                color: AppColors.mystic.withOpacity(0.4),
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: AppColors.mystic.withOpacity(0.1),
-                  blurRadius: 4,
-                ),
-              ],
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(answer['emoji']!, style: const TextStyle(fontSize: 14)),
-                const SizedBox(width: 6),
-                Text(
-                  answer['text']!,
-                  style: const TextStyle(
-                    fontSize: 12,
-                    color: AppColors.textPrimary,
-                    fontWeight: FontWeight.w500,
+        children: quickAnswers
+            .map(
+              (answer) => InkWell(
+                onTap: () {
+                  _dreamController.text = answer['text']!;
+                  _sendMessage();
+                },
+                borderRadius: BorderRadius.circular(20),
+                child: Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 12,
+                    vertical: 8,
+                  ),
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        AppColors.cosmicPurple.withOpacity(0.3),
+                        AppColors.mystic.withOpacity(0.2),
+                      ],
+                    ),
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(
+                      color: AppColors.mystic.withOpacity(0.4),
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: AppColors.mystic.withOpacity(0.1),
+                        blurRadius: 4,
+                      ),
+                    ],
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        answer['emoji']!,
+                        style: const TextStyle(fontSize: 14),
+                      ),
+                      const SizedBox(width: 6),
+                      Text(
+                        answer['text']!,
+                        style: const TextStyle(
+                          fontSize: 12,
+                          color: AppColors.textPrimary,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-              ],
-            ),
-          ),
-        )).toList(),
+              ),
+            )
+            .toList(),
       ),
     );
   }
@@ -1663,17 +1940,53 @@ class _DreamSymbolsSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final symbols = [
-      {'emoji': '\u{1F40D}', 'name': 'Yilan', 'meaning': 'Donusum, iyilesme, gizli korkular'},
-      {'emoji': '\u{1F30A}', 'name': 'Su', 'meaning': 'Duygular, bilincalti, arinma'},
+      {
+        'emoji': '\u{1F40D}',
+        'name': 'Yilan',
+        'meaning': 'Donusum, iyilesme, gizli korkular',
+      },
+      {
+        'emoji': '\u{1F30A}',
+        'name': 'Su',
+        'meaning': 'Duygular, bilincalti, arinma',
+      },
       {'emoji': '\u{1F525}', 'name': 'Ates', 'meaning': 'Tutku, ofke, donusum'},
       {'emoji': '\u{1F3E0}', 'name': 'Ev', 'meaning': 'Benlik, guvenlik, aile'},
-      {'emoji': '\u{2708}', 'name': 'Ucmak', 'meaning': 'Ozgurluk, yukselis, kacis'},
-      {'emoji': '\u{1F319}', 'name': 'Ay', 'meaning': 'Sezgi, kadinsi enerji, donguler'},
-      {'emoji': '\u{2600}', 'name': 'Gunes', 'meaning': 'Bilinc, basari, erkeksi enerji'},
-      {'emoji': '\u{1F480}', 'name': 'Olum', 'meaning': 'Transformasyon, son, yeni baslangic'},
-      {'emoji': '\u{1F436}', 'name': 'Kopek', 'meaning': 'Sadakat, koruma, dostluk'},
-      {'emoji': '\u{1F431}', 'name': 'Kedi', 'meaning': 'Bagimsizlik, sezgi, gizemlilik'},
-      {'emoji': '\u{1F4B0}', 'name': 'Para', 'meaning': 'Ozdeger, bolluk, guvenlik'},
+      {
+        'emoji': '\u{2708}',
+        'name': 'Ucmak',
+        'meaning': 'Ozgurluk, yukselis, kacis',
+      },
+      {
+        'emoji': '\u{1F319}',
+        'name': 'Ay',
+        'meaning': 'Sezgi, kadinsi enerji, donguler',
+      },
+      {
+        'emoji': '\u{2600}',
+        'name': 'Gunes',
+        'meaning': 'Bilinc, basari, erkeksi enerji',
+      },
+      {
+        'emoji': '\u{1F480}',
+        'name': 'Olum',
+        'meaning': 'Transformasyon, son, yeni baslangic',
+      },
+      {
+        'emoji': '\u{1F436}',
+        'name': 'Kopek',
+        'meaning': 'Sadakat, koruma, dostluk',
+      },
+      {
+        'emoji': '\u{1F431}',
+        'name': 'Kedi',
+        'meaning': 'Bagimsizlik, sezgi, gizemlilik',
+      },
+      {
+        'emoji': '\u{1F4B0}',
+        'name': 'Para',
+        'meaning': 'Ozdeger, bolluk, guvenlik',
+      },
       {'emoji': '\u{2764}', 'name': 'Ask', 'meaning': 'Baglanma, arzu, kabul'},
     ];
 
@@ -1683,10 +1996,7 @@ class _DreamSymbolsSheet extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          colors: [
-            AppColors.nebulaPurple,
-            const Color(0xFF0D0D1A),
-          ],
+          colors: [AppColors.nebulaPurple, const Color(0xFF0D0D1A)],
         ),
         borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
       ),
@@ -1712,9 +2022,9 @@ class _DreamSymbolsSheet extends StatelessWidget {
                 Text(
                   'Ruya Sembolleri Rehberi',
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        color: AppColors.textPrimary,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    color: AppColors.textPrimary,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ],
             ),
@@ -1733,54 +2043,59 @@ class _DreamSymbolsSheet extends StatelessWidget {
               itemBuilder: (context, index) {
                 final symbol = symbols[index];
                 return Container(
-                  padding: const EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        AppColors.mystic.withOpacity(0.2),
-                        const Color(0xFF1A1A2E).withOpacity(0.8),
-                      ],
-                    ),
-                    borderRadius: BorderRadius.circular(14),
-                    border: Border.all(
-                      color: AppColors.mystic.withOpacity(0.2),
-                    ),
-                  ),
-                  child: Row(
-                    children: [
-                      Text(
-                        symbol['emoji']!,
-                        style: const TextStyle(fontSize: 28),
-                      ),
-                      const SizedBox(width: 10),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              symbol['name']!,
-                              style: const TextStyle(
-                                color: AppColors.textPrimary,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 13,
-                              ),
-                            ),
-                            Text(
-                              symbol['meaning']!,
-                              style: TextStyle(
-                                color: AppColors.textSecondary.withOpacity(0.8),
-                                fontSize: 10,
-                              ),
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                            ),
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [
+                            AppColors.mystic.withOpacity(0.2),
+                            const Color(0xFF1A1A2E).withOpacity(0.8),
                           ],
                         ),
+                        borderRadius: BorderRadius.circular(14),
+                        border: Border.all(
+                          color: AppColors.mystic.withOpacity(0.2),
+                        ),
                       ),
-                    ],
-                  ),
-                ).animate().fadeIn(delay: (50 * index).ms).slideY(begin: 0.1, end: 0);
+                      child: Row(
+                        children: [
+                          Text(
+                            symbol['emoji']!,
+                            style: const TextStyle(fontSize: 28),
+                          ),
+                          const SizedBox(width: 10),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  symbol['name']!,
+                                  style: const TextStyle(
+                                    color: AppColors.textPrimary,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 13,
+                                  ),
+                                ),
+                                Text(
+                                  symbol['meaning']!,
+                                  style: TextStyle(
+                                    color: AppColors.textSecondary.withOpacity(
+                                      0.8,
+                                    ),
+                                    fontSize: 10,
+                                  ),
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
+                    .animate()
+                    .fadeIn(delay: (50 * index).ms)
+                    .slideY(begin: 0.1, end: 0);
               },
             ),
           ),

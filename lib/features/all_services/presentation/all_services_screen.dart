@@ -46,36 +46,29 @@ class _AllServicesScreenState extends State<AllServicesScreen>
             child: CustomScrollView(
               slivers: [
                 // Beautiful header
-                SliverToBoxAdapter(
-                  child: _buildHeader(context, isDark),
-                ),
+                SliverToBoxAdapter(child: _buildHeader(context, isDark)),
 
                 // Categories list
                 SliverPadding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   sliver: SliverList(
-                    delegate: SliverChildBuilderDelegate(
-                      (context, index) {
-                        final category = _categories[index];
-                        return _buildCategorySection(
-                          context,
-                          category['name'] as String,
-                          category['icon'] as String,
-                          category['color'] as Color,
-                          (category['services'] as List<Map<String, dynamic>>),
-                          isDark,
-                          index,
-                        );
-                      },
-                      childCount: _categories.length,
-                    ),
+                    delegate: SliverChildBuilderDelegate((context, index) {
+                      final category = _categories[index];
+                      return _buildCategorySection(
+                        context,
+                        category['name'] as String,
+                        category['icon'] as String,
+                        category['color'] as Color,
+                        (category['services'] as List<Map<String, dynamic>>),
+                        isDark,
+                        index,
+                      );
+                    }, childCount: _categories.length),
                   ),
                 ),
 
                 // Bottom spacing
-                const SliverToBoxAdapter(
-                  child: SizedBox(height: 80),
-                ),
+                const SliverToBoxAdapter(child: SizedBox(height: 80)),
               ],
             ),
           ),
@@ -226,65 +219,63 @@ class _AllServicesScreenState extends State<AllServicesScreen>
     int categoryIndex,
   ) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 28),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // Category header - minimal
-          Padding(
-            padding: const EdgeInsets.only(bottom: 12),
-            child: Row(
-              children: [
-                Text(
-                  icon,
-                  style: const TextStyle(fontSize: 16),
-                ),
-                const SizedBox(width: 8),
-                Text(
-                  title,
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                    color: color,
-                    letterSpacing: 0.5,
-                  ),
-                ),
-                const SizedBox(width: 8),
-                Expanded(
-                  child: Container(
-                    height: 1,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [
-                          color.withOpacity(0.3),
-                          Colors.transparent,
-                        ],
+          margin: const EdgeInsets.only(bottom: 28),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Category header - minimal
+              Padding(
+                padding: const EdgeInsets.only(bottom: 12),
+                child: Row(
+                  children: [
+                    Text(icon, style: const TextStyle(fontSize: 16)),
+                    const SizedBox(width: 8),
+                    Text(
+                      title,
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        color: color,
+                        letterSpacing: 0.5,
                       ),
                     ),
-                  ),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: Container(
+                        height: 1,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [
+                              color.withOpacity(0.3),
+                              Colors.transparent,
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
-          ),
+              ),
 
-          // Services - text only, wrapped
-          Wrap(
-            spacing: 6,
-            runSpacing: 6,
-            children: services.asMap().entries.map((entry) {
-              final service = entry.value;
-              return _buildServiceChip(
-                context,
-                service['name'] as String,
-                service['route'] as String,
-                color,
-                isDark,
-              );
-            }).toList(),
+              // Services - text only, wrapped
+              Wrap(
+                spacing: 6,
+                runSpacing: 6,
+                children: services.asMap().entries.map((entry) {
+                  final service = entry.value;
+                  return _buildServiceChip(
+                    context,
+                    service['name'] as String,
+                    service['route'] as String,
+                    color,
+                    isDark,
+                  );
+                }).toList(),
+              ),
+            ],
           ),
-        ],
-      ),
-    ).animate(delay: (80 * categoryIndex).ms)
+        )
+        .animate(delay: (80 * categoryIndex).ms)
         .fadeIn(duration: 400.ms)
         .slideX(begin: -0.02);
   }
@@ -402,7 +393,10 @@ class _AllServicesScreenState extends State<AllServicesScreen>
       'color': AppColors.mystic,
       'services': [
         {'name': 'Tarot Falı', 'route': Routes.tarot},
-        {'name': 'Major Arcana', 'route': Routes.majorArcanaDetail.replaceAll(':number', '0')},
+        {
+          'name': 'Major Arcana',
+          'route': Routes.majorArcanaDetail.replaceAll(':number', '0'),
+        },
       ],
     },
     {

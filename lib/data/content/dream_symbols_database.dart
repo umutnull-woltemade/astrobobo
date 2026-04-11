@@ -26,14 +26,18 @@ class DreamSymbolsDatabase {
         'Feminen enerji ve sezgi',
       ],
       emotionVariants: {
-        EmotionalTone.korku: 'Bastırılmış duygular yüzeye çıkmak istiyor - dalga tehditkar geliyorsa kontrol kaybı korkusu',
-        EmotionalTone.huzur: 'Duygusal denge ve iç huzur - bilinçaltınla barışıksın',
-        EmotionalTone.merak: 'Keşfedilmemiş duygusal derinlikler - sezgisel kapasiten artıyor',
+        EmotionalTone.korku:
+            'Bastırılmış duygular yüzeye çıkmak istiyor - dalga tehditkar geliyorsa kontrol kaybı korkusu',
+        EmotionalTone.huzur:
+            'Duygusal denge ve iç huzur - bilinçaltınla barışıksın',
+        EmotionalTone.merak:
+            'Keşfedilmemiş duygusal derinlikler - sezgisel kapasiten artıyor',
         EmotionalTone.donukluk: 'Duygusal uyuşukluk - hissetmekten kaçınma',
       },
       archetypes: ['Anne', 'Bilinçdışı', 'Transformasyon'],
       relatedSymbols: ['ocean', 'rain', 'river', 'flood'],
-      shadowAspect: 'Duygulara boğulma korkusu, kontrol kaybı, bastırılmış acılar',
+      shadowAspect:
+          'Duygulara boğulma korkusu, kontrol kaybı, bastırılmış acılar',
       lightAspect: 'Duygusal zeka, sezgisel bilgelik, yaşam enerjisi',
     ),
 
@@ -49,9 +53,11 @@ class DreamSymbolsDatabase {
         'Sınırsız olasılıklar',
       ],
       emotionVariants: {
-        EmotionalTone.korku: 'Varoluşsal endişe - bilinmeyenin derinliği ürkütüyor',
+        EmotionalTone.korku:
+            'Varoluşsal endişe - bilinmeyenin derinliği ürkütüyor',
         EmotionalTone.huzur: 'Evrenle bütünleşme - spiritüel birlik hissi',
-        EmotionalTone.ozlem: 'Kayıp bütünlüğe özlem - anne rahmine dönüş arzusu',
+        EmotionalTone.ozlem:
+            'Kayıp bütünlüğe özlem - anne rahmine dönüş arzusu',
         EmotionalTone.heyecan: 'Keşfedilecek sonsuz potansiyel - yeni ufuklar',
       },
       archetypes: ['Büyük Anne', 'Kolektif Bilinçdışı', 'Kaos'],
@@ -96,7 +102,8 @@ class DreamSymbolsDatabase {
       ],
       emotionVariants: {
         EmotionalTone.korku: 'Duygusal tsunami - bastırdıkların patlamak üzere',
-        EmotionalTone.heyecan: 'Kaotik dönüşüm - eskinin yıkılması yeniyi getirir',
+        EmotionalTone.heyecan:
+            'Kaotik dönüşüm - eskinin yıkılması yeniyi getirir',
         EmotionalTone.donukluk: 'Şok - çok fazla geldi, dondum',
         EmotionalTone.ofke: 'Bastırılmış öfke taşıyor - sınırlar aşıldı',
       },
@@ -121,9 +128,11 @@ class DreamSymbolsDatabase {
         'Gizli düşman veya ihanet',
       ],
       emotionVariants: {
-        EmotionalTone.korku: 'İhanet korkusu veya bastırılmış cinsellik - kim veya ne tehdit ediyor?',
+        EmotionalTone.korku:
+            'İhanet korkusu veya bastırılmış cinsellik - kim veya ne tehdit ediyor?',
         EmotionalTone.merak: 'Bilgelik arayışı - dönüşüm kapıda',
-        EmotionalTone.heyecan: 'Kundalini uyanışı - yaratıcı/cinsel enerji yükseliyor',
+        EmotionalTone.heyecan:
+            'Kundalini uyanışı - yaratıcı/cinsel enerji yükseliyor',
         EmotionalTone.ofke: 'Zehirli bir durum veya kişi - sınırları koru',
       },
       archetypes: ['Dönüştürücü', 'Bilge', 'Gölge'],
@@ -144,10 +153,13 @@ class DreamSymbolsDatabase {
         'Rehberlik (özellikle siyah köpek)',
       ],
       emotionVariants: {
-        EmotionalTone.huzur: 'Güvenilir dostluk - birileri seni koşulsuz seviyor',
-        EmotionalTone.korku: 'Saldırgan köpek: içgüdüsel tehdit, sadakatsizlik korkusu',
+        EmotionalTone.huzur:
+            'Güvenilir dostluk - birileri seni koşulsuz seviyor',
+        EmotionalTone.korku:
+            'Saldırgan köpek: içgüdüsel tehdit, sadakatsizlik korkusu',
         EmotionalTone.ozlem: 'Kayıp bir bağlılık - eski dostluk özlemi',
-        EmotionalTone.heyecan: 'Yeni sadık bir bağ - güvenebileceğin biri geliyor',
+        EmotionalTone.heyecan:
+            'Yeni sadık bir bağ - güvenebileceğin biri geliyor',
       },
       archetypes: ['Koruyucu', 'Rehber', 'Sadık Dost'],
       relatedSymbols: ['loyalty', 'protection', 'instinct', 'guide'],
@@ -282,7 +294,8 @@ class DreamSymbolsDatabase {
         'Öğretmen ve rehber',
       ],
       emotionVariants: {
-        EmotionalTone.korku: 'Tehditkar vahşi doğa - içindeki kurt seni korkutuyor mu?',
+        EmotionalTone.korku:
+            'Tehditkar vahşi doğa - içindeki kurt seni korkutuyor mu?',
         EmotionalTone.heyecan: 'Vahşi gücünü kucakla - özgürleş',
         EmotionalTone.ozlem: 'Ait olma arzusu - sürünü bul',
         EmotionalTone.huzur: 'Doğanla barış - içgüdülerin rehberin',
@@ -331,8 +344,10 @@ class DreamSymbolsDatabase {
         'Potansiyel alanlar',
       ],
       emotionVariants: {
-        EmotionalTone.merak: 'Keşfedilmemiş oda: gizli yetenekler, bastırılmış potansiyel',
-        EmotionalTone.korku: 'Karanlık oda: yüzleşilmemiş gölge, bilinmeyen korku',
+        EmotionalTone.merak:
+            'Keşfedilmemiş oda: gizli yetenekler, bastırılmış potansiyel',
+        EmotionalTone.korku:
+            'Karanlık oda: yüzleşilmemiş gölge, bilinmeyen korku',
         EmotionalTone.huzur: 'Aydınlık oda: farkındalık ve kabul',
         EmotionalTone.sucluluk: 'Gizli oda: saklanan sırlar',
       },
@@ -423,7 +438,8 @@ class DreamSymbolsDatabase {
         'Otorite ve kurallar',
       ],
       emotionVariants: {
-        EmotionalTone.korku: 'Sınav kaygısı: değerlendirilme korkusu, yetersizlik',
+        EmotionalTone.korku:
+            'Sınav kaygısı: değerlendirilme korkusu, yetersizlik',
         EmotionalTone.merak: 'Yeni dersler: hayat öğretiyor',
         EmotionalTone.sucluluk: 'Hazırlıksız yakalandın: erteleme, sorumluluk',
         EmotionalTone.ozlem: 'Eski okul: gençlik, masumiyet',
@@ -474,7 +490,8 @@ class DreamSymbolsDatabase {
       emotionVariants: {
         EmotionalTone.heyecan: 'Özgürleşme - sınırlarını aşıyorsun',
         EmotionalTone.huzur: 'Ruhsal uçuş - dünyevi kaygıların üstünde',
-        EmotionalTone.korku: 'Kontrolsüz uçuş: temelsiz hayaller, düşme korkusu',
+        EmotionalTone.korku:
+            'Kontrolsüz uçuş: temelsiz hayaller, düşme korkusu',
         EmotionalTone.merak: 'Nereye uçuyorsun? - hedefini bul',
       },
       archetypes: ['Özgür Ruh', 'Aşkın Benlik', 'Kahraman'],
@@ -965,7 +982,8 @@ class DreamSymbolsDatabase {
       ],
       emotionVariants: {
         EmotionalTone.merak: 'Kim arıyor? Bilinçaltından mesaj',
-        EmotionalTone.korku: 'Cevapsız çağrılar: kaçırılan fırsatlar, bağlantı kaybı',
+        EmotionalTone.korku:
+            'Cevapsız çağrılar: kaçırılan fırsatlar, bağlantı kaybı',
         EmotionalTone.heyecan: 'Beklenen haber geliyor',
         EmotionalTone.ozlem: 'Uzaktaki biriyle bağlantı arzusu',
       },
@@ -1121,11 +1139,11 @@ class DreamSymbolsDatabase {
   static DreamSymbolData? findSymbol(String query) {
     final lowerQuery = query.toLowerCase().trim();
     return allSymbols.cast<DreamSymbolData?>().firstWhere(
-          (s) =>
-              s!.symbol.toLowerCase() == lowerQuery ||
-              s.symbolTr.toLowerCase() == lowerQuery,
-          orElse: () => null,
-        );
+      (s) =>
+          s!.symbol.toLowerCase() == lowerQuery ||
+          s.symbolTr.toLowerCase() == lowerQuery,
+      orElse: () => null,
+    );
   }
 
   /// Kategoriye göre sembolleri getir
@@ -1135,17 +1153,17 @@ class DreamSymbolsDatabase {
 
   /// En yaygın sembolleri getir (UI'da göstermek için)
   static List<DreamSymbolData> get commonSymbols => [
-        findSymbol('water')!,
-        findSymbol('snake')!,
-        findSymbol('flying')!,
-        findSymbol('falling')!,
-        findSymbol('teeth-falling')!,
-        findSymbol('house')!,
-        findSymbol('chasing')!,
-        findSymbol('death')!,
-        findSymbol('naked')!,
-        findSymbol('lost')!,
-      ];
+    findSymbol('water')!,
+    findSymbol('snake')!,
+    findSymbol('flying')!,
+    findSymbol('falling')!,
+    findSymbol('teeth-falling')!,
+    findSymbol('house')!,
+    findSymbol('chasing')!,
+    findSymbol('death')!,
+    findSymbol('naked')!,
+    findSymbol('lost')!,
+  ];
 
   /// Rüya metninden sembolleri tespit et
   static List<DreamSymbolData> detectSymbolsInText(String dreamText) {
@@ -1280,8 +1298,7 @@ class ArchetypeDatabase {
       ],
       lightSide: 'Yaratıcılık, sezgi, duygusal derinlik, ilham',
       shadowSide: 'Ruh hali dalgalanmaları, kapris, manipülasyon',
-      integrationPath:
-          'Feminen yönleri tanımak, duygusal zekayı geliştirmek',
+      integrationPath: 'Feminen yönleri tanımak, duygusal zekayı geliştirmek',
     ),
     ArchetypeData(
       name: 'Animus',
@@ -1332,8 +1349,7 @@ class ArchetypeDatabase {
       ],
       lightSide: 'Bütünlük, anlam, amaç, iç huzur',
       shadowSide: 'Ego şişmesi, tanrı kompleksi (sağlıksız özdeşleşme)',
-      integrationPath:
-          'Bireyselleşme yolculuğu, tüm yönlerin dengelenmesi',
+      integrationPath: 'Bireyselleşme yolculuğu, tüm yönlerin dengelenmesi',
     ),
     ArchetypeData(
       name: 'Hero',
@@ -1372,15 +1388,8 @@ class ArchetypeDatabase {
       name: 'Great Mother',
       nameTr: 'Büyük Anne',
       emoji: '🌍',
-      description:
-          'Evrensel anne figürü. Besleyen ama aynı zamanda yutan güç.',
-      manifestations: [
-        'Toprak Ana',
-        'Doğa',
-        'Deniz',
-        'Mağara',
-        'Ev',
-      ],
+      description: 'Evrensel anne figürü. Besleyen ama aynı zamanda yutan güç.',
+      manifestations: ['Toprak Ana', 'Doğa', 'Deniz', 'Mağara', 'Ev'],
       lightSide: 'Koşulsuz sevgi, beslenme, yaratıcılık, bereket',
       shadowSide: 'Boğuculuk, yutma, bağımlılık yaratma',
       integrationPath:
@@ -1400,8 +1409,7 @@ class ArchetypeDatabase {
       ],
       lightSide: 'Yaratıcılık, esneklik, kalıp kırma, mizah',
       shadowSide: 'Aldatma, sorumsuzluk, kaos',
-      integrationPath:
-          'Oyunculuğu kabul etmek, esnekliği sorumlu kullanmak',
+      integrationPath: 'Oyunculuğu kabul etmek, esnekliği sorumlu kullanmak',
     ),
     ArchetypeData(
       name: 'Child',
@@ -1409,12 +1417,7 @@ class ArchetypeDatabase {
       emoji: '👶',
       description:
           'Masumiyet, potansiyel ve yenilik. Her şeyin mümkün olduğu başlangıç noktası.',
-      manifestations: [
-        'Bebek',
-        'Küçük çocuk',
-        'Yeni doğan',
-        'Oyun',
-      ],
+      manifestations: ['Bebek', 'Küçük çocuk', 'Yeni doğan', 'Oyun'],
       lightSide: 'Masumiyet, merak, spontanlık, yaratıcılık',
       shadowSide: 'Çocuksuluuk, sorumsuzluk, bağımlılık',
       integrationPath:
@@ -1426,11 +1429,11 @@ class ArchetypeDatabase {
   static ArchetypeData? findArchetype(String name) {
     final lowerName = name.toLowerCase();
     return allArchetypes.cast<ArchetypeData?>().firstWhere(
-          (a) =>
-              a!.name.toLowerCase() == lowerName ||
-              a.nameTr.toLowerCase() == lowerName,
-          orElse: () => null,
-        );
+      (a) =>
+          a!.name.toLowerCase() == lowerName ||
+          a.nameTr.toLowerCase() == lowerName,
+      orElse: () => null,
+    );
   }
 }
 

@@ -60,7 +60,10 @@ class CompatibilityResult {
     );
   }
 
-  static Map<String, double> _calculateScores(ZodiacSign sign1, ZodiacSign sign2) {
+  static Map<String, double> _calculateScores(
+    ZodiacSign sign1,
+    ZodiacSign sign2,
+  ) {
     double baseScore = 50.0;
 
     // Same element = high compatibility
@@ -98,28 +101,52 @@ class CompatibilityResult {
     // Add some variation for different categories
     return {
       'overall': baseScore,
-      'love': (baseScore + (sign1.element == Element.fire || sign1.element == Element.water ? 5 : -3)).clamp(30.0, 95.0),
-      'friendship': (baseScore + (sign1.element == Element.air ? 8 : 0)).clamp(30.0, 95.0),
-      'communication': (baseScore + (sign1.element == Element.air || sign2.element == Element.air ? 10 : -5)).clamp(30.0, 95.0),
-      'emotional': (baseScore + (sign1.element == Element.water || sign2.element == Element.water ? 10 : -5)).clamp(30.0, 95.0),
+      'love':
+          (baseScore +
+                  (sign1.element == Element.fire ||
+                          sign1.element == Element.water
+                      ? 5
+                      : -3))
+              .clamp(30.0, 95.0),
+      'friendship': (baseScore + (sign1.element == Element.air ? 8 : 0)).clamp(
+        30.0,
+        95.0,
+      ),
+      'communication':
+          (baseScore +
+                  (sign1.element == Element.air || sign2.element == Element.air
+                      ? 10
+                      : -5))
+              .clamp(30.0, 95.0),
+      'emotional':
+          (baseScore +
+                  (sign1.element == Element.water ||
+                          sign2.element == Element.water
+                      ? 10
+                      : -5))
+              .clamp(30.0, 95.0),
     };
   }
 
   static bool _areComplementary(Element e1, Element e2) {
     return (e1 == Element.fire && e2 == Element.air) ||
-           (e1 == Element.air && e2 == Element.fire) ||
-           (e1 == Element.earth && e2 == Element.water) ||
-           (e1 == Element.water && e2 == Element.earth);
+        (e1 == Element.air && e2 == Element.fire) ||
+        (e1 == Element.earth && e2 == Element.water) ||
+        (e1 == Element.water && e2 == Element.earth);
   }
 
   static bool _areChallenging(Element e1, Element e2) {
     return (e1 == Element.fire && e2 == Element.water) ||
-           (e1 == Element.water && e2 == Element.fire) ||
-           (e1 == Element.earth && e2 == Element.air) ||
-           (e1 == Element.air && e2 == Element.earth);
+        (e1 == Element.water && e2 == Element.fire) ||
+        (e1 == Element.earth && e2 == Element.air) ||
+        (e1 == Element.air && e2 == Element.earth);
   }
 
-  static String _generateSummary(ZodiacSign sign1, ZodiacSign sign2, double score) {
+  static String _generateSummary(
+    ZodiacSign sign1,
+    ZodiacSign sign2,
+    double score,
+  ) {
     if (score >= 80) {
       return 'A celestial match! ${sign1.name} and ${sign2.name} share a profound cosmic connection that creates harmony and understanding.';
     } else if (score >= 65) {
@@ -135,7 +162,9 @@ class CompatibilityResult {
     final strengths = <String>[];
 
     if (sign1.element == sign2.element) {
-      strengths.add('Natural understanding through shared ${sign1.element.name} energy');
+      strengths.add(
+        'Natural understanding through shared ${sign1.element.name} energy',
+      );
     }
     if (_areComplementary(sign1.element, sign2.element)) {
       strengths.add('Complementary energies that balance each other');
@@ -172,13 +201,15 @@ class CompatibilityResult {
     }
 
     // Modality-specific challenges
-    if (sign1.modality == Modality.cardinal && sign2.modality == Modality.cardinal) {
+    if (sign1.modality == Modality.cardinal &&
+        sign2.modality == Modality.cardinal) {
       challenges.add('Both want to lead—taking turns is key');
     }
     if (sign1.modality == Modality.fixed && sign2.modality == Modality.fixed) {
       challenges.add('Stubbornness can create standoffs');
     }
-    if (sign1.modality == Modality.mutable && sign2.modality == Modality.mutable) {
+    if (sign1.modality == Modality.mutable &&
+        sign2.modality == Modality.mutable) {
       challenges.add('Direction may feel unclear at times');
     }
 
@@ -198,13 +229,15 @@ class CompatibilityResult {
       tips.add('Learn to appreciate the unique gifts each element brings');
     }
 
-    if (sign1.modality == Modality.cardinal || sign2.modality == Modality.cardinal) {
+    if (sign1.modality == Modality.cardinal ||
+        sign2.modality == Modality.cardinal) {
       tips.add('Take initiative but also allow space for the other to lead');
     }
     if (sign1.modality == Modality.fixed || sign2.modality == Modality.fixed) {
       tips.add('Practice flexibility and openness to change');
     }
-    if (sign1.modality == Modality.mutable || sign2.modality == Modality.mutable) {
+    if (sign1.modality == Modality.mutable ||
+        sign2.modality == Modality.mutable) {
       tips.add('Create shared goals to maintain focus together');
     }
 

@@ -33,7 +33,23 @@ class _AddProfileSheetState extends State<AddProfileSheet> {
     {'value': 'other', 'label': 'Diğer', 'emoji': '✨'},
   ];
 
-  final _emojiOptions = ['👤', '👱', '👩', '👨', '🧑', '👧', '👦', '🧔', '👵', '👴', '💫', '🌟', '🔮', '🌙', '☀️'];
+  final _emojiOptions = [
+    '👤',
+    '👱',
+    '👩',
+    '👨',
+    '🧑',
+    '👧',
+    '👦',
+    '🧔',
+    '👵',
+    '👴',
+    '💫',
+    '🌟',
+    '🔮',
+    '🌙',
+    '☀️',
+  ];
 
   @override
   void dispose() {
@@ -111,57 +127,66 @@ class _AddProfileSheetState extends State<AddProfileSheet> {
         Text(
           'Yeni Profil',
           style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                color: AppColors.starGold,
-                fontWeight: FontWeight.bold,
-              ),
+            color: AppColors.starGold,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         const SizedBox(width: 60),
       ],
     ).animate().fadeIn(duration: 300.ms);
   }
 
-  Widget _buildAvatarSection(BuildContext context, bool isDark, ZodiacSign sign) {
+  Widget _buildAvatarSection(
+    BuildContext context,
+    bool isDark,
+    ZodiacSign sign,
+  ) {
     return Center(
-      child: Column(
-        children: [
-          GestureDetector(
-            onTap: () => _showEmojiPicker(context, isDark),
-            child: Container(
-              width: 80,
-              height: 80,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                gradient: RadialGradient(
-                  colors: [
-                    sign.color.withAlpha(100),
-                    sign.color.withAlpha(30),
-                  ],
-                ),
-                border: Border.all(
-                  color: sign.color.withAlpha(100),
-                  width: 3,
+          child: Column(
+            children: [
+              GestureDetector(
+                onTap: () => _showEmojiPicker(context, isDark),
+                child: Container(
+                  width: 80,
+                  height: 80,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    gradient: RadialGradient(
+                      colors: [
+                        sign.color.withAlpha(100),
+                        sign.color.withAlpha(30),
+                      ],
+                    ),
+                    border: Border.all(
+                      color: sign.color.withAlpha(100),
+                      width: 3,
+                    ),
+                  ),
+                  child: Center(
+                    child: Text(
+                      _avatarEmoji ?? sign.symbol,
+                      style: const TextStyle(fontSize: 36),
+                    ),
+                  ),
                 ),
               ),
-              child: Center(
-                child: Text(
-                  _avatarEmoji ?? sign.symbol,
-                  style: const TextStyle(fontSize: 36),
+              const SizedBox(height: 8),
+              TextButton.icon(
+                onPressed: () => _showEmojiPicker(context, isDark),
+                icon: const Icon(Icons.edit, size: 16),
+                label: const Text('Emoji Seç'),
+                style: TextButton.styleFrom(
+                  foregroundColor: isDark
+                      ? AppColors.textMuted
+                      : AppColors.lightTextMuted,
                 ),
               ),
-            ),
+            ],
           ),
-          const SizedBox(height: 8),
-          TextButton.icon(
-            onPressed: () => _showEmojiPicker(context, isDark),
-            icon: const Icon(Icons.edit, size: 16),
-            label: const Text('Emoji Seç'),
-            style: TextButton.styleFrom(
-              foregroundColor: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
-            ),
-          ),
-        ],
-      ),
-    ).animate().fadeIn(delay: 100.ms, duration: 400.ms).scale(begin: const Offset(0.9, 0.9));
+        )
+        .animate()
+        .fadeIn(delay: 100.ms, duration: 400.ms)
+        .scale(begin: const Offset(0.9, 0.9));
   }
 
   Widget _buildNameField(BuildContext context, bool isDark) {
@@ -171,8 +196,8 @@ class _AddProfileSheetState extends State<AddProfileSheet> {
         Text(
           'İsim',
           style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
-              ),
+            color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
+          ),
         ),
         const SizedBox(height: 8),
         TextField(
@@ -187,7 +212,9 @@ class _AddProfileSheetState extends State<AddProfileSheet> {
             ),
             prefixIcon: Icon(
               Icons.person_outline,
-              color: isDark ? AppColors.textSecondary : AppColors.lightTextSecondary,
+              color: isDark
+                  ? AppColors.textSecondary
+                  : AppColors.lightTextSecondary,
             ),
             filled: true,
             fillColor: isDark
@@ -199,7 +226,10 @@ class _AddProfileSheetState extends State<AddProfileSheet> {
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(AppConstants.radiusMd),
-              borderSide: const BorderSide(color: AppColors.auroraStart, width: 2),
+              borderSide: const BorderSide(
+                color: AppColors.auroraStart,
+                width: 2,
+              ),
             ),
           ),
         ),
@@ -214,8 +244,8 @@ class _AddProfileSheetState extends State<AddProfileSheet> {
         Text(
           'Doğum Tarihi',
           style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
-              ),
+            color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
+          ),
         ),
         const SizedBox(height: 8),
         GestureDetector(
@@ -232,19 +262,26 @@ class _AddProfileSheetState extends State<AddProfileSheet> {
               children: [
                 Icon(
                   Icons.calendar_today_outlined,
-                  color: isDark ? AppColors.textSecondary : AppColors.lightTextSecondary,
+                  color: isDark
+                      ? AppColors.textSecondary
+                      : AppColors.lightTextSecondary,
                 ),
                 const SizedBox(width: AppConstants.spacingMd),
                 Expanded(
                   child: Text(
                     '${_birthDate.day}/${_birthDate.month}/${_birthDate.year}',
                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
-                        ),
+                      color: isDark
+                          ? AppColors.textPrimary
+                          : AppColors.lightTextPrimary,
+                    ),
                   ),
                 ),
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 10,
+                    vertical: 4,
+                  ),
                   decoration: BoxDecoration(
                     color: sign.color.withAlpha(30),
                     borderRadius: BorderRadius.circular(12),
@@ -282,8 +319,8 @@ class _AddProfileSheetState extends State<AddProfileSheet> {
             Text(
               'Doğum Saati',
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
-                  ),
+                color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
+              ),
             ),
             const SizedBox(width: 8),
             Container(
@@ -314,7 +351,10 @@ class _AddProfileSheetState extends State<AddProfileSheet> {
                   : AppColors.lightSurfaceVariant,
               borderRadius: BorderRadius.circular(AppConstants.radiusMd),
               border: _birthTime != null
-                  ? Border.all(color: AppColors.auroraStart.withAlpha(100), width: 1.5)
+                  ? Border.all(
+                      color: AppColors.auroraStart.withAlpha(100),
+                      width: 1.5,
+                    )
                   : null,
             ),
             child: Row(
@@ -323,7 +363,9 @@ class _AddProfileSheetState extends State<AddProfileSheet> {
                   Icons.access_time_outlined,
                   color: _birthTime != null
                       ? AppColors.auroraStart
-                      : (isDark ? AppColors.textSecondary : AppColors.lightTextSecondary),
+                      : (isDark
+                            ? AppColors.textSecondary
+                            : AppColors.lightTextSecondary),
                 ),
                 const SizedBox(width: AppConstants.spacingMd),
                 Expanded(
@@ -332,10 +374,14 @@ class _AddProfileSheetState extends State<AddProfileSheet> {
                         ? '${_birthTime!.hour.toString().padLeft(2, '0')}:${_birthTime!.minute.toString().padLeft(2, '0')}'
                         : 'Saat seçin (opsiyonel)',
                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          color: _birthTime != null
-                              ? (isDark ? AppColors.textPrimary : AppColors.lightTextPrimary)
-                              : (isDark ? AppColors.textMuted : AppColors.lightTextMuted),
-                        ),
+                      color: _birthTime != null
+                          ? (isDark
+                                ? AppColors.textPrimary
+                                : AppColors.lightTextPrimary)
+                          : (isDark
+                                ? AppColors.textMuted
+                                : AppColors.lightTextMuted),
+                    ),
                   ),
                 ),
                 if (_birthTime != null)
@@ -344,7 +390,9 @@ class _AddProfileSheetState extends State<AddProfileSheet> {
                     child: Icon(
                       Icons.close,
                       size: 20,
-                      color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
+                      color: isDark
+                          ? AppColors.textMuted
+                          : AppColors.lightTextMuted,
                     ),
                   ),
               ],
@@ -364,8 +412,8 @@ class _AddProfileSheetState extends State<AddProfileSheet> {
             Text(
               'Doğum Yeri',
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
-                  ),
+                color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
+              ),
             ),
             const SizedBox(width: 8),
             Container(
@@ -396,7 +444,10 @@ class _AddProfileSheetState extends State<AddProfileSheet> {
                   : AppColors.lightSurfaceVariant,
               borderRadius: BorderRadius.circular(AppConstants.radiusMd),
               border: _birthPlace != null
-                  ? Border.all(color: AppColors.cosmicPurple.withAlpha(100), width: 1.5)
+                  ? Border.all(
+                      color: AppColors.cosmicPurple.withAlpha(100),
+                      width: 1.5,
+                    )
                   : null,
             ),
             child: Row(
@@ -405,17 +456,23 @@ class _AddProfileSheetState extends State<AddProfileSheet> {
                   Icons.location_on_outlined,
                   color: _birthPlace != null
                       ? AppColors.cosmicPurple
-                      : (isDark ? AppColors.textSecondary : AppColors.lightTextSecondary),
+                      : (isDark
+                            ? AppColors.textSecondary
+                            : AppColors.lightTextSecondary),
                 ),
                 const SizedBox(width: AppConstants.spacingMd),
                 Expanded(
                   child: Text(
                     _birthPlace ?? 'Konum seçin (opsiyonel)',
                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          color: _birthPlace != null
-                              ? (isDark ? AppColors.textPrimary : AppColors.lightTextPrimary)
-                              : (isDark ? AppColors.textMuted : AppColors.lightTextMuted),
-                        ),
+                      color: _birthPlace != null
+                          ? (isDark
+                                ? AppColors.textPrimary
+                                : AppColors.lightTextPrimary)
+                          : (isDark
+                                ? AppColors.textMuted
+                                : AppColors.lightTextMuted),
+                    ),
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),
@@ -430,7 +487,9 @@ class _AddProfileSheetState extends State<AddProfileSheet> {
                     child: Icon(
                       Icons.close,
                       size: 20,
-                      color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
+                      color: isDark
+                          ? AppColors.textMuted
+                          : AppColors.lightTextMuted,
                     ),
                   ),
               ],
@@ -448,8 +507,8 @@ class _AddProfileSheetState extends State<AddProfileSheet> {
         Text(
           'İlişki Türü',
           style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
-              ),
+            color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
+          ),
         ),
         const SizedBox(height: 8),
         Wrap(
@@ -458,18 +517,24 @@ class _AddProfileSheetState extends State<AddProfileSheet> {
           children: _relationshipOptions.map((option) {
             final isSelected = _relationship == option['value'];
             return GestureDetector(
-              onTap: () => setState(() => _relationship = option['value'] as String),
+              onTap: () =>
+                  setState(() => _relationship = option['value'] as String),
               child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 10,
+                ),
                 decoration: BoxDecoration(
                   color: isSelected
                       ? AppColors.auroraStart.withAlpha(40)
                       : (isDark
-                          ? AppColors.surfaceLight.withAlpha(30)
-                          : AppColors.lightSurfaceVariant),
+                            ? AppColors.surfaceLight.withAlpha(30)
+                            : AppColors.lightSurfaceVariant),
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(
-                    color: isSelected ? AppColors.auroraStart : Colors.transparent,
+                    color: isSelected
+                        ? AppColors.auroraStart
+                        : Colors.transparent,
                     width: 2,
                   ),
                 ),
@@ -483,8 +548,12 @@ class _AddProfileSheetState extends State<AddProfileSheet> {
                       style: TextStyle(
                         color: isSelected
                             ? AppColors.auroraStart
-                            : (isDark ? AppColors.textSecondary : AppColors.lightTextSecondary),
-                        fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
+                            : (isDark
+                                  ? AppColors.textSecondary
+                                  : AppColors.lightTextSecondary),
+                        fontWeight: isSelected
+                            ? FontWeight.w600
+                            : FontWeight.normal,
                       ),
                     ),
                   ],
@@ -603,134 +672,153 @@ class _AddProfileSheetState extends State<AddProfileSheet> {
         expand: false,
         builder: (context, scrollController) => StatefulBuilder(
           builder: (context, setModalState) => Container(
-          padding: const EdgeInsets.all(AppConstants.spacingLg),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Center(
-                child: Container(
-                  width: 40,
-                  height: 4,
-                  decoration: BoxDecoration(
-                    color: Colors.grey.withAlpha(80),
-                    borderRadius: BorderRadius.circular(2),
+            padding: const EdgeInsets.all(AppConstants.spacingLg),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Center(
+                  child: Container(
+                    width: 40,
+                    height: 4,
+                    decoration: BoxDecoration(
+                      color: Colors.grey.withAlpha(80),
+                      borderRadius: BorderRadius.circular(2),
+                    ),
                   ),
                 ),
-              ),
-              const SizedBox(height: AppConstants.spacingLg),
-              Text(
-                '📍 Doğum Yeri Seçin',
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
-                      fontWeight: FontWeight.bold,
-                    ),
-              ),
-              const SizedBox(height: 8),
-              Text(
-                'Ay burcu ve yükselen hesaplaması için konum gereklidir',
-                style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                      color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
-                    ),
-              ),
-              const SizedBox(height: AppConstants.spacingLg),
-              // Arama alanı
-              TextField(
-                controller: _locationController,
-                style: TextStyle(
-                  color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
-                ),
-                decoration: InputDecoration(
-                  hintText: 'Şehir ara...',
-                  hintStyle: TextStyle(
-                    color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
-                  ),
-                  prefixIcon: Icon(
-                    Icons.search,
-                    color: isDark ? AppColors.textSecondary : AppColors.lightTextSecondary,
-                  ),
-                  filled: true,
-                  fillColor: isDark
-                      ? AppColors.surfaceLight.withAlpha(30)
-                      : AppColors.lightSurfaceVariant,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(AppConstants.radiusMd),
-                    borderSide: BorderSide.none,
+                const SizedBox(height: AppConstants.spacingLg),
+                Text(
+                  '📍 Doğum Yeri Seçin',
+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    color: isDark
+                        ? AppColors.textPrimary
+                        : AppColors.lightTextPrimary,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-                onChanged: (value) {
-                  // Filter cities
-                  setModalState(() {});
-                },
-              ),
-              const SizedBox(height: AppConstants.spacingMd),
-              Text(
-                'Popüler Şehirler',
-                style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                      color: AppColors.starGold,
-                      fontWeight: FontWeight.w600,
+                const SizedBox(height: 8),
+                Text(
+                  'Ay burcu ve yükselen hesaplaması için konum gereklidir',
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                    color: isDark
+                        ? AppColors.textMuted
+                        : AppColors.lightTextMuted,
+                  ),
+                ),
+                const SizedBox(height: AppConstants.spacingLg),
+                // Arama alanı
+                TextField(
+                  controller: _locationController,
+                  style: TextStyle(
+                    color: isDark
+                        ? AppColors.textPrimary
+                        : AppColors.lightTextPrimary,
+                  ),
+                  decoration: InputDecoration(
+                    hintText: 'Şehir ara...',
+                    hintStyle: TextStyle(
+                      color: isDark
+                          ? AppColors.textMuted
+                          : AppColors.lightTextMuted,
                     ),
-              ),
-              const SizedBox(height: 8),
-              Expanded(
-                child: ListView.builder(
-                  controller: scrollController,
-                  itemCount: popularCities.length,
-                  itemBuilder: (context, index) {
-                    final city = popularCities[index];
-                    final searchTerm = _locationController.text.toLowerCase();
-                    final cityName = (city['name'] as String).toLowerCase();
-
-                    if (searchTerm.isNotEmpty && !cityName.contains(searchTerm)) {
-                      return const SizedBox.shrink();
-                    }
-
-                    return ListTile(
-                      leading: Container(
-                        padding: const EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                          color: AppColors.cosmicPurple.withAlpha(30),
-                          shape: BoxShape.circle,
-                        ),
-                        child: const Icon(
-                          Icons.location_city,
-                          color: AppColors.cosmicPurple,
-                          size: 20,
-                        ),
+                    prefixIcon: Icon(
+                      Icons.search,
+                      color: isDark
+                          ? AppColors.textSecondary
+                          : AppColors.lightTextSecondary,
+                    ),
+                    filled: true,
+                    fillColor: isDark
+                        ? AppColors.surfaceLight.withAlpha(30)
+                        : AppColors.lightSurfaceVariant,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(
+                        AppConstants.radiusMd,
                       ),
-                      title: Text(
-                        city['name'] as String,
-                        style: TextStyle(
-                          color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      subtitle: Text(
-                        'Türkiye',
-                        style: TextStyle(
-                          color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
-                          fontSize: 12,
-                        ),
-                      ),
-                      trailing: Icon(
-                        Icons.arrow_forward_ios,
-                        size: 16,
-                        color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
-                      ),
-                      onTap: () {
-                        setState(() {
-                          _birthPlace = city['name'] as String;
-                          _birthLatitude = city['lat'] as double;
-                          _birthLongitude = city['lng'] as double;
-                        });
-                        Navigator.pop(context);
-                      },
-                    );
+                      borderSide: BorderSide.none,
+                    ),
+                  ),
+                  onChanged: (value) {
+                    // Filter cities
+                    setModalState(() {});
                   },
                 ),
-              ),
-            ],
+                const SizedBox(height: AppConstants.spacingMd),
+                Text(
+                  'Popüler Şehirler',
+                  style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                    color: AppColors.starGold,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Expanded(
+                  child: ListView.builder(
+                    controller: scrollController,
+                    itemCount: popularCities.length,
+                    itemBuilder: (context, index) {
+                      final city = popularCities[index];
+                      final searchTerm = _locationController.text.toLowerCase();
+                      final cityName = (city['name'] as String).toLowerCase();
+
+                      if (searchTerm.isNotEmpty &&
+                          !cityName.contains(searchTerm)) {
+                        return const SizedBox.shrink();
+                      }
+
+                      return ListTile(
+                        leading: Container(
+                          padding: const EdgeInsets.all(8),
+                          decoration: BoxDecoration(
+                            color: AppColors.cosmicPurple.withAlpha(30),
+                            shape: BoxShape.circle,
+                          ),
+                          child: const Icon(
+                            Icons.location_city,
+                            color: AppColors.cosmicPurple,
+                            size: 20,
+                          ),
+                        ),
+                        title: Text(
+                          city['name'] as String,
+                          style: TextStyle(
+                            color: isDark
+                                ? AppColors.textPrimary
+                                : AppColors.lightTextPrimary,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        subtitle: Text(
+                          'Türkiye',
+                          style: TextStyle(
+                            color: isDark
+                                ? AppColors.textMuted
+                                : AppColors.lightTextMuted,
+                            fontSize: 12,
+                          ),
+                        ),
+                        trailing: Icon(
+                          Icons.arrow_forward_ios,
+                          size: 16,
+                          color: isDark
+                              ? AppColors.textMuted
+                              : AppColors.lightTextMuted,
+                        ),
+                        onTap: () {
+                          setState(() {
+                            _birthPlace = city['name'] as String;
+                            _birthLatitude = city['lat'] as double;
+                            _birthLongitude = city['lng'] as double;
+                          });
+                          Navigator.pop(context);
+                        },
+                      );
+                    },
+                  ),
+                ),
+              ],
+            ),
           ),
-        ),
         ),
       ),
     );
@@ -751,9 +839,11 @@ class _AddProfileSheetState extends State<AddProfileSheet> {
             Text(
               'Emoji Seç',
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
-                    fontWeight: FontWeight.bold,
-                  ),
+                color: isDark
+                    ? AppColors.textPrimary
+                    : AppColors.lightTextPrimary,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             const SizedBox(height: AppConstants.spacingLg),
             Wrap(
@@ -773,11 +863,13 @@ class _AddProfileSheetState extends State<AddProfileSheet> {
                       color: isSelected
                           ? AppColors.auroraStart.withAlpha(40)
                           : (isDark
-                              ? AppColors.surfaceLight.withAlpha(30)
-                              : AppColors.lightSurfaceVariant),
+                                ? AppColors.surfaceLight.withAlpha(30)
+                                : AppColors.lightSurfaceVariant),
                       shape: BoxShape.circle,
                       border: Border.all(
-                        color: isSelected ? AppColors.auroraStart : Colors.transparent,
+                        color: isSelected
+                            ? AppColors.auroraStart
+                            : Colors.transparent,
                         width: 2,
                       ),
                     ),
@@ -815,7 +907,8 @@ class _AddProfileSheetState extends State<AddProfileSheet> {
     // Saat string formatına çevir
     String? birthTimeStr;
     if (_birthTime != null) {
-      birthTimeStr = '${_birthTime!.hour.toString().padLeft(2, '0')}:${_birthTime!.minute.toString().padLeft(2, '0')}';
+      birthTimeStr =
+          '${_birthTime!.hour.toString().padLeft(2, '0')}:${_birthTime!.minute.toString().padLeft(2, '0')}';
     }
 
     final profile = UserProfile(

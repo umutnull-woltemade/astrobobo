@@ -72,33 +72,22 @@ class AnalyticsService {
 
   /// Log feature usage
   void logFeatureUsage(String feature, {Map<String, String>? details}) {
-    logEvent('feature_used', {
-      'feature': feature,
-      ...?details,
-    });
+    logEvent('feature_used', {'feature': feature, ...?details});
   }
 
   /// Log horoscope view
   void logHoroscopeView(String sign, String type) {
-    logEvent('horoscope_view', {
-      'sign': sign,
-      'type': type,
-    });
+    logEvent('horoscope_view', {'sign': sign, 'type': type});
   }
 
   /// Log chart generation
   void logChartGeneration(String chartType) {
-    logEvent('chart_generated', {
-      'chart_type': chartType,
-    });
+    logEvent('chart_generated', {'chart_type': chartType});
   }
 
   /// Log share action
   void logShare(String contentType, String method) {
-    logEvent('share', {
-      'content_type': contentType,
-      'method': method,
-    });
+    logEvent('share', {'content_type': contentType, 'method': method});
   }
 
   /// Log error
@@ -261,10 +250,7 @@ class AnalyticsService {
   }
 
   /// Log entitlement check
-  void logEntitlementCheck({
-    required bool isActive,
-    required String source,
-  }) {
+  void logEntitlementCheck({required bool isActive, required String source}) {
     logEvent('entitlement_check', {
       'is_active': isActive.toString(),
       'source': source,

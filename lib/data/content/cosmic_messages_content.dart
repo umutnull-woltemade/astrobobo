@@ -6,14 +6,18 @@ class CosmicMessagesContent {
 
   /// Get a cosmic message for a specific zodiac sign based on day
   static String getDailyCosmicMessage(ZodiacSign sign, {DateTime? date}) {
-    final dayOfYear = (date ?? DateTime.now()).difference(DateTime(DateTime.now().year, 1, 1)).inDays;
+    final dayOfYear = (date ?? DateTime.now())
+        .difference(DateTime(DateTime.now().year, 1, 1))
+        .inDays;
     final messages = _cosmicMessages[sign] ?? _universalMessages;
     return messages[dayOfYear % messages.length];
   }
 
   /// Get a random universal cosmic message
   static String getUniversalMessage({DateTime? date}) {
-    final dayOfYear = (date ?? DateTime.now()).difference(DateTime(DateTime.now().year, 1, 1)).inDays;
+    final dayOfYear = (date ?? DateTime.now())
+        .difference(DateTime(DateTime.now().year, 1, 1))
+        .inDays;
     return _universalMessages[dayOfYear % _universalMessages.length];
   }
 
@@ -33,7 +37,8 @@ class CosmicMessagesContent {
 
   /// Get cosmic insight based on moon phase
   static String getMoonPhaseInsight(String moonPhase) {
-    return _moonPhaseInsights[moonPhase] ?? _moonPhaseInsights['waxing_crescent']!;
+    return _moonPhaseInsights[moonPhase] ??
+        _moonPhaseInsights['waxing_crescent']!;
   }
 
   /// Get daily intention suggestion
@@ -383,14 +388,22 @@ class CosmicMessagesContent {
 
   /// Moon phase insights
   static final Map<String, String> _moonPhaseInsights = {
-    'new_moon': 'Yeni Ay zamanı - yeni başlangıçlar için tohum ek. Niyetlerini netleştir, içe dön, planla.',
-    'waxing_crescent': 'Hilal Ay - niyetlerini eyleme dönüştür. İnanç ve umut zamanı.',
-    'first_quarter': 'İlk Dördün - engellerle yüzleş, kararlı ol. Aksiyon zamanı.',
-    'waxing_gibbous': 'Kabaran Ay - ince ayar yap, sabırlı ol. Sonuçlar yaklaşıyor.',
-    'full_moon': 'Dolunay - enerji doruğunda! Manifestasyonlar gerçekleşiyor, şükret ve kutla.',
-    'waning_gibbous': 'Azalan Ay - bilgeliği paylaş, minnettarlık prat. Hasat zamanı.',
-    'last_quarter': 'Son Dördün - bırakma ve affetme zamanı. Eskiyi serbest bırak.',
-    'waning_crescent': 'Son Hilal - dinlen, rüya gör, arın. Döngü tamamlanıyor.',
+    'new_moon':
+        'Yeni Ay zamanı - yeni başlangıçlar için tohum ek. Niyetlerini netleştir, içe dön, planla.',
+    'waxing_crescent':
+        'Hilal Ay - niyetlerini eyleme dönüştür. İnanç ve umut zamanı.',
+    'first_quarter':
+        'İlk Dördün - engellerle yüzleş, kararlı ol. Aksiyon zamanı.',
+    'waxing_gibbous':
+        'Kabaran Ay - ince ayar yap, sabırlı ol. Sonuçlar yaklaşıyor.',
+    'full_moon':
+        'Dolunay - enerji doruğunda! Manifestasyonlar gerçekleşiyor, şükret ve kutla.',
+    'waning_gibbous':
+        'Azalan Ay - bilgeliği paylaş, minnettarlık prat. Hasat zamanı.',
+    'last_quarter':
+        'Son Dördün - bırakma ve affetme zamanı. Eskiyi serbest bırak.',
+    'waning_crescent':
+        'Son Hilal - dinlen, rüya gör, arın. Döngü tamamlanıyor.',
   };
 
   /// Daily intentions by sign
@@ -517,14 +530,17 @@ class CosmicMessagesContent {
 
   /// Get extended cosmic wisdom for deeper readings
   static String getExtendedCosmicWisdom(ZodiacSign sign, {DateTime? date}) {
-    final dayOfYear = (date ?? DateTime.now()).difference(DateTime(DateTime.now().year, 1, 1)).inDays;
+    final dayOfYear = (date ?? DateTime.now())
+        .difference(DateTime(DateTime.now().year, 1, 1))
+        .inDays;
     final wisdoms = _extendedCosmicWisdoms[sign] ?? _universalExtendedWisdoms;
     return wisdoms[dayOfYear % wisdoms.length];
   }
 
   /// Get planet-based daily guidance
   static String getPlanetaryGuidance(String planet) {
-    return _planetaryGuidance[planet.toLowerCase()] ?? _planetaryGuidance['sun']!;
+    return _planetaryGuidance[planet.toLowerCase()] ??
+        _planetaryGuidance['sun']!;
   }
 
   /// Get element-based message
@@ -609,24 +625,38 @@ class CosmicMessagesContent {
 
   /// Planetary guidance messages
   static final Map<String, String> _planetaryGuidance = {
-    'sun': 'Güneş enerjisi bugün kimliğini ve yaşam gücünü aydınlatıyor. Kendini ifade et, parla, merkezinde kal. Güneş gibi etrafına ışık ve sıcaklık yay.',
-    'moon': 'Ay bugün duygusal dünyani aktive ediyor. Sezgilerine güven, iç sesini dinle, hislerini kabul et. Ay döngüleriyle uyum içinde hareket et.',
-    'mercury': 'Merkür iletişim ve düşünce kanallarını açıyor. Konuş, yaz, öğren, öğret. Fikirlerini paylaş, bilgi al ver. Zihinsel çevikliğini kullan.',
-    'venus': 'Venüs sevgi, güzellik ve değerler konusunda rehberlik ediyor. Aşkı kabul et, güzellik yarat, kendine değer ver. Hayatın tadını çıkar.',
-    'mars': 'Mars aksiyon ve enerji veriyor. Harekete geç, cesaretini kullan, hedeflerine doğru ilerle. Tutkunla motive ol, ama öfkeni kontrol et.',
-    'jupiter': 'Jüpiter şans ve genişleme getiriyor. Fırsatlara açık ol, risk al, büyük düşün. Bolluk ve bilgelik kapıları açılıyor.',
-    'saturn': 'Satürn disiplin ve yapı öğretiyor. Sabırlı ol, sorumlu davran, uzun vadeli düşün. Sınırlamalar aslında koruma.',
-    'uranus': 'Uranüs ani değişimler ve aydınlanmalar getiriyor. Beklenmedik olaylara açık ol, eski kalıpları kır, özgür düşün.',
-    'neptune': 'Neptün spiritüel bağlantıyı güçlendiriyor. Rüyalara dikkat et, sezgilerine güven, yaratıcılığını kullan. Görünmeyeni gör.',
-    'pluto': 'Pluto derin dönüşümü tetikliyor. Gölgelerle yüzleş, ölüp yeniden doğ, gücünü keşfet. Korkularının ötesine geç.',
+    'sun':
+        'Güneş enerjisi bugün kimliğini ve yaşam gücünü aydınlatıyor. Kendini ifade et, parla, merkezinde kal. Güneş gibi etrafına ışık ve sıcaklık yay.',
+    'moon':
+        'Ay bugün duygusal dünyani aktive ediyor. Sezgilerine güven, iç sesini dinle, hislerini kabul et. Ay döngüleriyle uyum içinde hareket et.',
+    'mercury':
+        'Merkür iletişim ve düşünce kanallarını açıyor. Konuş, yaz, öğren, öğret. Fikirlerini paylaş, bilgi al ver. Zihinsel çevikliğini kullan.',
+    'venus':
+        'Venüs sevgi, güzellik ve değerler konusunda rehberlik ediyor. Aşkı kabul et, güzellik yarat, kendine değer ver. Hayatın tadını çıkar.',
+    'mars':
+        'Mars aksiyon ve enerji veriyor. Harekete geç, cesaretini kullan, hedeflerine doğru ilerle. Tutkunla motive ol, ama öfkeni kontrol et.',
+    'jupiter':
+        'Jüpiter şans ve genişleme getiriyor. Fırsatlara açık ol, risk al, büyük düşün. Bolluk ve bilgelik kapıları açılıyor.',
+    'saturn':
+        'Satürn disiplin ve yapı öğretiyor. Sabırlı ol, sorumlu davran, uzun vadeli düşün. Sınırlamalar aslında koruma.',
+    'uranus':
+        'Uranüs ani değişimler ve aydınlanmalar getiriyor. Beklenmedik olaylara açık ol, eski kalıpları kır, özgür düşün.',
+    'neptune':
+        'Neptün spiritüel bağlantıyı güçlendiriyor. Rüyalara dikkat et, sezgilerine güven, yaratıcılığını kullan. Görünmeyeni gör.',
+    'pluto':
+        'Pluto derin dönüşümü tetikliyor. Gölgelerle yüzleş, ölüp yeniden doğ, gücünü keşfet. Korkularının ötesine geç.',
   };
 
   /// Element-based messages
   static final Map<String, String> _elementMessages = {
-    'fire': 'Ateş elementi bugün tutkunu, cesaretini ve yaşam enerjini ateşliyor. Harekete geç, risk al, parla. Ateş gibi dönüştürücü ol, ama kontrolü elden bırakma.',
-    'earth': 'Toprak elementi bugün pratikliğini, istikrarını ve maddi bilincini güçlendiriyor. Temelleri sağlam at, sabırla çalış, somut sonuçlar üret.',
-    'air': 'Hava elementi bugün zihinsel çevikliğini, iletişimini ve sosyal bağlantılarını destekliyor. Düşün, konuş, bağlan. Fikirlerini paylaş, öğren.',
-    'water': 'Su elementi bugün duygusal derinliğini, sezgilerini ve empati gücünü aktive ediyor. Hisset, sezgilerine güven, akışa teslim ol.',
+    'fire':
+        'Ateş elementi bugün tutkunu, cesaretini ve yaşam enerjini ateşliyor. Harekete geç, risk al, parla. Ateş gibi dönüştürücü ol, ama kontrolü elden bırakma.',
+    'earth':
+        'Toprak elementi bugün pratikliğini, istikrarını ve maddi bilincini güçlendiriyor. Temelleri sağlam at, sabırla çalış, somut sonuçlar üret.',
+    'air':
+        'Hava elementi bugün zihinsel çevikliğini, iletişimini ve sosyal bağlantılarını destekliyor. Düşün, konuş, bağlan. Fikirlerini paylaş, öğren.',
+    'water':
+        'Su elementi bugün duygusal derinliğini, sezgilerini ve empati gücünü aktive ediyor. Hisset, sezgilerine güven, akışa teslim ol.',
   };
 
   /// House-based daily insights

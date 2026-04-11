@@ -26,8 +26,9 @@ class EntertainmentDisclaimer extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    final text = customText ??
-      'Bu içerik eğlence amaçlıdır ve profesyonel tavsiye yerine geçmez.';
+    final text =
+        customText ??
+        'Bu içerik eğlence amaçlıdır ve profesyonel tavsiye yerine geçmez.';
 
     if (compact) {
       return Padding(
@@ -36,7 +37,9 @@ class EntertainmentDisclaimer extends StatelessWidget {
           text,
           style: TextStyle(
             fontSize: 10,
-            color: isDark ? Colors.white30 : AppColors.textLight.withValues(alpha: 0.6),
+            color: isDark
+                ? Colors.white30
+                : AppColors.textLight.withValues(alpha: 0.6),
             fontStyle: FontStyle.italic,
           ),
           textAlign: TextAlign.center,
@@ -63,7 +66,9 @@ class EntertainmentDisclaimer extends StatelessWidget {
           Icon(
             Icons.info_outline,
             size: 14,
-            color: isDark ? Colors.white30 : AppColors.textLight.withValues(alpha: 0.5),
+            color: isDark
+                ? Colors.white30
+                : AppColors.textLight.withValues(alpha: 0.5),
           ),
           const SizedBox(width: 8),
           Expanded(
@@ -71,7 +76,9 @@ class EntertainmentDisclaimer extends StatelessWidget {
               text,
               style: TextStyle(
                 fontSize: 11,
-                color: isDark ? Colors.white38 : AppColors.textLight.withValues(alpha: 0.7),
+                color: isDark
+                    ? Colors.white38
+                    : AppColors.textLight.withValues(alpha: 0.7),
                 height: 1.4,
               ),
             ),
@@ -85,28 +92,28 @@ class EntertainmentDisclaimer extends StatelessWidget {
 /// Kategori bazlı disclaimer metinleri
 class DisclaimerTexts {
   static const String general =
-    'Bu içerik eğlence amaçlıdır ve profesyonel tavsiye yerine geçmez.';
+      'Bu içerik eğlence amaçlıdır ve profesyonel tavsiye yerine geçmez.';
 
   static const String dreams =
-    'Rüya yorumları eğlence amaçlıdır. Psikolojik destek için uzmana başvurun.';
+      'Rüya yorumları eğlence amaçlıdır. Psikolojik destek için uzmana başvurun.';
 
   static const String health =
-    'Bu içerik tıbbi tavsiye değildir. Sağlık konularında doktorunuza danışın.';
+      'Bu içerik tıbbi tavsiye değildir. Sağlık konularında doktorunuza danışın.';
 
   static const String astrology =
-    'Astrolojik yorumlar eğlence amaçlıdır ve bilimsel kesinlik taşımaz.';
+      'Astrolojik yorumlar eğlence amaçlıdır ve bilimsel kesinlik taşımaz.';
 
   static const String tarot =
-    'Tarot okumaları eğlence amaçlıdır ve geleceği garanti etmez.';
+      'Tarot okumaları eğlence amaçlıdır ve geleceği garanti etmez.';
 
   static const String numerology =
-    'Numeroloji yorumları eğlence amaçlıdır ve kişisel rehberlik yerine geçmez.';
+      'Numeroloji yorumları eğlence amaçlıdır ve kişisel rehberlik yerine geçmez.';
 
   static const String chakra =
-    'Enerji yorumları eğlence amaçlıdır. Sağlık sorunları için uzmana başvurun.';
+      'Enerji yorumları eğlence amaçlıdır. Sağlık sorunları için uzmana başvurun.';
 
   static const String compatibility =
-    'Uyum analizleri eğlence amaçlıdır ve ilişki kararlarınızı belirlememeli.';
+      'Uyum analizleri eğlence amaçlıdır ve ilişki kararlarınızı belirlememeli.';
 }
 
 /// Sayfa footer'ı ile disclaimer birlikte
@@ -129,10 +136,7 @@ class PageFooterWithDisclaimer extends StatelessWidget {
     return Column(
       children: [
         if (showDisclaimer) ...[
-          EntertainmentDisclaimer(
-            compact: true,
-            customText: disclaimerText,
-          ),
+          EntertainmentDisclaimer(compact: true, customText: disclaimerText),
           const SizedBox(height: 8),
         ],
         Center(

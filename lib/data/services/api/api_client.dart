@@ -10,11 +10,9 @@ class ApiClient {
   final http.Client _client;
   String? _authToken;
 
-  ApiClient({
-    String? baseUrl,
-    http.Client? client,
-  })  : baseUrl = baseUrl ?? _defaultBaseUrl,
-        _client = client ?? http.Client();
+  ApiClient({String? baseUrl, http.Client? client})
+    : baseUrl = baseUrl ?? _defaultBaseUrl,
+      _client = client ?? http.Client();
 
   /// Set the auth token for authenticated requests
   void setAuthToken(String? token) {

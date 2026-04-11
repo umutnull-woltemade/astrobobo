@@ -1,0 +1,16 @@
+{
+  "name": "astrobobo-web-tests",
+  "version": "1.0.0",
+  "private": true,
+  "description": "E2E tests for astrobobo.com Flutter web app",
+  "scripts": {
+    "test:e2e": "playwright test",
+    "test:e2e:prod": "BASE_URL=https://astrobobo.com playwright test",
+    "test:e2e:routes": "BASE_URL=https://astrobobo.com playwright test e2e/all-routes.spec.ts",
+    "test:e2e:install": "playwright install chromium"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^22.0.0"
+  }
+}

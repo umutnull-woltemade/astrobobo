@@ -30,7 +30,8 @@ class PremiumUpsell extends StatelessWidget {
     super.key,
     this.type = PremiumUpsellType.card,
     this.title = 'Premium ile Daha Fazlasını Keşfet',
-    this.description = 'Sınırsız harita, detaylı raporlar ve kişiselleştirilmiş içerikler',
+    this.description =
+        'Sınırsız harita, detaylı raporlar ve kişiselleştirilmiş içerikler',
     this.ctaText = 'Premium\'a Geç',
     this.features,
     this.icon,
@@ -104,7 +105,8 @@ class PremiumUpsell extends StatelessWidget {
     return const PremiumUpsell(
       type: PremiumUpsellType.banner,
       title: 'Kozmik Yolculuğunuzu Derinleştirin',
-      description: 'Premium ile sınırsız erişim ve kişiselleştirilmiş rehberlik',
+      description:
+          'Premium ile sınırsız erişim ve kişiselleştirilmiş rehberlik',
       ctaText: 'Hemen Başla',
       icon: Icons.auto_awesome,
     );
@@ -122,7 +124,9 @@ class PremiumUpsell extends StatelessWidget {
       case PremiumUpsellType.subtle:
         return _buildSubtle(context);
       case PremiumUpsellType.modal:
-        return _buildCard(context); // Modal uses same UI, different presentation
+        return _buildCard(
+          context,
+        ); // Modal uses same UI, different presentation
     }
   }
 
@@ -130,113 +134,121 @@ class PremiumUpsell extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Container(
-      width: double.infinity,
-      margin: const EdgeInsets.symmetric(
-        horizontal: AppConstants.spacingMd,
-        vertical: AppConstants.spacingLg,
-      ),
-      padding: const EdgeInsets.all(AppConstants.spacingLg),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            AppColors.auroraStart.withOpacity(isDark ? 0.3 : 0.15),
-            AppColors.auroraEnd.withOpacity(isDark ? 0.2 : 0.1),
-            AppColors.starGold.withOpacity(isDark ? 0.15 : 0.08),
-          ],
-        ),
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(
-          color: AppColors.starGold.withOpacity(0.3),
-          width: 1.5,
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: AppColors.auroraStart.withOpacity(0.2),
-            blurRadius: 20,
-            offset: const Offset(0, 8),
+          width: double.infinity,
+          margin: const EdgeInsets.symmetric(
+            horizontal: AppConstants.spacingMd,
+            vertical: AppConstants.spacingLg,
           ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Container(
-                padding: const EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  gradient: const LinearGradient(
-                    colors: [AppColors.starGold, AppColors.auroraStart],
-                  ),
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Icon(
-                  icon ?? Icons.auto_awesome,
-                  color: Colors.white,
-                  size: 24,
-                ),
+          padding: const EdgeInsets.all(AppConstants.spacingLg),
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                AppColors.auroraStart.withOpacity(isDark ? 0.3 : 0.15),
+                AppColors.auroraEnd.withOpacity(isDark ? 0.2 : 0.1),
+                AppColors.starGold.withOpacity(isDark ? 0.15 : 0.08),
+              ],
+            ),
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(
+              color: AppColors.starGold.withOpacity(0.3),
+              width: 1.5,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: AppColors.auroraStart.withOpacity(0.2),
+                blurRadius: 20,
+                offset: const Offset(0, 8),
               ),
-              const SizedBox(width: 14),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
+            ],
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      gradient: const LinearGradient(
+                        colors: [AppColors.starGold, AppColors.auroraStart],
+                      ),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Icon(
+                      icon ?? Icons.auto_awesome,
+                      color: Colors.white,
+                      size: 24,
+                    ),
+                  ),
+                  const SizedBox(width: 14),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 8,
-                            vertical: 3,
-                          ),
-                          decoration: BoxDecoration(
-                            gradient: const LinearGradient(
-                              colors: [AppColors.starGold, AppColors.auroraStart],
+                        Row(
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 8,
+                                vertical: 3,
+                              ),
+                              decoration: BoxDecoration(
+                                gradient: const LinearGradient(
+                                  colors: [
+                                    AppColors.starGold,
+                                    AppColors.auroraStart,
+                                  ],
+                                ),
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Text(
+                                'PREMIUM',
+                                style: GoogleFonts.raleway(
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.white,
+                                  letterSpacing: 1,
+                                ),
+                              ),
                             ),
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Text(
-                            'PREMIUM',
-                            style: GoogleFonts.raleway(
-                              fontSize: 10,
-                              fontWeight: FontWeight.w700,
-                              color: Colors.white,
-                              letterSpacing: 1,
-                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 6),
+                        Text(
+                          title,
+                          style: GoogleFonts.cormorantGaramond(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700,
+                            color: isDark
+                                ? AppColors.textPrimary
+                                : AppColors.lightTextPrimary,
                           ),
                         ),
                       ],
                     ),
-                    const SizedBox(height: 6),
-                    Text(
-                      title,
-                      style: GoogleFonts.cormorantGaramond(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w700,
-                        color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
-                      ),
-                    ),
-                  ],
+                  ),
+                ],
+              ),
+              const SizedBox(height: 12),
+              Text(
+                description,
+                style: GoogleFonts.raleway(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                  color: isDark
+                      ? AppColors.textSecondary
+                      : AppColors.lightTextSecondary,
+                  height: 1.4,
                 ),
               ),
+              const SizedBox(height: 16),
+              _buildCtaButton(context),
             ],
           ),
-          const SizedBox(height: 12),
-          Text(
-            description,
-            style: GoogleFonts.raleway(
-              fontSize: 14,
-              fontWeight: FontWeight.w500,
-              color: isDark ? AppColors.textSecondary : AppColors.lightTextSecondary,
-              height: 1.4,
-            ),
-          ),
-          const SizedBox(height: 16),
-          _buildCtaButton(context),
-        ],
-      ),
-    ).animate()
+        )
+        .animate()
         .fadeIn(duration: 400.ms)
         .slideY(begin: 0.1, curve: Curves.easeOut);
   }
@@ -259,10 +271,7 @@ class PremiumUpsell extends StatelessWidget {
                   AppColors.surfaceLight.withOpacity(0.1),
                   AppColors.surfaceDark.withOpacity(0.5),
                 ]
-              : [
-                  AppColors.lightCard,
-                  AppColors.lightSurfaceVariant,
-                ],
+              : [AppColors.lightCard, AppColors.lightSurfaceVariant],
         ),
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
@@ -305,7 +314,9 @@ class PremiumUpsell extends StatelessWidget {
                   style: GoogleFonts.cormorantGaramond(
                     fontSize: 18,
                     fontWeight: FontWeight.w700,
-                    color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
+                    color: isDark
+                        ? AppColors.textPrimary
+                        : AppColors.lightTextPrimary,
                   ),
                 ),
               ),
@@ -335,46 +346,48 @@ class PremiumUpsell extends StatelessWidget {
             style: GoogleFonts.raleway(
               fontSize: 13,
               fontWeight: FontWeight.w500,
-              color: isDark ? AppColors.textSecondary : AppColors.lightTextSecondary,
+              color: isDark
+                  ? AppColors.textSecondary
+                  : AppColors.lightTextSecondary,
               height: 1.4,
             ),
           ),
           // Features list
           if (features != null && features!.isNotEmpty) ...[
             const SizedBox(height: 14),
-            ...features!.map((feature) => Padding(
-                  padding: const EdgeInsets.only(bottom: 6),
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.check_circle,
-                        size: 14,
-                        color: AppColors.success,
-                      ),
-                      const SizedBox(width: 8),
-                      Expanded(
-                        child: Text(
-                          feature,
-                          style: GoogleFonts.raleway(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w500,
-                            color: isDark
-                                ? AppColors.textSecondary.withOpacity(0.9)
-                                : AppColors.lightTextSecondary,
-                          ),
+            ...features!.map(
+              (feature) => Padding(
+                padding: const EdgeInsets.only(bottom: 6),
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.check_circle,
+                      size: 14,
+                      color: AppColors.success,
+                    ),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: Text(
+                        feature,
+                        style: GoogleFonts.raleway(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                          color: isDark
+                              ? AppColors.textSecondary.withOpacity(0.9)
+                              : AppColors.lightTextSecondary,
                         ),
                       ),
-                    ],
-                  ),
-                )),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ],
           const SizedBox(height: 16),
           _buildCtaButton(context, compact: true),
         ],
       ),
-    ).animate()
-        .fadeIn(duration: 300.ms)
-        .scale(begin: const Offset(0.98, 0.98));
+    ).animate().fadeIn(duration: 300.ms).scale(begin: const Offset(0.98, 0.98));
   }
 
   Widget _buildInline(BuildContext context) {
@@ -548,9 +561,11 @@ Future<void> showPremiumUpsellModal(
               PremiumUpsell(
                 type: PremiumUpsellType.card,
                 title: title ?? 'Premium ile Daha Fazlasını Keşfet',
-                description: description ??
+                description:
+                    description ??
                     'Sınırsız erişim, detaylı raporlar ve kişiselleştirilmiş içerikler',
-                features: features ??
+                features:
+                    features ??
                     const [
                       'Sınırsız doğum haritası',
                       'Detaylı transit raporları',
@@ -570,7 +585,9 @@ Future<void> showPremiumUpsellModal(
                   style: GoogleFonts.raleway(
                     fontSize: 13,
                     fontWeight: FontWeight.w500,
-                    color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
+                    color: isDark
+                        ? AppColors.textMuted
+                        : AppColors.lightTextMuted,
                   ),
                 ),
               ),

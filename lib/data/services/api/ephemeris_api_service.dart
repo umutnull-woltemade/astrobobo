@@ -48,10 +48,7 @@ class EphemerisApiService {
   }) async {
     return _client.get<List<LunarPhaseDto>>(
       '/ephemeris/lunar-phases',
-      queryParams: {
-        'year': year.toString(),
-        'month': month.toString(),
-      },
+      queryParams: {'year': year.toString(), 'month': month.toString()},
       fromJson: (json) =>
           (json as List).map((l) => LunarPhaseDto.fromJson(l)).toList(),
     );
@@ -73,10 +70,7 @@ class EphemerisApiService {
   }) async {
     return _client.get<List<AspectEventDto>>(
       '/ephemeris/aspects',
-      queryParams: {
-        'year': year.toString(),
-        'month': month.toString(),
-      },
+      queryParams: {'year': year.toString(), 'month': month.toString()},
       fromJson: (json) =>
           (json as List).map((a) => AspectEventDto.fromJson(a)).toList(),
     );
@@ -109,10 +103,7 @@ class DailyPositionsDto {
   final DateTime date;
   final Map<String, PlanetEphemerisDto> planets;
 
-  DailyPositionsDto({
-    required this.date,
-    required this.planets,
-  });
+  DailyPositionsDto({required this.date, required this.planets});
 
   factory DailyPositionsDto.fromJson(Map<String, dynamic> json) {
     return DailyPositionsDto(

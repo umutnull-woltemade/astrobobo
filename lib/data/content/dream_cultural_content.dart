@@ -19,7 +19,8 @@ class TurkHalkTabiri {
       symbol: 'At',
       hayirliYorum: 'Kısmet, bereket, yolculuk, iyi haber gelecek',
       serrliYorum: 'At kişnerse kötü haber, at düşerse kayıp',
-      halkInanci: 'Halk inancında beyaz at görmek hayırlı sayılır, evlilik çağındaki kız için iyi kısmet işareti olarak yorumlanır',
+      halkInanci:
+          'Halk inancında beyaz at görmek hayırlı sayılır, evlilik çağındaki kız için iyi kısmet işareti olarak yorumlanır',
       bolgeselFarklar: {
         'İç Anadolu': 'Bereket ve zenginlik müjdesi',
         'Karadeniz': 'Yolculuk ve ticaret',
@@ -30,7 +31,8 @@ class TurkHalkTabiri {
       symbol: 'Yılan',
       hayirliYorum: 'Yılanı öldürmek düşmana galip gelmek',
       serrliYorum: 'Yılan sokarsa hastalık, kara yılan kötü düşman',
-      halkInanci: 'Ev yılanı "sahabi" sayılır, öldürülmez. Rüyada ev yılanı koruyucu',
+      halkInanci:
+          'Ev yılanı "sahabi" sayılır, öldürülmez. Rüyada ev yılanı koruyucu',
       bolgeselFarklar: {
         'Güneydoğu': 'Yılan define işareti',
         'Akdeniz': 'Sağlık uyarısı',
@@ -41,7 +43,8 @@ class TurkHalkTabiri {
       symbol: 'Su',
       hayirliYorum: 'Berrak su içmek ömür uzunluğu, su kenarı huzur',
       serrliYorum: 'Bulanık su sıkıntı, selde boğulmak borç',
-      halkInanci: 'Zemzem görmek hacca gitmek, pınar bulmak rızık kapısı açılır',
+      halkInanci:
+          'Zemzem görmek hacca gitmek, pınar bulmak rızık kapısı açılır',
       bolgeselFarklar: {
         'Orta Anadolu': 'Bereket ve bolluk',
         'Doğu Anadolu': 'Gözyaşı ve hasret',
@@ -53,9 +56,7 @@ class TurkHalkTabiri {
       hayirliYorum: 'Ekmek yemek rızık bolluğu, ekmek dağıtmak sevap',
       serrliYorum: 'Bayat ekmek zorluk, ekmek çöpe atmak haram',
       halkInanci: 'Sıcak ekmek müjde, tandır ekmeği ev saadeti',
-      bolgeselFarklar: {
-        'Her yerde': 'Rızık ve bereket sembolü',
-      },
+      bolgeselFarklar: {'Her yerde': 'Rızık ve bereket sembolü'},
     ),
     'altin': TurkishDreamSymbol(
       symbol: 'Altın',
@@ -73,9 +74,7 @@ class TurkHalkTabiri {
       hayirliYorum: 'Bebek görmek müjde, kız bebek bereket, erkek bebek güç',
       serrliYorum: 'Ağlayan bebek sıkıntı, hasta bebek endişe',
       halkInanci: 'Beşikte bebek görmek hamilelik, bebek emzirmek sadaka',
-      bolgeselFarklar: {
-        'Genel': 'Yeni başlangıç ve umut',
-      },
+      bolgeselFarklar: {'Genel': 'Yeni başlangıç ve umut'},
     ),
     'olum': TurkishDreamSymbol(
       symbol: 'Ölüm/Ölü',
@@ -90,19 +89,16 @@ class TurkHalkTabiri {
       symbol: 'Düğün',
       hayirliYorum: 'Düğünde oynamak mutluluk, gelin olmak kısmet',
       serrliYorum: 'Düğünde ağlamak ters, düğün bozulursa hayal kırıklığı',
-      halkInanci: 'Kendi düğününü görmek evlilik yakın, başkasının düğünü sevinç',
-      bolgeselFarklar: {
-        'Her yerde': 'Aile birliği ve mutluluk',
-      },
+      halkInanci:
+          'Kendi düğününü görmek evlilik yakın, başkasının düğünü sevinç',
+      bolgeselFarklar: {'Her yerde': 'Aile birliği ve mutluluk'},
     ),
     'cami': TurkishDreamSymbol(
       symbol: 'Cami/Mescit',
       hayirliYorum: 'Camide namaz kılmak huzur, ezan duymak müjde',
       serrliYorum: 'Cami yıkılırsa fitne, camiye girememek günah',
       halkInanci: 'Camide cemaatle namaz topluluk bereketi',
-      bolgeselFarklar: {
-        'Her yerde': 'Spiritüel arınma ve huzur',
-      },
+      bolgeselFarklar: {'Her yerde': 'Spiritüel arınma ve huzur'},
     ),
     'deniz': TurkishDreamSymbol(
       symbol: 'Deniz',
@@ -429,13 +425,15 @@ class AntikMisirRuyaTabiri {
   static const Map<String, EgyptianDreamSymbol> semboller = {
     'nil': EgyptianDreamSymbol(
       symbol: 'Nil Nehri',
-      meaning: 'Hayat, bereket, yenilenme. Taşan Nil bolluk, kuruyan Nil kıtlık.',
+      meaning:
+          'Hayat, bereket, yenilenme. Taşan Nil bolluk, kuruyan Nil kıtlık.',
       deity: 'Hapi - Nil tanrısı',
       ritual: 'Nil\'e adaklar sunulurdu',
     ),
     'gunes': EgyptianDreamSymbol(
       symbol: 'Güneş/Ra',
-      meaning: 'Hayat gücü, kral otoritesi, adalet. Doğan güneş yeni başlangıç.',
+      meaning:
+          'Hayat gücü, kral otoritesi, adalet. Doğan güneş yeni başlangıç.',
       deity: 'Ra - Güneş tanrısı',
       ritual: 'Güneşin doğuşuna ibadet',
     ),
@@ -538,7 +536,8 @@ class AntikYunanRuyaTabiri {
     GreekDreamDeity(
       name: 'Morpheus',
       domain: 'İnsan formunda rüyalar',
-      description: 'Uyku tanrısı Hypnos\'un oğlu. İnsanların rüyalarına şekil verir.',
+      description:
+          'Uyku tanrısı Hypnos\'un oğlu. İnsanların rüyalarına şekil verir.',
       symbolism: 'Dönüşüm, şekil değiştirme, illüzyon',
     ),
     GreekDreamDeity(
@@ -570,10 +569,7 @@ class AntikYunanRuyaTabiri {
       'Yaşa göre anlam değişir',
       'Kültürel bağlamı unutma',
     ],
-    categories: [
-      'Teorematik (doğrudan anlam)',
-      'Alegorik (sembolik anlam)',
-    ],
+    categories: ['Teorematik (doğrudan anlam)', 'Alegorik (sembolik anlam)'],
     famousInterpretations: [
       'Aslan görmek: Güç sahibi ile karşılaşma',
       'Uçmak: Kölelere özgürlük, tüccarlara kar',

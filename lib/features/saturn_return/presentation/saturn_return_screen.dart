@@ -62,7 +62,8 @@ class _SaturnReturnScreenState extends ConsumerState<SaturnReturnScreen> {
                 KadimNotCard(
                   category: KadimCategory.astrology,
                   title: 'Olgunlaşma Sınavı',
-                  content: 'Satürn Dönüşü, astrolojinin en önemli yaşam geçişlerinden biridir. 29.5 yılda '
+                  content:
+                      'Satürn Dönüşü, astrolojinin en önemli yaşam geçişlerinden biridir. 29.5 yılda '
                       'bir gerçekleşen bu döngü, antik çağlardan beri "olgunlaşma sınavı" olarak bilinir. '
                       'Romalılar Satürn\'ü zaman tanrısı Kronos ile özdeşleştirirdi - biçtiğin şeyi '
                       'toplarsın. Bu dönem seni otantik benliğine çağırır.',
@@ -100,15 +101,15 @@ class _SaturnReturnScreenState extends ConsumerState<SaturnReturnScreen> {
               Text(
                 'Satürn Dönüşü',
                 style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                      color: AppColors.starGold,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  color: AppColors.starGold,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               Text(
                 'Yaşamın Dönüşüm Noktaları',
-                style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                      color: AppColors.textSecondary,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.bodySmall?.copyWith(color: AppColors.textSecondary),
               ),
             ],
           ),
@@ -158,7 +159,10 @@ class _SaturnReturnScreenState extends ConsumerState<SaturnReturnScreen> {
             Row(
               children: [
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 12,
+                    vertical: 6,
+                  ),
                   decoration: BoxDecoration(
                     color: AppColors.saturnColor.withAlpha(50),
                     borderRadius: BorderRadius.circular(20),
@@ -178,10 +182,10 @@ class _SaturnReturnScreenState extends ConsumerState<SaturnReturnScreen> {
                       Text(
                         'AKTIF',
                         style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                              color: AppColors.saturnColor,
-                              fontWeight: FontWeight.bold,
-                              letterSpacing: 1.2,
-                            ),
+                          color: AppColors.saturnColor,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 1.2,
+                        ),
                       ),
                     ],
                   ),
@@ -190,9 +194,9 @@ class _SaturnReturnScreenState extends ConsumerState<SaturnReturnScreen> {
                 Text(
                   '${currentReturn.returnNumber}. Donus',
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                        color: AppColors.saturnColor,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    color: AppColors.saturnColor,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ],
             ),
@@ -200,17 +204,17 @@ class _SaturnReturnScreenState extends ConsumerState<SaturnReturnScreen> {
             Text(
               'Satürn Dönüşündesin!',
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                    color: AppColors.textPrimary,
-                    fontWeight: FontWeight.bold,
-                  ),
+                color: AppColors.textPrimary,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             const SizedBox(height: 8),
             Text(
               _getActiveReturnMessage(currentReturn.returnNumber),
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: AppColors.textSecondary,
-                    height: 1.5,
-                  ),
+                color: AppColors.textSecondary,
+                height: 1.5,
+              ),
               textAlign: TextAlign.center,
             ),
           ] else if (nextReturn != null) ...[
@@ -218,33 +222,33 @@ class _SaturnReturnScreenState extends ConsumerState<SaturnReturnScreen> {
             Text(
               'Sıradaki Satürn Dönüşü',
               style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                    color: AppColors.textMuted,
-                    letterSpacing: 1.2,
-                  ),
+                color: AppColors.textMuted,
+                letterSpacing: 1.2,
+              ),
             ),
             const SizedBox(height: AppConstants.spacingSm),
             Text(
               '${nextReturn.returnNumber}. Donus',
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                    color: AppColors.starGold,
-                    fontWeight: FontWeight.bold,
-                  ),
+                color: AppColors.starGold,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             const SizedBox(height: AppConstants.spacingMd),
             _buildCountdown(context, nextReturn),
             const SizedBox(height: AppConstants.spacingMd),
             Text(
               _formatDateRange(nextReturn.startDate, nextReturn.endDate),
-              style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: AppColors.textSecondary,
-                  ),
+              style: Theme.of(
+                context,
+              ).textTheme.bodySmall?.copyWith(color: AppColors.textSecondary),
             ),
           ] else if (_returnData.returns.isEmpty) ...[
             Text(
               'Saturn donusleriniz tamamlandi',
-              style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    color: AppColors.textSecondary,
-                  ),
+              style: Theme.of(
+                context,
+              ).textTheme.titleMedium?.copyWith(color: AppColors.textSecondary),
             ),
           ],
         ],
@@ -281,9 +285,9 @@ class _SaturnReturnScreenState extends ConsumerState<SaturnReturnScreen> {
       children: [
         Text(
           'Saturn Donuslerin',
-          style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                color: AppColors.textPrimary,
-              ),
+          style: Theme.of(
+            context,
+          ).textTheme.titleLarge?.copyWith(color: AppColors.textPrimary),
         ),
         const SizedBox(height: AppConstants.spacingMd),
         ..._returnData.returns.asMap().entries.map((entry) {
@@ -346,9 +350,9 @@ class _SaturnReturnScreenState extends ConsumerState<SaturnReturnScreen> {
               child: Text(
                 '${returnItem.returnNumber}',
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      color: statusColor,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  color: statusColor,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ),
@@ -360,23 +364,23 @@ class _SaturnReturnScreenState extends ConsumerState<SaturnReturnScreen> {
                 Text(
                   '${returnItem.returnNumber}. Saturn Donusu',
                   style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                        color: AppColors.textPrimary,
-                        fontWeight: FontWeight.w600,
-                      ),
+                    color: AppColors.textPrimary,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
                 const SizedBox(height: 2),
                 Text(
                   _formatDateRange(returnItem.startDate, returnItem.endDate),
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: AppColors.textSecondary,
-                      ),
+                    color: AppColors.textSecondary,
+                  ),
                 ),
                 const SizedBox(height: 2),
                 Text(
                   'Yas: ${returnItem.ageAtReturn}',
-                  style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                        color: AppColors.textMuted,
-                      ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.labelSmall?.copyWith(color: AppColors.textMuted),
                 ),
               ],
             ),
@@ -395,9 +399,9 @@ class _SaturnReturnScreenState extends ConsumerState<SaturnReturnScreen> {
                 Text(
                   statusText,
                   style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                        color: statusColor,
-                        fontWeight: FontWeight.w600,
-                      ),
+                    color: statusColor,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ],
             ),
@@ -408,7 +412,8 @@ class _SaturnReturnScreenState extends ConsumerState<SaturnReturnScreen> {
   }
 
   Widget _buildInterpretation(BuildContext context) {
-    final currentOrNext = _returnData.getCurrentReturn() ?? _returnData.getNextReturn();
+    final currentOrNext =
+        _returnData.getCurrentReturn() ?? _returnData.getNextReturn();
     if (currentOrNext == null) return const SizedBox.shrink();
 
     return Container(
@@ -418,10 +423,7 @@ class _SaturnReturnScreenState extends ConsumerState<SaturnReturnScreen> {
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [
-            AppColors.starGold.withAlpha(20),
-            AppColors.surfaceDark,
-          ],
+          colors: [AppColors.starGold.withAlpha(20), AppColors.surfaceDark],
         ),
         borderRadius: BorderRadius.circular(AppConstants.radiusMd),
         border: Border.all(color: AppColors.starGold.withAlpha(40)),
@@ -431,14 +433,18 @@ class _SaturnReturnScreenState extends ConsumerState<SaturnReturnScreen> {
         children: [
           Row(
             children: [
-              const Icon(Icons.auto_awesome, color: AppColors.starGold, size: 20),
+              const Icon(
+                Icons.auto_awesome,
+                color: AppColors.starGold,
+                size: 20,
+              ),
               const SizedBox(width: 8),
               Text(
                 '${currentOrNext.returnNumber}. Donus Yorumu',
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      color: AppColors.starGold,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  color: AppColors.starGold,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ],
           ),
@@ -446,37 +452,44 @@ class _SaturnReturnScreenState extends ConsumerState<SaturnReturnScreen> {
           Text(
             _getReturnInterpretation(currentOrNext.returnNumber),
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: AppColors.textPrimary,
-                  height: 1.6,
-                ),
+              color: AppColors.textPrimary,
+              height: 1.6,
+            ),
           ),
           const SizedBox(height: AppConstants.spacingMd),
           Text(
             'Anahtar Temalar:',
             style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                  color: AppColors.starGold,
-                  fontWeight: FontWeight.bold,
-                ),
+              color: AppColors.starGold,
+              fontWeight: FontWeight.bold,
+            ),
           ),
           const SizedBox(height: 8),
           Wrap(
             spacing: 8,
             runSpacing: 8,
             children: _getReturnThemes(currentOrNext.returnNumber)
-                .map((theme) => Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                      decoration: BoxDecoration(
-                        color: AppColors.starGold.withAlpha(20),
-                        borderRadius: BorderRadius.circular(16),
-                        border: Border.all(color: AppColors.starGold.withAlpha(40)),
+                .map(
+                  (theme) => Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 12,
+                      vertical: 6,
+                    ),
+                    decoration: BoxDecoration(
+                      color: AppColors.starGold.withAlpha(20),
+                      borderRadius: BorderRadius.circular(16),
+                      border: Border.all(
+                        color: AppColors.starGold.withAlpha(40),
                       ),
-                      child: Text(
-                        theme,
-                        style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                              color: AppColors.starGold,
-                            ),
+                    ),
+                    child: Text(
+                      theme,
+                      style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                        color: AppColors.starGold,
                       ),
-                    ))
+                    ),
+                  ),
+                )
                 .toList(),
           ),
         ],
@@ -497,29 +510,36 @@ class _SaturnReturnScreenState extends ConsumerState<SaturnReturnScreen> {
         children: [
           Row(
             children: [
-              Text('♄', style: TextStyle(fontSize: 24, color: AppColors.saturnColor)),
+              Text(
+                '♄',
+                style: TextStyle(fontSize: 24, color: AppColors.saturnColor),
+              ),
               const SizedBox(width: 8),
               Text(
                 'Saturn Hakkinda',
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      color: AppColors.textPrimary,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleMedium?.copyWith(color: AppColors.textPrimary),
               ),
             ],
           ),
           const SizedBox(height: AppConstants.spacingMd),
           _buildInfoRow(context, 'Yörünge Süresi', '29.5 yıl'),
-          _buildInfoRow(context, 'Temsil Ettiği', 'Sorumluluk, olgunluk, sınırlar'),
+          _buildInfoRow(
+            context,
+            'Temsil Ettiği',
+            'Sorumluluk, olgunluk, sınırlar',
+          ),
           _buildInfoRow(context, 'Ev', 'Oğlak (10. ev)'),
           _buildInfoRow(context, 'Element', 'Toprak'),
           const SizedBox(height: AppConstants.spacingMd),
           Text(
             'Satürn, kozmik öğretmendir. Dönüşlerinde bizi sınırlarımızla, sorumluluklarımızla ve gerçek benliğimizle yüzleştirir.',
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: AppColors.textSecondary,
-                  fontStyle: FontStyle.italic,
-                  height: 1.5,
-                ),
+              color: AppColors.textSecondary,
+              fontStyle: FontStyle.italic,
+              height: 1.5,
+            ),
           ),
         ],
       ),
@@ -536,17 +556,17 @@ class _SaturnReturnScreenState extends ConsumerState<SaturnReturnScreen> {
             width: 120,
             child: Text(
               label,
-              style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: AppColors.textMuted,
-                  ),
+              style: Theme.of(
+                context,
+              ).textTheme.bodySmall?.copyWith(color: AppColors.textMuted),
             ),
           ),
           Expanded(
             child: Text(
               value,
-              style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: AppColors.textPrimary,
-                  ),
+              style: Theme.of(
+                context,
+              ).textTheme.bodySmall?.copyWith(color: AppColors.textPrimary),
             ),
           ),
         ],
@@ -556,8 +576,18 @@ class _SaturnReturnScreenState extends ConsumerState<SaturnReturnScreen> {
 
   String _formatDateRange(DateTime start, DateTime end) {
     final months = [
-      'Ocak', 'Subat', 'Mart', 'Nisan', 'Mayis', 'Haziran',
-      'Temmuz', 'Agustos', 'Eylul', 'Ekim', 'Kasim', 'Aralik'
+      'Ocak',
+      'Subat',
+      'Mart',
+      'Nisan',
+      'Mayis',
+      'Haziran',
+      'Temmuz',
+      'Agustos',
+      'Eylul',
+      'Ekim',
+      'Kasim',
+      'Aralik',
     ];
     return '${months[start.month - 1]} ${start.year} - ${months[end.month - 1]} ${end.year}';
   }
@@ -624,18 +654,18 @@ class _CountdownUnit extends StatelessWidget {
             child: Text(
               '$value',
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    color: AppColors.starGold,
-                    fontWeight: FontWeight.bold,
-                  ),
+                color: AppColors.starGold,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ),
         const SizedBox(height: 4),
         Text(
           label,
-          style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                color: AppColors.textMuted,
-              ),
+          style: Theme.of(
+            context,
+          ).textTheme.labelSmall?.copyWith(color: AppColors.textMuted),
         ),
       ],
     );
@@ -653,19 +683,27 @@ class SaturnReturnCalculator {
 
     for (int i = 1; i <= 3; i++) {
       final exactReturnAge = saturnOrbitalPeriod * i;
-      final startAge = exactReturnAge - 1.5; // Saturn return period starts ~1.5 years before exact
+      final startAge =
+          exactReturnAge -
+          1.5; // Saturn return period starts ~1.5 years before exact
       final endAge = exactReturnAge + 1.0; // And ends ~1 year after
 
-      final startDate = birthDate.add(Duration(days: (startAge * 365.25).round()));
+      final startDate = birthDate.add(
+        Duration(days: (startAge * 365.25).round()),
+      );
       final endDate = birthDate.add(Duration(days: (endAge * 365.25).round()));
 
-      returns.add(SaturnReturn(
-        returnNumber: i,
-        startDate: startDate,
-        endDate: endDate,
-        exactDate: birthDate.add(Duration(days: (exactReturnAge * 365.25).round())),
-        ageAtReturn: exactReturnAge.round(),
-      ));
+      returns.add(
+        SaturnReturn(
+          returnNumber: i,
+          startDate: startDate,
+          endDate: endDate,
+          exactDate: birthDate.add(
+            Duration(days: (exactReturnAge * 365.25).round()),
+          ),
+          ageAtReturn: exactReturnAge.round(),
+        ),
+      );
     }
 
     return SaturnReturnData(birthDate: birthDate, returns: returns);
@@ -720,4 +758,3 @@ class SaturnReturn {
   bool get isPast => DateTime.now().isAfter(endDate);
   bool get isFuture => DateTime.now().isBefore(startDate);
 }
-

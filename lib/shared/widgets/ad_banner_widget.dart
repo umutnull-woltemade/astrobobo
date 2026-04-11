@@ -119,10 +119,7 @@ class LargeAdBanner extends StatelessWidget {
 class StickyBottomAdBanner extends StatelessWidget {
   final Widget child;
 
-  const StickyBottomAdBanner({
-    super.key,
-    required this.child,
-  });
+  const StickyBottomAdBanner({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {
@@ -131,10 +128,7 @@ class StickyBottomAdBanner extends StatelessWidget {
         Expanded(child: child),
         const SafeArea(
           top: false,
-          child: AdBannerWidget(
-            adSize: AdSize.banner,
-            margin: EdgeInsets.zero,
-          ),
+          child: AdBannerWidget(adSize: AdSize.banner, margin: EdgeInsets.zero),
         ),
       ],
     );

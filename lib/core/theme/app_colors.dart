@@ -104,11 +104,11 @@ class AppColors {
 
   // ========== TANTRA COLORS ==========
   // Warm, sensual, grounding palette (non-explicit)
-  static const Color tantraWarm = Color(0xFFC4A484);      // Warm earth
-  static const Color tantraCrimson = Color(0xFFBC544B);   // Soft crimson
-  static const Color tantraGold = Color(0xFFE8B4B8);      // Rose gold
-  static const Color tantraDeep = Color(0xFF8B5A2B);      // Deep amber
-  static const Color tantraIvory = Color(0xFFFDF6E3);     // Cream ivory
+  static const Color tantraWarm = Color(0xFFC4A484); // Warm earth
+  static const Color tantraCrimson = Color(0xFFBC544B); // Soft crimson
+  static const Color tantraGold = Color(0xFFE8B4B8); // Rose gold
+  static const Color tantraDeep = Color(0xFF8B5A2B); // Deep amber
+  static const Color tantraIvory = Color(0xFFFDF6E3); // Cream ivory
 
   static const LinearGradient goldGradient = LinearGradient(
     begin: Alignment.topCenter,
@@ -119,9 +119,6 @@ class AppColors {
   static const RadialGradient cosmicGlow = RadialGradient(
     center: Alignment.center,
     radius: 1.0,
-    colors: [
-      Color(0x30667EEA),
-      Color(0x00667EEA),
-    ],
+    colors: [Color(0x30667EEA), Color(0x00667EEA)],
   );
 }

@@ -66,7 +66,8 @@ class SocialFormatService {
         slideNumber: 4,
         type: SlideType.coreMessage,
         mainText: content.planetaryInfluence.oneAction,
-        subText: '${content.planetaryInfluence.planetSymbol} ${content.planetaryInfluence.dominantPlanet.nameTr}',
+        subText:
+            '${content.planetaryInfluence.planetSymbol} ${content.planetaryInfluence.dominantPlanet.nameTr}',
         accent: content.planetaryInfluence.planetSymbol,
         backgroundColor: 'cosmic_gradient_4',
       ),
@@ -220,7 +221,8 @@ Playfair Display for headlines.
 Raleway for body text.
 Safe area: 10% margin all sides for subtitles.
 ''',
-      atmosphereNotes: '''
+      atmosphereNotes:
+          '''
 Emotional, introspective mood.
 Night sky feeling without being literal.
 Zodiac symbol (${sign.symbol}) as subtle watermark.
@@ -342,16 +344,15 @@ class ReelsScript {
   final int totalDuration;
   final List<VideoSegment> segments;
 
-  const ReelsScript({
-    required this.totalDuration,
-    required this.segments,
-  });
+  const ReelsScript({required this.totalDuration, required this.segments});
 
   String toReadableScript() {
     final buffer = StringBuffer();
     buffer.writeln('=== REELS SCRIPT (${totalDuration}s) ===\n');
     for (final segment in segments) {
-      buffer.writeln('[${segment.startTime}s - ${segment.endTime}s] ${segment.type.name.toUpperCase()}');
+      buffer.writeln(
+        '[${segment.startTime}s - ${segment.endTime}s] ${segment.type.name.toUpperCase()}',
+      );
       buffer.writeln('Text: "${segment.textOverlay}"');
       if (segment.subtext != null) {
         buffer.writeln('Subtext: "${segment.subtext}"');

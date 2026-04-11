@@ -28,10 +28,7 @@ class CompatibilityApiService {
   }) async {
     return _client.get<SignCompatibilityDto>(
       '/compatibility/signs',
-      queryParams: {
-        'sign1': sign1.toLowerCase(),
-        'sign2': sign2.toLowerCase(),
-      },
+      queryParams: {'sign1': sign1.toLowerCase(), 'sign2': sign2.toLowerCase()},
       fromJson: (json) => SignCompatibilityDto.fromJson(json),
     );
   }
@@ -75,12 +72,14 @@ class CompatibilityResultDto {
       strengths: List<String>.from(json['strengths'] as List),
       challenges: List<String>.from(json['challenges'] as List),
       advice: List<String>.from(json['advice'] as List),
-      interAspects: (json['interAspects'] as List?)
+      interAspects:
+          (json['interAspects'] as List?)
               ?.map((a) => InterAspectDto.fromJson(a))
               .toList() ??
           [],
-      compositeHighlights:
-          List<String>.from(json['compositeHighlights'] as List? ?? []),
+      compositeHighlights: List<String>.from(
+        json['compositeHighlights'] as List? ?? [],
+      ),
     );
   }
 }

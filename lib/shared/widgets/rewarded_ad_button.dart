@@ -119,8 +119,9 @@ class _RewardedAdButtonState extends ConsumerState<RewardedAdButton> {
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: (isPremium ? const Color(0xFFFFD700) : const Color(0xFF6B46C1))
-                .withOpacity(0.3),
+            color:
+                (isPremium ? const Color(0xFFFFD700) : const Color(0xFF6B46C1))
+                    .withOpacity(0.3),
             blurRadius: 8,
             offset: const Offset(0, 4),
           ),
@@ -215,9 +216,7 @@ class PremiumContentCard extends ConsumerWidget {
       decoration: BoxDecoration(
         color: const Color(0xFF1A1A2E),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(
-          color: const Color(0xFF6B46C1).withOpacity(0.3),
-        ),
+        border: Border.all(color: const Color(0xFF6B46C1).withOpacity(0.3)),
       ),
       child: Stack(
         children: [
@@ -246,10 +245,7 @@ class PremiumContentCard extends ConsumerWidget {
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  colors: [
-                    Colors.transparent,
-                    Colors.black.withOpacity(0.8),
-                  ],
+                  colors: [Colors.transparent, Colors.black.withOpacity(0.8)],
                 ),
               ),
               child: Column(

@@ -78,12 +78,15 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
                 title: Text(
                   'Kartlar sana ne söylüyor?',
                   style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                        color: AppColors.starGold,
-                        fontSize: 20,
-                      ),
+                    color: AppColors.starGold,
+                    fontSize: 20,
+                  ),
                 ),
                 leading: IconButton(
-                  icon: const Icon(Icons.arrow_back, color: AppColors.textPrimary),
+                  icon: const Icon(
+                    Icons.arrow_back,
+                    color: AppColors.textPrimary,
+                  ),
                   onPressed: () => Navigator.pop(context),
                 ),
               ),
@@ -102,11 +105,13 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
                     // Seçilen açılım
                     if (_selectedSpread == 'daily')
                       _buildDailyCard(context)
-                    else if (_selectedSpread == 'three' && _threeCardSpread != null)
+                    else if (_selectedSpread == 'three' &&
+                        _threeCardSpread != null)
                       _buildThreeCardSpread(context)
                     else if (_selectedSpread == 'love' && _loveSpread != null)
                       _buildLoveSpread(context)
-                    else if (_selectedSpread == 'yesno' && _yesNoReading != null)
+                    else if (_selectedSpread == 'yesno' &&
+                        _yesNoReading != null)
                       _buildYesNoReading(context),
 
                     const SizedBox(height: AppConstants.spacingLg),
@@ -122,7 +127,8 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
                     // Kadim Not - Tarot bilgeliği
                     const KadimNotCard(
                       title: 'Arketiplerin Dansı',
-                      content: 'Her Tarot kartı, kolektif bilinçaltının bir arketipidir. Jung\'un dediği gibi, bu semboller insanlığın ortak rüyalarından doğmuştur. Bir kart çektiğinde, evrenle bir diyalog başlatıyorsun. Cevap kartın kendisinde değil, onunla kurduğun bağlantıda.',
+                      content:
+                          'Her Tarot kartı, kolektif bilinçaltının bir arketipidir. Jung\'un dediği gibi, bu semboller insanlığın ortak rüyalarından doğmuştur. Bir kart çektiğinde, evrenle bir diyalog başlatıyorsun. Cevap kartın kendisinde değil, onunla kurduğun bağlantıda.',
                       category: KadimCategory.tarot,
                       source: 'Jungiyen Sembolizm',
                     ),
@@ -155,10 +161,7 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [
-            AppColors.auroraEnd.withAlpha(25),
-            Colors.transparent,
-          ],
+          colors: [AppColors.auroraEnd.withAlpha(25), Colors.transparent],
         ),
         borderRadius: BorderRadius.circular(AppConstants.radiusMd),
         border: Border.all(color: AppColors.auroraEnd.withAlpha(51)),
@@ -168,15 +171,19 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
         children: [
           Row(
             children: [
-              const Icon(Icons.auto_awesome, color: AppColors.auroraEnd, size: 18),
+              const Icon(
+                Icons.auto_awesome,
+                color: AppColors.auroraEnd,
+                size: 18,
+              ),
               const SizedBox(width: 8),
               Flexible(
                 child: Text(
                   'Kadim Bilgeliğin Anahtarları',
                   style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                        color: AppColors.auroraEnd,
-                        fontStyle: FontStyle.italic,
-                      ),
+                    color: AppColors.auroraEnd,
+                    fontStyle: FontStyle.italic,
+                  ),
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
@@ -186,10 +193,10 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
           Text(
             'Tarot, bilinçaltının aynasıdır. Bu kartlar geleceği değil, olasılıkları gösterir. Her çekiş, şu anki enerji alanını ve potansiyel yolları ortaya koyar. Kartlara bir soru sor veya sadece rehberlik iste. Sezgine güven - cevaplar zaten içinde.',
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: AppColors.textSecondary,
-                  height: 1.6,
-                  fontStyle: FontStyle.italic,
-                ),
+              color: AppColors.textSecondary,
+              height: 1.6,
+              fontStyle: FontStyle.italic,
+            ),
           ),
         ],
       ),
@@ -202,9 +209,9 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
       children: [
         Text(
           'Açılım Seç',
-          style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                color: AppColors.textPrimary,
-              ),
+          style: Theme.of(
+            context,
+          ).textTheme.titleMedium?.copyWith(color: AppColors.textPrimary),
         ),
         const SizedBox(height: AppConstants.spacingMd),
         Wrap(
@@ -266,7 +273,9 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
         ),
         decoration: BoxDecoration(
           gradient: isSelected
-              ? LinearGradient(colors: [color.withAlpha(100), color.withAlpha(50)])
+              ? LinearGradient(
+                  colors: [color.withAlpha(100), color.withAlpha(50)],
+                )
               : null,
           color: isSelected ? null : AppColors.surfaceDark,
           borderRadius: BorderRadius.circular(AppConstants.radiusMd),
@@ -283,8 +292,8 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
             Text(
               label,
               style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                    color: isSelected ? AppColors.textPrimary : color,
-                  ),
+                color: isSelected ? AppColors.textPrimary : color,
+              ),
             ),
           ],
         ),
@@ -299,9 +308,9 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
       children: [
         Text(
           'Günün Kartı',
-          style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                color: AppColors.starGold,
-              ),
+          style: Theme.of(
+            context,
+          ).textTheme.titleLarge?.copyWith(color: AppColors.starGold),
         ),
         const SizedBox(height: AppConstants.spacingLg),
         _buildSingleCard(context, _dailyCard!, true, AppColors.starGold),
@@ -314,9 +323,9 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
       children: [
         Text(
           'Geçmiş - Şimdi - Gelecek',
-          style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                color: AppColors.auroraStart,
-              ),
+          style: Theme.of(
+            context,
+          ).textTheme.titleLarge?.copyWith(color: AppColors.auroraStart),
         ),
         const SizedBox(height: AppConstants.spacingLg),
         if (!_isRevealed)
@@ -336,20 +345,38 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Expanded(
-                    child: _buildMiniCard(context, _threeCardSpread!.past, 'Geçmiş', Colors.grey),
+                    child: _buildMiniCard(
+                      context,
+                      _threeCardSpread!.past,
+                      'Geçmiş',
+                      Colors.grey,
+                    ),
                   ),
                   const SizedBox(width: AppConstants.spacingSm),
                   Expanded(
-                    child: _buildMiniCard(context, _threeCardSpread!.present, 'Şimdi', AppColors.auroraStart),
+                    child: _buildMiniCard(
+                      context,
+                      _threeCardSpread!.present,
+                      'Şimdi',
+                      AppColors.auroraStart,
+                    ),
                   ),
                   const SizedBox(width: AppConstants.spacingSm),
                   Expanded(
-                    child: _buildMiniCard(context, _threeCardSpread!.future, 'Gelecek', AppColors.starGold),
+                    child: _buildMiniCard(
+                      context,
+                      _threeCardSpread!.future,
+                      'Gelecek',
+                      AppColors.starGold,
+                    ),
                   ),
                 ],
               ),
               const SizedBox(height: AppConstants.spacingLg),
-              _buildInterpretationCard(context, _threeCardSpread!.interpretation),
+              _buildInterpretationCard(
+                context,
+                _threeCardSpread!.interpretation,
+              ),
             ],
           ),
       ],
@@ -361,9 +388,9 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
       children: [
         Text(
           'Aşk Açılımı',
-          style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                color: AppColors.fireElement,
-              ),
+          style: Theme.of(
+            context,
+          ).textTheme.titleLarge?.copyWith(color: AppColors.fireElement),
         ),
         const SizedBox(height: AppConstants.spacingLg),
         if (!_isRevealed)
@@ -383,26 +410,51 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Expanded(
-                    child: _buildMiniCard(context, _loveSpread!.youCard, 'Sen', AppColors.waterElement),
+                    child: _buildMiniCard(
+                      context,
+                      _loveSpread!.youCard,
+                      'Sen',
+                      AppColors.waterElement,
+                    ),
                   ),
                   const SizedBox(width: AppConstants.spacingSm),
                   Expanded(
-                    child: _buildMiniCard(context, _loveSpread!.partnerCard, 'Partner', AppColors.fireElement),
+                    child: _buildMiniCard(
+                      context,
+                      _loveSpread!.partnerCard,
+                      'Partner',
+                      AppColors.fireElement,
+                    ),
                   ),
                 ],
               ),
               const SizedBox(height: AppConstants.spacingSm),
-              _buildMiniCard(context, _loveSpread!.relationshipCard, 'İlişki', AppColors.auroraStart),
+              _buildMiniCard(
+                context,
+                _loveSpread!.relationshipCard,
+                'İlişki',
+                AppColors.auroraStart,
+              ),
               const SizedBox(height: AppConstants.spacingSm),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Expanded(
-                    child: _buildMiniCard(context, _loveSpread!.challengeCard, 'Zorluk', Colors.red),
+                    child: _buildMiniCard(
+                      context,
+                      _loveSpread!.challengeCard,
+                      'Zorluk',
+                      Colors.red,
+                    ),
                   ),
                   const SizedBox(width: AppConstants.spacingSm),
                   Expanded(
-                    child: _buildMiniCard(context, _loveSpread!.adviceCard, 'Tavsiye', AppColors.starGold),
+                    child: _buildMiniCard(
+                      context,
+                      _loveSpread!.adviceCard,
+                      'Tavsiye',
+                      AppColors.starGold,
+                    ),
                   ),
                 ],
               ),
@@ -419,9 +471,9 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
       children: [
         Text(
           'Evet / Hayır',
-          style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                color: AppColors.waterElement,
-              ),
+          style: Theme.of(
+            context,
+          ).textTheme.titleLarge?.copyWith(color: AppColors.waterElement),
         ),
         const SizedBox(height: AppConstants.spacingLg),
         if (!_isRevealed)
@@ -437,7 +489,12 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
         else
           Column(
             children: [
-              _buildSingleCard(context, _yesNoReading!.card, true, AppColors.waterElement),
+              _buildSingleCard(
+                context,
+                _yesNoReading!.card,
+                true,
+                AppColors.waterElement,
+              ),
               const SizedBox(height: AppConstants.spacingLg),
               Container(
                 width: double.infinity,
@@ -451,14 +508,17 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
                   ),
                   borderRadius: BorderRadius.circular(AppConstants.radiusMd),
                   border: Border.all(
-                    color: _getAnswerColor(_yesNoReading!.answer).withAlpha(128),
+                    color: _getAnswerColor(
+                      _yesNoReading!.answer,
+                    ).withAlpha(128),
                   ),
                 ),
                 child: Column(
                   children: [
                     Text(
                       _yesNoReading!.answer,
-                      style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                      style: Theme.of(context).textTheme.headlineSmall
+                          ?.copyWith(
                             color: _getAnswerColor(_yesNoReading!.answer),
                             fontWeight: FontWeight.bold,
                           ),
@@ -467,9 +527,9 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
                     Text(
                       _yesNoReading!.explanation,
                       style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                            color: AppColors.textSecondary,
-                            height: 1.5,
-                          ),
+                        color: AppColors.textSecondary,
+                        height: 1.5,
+                      ),
                       textAlign: TextAlign.center,
                     ),
                   ],
@@ -487,17 +547,19 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
     return AppColors.warning;
   }
 
-  Widget _buildSingleCard(BuildContext context, TarotCard card, bool showDetails, Color color) {
+  Widget _buildSingleCard(
+    BuildContext context,
+    TarotCard card,
+    bool showDetails,
+    Color color,
+  ) {
     return Container(
       padding: const EdgeInsets.all(AppConstants.spacingLg),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          colors: [
-            color.withAlpha(50),
-            AppColors.surfaceDark,
-          ],
+          colors: [color.withAlpha(50), AppColors.surfaceDark],
         ),
         borderRadius: BorderRadius.circular(AppConstants.radiusLg),
         border: Border.all(color: color.withAlpha(128)),
@@ -512,10 +574,7 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
-                colors: [
-                  color.withAlpha(100),
-                  AppColors.surfaceDark,
-                ],
+                colors: [color.withAlpha(100), AppColors.surfaceDark],
               ),
               borderRadius: BorderRadius.circular(12),
               border: Border.all(color: color, width: 2),
@@ -533,9 +592,9 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
                 Text(
                   card.number.toString(),
                   style: Theme.of(context).textTheme.displayLarge?.copyWith(
-                        color: color,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    color: color,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 if (card.isReversed)
                   Transform.rotate(
@@ -548,16 +607,16 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
           const SizedBox(height: AppConstants.spacingLg),
           Text(
             '${card.nameTr}${card.isReversed ? ' (Ters)' : ''}',
-            style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                  color: color,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.headlineSmall?.copyWith(color: color),
           ),
           const SizedBox(height: AppConstants.spacingSm),
           Text(
             card.keywordsTr,
-            style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: AppColors.textMuted,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.bodySmall?.copyWith(color: AppColors.textMuted),
             textAlign: TextAlign.center,
           ),
           if (showDetails) ...[
@@ -565,9 +624,9 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
             Text(
               card.currentMeaning,
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: AppColors.textSecondary,
-                    height: 1.6,
-                  ),
+                color: AppColors.textSecondary,
+                height: 1.6,
+              ),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: AppConstants.spacingMd),
@@ -588,9 +647,9 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
                     child: Text(
                       card.advice,
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                            color: color,
-                            fontStyle: FontStyle.italic,
-                          ),
+                        color: color,
+                        fontStyle: FontStyle.italic,
+                      ),
                     ),
                   ),
                 ],
@@ -602,7 +661,11 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
     );
   }
 
-  Widget _buildEsotericInfoCard(BuildContext context, TarotCard card, Color color) {
+  Widget _buildEsotericInfoCard(
+    BuildContext context,
+    TarotCard card,
+    Color color,
+  ) {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(AppConstants.spacingMd),
@@ -610,10 +673,7 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [
-            AppColors.surfaceDark,
-            color.withAlpha(15),
-          ],
+          colors: [AppColors.surfaceDark, color.withAlpha(15)],
         ),
         borderRadius: BorderRadius.circular(AppConstants.radiusMd),
         border: Border.all(color: color.withAlpha(50)),
@@ -628,9 +688,9 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
               Text(
                 'Ezoterik Sırlar',
                 style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      color: AppColors.starGold,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  color: AppColors.starGold,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ],
           ),
@@ -639,10 +699,10 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
             Text(
               card.esotericMeaning,
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: AppColors.textSecondary,
-                    height: 1.7,
-                    fontStyle: FontStyle.italic,
-                  ),
+                color: AppColors.textSecondary,
+                height: 1.7,
+                fontStyle: FontStyle.italic,
+              ),
             ),
             const SizedBox(height: AppConstants.spacingMd),
           ],
@@ -652,15 +712,40 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
             runSpacing: AppConstants.spacingSm,
             children: [
               if (card.archetype.isNotEmpty)
-                _buildEsotericTag(context, 'Arketip', card.archetype, Colors.purple),
+                _buildEsotericTag(
+                  context,
+                  'Arketip',
+                  card.archetype,
+                  Colors.purple,
+                ),
               if (card.element.isNotEmpty)
-                _buildEsotericTag(context, 'Element', card.element, Colors.blue),
+                _buildEsotericTag(
+                  context,
+                  'Element',
+                  card.element,
+                  Colors.blue,
+                ),
               if (card.astrologicalSign.isNotEmpty)
-                _buildEsotericTag(context, 'Gezegen/Burç', card.astrologicalSign, Colors.orange),
+                _buildEsotericTag(
+                  context,
+                  'Gezegen/Burç',
+                  card.astrologicalSign,
+                  Colors.orange,
+                ),
               if (card.hebrewLetter.isNotEmpty)
-                _buildEsotericTag(context, 'İbrani Harf', card.hebrewLetter, Colors.teal),
+                _buildEsotericTag(
+                  context,
+                  'İbrani Harf',
+                  card.hebrewLetter,
+                  Colors.teal,
+                ),
               if (card.pathOnTree.isNotEmpty)
-                _buildEsotericTag(context, 'Hayat Ağacı', card.pathOnTree, AppColors.starGold),
+                _buildEsotericTag(
+                  context,
+                  'Hayat Ağacı',
+                  card.pathOnTree,
+                  AppColors.starGold,
+                ),
             ],
           ),
         ],
@@ -668,7 +753,12 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
     );
   }
 
-  Widget _buildEsotericTag(BuildContext context, String label, String value, Color color) {
+  Widget _buildEsotericTag(
+    BuildContext context,
+    String label,
+    String value,
+    Color color,
+  ) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
       decoration: BoxDecoration(
@@ -683,23 +773,28 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
           Text(
             label,
             style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                  color: color.withAlpha(180),
-                  fontSize: 9,
-                ),
+              color: color.withAlpha(180),
+              fontSize: 9,
+            ),
           ),
           Text(
             value,
             style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                  color: color,
-                  fontWeight: FontWeight.w500,
-                ),
+              color: color,
+              fontWeight: FontWeight.w500,
+            ),
           ),
         ],
       ),
     );
   }
 
-  Widget _buildMiniCard(BuildContext context, TarotCard card, String label, Color color) {
+  Widget _buildMiniCard(
+    BuildContext context,
+    TarotCard card,
+    String label,
+    Color color,
+  ) {
     return Container(
       padding: const EdgeInsets.all(AppConstants.spacingMd),
       decoration: BoxDecoration(
@@ -713,9 +808,9 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
         children: [
           Text(
             label,
-            style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                  color: AppColors.textMuted,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.labelSmall?.copyWith(color: AppColors.textMuted),
           ),
           const SizedBox(height: 4),
           Container(
@@ -731,18 +826,18 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
             child: Center(
               child: Text(
                 card.number.toString(),
-                style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                      color: color,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.headlineSmall?.copyWith(color: color),
               ),
             ),
           ),
           const SizedBox(height: 8),
           Text(
             card.nameTr,
-            style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                  color: color,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.labelSmall?.copyWith(color: color),
             textAlign: TextAlign.center,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
@@ -751,9 +846,9 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
             Text(
               '(Ters)',
               style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                    color: AppColors.textMuted,
-                    fontSize: 10,
-                  ),
+                color: AppColors.textMuted,
+                fontSize: 10,
+              ),
             ),
         ],
       ),
@@ -774,13 +869,17 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
         children: [
           Row(
             children: [
-              const Icon(Icons.auto_awesome, color: AppColors.starGold, size: 18),
+              const Icon(
+                Icons.auto_awesome,
+                color: AppColors.starGold,
+                size: 18,
+              ),
               const SizedBox(width: 8),
               Text(
                 'Yorum',
-                style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      color: AppColors.starGold,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleSmall?.copyWith(color: AppColors.starGold),
               ),
             ],
           ),
@@ -788,9 +887,9 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
           Text(
             interpretation,
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: AppColors.textSecondary,
-                  height: 1.6,
-                ),
+              color: AppColors.textSecondary,
+              height: 1.6,
+            ),
           ),
         ],
       ),
@@ -835,52 +934,52 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
               final color = _getMajorArcanaColor(index);
 
               return GestureDetector(
-                onTap: () => context.push('/tarot/major/$index'),
-                child: Container(
-                  width: 80,
-                  margin: const EdgeInsets.only(right: 10),
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [
-                        color.withAlpha(80),
-                        AppColors.surfaceDark,
-                      ],
-                    ),
-                    borderRadius: BorderRadius.circular(12),
-                    border: Border.all(color: color.withAlpha(150)),
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        _getRomanNumeral(index),
-                        style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                          color: color,
-                          fontWeight: FontWeight.bold,
+                    onTap: () => context.push('/tarot/major/$index'),
+                    child: Container(
+                      width: 80,
+                      margin: const EdgeInsets.only(right: 10),
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [color.withAlpha(80), AppColors.surfaceDark],
                         ),
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(color: color.withAlpha(150)),
                       ),
-                      const SizedBox(height: 4),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 4),
-                        child: Text(
-                          card.nameTr,
-                          style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                            color: AppColors.textSecondary,
-                            fontSize: 9,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            _getRomanNumeral(index),
+                            style: Theme.of(context).textTheme.titleLarge
+                                ?.copyWith(
+                                  color: color,
+                                  fontWeight: FontWeight.bold,
+                                ),
                           ),
-                          textAlign: TextAlign.center,
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                        ),
+                          const SizedBox(height: 4),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 4),
+                            child: Text(
+                              card.nameTr,
+                              style: Theme.of(context).textTheme.labelSmall
+                                  ?.copyWith(
+                                    color: AppColors.textSecondary,
+                                    fontSize: 9,
+                                  ),
+                              textAlign: TextAlign.center,
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                ),
-              ).animate(delay: Duration(milliseconds: index * 30))
-                .fadeIn(duration: 300.ms)
-                .slideX(begin: 0.2, end: 0);
+                    ),
+                  )
+                  .animate(delay: Duration(milliseconds: index * 30))
+                  .fadeIn(duration: 300.ms)
+                  .slideX(begin: 0.2, end: 0);
             },
           ),
         ),
@@ -890,8 +989,28 @@ class _TarotScreenState extends ConsumerState<TarotScreen> {
 
   String _getRomanNumeral(int number) {
     final romanNumerals = [
-      '0', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X',
-      'XI', 'XII', 'XIII', 'XIV', 'XV', 'XVI', 'XVII', 'XVIII', 'XIX', 'XX', 'XXI'
+      '0',
+      'I',
+      'II',
+      'III',
+      'IV',
+      'V',
+      'VI',
+      'VII',
+      'VIII',
+      'IX',
+      'X',
+      'XI',
+      'XII',
+      'XIII',
+      'XIV',
+      'XV',
+      'XVI',
+      'XVII',
+      'XVIII',
+      'XIX',
+      'XX',
+      'XXI',
     ];
     return romanNumerals[number];
   }

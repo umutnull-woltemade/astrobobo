@@ -26,16 +26,28 @@ class MegaDreamSymbolsPart1 {
         'Ruhsal temizlik',
       ],
       emotionVariants: {
-        EmotionalTone.korku: 'Bastirilmis duygular yuzeye cikmak istiyor - dalga tehditkar geliyorsa kontrol kaybi korkusu',
-        EmotionalTone.huzur: 'Duygusal denge ve ic huzur - bilincaltinla barisiksin',
-        EmotionalTone.merak: 'Kesfedilmemis duygusal derinlikler - sezgisel kapasitenin artiyor',
+        EmotionalTone.korku:
+            'Bastirilmis duygular yuzeye cikmak istiyor - dalga tehditkar geliyorsa kontrol kaybi korkusu',
+        EmotionalTone.huzur:
+            'Duygusal denge ve ic huzur - bilincaltinla barisiksin',
+        EmotionalTone.merak:
+            'Kesfedilmemis duygusal derinlikler - sezgisel kapasitenin artiyor',
         EmotionalTone.donukluk: 'Duygusal uyusukluk - hissetmekten kacinma',
         EmotionalTone.heyecan: 'Yeni duygusal deneyimlere aciklik',
         EmotionalTone.ozlem: 'Gecmise duyulan ozlem, kayip iliskiler',
       },
       archetypes: ['Anne', 'Bilincdisi', 'Transformasyon', 'Ay'],
-      relatedSymbols: ['ocean', 'rain', 'river', 'flood', 'lake', 'pool', 'tears'],
-      shadowAspect: 'Duygulara bogulma korkusu, kontrol kaybi, bastirilmis acilar',
+      relatedSymbols: [
+        'ocean',
+        'rain',
+        'river',
+        'flood',
+        'lake',
+        'pool',
+        'tears',
+      ],
+      shadowAspect:
+          'Duygulara bogulma korkusu, kontrol kaybi, bastirilmis acilar',
       lightAspect: 'Duygusal zeka, sezgisel bilgelik, yasam enerjisi',
     ),
 
@@ -53,9 +65,11 @@ class MegaDreamSymbolsPart1 {
         'Kozmik hafiza',
       ],
       emotionVariants: {
-        EmotionalTone.korku: 'Varolussal endise - bilinmeyenin derinliği urkutuyor',
+        EmotionalTone.korku:
+            'Varolussal endise - bilinmeyenin derinliği urkutuyor',
         EmotionalTone.huzur: 'Evrenle butunlesme - spirituel birlik hissi',
-        EmotionalTone.ozlem: 'Kayip butunluge ozlem - anne rahmine donus arzusu',
+        EmotionalTone.ozlem:
+            'Kayip butunluge ozlem - anne rahmine donus arzusu',
         EmotionalTone.heyecan: 'Kesfedilecek sonsuz potansiyel - yeni ufuklar',
         EmotionalTone.merak: 'Derinliklerdeki sirlara ulasma istegi',
       },
@@ -156,7 +170,8 @@ class MegaDreamSymbolsPart1 {
       ],
       emotionVariants: {
         EmotionalTone.korku: 'Duygusal tsunami - bastirdiklarin patlamak uzere',
-        EmotionalTone.heyecan: 'Kaotik donusum - eskinin yikilmasi yeniyi getirir',
+        EmotionalTone.heyecan:
+            'Kaotik donusum - eskinin yikilmasi yeniyi getirir',
         EmotionalTone.donukluk: 'Sok - cok fazla geldi, dondum',
         EmotionalTone.sucluluk: 'Kontrolsuz duygularin yarattigi hasar',
       },
@@ -919,7 +934,6 @@ class MegaDreamSymbolsPart1 {
     // ════════════════════════════════════════════════════════════════════════
     // HAVA ELEMENTI - 80+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'wind',
       symbolTr: 'Ruzgar',
@@ -1473,7 +1487,6 @@ class MegaDreamSymbolsPart1 {
     // ════════════════════════════════════════════════════════════════════════
     // ATES ELEMENTI - 80+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'fire',
       symbolTr: 'Ates',
@@ -1777,7 +1790,6 @@ class MegaDreamSymbolsPart1 {
     // ════════════════════════════════════════════════════════════════════════
     // TOPRAK ELEMENTI - 80+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'earth',
       symbolTr: 'Toprak',

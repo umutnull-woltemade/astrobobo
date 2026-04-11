@@ -10,7 +10,6 @@ class MegaDreamSymbolsPart15 {
     // ════════════════════════════════════════════════════════════════════════
     // YAPILAR VE BINALAR - 35+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'castle',
       symbolTr: 'Kale/Şato',
@@ -414,7 +413,6 @@ class MegaDreamSymbolsPart15 {
     // ════════════════════════════════════════════════════════════════════════
     // ODALAR VE İÇ MEKANLAR - 30+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'bedroom',
       symbolTr: 'Yatak Odası',
@@ -718,7 +716,6 @@ class MegaDreamSymbolsPart15 {
     // ════════════════════════════════════════════════════════════════════════
     // DIŞ MEKANLAR VE DOĞAL ALANLAR - 35+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'garden',
       symbolTr: 'Bahçe',
@@ -924,14 +921,7 @@ class MegaDreamSymbolsPart15 {
       symbolTr: 'Mezarlık',
       emoji: '🪦',
       category: SymbolCategory.mekan,
-      universalMeanings: [
-        'Ölüm',
-        'Son',
-        'Geçmiş',
-        'Anma',
-        'Dönüşüm',
-        'Atalar',
-      ],
+      universalMeanings: ['Ölüm', 'Son', 'Geçmiş', 'Anma', 'Dönüşüm', 'Atalar'],
       emotionVariants: {
         EmotionalTone.korku: 'Ölüm korkusu',
         EmotionalTone.ozlem: 'Kayıp sevdikler',

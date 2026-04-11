@@ -64,9 +64,7 @@ class CosmicBackground extends StatelessWidget {
       children: [
         // Ana kozmik arka plan - nebula ve yıldızlar
         const Positioned.fill(
-          child: IgnorePointer(
-            child: _BeautifulCosmicBackground(),
-          ),
+          child: IgnorePointer(child: _BeautifulCosmicBackground()),
         ),
         // Content
         child,
@@ -158,12 +156,14 @@ class _SimpleStarsPainter extends CustomPainter {
 
     // Only 100 stars for web performance
     for (int i = 0; i < 100; i++) {
-      stars.add(_SimpleStar(
-        x: random.nextDouble(),
-        y: random.nextDouble(),
-        size: 0.5 + random.nextDouble() * 1.5,
-        opacity: 0.3 + random.nextDouble() * 0.5,
-      ));
+      stars.add(
+        _SimpleStar(
+          x: random.nextDouble(),
+          y: random.nextDouble(),
+          size: 0.5 + random.nextDouble() * 1.5,
+          opacity: 0.3 + random.nextDouble() * 0.5,
+        ),
+      );
     }
     return stars;
   }
@@ -236,14 +236,18 @@ class _CosmicPainter extends CustomPainter {
     // 200 yıldız - farklı boyut ve parlaklıkta
     for (int i = 0; i < 200; i++) {
       final size = random.nextDouble();
-      stars.add(_Star(
-        x: random.nextDouble(),
-        y: random.nextDouble(),
-        size: size < 0.7 ? 0.5 + random.nextDouble() * 1.0 : 1.5 + random.nextDouble() * 2.5,
-        opacity: 0.3 + random.nextDouble() * 0.7,
-        hasGlow: size > 0.85, // Büyük yıldızlarda glow efekti
-        color: _getStarColor(random),
-      ));
+      stars.add(
+        _Star(
+          x: random.nextDouble(),
+          y: random.nextDouble(),
+          size: size < 0.7
+              ? 0.5 + random.nextDouble() * 1.0
+              : 1.5 + random.nextDouble() * 2.5,
+          opacity: 0.3 + random.nextDouble() * 0.7,
+          hasGlow: size > 0.85, // Büyük yıldızlarda glow efekti
+          color: _getStarColor(random),
+        ),
+      );
     }
     return stars;
   }
@@ -314,15 +318,45 @@ class _CosmicPainter extends CustomPainter {
   static List<_GlowOrb> _generateGlowOrbs() {
     return [
       // Büyük mor ışık
-      _GlowOrb(x: 0.1, y: 0.3, size: 0.15, color: const Color(0xFF9C27B0), opacity: 0.3),
+      _GlowOrb(
+        x: 0.1,
+        y: 0.3,
+        size: 0.15,
+        color: const Color(0xFF9C27B0),
+        opacity: 0.3,
+      ),
       // Pembe ışık
-      _GlowOrb(x: 0.9, y: 0.5, size: 0.12, color: const Color(0xFFE91E63), opacity: 0.25),
+      _GlowOrb(
+        x: 0.9,
+        y: 0.5,
+        size: 0.12,
+        color: const Color(0xFFE91E63),
+        opacity: 0.25,
+      ),
       // Mavi ışık
-      _GlowOrb(x: 0.5, y: 0.9, size: 0.18, color: const Color(0xFF2196F3), opacity: 0.2),
+      _GlowOrb(
+        x: 0.5,
+        y: 0.9,
+        size: 0.18,
+        color: const Color(0xFF2196F3),
+        opacity: 0.2,
+      ),
       // Turkuaz ışık
-      _GlowOrb(x: 0.2, y: 0.7, size: 0.1, color: const Color(0xFF00BCD4), opacity: 0.2),
+      _GlowOrb(
+        x: 0.2,
+        y: 0.7,
+        size: 0.1,
+        color: const Color(0xFF00BCD4),
+        opacity: 0.2,
+      ),
       // Altın ışık
-      _GlowOrb(x: 0.75, y: 0.2, size: 0.08, color: const Color(0xFFFFD700), opacity: 0.15),
+      _GlowOrb(
+        x: 0.75,
+        y: 0.2,
+        size: 0.08,
+        color: const Color(0xFFFFD700),
+        opacity: 0.15,
+      ),
     ];
   }
 
@@ -332,7 +366,20 @@ class _CosmicPainter extends CustomPainter {
     final symbols = <_EsotericSymbol>[];
 
     // Burç sembolleri
-    const zodiacSymbols = ['♈', '♉', '♊', '♋', '♌', '♍', '♎', '♏', '♐', '♑', '♒', '♓'];
+    const zodiacSymbols = [
+      '♈',
+      '♉',
+      '♊',
+      '♋',
+      '♌',
+      '♍',
+      '♎',
+      '♏',
+      '♐',
+      '♑',
+      '♒',
+      '♓',
+    ];
     // Gezegen sembolleri
     const planetSymbols = ['☉', '☽', '☿', '♀', '♂', '♃', '♄', '♅', '♆', '⚷'];
     // Ezoterik semboller
@@ -354,15 +401,17 @@ class _CosmicPainter extends CustomPainter {
 
     // 25-30 sembol ekle - dağınık ve soluk
     for (int i = 0; i < 28; i++) {
-      symbols.add(_EsotericSymbol(
-        x: random.nextDouble(),
-        y: random.nextDouble(),
-        symbol: allSymbols[random.nextInt(allSymbols.length)],
-        size: 14 + random.nextDouble() * 20, // 14-34 arası boyut
-        opacity: 0.04 + random.nextDouble() * 0.08, // Soluk: 0.04-0.12
-        rotation: random.nextDouble() * math.pi * 2,
-        color: pastelColors[random.nextInt(pastelColors.length)],
-      ));
+      symbols.add(
+        _EsotericSymbol(
+          x: random.nextDouble(),
+          y: random.nextDouble(),
+          symbol: allSymbols[random.nextInt(allSymbols.length)],
+          size: 14 + random.nextDouble() * 20, // 14-34 arası boyut
+          opacity: 0.04 + random.nextDouble() * 0.08, // Soluk: 0.04-0.12
+          rotation: random.nextDouble() * math.pi * 2,
+          color: pastelColors[random.nextInt(pastelColors.length)],
+        ),
+      );
     }
     return symbols;
   }

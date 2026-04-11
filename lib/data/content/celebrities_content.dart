@@ -15,7 +15,8 @@ class CelebritiesContent {
         moonSign: ZodiacSign.leo,
         ascendant: ZodiacSign.scorpio,
         imageUrl: '',
-        chartAnalysis: '''Atatürk'ün Boğa Güneşi, kararlılık, sabır ve pratik liderliği gösterir. Değişmez hedeflere odaklanma yeteneği bu burçtan gelir. Aslan Ayı, güçlü irade, halkını koruma içgüdüsü ve doğal liderlik karizmasını vurgular. Akrep yükseleni ise stratejik zeka, dönüştürücü güç ve engellenemez kararlılığı işaret eder.
+        chartAnalysis:
+            '''Atatürk'ün Boğa Güneşi, kararlılık, sabır ve pratik liderliği gösterir. Değişmez hedeflere odaklanma yeteneği bu burçtan gelir. Aslan Ayı, güçlü irade, halkını koruma içgüdüsü ve doğal liderlik karizmasını vurgular. Akrep yükseleni ise stratejik zeka, dönüştürücü güç ve engellenemez kararlılığı işaret eder.
 
 Haritasındaki Mars-Pluto kavuşumu, devrimci enerji ve köklü değişim yapabilme kapasitesini gösterir. Güneş'in 10. evde olması, kamusal alanda liderlik ve tarihsel miras bırakma potansiyelini belirtir. Jüpiter'in 9. evdeki konumu, vizyon, idealizm ve yabancı kültürlerle etkileşimi işaret eder.''',
         notableAspects: [
@@ -37,7 +38,8 @@ Haritasındaki Mars-Pluto kavuşumu, devrimci enerji ve köklü değişim yapabi
         moonSign: ZodiacSign.sagittarius,
         ascendant: ZodiacSign.cancer,
         imageUrl: '',
-        chartAnalysis: '''Einstein'ın Balık Güneşi, sezgisel ve hayal gücü yüksek doğasını gösterir. Balık burcu, soyut düşünce ve evrensel gerçekleri kavrama yeteneği verir. Yay Ayı, felsefi düşünce, büyük resmi görme ve özgür düşünce yatkınlığını vurgular.
+        chartAnalysis:
+            '''Einstein'ın Balık Güneşi, sezgisel ve hayal gücü yüksek doğasını gösterir. Balık burcu, soyut düşünce ve evrensel gerçekleri kavrama yeteneği verir. Yay Ayı, felsefi düşünce, büyük resmi görme ve özgür düşünce yatkınlığını vurgular.
 
 Yengeç yükseleni, güvenli bir çevrede çalışma ihtiyacını ve duygusal zekayı işaret eder. Uranüs'ün 3. evdeki güçlü konumu, devrimci fikirler ve norm dışı düşünce kapasitesini gösterir. Merkür-Güneş kavuşumu, parlak zihin ve karmaşık kavramları basitleştirme yeteneğini belirtir.''',
         notableAspects: [
@@ -59,7 +61,8 @@ Yengeç yükseleni, güvenli bir çevrede çalışma ihtiyacını ve duygusal ze
         moonSign: ZodiacSign.pisces,
         ascendant: ZodiacSign.sagittarius,
         imageUrl: '',
-        chartAnalysis: '''Da Vinci'nin Koç Güneşi, öncü ve cesur doğasını, sürekli yeni alanlara girme tutkusunu gösterir. Balık Ayı, derin sanatsal sezgi ve sınırsız hayal gücünü temsil eder. Bu kombinasyon, eylem ile hayal gücünün mükemmel birleşimidir.
+        chartAnalysis:
+            '''Da Vinci'nin Koç Güneşi, öncü ve cesur doğasını, sürekli yeni alanlara girme tutkusunu gösterir. Balık Ayı, derin sanatsal sezgi ve sınırsız hayal gücünü temsil eder. Bu kombinasyon, eylem ile hayal gücünün mükemmel birleşimidir.
 
 Yay yükseleni, çok yönlülük ve sürekli öğrenme tutkusunu işaret eder. Merkür-Venüs kavuşumu, estetik zeka ve el becerisi birleşimini gösterir. Mars'ın 5. evdeki konumu, yaratıcı enerji ve sanatsal ifadede cesaret verir.''',
         notableAspects: [
@@ -81,7 +84,8 @@ Yay yükseleni, çok yönlülük ve sürekli öğrenme tutkusunu işaret eder. M
         moonSign: ZodiacSign.pisces,
         ascendant: ZodiacSign.virgo,
         imageUrl: '',
-        chartAnalysis: '''Curie'nin Akrep Güneşi, araştırmacı ruhu ve derinlere inme tutkusunu gösterir. Görünmeyeni keşfetme arzusu bu burçtan kaynaklanır. Balık Ayı, sezgisel anlayış ve bilim için fedakarlık kapasitesini vurgular.
+        chartAnalysis:
+            '''Curie'nin Akrep Güneşi, araştırmacı ruhu ve derinlere inme tutkusunu gösterir. Görünmeyeni keşfetme arzusu bu burçtan kaynaklanır. Balık Ayı, sezgisel anlayış ve bilim için fedakarlık kapasitesini vurgular.
 
 Başak yükseleni, bilimsel titizlik ve analitik yaklaşımı işaret eder. Pluto'nun güçlü konumu, radyoaktivite keşfi ile sembolik bağlantı kurar. Merkür'ün 8. evdeki konumu, gizli olanı araştırma ve dönüştürücü keşifler yapma yeteneğini gösterir.''',
         notableAspects: [
@@ -103,7 +107,8 @@ Başak yükseleni, bilimsel titizlik ve analitik yaklaşımı işaret eder. Plut
         moonSign: ZodiacSign.capricorn,
         ascendant: ZodiacSign.scorpio,
         imageUrl: '',
-        chartAnalysis: '''Fatih'in Koç Güneşi, savaşçı ruhu, cesaret ve fetih tutkusunu gösterir. 21 yaşında İstanbul'u fethetmesi bu öncü enerjinin somut ifadesidir. Oğlak Ayı, stratejik düşünce, uzun vadeli planlama ve disiplinli yaklaşımı vurgular.
+        chartAnalysis:
+            '''Fatih'in Koç Güneşi, savaşçı ruhu, cesaret ve fetih tutkusunu gösterir. 21 yaşında İstanbul'u fethetmesi bu öncü enerjinin somut ifadesidir. Oğlak Ayı, stratejik düşünce, uzun vadeli planlama ve disiplinli yaklaşımı vurgular.
 
 Akrep yükseleni, güçlü irade ve rakiplerini yıldıran kararlılığı işaret eder. Mars'ın güçlü konumu, askeri deha ve liderlik kapasitesini gösterir. Jüpiter'in yükselene açısı, büyük vizyonlar ve genişleme tutkusunu belirtir.''',
         notableAspects: [
@@ -125,7 +130,8 @@ Akrep yükseleni, güçlü irade ve rakiplerini yıldıran kararlılığı işar
         moonSign: ZodiacSign.scorpio,
         ascendant: ZodiacSign.leo,
         imageUrl: '',
-        chartAnalysis: '''Kleopatra'nın Oğlak Güneşi, stratejik zeka, politik hırs ve güç arayışını gösterir. Tahtını korumak için gösterdiği kararlılık bu burçtan gelir. Akrep Ayı, derin duygusal zeka, etkileme yeteneği ve tutkulu doğayı vurgular.
+        chartAnalysis:
+            '''Kleopatra'nın Oğlak Güneşi, stratejik zeka, politik hırs ve güç arayışını gösterir. Tahtını korumak için gösterdiği kararlılık bu burçtan gelir. Akrep Ayı, derin duygusal zeka, etkileme yeteneği ve tutkulu doğayı vurgular.
 
 Aslan yükseleni, kraliyet havası, karizmatik çekim ve dramatik varlığı işaret eder. Venüs'ün güçlü konumu, güzelliği silah olarak kullanma ve diplomasi yeteneğini gösterir. Pluto açıları, güç dinamikleri ve dönüştürücü liderliği belirtir.''',
         notableAspects: [
@@ -147,7 +153,8 @@ Aslan yükseleni, kraliyet havası, karizmatik çekim ve dramatik varlığı iş
         moonSign: ZodiacSign.capricorn,
         ascendant: ZodiacSign.scorpio,
         imageUrl: '',
-        chartAnalysis: '''Napoleon'un Aslan Güneşi, doğal liderlik, güçlü ego ve görkemli hedefler koymayı gösterir. Kendisini imparator ilan etmesi bu burç enerjisinin yansımasıdır. Oğlak Ayı, stratejik planlama, disiplin ve uzun vadeli düşünceyi vurgular.
+        chartAnalysis:
+            '''Napoleon'un Aslan Güneşi, doğal liderlik, güçlü ego ve görkemli hedefler koymayı gösterir. Kendisini imparator ilan etmesi bu burç enerjisinin yansımasıdır. Oğlak Ayı, stratejik planlama, disiplin ve uzun vadeli düşünceyi vurgular.
 
 Akrep yükseleni, yoğun irade, rakipleri yok etme kararlılığı ve dönüştürücü gücü işaret eder. Mars-Jupiter kavuşumu, askeri şansı ve genişleme tutkusunu gösterir. Satürn'ün 10. evdeki konumu, kalıcı miras ama sonunda düşüşü belirtir.''',
         notableAspects: [
@@ -169,7 +176,8 @@ Akrep yükseleni, yoğun irade, rakipleri yok etme kararlılığı ve dönüşt�
         moonSign: ZodiacSign.pisces,
         ascendant: ZodiacSign.sagittarius,
         imageUrl: '',
-        chartAnalysis: '''Mevlana'nın Terazi Güneşi, denge arayışı, güzellik ve uyumu gösterir. Şiirlerindeki estetik mükemmellik bu burçtan kaynaklanır. Balık Ayı, derin spiritüellik, mistik deneyimler ve evrensel aşkı vurgular.
+        chartAnalysis:
+            '''Mevlana'nın Terazi Güneşi, denge arayışı, güzellik ve uyumu gösterir. Şiirlerindeki estetik mükemmellik bu burçtan kaynaklanır. Balık Ayı, derin spiritüellik, mistik deneyimler ve evrensel aşkı vurgular.
 
 Yay yükseleni, felsefi arayış, öğretmenlik ve yüksek hakikat arayışını işaret eder. Neptün'ün güçlü konumu, mistik deneyimler ve ilahi aşkla bağlantıyı gösterir. Jüpiter'in yükselen yöneticisi olarak gücü, spiritüel genişleme ve öğretiyi belirtir.''',
         notableAspects: [
@@ -191,7 +199,8 @@ Yay yükseleni, felsefi arayış, öğretmenlik ve yüksek hakikat arayışını
         moonSign: ZodiacSign.libra,
         ascendant: ZodiacSign.virgo,
         imageUrl: '',
-        chartAnalysis: '''Tesla'nın Yengeç Güneşi, güçlü hayal gücü ve sezgisel zekayı gösterir. Buluşlarını çoğunlukla zihninde "gördüğü" söylenir. Terazi Ayı, denge arayışı ve estetik düşünceyi vurgular. AC/DC tartışmasında denge arayışı bu enerjiden gelir.
+        chartAnalysis:
+            '''Tesla'nın Yengeç Güneşi, güçlü hayal gücü ve sezgisel zekayı gösterir. Buluşlarını çoğunlukla zihninde "gördüğü" söylenir. Terazi Ayı, denge arayışı ve estetik düşünceyi vurgular. AC/DC tartışmasında denge arayışı bu enerjiden gelir.
 
 Başak yükseleni, detaylara dikkat, teknik mükemmellik ve analitik yaklaşımı işaret eder. Uranüs'ün son derece güçlü konumu, elektrik ve yenilik ile derin bağlantıyı gösterir. Neptün açıları, vizyoner düşünce ve zamanının ötesinde görme yeteneğini belirtir.''',
         notableAspects: [
@@ -213,7 +222,8 @@ Başak yükseleni, detaylara dikkat, teknik mükemmellik ve analitik yaklaşım�
         moonSign: ZodiacSign.taurus,
         ascendant: ZodiacSign.leo,
         imageUrl: '',
-        chartAnalysis: '''Frida'nın Yengeç Güneşi, derin duygusallık ve yaralarını sanata dönüştürme yeteneğini gösterir. Otoportreleri bu iç dünya yolculuğunun yansımasıdır. Boğa Ayı, güzelliğe bağlılık ve acı içinde bile zevk bulma kapasitesini vurgular.
+        chartAnalysis:
+            '''Frida'nın Yengeç Güneşi, derin duygusallık ve yaralarını sanata dönüştürme yeteneğini gösterir. Otoportreleri bu iç dünya yolculuğunun yansımasıdır. Boğa Ayı, güzelliğe bağlılık ve acı içinde bile zevk bulma kapasitesini vurgular.
 
 Aslan yükseleni, dramatik kendini ifade ve göze çarpan bir tarzı işaret eder. Kiron'un güçlü konumu, "yaralı şifacı" arketipini ve acıyı sanata dönüştürmeyi gösterir. Mars-Uranüs açısı, kaza ve fiziksel travmayı ama aynı zamanda devrimci sanatı belirtir.''',
         notableAspects: [
@@ -236,7 +246,8 @@ Aslan yükseleni, dramatik kendini ifade ve göze çarpan bir tarzı işaret ede
         moonSign: ZodiacSign.gemini,
         ascendant: ZodiacSign.sagittarius,
         imageUrl: '',
-        chartAnalysis: '''Barış Manço'nun Oğlak Güneşi, kararlılık, uzun vadeli kariyer planlaması ve gelenekle modernin birleşimini gösterir. Anadolu rock'ın öncüsü olması bu yapıcı enerjinin ürünüdür. İkizler Ayı, iletişim yeteneği ve merakı vurgular.
+        chartAnalysis:
+            '''Barış Manço'nun Oğlak Güneşi, kararlılık, uzun vadeli kariyer planlaması ve gelenekle modernin birleşimini gösterir. Anadolu rock'ın öncüsü olması bu yapıcı enerjinin ürünüdür. İkizler Ayı, iletişim yeteneği ve merakı vurgular.
 
 Yay yükseleni, kültürel keşif, dünya müziği ve TV programlarıyla uluslararası ulaşımı işaret eder. Neptün'ün müzik eviyle güçlü bağlantısı, müzikal ilham ve sanatsal vizyonu gösterir. Jüpiter'in yükselen yöneticisi olması, genişleme ve büyük kitlelerle bağlantıyı belirtir.''',
         notableAspects: [
@@ -258,7 +269,8 @@ Yay yükseleni, kültürel keşif, dünya müziği ve TV programlarıyla uluslar
         moonSign: ZodiacSign.sagittarius,
         ascendant: ZodiacSign.leo,
         imageUrl: '',
-        chartAnalysis: '''Mercury'nin Başak Güneşi, mükemmeliyetçiliği ve müzikal detaycılığını gösterir. Şarkılarındaki karmaşık yapılar bu burçtan gelir. Yay Ayı, sahne performansındaki coşku ve özgürlük tutkusunu vurgular.
+        chartAnalysis:
+            '''Mercury'nin Başak Güneşi, mükemmeliyetçiliği ve müzikal detaycılığını gösterir. Şarkılarındaki karmaşık yapılar bu burçtan gelir. Yay Ayı, sahne performansındaki coşku ve özgürlük tutkusunu vurgular.
 
 Aslan yükseleni, karizmatik sahne varlığı ve dramatik ifadeyi işaret eder. Venüs-Mars kavuşumu, tutkulu sanatsal ifade ve performans enerjisini gösterir. Neptün'ün 5. evdeki konumu, yaratıcı ilham ve müzikal dehayı belirtir.''',
         notableAspects: [
@@ -280,7 +292,8 @@ Aslan yükseleni, karizmatik sahne varlığı ve dramatik ifadeyi işaret eder. 
         moonSign: ZodiacSign.cancer,
         ascendant: ZodiacSign.scorpio,
         imageUrl: '',
-        chartAnalysis: '''Tarkan'ın Terazi Güneşi, estetik hassasiyet, uyum ve güzellik arayışını gösterir. Şarkılarındaki melodik yapı ve sahne estetiği bu burçtan kaynaklanır. Yengeç Ayı, halkıyla derin duygusal bağ ve nostaljik melodileri vurgular.
+        chartAnalysis:
+            '''Tarkan'ın Terazi Güneşi, estetik hassasiyet, uyum ve güzellik arayışını gösterir. Şarkılarındaki melodik yapı ve sahne estetiği bu burçtan kaynaklanır. Yengeç Ayı, halkıyla derin duygusal bağ ve nostaljik melodileri vurgular.
 
 Akrep yükseleni, manyetik çekim, yoğun sahne varlığı ve gizem havasını işaret eder. Venüs'ün güçlü konumu, çekicilik ve sanatsal yeteneği gösterir. Pluto açıları, dönüştürücü müzik ve kitleler üzerindeki etkiyi belirtir.''',
         notableAspects: [
@@ -302,7 +315,8 @@ Akrep yükseleni, manyetik çekim, yoğun sahne varlığı ve gizem havasını i
         moonSign: ZodiacSign.virgo,
         ascendant: ZodiacSign.libra,
         imageUrl: '',
-        chartAnalysis: '''Sezen Aksu'nun Yengeç Güneşi, derin duygusallık ve halkın kalbine dokunma yeteneğini gösterir. Şarkıları nesilleri birleştiren duygusal köprüler kurar. Başak Ayı, söz yazarlığındaki incelik ve detaycılığı vurgular.
+        chartAnalysis:
+            '''Sezen Aksu'nun Yengeç Güneşi, derin duygusallık ve halkın kalbine dokunma yeteneğini gösterir. Şarkıları nesilleri birleştiren duygusal köprüler kurar. Başak Ayı, söz yazarlığındaki incelik ve detaycılığı vurgular.
 
 Terazi yükseleni, estetik hassasiyet ve uyum arayışını işaret eder. Neptün'ün güçlü konumu, müzikal ilham ve poetik ifadeyi gösterir. Ay'ın yaratıcılık eviyle bağlantısı, duygusal yaratıcılık ve sanatsal üretkenliği belirtir.''',
         notableAspects: [
@@ -324,7 +338,8 @@ Terazi yükseleni, estetik hassasiyet ve uyum arayışını işaret eder. Neptü
         moonSign: ZodiacSign.pisces,
         ascendant: ZodiacSign.pisces,
         imageUrl: '',
-        chartAnalysis: '''Michael Jackson'ın Başak Güneşi, mükemmeliyetçiliği ve her detaya gösterdiği özeni gösterir. Dans hareketlerindeki hassasiyet bu burçtan gelir. Balık Ayı ve yükseleni, duygusal derinlik, artistik sezgi ve mistik havayı vurgular.
+        chartAnalysis:
+            '''Michael Jackson'ın Başak Güneşi, mükemmeliyetçiliği ve her detaya gösterdiği özeni gösterir. Dans hareketlerindeki hassasiyet bu burçtan gelir. Balık Ayı ve yükseleni, duygusal derinlik, artistik sezgi ve mistik havayı vurgular.
 
 Neptün'ün yükselen yöneticisi olarak gücü, dünya çapında etkiyi ve neredeyse gerçeküstü popülariteyi işaret eder. Venüs-Uranüs açısı, benzersiz sanatsal ifade ve devrimci müziği gösterir. Pluto'nun güçlü konumu, transformasyonu ve karanlık temaları belirtir.''',
         notableAspects: [
@@ -346,7 +361,8 @@ Neptün'ün yükselen yöneticisi olarak gücü, dünya çapında etkiyi ve nere
         moonSign: ZodiacSign.leo,
         ascendant: ZodiacSign.leo,
         imageUrl: '',
-        chartAnalysis: '''Zeki Müren'in Yay Güneşi, geniş vizyonu, kültürel zenginliği kucaklamasını ve sınırları aşan sanatı gösterir. Aslan Ayı ve yükseleni, dramatik sahne varlığı, cömertlik ve görkemli tarzı vurgular.
+        chartAnalysis:
+            '''Zeki Müren'in Yay Güneşi, geniş vizyonu, kültürel zenginliği kucaklamasını ve sınırları aşan sanatı gösterir. Aslan Ayı ve yükseleni, dramatik sahne varlığı, cömertlik ve görkemli tarzı vurgular.
 
 Güneş-Jüpiter açısı, büyüklük, şöhret ve sanat güneşi ünvanını işaret eder. Venüs'ün güçlü konumu, ses güzelliği ve estetik mükemmelliği gösterir. Neptün'ün müzik eviyle bağlantısı, eşsiz vokal yeteneğini belirtir.''',
         notableAspects: [
@@ -368,7 +384,8 @@ Güneş-Jüpiter açısı, büyüklük, şöhret ve sanat güneşi ünvanını i
         moonSign: ZodiacSign.leo,
         ascendant: ZodiacSign.aquarius,
         imageUrl: '',
-        chartAnalysis: '''Bowie'nin Oğlak Güneşi, kariyer stratejisi ve uzun ömürlü mirası gösterir. Sürekli yeniden icat etmesi planlı değişimin ürünüdür. Aslan Ayı, dramatik sahne personaları (Ziggy Stardust) ve yaratıcı cesareti vurgular.
+        chartAnalysis:
+            '''Bowie'nin Oğlak Güneşi, kariyer stratejisi ve uzun ömürlü mirası gösterir. Sürekli yeniden icat etmesi planlı değişimin ürünüdür. Aslan Ayı, dramatik sahne personaları (Ziggy Stardust) ve yaratıcı cesareti vurgular.
 
 Kova yükseleni, radikal özgünlük ve zamanının ötesinde olmayı işaret eder. Mars-Venüs kavuşumu, androjen estetik ve sanatsal ifadede sınır tanımazlığı gösterir. Uranüs'ün güçlü konumu, devrimci müzik ve sürekli evrimleşmeyi belirtir.''',
         notableAspects: [
@@ -390,7 +407,8 @@ Kova yükseleni, radikal özgünlük ve zamanının ötesinde olmayı işaret ed
         moonSign: ZodiacSign.virgo,
         ascendant: ZodiacSign.taurus,
         imageUrl: '',
-        chartAnalysis: '''Ajda Pekkan'ın Kova Güneşi, zamanının ötesinde olmayı ve trendleri belirlemeyi gösterir. "Süperstar" ünvanı bu benzersiz konumun yansımasıdır. Başak Ayı, detaycılık ve uzun kariyerde tutarlılığı vurgular.
+        chartAnalysis:
+            '''Ajda Pekkan'ın Kova Güneşi, zamanının ötesinde olmayı ve trendleri belirlemeyi gösterir. "Süperstar" ünvanı bu benzersiz konumun yansımasıdır. Başak Ayı, detaycılık ve uzun kariyerde tutarlılığı vurgular.
 
 Boğa yükseleni, güzellik, lüks ve kalıcılığı işaret eder. Venüs'ün ev sahibi olarak gücü, estetik mükemmelliği ve çekiciliği gösterir. Satürn'ün güçlü konumu, disiplin ve onlarca yıl süren kariyeri belirtir.''',
         notableAspects: [
@@ -413,7 +431,8 @@ Boğa yükseleni, güzellik, lüks ve kalıcılığı işaret eder. Venüs'ün e
         moonSign: ZodiacSign.cancer,
         ascendant: ZodiacSign.virgo,
         imageUrl: '',
-        chartAnalysis: '''Kemal Sunal'ın Akrep Güneşi, derinlik, gözlem gücü ve karakterlerin içine girme yeteneğini gösterir. Komedilerinin altındaki toplumsal eleştiri bu derin bakıştan kaynaklanır. Yengeç Ayı, halkla duygusal bağ ve sıradan insanı temsil etmeyi vurgular.
+        chartAnalysis:
+            '''Kemal Sunal'ın Akrep Güneşi, derinlik, gözlem gücü ve karakterlerin içine girme yeteneğini gösterir. Komedilerinin altındaki toplumsal eleştiri bu derin bakıştan kaynaklanır. Yengeç Ayı, halkla duygusal bağ ve sıradan insanı temsil etmeyi vurgular.
 
 Başak yükseleni, mütevazı görünüm ve "küçük adam" karakterlerini işaret eder. Jüpiter'in komedi eviyle bağlantısı, doğal mizah yeteneğini gösterir. Satürn'ün güçlü konumu, toplumsal eleştiri ve kalıcı mirası belirtir.''',
         notableAspects: [
@@ -435,7 +454,8 @@ Başak yükseleni, mütevazı görünüm ve "küçük adam" karakterlerini işar
         moonSign: ZodiacSign.libra,
         ascendant: ZodiacSign.scorpio,
         imageUrl: '',
-        chartAnalysis: '''Türkan Şoray'ın Yengeç Güneşi, duygusal derinlik ve izleyicinin kalbini fethetme yeteneğini gösterir. Melodramlardaki güçlü performanslar bu duygusal zekadan kaynaklanır. Terazi Ayı, güzellik ve estetik dengeyi vurgular.
+        chartAnalysis:
+            '''Türkan Şoray'ın Yengeç Güneşi, duygusal derinlik ve izleyicinin kalbini fethetme yeteneğini gösterir. Melodramlardaki güçlü performanslar bu duygusal zekadan kaynaklanır. Terazi Ayı, güzellik ve estetik dengeyi vurgular.
 
 Akrep yükseleni, manyetik çekim ve yoğun ekran varlığını işaret eder. Venüs'ün güçlü konumu, zamansız güzelliği gösterir. Neptün'ün film eviyle bağlantısı, sinematik büyüyü ve "Sultan" ünvanını belirtir.''',
         notableAspects: [
@@ -457,7 +477,8 @@ Akrep yükseleni, manyetik çekim ve yoğun ekran varlığını işaret eder. Ve
         moonSign: ZodiacSign.taurus,
         ascendant: ZodiacSign.leo,
         imageUrl: '',
-        chartAnalysis: '''Meryl Streep'in Yengeç Güneşi, duygusal derinlik ve karakterlere tam empati kurma yeteneğini gösterir. Her rolde farklı bir insana dönüşmesi bu duygusal esneklikten gelir. Boğa Ayı, istikrar ve uzun kariyeri vurgular.
+        chartAnalysis:
+            '''Meryl Streep'in Yengeç Güneşi, duygusal derinlik ve karakterlere tam empati kurma yeteneğini gösterir. Her rolde farklı bir insana dönüşmesi bu duygusal esneklikten gelir. Boğa Ayı, istikrar ve uzun kariyeri vurgular.
 
 Aslan yükseleni, güçlü sahne varlığı ve star kalitesini işaret eder. Neptün'ün güçlü konumu, bukalemun gibi dönüşüm yeteneğini gösterir. Merkür'ün aksan ustası olmasını sağlayan konumu belirgindir.''',
         notableAspects: [
@@ -479,7 +500,8 @@ Aslan yükseleni, güçlü sahne varlığı ve star kalitesini işaret eder. Nep
         moonSign: ZodiacSign.libra,
         ascendant: ZodiacSign.libra,
         imageUrl: '',
-        chartAnalysis: '''DiCaprio'nun Akrep Güneşi, yoğun karakterlere bürünme ve derin dönüşüm rollerini gösterir. "The Revenant" ve "Wolf of Wall Street" bu yoğunluğun yansımasıdır. Terazi Ay ve yükseleni, estetik duyarlılık ve çekiciliği vurgular.
+        chartAnalysis:
+            '''DiCaprio'nun Akrep Güneşi, yoğun karakterlere bürünme ve derin dönüşüm rollerini gösterir. "The Revenant" ve "Wolf of Wall Street" bu yoğunluğun yansımasıdır. Terazi Ay ve yükseleni, estetik duyarlılık ve çekiciliği vurgular.
 
 Venüs'ün yükselen yöneticisi olarak gücü, star imajını işaret eder. Pluto'nun güçlü konumu, karanlık ve karmaşık karakterlere çekimi gösterir. Neptün'ün çevre aktivizmine yönelten spiritüel bağlantıyı belirtir.''',
         notableAspects: [
@@ -501,7 +523,8 @@ Venüs'ün yükselen yöneticisi olarak gücü, star imajını işaret eder. Plu
         moonSign: ZodiacSign.aries,
         ascendant: ZodiacSign.leo,
         imageUrl: '',
-        chartAnalysis: '''Kıvanç Tatlıtuğ'un Akrep Güneşi, yoğun ekran varlığı ve karmaşık karakterleri canlandırma yeteneğini gösterir. Koç Ayı, cesaret ve aksiyona yatkınlığı vurgular.
+        chartAnalysis:
+            '''Kıvanç Tatlıtuğ'un Akrep Güneşi, yoğun ekran varlığı ve karmaşık karakterleri canlandırma yeteneğini gösterir. Koç Ayı, cesaret ve aksiyona yatkınlığı vurgular.
 
 Aslan yükseleni, karizmatik görünüm ve star kalitesini işaret eder. Mars'ın güçlü konumu, fiziksel çekicilik ve enerjik performansları gösterir. Venüs'ün romantik rolleri ve uluslararası çekiciliği belirtir.''',
         notableAspects: [
@@ -523,7 +546,8 @@ Aslan yükseleni, karizmatik görünüm ve star kalitesini işaret eder. Mars'ı
         moonSign: ZodiacSign.aries,
         ascendant: ZodiacSign.cancer,
         imageUrl: '',
-        chartAnalysis: '''Angelina Jolie'nin İkizler Güneşi, çok yönlülük ve değişkenliği gösterir. Oyunculuktan yönetmenliğe, aktivizme geçişleri bu enerjidir. Koç Ayı, cesaret ve bağımsızlığı vurgular.
+        chartAnalysis:
+            '''Angelina Jolie'nin İkizler Güneşi, çok yönlülük ve değişkenliği gösterir. Oyunculuktan yönetmenliğe, aktivizme geçişleri bu enerjidir. Koç Ayı, cesaret ve bağımsızlığı vurgular.
 
 Yengeç yükseleni, annelik ve insancıl aktivizmi işaret eder. Mars'ın çok güçlü konumu (Koç), aksiyon rolleri ve cesur kararları gösterir. Jüpiter'in genişleme açıları, BM aktivizmini belirtir.''',
         notableAspects: [
@@ -545,7 +569,8 @@ Yengeç yükseleni, annelik ve insancıl aktivizmi işaret eder. Mars'ın çok g
         moonSign: ZodiacSign.gemini,
         ascendant: ZodiacSign.virgo,
         imageUrl: '',
-        chartAnalysis: '''Beren Saat'in Balık Güneşi, duygusal derinlik ve karakterlere empati kurma yeteneğini gösterir. Dramatik rollerdeki başarısı bu sezgisellikten kaynaklanır. İkizler Ayı, uyum sağlama ve farklı karakterlere geçişi vurgular.
+        chartAnalysis:
+            '''Beren Saat'in Balık Güneşi, duygusal derinlik ve karakterlere empati kurma yeteneğini gösterir. Dramatik rollerdeki başarısı bu sezgisellikten kaynaklanır. İkizler Ayı, uyum sağlama ve farklı karakterlere geçişi vurgular.
 
 Başak yükseleni, detaylara dikkat ve mükemmeliyetçiliği işaret eder. Neptün'ün güçlü konumu, ekran büyüsü ve uluslararası çekiciliği gösterir. Venüs'ün romantik rollere yatkınlığı belirtir.''',
         notableAspects: [
@@ -567,7 +592,8 @@ Başak yükseleni, detaylara dikkat ve mükemmeliyetçiliği işaret eder. Nept�
         moonSign: ZodiacSign.capricorn,
         ascendant: ZodiacSign.leo,
         imageUrl: '',
-        chartAnalysis: '''Johnny Depp'in İkizler Güneşi, çok yönlülük ve sınırsız karakter yelpazesini gösterir. Jack Sparrow'dan Edward Scissorhands'e kadar geçişler bu enerjidir. Oğlak Ayı, gizli ciddiyet ve iş disiplinini vurgular.
+        chartAnalysis:
+            '''Johnny Depp'in İkizler Güneşi, çok yönlülük ve sınırsız karakter yelpazesini gösterir. Jack Sparrow'dan Edward Scissorhands'e kadar geçişler bu enerjidir. Oğlak Ayı, gizli ciddiyet ve iş disiplinini vurgular.
 
 Aslan yükseleni, göz alıcı görünüm ve star kalitesini işaret eder. Uranüs'ün güçlü konumu, eksantrik karakterlere çekimi gösterir. Neptün açıları, fantazi dünyalara dalma yeteneğini belirtir.''',
         notableAspects: [
@@ -590,7 +616,8 @@ Aslan yükseleni, göz alıcı görünüm ve star kalitesini işaret eder. Uran�
         moonSign: ZodiacSign.aries,
         ascendant: ZodiacSign.gemini,
         imageUrl: '',
-        chartAnalysis: '''Arda Güler'in Balık Güneşi, yaratıcı futbol vizyonu ve sezgisel oyun okumayı gösterir. Sahada "görmediği" pasları vermesi bu enerjinin yansımasıdır. Koç Ayı, rekabetçi ruhu ve gol atma içgüdüsünü vurgular.
+        chartAnalysis:
+            '''Arda Güler'in Balık Güneşi, yaratıcı futbol vizyonu ve sezgisel oyun okumayı gösterir. Sahada "görmediği" pasları vermesi bu enerjinin yansımasıdır. Koç Ayı, rekabetçi ruhu ve gol atma içgüdüsünü vurgular.
 
 İkizler yükseleni, hız, çeviklik ve adapte olma yeteneğini işaret eder. Mars'ın güçlü konumu, atletik yeteneği gösterir. Jüpiter'in şans açıları, erken yaşta büyük başarıları belirtir.''',
         notableAspects: [
@@ -612,7 +639,8 @@ Aslan yükseleni, göz alıcı görünüm ve star kalitesini işaret eder. Uran�
         moonSign: ZodiacSign.leo,
         ascendant: ZodiacSign.virgo,
         imageUrl: '',
-        chartAnalysis: '''Cristiano Ronaldo'nun Kova Güneşi, benzersiz olmak ve rekorlar kırmak tutkusunu gösterir. Aslan Ayı, star olma ihtiyacı ve karizmatik varlığı vurgular.
+        chartAnalysis:
+            '''Cristiano Ronaldo'nun Kova Güneşi, benzersiz olmak ve rekorlar kırmak tutkusunu gösterir. Aslan Ayı, star olma ihtiyacı ve karizmatik varlığı vurgular.
 
 Başak yükseleni, fiziksel mükemmeliyetçilik ve sağlıklı yaşam takıntısını işaret eder. Mars-Satürn açısı, disiplin ve sınırsız çalışma ahlakını gösterir. Jüpiter'in güçlü konumu, uluslararası başarıyı belirtir.''',
         notableAspects: [
@@ -634,7 +662,8 @@ Başak yükseleni, fiziksel mükemmeliyetçilik ve sağlıklı yaşam takıntıs
         moonSign: ZodiacSign.gemini,
         ascendant: ZodiacSign.virgo,
         imageUrl: '',
-        chartAnalysis: '''Lionel Messi'nin Yengeç Güneşi, takıma ve ülkesine bağlılığı gösterir. Dünya Kupası'nı kazanma tutkusu bu duygusal bağın yansımasıdır. İkizler Ayı, hız, çeviklik ve değişken oyun tarzını vurgular.
+        chartAnalysis:
+            '''Lionel Messi'nin Yengeç Güneşi, takıma ve ülkesine bağlılığı gösterir. Dünya Kupası'nı kazanma tutkusu bu duygusal bağın yansımasıdır. İkizler Ayı, hız, çeviklik ve değişken oyun tarzını vurgular.
 
 Başak yükseleni, mütevazı kişilik ve teknik mükemmelliği işaret eder. Neptün'ün güçlü konumu, neredeyse doğaüstü dribling yeteneğini gösterir. Satürn'ün fiziksel engellere rağmen azmi belirtir.''',
         notableAspects: [
@@ -656,7 +685,8 @@ Başak yükseleni, mütevazı kişilik ve teknik mükemmelliği işaret eder. Ne
         moonSign: ZodiacSign.virgo,
         ascendant: ZodiacSign.leo,
         imageUrl: '',
-        chartAnalysis: '''Serena Williams'ın Terazi Güneşi, denge ve estetik arayışını gösterir. Tenis kortundaki zarafet bu enerjidir. Başak Ayı, mükemmeliyetçilik ve teknik detaycılığı vurgular.
+        chartAnalysis:
+            '''Serena Williams'ın Terazi Güneşi, denge ve estetik arayışını gösterir. Tenis kortundaki zarafet bu enerjidir. Başak Ayı, mükemmeliyetçilik ve teknik detaycılığı vurgular.
 
 Aslan yükseleni, güçlü fiziksel varlık ve dominant sahne enerjisini işaret eder. Mars'ın çok güçlü konumu, atletik güç ve rekabetçi ateşi gösterir. Pluto açıları, dominans ve dönüştürücü gücü belirtir.''',
         notableAspects: [

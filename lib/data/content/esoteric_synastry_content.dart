@@ -33,15 +33,7 @@ enum KarmicPatternType {
   chironWound,
 }
 
-enum ChakraType {
-  root,
-  sacral,
-  solarPlexus,
-  heart,
-  throat,
-  thirdEye,
-  crown,
-}
+enum ChakraType { root, sacral, solarPlexus, heart, throat, thirdEye, crown }
 
 class SoulmateIndicator {
   final String id;
@@ -3698,7 +3690,9 @@ class EsotericSynastryContentService {
     ];
   }
 
-  static List<SoulmateIndicator> getSoulmateIndicatorsByType(SoulmateIndicatorType type) {
+  static List<SoulmateIndicator> getSoulmateIndicatorsByType(
+    SoulmateIndicatorType type,
+  ) {
     return getAllSoulmateIndicators().where((i) => i.type == type).toList();
   }
 
@@ -3714,7 +3708,9 @@ class EsotericSynastryContentService {
     ];
   }
 
-  static List<TwinFlameAspect> getTwinFlameAspectsByPattern(TwinFlamePattern pattern) {
+  static List<TwinFlameAspect> getTwinFlameAspectsByPattern(
+    TwinFlamePattern pattern,
+  ) {
     return getAllTwinFlameAspects().where((a) => a.pattern == pattern).toList();
   }
 
@@ -3746,8 +3742,12 @@ class EsotericSynastryContentService {
     return TantricCompatibilityContent.chakraBySign;
   }
 
-  static List<ChakraCompatibility> getChakraCompatibilityByType(ChakraType type) {
-    return getAllChakraCompatibilities().where((c) => c.chakra == type).toList();
+  static List<ChakraCompatibility> getChakraCompatibilityByType(
+    ChakraType type,
+  ) {
+    return getAllChakraCompatibilities()
+        .where((c) => c.chakra == type)
+        .toList();
   }
 
   // Composite Esoterics
@@ -3768,23 +3768,40 @@ class EsotericSynastryContentService {
   // Introduction Texts
   static String getSoulmateIntroduction() => SoulmateIndicators.introduction;
   static String getTwinFlameIntroduction() => TwinFlameAstrology.introduction;
-  static String getKarmicIntroduction() => KarmicRelationshipPatterns.introduction;
-  static String getTantricIntroduction() => TantricCompatibilityContent.introduction;
-  static String getCompositeIntroduction() => CompositeChartEsoterics.introduction;
-  static String getSexualIntroduction() => SexualCompatibilityContent.introduction;
-  static String getSpiritualIntroduction() => SpiritualPartnershipContent.introduction;
+  static String getKarmicIntroduction() =>
+      KarmicRelationshipPatterns.introduction;
+  static String getTantricIntroduction() =>
+      TantricCompatibilityContent.introduction;
+  static String getCompositeIntroduction() =>
+      CompositeChartEsoterics.introduction;
+  static String getSexualIntroduction() =>
+      SexualCompatibilityContent.introduction;
+  static String getSpiritualIntroduction() =>
+      SpiritualPartnershipContent.introduction;
 
   // Extended Content
-  static String getKundaliniSynastry() => TantricCompatibilityContent.kundaliniSynastry;
-  static String getSacredUnionIndicators() => TantricCompatibilityContent.sacredUnionIndicators;
-  static String getCompositeSpiritualEvolution() => CompositeChartEsoterics.compositeSpiritualEvolution;
-  static String getCompositeShadowWork() => CompositeChartEsoterics.compositeShadowWork;
-  static String getFifthHouseRomance() => SexualCompatibilityContent.fifthHouseRomance;
-  static String getEighthHouseIntimacy() => SexualCompatibilityContent.eighthHouseIntimacy;
-  static String getNinthHouseBeliefs() => SpiritualPartnershipContent.ninthHouseBeliefs;
-  static String getTwelfthHouseSoulConnection() => SpiritualPartnershipContent.twelfthHouseSoulConnection;
-  static String getNeptuneTranscendence() => SpiritualPartnershipContent.neptuneTranscendence;
-  static String getJupiterGrowthTogether() => SpiritualPartnershipContent.jupiterGrowthTogether;
-  static String getSpiritualPartnershipPrinciples() => SpiritualPartnershipContent.spiritualPartnershipPrinciples;
-  static String getSacredUnionMeditation() => SpiritualPartnershipContent.sacredUnionMeditation;
+  static String getKundaliniSynastry() =>
+      TantricCompatibilityContent.kundaliniSynastry;
+  static String getSacredUnionIndicators() =>
+      TantricCompatibilityContent.sacredUnionIndicators;
+  static String getCompositeSpiritualEvolution() =>
+      CompositeChartEsoterics.compositeSpiritualEvolution;
+  static String getCompositeShadowWork() =>
+      CompositeChartEsoterics.compositeShadowWork;
+  static String getFifthHouseRomance() =>
+      SexualCompatibilityContent.fifthHouseRomance;
+  static String getEighthHouseIntimacy() =>
+      SexualCompatibilityContent.eighthHouseIntimacy;
+  static String getNinthHouseBeliefs() =>
+      SpiritualPartnershipContent.ninthHouseBeliefs;
+  static String getTwelfthHouseSoulConnection() =>
+      SpiritualPartnershipContent.twelfthHouseSoulConnection;
+  static String getNeptuneTranscendence() =>
+      SpiritualPartnershipContent.neptuneTranscendence;
+  static String getJupiterGrowthTogether() =>
+      SpiritualPartnershipContent.jupiterGrowthTogether;
+  static String getSpiritualPartnershipPrinciples() =>
+      SpiritualPartnershipContent.spiritualPartnershipPrinciples;
+  static String getSacredUnionMeditation() =>
+      SpiritualPartnershipContent.sacredUnionMeditation;
 }

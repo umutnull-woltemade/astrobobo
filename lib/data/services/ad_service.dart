@@ -9,7 +9,8 @@ import 'analytics_service.dart';
 class AdConfig {
   // Test IDs (for development)
   static const String testBannerId = 'ca-app-pub-3940256099942544/6300978111';
-  static const String testInterstitialId = 'ca-app-pub-3940256099942544/1033173712';
+  static const String testInterstitialId =
+      'ca-app-pub-3940256099942544/1033173712';
   static const String testRewardedId = 'ca-app-pub-3940256099942544/5224354917';
 
   // Use test ads in debug mode
@@ -17,22 +18,28 @@ class AdConfig {
 
   static String get bannerId {
     if (isTestMode) return testBannerId;
-    if (defaultTargetPlatform == TargetPlatform.android) return AppConstants.admobBannerIdAndroid;
-    if (defaultTargetPlatform == TargetPlatform.iOS) return AppConstants.admobBannerIdIos;
+    if (defaultTargetPlatform == TargetPlatform.android)
+      return AppConstants.admobBannerIdAndroid;
+    if (defaultTargetPlatform == TargetPlatform.iOS)
+      return AppConstants.admobBannerIdIos;
     return testBannerId;
   }
 
   static String get interstitialId {
     if (isTestMode) return testInterstitialId;
-    if (defaultTargetPlatform == TargetPlatform.android) return AppConstants.admobInterstitialIdAndroid;
-    if (defaultTargetPlatform == TargetPlatform.iOS) return AppConstants.admobInterstitialIdIos;
+    if (defaultTargetPlatform == TargetPlatform.android)
+      return AppConstants.admobInterstitialIdAndroid;
+    if (defaultTargetPlatform == TargetPlatform.iOS)
+      return AppConstants.admobInterstitialIdIos;
     return testInterstitialId;
   }
 
   static String get rewardedId {
     if (isTestMode) return testRewardedId;
-    if (defaultTargetPlatform == TargetPlatform.android) return AppConstants.admobRewardedIdAndroid;
-    if (defaultTargetPlatform == TargetPlatform.iOS) return AppConstants.admobRewardedIdIos;
+    if (defaultTargetPlatform == TargetPlatform.android)
+      return AppConstants.admobRewardedIdAndroid;
+    if (defaultTargetPlatform == TargetPlatform.iOS)
+      return AppConstants.admobRewardedIdIos;
     return testRewardedId;
   }
 }
@@ -148,10 +155,14 @@ class AdService {
           _logAdEvent('banner', 'failed', placement: placement);
           onAdFailedToLoad(ad, error);
         },
-        onAdOpened: (ad) => _logAdEvent('banner', 'opened', placement: placement),
-        onAdClosed: (ad) => _logAdEvent('banner', 'closed', placement: placement),
-        onAdImpression: (ad) => _logAdEvent('banner', 'impression', placement: placement),
-        onAdClicked: (ad) => _logAdEvent('banner', 'clicked', placement: placement),
+        onAdOpened: (ad) =>
+            _logAdEvent('banner', 'opened', placement: placement),
+        onAdClosed: (ad) =>
+            _logAdEvent('banner', 'closed', placement: placement),
+        onAdImpression: (ad) =>
+            _logAdEvent('banner', 'impression', placement: placement),
+        onAdClicked: (ad) =>
+            _logAdEvent('banner', 'clicked', placement: placement),
       ),
     );
   }

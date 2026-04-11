@@ -29,10 +29,7 @@ class ConstellationWidget extends StatelessWidget {
   });
 
   /// Factory for icon-sized usage (replacing symbol in lists)
-  factory ConstellationWidget.icon({
-    required ZodiacSign sign,
-    Color? color,
-  }) {
+  factory ConstellationWidget.icon({required ZodiacSign sign, Color? color}) {
     return ConstellationWidget(
       sign: sign,
       size: 24,
@@ -44,10 +41,7 @@ class ConstellationWidget extends StatelessWidget {
   }
 
   /// Factory for medium display (cards, headers)
-  factory ConstellationWidget.medium({
-    required ZodiacSign sign,
-    Color? color,
-  }) {
+  factory ConstellationWidget.medium({required ZodiacSign sign, Color? color}) {
     return ConstellationWidget(
       sign: sign,
       size: 48,
@@ -152,7 +146,9 @@ class _ConstellationPainter extends CustomPainter {
     final linePaint = Paint()
       ..color = color.withOpacity(lineOpacity * starBrightness)
       ..style = PaintingStyle.stroke
-      ..strokeWidth = size.width * 0.015 // Thin lines, scalable
+      ..strokeWidth =
+          size.width *
+          0.015 // Thin lines, scalable
       ..strokeCap = StrokeCap.round;
 
     for (final connection in connections) {

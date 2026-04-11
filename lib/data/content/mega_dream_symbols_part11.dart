@@ -10,7 +10,6 @@ class MegaDreamSymbolsPart11 {
     // ════════════════════════════════════════════════════════════════════════
     // AGACLAR VE BITKILER - 30+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'oak_tree',
       symbolTr: 'Mese Agaci',
@@ -389,7 +388,6 @@ class MegaDreamSymbolsPart11 {
     // ════════════════════════════════════════════════════════════════════════
     // MEVSIMLER VE HAVA DURUMU - 25+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'spring_season',
       symbolTr: 'Ilkbahar',
@@ -693,7 +691,6 @@ class MegaDreamSymbolsPart11 {
     // ════════════════════════════════════════════════════════════════════════
     // DOGAL OLUŞUMLAR - 25+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'volcano',
       symbolTr: 'Yanardağ',
@@ -1022,7 +1019,6 @@ class MegaDreamSymbolsPart11 {
     // ════════════════════════════════════════════════════════════════════════
     // HAYVAN DAVRANISLARI - 20+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'bird_flying',
       symbolTr: 'Uçan Kuş',

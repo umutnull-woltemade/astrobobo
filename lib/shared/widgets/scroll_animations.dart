@@ -39,7 +39,9 @@ class _ScrollFadeInState extends State<ScrollFadeIn> {
         duration: widget.duration,
         curve: Curves.easeOutCubic,
         child: AnimatedSlide(
-          offset: _isVisible ? Offset.zero : Offset(widget.offset.dx / 100, widget.offset.dy / 100),
+          offset: _isVisible
+              ? Offset.zero
+              : Offset(widget.offset.dx / 100, widget.offset.dy / 100),
           duration: widget.duration,
           curve: Curves.easeOutCubic,
           child: widget.child,
@@ -79,14 +81,16 @@ class _VisibilityDetectorState extends State<VisibilityDetector> {
   void _checkVisibility() {
     if (!mounted) return;
 
-    final RenderBox? renderBox = _key.currentContext?.findRenderObject() as RenderBox?;
+    final RenderBox? renderBox =
+        _key.currentContext?.findRenderObject() as RenderBox?;
     if (renderBox == null) return;
 
     final size = renderBox.size;
     final offset = renderBox.localToGlobal(Offset.zero);
     final screenHeight = MediaQuery.of(context).size.height;
 
-    final isVisible = offset.dy < screenHeight * (1 - widget.triggerOffset) &&
+    final isVisible =
+        offset.dy < screenHeight * (1 - widget.triggerOffset) &&
         offset.dy + size.height > screenHeight * widget.triggerOffset;
 
     if (isVisible != _wasVisible) {
@@ -102,10 +106,7 @@ class _VisibilityDetectorState extends State<VisibilityDetector> {
         _checkVisibility();
         return false;
       },
-      child: Container(
-        key: _key,
-        child: widget.child,
-      ),
+      child: Container(key: _key, child: widget.child),
     );
   }
 }
@@ -388,8 +389,10 @@ class _GlowPulseState extends State<GlowPulse>
     super.initState();
     _controller = AnimationController(vsync: this, duration: widget.duration)
       ..repeat(reverse: true);
-    _animation = Tween<double>(begin: widget.minGlow, end: widget.maxGlow)
-        .animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
+    _animation = Tween<double>(
+      begin: widget.minGlow,
+      end: widget.maxGlow,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
   }
 
   @override
@@ -447,8 +450,10 @@ class _FloatingAnimationState extends State<FloatingAnimation>
     super.initState();
     _controller = AnimationController(vsync: this, duration: widget.duration)
       ..repeat(reverse: true);
-    _animation = Tween<double>(begin: -widget.distance / 2, end: widget.distance / 2)
-        .animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
+    _animation = Tween<double>(
+      begin: -widget.distance / 2,
+      end: widget.distance / 2,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
   }
 
   @override
@@ -524,22 +529,26 @@ class SmoothPageTransition extends PageRouteBuilder {
   final Widget page;
 
   SmoothPageTransition({required this.page})
-      : super(
-          pageBuilder: (context, animation, secondaryAnimation) => page,
-          transitionsBuilder: (context, animation, secondaryAnimation, child) {
-            final tween = Tween(begin: const Offset(0.0, 0.05), end: Offset.zero)
-                .chain(CurveTween(curve: Curves.easeOutCubic));
-            final fadeTween = Tween(begin: 0.0, end: 1.0)
-                .chain(CurveTween(curve: Curves.easeOut));
+    : super(
+        pageBuilder: (context, animation, secondaryAnimation) => page,
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          final tween = Tween(
+            begin: const Offset(0.0, 0.05),
+            end: Offset.zero,
+          ).chain(CurveTween(curve: Curves.easeOutCubic));
+          final fadeTween = Tween(
+            begin: 0.0,
+            end: 1.0,
+          ).chain(CurveTween(curve: Curves.easeOut));
 
-            return SlideTransition(
-              position: animation.drive(tween),
-              child: FadeTransition(
-                opacity: animation.drive(fadeTween),
-                child: child,
-              ),
-            );
-          },
-          transitionDuration: const Duration(milliseconds: 350),
-        );
+          return SlideTransition(
+            position: animation.drive(tween),
+            child: FadeTransition(
+              opacity: animation.drive(fadeTween),
+              child: child,
+            ),
+          );
+        },
+        transitionDuration: const Duration(milliseconds: 350),
+      );
 }

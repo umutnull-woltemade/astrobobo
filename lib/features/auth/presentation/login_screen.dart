@@ -1,5 +1,5 @@
-import 'dart:io' show Platform;
-import 'package:flutter/foundation.dart' show kIsWeb, debugPrint;
+import 'package:flutter/foundation.dart'
+    show kIsWeb, debugPrint, defaultTargetPlatform, TargetPlatform;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -25,11 +25,8 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
 
   bool get _showAppleSignIn {
     if (kIsWeb) return true; // Web'de her zaman goster
-    try {
-      return Platform.isIOS || Platform.isMacOS;
-    } catch (_) {
-      return false;
-    }
+    return defaultTargetPlatform == TargetPlatform.iOS ||
+        defaultTargetPlatform == TargetPlatform.macOS;
   }
 
   Future<void> _signInWithApple() async {
@@ -62,7 +59,8 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
             // Iptal durumunda hata gosterme
             _errorMessage = null;
           } else {
-            _errorMessage = 'Apple ile giris yapilamadi. Lutfen tekrar deneyin.';
+            _errorMessage =
+                'Apple ile giris yapilamadi. Lutfen tekrar deneyin.';
           }
         });
       }
@@ -77,11 +75,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
   }
 
   void _navigateToEmailLogin() {
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (_) => const EmailLoginScreen(),
-      ),
-    );
+    Navigator.of(
+      context,
+    ).push(MaterialPageRoute(builder: (_) => const EmailLoginScreen()));
   }
 
   void _skipLogin() {
@@ -113,10 +109,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                   const SizedBox(height: AppConstants.spacingMd),
                   Text(
                     _errorMessage!,
-                    style: TextStyle(
-                      color: AppColors.error,
-                      fontSize: 14,
-                    ),
+                    style: TextStyle(color: AppColors.error, fontSize: 14),
                     textAlign: TextAlign.center,
                   ).animate().shake(),
                 ],
@@ -138,28 +131,26 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
   Widget _buildHeader(BuildContext context, bool isDark) {
     return Column(
       children: [
-        const Text(
-          '✨',
-          style: TextStyle(fontSize: 64),
-        ).animate(onPlay: (c) => c.repeat()).shimmer(
-              duration: 2.seconds,
-              color: AppColors.starGold,
-            ),
+        const Text('✨', style: TextStyle(fontSize: 64))
+            .animate(onPlay: (c) => c.repeat())
+            .shimmer(duration: 2.seconds, color: AppColors.starGold),
         const SizedBox(height: AppConstants.spacingLg),
         Text(
           AppConstants.appName,
           style: Theme.of(context).textTheme.displayLarge?.copyWith(
-                color: AppColors.starGold,
-                fontSize: 42,
-                fontWeight: FontWeight.bold,
-              ),
+            color: AppColors.starGold,
+            fontSize: 42,
+            fontWeight: FontWeight.bold,
+          ),
         ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.3),
         const SizedBox(height: AppConstants.spacingSm),
         Text(
           'Kozmik yolculuguna basla',
           style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                color: isDark ? AppColors.textSecondary : AppColors.lightTextSecondary,
-              ),
+            color: isDark
+                ? AppColors.textSecondary
+                : AppColors.lightTextSecondary,
+          ),
           textAlign: TextAlign.center,
         ).animate().fadeIn(delay: 300.ms, duration: 600.ms),
       ],
@@ -172,13 +163,16 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
         // Apple Sign In (iOS/macOS/Web)
         if (_showAppleSignIn)
           _SocialLoginButton(
-            label: 'Apple ile Devam Et',
-            icon: Icons.apple,
-            backgroundColor: isDark ? Colors.white : Colors.black,
-            textColor: isDark ? Colors.black : Colors.white,
-            onPressed: _isLoading ? null : _signInWithApple,
-            isLoading: _loadingProvider == AuthProvider.apple,
-          ).animate().fadeIn(delay: 400.ms, duration: 400.ms).slideY(begin: 0.2),
+                label: 'Apple ile Devam Et',
+                icon: Icons.apple,
+                backgroundColor: isDark ? Colors.white : Colors.black,
+                textColor: isDark ? Colors.black : Colors.white,
+                onPressed: _isLoading ? null : _signInWithApple,
+                isLoading: _loadingProvider == AuthProvider.apple,
+              )
+              .animate()
+              .fadeIn(delay: 400.ms, duration: 400.ms)
+              .slideY(begin: 0.2),
 
         if (_showAppleSignIn) const SizedBox(height: AppConstants.spacingMd),
 
@@ -187,8 +181,12 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
           label: 'E-posta ile Devam Et',
           icon: Icons.email_outlined,
           backgroundColor: Colors.transparent,
-          textColor: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
-          borderColor: isDark ? AppColors.auroraStart : AppColors.lightAuroraStart,
+          textColor: isDark
+              ? AppColors.textPrimary
+              : AppColors.lightTextPrimary,
+          borderColor: isDark
+              ? AppColors.auroraStart
+              : AppColors.lightAuroraStart,
           onPressed: _isLoading ? null : _navigateToEmailLogin,
           isLoading: _loadingProvider == AuthProvider.email,
         ).animate().fadeIn(delay: 600.ms, duration: 400.ms).slideY(begin: 0.2),
@@ -260,15 +258,11 @@ class _SocialLoginButton extends StatelessWidget {
             : Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  if (icon != null)
-                    Icon(icon, size: 24),
+                  if (icon != null) Icon(icon, size: 24),
                   const SizedBox(width: 12),
                   Text(
                     label,
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                    ),
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
                   ),
                 ],
               ),
@@ -397,7 +391,9 @@ class _EmailLoginScreenState extends ConsumerState<EmailLoginScreen> {
                     onPressed: () => Navigator.of(context).pop(),
                     icon: Icon(
                       Icons.arrow_back_ios,
-                      color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
+                      color: isDark
+                          ? AppColors.textPrimary
+                          : AppColors.lightTextPrimary,
                     ),
                   ),
 
@@ -415,9 +411,8 @@ class _EmailLoginScreenState extends ConsumerState<EmailLoginScreen> {
                         const SizedBox(height: AppConstants.spacingMd),
                         Text(
                           _isSignUp ? 'Hesap Olustur' : 'Giris Yap',
-                          style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                                fontWeight: FontWeight.bold,
-                              ),
+                          style: Theme.of(context).textTheme.headlineMedium
+                              ?.copyWith(fontWeight: FontWeight.bold),
                         ),
                       ],
                     ),
@@ -471,8 +466,12 @@ class _EmailLoginScreenState extends ConsumerState<EmailLoginScreen> {
                     isDark: isDark,
                     suffixIcon: IconButton(
                       icon: Icon(
-                        _obscurePassword ? Icons.visibility_off : Icons.visibility,
-                        color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
+                        _obscurePassword
+                            ? Icons.visibility_off
+                            : Icons.visibility,
+                        color: isDark
+                            ? AppColors.textMuted
+                            : AppColors.lightTextMuted,
                       ),
                       onPressed: () {
                         setState(() => _obscurePassword = !_obscurePassword);
@@ -515,16 +514,25 @@ class _EmailLoginScreenState extends ConsumerState<EmailLoginScreen> {
                       decoration: BoxDecoration(
                         color: AppColors.error.withOpacity(0.1),
                         borderRadius: BorderRadius.circular(8),
-                        border: Border.all(color: AppColors.error.withOpacity(0.3)),
+                        border: Border.all(
+                          color: AppColors.error.withOpacity(0.3),
+                        ),
                       ),
                       child: Row(
                         children: [
-                          Icon(Icons.error_outline, color: AppColors.error, size: 20),
+                          Icon(
+                            Icons.error_outline,
+                            color: AppColors.error,
+                            size: 20,
+                          ),
                           const SizedBox(width: 8),
                           Expanded(
                             child: Text(
                               _errorMessage!,
-                              style: TextStyle(color: AppColors.error, fontSize: 14),
+                              style: TextStyle(
+                                color: AppColors.error,
+                                fontSize: 14,
+                              ),
                             ),
                           ),
                         ],
@@ -572,9 +580,13 @@ class _EmailLoginScreenState extends ConsumerState<EmailLoginScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        _isSignUp ? 'Zaten hesabiniz var mi?' : 'Hesabiniz yok mu?',
+                        _isSignUp
+                            ? 'Zaten hesabiniz var mi?'
+                            : 'Hesabiniz yok mu?',
                         style: TextStyle(
-                          color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
+                          color: isDark
+                              ? AppColors.textMuted
+                              : AppColors.lightTextMuted,
                         ),
                       ),
                       TextButton(
@@ -634,7 +646,9 @@ class _EmailLoginScreenState extends ConsumerState<EmailLoginScreen> {
         ),
         suffixIcon: suffixIcon,
         filled: true,
-        fillColor: isDark ? AppColors.surfaceDark.withAlpha(128) : AppColors.lightSurfaceVariant,
+        fillColor: isDark
+            ? AppColors.surfaceDark.withAlpha(128)
+            : AppColors.lightSurfaceVariant,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide: BorderSide.none,

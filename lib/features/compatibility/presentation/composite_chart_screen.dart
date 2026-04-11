@@ -14,7 +14,8 @@ class CompositeChartScreen extends ConsumerStatefulWidget {
   const CompositeChartScreen({super.key});
 
   @override
-  ConsumerState<CompositeChartScreen> createState() => _CompositeChartScreenState();
+  ConsumerState<CompositeChartScreen> createState() =>
+      _CompositeChartScreenState();
 }
 
 class _CompositeChartScreenState extends ConsumerState<CompositeChartScreen> {
@@ -63,16 +64,16 @@ class _CompositeChartScreenState extends ConsumerState<CompositeChartScreen> {
                 const SizedBox(height: 16),
                 Text(
                   'Profil bulunamadi',
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        color: Colors.white,
-                      ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.titleLarge?.copyWith(color: Colors.white),
                 ),
                 const SizedBox(height: 8),
                 Text(
                   'Lutfen once dogum bilgilerinizi girin',
-                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        color: Colors.white70,
-                      ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.bodyMedium?.copyWith(color: Colors.white70),
                 ),
                 const SizedBox(height: 24),
                 ElevatedButton(
@@ -196,26 +197,34 @@ class _CompositeChartScreenState extends ConsumerState<CompositeChartScreen> {
                 ),
               ),
               const Spacer(),
-              Icon(
-                Icons.check_circle,
-                color: Colors.green,
-                size: 20,
-              ),
+              Icon(Icons.check_circle, color: Colors.green, size: 20),
               const SizedBox(width: 4),
               Text(
                 'Profilden',
-                style: TextStyle(
-                  fontSize: 11,
-                  color: Colors.green,
-                ),
+                style: TextStyle(fontSize: 11, color: Colors.green),
               ),
             ],
           ),
           const SizedBox(height: AppConstants.spacingMd),
-          _buildInfoRow(isDark, Icons.person_outline, 'Isim', userProfile.name ?? 'Kullanici'),
-          _buildInfoRow(isDark, Icons.wb_sunny_outlined, 'Gunes', userProfile.sunSign.nameTr),
+          _buildInfoRow(
+            isDark,
+            Icons.person_outline,
+            'Isim',
+            userProfile.name ?? 'Kullanici',
+          ),
+          _buildInfoRow(
+            isDark,
+            Icons.wb_sunny_outlined,
+            'Gunes',
+            userProfile.sunSign.nameTr,
+          ),
           if (userProfile.moonSign != null)
-            _buildInfoRow(isDark, Icons.nightlight_outlined, 'Ay', userProfile.moonSign!.nameTr),
+            _buildInfoRow(
+              isDark,
+              Icons.nightlight_outlined,
+              'Ay',
+              userProfile.moonSign!.nameTr,
+            ),
         ],
       ),
     );
@@ -226,7 +235,11 @@ class _CompositeChartScreenState extends ConsumerState<CompositeChartScreen> {
       padding: const EdgeInsets.symmetric(vertical: 4),
       child: Row(
         children: [
-          Icon(icon, size: 16, color: isDark ? Colors.white54 : AppColors.textLight),
+          Icon(
+            icon,
+            size: 16,
+            color: isDark ? Colors.white54 : AppColors.textLight,
+          ),
           const SizedBox(width: 8),
           Text(
             '$label: ',
@@ -291,7 +304,10 @@ class _CompositeChartScreenState extends ConsumerState<CompositeChartScreen> {
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(AppConstants.radiusSm),
               ),
-              contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+              contentPadding: const EdgeInsets.symmetric(
+                horizontal: 12,
+                vertical: 8,
+              ),
             ),
           ),
           const SizedBox(height: 12),
@@ -349,17 +365,12 @@ class _CompositeChartScreenState extends ConsumerState<CompositeChartScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          label,
-          style: Theme.of(context).textTheme.bodySmall,
-        ),
+        Text(label, style: Theme.of(context).textTheme.bodySmall),
         const SizedBox(height: 4),
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 8),
           decoration: BoxDecoration(
-            border: Border.all(
-              color: isDark ? Colors.white24 : Colors.black12,
-            ),
+            border: Border.all(color: isDark ? Colors.white24 : Colors.black12),
             borderRadius: BorderRadius.circular(AppConstants.radiusSm),
           ),
           child: DropdownButton<ZodiacSign>(
@@ -392,8 +403,8 @@ class _CompositeChartScreenState extends ConsumerState<CompositeChartScreen> {
     final color = score >= 70
         ? Colors.green
         : score >= 50
-            ? Colors.orange
-            : Colors.red;
+        ? Colors.orange
+        : Colors.red;
 
     return Container(
       padding: const EdgeInsets.all(AppConstants.spacingXl),
@@ -413,9 +424,9 @@ class _CompositeChartScreenState extends ConsumerState<CompositeChartScreen> {
         children: [
           Text(
             '${_chart!.person1Name} & ${_chart!.person2Name}',
-            style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: AppConstants.spacingMd),
           Stack(
@@ -436,14 +447,11 @@ class _CompositeChartScreenState extends ConsumerState<CompositeChartScreen> {
                   Text(
                     '$score%',
                     style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-                          fontWeight: FontWeight.bold,
-                          color: color,
-                        ),
+                      fontWeight: FontWeight.bold,
+                      color: color,
+                    ),
                   ),
-                  Text(
-                    'Uyum',
-                    style: Theme.of(context).textTheme.bodySmall,
-                  ),
+                  Text('Uyum', style: Theme.of(context).textTheme.bodySmall),
                 ],
               ),
             ],
@@ -457,7 +465,11 @@ class _CompositeChartScreenState extends ConsumerState<CompositeChartScreen> {
     final positions = [
       {'label': 'Kompozit Gunes', 'sign': _chart!.compositeSun, 'icon': ''},
       {'label': 'Kompozit Ay', 'sign': _chart!.compositeMoon, 'icon': ''},
-      {'label': 'Kompozit Yukselesi', 'sign': _chart!.compositeAscendant, 'icon': ''},
+      {
+        'label': 'Kompozit Yukselesi',
+        'sign': _chart!.compositeAscendant,
+        'icon': '',
+      },
       {'label': 'Kompozit Venus', 'sign': _chart!.compositeVenus, 'icon': ''},
       {'label': 'Kompozit Mars', 'sign': _chart!.compositeMars, 'icon': ''},
     ];
@@ -475,9 +487,9 @@ class _CompositeChartScreenState extends ConsumerState<CompositeChartScreen> {
         children: [
           Text(
             'Kompozit Pozisyonlar',
-            style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: AppConstants.spacingMd),
           Wrap(
@@ -486,7 +498,10 @@ class _CompositeChartScreenState extends ConsumerState<CompositeChartScreen> {
             children: positions.map((pos) {
               final sign = pos['sign'] as ZodiacSign;
               return Container(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 8,
+                ),
                 decoration: BoxDecoration(
                   color: isDark
                       ? AppColors.surfaceLight.withValues(alpha: 0.3)
@@ -496,18 +511,18 @@ class _CompositeChartScreenState extends ConsumerState<CompositeChartScreen> {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text(pos['icon'] as String, style: const TextStyle(fontSize: 16)),
-                    const SizedBox(width: 6),
                     Text(
-                      sign.symbol,
+                      pos['icon'] as String,
                       style: const TextStyle(fontSize: 16),
                     ),
+                    const SizedBox(width: 6),
+                    Text(sign.symbol, style: const TextStyle(fontSize: 16)),
                     const SizedBox(width: 4),
                     Text(
                       sign.nameTr,
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                            fontWeight: FontWeight.w600,
-                          ),
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ],
                 ),
@@ -543,18 +558,18 @@ class _CompositeChartScreenState extends ConsumerState<CompositeChartScreen> {
               const SizedBox(width: 8),
               Text(
                 'Iliski Temasi',
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
               ),
             ],
           ),
           const SizedBox(height: AppConstants.spacingMd),
           Text(
             _chart!.relationshipTheme,
-            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  height: 1.6,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.bodyMedium?.copyWith(height: 1.6),
           ),
         ],
       ),
@@ -622,17 +637,17 @@ class _CompositeChartScreenState extends ConsumerState<CompositeChartScreen> {
                   Text(
                     d['title'] as String,
                     style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                          fontWeight: FontWeight.bold,
-                        ),
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ],
               ),
               const SizedBox(height: 12),
               Text(
                 d['content'] as String,
-                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      height: 1.5,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.bodyMedium?.copyWith(height: 1.5),
               ),
             ],
           ),
@@ -655,9 +670,9 @@ class _CompositeChartScreenState extends ConsumerState<CompositeChartScreen> {
         children: [
           Text(
             'Önemli Açılar',
-            style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: AppConstants.spacingMd),
           ..._chart!.keyAspects.map((aspect) {
@@ -683,8 +698,8 @@ class _CompositeChartScreenState extends ConsumerState<CompositeChartScreen> {
                       Text(
                         '${aspect.planet1} ${aspect.type.symbol} ${aspect.planet2}',
                         style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                              fontWeight: FontWeight.bold,
-                            ),
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                       const Spacer(),
                       Container(
@@ -700,7 +715,8 @@ class _CompositeChartScreenState extends ConsumerState<CompositeChartScreen> {
                         ),
                         child: Text(
                           aspect.type.nameTr,
-                          style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                          style: Theme.of(context).textTheme.labelSmall
+                              ?.copyWith(
                                 color: aspect.isHarmonious
                                     ? Colors.green
                                     : Colors.orange,
@@ -740,25 +756,21 @@ class _CompositeChartScreenState extends ConsumerState<CompositeChartScreen> {
       ),
       child: Column(
         children: [
-          const Icon(
-            Icons.auto_awesome,
-            color: AppColors.starGold,
-            size: 32,
-          ),
+          const Icon(Icons.auto_awesome, color: AppColors.starGold, size: 32),
           const SizedBox(height: AppConstants.spacingMd),
           Text(
             'Ruhsal Amac',
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.starGold,
-                ),
+              fontWeight: FontWeight.bold,
+              color: AppColors.starGold,
+            ),
           ),
           const SizedBox(height: AppConstants.spacingSm),
           Text(
             _chart!.soulPurpose,
-            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  height: 1.6,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.bodyMedium?.copyWith(height: 1.6),
             textAlign: TextAlign.center,
           ),
         ],

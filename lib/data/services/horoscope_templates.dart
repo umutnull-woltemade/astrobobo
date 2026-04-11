@@ -291,7 +291,9 @@ class HoroscopeTemplates {
 
   /// Generate daily horoscope reading
   static Map<String, dynamic> generateDailyReading(
-      DateTime date, ZodiacSign sign) {
+    DateTime date,
+    ZodiacSign sign,
+  ) {
     final seed = _generateSeed(date, sign);
     final random = Random(seed);
 
@@ -342,7 +344,10 @@ class HoroscopeTemplates {
 
   /// Generate compatibility summary
   static String generateCompatibilitySummary(
-      ZodiacSign sign1, ZodiacSign sign2, int overallScore) {
+    ZodiacSign sign1,
+    ZodiacSign sign2,
+    int overallScore,
+  ) {
     if (overallScore >= 80) {
       return '${sign1.nameTr} ve ${sign2.nameTr} arasında güçlü bir uyum var. '
           'Bu ilişki karşılıklı anlayış ve derin bağ potansiyeli taşıyor.';

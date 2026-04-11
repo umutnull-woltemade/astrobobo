@@ -38,7 +38,10 @@ class TantraMicroRitualScreen extends StatelessWidget {
                   children: [
                     IconButton(
                       onPressed: () => context.pop(),
-                      icon: Icon(Icons.arrow_back_ios, color: isDark ? Colors.white70 : AppColors.textDark),
+                      icon: Icon(
+                        Icons.arrow_back_ios,
+                        color: isDark ? Colors.white70 : AppColors.textDark,
+                      ),
                     ),
                     const Spacer(),
                     _buildDateBadge(context, isDark, today),
@@ -84,39 +87,47 @@ class TantraMicroRitualScreen extends StatelessWidget {
 
                 // Core Message Box - 2-3 lines
                 Container(
-                  padding: const EdgeInsets.all(24),
-                  decoration: BoxDecoration(
-                    color: isDark
-                        ? Colors.white.withOpacity(0.05)
-                        : Colors.white.withOpacity(0.9),
-                    borderRadius: BorderRadius.circular(20),
-                    border: Border.all(
-                      color: isDark
-                          ? const Color(0xFFE57373).withOpacity(0.2)
-                          : const Color(0xFFE57373).withOpacity(0.15),
-                    ),
-                  ),
-                  child: Column(
-                    children: [
-                      Text(
-                        ritual.instruction,
-                        style: TextStyle(
-                          fontSize: 18,
-                          height: 1.6,
-                          color: isDark ? Colors.white : AppColors.textDark,
+                      padding: const EdgeInsets.all(24),
+                      decoration: BoxDecoration(
+                        color: isDark
+                            ? Colors.white.withOpacity(0.05)
+                            : Colors.white.withOpacity(0.9),
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(
+                          color: isDark
+                              ? const Color(0xFFE57373).withOpacity(0.2)
+                              : const Color(0xFFE57373).withOpacity(0.15),
                         ),
-                        textAlign: TextAlign.center,
                       ),
-                    ],
-                  ),
-                ).animate().fadeIn(delay: 200.ms, duration: 400.ms).slideY(begin: 0.1),
+                      child: Column(
+                        children: [
+                          Text(
+                            ritual.instruction,
+                            style: TextStyle(
+                              fontSize: 18,
+                              height: 1.6,
+                              color: isDark ? Colors.white : AppColors.textDark,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
+                      ),
+                    )
+                    .animate()
+                    .fadeIn(delay: 200.ms, duration: 400.ms)
+                    .slideY(begin: 0.1),
                 const SizedBox(height: 32),
 
                 // Intention
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 16,
+                  ),
                   decoration: BoxDecoration(
-                    color: const Color(0xFFE57373).withOpacity(isDark ? 0.15 : 0.1),
+                    color: const Color(
+                      0xFFE57373,
+                    ).withOpacity(isDark ? 0.15 : 0.1),
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: Row(
@@ -130,7 +141,9 @@ class TantraMicroRitualScreen extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 15,
                             fontStyle: FontStyle.italic,
-                            color: isDark ? const Color(0xFFE57373) : const Color(0xFFC62828),
+                            color: isDark
+                                ? const Color(0xFFE57373)
+                                : const Color(0xFFC62828),
                           ),
                         ),
                       ),
@@ -140,13 +153,22 @@ class TantraMicroRitualScreen extends StatelessWidget {
                 const SizedBox(height: 64),
 
                 // Suggestion Box - Link to Dreams
-                _buildSuggestion(context, isDark, '🌙', 'Rüya İzi\'ni keşfet', Routes.dreamRecurring),
+                _buildSuggestion(
+                  context,
+                  isDark,
+                  '🌙',
+                  'Rüya İzi\'ni keşfet',
+                  Routes.dreamRecurring,
+                ),
                 const SizedBox(height: 48),
 
                 // Footer
                 Text(
                   'Tantra — Venus One',
-                  style: TextStyle(fontSize: 12, color: isDark ? Colors.white38 : AppColors.textLight),
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: isDark ? Colors.white38 : AppColors.textLight,
+                  ),
                 ),
                 const SizedBox(height: 20),
               ],
@@ -158,11 +180,26 @@ class TantraMicroRitualScreen extends StatelessWidget {
   }
 
   Widget _buildDateBadge(BuildContext context, bool isDark, DateTime date) {
-    final months = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
+    final months = [
+      'Ocak',
+      'Şubat',
+      'Mart',
+      'Nisan',
+      'Mayıs',
+      'Haziran',
+      'Temmuz',
+      'Ağustos',
+      'Eylül',
+      'Ekim',
+      'Kasım',
+      'Aralık',
+    ];
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
       decoration: BoxDecoration(
-        color: isDark ? Colors.white.withOpacity(0.1) : Colors.black.withOpacity(0.05),
+        color: isDark
+            ? Colors.white.withOpacity(0.1)
+            : Colors.black.withOpacity(0.05),
         borderRadius: BorderRadius.circular(16),
       ),
       child: Text(
@@ -182,26 +219,52 @@ class TantraMicroRitualScreen extends StatelessWidget {
       color: color.withOpacity(0.15),
       borderRadius: BorderRadius.circular(14),
     ),
-    child: Text(text, style: TextStyle(fontSize: 13, color: color, fontWeight: FontWeight.w500)),
+    child: Text(
+      text,
+      style: TextStyle(fontSize: 13, color: color, fontWeight: FontWeight.w500),
+    ),
   );
 
-  Widget _buildSuggestion(BuildContext context, bool isDark, String emoji, String text, String route) => GestureDetector(
+  Widget _buildSuggestion(
+    BuildContext context,
+    bool isDark,
+    String emoji,
+    String text,
+    String route,
+  ) => GestureDetector(
     onTap: () => context.push(route),
     child: Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: isDark ? Colors.white.withOpacity(0.05) : Colors.white.withOpacity(0.8),
+        color: isDark
+            ? Colors.white.withOpacity(0.05)
+            : Colors.white.withOpacity(0.8),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: isDark ? Colors.white.withOpacity(0.1) : Colors.black.withOpacity(0.1)),
+        border: Border.all(
+          color: isDark
+              ? Colors.white.withOpacity(0.1)
+              : Colors.black.withOpacity(0.1),
+        ),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(emoji, style: const TextStyle(fontSize: 24)),
           const SizedBox(width: 12),
-          Text(text, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: isDark ? Colors.white : AppColors.textDark)),
+          Text(
+            text,
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w500,
+              color: isDark ? Colors.white : AppColors.textDark,
+            ),
+          ),
           const SizedBox(width: 8),
-          Icon(Icons.arrow_forward_ios, size: 14, color: isDark ? Colors.white38 : AppColors.textLight),
+          Icon(
+            Icons.arrow_forward_ios,
+            size: 14,
+            color: isDark ? Colors.white38 : AppColors.textLight,
+          ),
         ],
       ),
     ),
@@ -217,19 +280,22 @@ class TantraMicroRitualScreen extends StatelessWidget {
     _MicroRitual(
       emoji: '🕯️',
       name: 'Nefes Farkındalığı',
-      instruction: 'Gözlerini kapat. Üç derin nefes al. Her nefeste "şimdi buradayım" de.',
+      instruction:
+          'Gözlerini kapat. Üç derin nefes al. Her nefeste "şimdi buradayım" de.',
       intention: 'Farkındalık başlangıçtır.',
     ),
     _MicroRitual(
       emoji: '🌸',
       name: 'Kalp Dinleme',
-      instruction: 'Elini kalbinin üzerine koy. Bir dakika sadece kalbinin sesini dinle.',
+      instruction:
+          'Elini kalbinin üzerine koy. Bir dakika sadece kalbinin sesini dinle.',
       intention: 'Kalp bilir.',
     ),
     _MicroRitual(
       emoji: '🌊',
       name: 'Akış Niyeti',
-      instruction: 'Bugün bir şeyi zorlamak yerine akışa bırak. Sadece izle ne olacağını.',
+      instruction:
+          'Bugün bir şeyi zorlamak yerine akışa bırak. Sadece izle ne olacağını.',
       intention: 'Kontrol bırakılınca akış başlar.',
     ),
     _MicroRitual(
@@ -247,13 +313,15 @@ class TantraMicroRitualScreen extends StatelessWidget {
     _MicroRitual(
       emoji: '🔥',
       name: 'Niyet Belirleme',
-      instruction: 'Bugün için tek bir niyet belirle. Onu içinden üç kez tekrarla.',
+      instruction:
+          'Bugün için tek bir niyet belirle. Onu içinden üç kez tekrarla.',
       intention: 'Niyet yön verir.',
     ),
     _MicroRitual(
       emoji: '💫',
       name: 'Beden Taraması',
-      instruction: 'Ayak parmaklarından başa kadar bedenini tara. Gergin yerlerini fark et.',
+      instruction:
+          'Ayak parmaklarından başa kadar bedenini tara. Gergin yerlerini fark et.',
       intention: 'Fark etmek ilk adımdır.',
     ),
   ];

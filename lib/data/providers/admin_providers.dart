@@ -35,12 +35,36 @@ final adminMetricsProvider = StateProvider<AdminMetrics>((ref) {
       'Tantra': 7.0,
     },
     retentionHistory: [
-      RetentionPoint(date: DateTime.now().subtract(const Duration(days: 6)), d1: 38.0, d7: 24.0),
-      RetentionPoint(date: DateTime.now().subtract(const Duration(days: 5)), d1: 40.2, d7: 25.5),
-      RetentionPoint(date: DateTime.now().subtract(const Duration(days: 4)), d1: 39.8, d7: 26.2),
-      RetentionPoint(date: DateTime.now().subtract(const Duration(days: 3)), d1: 41.5, d7: 27.0),
-      RetentionPoint(date: DateTime.now().subtract(const Duration(days: 2)), d1: 43.0, d7: 27.8),
-      RetentionPoint(date: DateTime.now().subtract(const Duration(days: 1)), d1: 42.0, d7: 28.0),
+      RetentionPoint(
+        date: DateTime.now().subtract(const Duration(days: 6)),
+        d1: 38.0,
+        d7: 24.0,
+      ),
+      RetentionPoint(
+        date: DateTime.now().subtract(const Duration(days: 5)),
+        d1: 40.2,
+        d7: 25.5,
+      ),
+      RetentionPoint(
+        date: DateTime.now().subtract(const Duration(days: 4)),
+        d1: 39.8,
+        d7: 26.2,
+      ),
+      RetentionPoint(
+        date: DateTime.now().subtract(const Duration(days: 3)),
+        d1: 41.5,
+        d7: 27.0,
+      ),
+      RetentionPoint(
+        date: DateTime.now().subtract(const Duration(days: 2)),
+        d1: 43.0,
+        d7: 27.8,
+      ),
+      RetentionPoint(
+        date: DateTime.now().subtract(const Duration(days: 1)),
+        d1: 42.0,
+        d7: 28.0,
+      ),
       RetentionPoint(date: DateTime.now(), d1: 42.5, d7: 28.3),
     ],
   );
@@ -79,11 +103,7 @@ class RetentionPoint {
   final double d1;
   final double d7;
 
-  RetentionPoint({
-    required this.date,
-    required this.d1,
-    required this.d7,
-  });
+  RetentionPoint({required this.date, required this.d1, required this.d7});
 }
 
 // ═══════════════════════════════════════════════════════════════════
@@ -151,8 +171,8 @@ class GrowthTasksNotifier extends StateNotifier<List<GrowthTask>> {
 
 final growthTasksProvider =
     StateNotifierProvider<GrowthTasksNotifier, List<GrowthTask>>((ref) {
-  return GrowthTasksNotifier();
-});
+      return GrowthTasksNotifier();
+    });
 
 class GrowthTask {
   final String id;
@@ -195,11 +215,15 @@ final eventLogProvider = StateProvider<List<EventLogEntry>>((ref) {
   final realEvents = AdminAnalyticsService.getAllEvents();
 
   if (realEvents.isNotEmpty) {
-    return realEvents.map((e) => EventLogEntry(
-      name: e.name,
-      count: e.count,
-      lastFired: e.lastFired,
-    )).toList();
+    return realEvents
+        .map(
+          (e) => EventLogEntry(
+            name: e.name,
+            count: e.count,
+            lastFired: e.lastFired,
+          ),
+        )
+        .toList();
   }
 
   // Fallback to sample data if no real events yet
@@ -314,8 +338,8 @@ class SnapshotsNotifier extends StateNotifier<List<AdminSnapshot>> {
 
 final snapshotsProvider =
     StateNotifierProvider<SnapshotsNotifier, List<AdminSnapshot>>((ref) {
-  return SnapshotsNotifier();
-});
+      return SnapshotsNotifier();
+    });
 
 class AdminSnapshot {
   final String id;

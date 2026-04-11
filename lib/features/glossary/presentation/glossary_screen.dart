@@ -60,7 +60,9 @@ class _GlossaryScreenState extends State<GlossaryScreen> {
 
       // Apply category filter
       if (_selectedCategory != null) {
-        results = results.where((e) => e.category == _selectedCategory).toList();
+        results = results
+            .where((e) => e.category == _selectedCategory)
+            .toList();
       }
 
       _filteredEntries = results;
@@ -109,9 +111,9 @@ class _GlossaryScreenState extends State<GlossaryScreen> {
                 Text(
                   'Astroloji Sözlüğü',
                   style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                        fontWeight: FontWeight.bold,
-                        color: isDark ? Colors.white : AppColors.textDark,
-                      ),
+                    fontWeight: FontWeight.bold,
+                    color: isDark ? Colors.white : AppColors.textDark,
+                  ),
                   textAlign: TextAlign.center,
                 ),
                 Text(
@@ -187,7 +189,11 @@ class _GlossaryScreenState extends State<GlossaryScreen> {
   }
 
   Widget _buildCategoryChip(
-      GlossaryCategory? category, String label, String icon, bool isDark) {
+    GlossaryCategory? category,
+    String label,
+    String icon,
+    bool isDark,
+  ) {
     final isSelected = _selectedCategory == category;
 
     return Padding(
@@ -196,11 +202,7 @@ class _GlossaryScreenState extends State<GlossaryScreen> {
         selected: isSelected,
         label: Row(
           mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(icon),
-            const SizedBox(width: 4),
-            Text(label),
-          ],
+          children: [Text(icon), const SizedBox(width: 4), Text(label)],
         ),
         onSelected: (_) {
           setState(() {
@@ -301,10 +303,7 @@ class _GlossaryScreenState extends State<GlossaryScreen> {
                     ),
                     child: Text(
                       '${entries.length}',
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: AppColors.cosmic,
-                      ),
+                      style: TextStyle(fontSize: 12, color: AppColors.cosmic),
                     ),
                   ),
                 ],
@@ -367,10 +366,7 @@ class _GlossaryScreenState extends State<GlossaryScreen> {
                       color: AppColors.mystic.withValues(alpha: 0.2),
                       borderRadius: BorderRadius.circular(8),
                     ),
-                    child: Text(
-                      '🏠',
-                      style: const TextStyle(fontSize: 12),
-                    ),
+                    child: Text('🏠', style: const TextStyle(fontSize: 12)),
                   ),
               ],
             ),
@@ -387,10 +383,7 @@ class _GlossaryScreenState extends State<GlossaryScreen> {
               const SizedBox(height: 4),
               Text(
                 '✨ ${entry.hint}',
-                style: TextStyle(
-                  fontSize: 12,
-                  color: AppColors.starGold,
-                ),
+                style: TextStyle(fontSize: 12, color: AppColors.starGold),
               ),
             ],
           ],
@@ -494,10 +487,7 @@ class _GlossaryScreenState extends State<GlossaryScreen> {
           if (entry.planetInHouse != null) ...[
             const SizedBox(height: AppConstants.spacingMd),
             Container(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 12,
-                vertical: 6,
-              ),
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
               decoration: BoxDecoration(
                 color: AppColors.mystic.withValues(alpha: 0.15),
                 borderRadius: BorderRadius.circular(20),
@@ -524,10 +514,7 @@ class _GlossaryScreenState extends State<GlossaryScreen> {
           if (entry.signRuler != null) ...[
             const SizedBox(height: AppConstants.spacingSm),
             Container(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 12,
-                vertical: 6,
-              ),
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
               decoration: BoxDecoration(
                 color: AppColors.starGold.withValues(alpha: 0.15),
                 borderRadius: BorderRadius.circular(20),
@@ -639,10 +626,10 @@ class _GlossaryScreenState extends State<GlossaryScreen> {
                             ref.type == 'book'
                                 ? '📖'
                                 : ref.type == 'article'
-                                    ? '📰'
-                                    : ref.type == 'website'
-                                        ? '🌐'
-                                        : '📜',
+                                ? '📰'
+                                : ref.type == 'website'
+                                ? '🌐'
+                                : '📜',
                             style: const TextStyle(fontSize: 12),
                           ),
                           const SizedBox(width: 6),

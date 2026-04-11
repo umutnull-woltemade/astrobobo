@@ -6,16 +6,15 @@ import 'package:flutter/material.dart';
 class AppErrorWidget extends StatelessWidget {
   final FlutterErrorDetails details;
 
-  const AppErrorWidget({
-    super.key,
-    required this.details,
-  });
+  const AppErrorWidget({super.key, required this.details});
 
   @override
   Widget build(BuildContext context) {
     // Log the error in debug mode
     if (kDebugMode) {
-      debugPrint('AppErrorWidget: Rendering error fallback for: ${details.exception}');
+      debugPrint(
+        'AppErrorWidget: Rendering error fallback for: ${details.exception}',
+      );
     }
 
     return Container(
@@ -28,10 +27,7 @@ class AppErrorWidget extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 // Icon
-                const Text(
-                  '✨',
-                  style: TextStyle(fontSize: 64),
-                ),
+                const Text('✨', style: TextStyle(fontSize: 64)),
                 const SizedBox(height: 24),
 
                 // Title
@@ -89,7 +85,9 @@ class AppErrorWidget extends StatelessWidget {
                       // Try to pop to root or reload
                       try {
                         if (Navigator.of(context).canPop()) {
-                          Navigator.of(context).popUntil((route) => route.isFirst);
+                          Navigator.of(
+                            context,
+                          ).popUntil((route) => route.isFirst);
                         }
                       } catch (e) {
                         // If navigation fails, we're in a bad state
@@ -125,7 +123,9 @@ class AppErrorWidget extends StatelessWidget {
                       // On web, this will reload the page
                       // Using JS interop would be cleaner but this is simpler
                       if (kDebugMode) {
-                        debugPrint('User requested page reload from error widget');
+                        debugPrint(
+                          'User requested page reload from error widget',
+                        );
                       }
                     },
                     child: Text(
@@ -171,10 +171,7 @@ class ProductionErrorWidget extends StatelessWidget {
               SizedBox(height: 12),
               Text(
                 'Lütfen sayfayı yenileyin.',
-                style: TextStyle(
-                  color: Colors.white70,
-                  fontSize: 14,
-                ),
+                style: TextStyle(color: Colors.white70, fontSize: 14),
               ),
             ],
           ),

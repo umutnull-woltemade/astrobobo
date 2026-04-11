@@ -264,27 +264,62 @@ extension ZodiacSignExtension on ZodiacSign {
       case ZodiacSign.aries:
         return ['Savaşçı Ruh', 'Ateş Enerjisi', 'Öncü Güç', 'Anlık Aksiyon'];
       case ZodiacSign.taurus:
-        return ['Toprak Bilgeliği', 'Sabır Taşı', 'Sadık Kalp', 'Dağ Kararlılığı'];
+        return [
+          'Toprak Bilgeliği',
+          'Sabır Taşı',
+          'Sadık Kalp',
+          'Dağ Kararlılığı',
+        ];
       case ZodiacSign.gemini:
         return ['Rüzgar Zekası', 'Merak Işığı', 'Söz Büyüsü', 'Uçan Düşünce'];
       case ZodiacSign.cancer:
-        return ['Anne Enerjisi', 'Ay Sezgisi', 'Koruyucu Kabuk', 'Gelgit Duygusu'];
+        return [
+          'Anne Enerjisi',
+          'Ay Sezgisi',
+          'Koruyucu Kabuk',
+          'Gelgit Duygusu',
+        ];
       case ZodiacSign.leo:
         return ['Güneş Kalbi', 'Yaratıcı Ateş', 'Kral Aurası', 'Sahne Ruhu'];
       case ZodiacSign.virgo:
-        return ['Detay Gözü', 'Toprak Pratiği', 'Hizmet Ruhu', 'Mükemmel Arayış'];
+        return [
+          'Detay Gözü',
+          'Toprak Pratiği',
+          'Hizmet Ruhu',
+          'Mükemmel Arayış',
+        ];
       case ZodiacSign.libra:
-        return ['Denge Ustası', 'Adalet Terazisi', 'Venüs Cazibesi', 'Tartı Ruhu'];
+        return [
+          'Denge Ustası',
+          'Adalet Terazisi',
+          'Venüs Cazibesi',
+          'Tartı Ruhu',
+        ];
       case ZodiacSign.scorpio:
-        return ['Dönüşüm Gücü', 'Derinlik Bilgisi', 'Plüton Cesareti', 'Gizem Perdesi'];
+        return [
+          'Dönüşüm Gücü',
+          'Derinlik Bilgisi',
+          'Plüton Cesareti',
+          'Gizem Perdesi',
+        ];
       case ZodiacSign.sagittarius:
         return ['Okçu Vizyonu', 'Macera Ateşi', 'Hakikat Oku', 'Özgür Ruh'];
       case ZodiacSign.capricorn:
         return ['Zirve Azmi', 'Saturn Disiplini', 'Dağ Sabrı', 'Taş Duvar'];
       case ZodiacSign.aquarius:
-        return ['Devrimci Ruh', 'Uranüs Kıvılcımı', 'Özgür Zihin', 'Uzak Bakış'];
+        return [
+          'Devrimci Ruh',
+          'Uranüs Kıvılcımı',
+          'Özgür Zihin',
+          'Uzak Bakış',
+        ];
       case ZodiacSign.pisces:
-        return ['Okyanus Kalbi', 'Neptün Rüyası', 'Mistik Sezgi', 'Sınırsız Hayal'];
+        return [
+          'Okyanus Kalbi',
+          'Neptün Rüyası',
+          'Mistik Sezgi',
+          'Sınırsız Hayal',
+        ];
     }
   }
 

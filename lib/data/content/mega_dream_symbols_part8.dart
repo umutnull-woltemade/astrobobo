@@ -10,7 +10,6 @@ class MegaDreamSymbolsPart8 {
     // ════════════════════════════════════════════════════════════════════════
     // TEKNOLOJI - 25+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'smartphone',
       symbolTr: 'Akilli Telefon',
@@ -264,7 +263,6 @@ class MegaDreamSymbolsPart8 {
     // ════════════════════════════════════════════════════════════════════════
     // KARIYER VE IS - 25+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'office',
       symbolTr: 'Ofis',
@@ -518,7 +516,6 @@ class MegaDreamSymbolsPart8 {
     // ════════════════════════════════════════════════════════════════════════
     // EGITIM VE OGRENME - 20+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'classroom',
       symbolTr: 'Sinif',
@@ -722,7 +719,6 @@ class MegaDreamSymbolsPart8 {
     // ════════════════════════════════════════════════════════════════════════
     // ULASIM VE SEYAHAT - 15+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'bus',
       symbolTr: 'Otobus',

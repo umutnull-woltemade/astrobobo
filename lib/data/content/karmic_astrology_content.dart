@@ -2582,8 +2582,10 @@ Somut Misyon Alanları:
 final Map<int, NodeInHouse> nodesInHouses = {
   1: const NodeInHouse(
     house: 1,
-    northNodeMeaning: 'Kuzey Düğüm 1. Evde - Benliğin keşfi, bireysellik ve öz güven geliştirme. Kendi yolunu çizme cesareti.',
-    southNodeMeaning: 'Güney Düğüm 7. Evde - İlişki mirası, başkalarına bağımlılık kalıplarını bırakma.',
+    northNodeMeaning:
+        'Kuzey Düğüm 1. Evde - Benliğin keşfi, bireysellik ve öz güven geliştirme. Kendi yolunu çizme cesareti.',
+    southNodeMeaning:
+        'Güney Düğüm 7. Evde - İlişki mirası, başkalarına bağımlılık kalıplarını bırakma.',
     karmicLesson: 'Birlikte olmayı biliyorsun, şimdi tek başına olmayı öğren.',
     lifeAreaFocus: 'Benlik, fiziksel beden, kişisel imaj, yeni başlangıçlar',
     spiritualGrowth: 'Başkalarının aynasında değil kendi içinde kendini bul.',
@@ -2591,17 +2593,22 @@ final Map<int, NodeInHouse> nodesInHouses = {
   ),
   2: const NodeInHouse(
     house: 2,
-    northNodeMeaning: 'Kuzey Düğüm 2. Evde - Öz değer keşfi, maddi güvenlik, kendi kaynaklarını geliştirme.',
-    southNodeMeaning: 'Güney Düğüm 8. Evde - Dönüşüm mirası, başkalarının kaynaklarına bağımlılığı bırakma.',
+    northNodeMeaning:
+        'Kuzey Düğüm 2. Evde - Öz değer keşfi, maddi güvenlik, kendi kaynaklarını geliştirme.',
+    southNodeMeaning:
+        'Güney Düğüm 8. Evde - Dönüşüm mirası, başkalarının kaynaklarına bağımlılığı bırakma.',
     karmicLesson: 'Derinliği biliyorsun, şimdi basitliği öğren.',
     lifeAreaFocus: 'Para, değerler, yetenekler, güvenlik',
     spiritualGrowth: 'Maddi dünyayı ruhani yolculuğun parçası olarak kabul et.',
-    practicalGuidance: 'Bütçe yap, yetenek geliştir, basit zevklerin tadını çıkar.',
+    practicalGuidance:
+        'Bütçe yap, yetenek geliştir, basit zevklerin tadını çıkar.',
   ),
   3: const NodeInHouse(
     house: 3,
-    northNodeMeaning: 'Kuzey Düğüm 3. Evde - İletişim güzelliği, öğrenme, yakın çevre ilişkileri.',
-    southNodeMeaning: 'Güney Düğüm 9. Evde - Bilgelik mirası, dogmatizmi bırakma.',
+    northNodeMeaning:
+        'Kuzey Düğüm 3. Evde - İletişim güzelliği, öğrenme, yakın çevre ilişkileri.',
+    southNodeMeaning:
+        'Güney Düğüm 9. Evde - Bilgelik mirası, dogmatizmi bırakma.',
     karmicLesson: 'Bilgeliği biliyorsun, şimdi merakı öğren.',
     lifeAreaFocus: 'İletişim, kısa yolculuklar, kardeşler, öğrenme',
     spiritualGrowth: 'Her sohbetin bir öğretmen olduğunu gör.',
@@ -2609,8 +2616,10 @@ final Map<int, NodeInHouse> nodesInHouses = {
   ),
   4: const NodeInHouse(
     house: 4,
-    northNodeMeaning: 'Kuzey Düğüm 4. Evde - Köklere dönüş, ev-aile, duygusal güvenlik.',
-    southNodeMeaning: 'Güney Düğüm 10. Evde - Kariyer mirası, iş-aholizmi bırakma.',
+    northNodeMeaning:
+        'Kuzey Düğüm 4. Evde - Köklere dönüş, ev-aile, duygusal güvenlik.',
+    southNodeMeaning:
+        'Güney Düğüm 10. Evde - Kariyer mirası, iş-aholizmi bırakma.',
     karmicLesson: 'Başarmayı biliyorsun, şimdi ait olmayı öğren.',
     lifeAreaFocus: 'Ev, aile, kökler, iç dünya',
     spiritualGrowth: 'Dış başarı yerine iç huzuru bul.',
@@ -2618,8 +2627,10 @@ final Map<int, NodeInHouse> nodesInHouses = {
   ),
   5: const NodeInHouse(
     house: 5,
-    northNodeMeaning: 'Kuzey Düğüm 5. Evde - Yaratıcılık sevinci, kendini ifade, aşk.',
-    southNodeMeaning: 'Güney Düğüm 11. Evde - Topluluk mirası, grup içinde kaybolmayı bırakma.',
+    northNodeMeaning:
+        'Kuzey Düğüm 5. Evde - Yaratıcılık sevinci, kendini ifade, aşk.',
+    southNodeMeaning:
+        'Güney Düğüm 11. Evde - Topluluk mirası, grup içinde kaybolmayı bırakma.',
     karmicLesson: 'Grup içinde olmayı biliyorsun, şimdi parlamayı öğren.',
     lifeAreaFocus: 'Yaratıcılık, romantizm, çocuklar, eğlence',
     spiritualGrowth: 'İçindeki yaratıcı kıvılcımı özgürleştir.',
@@ -2627,8 +2638,10 @@ final Map<int, NodeInHouse> nodesInHouses = {
   ),
   6: const NodeInHouse(
     house: 6,
-    northNodeMeaning: 'Kuzey Düğüm 6. Evde - Hizmetin anlamı, sağlık, günlük rutinler.',
-    southNodeMeaning: 'Güney Düğüm 12. Evde - Mistik miras, kaçışçılığı bırakma.',
+    northNodeMeaning:
+        'Kuzey Düğüm 6. Evde - Hizmetin anlamı, sağlık, günlük rutinler.',
+    southNodeMeaning:
+        'Güney Düğüm 12. Evde - Mistik miras, kaçışçılığı bırakma.',
     karmicLesson: 'Mistik olmayı biliyorsun, şimdi pratik olmayı öğren.',
     lifeAreaFocus: 'Sağlık, iş, günlük rutinler, hizmet',
     spiritualGrowth: 'Her gündelik eylemi ibadet olarak yap.',
@@ -2636,17 +2649,22 @@ final Map<int, NodeInHouse> nodesInHouses = {
   ),
   7: const NodeInHouse(
     house: 7,
-    northNodeMeaning: 'Kuzey Düğüm 7. Evde - İlişkinin aynası, ortaklık, işbirliği.',
-    southNodeMeaning: 'Güney Düğüm 1. Evde - Bireysellik mirası, yalnız kurt olmayı bırakma.',
-    karmicLesson: 'Tek başına güçlü olmayı biliyorsun, şimdi birlikte güçlü ol.',
+    northNodeMeaning:
+        'Kuzey Düğüm 7. Evde - İlişkinin aynası, ortaklık, işbirliği.',
+    southNodeMeaning:
+        'Güney Düğüm 1. Evde - Bireysellik mirası, yalnız kurt olmayı bırakma.',
+    karmicLesson:
+        'Tek başına güçlü olmayı biliyorsun, şimdi birlikte güçlü ol.',
     lifeAreaFocus: 'Evlilik, ortaklıklar, ilişkiler',
     spiritualGrowth: 'Başkasında kendini gör, ilişkiyi ayna olarak kullan.',
     practicalGuidance: 'İlişkiye zaman yatır, uzlaşmayı pratik et.',
   ),
   8: const NodeInHouse(
     house: 8,
-    northNodeMeaning: 'Kuzey Düğüm 8. Evde - Dönüşüm ateşi, psikolojik derinlik, paylaşım.',
-    southNodeMeaning: 'Güney Düğüm 2. Evde - Maddi güvenlik mirası, tutunmayı bırakma.',
+    northNodeMeaning:
+        'Kuzey Düğüm 8. Evde - Dönüşüm ateşi, psikolojik derinlik, paylaşım.',
+    southNodeMeaning:
+        'Güney Düğüm 2. Evde - Maddi güvenlik mirası, tutunmayı bırakma.',
     karmicLesson: 'Biriktirmeyi biliyorsun, şimdi bırakmayı öğren.',
     lifeAreaFocus: 'Dönüşüm, paylaşılan kaynaklar, cinsellik',
     spiritualGrowth: 'Ego ölümüne izin ver, yeniden doğ.',
@@ -2654,8 +2672,10 @@ final Map<int, NodeInHouse> nodesInHouses = {
   ),
   9: const NodeInHouse(
     house: 9,
-    northNodeMeaning: 'Kuzey Düğüm 9. Evde - Bilgelik yolculuğu, anlam arayışı, uzak ufuklar.',
-    southNodeMeaning: 'Güney Düğüm 3. Evde - İletişim mirası, yüzeyselliği bırakma.',
+    northNodeMeaning:
+        'Kuzey Düğüm 9. Evde - Bilgelik yolculuğu, anlam arayışı, uzak ufuklar.',
+    southNodeMeaning:
+        'Güney Düğüm 3. Evde - İletişim mirası, yüzeyselliği bırakma.',
     karmicLesson: 'Bilgi toplamayı biliyorsun, şimdi bilgeliğe dönüştür.',
     lifeAreaFocus: 'Yükseköğrenim, felsefe, uzak yolculuklar',
     spiritualGrowth: 'Hayatın anlamını ara ve paylaş.',
@@ -2663,8 +2683,10 @@ final Map<int, NodeInHouse> nodesInHouses = {
   ),
   10: const NodeInHouse(
     house: 10,
-    northNodeMeaning: 'Kuzey Düğüm 10. Evde - Toplumsal misyon, kariyer, kalıcı miras.',
-    southNodeMeaning: 'Güney Düğüm 4. Evde - Aile mirası, konfor alanını bırakma.',
+    northNodeMeaning:
+        'Kuzey Düğüm 10. Evde - Toplumsal misyon, kariyer, kalıcı miras.',
+    southNodeMeaning:
+        'Güney Düğüm 4. Evde - Aile mirası, konfor alanını bırakma.',
     karmicLesson: 'Yuva kurmayı biliyorsun, şimdi dünyada yer edin.',
     lifeAreaFocus: 'Kariyer, toplumsal statü, otorite',
     spiritualGrowth: 'Topluma kalıcı katkıda bulun.',
@@ -2672,8 +2694,10 @@ final Map<int, NodeInHouse> nodesInHouses = {
   ),
   11: const NodeInHouse(
     house: 11,
-    northNodeMeaning: 'Kuzey Düğüm 11. Evde - İnsanlık hizmeti, topluluk, arkadaşlık.',
-    southNodeMeaning: 'Güney Düğüm 5. Evde - Yaratıcılık mirası, ego odaklılığı bırakma.',
+    northNodeMeaning:
+        'Kuzey Düğüm 11. Evde - İnsanlık hizmeti, topluluk, arkadaşlık.',
+    southNodeMeaning:
+        'Güney Düğüm 5. Evde - Yaratıcılık mirası, ego odaklılığı bırakma.',
     karmicLesson: 'Parlamayı biliyorsun, şimdi ışığını başkaları için kullan.',
     lifeAreaFocus: 'Arkadaşlar, gruplar, idealler',
     spiritualGrowth: 'Bireysel egodan evrensel bilince geç.',
@@ -2681,7 +2705,8 @@ final Map<int, NodeInHouse> nodesInHouses = {
   ),
   12: const NodeInHouse(
     house: 12,
-    northNodeMeaning: 'Kuzey Düğüm 12. Evde - Sırların kapısı, ruhanilik, teslimiyet.',
+    northNodeMeaning:
+        'Kuzey Düğüm 12. Evde - Sırların kapısı, ruhanilik, teslimiyet.',
     southNodeMeaning: 'Güney Düğüm 6. Evde - Hizmet mirası, kontrolü bırakma.',
     karmicLesson: 'Kontrol etmeyi biliyorsun, şimdi teslim olmayı öğren.',
     lifeAreaFocus: 'Ruhanilik, bilinçdışı, yalnızlık, şifa',
@@ -3184,7 +3209,8 @@ alternatif şifanın yükselişine denk geldi.
   static const Map<String, ChironPlacement> chironInSigns = {
     'aries': ChironPlacement(
       sign: 'Koç',
-      coreWound: 'Kimlik ve var olma hakkı yarası. "Ben var olmaya değer miyim?"',
+      coreWound:
+          'Kimlik ve var olma hakkı yarası. "Ben var olmaya değer miyim?"',
       woundOrigin: '''
 Bu yara, erken çocuklukta ya da geçmiş yaşamlarda kimliğin,
 bireyselliğin ya da var olma hakkının sorgulandığı deneyimlerden
@@ -3472,7 +3498,8 @@ ama çok zorlu. Birleşim ve ayrılık döngüleri.
       name: 'Güneş-Ay Aspektleri',
       aspect: 'Konjunksiyon, Trigon, Karşıt',
       meaning: 'Temel enerji uyumu, karşılıklı anlayış',
-      pastLifeConnection: 'Muhtemelen eş, aile ya da yakın partner olarak birlikte yaşamlar',
+      pastLifeConnection:
+          'Muhtemelen eş, aile ya da yakın partner olarak birlikte yaşamlar',
       currentLifePurpose: 'Birbirini dengelemek ve tamamlamak',
       challenges: 'Karşıtlıkta projeksiyon, konjunksiyonda birleşme',
       healingPotential: 'Derin duygusal şifa ve kabul',

@@ -126,11 +126,14 @@ class AdminAuthService {
       final sessionToken = _generateSessionToken();
       final expiresAt = DateTime.now().add(sessionDuration);
 
-      await box.put(_sessionKey, jsonEncode({
-        'token': sessionToken,
-        'expiresAt': expiresAt.millisecondsSinceEpoch,
-        'createdAt': DateTime.now().millisecondsSinceEpoch,
-      }));
+      await box.put(
+        _sessionKey,
+        jsonEncode({
+          'token': sessionToken,
+          'expiresAt': expiresAt.millisecondsSinceEpoch,
+          'createdAt': DateTime.now().millisecondsSinceEpoch,
+        }),
+      );
 
       return AdminAuthResult.success(sessionToken);
     }
@@ -222,26 +225,17 @@ class AdminAuthResult {
     this.lockedOut = false,
   });
 
-  factory AdminAuthResult.success(String token) => AdminAuthResult._(
-        success: true,
-        token: token,
-      );
+  factory AdminAuthResult.success(String token) =>
+      AdminAuthResult._(success: true, token: token);
 
-  factory AdminAuthResult.invalid(String error) => AdminAuthResult._(
-        success: false,
-        error: error,
-      );
+  factory AdminAuthResult.invalid(String error) =>
+      AdminAuthResult._(success: false, error: error);
 
-  factory AdminAuthResult.lockedOut(String error) => AdminAuthResult._(
-        success: false,
-        error: error,
-        lockedOut: true,
-      );
+  factory AdminAuthResult.lockedOut(String error) =>
+      AdminAuthResult._(success: false, error: error, lockedOut: true);
 
-  factory AdminAuthResult.error(String error) => AdminAuthResult._(
-        success: false,
-        error: error,
-      );
+  factory AdminAuthResult.error(String error) =>
+      AdminAuthResult._(success: false, error: error);
 }
 
 /// Admin session data
@@ -257,10 +251,10 @@ class AdminSession {
   });
 
   factory AdminSession.fromJson(Map<String, dynamic> json) => AdminSession(
-        token: json['token'] as String,
-        expiresAt: DateTime.fromMillisecondsSinceEpoch(json['expiresAt'] as int),
-        createdAt: DateTime.fromMillisecondsSinceEpoch(json['createdAt'] as int),
-      );
+    token: json['token'] as String,
+    expiresAt: DateTime.fromMillisecondsSinceEpoch(json['expiresAt'] as int),
+    createdAt: DateTime.fromMillisecondsSinceEpoch(json['createdAt'] as int),
+  );
 
   bool get isValid => DateTime.now().isBefore(expiresAt);
 

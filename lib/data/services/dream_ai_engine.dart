@@ -450,14 +450,20 @@ ASLA YAPMA:
     if (user != null) {
       buffer.writeln('İsim: ${user.name ?? "Belirtilmemiş"}');
       buffer.writeln('Yaş: ${user.age}');
-      buffer.writeln('Güneş Burcu: ${user.sunSign.nameTr} ${user.sunSign.symbol}');
+      buffer.writeln(
+        'Güneş Burcu: ${user.sunSign.nameTr} ${user.sunSign.symbol}',
+      );
 
       if (user.moonSign != null) {
-        buffer.writeln('Ay Burcu: ${user.moonSign!.nameTr} ${user.moonSign!.symbol}');
+        buffer.writeln(
+          'Ay Burcu: ${user.moonSign!.nameTr} ${user.moonSign!.symbol}',
+        );
       }
 
       if (user.risingSign != null) {
-        buffer.writeln('Yükselen: ${user.risingSign!.nameTr} ${user.risingSign!.symbol}');
+        buffer.writeln(
+          'Yükselen: ${user.risingSign!.nameTr} ${user.risingSign!.symbol}',
+        );
       }
     } else {
       buffer.writeln('Profil bilgisi mevcut değil');
@@ -489,13 +495,16 @@ ASLA YAPMA:
       final sortedSymbols = symbolCounts.entries.toList()
         ..sort((a, b) => b.value.compareTo(a.value));
       if (sortedSymbols.isNotEmpty) {
-        buffer.writeln('Tekrarlayan Semboller: ${sortedSymbols.take(5).map((e) => "${e.key}(${e.value})").join(", ")}');
+        buffer.writeln(
+          'Tekrarlayan Semboller: ${sortedSymbols.take(5).map((e) => "${e.key}(${e.value})").join(", ")}',
+        );
       }
 
       // Dominant duygu
       if (emotionCounts.isNotEmpty) {
-        final dominantEmotion = emotionCounts.entries
-            .reduce((a, b) => a.value > b.value ? a : b);
+        final dominantEmotion = emotionCounts.entries.reduce(
+          (a, b) => a.value > b.value ? a : b,
+        );
         buffer.writeln('Baskın Duygusal Ton: ${dominantEmotion.key}');
       }
 
@@ -503,7 +512,9 @@ ASLA YAPMA:
       final sortedThemes = themeCounts.entries.toList()
         ..sort((a, b) => b.value.compareTo(a.value));
       if (sortedThemes.isNotEmpty) {
-        buffer.writeln('Ortak Temalar: ${sortedThemes.take(3).map((e) => e.key).join(", ")}');
+        buffer.writeln(
+          'Ortak Temalar: ${sortedThemes.take(3).map((e) => e.key).join(", ")}',
+        );
       }
 
       // Tekrarlayan rüya kalıbı tespiti
@@ -520,10 +531,7 @@ ASLA YAPMA:
   }
 
   /// Astrolojik bağlam oluştur
-  static String buildAstroContext(
-    DateTime dreamTime,
-    BirthChart? chart,
-  ) {
+  static String buildAstroContext(DateTime dreamTime, BirthChart? chart) {
     final buffer = StringBuffer();
 
     buffer.writeln('ASTROLOJİK BAĞLAM:');
@@ -652,7 +660,9 @@ ASLA YAPMA:
 
     // Ek bilgiler
     if (input.dominantEmotion != null) {
-      buffer.writeln('\nBaskın Duygu: ${input.dominantEmotion!.label} ${input.dominantEmotion!.emoji}');
+      buffer.writeln(
+        '\nBaskın Duygu: ${input.dominantEmotion!.label} ${input.dominantEmotion!.emoji}',
+      );
     }
 
     if (input.wakingFeeling != null) {
@@ -660,11 +670,15 @@ ASLA YAPMA:
     }
 
     if (input.perceivedRole != null) {
-      buffer.writeln('Rüyadaki Rol: ${input.perceivedRole!.label} ${input.perceivedRole!.emoji}');
+      buffer.writeln(
+        'Rüyadaki Rol: ${input.perceivedRole!.label} ${input.perceivedRole!.emoji}',
+      );
     }
 
     if (input.isRecurring) {
-      buffer.writeln('⚠️ TEKRARLAYAN RÜYA: ${input.recurringCount ?? "?"} kez görülmüş');
+      buffer.writeln(
+        '⚠️ TEKRARLAYAN RÜYA: ${input.recurringCount ?? "?"} kez görülmüş',
+      );
     }
 
     if (input.currentLifeSituation != null) {
@@ -672,11 +686,15 @@ ASLA YAPMA:
     }
 
     // Tespit edilen semboller
-    final detectedSymbols = DreamSymbolsDatabase.detectSymbolsInText(input.dreamDescription);
+    final detectedSymbols = DreamSymbolsDatabase.detectSymbolsInText(
+      input.dreamDescription,
+    );
     if (detectedSymbols.isNotEmpty) {
       buffer.writeln('\nOtomatik Tespit Edilen Semboller:');
       for (final symbol in detectedSymbols) {
-        buffer.writeln('  ${symbol.emoji} ${symbol.symbolTr}: ${symbol.universalMeanings.first}');
+        buffer.writeln(
+          '  ${symbol.emoji} ${symbol.symbolTr}: ${symbol.universalMeanings.first}',
+        );
       }
     }
 
@@ -892,14 +910,20 @@ ${input.dominantEmotion != null ? 'DUYGU: ${input.dominantEmotion!.label}' : ''}
       ancientIntro: json['ancientIntro'] ?? json['kadimGiris'] ?? '',
       coreMessage: json['coreMessage'] ?? json['anaMesaj'] ?? '',
       symbols: _parseSymbols(json['symbols'] ?? json['semboller']),
-      archetypeConnection: json['archetypeConnection'] ?? json['arketipBaglantisi'] ?? '',
+      archetypeConnection:
+          json['archetypeConnection'] ?? json['arketipBaglantisi'] ?? '',
       archetypeName: json['archetypeName'] ?? json['arketipAdi'] ?? 'Gölge',
-      emotionalReading: _parseEmotionalReading(json['emotionalReading'] ?? json['duygusalOkuma']),
+      emotionalReading: _parseEmotionalReading(
+        json['emotionalReading'] ?? json['duygusalOkuma'],
+      ),
       astroTiming: AstroTiming(
         moonPhase: moonPhase,
         moonSign: json['moonSign'] ?? json['ayBurcu'],
         relevantTransit: json['relevantTransit'] ?? json['ilgiliTransit'],
-        timingMessage: json['timingMessage'] ?? json['zamanlamaMesaji'] ?? moonPhase.meaning,
+        timingMessage:
+            json['timingMessage'] ??
+            json['zamanlamaMesaji'] ??
+            moonPhase.meaning,
         whyNow: json['whyNow'] ?? json['nedenSimdi'] ?? '',
         isRetrograde: json['isRetrograde'] ?? json['retroMu'] ?? false,
       ),
@@ -925,7 +949,9 @@ ${input.dominantEmotion != null ? 'DUYGU: ${input.dominantEmotion!.label}' : ''}
     String? userId,
   }) {
     final moonPhase = MoonPhaseCalculator.today;
-    final detectedSymbols = DreamSymbolsDatabase.detectSymbolsInText(input.dreamDescription);
+    final detectedSymbols = DreamSymbolsDatabase.detectSymbolsInText(
+      input.dreamDescription,
+    );
 
     // Metinden bölümler çıkar
     final sections = _extractSections(text);
@@ -936,7 +962,8 @@ ${input.dominantEmotion != null ? 'DUYGU: ${input.dominantEmotion!.label}' : ''}
         symbol: symbolData.symbolTr,
         symbolEmoji: symbolData.emoji,
         universalMeaning: symbolData.universalMeanings.first,
-        personalContext: symbolData.emotionVariants[input.dominantEmotion] ??
+        personalContext:
+            symbolData.emotionVariants[input.dominantEmotion] ??
             symbolData.universalMeanings.first,
         shadowAspect: symbolData.shadowAspect,
         lightAspect: symbolData.lightAspect,
@@ -974,7 +1001,8 @@ ${input.dominantEmotion != null ? 'DUYGU: ${input.dominantEmotion!.label}' : ''}
       ),
       guidance: PracticalGuidance(
         todayAction: sections['todayAction'] ?? 'Bu rüyayı günlüğüne yaz.',
-        reflectionQuestion: sections['reflectionQuestion'] ?? 'Bu rüya bana ne söylüyor?',
+        reflectionQuestion:
+            sections['reflectionQuestion'] ?? 'Bu rüya bana ne söylüyor?',
         weeklyFocus: sections['weeklyFocus'] ?? 'Rüya sembollerine dikkat et.',
         avoidance: sections['avoidance'] ?? 'Mesajı görmezden gelmekten kaçın.',
       ),
@@ -999,7 +1027,9 @@ ${input.dominantEmotion != null ? 'DUYGU: ${input.dominantEmotion!.label}' : ''}
     String? userId,
   }) {
     final moonPhase = MoonPhaseCalculator.today;
-    final detectedSymbols = DreamSymbolsDatabase.detectSymbolsInText(input.dreamDescription);
+    final detectedSymbols = DreamSymbolsDatabase.detectSymbolsInText(
+      input.dreamDescription,
+    );
     final dominantEmotion = input.dominantEmotion ?? EmotionalTone.merak;
 
     // Sembolleri yorumla
@@ -1008,7 +1038,8 @@ ${input.dominantEmotion != null ? 'DUYGU: ${input.dominantEmotion!.label}' : ''}
         symbol: symbolData.symbolTr,
         symbolEmoji: symbolData.emoji,
         universalMeaning: symbolData.universalMeanings.first,
-        personalContext: symbolData.emotionVariants[dominantEmotion] ??
+        personalContext:
+            symbolData.emotionVariants[dominantEmotion] ??
             symbolData.universalMeanings.first,
         shadowAspect: symbolData.shadowAspect,
         lightAspect: symbolData.lightAspect,
@@ -1017,17 +1048,32 @@ ${input.dominantEmotion != null ? 'DUYGU: ${input.dominantEmotion!.label}' : ''}
     }).toList();
 
     // Arketip tespit et
-    final archetype = _detectDominantArchetype(detectedSymbols, dominantEmotion);
+    final archetype = _detectDominantArchetype(
+      detectedSymbols,
+      dominantEmotion,
+    );
     final archetypeData = ArchetypeDatabase.findArchetype(archetype);
 
     // Zaman katmanı
-    final timeLayer = input.isRecurring ? TimeLayer.dongusel : _inferTimeLayer(input);
+    final timeLayer = input.isRecurring
+        ? TimeLayer.dongusel
+        : _inferTimeLayer(input);
 
     // Stil bazlı kadim giriş
-    final ancientIntro = _generateStyledIntro(style, moonPhase, dominantEmotion, detectedSymbols);
+    final ancientIntro = _generateStyledIntro(
+      style,
+      moonPhase,
+      dominantEmotion,
+      detectedSymbols,
+    );
 
     // Ana mesaj
-    final coreMessage = _generateCoreMessage(detectedSymbols, dominantEmotion, timeLayer, moonPhase);
+    final coreMessage = _generateCoreMessage(
+      detectedSymbols,
+      dominantEmotion,
+      timeLayer,
+      moonPhase,
+    );
 
     // Duygusal okuma
     final emotionalReading = _generateEmotionalReading(dominantEmotion, style);
@@ -1041,7 +1087,9 @@ ${input.dominantEmotion != null ? 'DUYGU: ${input.dominantEmotion!.label}' : ''}
         : null;
 
     // Kâbus tespiti
-    final nightmareType = NightmareTransformationService.detectNightmareType(input.dreamDescription)?.title;
+    final nightmareType = NightmareTransformationService.detectNightmareType(
+      input.dreamDescription,
+    )?.title;
 
     // Lucid potansiyeli
     final lucidPotential = _calculateLucidPotential(dominantEmotion, moonPhase);
@@ -1054,7 +1102,9 @@ ${input.dominantEmotion != null ? 'DUYGU: ${input.dominantEmotion!.label}' : ''}
       ancientIntro: ancientIntro,
       coreMessage: coreMessage,
       symbols: symbolInterpretations,
-      archetypeConnection: archetypeData?.description ?? 'Bilinçaltının derinliklerinden bir mesaj.',
+      archetypeConnection:
+          archetypeData?.description ??
+          'Bilinçaltının derinliklerinden bir mesaj.',
       archetypeName: archetypeData?.nameTr ?? archetype,
       emotionalReading: emotionalReading,
       astroTiming: AstroTiming(
@@ -1065,7 +1115,8 @@ ${input.dominantEmotion != null ? 'DUYGU: ${input.dominantEmotion!.label}' : ''}
       lightShadow: LightShadowReading(
         lightMessage: _generateLightMessage(detectedSymbols),
         shadowMessage: _generateShadowMessage(detectedSymbols),
-        integrationPath: archetypeData?.integrationPath ?? 'Bu rüyayla çalışmaya devam et.',
+        integrationPath:
+            archetypeData?.integrationPath ?? 'Bu rüyayla çalışmaya devam et.',
         archetype: archetype,
       ),
       guidance: guidance,
@@ -1339,8 +1390,20 @@ JSON çıktısı da ekle.
 
   static String _estimateMoonSign(DateTime date) {
     // Basit tahmin (ay yaklaşık 2.5 günde burç değiştirir)
-    final signs = ['Koç', 'Boğa', 'İkizler', 'Yengeç', 'Aslan', 'Başak',
-                   'Terazi', 'Akrep', 'Yay', 'Oğlak', 'Kova', 'Balık'];
+    final signs = [
+      'Koç',
+      'Boğa',
+      'İkizler',
+      'Yengeç',
+      'Aslan',
+      'Başak',
+      'Terazi',
+      'Akrep',
+      'Yay',
+      'Oğlak',
+      'Kova',
+      'Balık',
+    ];
     final dayOfYear = date.difference(DateTime(date.year, 1, 1)).inDays;
     final signIndex = ((dayOfYear / 2.5) % 12).floor();
     return signs[signIndex];
@@ -1352,7 +1415,9 @@ JSON çıktısı da ekle.
     final month = date.month;
 
     // Merkür retro dönemleri (yaklaşık)
-    if ((month >= 1 && month <= 2) || (month >= 5 && month <= 6) || (month >= 9 && month <= 10)) {
+    if ((month >= 1 && month <= 2) ||
+        (month >= 5 && month <= 6) ||
+        (month >= 9 && month <= 10)) {
       buffer.writeln('☿ Merkür Retro olabilir - iletişim ve geçmiş temaları');
     }
 
@@ -1365,13 +1430,18 @@ JSON çıktısı da ekle.
 
   static String _detectArchetype(String text) {
     final lowercaseText = text.toLowerCase();
-    if (lowercaseText.contains('gölge') || lowercaseText.contains('shadow')) return 'Gölge';
+    if (lowercaseText.contains('gölge') || lowercaseText.contains('shadow'))
+      return 'Gölge';
     if (lowercaseText.contains('anima')) return 'Anima';
     if (lowercaseText.contains('animus')) return 'Animus';
-    if (lowercaseText.contains('kahraman') || lowercaseText.contains('hero')) return 'Kahraman';
-    if (lowercaseText.contains('bilge') || lowercaseText.contains('wise')) return 'Bilge Yaşlı';
-    if (lowercaseText.contains('anne') || lowercaseText.contains('mother')) return 'Büyük Anne';
-    if (lowercaseText.contains('çocuk') || lowercaseText.contains('child')) return 'Çocuk';
+    if (lowercaseText.contains('kahraman') || lowercaseText.contains('hero'))
+      return 'Kahraman';
+    if (lowercaseText.contains('bilge') || lowercaseText.contains('wise'))
+      return 'Bilge Yaşlı';
+    if (lowercaseText.contains('anne') || lowercaseText.contains('mother'))
+      return 'Büyük Anne';
+    if (lowercaseText.contains('çocuk') || lowercaseText.contains('child'))
+      return 'Çocuk';
     return 'Gölge';
   }
 
@@ -1454,13 +1524,16 @@ JSON çıktısı da ekle.
   static TimeLayer _inferTimeLayer(DreamInput input) {
     final text = input.dreamDescription.toLowerCase();
 
-    if (text.contains('çocukluğumda') || text.contains('eskiden') ||
-        text.contains('eski evim') || text.contains('annem') ||
+    if (text.contains('çocukluğumda') ||
+        text.contains('eskiden') ||
+        text.contains('eski evim') ||
+        text.contains('annem') ||
         text.contains('babam')) {
       return TimeLayer.gecmis;
     }
 
-    if (text.contains('yarın') || text.contains('gelecekte') ||
+    if (text.contains('yarın') ||
+        text.contains('gelecekte') ||
         text.contains('olacak')) {
       return TimeLayer.gelecek;
     }
@@ -1542,25 +1615,37 @@ JSON çıktısı da ekle.
   ) {
     // Stil bazlı mesajlar
     final surfaceMessages = {
-      EmotionalTone.korku: 'Yüzeyde bir alarm çalıyor - dikkatini çeken bir tehdit var.',
+      EmotionalTone.korku:
+          'Yüzeyde bir alarm çalıyor - dikkatini çeken bir tehdit var.',
       EmotionalTone.huzur: 'İç dünyanda bir denge hissediyorsun - bu değerli.',
-      EmotionalTone.merak: 'Keşfetme dürtüsü aktif - sorular cevaplardan daha önemli.',
-      EmotionalTone.sucluluk: 'Bir şey yanlış hissettiriyor - ama gerçekten öyle mi?',
+      EmotionalTone.merak:
+          'Keşfetme dürtüsü aktif - sorular cevaplardan daha önemli.',
+      EmotionalTone.sucluluk:
+          'Bir şey yanlış hissettiriyor - ama gerçekten öyle mi?',
       EmotionalTone.ozlem: 'Kalbinde bir boşluk var - doldurulması gereken.',
       EmotionalTone.heyecan: 'Enerji yükseliyor - yeni bir şey kapıda.',
-      EmotionalTone.donukluk: 'Duygular geçici olarak susturulmuş - koruma mekanizması.',
+      EmotionalTone.donukluk:
+          'Duygular geçici olarak susturulmuş - koruma mekanizması.',
       EmotionalTone.ofke: 'Sınırlar zorlanmış - güç geri alınmak istiyor.',
     };
 
     final deeperMeanings = {
-      EmotionalTone.korku: 'Korkunun altında genellikle sevgi vardır. Neyi kaybetmekten korkuyorsun?',
-      EmotionalTone.huzur: 'Bu huzur, çatışmanın çözüldüğüne işaret. Hangi iç savaş sona erdi?',
-      EmotionalTone.merak: 'Merak, ruhun büyüme çağrısıdır. Bilinmeyene açılmaya hazırsın.',
-      EmotionalTone.sucluluk: 'Suçluluk bazen başkalarının sesini içselleştirmektir. Bu ses kimin?',
-      EmotionalTone.ozlem: 'Özlem, kaybedilen bütünlüğe dönüş arzusudur. Ne zaman bütün hissettin?',
-      EmotionalTone.heyecan: 'Heyecan, yaşam enerjisinin doruğudur. Bu enerjiyi nereye yönlendireceksin?',
-      EmotionalTone.donukluk: 'Donukluk, çok fazla hissetmekten korumadır. Neyi hissetmekten kaçınıyorsun?',
-      EmotionalTone.ofke: 'Öfke, bastırılmış gücün sesidir. Gücünü nerede geri istiyorsun?',
+      EmotionalTone.korku:
+          'Korkunun altında genellikle sevgi vardır. Neyi kaybetmekten korkuyorsun?',
+      EmotionalTone.huzur:
+          'Bu huzur, çatışmanın çözüldüğüne işaret. Hangi iç savaş sona erdi?',
+      EmotionalTone.merak:
+          'Merak, ruhun büyüme çağrısıdır. Bilinmeyene açılmaya hazırsın.',
+      EmotionalTone.sucluluk:
+          'Suçluluk bazen başkalarının sesini içselleştirmektir. Bu ses kimin?',
+      EmotionalTone.ozlem:
+          'Özlem, kaybedilen bütünlüğe dönüş arzusudur. Ne zaman bütün hissettin?',
+      EmotionalTone.heyecan:
+          'Heyecan, yaşam enerjisinin doruğudur. Bu enerjiyi nereye yönlendireceksin?',
+      EmotionalTone.donukluk:
+          'Donukluk, çok fazla hissetmekten korumadır. Neyi hissetmekten kaçınıyorsun?',
+      EmotionalTone.ofke:
+          'Öfke, bastırılmış gücün sesidir. Gücünü nerede geri istiyorsun?',
     };
 
     final shadowQuestions = {
@@ -1568,21 +1653,29 @@ JSON çıktısı da ekle.
       EmotionalTone.huzur: 'Bu huzuru sabote eden düşünce hangisi?',
       EmotionalTone.merak: 'Cevabını bulmaktan korktuğun soru ne?',
       EmotionalTone.sucluluk: 'Kendini affetsen ne değişirdi?',
-      EmotionalTone.ozlem: 'Özlediğin şey geri gelse, onu kabul edebilir misin?',
+      EmotionalTone.ozlem:
+          'Özlediğin şey geri gelse, onu kabul edebilir misin?',
       EmotionalTone.heyecan: 'Bu heyecan sönse ne kalır?',
       EmotionalTone.donukluk: 'Hissetseydin ne hissederdin?',
       EmotionalTone.ofke: 'Öfkenin altında hangi acı var?',
     };
 
     final integrationPaths = {
-      EmotionalTone.korku: 'Korkuyla yüzleş, ama nazik ol. Korktuğun şeye küçük adımlarla yaklaş.',
-      EmotionalTone.huzur: 'Bu huzuru hatırla ve günlük hayatına taşı. Meditasyonla pekiştir.',
-      EmotionalTone.merak: 'Sorularını yaz, cevapları aramak yerine sorularla yaşamayı öğren.',
-      EmotionalTone.sucluluk: 'Suçluluğu incele: gerçek mi, öğrenilmiş mi? Kendine mektup yaz.',
-      EmotionalTone.ozlem: 'Özlemi onurlandır ama şimdide kal. Kaybı kabul, geleceğe kapı açar.',
+      EmotionalTone.korku:
+          'Korkuyla yüzleş, ama nazik ol. Korktuğun şeye küçük adımlarla yaklaş.',
+      EmotionalTone.huzur:
+          'Bu huzuru hatırla ve günlük hayatına taşı. Meditasyonla pekiştir.',
+      EmotionalTone.merak:
+          'Sorularını yaz, cevapları aramak yerine sorularla yaşamayı öğren.',
+      EmotionalTone.sucluluk:
+          'Suçluluğu incele: gerçek mi, öğrenilmiş mi? Kendine mektup yaz.',
+      EmotionalTone.ozlem:
+          'Özlemi onurlandır ama şimdide kal. Kaybı kabul, geleceğe kapı açar.',
       EmotionalTone.heyecan: 'Heyecanı eyleme dönüştür. Bugün bir adım at.',
-      EmotionalTone.donukluk: 'Bedenine dön. Hareket et, nefes al, yavaş yavaş hisset.',
-      EmotionalTone.ofke: 'Öfkeyi sağlıklı ifade et: spor, yazı, yaratıcılık. Ama birini incitme.',
+      EmotionalTone.donukluk:
+          'Bedenine dön. Hareket et, nefes al, yavaş yavaş hisset.',
+      EmotionalTone.ofke:
+          'Öfkeyi sağlıklı ifade et: spor, yazı, yaratıcılık. Ama birini incitme.',
     };
 
     return EmotionalReading(
@@ -1605,20 +1698,23 @@ JSON çıktısı da ekle.
     } else if (emotion == EmotionalTone.ozlem) {
       todayAction = 'Bugün özlediğin kişiye/duruma dair bir anı yaz.';
     } else if (symbols.isNotEmpty) {
-      todayAction = 'Bugün ${symbols.first.symbolTr} sembolü hakkında 5 dakika düşün.';
+      todayAction =
+          'Bugün ${symbols.first.symbolTr} sembolü hakkında 5 dakika düşün.';
     } else {
       todayAction = 'Bugün bu rüyayı bir günlüğe yaz ve duygularını kaydet.';
     }
 
     String reflectionQuestion;
     if (symbols.isNotEmpty) {
-      reflectionQuestion = '${symbols.first.symbolTr} sembolü hayatımda neyi temsil ediyor?';
+      reflectionQuestion =
+          '${symbols.first.symbolTr} sembolü hayatımda neyi temsil ediyor?';
     } else {
       reflectionQuestion = 'Bu rüya bana ne söylemeye çalışıyor?';
     }
 
     final avoidances = {
-      EmotionalTone.korku: 'Bu hafta korkudan kaçmak için yapılan impulsif kararlardan kaçın.',
+      EmotionalTone.korku:
+          'Bu hafta korkudan kaçmak için yapılan impulsif kararlardan kaçın.',
       EmotionalTone.huzur: 'Huzuru bozmak isteyenlerden nazikçe mesafe koy.',
       EmotionalTone.merak: 'Cevapsız sorulara tahammülsüzlükten kaçın.',
       EmotionalTone.sucluluk: 'Kendini aşırı yargılamaktan kaçın.',
@@ -1631,7 +1727,8 @@ JSON çıktısı da ekle.
     return PracticalGuidance(
       todayAction: todayAction,
       reflectionQuestion: reflectionQuestion,
-      weeklyFocus: 'Bu hafta rüya sembollerine ve duygusal tepkilerine dikkat et.',
+      weeklyFocus:
+          'Bu hafta rüya sembollerine ve duygusal tepkilerine dikkat et.',
       avoidance: avoidances[emotion]!,
     );
   }
@@ -1674,7 +1771,10 @@ JSON çıktısı da ekle.
     return 'Gölge uyarısı: $shadowAspects Farkında ol, ama korkma.';
   }
 
-  static String _calculateLucidPotential(EmotionalTone emotion, MoonPhase phase) {
+  static String _calculateLucidPotential(
+    EmotionalTone emotion,
+    MoonPhase phase,
+  ) {
     int score = 0;
 
     switch (phase) {
@@ -1794,7 +1894,8 @@ enum Planet {
 /// KadimGirisTemplates erişimi için extension
 extension KadimGirisTemplatesAccess on KadimGirisTemplates {
   static String getRandomIntro() {
-    return KadimGirisTemplates.genel[DateTime.now().millisecond % KadimGirisTemplates.genel.length];
+    return KadimGirisTemplates.genel[DateTime.now().millisecond %
+        KadimGirisTemplates.genel.length];
   }
 
   static List<String> getForMoonPhase(MoonPhase phase) {

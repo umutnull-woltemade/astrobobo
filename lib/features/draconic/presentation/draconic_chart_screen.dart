@@ -14,7 +14,8 @@ class DraconicChartScreen extends ConsumerStatefulWidget {
   const DraconicChartScreen({super.key});
 
   @override
-  ConsumerState<DraconicChartScreen> createState() => _DraconicChartScreenState();
+  ConsumerState<DraconicChartScreen> createState() =>
+      _DraconicChartScreenState();
 }
 
 class _DraconicChartScreenState extends ConsumerState<DraconicChartScreen> {
@@ -65,16 +66,16 @@ class _DraconicChartScreenState extends ConsumerState<DraconicChartScreen> {
                 const SizedBox(height: 16),
                 Text(
                   'Profil bulunamadı',
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        color: Colors.white,
-                      ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.titleLarge?.copyWith(color: Colors.white),
                 ),
                 const SizedBox(height: 8),
                 Text(
                   'Lütfen önce doğum bilgilerinizi girin',
-                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        color: Colors.white70,
-                      ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.bodyMedium?.copyWith(color: Colors.white70),
                 ),
                 const SizedBox(height: 24),
                 ElevatedButton(
@@ -120,12 +121,16 @@ class _DraconicChartScreenState extends ConsumerState<DraconicChartScreen> {
                         const SizedBox(height: AppConstants.spacingXxl),
                       ] else ...[
                         const SizedBox(height: 100),
-                        const CircularProgressIndicator(color: AppColors.mystic),
+                        const CircularProgressIndicator(
+                          color: AppColors.mystic,
+                        ),
                         const SizedBox(height: 16),
                         Text(
                           'Harita oluşturuluyor...',
                           style: TextStyle(
-                            color: isDark ? Colors.white70 : AppColors.textLight,
+                            color: isDark
+                                ? Colors.white70
+                                : AppColors.textLight,
                           ),
                         ),
                       ],
@@ -156,9 +161,9 @@ class _DraconicChartScreenState extends ConsumerState<DraconicChartScreen> {
             child: Text(
               'Drakonik Harita',
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                    fontWeight: FontWeight.bold,
-                    color: isDark ? Colors.white : AppColors.textDark,
-                  ),
+                fontWeight: FontWeight.bold,
+                color: isDark ? Colors.white : AppColors.textDark,
+              ),
               textAlign: TextAlign.center,
             ),
           ),
@@ -179,9 +184,7 @@ class _DraconicChartScreenState extends ConsumerState<DraconicChartScreen> {
           ],
         ),
         borderRadius: BorderRadius.circular(AppConstants.radiusLg),
-        border: Border.all(
-          color: AppColors.mystic.withValues(alpha: 0.5),
-        ),
+        border: Border.all(color: AppColors.mystic.withValues(alpha: 0.5)),
       ),
       child: Row(
         children: [
@@ -221,20 +224,14 @@ class _DraconicChartScreenState extends ConsumerState<DraconicChartScreen> {
             ? Colors.white.withValues(alpha: 0.05)
             : Colors.white.withValues(alpha: 0.9),
         borderRadius: BorderRadius.circular(AppConstants.radiusLg),
-        border: Border.all(
-          color: AppColors.mystic.withValues(alpha: 0.3),
-        ),
+        border: Border.all(color: AppColors.mystic.withValues(alpha: 0.3)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [
-              Icon(
-                Icons.person,
-                color: AppColors.mystic,
-                size: 20,
-              ),
+              Icon(Icons.person, color: AppColors.mystic, size: 20),
               const SizedBox(width: 8),
               Text(
                 'Profil Bilgileri',
@@ -247,13 +244,38 @@ class _DraconicChartScreenState extends ConsumerState<DraconicChartScreen> {
             ],
           ),
           const SizedBox(height: AppConstants.spacingMd),
-          _buildInfoRow(isDark, Icons.person_outline, 'İsim', userProfile.name ?? 'Kullanıcı'),
-          _buildInfoRow(isDark, Icons.cake_outlined, 'Doğum Tarihi', _formatDate(userProfile.birthDate)),
-          _buildInfoRow(isDark, Icons.wb_sunny_outlined, 'Güneş Burcu', userProfile.sunSign.nameTr),
+          _buildInfoRow(
+            isDark,
+            Icons.person_outline,
+            'İsim',
+            userProfile.name ?? 'Kullanıcı',
+          ),
+          _buildInfoRow(
+            isDark,
+            Icons.cake_outlined,
+            'Doğum Tarihi',
+            _formatDate(userProfile.birthDate),
+          ),
+          _buildInfoRow(
+            isDark,
+            Icons.wb_sunny_outlined,
+            'Güneş Burcu',
+            userProfile.sunSign.nameTr,
+          ),
           if (userProfile.moonSign != null)
-            _buildInfoRow(isDark, Icons.nightlight_outlined, 'Ay Burcu', userProfile.moonSign!.nameTr),
+            _buildInfoRow(
+              isDark,
+              Icons.nightlight_outlined,
+              'Ay Burcu',
+              userProfile.moonSign!.nameTr,
+            ),
           if (userProfile.risingSign != null)
-            _buildInfoRow(isDark, Icons.arrow_upward, 'Yükselen', userProfile.risingSign!.nameTr),
+            _buildInfoRow(
+              isDark,
+              Icons.arrow_upward,
+              'Yükselen',
+              userProfile.risingSign!.nameTr,
+            ),
         ],
       ),
     );
@@ -264,7 +286,11 @@ class _DraconicChartScreenState extends ConsumerState<DraconicChartScreen> {
       padding: const EdgeInsets.symmetric(vertical: 4),
       child: Row(
         children: [
-          Icon(icon, size: 16, color: isDark ? Colors.white54 : AppColors.textLight),
+          Icon(
+            icon,
+            size: 16,
+            color: isDark ? Colors.white54 : AppColors.textLight,
+          ),
           const SizedBox(width: 8),
           Text(
             '$label: ',
@@ -291,8 +317,18 @@ class _DraconicChartScreenState extends ConsumerState<DraconicChartScreen> {
 
   String _formatDate(DateTime date) {
     const months = [
-      'Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran',
-      'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'
+      'Ocak',
+      'Şubat',
+      'Mart',
+      'Nisan',
+      'Mayıs',
+      'Haziran',
+      'Temmuz',
+      'Ağustos',
+      'Eylül',
+      'Ekim',
+      'Kasım',
+      'Aralık',
     ];
     return '${date.day} ${months[date.month - 1]} ${date.year}';
   }
@@ -310,9 +346,7 @@ class _DraconicChartScreenState extends ConsumerState<DraconicChartScreen> {
           ],
         ),
         borderRadius: BorderRadius.circular(AppConstants.radiusLg),
-        border: Border.all(
-          color: AppColors.mystic.withValues(alpha: 0.5),
-        ),
+        border: Border.all(color: AppColors.mystic.withValues(alpha: 0.5)),
       ),
       child: Column(
         children: [
@@ -328,18 +362,8 @@ class _DraconicChartScreenState extends ConsumerState<DraconicChartScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              _buildDraconicSign(
-                'Güneş',
-                _chart!.draconicSun,
-                '',
-                isDark,
-              ),
-              _buildDraconicSign(
-                'Ay',
-                _chart!.draconicMoon,
-                '',
-                isDark,
-              ),
+              _buildDraconicSign('Güneş', _chart!.draconicSun, '', isDark),
+              _buildDraconicSign('Ay', _chart!.draconicMoon, '', isDark),
               _buildDraconicSign(
                 'Yükselen',
                 _chart!.draconicAscendant,
@@ -354,7 +378,11 @@ class _DraconicChartScreenState extends ConsumerState<DraconicChartScreen> {
   }
 
   Widget _buildDraconicSign(
-      String label, ZodiacSign sign, String emoji, bool isDark) {
+    String label,
+    ZodiacSign sign,
+    String emoji,
+    bool isDark,
+  ) {
     return Column(
       children: [
         Text(emoji, style: const TextStyle(fontSize: 28)),
@@ -372,9 +400,7 @@ class _DraconicChartScreenState extends ConsumerState<DraconicChartScreen> {
           decoration: BoxDecoration(
             color: sign.color.withValues(alpha: 0.2),
             borderRadius: BorderRadius.circular(16),
-            border: Border.all(
-              color: sign.color.withValues(alpha: 0.5),
-            ),
+            border: Border.all(color: sign.color.withValues(alpha: 0.5)),
           ),
           child: Row(
             mainAxisSize: MainAxisSize.min,
@@ -470,9 +496,7 @@ class _DraconicChartScreenState extends ConsumerState<DraconicChartScreen> {
             ? Colors.white.withValues(alpha: 0.05)
             : Colors.white.withValues(alpha: 0.9),
         borderRadius: BorderRadius.circular(AppConstants.radiusLg),
-        border: Border.all(
-          color: color.withValues(alpha: 0.3),
-        ),
+        border: Border.all(color: color.withValues(alpha: 0.3)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -591,11 +615,7 @@ class _DraconicChartScreenState extends ConsumerState<DraconicChartScreen> {
       ),
       children: [
         Padding(
-          padding: const EdgeInsets.only(
-            left: 56,
-            right: 16,
-            bottom: 16,
-          ),
+          padding: const EdgeInsets.only(left: 56, right: 16, bottom: 16),
           child: Text(
             planet.interpretation,
             style: TextStyle(

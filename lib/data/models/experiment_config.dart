@@ -126,9 +126,13 @@ class ExperimentAssignment {
 
   factory ExperimentAssignment.fromJson(Map<String, dynamic> json) {
     return ExperimentAssignment(
-      timingVariant: PaywallTimingVariant.fromCode(json['timingVariant'] ?? 'B'),
+      timingVariant: PaywallTimingVariant.fromCode(
+        json['timingVariant'] ?? 'B',
+      ),
       pricingVariant: PricingVariant.fromCode(json['pricingVariant'] ?? 'A'),
-      assignedAt: DateTime.parse(json['assignedAt'] ?? DateTime.now().toIso8601String()),
+      assignedAt: DateTime.parse(
+        json['assignedAt'] ?? DateTime.now().toIso8601String(),
+      ),
       sessionCount: json['sessionCount'] ?? 0,
       hasSeenFirstInsight: json['hasSeenFirstInsight'] ?? false,
       lastPaywallShown: json['lastPaywallShown'] != null
@@ -148,13 +152,17 @@ class ExperimentAssignment {
       case PaywallTimingVariant.firstInsight:
         return hasSeenFirstInsight;
       case PaywallTimingVariant.delayed:
-        final hoursSinceAssigned = DateTime.now().difference(assignedAt).inHours;
+        final hoursSinceAssigned = DateTime.now()
+            .difference(assignedAt)
+            .inHours;
         return sessionCount >= 2 || hoursSinceAssigned >= 24;
     }
   }
 
   /// Check if enough time has passed since last paywall (48h cooldown during churn defense)
-  bool canShowPaywallWithCooldown({Duration cooldown = const Duration(hours: 48)}) {
+  bool canShowPaywallWithCooldown({
+    Duration cooldown = const Duration(hours: 48),
+  }) {
     if (lastPaywallShown == null) return true;
     return DateTime.now().difference(lastPaywallShown!) >= cooldown;
   }

@@ -68,16 +68,16 @@ class _AsteroidsScreenState extends ConsumerState<AsteroidsScreen>
                 const SizedBox(height: 16),
                 Text(
                   'Profil bulunamadi',
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        color: Colors.white,
-                      ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.titleLarge?.copyWith(color: Colors.white),
                 ),
                 const SizedBox(height: 8),
                 Text(
                   'Lutfen once dogum bilgilerinizi girin',
-                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        color: Colors.white70,
-                      ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.bodyMedium?.copyWith(color: Colors.white70),
                 ),
                 const SizedBox(height: 24),
                 ElevatedButton(
@@ -116,7 +116,9 @@ class _AsteroidsScreenState extends ConsumerState<AsteroidsScreen>
                         Text(
                           'Harita olusturuluyor...',
                           style: TextStyle(
-                            color: isDark ? Colors.white70 : AppColors.textLight,
+                            color: isDark
+                                ? Colors.white70
+                                : AppColors.textLight,
                           ),
                         ),
                       ],
@@ -147,9 +149,9 @@ class _AsteroidsScreenState extends ConsumerState<AsteroidsScreen>
             child: Text(
               'Asteroid Haritasi',
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                    fontWeight: FontWeight.bold,
-                    color: isDark ? Colors.white : AppColors.textDark,
-                  ),
+                fontWeight: FontWeight.bold,
+                color: isDark ? Colors.white : AppColors.textDark,
+              ),
               textAlign: TextAlign.center,
             ),
           ),
@@ -170,9 +172,7 @@ class _AsteroidsScreenState extends ConsumerState<AsteroidsScreen>
           ],
         ),
         borderRadius: BorderRadius.circular(AppConstants.radiusLg),
-        border: Border.all(
-          color: Colors.purple.withValues(alpha: 0.5),
-        ),
+        border: Border.all(color: Colors.purple.withValues(alpha: 0.5)),
       ),
       child: Row(
         children: [
@@ -212,20 +212,14 @@ class _AsteroidsScreenState extends ConsumerState<AsteroidsScreen>
             ? Colors.white.withValues(alpha: 0.05)
             : Colors.white.withValues(alpha: 0.9),
         borderRadius: BorderRadius.circular(AppConstants.radiusLg),
-        border: Border.all(
-          color: Colors.purple.withValues(alpha: 0.3),
-        ),
+        border: Border.all(color: Colors.purple.withValues(alpha: 0.3)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [
-              Icon(
-                Icons.person,
-                color: Colors.purple,
-                size: 20,
-              ),
+              Icon(Icons.person, color: Colors.purple, size: 20),
               const SizedBox(width: 8),
               Text(
                 'Profil Bilgileri',
@@ -238,9 +232,24 @@ class _AsteroidsScreenState extends ConsumerState<AsteroidsScreen>
             ],
           ),
           const SizedBox(height: AppConstants.spacingMd),
-          _buildInfoRow(isDark, Icons.person_outline, 'Isim', userProfile.name ?? 'Kullanici'),
-          _buildInfoRow(isDark, Icons.cake_outlined, 'Dogum Tarihi', _formatDate(userProfile.birthDate)),
-          _buildInfoRow(isDark, Icons.wb_sunny_outlined, 'Gunes Burcu', userProfile.sunSign.nameTr),
+          _buildInfoRow(
+            isDark,
+            Icons.person_outline,
+            'Isim',
+            userProfile.name ?? 'Kullanici',
+          ),
+          _buildInfoRow(
+            isDark,
+            Icons.cake_outlined,
+            'Dogum Tarihi',
+            _formatDate(userProfile.birthDate),
+          ),
+          _buildInfoRow(
+            isDark,
+            Icons.wb_sunny_outlined,
+            'Gunes Burcu',
+            userProfile.sunSign.nameTr,
+          ),
         ],
       ),
     );
@@ -251,7 +260,11 @@ class _AsteroidsScreenState extends ConsumerState<AsteroidsScreen>
       padding: const EdgeInsets.symmetric(vertical: 4),
       child: Row(
         children: [
-          Icon(icon, size: 16, color: isDark ? Colors.white54 : AppColors.textLight),
+          Icon(
+            icon,
+            size: 16,
+            color: isDark ? Colors.white54 : AppColors.textLight,
+          ),
           const SizedBox(width: 8),
           Text(
             '$label: ',
@@ -278,8 +291,18 @@ class _AsteroidsScreenState extends ConsumerState<AsteroidsScreen>
 
   String _formatDate(DateTime date) {
     const months = [
-      'Ocak', 'Subat', 'Mart', 'Nisan', 'Mayis', 'Haziran',
-      'Temmuz', 'Agustos', 'Eylul', 'Ekim', 'Kasim', 'Aralik'
+      'Ocak',
+      'Subat',
+      'Mart',
+      'Nisan',
+      'Mayis',
+      'Haziran',
+      'Temmuz',
+      'Agustos',
+      'Eylul',
+      'Ekim',
+      'Kasim',
+      'Aralik',
     ];
     return '${date.day} ${months[date.month - 1]} ${date.year}';
   }
@@ -439,7 +462,9 @@ class _AsteroidsScreenState extends ConsumerState<AsteroidsScreen>
                           '${pos.degree.toStringAsFixed(1)} - ${pos.house}. Ev',
                           style: TextStyle(
                             fontSize: 12,
-                            color: isDark ? Colors.white60 : AppColors.textLight,
+                            color: isDark
+                                ? Colors.white60
+                                : AppColors.textLight,
                           ),
                         ),
                       ],
@@ -577,9 +602,7 @@ class _AsteroidsScreenState extends ConsumerState<AsteroidsScreen>
             ? Colors.white.withValues(alpha: 0.05)
             : Colors.white.withValues(alpha: 0.9),
         borderRadius: BorderRadius.circular(AppConstants.radiusLg),
-        border: Border.all(
-          color: color.withValues(alpha: 0.3),
-        ),
+        border: Border.all(color: color.withValues(alpha: 0.3)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -594,10 +617,7 @@ class _AsteroidsScreenState extends ConsumerState<AsteroidsScreen>
                   borderRadius: BorderRadius.circular(18),
                 ),
                 child: Center(
-                  child: Text(
-                    icon,
-                    style: const TextStyle(fontSize: 18),
-                  ),
+                  child: Text(icon, style: const TextStyle(fontSize: 18)),
                 ),
               ),
               const SizedBox(width: AppConstants.spacingMd),

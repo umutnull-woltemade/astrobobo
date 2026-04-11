@@ -40,22 +40,22 @@ class UserProfile {
        updatedAt = updatedAt ?? DateTime.now();
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'name': name,
-        'birthDate': birthDate.toIso8601String(),
-        'birthTime': birthTime,
-        'birthPlace': birthPlace,
-        'birthLatitude': birthLatitude,
-        'birthLongitude': birthLongitude,
-        'sunSign': sunSign.index,
-        'moonSign': moonSign?.index,
-        'risingSign': risingSign?.index,
-        'createdAt': createdAt.toIso8601String(),
-        'updatedAt': updatedAt.toIso8601String(),
-        'isPrimary': isPrimary,
-        'relationship': relationship,
-        'avatarEmoji': avatarEmoji,
-      };
+    'id': id,
+    'name': name,
+    'birthDate': birthDate.toIso8601String(),
+    'birthTime': birthTime,
+    'birthPlace': birthPlace,
+    'birthLatitude': birthLatitude,
+    'birthLongitude': birthLongitude,
+    'sunSign': sunSign.index,
+    'moonSign': moonSign?.index,
+    'risingSign': risingSign?.index,
+    'createdAt': createdAt.toIso8601String(),
+    'updatedAt': updatedAt.toIso8601String(),
+    'isPrimary': isPrimary,
+    'relationship': relationship,
+    'avatarEmoji': avatarEmoji,
+  };
 
   factory UserProfile.fromJson(Map<String, dynamic> json) {
     final sunSignIndex = json['sunSign'] as int? ?? 0;
@@ -63,32 +63,38 @@ class UserProfile {
     final risingSignIndex = json['risingSign'] as int?;
 
     return UserProfile(
-        id: json['id'] as String?,
-        name: json['name'] as String?,
-        birthDate: DateTime.parse(json['birthDate'] as String),
-        birthTime: json['birthTime'] as String?,
-        birthPlace: json['birthPlace'] as String?,
-        birthLatitude: json['birthLatitude'] as double?,
-        birthLongitude: json['birthLongitude'] as double?,
-        sunSign: (sunSignIndex >= 0 && sunSignIndex < ZodiacSign.values.length)
-            ? ZodiacSign.values[sunSignIndex]
-            : null,
-        moonSign: (moonSignIndex != null && moonSignIndex >= 0 && moonSignIndex < ZodiacSign.values.length)
-            ? ZodiacSign.values[moonSignIndex]
-            : null,
-        risingSign: (risingSignIndex != null && risingSignIndex >= 0 && risingSignIndex < ZodiacSign.values.length)
-            ? ZodiacSign.values[risingSignIndex]
-            : null,
-        createdAt: json['createdAt'] != null
-            ? DateTime.parse(json['createdAt'] as String)
-            : null,
-        updatedAt: json['updatedAt'] != null
-            ? DateTime.parse(json['updatedAt'] as String)
-            : null,
-        isPrimary: json['isPrimary'] as bool? ?? false,
-        relationship: json['relationship'] as String?,
-        avatarEmoji: json['avatarEmoji'] as String?,
-      );
+      id: json['id'] as String?,
+      name: json['name'] as String?,
+      birthDate: DateTime.parse(json['birthDate'] as String),
+      birthTime: json['birthTime'] as String?,
+      birthPlace: json['birthPlace'] as String?,
+      birthLatitude: json['birthLatitude'] as double?,
+      birthLongitude: json['birthLongitude'] as double?,
+      sunSign: (sunSignIndex >= 0 && sunSignIndex < ZodiacSign.values.length)
+          ? ZodiacSign.values[sunSignIndex]
+          : null,
+      moonSign:
+          (moonSignIndex != null &&
+              moonSignIndex >= 0 &&
+              moonSignIndex < ZodiacSign.values.length)
+          ? ZodiacSign.values[moonSignIndex]
+          : null,
+      risingSign:
+          (risingSignIndex != null &&
+              risingSignIndex >= 0 &&
+              risingSignIndex < ZodiacSign.values.length)
+          ? ZodiacSign.values[risingSignIndex]
+          : null,
+      createdAt: json['createdAt'] != null
+          ? DateTime.parse(json['createdAt'] as String)
+          : null,
+      updatedAt: json['updatedAt'] != null
+          ? DateTime.parse(json['updatedAt'] as String)
+          : null,
+      isPrimary: json['isPrimary'] as bool? ?? false,
+      relationship: json['relationship'] as String?,
+      avatarEmoji: json['avatarEmoji'] as String?,
+    );
   }
 
   UserProfile copyWith({
@@ -107,24 +113,23 @@ class UserProfile {
     bool? isPrimary,
     String? relationship,
     String? avatarEmoji,
-  }) =>
-      UserProfile(
-        id: id ?? this.id,
-        name: name ?? this.name,
-        birthDate: birthDate ?? this.birthDate,
-        birthTime: birthTime ?? this.birthTime,
-        birthPlace: birthPlace ?? this.birthPlace,
-        birthLatitude: birthLatitude ?? this.birthLatitude,
-        birthLongitude: birthLongitude ?? this.birthLongitude,
-        sunSign: sunSign ?? this.sunSign,
-        moonSign: moonSign ?? this.moonSign,
-        risingSign: risingSign ?? this.risingSign,
-        createdAt: createdAt ?? this.createdAt,
-        updatedAt: updatedAt ?? DateTime.now(),
-        isPrimary: isPrimary ?? this.isPrimary,
-        relationship: relationship ?? this.relationship,
-        avatarEmoji: avatarEmoji ?? this.avatarEmoji,
-      );
+  }) => UserProfile(
+    id: id ?? this.id,
+    name: name ?? this.name,
+    birthDate: birthDate ?? this.birthDate,
+    birthTime: birthTime ?? this.birthTime,
+    birthPlace: birthPlace ?? this.birthPlace,
+    birthLatitude: birthLatitude ?? this.birthLatitude,
+    birthLongitude: birthLongitude ?? this.birthLongitude,
+    sunSign: sunSign ?? this.sunSign,
+    moonSign: moonSign ?? this.moonSign,
+    risingSign: risingSign ?? this.risingSign,
+    createdAt: createdAt ?? this.createdAt,
+    updatedAt: updatedAt ?? DateTime.now(),
+    isPrimary: isPrimary ?? this.isPrimary,
+    relationship: relationship ?? this.relationship,
+    avatarEmoji: avatarEmoji ?? this.avatarEmoji,
+  );
 
   /// Check if the profile has complete birth data for chart calculation
   bool get hasCompleteBirthData =>
@@ -144,7 +149,9 @@ class UserProfile {
 
   /// DEPRECATED: Use actualRisingSign instead
   /// This getter incorrectly falls back to sun sign which causes inconsistencies
-  @Deprecated('Use actualRisingSign instead - risingSign should not fallback to sunSign')
+  @Deprecated(
+    'Use actualRisingSign instead - risingSign should not fallback to sunSign',
+  )
   ZodiacSign get effectiveRisingSign => risingSign ?? sunSign;
 
   /// Get display emoji (uses relationship emoji or sign emoji)
@@ -153,14 +160,22 @@ class UserProfile {
   /// Get relationship display name
   String get relationshipLabel {
     switch (relationship) {
-      case 'partner': return 'Partner';
-      case 'friend': return 'Arkadaş';
-      case 'family': return 'Aile';
-      case 'child': return 'Çocuk';
-      case 'crush': return 'İlgi';
-      case 'ex': return 'Eski';
-      case 'colleague': return 'İş Arkadaşı';
-      default: return relationship ?? '';
+      case 'partner':
+        return 'Partner';
+      case 'friend':
+        return 'Arkadaş';
+      case 'family':
+        return 'Aile';
+      case 'child':
+        return 'Çocuk';
+      case 'crush':
+        return 'İlgi';
+      case 'ex':
+        return 'Eski';
+      case 'colleague':
+        return 'İş Arkadaşı';
+      default:
+        return relationship ?? '';
     }
   }
 

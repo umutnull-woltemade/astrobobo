@@ -24,7 +24,9 @@ class PaywallBenefitItem extends StatelessWidget {
             width: 24,
             height: 24,
             decoration: BoxDecoration(
-              color: (iconColor ?? const Color(0xFFD4AF37)).withValues(alpha: 0.15),
+              color: (iconColor ?? const Color(0xFFD4AF37)).withValues(
+                alpha: 0.15,
+              ),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Icon(

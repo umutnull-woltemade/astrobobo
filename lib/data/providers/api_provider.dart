@@ -49,8 +49,9 @@ final ephemerisApiProvider = Provider<EphemerisApiService>((ref) {
 // ============================================================================
 
 /// Current planetary positions
-final currentPlanetPositionsProvider =
-    FutureProvider<List<PlanetPositionDto>>((ref) async {
+final currentPlanetPositionsProvider = FutureProvider<List<PlanetPositionDto>>((
+  ref,
+) async {
   final api = ref.watch(planetsApiProvider);
   final response = await api.getCurrentPositions();
   if (response.isSuccess && response.data != null) {
@@ -70,8 +71,9 @@ final currentMoonPhaseProvider = FutureProvider<MoonPhaseDto>((ref) async {
 });
 
 /// Currently retrograde planets
-final retrogradesPlanetProvider =
-    FutureProvider<List<RetrogradeDto>>((ref) async {
+final retrogradesPlanetProvider = FutureProvider<List<RetrogradeDto>>((
+  ref,
+) async {
   final api = ref.watch(planetsApiProvider);
   final response = await api.getRetrogrades();
   if (response.isSuccess && response.data != null) {
@@ -81,8 +83,10 @@ final retrogradesPlanetProvider =
 });
 
 /// Daily horoscope for a specific sign
-final dailyHoroscopeProvider =
-    FutureProvider.family<HoroscopeDto, String>((ref, sign) async {
+final dailyHoroscopeProvider = FutureProvider.family<HoroscopeDto, String>((
+  ref,
+  sign,
+) async {
   final api = ref.watch(horoscopeApiProvider);
   // Get locale for language
   final language = 'en'; // TODO: Get from app locale
@@ -94,15 +98,17 @@ final dailyHoroscopeProvider =
 });
 
 /// Sign compatibility
-final signCompatibilityProvider = FutureProvider.family<SignCompatibilityDto,
-    ({String sign1, String sign2})>((ref, params) async {
-  final api = ref.watch(compatibilityApiProvider);
-  final response = await api.calculateSignCompatibility(
-    sign1: params.sign1,
-    sign2: params.sign2,
-  );
-  if (response.isSuccess && response.data != null) {
-    return response.data!;
-  }
-  throw Exception(response.error ?? 'Failed to calculate compatibility');
-});
+final signCompatibilityProvider =
+    FutureProvider.family<SignCompatibilityDto, ({String sign1, String sign2})>(
+      (ref, params) async {
+        final api = ref.watch(compatibilityApiProvider);
+        final response = await api.calculateSignCompatibility(
+          sign1: params.sign1,
+          sign2: params.sign2,
+        );
+        if (response.isSuccess && response.data != null) {
+          return response.data!;
+        }
+        throw Exception(response.error ?? 'Failed to calculate compatibility');
+      },
+    );

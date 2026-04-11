@@ -44,7 +44,10 @@ class CosmicShareContentService {
   // MASTER LEVEL: NEW GENERATORS
   // ═══════════════════════════════════════════════════════════════
 
-  static DreamInsight _generateDreamInsight(ZodiacSign sign, MoonPhase moonPhase) {
+  static DreamInsight _generateDreamInsight(
+    ZodiacSign sign,
+    MoonPhase moonPhase,
+  ) {
     final symbols = {
       ZodiacSign.aries: ['🔥', 'Ateş — dönüşüm ve tutku'],
       ZodiacSign.taurus: ['🌳', 'Ağaç — kökler ve büyüme'],
@@ -92,7 +95,11 @@ class CosmicShareContentService {
     // Calculate day number (reduce to single digit)
     int daySum = today.day + today.month + today.year;
     while (daySum > 9 && daySum != 11 && daySum != 22 && daySum != 33) {
-      daySum = daySum.toString().split('').map(int.parse).reduce((a, b) => a + b);
+      daySum = daySum
+          .toString()
+          .split('')
+          .map(int.parse)
+          .reduce((a, b) => a + b);
     }
 
     final meanings = {
@@ -126,7 +133,16 @@ class CosmicShareContentService {
     };
 
     // Calculate lucky hour based on day number
-    final luckyHours = ['06:00', '09:00', '11:11', '14:00', '17:00', '19:00', '21:00', '23:00'];
+    final luckyHours = [
+      '06:00',
+      '09:00',
+      '11:11',
+      '14:00',
+      '17:00',
+      '19:00',
+      '21:00',
+      '23:00',
+    ];
     final luckyHour = luckyHours[(daySum - 1) % luckyHours.length];
 
     return NumerologyInsight(
@@ -175,7 +191,10 @@ class CosmicShareContentService {
     );
   }
 
-  static ChakraSnapshot _generateChakraSnapshot(ZodiacSign sign, int dayOfYear) {
+  static ChakraSnapshot _generateChakraSnapshot(
+    ZodiacSign sign,
+    int dayOfYear,
+  ) {
     final chakras = {
       ZodiacSign.aries: ['Kök Çakra', '🔴', 'Güvenlik ve topraklama'],
       ZodiacSign.taurus: ['Sakral Çakra', '🟠', 'Yaratıcılık ve tutku'],
@@ -304,7 +323,10 @@ class CosmicShareContentService {
     );
   }
 
-  static CosmicEnergyMeter _generateEnergyMeter(ZodiacSign sign, int dayOfYear) {
+  static CosmicEnergyMeter _generateEnergyMeter(
+    ZodiacSign sign,
+    int dayOfYear,
+  ) {
     // Pseudo-randomized but consistent for the same day
     final seed = dayOfYear + sign.index;
     final energyLevel = 45 + (seed % 50);
@@ -319,15 +341,17 @@ class CosmicShareContentService {
       energyLevel: energyLevel,
       energyDescription: _getEnergyDescription(energyLevel),
       emotionalIntensity: intensityOptions[intensityIndex],
-      intensityDescription: _getIntensityDescription(intensityOptions[intensityIndex]),
+      intensityDescription: _getIntensityDescription(
+        intensityOptions[intensityIndex],
+      ),
       intuitionStrength: intuitionLevel,
       intuitionDescription: _getIntuitionDescription(intuitionLevel),
       actionReflectionBalance: balanceRatio,
       balanceDescription: balanceRatio > 0.6
           ? 'Bugün hareket günü. Düşünmeyi bırak, yap.'
           : balanceRatio < 0.4
-              ? 'İçe dön. Cevaplar sessizlikte gizli.'
-              : 'Dengeli bir gün. Hem düşün hem hareket et.',
+          ? 'İçe dön. Cevaplar sessizlikte gizli.'
+          : 'Dengeli bir gün. Hem düşün hem hareket et.',
     );
   }
 
@@ -338,7 +362,8 @@ class CosmicShareContentService {
     final dominantPlanets = _getDominantPlanets(sign, today);
     final dominant = dominantPlanets.first;
 
-    final planetData = _planetInfluenceData[dominant] ??
+    final planetData =
+        _planetInfluenceData[dominant] ??
         PlanetInfluenceData(
           activates: 'İç gücünüzü',
           blocks: 'Şüphelerinizi',
@@ -351,7 +376,8 @@ class CosmicShareContentService {
       activates: planetData.activates,
       blocks: planetData.blocks,
       oneAction: planetData.action,
-      exclusivityText: 'Bu gezegen etkisi bugün sadece ${sign.nameTr} ve ${_getCompatibleSign(sign).nameTr} için bu kadar güçlü.',
+      exclusivityText:
+          'Bu gezegen etkisi bugün sadece ${sign.nameTr} ve ${_getCompatibleSign(sign).nameTr} için bu kadar güçlü.',
     );
   }
 
@@ -375,7 +401,10 @@ class CosmicShareContentService {
     return shuffled.take(3).toList();
   }
 
-  static SymbolicMessage _generateSymbolicMessage(ZodiacSign sign, int dayOfYear) {
+  static SymbolicMessage _generateSymbolicMessage(
+    ZodiacSign sign,
+    int dayOfYear,
+  ) {
     final archetypes = _archetypes[sign] ?? _defaultArchetypes;
     final index = dayOfYear % archetypes.length;
     return archetypes[index];
@@ -415,7 +444,10 @@ class CosmicShareContentService {
     return prompts[_random.nextInt(prompts.length)];
   }
 
-  static CollectiveMoment _generateCollectiveMoment(ZodiacSign sign, MoonPhase moonPhase) {
+  static CollectiveMoment _generateCollectiveMoment(
+    ZodiacSign sign,
+    MoonPhase moonPhase,
+  ) {
     final mainTexts = [
       'Senin burcundan pek çok kişi bugün aynı şeyi hissediyor.',
       'Bu enerji şu an sadece birkaç burcu bu kadar derinden etkiliyor.',
@@ -462,7 +494,8 @@ class CosmicShareContentService {
   }
 
   static List<String> _generateMicroMessages(ZodiacSign sign) {
-    final allMicroMessages = _microMessagesBySign[sign] ?? _defaultMicroMessages;
+    final allMicroMessages =
+        _microMessagesBySign[sign] ?? _defaultMicroMessages;
     final shuffled = List<String>.from(allMicroMessages)..shuffle(_random);
     return shuffled.take(3).toList();
   }
@@ -563,10 +596,28 @@ class CosmicShareContentService {
   // Helper methods
   static String _formatTurkishDate(DateTime date) {
     final months = [
-      'Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran',
-      'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'
+      'Ocak',
+      'Şubat',
+      'Mart',
+      'Nisan',
+      'Mayıs',
+      'Haziran',
+      'Temmuz',
+      'Ağustos',
+      'Eylül',
+      'Ekim',
+      'Kasım',
+      'Aralık',
     ];
-    final days = ['Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi', 'Pazar'];
+    final days = [
+      'Pazartesi',
+      'Salı',
+      'Çarşamba',
+      'Perşembe',
+      'Cuma',
+      'Cumartesi',
+      'Pazar',
+    ];
     return '${date.day} ${months[date.month - 1]} ${date.year} · ${days[date.weekday - 1]}';
   }
 
@@ -865,11 +916,14 @@ class CosmicShareContentService {
     ZodiacSign.cancer: 'Ay\'ın Yengeç\'te olması duygusal derinlik katıyor.',
     ZodiacSign.leo: 'Ay\'ın Aslan\'da olması özgüvenini artırıyor.',
     ZodiacSign.virgo: 'Ay\'ın Başak\'ta olması pratikliğini güçlendiriyor.',
-    ZodiacSign.libra: 'Ay\'ın Terazi\'de olması ilişkilere odaklanmanı sağlıyor.',
+    ZodiacSign.libra:
+        'Ay\'ın Terazi\'de olması ilişkilere odaklanmanı sağlıyor.',
     ZodiacSign.scorpio: 'Ay\'ın Akrep\'te olması yoğunluğunu artırıyor.',
-    ZodiacSign.sagittarius: 'Ay\'ın Yay\'da olması macera ruhunu canlandırıyor.',
+    ZodiacSign.sagittarius:
+        'Ay\'ın Yay\'da olması macera ruhunu canlandırıyor.',
     ZodiacSign.capricorn: 'Ay\'ın Oğlak\'ta olması disiplinini güçlendiriyor.',
-    ZodiacSign.aquarius: 'Ay\'ın Kova\'da olması yenilikçiliğini öne çıkarıyor.',
+    ZodiacSign.aquarius:
+        'Ay\'ın Kova\'da olması yenilikçiliğini öne çıkarıyor.',
     ZodiacSign.pisces: 'Ay\'ın Balık\'ta olması sezgilerini zirveye taşıyor.',
   };
 
@@ -1148,14 +1202,16 @@ class CosmicShareContentService {
         type: 'Arketip',
         symbol: 'Savaşçı',
         title: 'İçindeki Savaşçı',
-        meaning: 'Bugün savaşçı arketipi aktif. Ama gerçek savaşçı bilir: En büyük zafer kendini fethetmektir.',
+        meaning:
+            'Bugün savaşçı arketipi aktif. Ama gerçek savaşçı bilir: En büyük zafer kendini fethetmektir.',
         imageHint: 'aries_warrior',
       ),
       SymbolicMessage(
         type: 'Tarot',
         symbol: 'İmparator',
         title: 'IV - İmparator',
-        meaning: 'Yapı, otorite ve kontrol. Bugün liderlik enerjin güçlü. Ama dikkat: Güç sorumluluk getirir.',
+        meaning:
+            'Yapı, otorite ve kontrol. Bugün liderlik enerjin güçlü. Ama dikkat: Güç sorumluluk getirir.',
         imageHint: 'emperor',
       ),
     ],
@@ -1164,14 +1220,16 @@ class CosmicShareContentService {
         type: 'Arketip',
         symbol: 'Bahçıvan',
         title: 'Sabırlı Bahçıvan',
-        meaning: 'Tohumlar zamanla meyve verir. Bugün sabırla ektiğin şeylerin yeşerdiğini göreceksin.',
+        meaning:
+            'Tohumlar zamanla meyve verir. Bugün sabırla ektiğin şeylerin yeşerdiğini göreceksin.',
         imageHint: 'taurus_gardener',
       ),
       SymbolicMessage(
         type: 'Tarot',
         symbol: 'İmparatoriçe',
         title: 'III - İmparatoriçe',
-        meaning: 'Bereket, duyusallık ve yaratıcılık. Hayatın güzelliklerini hissetme zamanı.',
+        meaning:
+            'Bereket, duyusallık ve yaratıcılık. Hayatın güzelliklerini hissetme zamanı.',
         imageHint: 'empress',
       ),
     ],
@@ -1180,14 +1238,16 @@ class CosmicShareContentService {
         type: 'Arketip',
         symbol: 'Elçi',
         title: 'Tanrıların Elçisi',
-        meaning: 'Hermes gibi sen de dünyalar arasında köprü kuruyorsun. Sözlerin bugün güç taşıyor.',
+        meaning:
+            'Hermes gibi sen de dünyalar arasında köprü kuruyorsun. Sözlerin bugün güç taşıyor.',
         imageHint: 'gemini_messenger',
       ),
       SymbolicMessage(
         type: 'Tarot',
         symbol: 'Aşıklar',
         title: 'VI - Aşıklar',
-        meaning: 'Seçimler ve bağlantılar. İki yol arasında değil, ikisini birleştirme zamanı.',
+        meaning:
+            'Seçimler ve bağlantılar. İki yol arasında değil, ikisini birleştirme zamanı.',
         imageHint: 'lovers',
       ),
     ],
@@ -1196,14 +1256,16 @@ class CosmicShareContentService {
         type: 'Arketip',
         symbol: 'Anne',
         title: 'Büyük Anne',
-        meaning: 'Besleyen, koruyan, sarmalayan. Bugün hem başkalarına hem kendine annelik et.',
+        meaning:
+            'Besleyen, koruyan, sarmalayan. Bugün hem başkalarına hem kendine annelik et.',
         imageHint: 'cancer_mother',
       ),
       SymbolicMessage(
         type: 'Tarot',
         symbol: 'Ay',
         title: 'XVIII - Ay',
-        meaning: 'Bilinçaltı, sezgiler ve gizli korkular. Karanlıkta da yol bulabilirsin.',
+        meaning:
+            'Bilinçaltı, sezgiler ve gizli korkular. Karanlıkta da yol bulabilirsin.',
         imageHint: 'moon',
       ),
     ],
@@ -1212,14 +1274,16 @@ class CosmicShareContentService {
         type: 'Arketip',
         symbol: 'Kral',
         title: 'Adil Kral',
-        meaning: 'Gerçek kral tahtı değil, kalpleri yönetir. Bugün cömertliğinle hükmet.',
+        meaning:
+            'Gerçek kral tahtı değil, kalpleri yönetir. Bugün cömertliğinle hükmet.',
         imageHint: 'leo_king',
       ),
       SymbolicMessage(
         type: 'Tarot',
         symbol: 'Güç',
         title: 'VIII - Güç',
-        meaning: 'İç aslanını evcilleştirme. Güç kontrolde değil, yumuşaklıkta.',
+        meaning:
+            'İç aslanını evcilleştirme. Güç kontrolde değil, yumuşaklıkta.',
         imageHint: 'strength',
       ),
     ],
@@ -1228,7 +1292,8 @@ class CosmicShareContentService {
         type: 'Arketip',
         symbol: 'Şifacı',
         title: 'Kutsal Şifacı',
-        meaning: 'Ellerin şifa taşıyor. Bugün dokunduğun her şeyi iyileştirme potansiyelin var.',
+        meaning:
+            'Ellerin şifa taşıyor. Bugün dokunduğun her şeyi iyileştirme potansiyelin var.',
         imageHint: 'virgo_healer',
       ),
       SymbolicMessage(
@@ -1251,7 +1316,8 @@ class CosmicShareContentService {
         type: 'Tarot',
         symbol: 'Adalet',
         title: 'XI - Adalet',
-        meaning: 'Denge, doğruluk ve kararlar. Terazi dengede — şimdi seçim zamanı.',
+        meaning:
+            'Denge, doğruluk ve kararlar. Terazi dengede — şimdi seçim zamanı.',
         imageHint: 'justice',
       ),
     ],
@@ -1260,14 +1326,16 @@ class CosmicShareContentService {
         type: 'Arketip',
         symbol: 'Simyacı',
         title: 'Karanlık Simyacı',
-        meaning: 'Kurşunu altına çevirirsin. Acıyı bilgeliğe, kaybı kazanca dönüştürme gücün var.',
+        meaning:
+            'Kurşunu altına çevirirsin. Acıyı bilgeliğe, kaybı kazanca dönüştürme gücün var.',
         imageHint: 'scorpio_alchemist',
       ),
       SymbolicMessage(
         type: 'Tarot',
         symbol: 'Ölüm',
         title: 'XIII - Ölüm',
-        meaning: 'Dönüşüm ve yeniden doğuş. Bitişler, başlangıçların kapısıdır.',
+        meaning:
+            'Dönüşüm ve yeniden doğuş. Bitişler, başlangıçların kapısıdır.',
         imageHint: 'death',
       ),
     ],
@@ -1276,7 +1344,8 @@ class CosmicShareContentService {
         type: 'Arketip',
         symbol: 'Kaşif',
         title: 'Ufuk Kaşifi',
-        meaning: 'Bilinmeyen seni çağırıyor. Bugün sınırları aşma cesareti içinde.',
+        meaning:
+            'Bilinmeyen seni çağırıyor. Bugün sınırları aşma cesareti içinde.',
         imageHint: 'sagittarius_explorer',
       ),
       SymbolicMessage(
@@ -1292,14 +1361,16 @@ class CosmicShareContentService {
         type: 'Arketip',
         symbol: 'Bilge',
         title: 'Dağın Bilgesi',
-        meaning: 'Zirveye çıkan, geri dönüp yol gösterir. Deneyimin başkalarına ışık tutuyor.',
+        meaning:
+            'Zirveye çıkan, geri dönüp yol gösterir. Deneyimin başkalarına ışık tutuyor.',
         imageHint: 'capricorn_sage',
       ),
       SymbolicMessage(
         type: 'Tarot',
         symbol: 'Şeytan',
         title: 'XV - Şeytan',
-        meaning: 'Zincirler mi, seçimler mi? Bağlandığın şeyler seni tanımlıyor mu?',
+        meaning:
+            'Zincirler mi, seçimler mi? Bağlandığın şeyler seni tanımlıyor mu?',
         imageHint: 'devil',
       ),
     ],
@@ -1315,7 +1386,8 @@ class CosmicShareContentService {
         type: 'Tarot',
         symbol: 'Yıldız',
         title: 'XVII - Yıldız',
-        meaning: 'Umut, ilham ve rehberlik. En karanlık gecede bile yıldızlar parlar.',
+        meaning:
+            'Umut, ilham ve rehberlik. En karanlık gecede bile yıldızlar parlar.',
         imageHint: 'star',
       ),
     ],
@@ -1532,10 +1604,7 @@ class CollectiveMoment {
   final String mainText;
   final String subText;
 
-  const CollectiveMoment({
-    required this.mainText,
-    required this.subText,
-  });
+  const CollectiveMoment({required this.mainText, required this.subText});
 }
 
 class SoftPremiumCuriosity {

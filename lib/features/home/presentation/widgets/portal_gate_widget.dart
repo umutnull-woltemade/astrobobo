@@ -61,9 +61,7 @@ class _PortalGateWidgetState extends State<PortalGateWidget>
 
     final prox = widget.proximity.clamp(0.0, 1.0);
     final shouldCharge = _hovering || prox > 0.35;
-    final delta = shouldCharge
-        ? dt * (0.55 + prox * 0.9)
-        : -dt * 0.7;
+    final delta = shouldCharge ? dt * (0.55 + prox * 0.9) : -dt * 0.7;
     final next = (_charge + delta).clamp(0.0, 1.0);
     if (next != _charge) {
       setState(() => _charge = next);
@@ -247,13 +245,7 @@ class _PortalGatePainter extends CustomPainter {
       ..style = PaintingStyle.stroke
       ..strokeWidth = 1
       ..color = const Color.fromRGBO(245, 243, 255, 0.1);
-    canvas.drawArc(
-      chargeRect,
-      -math.pi / 2,
-      2 * math.pi,
-      false,
-      trackPaint,
-    );
+    canvas.drawArc(chargeRect, -math.pi / 2, 2 * math.pi, false, trackPaint);
   }
 
   @override

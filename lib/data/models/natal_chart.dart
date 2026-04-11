@@ -76,7 +76,8 @@ class NatalChart {
   }
 
   /// Get only major aspects
-  List<Aspect> get majorAspects => aspects.where((a) => a.type.isMajor).toList();
+  List<Aspect> get majorAspects =>
+      aspects.where((a) => a.type.isMajor).toList();
 
   /// Get challenging aspects
   List<Aspect> get challengingAspects =>
@@ -93,8 +94,9 @@ class NatalChart {
   /// Dominant element in chart
   Element get dominantElement {
     final elementCounts = <Element, int>{};
-    for (final planet in planets.where((p) =>
-        p.planet.isPersonalPlanet || p.planet.isSocialPlanet)) {
+    for (final planet in planets.where(
+      (p) => p.planet.isPersonalPlanet || p.planet.isSocialPlanet,
+    )) {
       final element = planet.sign.element;
       elementCounts[element] = (elementCounts[element] ?? 0) + 1;
     }
@@ -106,8 +108,9 @@ class NatalChart {
   /// Dominant modality in chart
   Modality get dominantModality {
     final modalityCounts = <Modality, int>{};
-    for (final planet in planets.where((p) =>
-        p.planet.isPersonalPlanet || p.planet.isSocialPlanet)) {
+    for (final planet in planets.where(
+      (p) => p.planet.isPersonalPlanet || p.planet.isSocialPlanet,
+    )) {
       final modality = planet.sign.modality;
       modalityCounts[modality] = (modalityCounts[modality] ?? 0) + 1;
     }
@@ -124,7 +127,8 @@ class BirthData {
   final double? latitude;
   final double? longitude;
   final String? placeName;
-  final double? timezoneOffset; // Hours offset from UTC (e.g., +3 for Istanbul, -5 for New York)
+  final double?
+  timezoneOffset; // Hours offset from UTC (e.g., +3 for Istanbul, -5 for New York)
 
   BirthData({
     required this.date,
@@ -164,9 +168,11 @@ class BirthData {
   DateTime get dateTimeUtc {
     final local = dateTime;
     // Subtract timezone offset to get UTC
-    return local.subtract(Duration(
-      hours: effectiveTimezoneOffset.truncate(),
-      minutes: ((effectiveTimezoneOffset % 1) * 60).round(),
-    ));
+    return local.subtract(
+      Duration(
+        hours: effectiveTimezoneOffset.truncate(),
+        minutes: ((effectiveTimezoneOffset % 1) * 60).round(),
+      ),
+    );
   }
 }

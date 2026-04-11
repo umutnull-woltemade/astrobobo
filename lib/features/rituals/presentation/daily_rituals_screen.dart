@@ -89,7 +89,10 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
         children: [
           IconButton(
             onPressed: () => context.pop(),
-            icon: const Icon(Icons.arrow_back_ios, color: AppColors.textPrimary),
+            icon: const Icon(
+              Icons.arrow_back_ios,
+              color: AppColors.textPrimary,
+            ),
           ),
           Expanded(
             child: Column(
@@ -98,24 +101,24 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
                 Text(
                   'Gunluk Rituel & Meditasyon',
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        color: AppColors.starGold,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    color: AppColors.starGold,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 Row(
                   children: [
                     Text(
                       '${sign.nameTr} ',
-                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                            color: sign.color,
-                          ),
+                      style: Theme.of(
+                        context,
+                      ).textTheme.bodySmall?.copyWith(color: sign.color),
                     ),
                     Text(sign.symbol, style: TextStyle(color: sign.color)),
                     Text(
                       ' • ${moonPhase.emoji} ${moonPhase.nameTr}',
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                            color: AppColors.textSecondary,
-                          ),
+                        color: AppColors.textSecondary,
+                      ),
                     ),
                   ],
                 ),
@@ -143,9 +146,9 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
         ),
         labelColor: AppColors.auroraStart,
         unselectedLabelColor: AppColors.textSecondary,
-        labelStyle: Theme.of(context).textTheme.labelMedium?.copyWith(
-              fontWeight: FontWeight.bold,
-            ),
+        labelStyle: Theme.of(
+          context,
+        ).textTheme.labelMedium?.copyWith(fontWeight: FontWeight.bold),
         dividerColor: Colors.transparent,
         tabs: const [
           Tab(text: 'Sabah'),
@@ -237,11 +240,26 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
           const SizedBox(height: AppConstants.spacingLg),
           _buildMainAffirmation(context, affirmations.mainAffirmation),
           const SizedBox(height: AppConstants.spacingMd),
-          _buildAffirmationList(context, 'Sabah Olumlamalari', affirmations.morningAffirmations, Colors.orange),
+          _buildAffirmationList(
+            context,
+            'Sabah Olumlamalari',
+            affirmations.morningAffirmations,
+            Colors.orange,
+          ),
           const SizedBox(height: AppConstants.spacingMd),
-          _buildAffirmationList(context, 'Ogle Olumlamalari', affirmations.noonAffirmations, AppColors.starGold),
+          _buildAffirmationList(
+            context,
+            'Ogle Olumlamalari',
+            affirmations.noonAffirmations,
+            AppColors.starGold,
+          ),
           const SizedBox(height: AppConstants.spacingMd),
-          _buildAffirmationList(context, 'Aksam Olumlamalari', affirmations.eveningAffirmations, AppColors.auroraStart),
+          _buildAffirmationList(
+            context,
+            'Aksam Olumlamalari',
+            affirmations.eveningAffirmations,
+            AppColors.auroraStart,
+          ),
           const SizedBox(height: AppConstants.spacingMd),
           _buildAffirmationTips(context),
           const SizedBox(height: AppConstants.spacingXxl),
@@ -315,15 +333,15 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
                 Text(
                   title,
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        color: color,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    color: color,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 Text(
                   subtitle,
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: AppColors.textSecondary,
-                      ),
+                    color: AppColors.textSecondary,
+                  ),
                 ),
               ],
             ),
@@ -349,16 +367,16 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
             children: [
               Text(
                 label,
-                style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                      color: AppColors.textMuted,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.labelSmall?.copyWith(color: AppColors.textMuted),
               ),
               Text(
                 time,
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      color: AppColors.starGold,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  color: AppColors.starGold,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ],
           ),
@@ -372,10 +390,7 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
       padding: const EdgeInsets.all(AppConstants.spacingLg),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [
-            AppColors.starGold.withAlpha(20),
-            Colors.transparent,
-          ],
+          colors: [AppColors.starGold.withAlpha(20), Colors.transparent],
         ),
         borderRadius: BorderRadius.circular(AppConstants.radiusMd),
         border: Border.all(color: AppColors.starGold.withAlpha(40)),
@@ -389,9 +404,9 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
               const SizedBox(width: 8),
               Text(
                 'Gunun Niyeti',
-                style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      color: AppColors.starGold,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleSmall?.copyWith(color: AppColors.starGold),
               ),
             ],
           ),
@@ -399,10 +414,10 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
           Text(
             '"$intention"',
             style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                  color: AppColors.textPrimary,
-                  fontStyle: FontStyle.italic,
-                  height: 1.5,
-                ),
+              color: AppColors.textPrimary,
+              fontStyle: FontStyle.italic,
+              height: 1.5,
+            ),
           ),
         ],
       ),
@@ -421,9 +436,9 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
         children: [
           Text(
             'Rituel Adimlari',
-            style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                  color: AppColors.textPrimary,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.titleSmall?.copyWith(color: AppColors.textPrimary),
           ),
           const SizedBox(height: AppConstants.spacingMd),
           ...steps.asMap().entries.map((entry) {
@@ -444,7 +459,8 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
                     child: Center(
                       child: Text(
                         '${index + 1}',
-                        style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                        style: Theme.of(context).textTheme.labelMedium
+                            ?.copyWith(
                               color: AppColors.auroraStart,
                               fontWeight: FontWeight.bold,
                             ),
@@ -458,22 +474,21 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
                       children: [
                         Text(
                           step.title,
-                          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          style: Theme.of(context).textTheme.bodyMedium
+                              ?.copyWith(
                                 color: AppColors.textPrimary,
                                 fontWeight: FontWeight.w500,
                               ),
                         ),
                         Text(
                           step.description,
-                          style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                color: AppColors.textSecondary,
-                              ),
+                          style: Theme.of(context).textTheme.bodySmall
+                              ?.copyWith(color: AppColors.textSecondary),
                         ),
                         Text(
                           '${step.durationMinutes} dakika',
-                          style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                                color: AppColors.textMuted,
-                              ),
+                          style: Theme.of(context).textTheme.labelSmall
+                              ?.copyWith(color: AppColors.textMuted),
                         ),
                       ],
                     ),
@@ -492,10 +507,7 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
       padding: const EdgeInsets.all(AppConstants.spacingLg),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [
-            Colors.purple.withAlpha(20),
-            Colors.transparent,
-          ],
+          colors: [Colors.purple.withAlpha(20), Colors.transparent],
         ),
         borderRadius: BorderRadius.circular(AppConstants.radiusMd),
         border: Border.all(color: Colors.purple.withAlpha(40)),
@@ -510,22 +522,22 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
               children: [
                 Text(
                   'Onerilen Kristal',
-                  style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                        color: AppColors.textMuted,
-                      ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.labelSmall?.copyWith(color: AppColors.textMuted),
                 ),
                 Text(
                   crystal.name,
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                        color: Colors.purple,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    color: Colors.purple,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 Text(
                   crystal.benefit,
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: AppColors.textSecondary,
-                      ),
+                    color: AppColors.textSecondary,
+                  ),
                 ),
               ],
             ),
@@ -535,15 +547,15 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
     );
   }
 
-  Widget _buildEssentialOilCard(BuildContext context, EssentialOilSuggestion oil) {
+  Widget _buildEssentialOilCard(
+    BuildContext context,
+    EssentialOilSuggestion oil,
+  ) {
     return Container(
       padding: const EdgeInsets.all(AppConstants.spacingLg),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [
-            Colors.green.withAlpha(20),
-            Colors.transparent,
-          ],
+          colors: [Colors.green.withAlpha(20), Colors.transparent],
         ),
         borderRadius: BorderRadius.circular(AppConstants.radiusMd),
         border: Border.all(color: Colors.green.withAlpha(40)),
@@ -558,22 +570,22 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
               children: [
                 Text(
                   'Onerilen Esansiyel Yag',
-                  style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                        color: AppColors.textMuted,
-                      ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.labelSmall?.copyWith(color: AppColors.textMuted),
                 ),
                 Text(
                   oil.name,
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                        color: Colors.green,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    color: Colors.green,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 Text(
                   oil.usage,
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: AppColors.textSecondary,
-                      ),
+                    color: AppColors.textSecondary,
+                  ),
                 ),
               ],
             ),
@@ -583,15 +595,15 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
     );
   }
 
-  Widget _buildMeditationTypeCard(BuildContext context, MeditationData meditation) {
+  Widget _buildMeditationTypeCard(
+    BuildContext context,
+    MeditationData meditation,
+  ) {
     return Container(
       padding: const EdgeInsets.all(AppConstants.spacingLg),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [
-            AppColors.auroraStart.withAlpha(30),
-            AppColors.surfaceDark,
-          ],
+          colors: [AppColors.auroraStart.withAlpha(30), AppColors.surfaceDark],
         ),
         borderRadius: BorderRadius.circular(AppConstants.radiusMd),
         border: Border.all(color: AppColors.auroraStart.withAlpha(50)),
@@ -607,7 +619,10 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
                   color: AppColors.auroraStart.withAlpha(30),
                   shape: BoxShape.circle,
                 ),
-                child: Text(meditation.emoji, style: const TextStyle(fontSize: 24)),
+                child: Text(
+                  meditation.emoji,
+                  style: const TextStyle(fontSize: 24),
+                ),
               ),
               const SizedBox(width: 12),
               Expanded(
@@ -617,15 +632,15 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
                     Text(
                       meditation.type,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                            color: AppColors.auroraStart,
-                            fontWeight: FontWeight.bold,
-                          ),
+                        color: AppColors.auroraStart,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     Text(
                       meditation.focus,
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                            color: AppColors.textSecondary,
-                          ),
+                        color: AppColors.textSecondary,
+                      ),
                     ),
                   ],
                 ),
@@ -636,9 +651,9 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
           Text(
             meditation.description,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: AppColors.textPrimary,
-                  height: 1.5,
-                ),
+              color: AppColors.textPrimary,
+              height: 1.5,
+            ),
           ),
         ],
       ),
@@ -657,9 +672,9 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
         children: [
           Text(
             'Onerilen Sure',
-            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: AppColors.textSecondary,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.bodyMedium?.copyWith(color: AppColors.textSecondary),
           ),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -674,9 +689,9 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
                 Text(
                   '$minutes dakika',
                   style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                        color: AppColors.auroraStart,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    color: AppColors.auroraStart,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ],
             ),
@@ -686,7 +701,10 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
     );
   }
 
-  Widget _buildMeditationGuide(BuildContext context, MeditationData meditation) {
+  Widget _buildMeditationGuide(
+    BuildContext context,
+    MeditationData meditation,
+  ) {
     return Container(
       padding: const EdgeInsets.all(AppConstants.spacingLg),
       decoration: BoxDecoration(
@@ -698,9 +716,9 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
         children: [
           Text(
             'Meditasyon Rehberi',
-            style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                  color: AppColors.textPrimary,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.titleSmall?.copyWith(color: AppColors.textPrimary),
           ),
           const SizedBox(height: AppConstants.spacingMd),
           ...meditation.steps.asMap().entries.map((entry) {
@@ -720,9 +738,9 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
                       child: Text(
                         '${entry.key + 1}',
                         style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                              color: AppColors.auroraStart,
-                              fontWeight: FontWeight.bold,
-                            ),
+                          color: AppColors.auroraStart,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ),
@@ -731,9 +749,9 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
                     child: Text(
                       entry.value,
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                            color: AppColors.textSecondary,
-                            height: 1.4,
-                          ),
+                        color: AppColors.textSecondary,
+                        height: 1.4,
+                      ),
                     ),
                   ),
                 ],
@@ -745,15 +763,15 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
     );
   }
 
-  Widget _buildBreathingExercise(BuildContext context, BreathingPattern pattern) {
+  Widget _buildBreathingExercise(
+    BuildContext context,
+    BreathingPattern pattern,
+  ) {
     return Container(
       padding: const EdgeInsets.all(AppConstants.spacingLg),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [
-            Colors.blue.withAlpha(20),
-            Colors.transparent,
-          ],
+          colors: [Colors.blue.withAlpha(20), Colors.transparent],
         ),
         borderRadius: BorderRadius.circular(AppConstants.radiusMd),
         border: Border.all(color: Colors.blue.withAlpha(40)),
@@ -767,9 +785,9 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
               const SizedBox(width: 8),
               Text(
                 'Nefes Egzersizi: ${pattern.name}',
-                style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      color: Colors.blue,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleSmall?.copyWith(color: Colors.blue),
               ),
             ],
           ),
@@ -777,17 +795,32 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              _buildBreathPhase(context, 'Nefes Al', '${pattern.inhaleSeconds}s', Colors.blue),
-              _buildBreathPhase(context, 'Tut', '${pattern.holdSeconds}s', Colors.purple),
-              _buildBreathPhase(context, 'Ver', '${pattern.exhaleSeconds}s', Colors.teal),
+              _buildBreathPhase(
+                context,
+                'Nefes Al',
+                '${pattern.inhaleSeconds}s',
+                Colors.blue,
+              ),
+              _buildBreathPhase(
+                context,
+                'Tut',
+                '${pattern.holdSeconds}s',
+                Colors.purple,
+              ),
+              _buildBreathPhase(
+                context,
+                'Ver',
+                '${pattern.exhaleSeconds}s',
+                Colors.teal,
+              ),
             ],
           ),
           const SizedBox(height: AppConstants.spacingSm),
           Text(
             '${pattern.cycles} kez tekrarla',
-            style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: AppColors.textMuted,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.bodySmall?.copyWith(color: AppColors.textMuted),
             textAlign: TextAlign.center,
           ),
         ],
@@ -795,7 +828,12 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
     );
   }
 
-  Widget _buildBreathPhase(BuildContext context, String label, String duration, Color color) {
+  Widget _buildBreathPhase(
+    BuildContext context,
+    String label,
+    String duration,
+    Color color,
+  ) {
     return Column(
       children: [
         Container(
@@ -809,18 +847,18 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
             child: Text(
               duration,
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    color: color,
-                    fontWeight: FontWeight.bold,
-                  ),
+                color: color,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ),
         const SizedBox(height: 4),
         Text(
           label,
-          style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                color: AppColors.textMuted,
-              ),
+          style: Theme.of(
+            context,
+          ).textTheme.labelSmall?.copyWith(color: AppColors.textMuted),
         ),
       ],
     );
@@ -831,10 +869,7 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
       padding: const EdgeInsets.all(AppConstants.spacingLg),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [
-            chakra.color.withAlpha(30),
-            Colors.transparent,
-          ],
+          colors: [chakra.color.withAlpha(30), Colors.transparent],
         ),
         borderRadius: BorderRadius.circular(AppConstants.radiusMd),
         border: Border.all(color: chakra.color.withAlpha(50)),
@@ -859,22 +894,22 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
               children: [
                 Text(
                   'Odaklanilacak Cakra',
-                  style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                        color: AppColors.textMuted,
-                      ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.labelSmall?.copyWith(color: AppColors.textMuted),
                 ),
                 Text(
                   chakra.name,
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                        color: chakra.color,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    color: chakra.color,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 Text(
                   chakra.focus,
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: AppColors.textSecondary,
-                      ),
+                    color: AppColors.textSecondary,
+                  ),
                 ),
               ],
             ),
@@ -906,25 +941,30 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
           Text(
             affirmation,
             style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                  color: AppColors.textPrimary,
-                  fontStyle: FontStyle.italic,
-                  height: 1.4,
-                ),
+              color: AppColors.textPrimary,
+              fontStyle: FontStyle.italic,
+              height: 1.4,
+            ),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: AppConstants.spacingMd),
           Text(
             'Gunun Ana Olumlamasi',
-            style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                  color: AppColors.starGold,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.labelMedium?.copyWith(color: AppColors.starGold),
           ),
         ],
       ),
     );
   }
 
-  Widget _buildAffirmationList(BuildContext context, String title, List<String> affirmations, Color color) {
+  Widget _buildAffirmationList(
+    BuildContext context,
+    String title,
+    List<String> affirmations,
+    Color color,
+  ) {
     return Container(
       padding: const EdgeInsets.all(AppConstants.spacingLg),
       decoration: BoxDecoration(
@@ -938,30 +978,32 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
           Text(
             title,
             style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                  color: color,
-                  fontWeight: FontWeight.bold,
-                ),
+              color: color,
+              fontWeight: FontWeight.bold,
+            ),
           ),
           const SizedBox(height: AppConstants.spacingMd),
-          ...affirmations.map((aff) => Padding(
-                padding: const EdgeInsets.only(bottom: 8),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Icon(Icons.star, color: color, size: 16),
-                    const SizedBox(width: 8),
-                    Expanded(
-                      child: Text(
-                        aff,
-                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                              color: AppColors.textPrimary,
-                              height: 1.4,
-                            ),
+          ...affirmations.map(
+            (aff) => Padding(
+              padding: const EdgeInsets.only(bottom: 8),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Icon(Icons.star, color: color, size: 16),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      aff,
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        color: AppColors.textPrimary,
+                        height: 1.4,
                       ),
                     ),
-                  ],
-                ),
-              )),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
@@ -983,9 +1025,9 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
               const SizedBox(width: 8),
               Text(
                 'Olumlama Ipuclari',
-                style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      color: AppColors.starGold,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleSmall?.copyWith(color: AppColors.starGold),
               ),
             ],
           ),
@@ -1015,9 +1057,9 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
           const SizedBox(width: 8),
           Text(
             tip,
-            style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: AppColors.textSecondary,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.bodySmall?.copyWith(color: AppColors.textSecondary),
           ),
         ],
       ),
@@ -1040,32 +1082,38 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
               const SizedBox(width: 8),
               Text(
                 'Gun Sonu Yansimasi',
-                style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      color: AppColors.auroraEnd,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleSmall?.copyWith(color: AppColors.auroraEnd),
               ),
             ],
           ),
           const SizedBox(height: AppConstants.spacingMd),
-          ...prompts.map((prompt) => Padding(
-                padding: const EdgeInsets.only(bottom: 8),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Icon(Icons.help_outline, color: AppColors.textMuted, size: 16),
-                    const SizedBox(width: 8),
-                    Expanded(
-                      child: Text(
-                        prompt,
-                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                              color: AppColors.textPrimary,
-                              height: 1.4,
-                            ),
+          ...prompts.map(
+            (prompt) => Padding(
+              padding: const EdgeInsets.only(bottom: 8),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Icon(
+                    Icons.help_outline,
+                    color: AppColors.textMuted,
+                    size: 16,
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      prompt,
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        color: AppColors.textPrimary,
+                        height: 1.4,
                       ),
                     ),
-                  ],
-                ),
-              )),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
@@ -1076,10 +1124,7 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
       padding: const EdgeInsets.all(AppConstants.spacingLg),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [
-            Colors.pink.withAlpha(20),
-            Colors.transparent,
-          ],
+          colors: [Colors.pink.withAlpha(20), Colors.transparent],
         ),
         borderRadius: BorderRadius.circular(AppConstants.radiusMd),
         border: Border.all(color: Colors.pink.withAlpha(40)),
@@ -1093,45 +1138,50 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
               const SizedBox(width: 8),
               Text(
                 'Sukran Pratiği',
-                style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      color: Colors.pink,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleSmall?.copyWith(color: Colors.pink),
               ),
             ],
           ),
           const SizedBox(height: AppConstants.spacingSm),
           Text(
             'Bu gun icin sukran duydugun 3 seyi yaz:',
-            style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: AppColors.textSecondary,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.bodySmall?.copyWith(color: AppColors.textSecondary),
           ),
           const SizedBox(height: AppConstants.spacingMd),
-          ...prompts.asMap().entries.map((entry) => Padding(
-                padding: const EdgeInsets.only(bottom: 8),
-                child: Container(
-                  padding: const EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                    color: Colors.pink.withAlpha(10),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Row(
-                    children: [
-                      Text('${entry.key + 1}.', style: TextStyle(color: Colors.pink)),
-                      const SizedBox(width: 8),
-                      Expanded(
-                        child: Text(
-                          entry.value,
-                          style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                color: AppColors.textSecondary,
-                                fontStyle: FontStyle.italic,
-                              ),
+          ...prompts.asMap().entries.map(
+            (entry) => Padding(
+              padding: const EdgeInsets.only(bottom: 8),
+              child: Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.pink.withAlpha(10),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Row(
+                  children: [
+                    Text(
+                      '${entry.key + 1}.',
+                      style: TextStyle(color: Colors.pink),
+                    ),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: Text(
+                        entry.value,
+                        style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                          color: AppColors.textSecondary,
+                          fontStyle: FontStyle.italic,
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-              )),
+              ),
+            ),
+          ),
         ],
       ),
     );
@@ -1153,9 +1203,9 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
               const SizedBox(width: 8),
               Text(
                 'Birakma Ritueli',
-                style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      color: AppColors.auroraEnd,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleSmall?.copyWith(color: AppColors.auroraEnd),
               ),
             ],
           ),
@@ -1163,16 +1213,16 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
           Text(
             ritual.description,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: AppColors.textPrimary,
-                  height: 1.5,
-                ),
+              color: AppColors.textPrimary,
+              height: 1.5,
+            ),
           ),
           const SizedBox(height: AppConstants.spacingMd),
           Text(
             'Birak:',
-            style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                  color: AppColors.textMuted,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.labelMedium?.copyWith(color: AppColors.textMuted),
           ),
           const SizedBox(height: 4),
           Wrap(
@@ -1180,16 +1230,19 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
             runSpacing: 8,
             children: ritual.thingsToRelease.map((thing) {
               return Container(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 6,
+                ),
                 decoration: BoxDecoration(
                   color: Colors.red.withAlpha(20),
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: Text(
                   thing,
-                  style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                        color: Colors.red,
-                      ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.labelSmall?.copyWith(color: Colors.red),
                 ),
               );
             }).toList(),
@@ -1204,10 +1257,7 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
       padding: const EdgeInsets.all(AppConstants.spacingLg),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [
-            Colors.indigo.withAlpha(20),
-            Colors.transparent,
-          ],
+          colors: [Colors.indigo.withAlpha(20), Colors.transparent],
         ),
         borderRadius: BorderRadius.circular(AppConstants.radiusMd),
         border: Border.all(color: Colors.indigo.withAlpha(40)),
@@ -1221,31 +1271,36 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
               const SizedBox(width: 8),
               Text(
                 'Uyku Hazirligi',
-                style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      color: Colors.indigo,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleSmall?.copyWith(color: Colors.indigo),
               ),
             ],
           ),
           const SizedBox(height: AppConstants.spacingMd),
-          ...prep.steps.asMap().entries.map((entry) => Padding(
-                padding: const EdgeInsets.only(bottom: 8),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('${entry.key + 1}.', style: TextStyle(color: Colors.indigo)),
-                    const SizedBox(width: 8),
-                    Expanded(
-                      child: Text(
-                        entry.value,
-                        style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                              color: AppColors.textSecondary,
-                            ),
+          ...prep.steps.asMap().entries.map(
+            (entry) => Padding(
+              padding: const EdgeInsets.only(bottom: 8),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    '${entry.key + 1}.',
+                    style: TextStyle(color: Colors.indigo),
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      entry.value,
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        color: AppColors.textSecondary,
                       ),
                     ),
-                  ],
-                ),
-              )),
+                  ),
+                ],
+              ),
+            ),
+          ),
           const SizedBox(height: AppConstants.spacingMd),
           Container(
             padding: const EdgeInsets.all(12),
@@ -1261,9 +1316,9 @@ class _DailyRitualsScreenState extends ConsumerState<DailyRitualsScreen>
                   child: Text(
                     '"${prep.sleepAffirmation}"',
                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          color: AppColors.textPrimary,
-                          fontStyle: FontStyle.italic,
-                        ),
+                      color: AppColors.textPrimary,
+                      fontStyle: FontStyle.italic,
+                    ),
                   ),
                 ),
               ],
@@ -1429,20 +1484,14 @@ class ReleasingRitual {
   final String description;
   final List<String> thingsToRelease;
 
-  ReleasingRitual({
-    required this.description,
-    required this.thingsToRelease,
-  });
+  ReleasingRitual({required this.description, required this.thingsToRelease});
 }
 
 class SleepPreparation {
   final List<String> steps;
   final String sleepAffirmation;
 
-  SleepPreparation({
-    required this.steps,
-    required this.sleepAffirmation,
-  });
+  SleepPreparation({required this.steps, required this.sleepAffirmation});
 }
 
 // ==================== Service ====================
@@ -1464,22 +1513,70 @@ class DailyRitualsService {
     );
   }
 
-  static MorningRitual _generateMorningRitual(ZodiacSign sign, MoonPhase moonPhase, Random random) {
+  static MorningRitual _generateMorningRitual(
+    ZodiacSign sign,
+    MoonPhase moonPhase,
+    Random random,
+  ) {
     final crystals = [
-      CrystalSuggestion(name: 'Ametist', emoji: '💜', benefit: 'Ic huzur ve sezgi'),
-      CrystalSuggestion(name: 'Sitrin', emoji: '💛', benefit: 'Bolluk ve pozitif enerji'),
-      CrystalSuggestion(name: 'Gul Kuvars', emoji: '💗', benefit: 'Ask ve kendini sevme'),
-      CrystalSuggestion(name: 'Kaplan Gozu', emoji: '🧡', benefit: 'Cesaret ve odaklanma'),
-      CrystalSuggestion(name: 'Aventurin', emoji: '💚', benefit: 'Sans ve firsatlar'),
-      CrystalSuggestion(name: 'Lapis Lazuli', emoji: '💙', benefit: 'Bilgelik ve gercek'),
+      CrystalSuggestion(
+        name: 'Ametist',
+        emoji: '💜',
+        benefit: 'Ic huzur ve sezgi',
+      ),
+      CrystalSuggestion(
+        name: 'Sitrin',
+        emoji: '💛',
+        benefit: 'Bolluk ve pozitif enerji',
+      ),
+      CrystalSuggestion(
+        name: 'Gul Kuvars',
+        emoji: '💗',
+        benefit: 'Ask ve kendini sevme',
+      ),
+      CrystalSuggestion(
+        name: 'Kaplan Gozu',
+        emoji: '🧡',
+        benefit: 'Cesaret ve odaklanma',
+      ),
+      CrystalSuggestion(
+        name: 'Aventurin',
+        emoji: '💚',
+        benefit: 'Sans ve firsatlar',
+      ),
+      CrystalSuggestion(
+        name: 'Lapis Lazuli',
+        emoji: '💙',
+        benefit: 'Bilgelik ve gercek',
+      ),
     ];
 
     final oils = [
-      EssentialOilSuggestion(name: 'Lavanta', emoji: '💜', usage: 'Huzur icin birkaç damla yayin'),
-      EssentialOilSuggestion(name: 'Limon', emoji: '🍋', usage: 'Canlandirici sabah enerjisi'),
-      EssentialOilSuggestion(name: 'Nane', emoji: '🌿', usage: 'Zihinsel berraklik icin'),
-      EssentialOilSuggestion(name: 'Portakal', emoji: '🍊', usage: 'Mutluluk ve neşe icin'),
-      EssentialOilSuggestion(name: 'Okaliptus', emoji: '🌲', usage: 'Temizlik ve yenilenme'),
+      EssentialOilSuggestion(
+        name: 'Lavanta',
+        emoji: '💜',
+        usage: 'Huzur icin birkaç damla yayin',
+      ),
+      EssentialOilSuggestion(
+        name: 'Limon',
+        emoji: '🍋',
+        usage: 'Canlandirici sabah enerjisi',
+      ),
+      EssentialOilSuggestion(
+        name: 'Nane',
+        emoji: '🌿',
+        usage: 'Zihinsel berraklik icin',
+      ),
+      EssentialOilSuggestion(
+        name: 'Portakal',
+        emoji: '🍊',
+        usage: 'Mutluluk ve neşe icin',
+      ),
+      EssentialOilSuggestion(
+        name: 'Okaliptus',
+        emoji: '🌲',
+        usage: 'Temizlik ve yenilenme',
+      ),
     ];
 
     final intentions = {
@@ -1503,7 +1600,8 @@ class DailyRitualsService {
       steps: [
         RitualStep(
           title: 'Uyanis Nefesi',
-          description: 'Yatakta uzanırken 3 derin nefes alın. Her nefeste vücudunuzu uyanmaya davet edin.',
+          description:
+              'Yatakta uzanırken 3 derin nefes alın. Her nefeste vücudunuzu uyanmaya davet edin.',
           durationMinutes: 2,
         ),
         RitualStep(
@@ -1513,7 +1611,8 @@ class DailyRitualsService {
         ),
         RitualStep(
           title: 'Vücut Uyandırma',
-          description: 'Hafif esnemeler ve dönüşlerle vücudu nazikçe harekete geçirin.',
+          description:
+              'Hafif esnemeler ve dönüşlerle vücudu nazikçe harekete geçirin.',
           durationMinutes: 5,
         ),
         RitualStep(
@@ -1527,13 +1626,18 @@ class DailyRitualsService {
     );
   }
 
-  static MeditationData _generateMeditation(ZodiacSign sunSign, MoonSign moonSign, Random random) {
+  static MeditationData _generateMeditation(
+    ZodiacSign sunSign,
+    MoonSign moonSign,
+    Random random,
+  ) {
     final meditations = [
       MeditationData(
         type: 'Nefes Meditasyonu',
         emoji: '🌬️',
         focus: 'Nefese odaklanma',
-        description: 'Nefes meditasyonu, zihni sakinleştirmenin en etkili yoludur. Bugün sadece nefesinize odaklanarak iç huzuru bulun.',
+        description:
+            'Nefes meditasyonu, zihni sakinleştirmenin en etkili yoludur. Bugün sadece nefesinize odaklanarak iç huzuru bulun.',
         recommendedDuration: 15,
         steps: [
           'Rahat bir pozisyonda oturun veya uzanın',
@@ -1542,14 +1646,26 @@ class DailyRitualsService {
           'Düşünceler geldiğinde nazikçe nefese dönün',
           'Vücudunuzun gevşediğini hissedin',
         ],
-        breathingPattern: BreathingPattern(name: '4-7-8 Nefes', inhaleSeconds: 4, holdSeconds: 7, exhaleSeconds: 8, cycles: 4),
-        chakraFocus: ChakraInfo(name: 'Kalp Çakrası', symbol: '💚', color: Colors.green, focus: 'Şefkat ve sevgi'),
+        breathingPattern: BreathingPattern(
+          name: '4-7-8 Nefes',
+          inhaleSeconds: 4,
+          holdSeconds: 7,
+          exhaleSeconds: 8,
+          cycles: 4,
+        ),
+        chakraFocus: ChakraInfo(
+          name: 'Kalp Çakrası',
+          symbol: '💚',
+          color: Colors.green,
+          focus: 'Şefkat ve sevgi',
+        ),
       ),
       MeditationData(
         type: 'Body Scan',
         emoji: '🧘',
         focus: 'Vücut farkındalığı',
-        description: 'Vücut taraması meditasyonu ile bedeninizle bağlantı kurun ve gerginlikleri fark edin.',
+        description:
+            'Vücut taraması meditasyonu ile bedeninizle bağlantı kurun ve gerginlikleri fark edin.',
         recommendedDuration: 20,
         steps: [
           'Sırt üstü uzanın',
@@ -1558,14 +1674,26 @@ class DailyRitualsService {
           'Yavaşça yukarı doğru ilerleyin',
           'Tüm vücudu bir bütün olarak hissedin',
         ],
-        breathingPattern: BreathingPattern(name: 'Doğal Nefes', inhaleSeconds: 4, holdSeconds: 0, exhaleSeconds: 6, cycles: 10),
-        chakraFocus: ChakraInfo(name: 'Kök Çakra', symbol: '🔴', color: Colors.red, focus: 'Topraklanma ve güvenlik'),
+        breathingPattern: BreathingPattern(
+          name: 'Doğal Nefes',
+          inhaleSeconds: 4,
+          holdSeconds: 0,
+          exhaleSeconds: 6,
+          cycles: 10,
+        ),
+        chakraFocus: ChakraInfo(
+          name: 'Kök Çakra',
+          symbol: '🔴',
+          color: Colors.red,
+          focus: 'Topraklanma ve güvenlik',
+        ),
       ),
       MeditationData(
         type: 'Sevgi-Şefkat',
         emoji: '💕',
         focus: 'Metta meditasyonu',
-        description: 'Kendinize ve başkalarına şefkat göndererek kalp merkezinizi açın.',
+        description:
+            'Kendinize ve başkalarına şefkat göndererek kalp merkezinizi açın.',
         recommendedDuration: 15,
         steps: [
           'Rahatça oturun ve gözlerinizi kapatın',
@@ -1574,14 +1702,26 @@ class DailyRitualsService {
           'Tanımadığınız birine sevgi gönderin',
           'Tüm varlıklara sevgi gönderin',
         ],
-        breathingPattern: BreathingPattern(name: 'Kalp Nefesi', inhaleSeconds: 4, holdSeconds: 4, exhaleSeconds: 4, cycles: 6),
-        chakraFocus: ChakraInfo(name: 'Kalp Çakrası', symbol: '💚', color: Colors.green, focus: 'Koşulsuz sevgi'),
+        breathingPattern: BreathingPattern(
+          name: 'Kalp Nefesi',
+          inhaleSeconds: 4,
+          holdSeconds: 4,
+          exhaleSeconds: 4,
+          cycles: 6,
+        ),
+        chakraFocus: ChakraInfo(
+          name: 'Kalp Çakrası',
+          symbol: '💚',
+          color: Colors.green,
+          focus: 'Koşulsuz sevgi',
+        ),
       ),
       MeditationData(
         type: 'Görselleştirme',
         emoji: '🌟',
         focus: 'Hayal gücü',
-        description: 'Zihinsel görselleştirme ile hedeflerinizi ve hayallerinizi canlandırın.',
+        description:
+            'Zihinsel görselleştirme ile hedeflerinizi ve hayallerinizi canlandırın.',
         recommendedDuration: 20,
         steps: [
           'Rahat bir pozisyon alın',
@@ -1590,20 +1730,35 @@ class DailyRitualsService {
           'Tüm duyularınızla deneyimleyin',
           'Bu gerçekliği kabul edin ve minnet duyun',
         ],
-        breathingPattern: BreathingPattern(name: 'Yaratıcı Nefes', inhaleSeconds: 5, holdSeconds: 3, exhaleSeconds: 5, cycles: 5),
-        chakraFocus: ChakraInfo(name: 'Üçüncü Göz', symbol: '💜', color: Colors.indigo, focus: 'Sezgi ve vizyon'),
+        breathingPattern: BreathingPattern(
+          name: 'Yaratıcı Nefes',
+          inhaleSeconds: 5,
+          holdSeconds: 3,
+          exhaleSeconds: 5,
+          cycles: 5,
+        ),
+        chakraFocus: ChakraInfo(
+          name: 'Üçüncü Göz',
+          symbol: '💜',
+          color: Colors.indigo,
+          focus: 'Sezgi ve vizyon',
+        ),
       ),
     ];
 
     return meditations[random.nextInt(meditations.length)];
   }
 
-  static AffirmationsData _generateAffirmations(ZodiacSign sign, MoonPhase moonPhase) {
+  static AffirmationsData _generateAffirmations(
+    ZodiacSign sign,
+    MoonPhase moonPhase,
+  ) {
     final mainAffirmations = {
       ZodiacSign.aries: 'Ben cesur, güçlü ve kararlıyım.',
       ZodiacSign.taurus: 'Bolluk ve bereket bana doğru akıyor.',
       ZodiacSign.gemini: 'Her gün yeni bilgiler ve bağlantılar çekiyorum.',
-      ZodiacSign.cancer: 'Duygusal güvenliğim sağlam, sevgi veriyorum ve alıyorum.',
+      ZodiacSign.cancer:
+          'Duygusal güvenliğim sağlam, sevgi veriyorum ve alıyorum.',
       ZodiacSign.leo: 'Işığım parlak, yaratıcılığım sınırsız.',
       ZodiacSign.virgo: 'Mükemmellik değil, ilerleme önemli.',
       ZodiacSign.libra: 'Hayatımda denge ve uyum yaratıyorum.',
@@ -1634,7 +1789,11 @@ class DailyRitualsService {
     );
   }
 
-  static EveningRitual _generateEveningRitual(ZodiacSign sign, MoonPhase moonPhase, Random random) {
+  static EveningRitual _generateEveningRitual(
+    ZodiacSign sign,
+    MoonPhase moonPhase,
+    Random random,
+  ) {
     return EveningRitual(
       bestTime: '21:00 - 22:00',
       reflectionPrompts: [
@@ -1648,8 +1807,14 @@ class DailyRitualsService {
         'Sahip olduğum bir şey',
       ],
       releasingRitual: ReleasingRitual(
-        description: 'Günün stresini ve olumsuz enerjileri bilinçli olarak bırakın. Her nefesinizde gitmesine izin verin.',
-        thingsToRelease: ['Günün stresi', 'Endişeler', 'Yarıda kalan işler', 'Olumsuz düşünceler'],
+        description:
+            'Günün stresini ve olumsuz enerjileri bilinçli olarak bırakın. Her nefesinizde gitmesine izin verin.',
+        thingsToRelease: [
+          'Günün stresi',
+          'Endişeler',
+          'Yarıda kalan işler',
+          'Olumsuz düşünceler',
+        ],
       ),
       sleepPreparation: SleepPreparation(
         steps: [

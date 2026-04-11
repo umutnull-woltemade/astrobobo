@@ -11,9 +11,6 @@ class EphemerisService {
   static const double _deg2rad = math.pi / 180.0;
   static const double _rad2deg = 180.0 / math.pi;
 
-
-
-
   /// Calculate complete natal chart
   static NatalChart calculateNatalChart(BirthData birthData) {
     // Use UTC time for Julian Day calculation (astronomical standard)
@@ -33,70 +30,102 @@ class EphemerisService {
     // Mercury
     final mercuryLong = _calculateMercuryLongitude(jd);
     final mercuryRetro = _isMercuryRetrograde(jd);
-    planets.add(PlanetPosition(
+    planets.add(
+      PlanetPosition(
         planet: Planet.mercury,
         longitude: mercuryLong,
-        isRetrograde: mercuryRetro));
+        isRetrograde: mercuryRetro,
+      ),
+    );
 
     // Venus
     final venusLong = _calculateVenusLongitude(jd);
     final venusRetro = _isVenusRetrograde(jd);
-    planets.add(PlanetPosition(
-        planet: Planet.venus, longitude: venusLong, isRetrograde: venusRetro));
+    planets.add(
+      PlanetPosition(
+        planet: Planet.venus,
+        longitude: venusLong,
+        isRetrograde: venusRetro,
+      ),
+    );
 
     // Mars
     final marsLong = _calculateMarsLongitude(jd);
     final marsRetro = _isMarsRetrograde(jd);
-    planets.add(PlanetPosition(
-        planet: Planet.mars, longitude: marsLong, isRetrograde: marsRetro));
+    planets.add(
+      PlanetPosition(
+        planet: Planet.mars,
+        longitude: marsLong,
+        isRetrograde: marsRetro,
+      ),
+    );
 
     // Jupiter
     final jupiterLong = _calculateJupiterLongitude(jd);
     final jupiterRetro = _isJupiterRetrograde(jd);
-    planets.add(PlanetPosition(
+    planets.add(
+      PlanetPosition(
         planet: Planet.jupiter,
         longitude: jupiterLong,
-        isRetrograde: jupiterRetro));
+        isRetrograde: jupiterRetro,
+      ),
+    );
 
     // Saturn
     final saturnLong = _calculateSaturnLongitude(jd);
     final saturnRetro = _isSaturnRetrograde(jd);
-    planets.add(PlanetPosition(
+    planets.add(
+      PlanetPosition(
         planet: Planet.saturn,
         longitude: saturnLong,
-        isRetrograde: saturnRetro));
+        isRetrograde: saturnRetro,
+      ),
+    );
 
     // Uranus
     final uranusLong = _calculateUranusLongitude(jd);
     final uranusRetro = _isUranusRetrograde(jd);
-    planets.add(PlanetPosition(
+    planets.add(
+      PlanetPosition(
         planet: Planet.uranus,
         longitude: uranusLong,
-        isRetrograde: uranusRetro));
+        isRetrograde: uranusRetro,
+      ),
+    );
 
     // Neptune
     final neptuneLong = _calculateNeptuneLongitude(jd);
     final neptuneRetro = _isNeptuneRetrograde(jd);
-    planets.add(PlanetPosition(
+    planets.add(
+      PlanetPosition(
         planet: Planet.neptune,
         longitude: neptuneLong,
-        isRetrograde: neptuneRetro));
+        isRetrograde: neptuneRetro,
+      ),
+    );
 
     // Pluto
     final plutoLong = _calculatePlutoLongitude(jd);
     final plutoRetro = _isPlutoRetrograde(jd);
-    planets.add(PlanetPosition(
-        planet: Planet.pluto, longitude: plutoLong, isRetrograde: plutoRetro));
+    planets.add(
+      PlanetPosition(
+        planet: Planet.pluto,
+        longitude: plutoLong,
+        isRetrograde: plutoRetro,
+      ),
+    );
 
     // North Node (Mean)
     final northNodeLong = _calculateNorthNodeLongitude(jd);
     planets.add(
-        PlanetPosition(planet: Planet.northNode, longitude: northNodeLong));
+      PlanetPosition(planet: Planet.northNode, longitude: northNodeLong),
+    );
 
     // South Node (opposite of North Node)
     final southNodeLong = (northNodeLong + 180) % 360;
     planets.add(
-        PlanetPosition(planet: Planet.southNode, longitude: southNodeLong));
+      PlanetPosition(planet: Planet.southNode, longitude: southNodeLong),
+    );
 
     // Chiron
     final chironLong = _calculateChironLongitude(jd);
@@ -110,18 +139,35 @@ class EphemerisService {
     var houses = <HouseCusp>[];
     if (birthData.hasExactTime && birthData.hasLocation) {
       houses = _calculateHouses(
-          jd, birthData.latitude!, birthData.longitude!, birthData.dateTimeUtc);
+        jd,
+        birthData.latitude!,
+        birthData.longitude!,
+        birthData.dateTimeUtc,
+      );
 
       // Add Ascendant, MC, IC, Descendant
       if (houses.isNotEmpty) {
-        planets.add(PlanetPosition(
-            planet: Planet.ascendant, longitude: houses[0].longitude));
-        planets.add(PlanetPosition(
-            planet: Planet.midheaven, longitude: houses[9].longitude));
-        planets.add(PlanetPosition(
-            planet: Planet.ic, longitude: houses[3].longitude));
-        planets.add(PlanetPosition(
-            planet: Planet.descendant, longitude: houses[6].longitude));
+        planets.add(
+          PlanetPosition(
+            planet: Planet.ascendant,
+            longitude: houses[0].longitude,
+          ),
+        );
+        planets.add(
+          PlanetPosition(
+            planet: Planet.midheaven,
+            longitude: houses[9].longitude,
+          ),
+        );
+        planets.add(
+          PlanetPosition(planet: Planet.ic, longitude: houses[3].longitude),
+        );
+        planets.add(
+          PlanetPosition(
+            planet: Planet.descendant,
+            longitude: houses[6].longitude,
+          ),
+        );
 
         // Assign houses to planets
         for (var i = 0; i < planets.length; i++) {
@@ -129,7 +175,10 @@ class EphemerisService {
               planets[i].planet != Planet.midheaven &&
               planets[i].planet != Planet.ic &&
               planets[i].planet != Planet.descendant) {
-            final houseNum = _getHouseForLongitude(planets[i].longitude, houses);
+            final houseNum = _getHouseForLongitude(
+              planets[i].longitude,
+              houses,
+            );
             planets[i] = PlanetPosition(
               planet: planets[i].planet,
               longitude: planets[i].longitude,
@@ -161,7 +210,8 @@ class EphemerisService {
   static double _dateToJulianDay(DateTime date) {
     int y = date.year;
     int m = date.month;
-    final d = date.day +
+    final d =
+        date.day +
         date.hour / 24.0 +
         date.minute / 1440.0 +
         date.second / 86400.0;
@@ -199,7 +249,8 @@ class EphemerisService {
 
     // Mean longitude (VSOP87 coefficients)
     // L0 = 280.46646 + 36000.76983 * T + 0.0003032 * T²
-    var l0 = 280.4664567 +
+    var l0 =
+        280.4664567 +
         36000.76982779 * t +
         0.0003032028 * t * t +
         t * t * t / 49931 -
@@ -211,7 +262,8 @@ class EphemerisService {
     m = _normalize(m) * _deg2rad;
 
     // Equation of center
-    final c = (1.9146 - 0.004817 * t - 0.000014 * t * t) * math.sin(m) +
+    final c =
+        (1.9146 - 0.004817 * t - 0.000014 * t * t) * math.sin(m) +
         (0.019993 - 0.000101 * t) * math.sin(2 * m) +
         0.00029 * math.sin(3 * m);
 
@@ -224,14 +276,16 @@ class EphemerisService {
     final t = _julianCenturies(jd);
 
     // Mean longitude
-    var lp = 218.3164477 +
+    var lp =
+        218.3164477 +
         481267.88123421 * t -
         0.0015786 * t * t +
         t * t * t / 538841 -
         t * t * t * t / 65194000;
 
     // Mean anomaly
-    var m = 134.9633964 +
+    var m =
+        134.9633964 +
         477198.8675055 * t +
         0.0087414 * t * t +
         t * t * t / 69699 -
@@ -243,21 +297,24 @@ class EphemerisService {
     ms = _normalize(ms) * _deg2rad;
 
     // Moon's argument of latitude
-    var f = 93.2720950 +
+    var f =
+        93.2720950 +
         483202.0175233 * t -
         0.0036539 * t * t -
         t * t * t / 3526000;
     f = _normalize(f) * _deg2rad;
 
     // Mean elongation
-    var d = 297.8501921 +
+    var d =
+        297.8501921 +
         445267.1114034 * t -
         0.0018819 * t * t +
         t * t * t / 545868;
     d = _normalize(d) * _deg2rad;
 
     // Longitude corrections (simplified)
-    final correction = 6.288774 * math.sin(m) +
+    final correction =
+        6.288774 * math.sin(m) +
         1.274027 * math.sin(2 * d - m) +
         0.658314 * math.sin(2 * d) +
         0.213618 * math.sin(2 * m) -
@@ -274,7 +331,8 @@ class EphemerisService {
     final m = 174.7948 + 149472.5153 * t;
     final mRad = _normalize(m) * _deg2rad;
 
-    final c = 23.4400 * math.sin(mRad) +
+    final c =
+        23.4400 * math.sin(mRad) +
         2.9818 * math.sin(2 * mRad) +
         0.5255 * math.sin(3 * mRad);
 
@@ -300,8 +358,7 @@ class EphemerisService {
     final m = 50.4161 + 58517.8039 * t;
     final mRad = _normalize(m) * _deg2rad;
 
-    final c = 0.7758 * math.sin(mRad) +
-        0.0033 * math.sin(2 * mRad);
+    final c = 0.7758 * math.sin(mRad) + 0.0033 * math.sin(2 * mRad);
 
     // Apply solar longitude offset
     final sunLong = _calculateSunLongitude(jd);
@@ -325,7 +382,8 @@ class EphemerisService {
     final m = 19.3730 + 19139.8585 * t;
     final mRad = _normalize(m) * _deg2rad;
 
-    final c = 10.6912 * math.sin(mRad) +
+    final c =
+        10.6912 * math.sin(mRad) +
         0.6228 * math.sin(2 * mRad) +
         0.0503 * math.sin(3 * mRad);
 
@@ -339,7 +397,8 @@ class EphemerisService {
     final m = 20.0202 + 3034.6955 * t;
     final mRad = _normalize(m) * _deg2rad;
 
-    final c = 5.5549 * math.sin(mRad) +
+    final c =
+        5.5549 * math.sin(mRad) +
         0.1683 * math.sin(2 * mRad) +
         0.0071 * math.sin(3 * mRad);
 
@@ -353,7 +412,8 @@ class EphemerisService {
     final m = 317.0207 + 1222.1138 * t;
     final mRad = _normalize(m) * _deg2rad;
 
-    final c = 6.3585 * math.sin(mRad) +
+    final c =
+        6.3585 * math.sin(mRad) +
         0.2204 * math.sin(2 * mRad) +
         0.0106 * math.sin(3 * mRad);
 
@@ -367,8 +427,7 @@ class EphemerisService {
     final m = 142.5905 + 428.4669 * t;
     final mRad = _normalize(m) * _deg2rad;
 
-    final c = 5.3118 * math.sin(mRad) +
-        0.1437 * math.sin(2 * mRad);
+    final c = 5.3118 * math.sin(mRad) + 0.1437 * math.sin(2 * mRad);
 
     return _normalize(l + c);
   }
@@ -380,8 +439,7 @@ class EphemerisService {
     final m = 256.2250 + 218.4862 * t;
     final mRad = _normalize(m) * _deg2rad;
 
-    final c = 1.0302 * math.sin(mRad) +
-        0.0058 * math.sin(2 * mRad);
+    final c = 1.0302 * math.sin(mRad) + 0.0058 * math.sin(2 * mRad);
 
     return _normalize(l + c);
   }
@@ -394,7 +452,8 @@ class EphemerisService {
     final m = 14.882 + 144.96 * t;
     final mRad = _normalize(m) * _deg2rad;
 
-    final c = 28.3150 * math.sin(mRad) +
+    final c =
+        28.3150 * math.sin(mRad) +
         4.3408 * math.sin(2 * mRad) +
         0.9214 * math.sin(3 * mRad);
 
@@ -405,10 +464,8 @@ class EphemerisService {
   static double _calculateNorthNodeLongitude(double jd) {
     final t = _julianCenturies(jd);
     // Mean ascending node of the Moon
-    final omega = 125.04452 -
-        1934.136261 * t +
-        0.0020708 * t * t +
-        t * t * t / 450000;
+    final omega =
+        125.04452 - 1934.136261 * t + 0.0020708 * t * t + t * t * t / 450000;
     return _normalize(omega);
   }
 
@@ -429,10 +486,8 @@ class EphemerisService {
   static double _calculateLilithLongitude(double jd) {
     final t = _julianCenturies(jd);
     // Mean lunar apogee
-    final l = 83.3532465 +
-        4069.0137287 * t -
-        0.0103200 * t * t -
-        t * t * t / 80053;
+    final l =
+        83.3532465 + 4069.0137287 * t - 0.0103200 * t * t - t * t * t / 80053;
     return _normalize(l);
   }
 
@@ -489,7 +544,11 @@ class EphemerisService {
   /// Calculate house cusps using Placidus system
   /// This is the most commonly used house system in Western astrology
   static List<HouseCusp> _calculateHouses(
-      double jd, double latitude, double longitude, DateTime localTime) {
+    double jd,
+    double latitude,
+    double longitude,
+    DateTime localTime,
+  ) {
     final houses = <HouseCusp>[];
 
     // Calculate Local Sidereal Time
@@ -516,32 +575,55 @@ class EphemerisService {
     final ramc = lst;
 
     // Houses 11, 12, 2, 3 are calculated using semi-arc division
-    final house11 = _calculatePlacidusIntermediate(ramc, latRad, obliquity, 1/3, true);
-    final house12 = _calculatePlacidusIntermediate(ramc, latRad, obliquity, 2/3, true);
-    final house2 = _calculatePlacidusIntermediate(ramc, latRad, obliquity, 1/3, false);
-    final house3 = _calculatePlacidusIntermediate(ramc, latRad, obliquity, 2/3, false);
+    final house11 = _calculatePlacidusIntermediate(
+      ramc,
+      latRad,
+      obliquity,
+      1 / 3,
+      true,
+    );
+    final house12 = _calculatePlacidusIntermediate(
+      ramc,
+      latRad,
+      obliquity,
+      2 / 3,
+      true,
+    );
+    final house2 = _calculatePlacidusIntermediate(
+      ramc,
+      latRad,
+      obliquity,
+      1 / 3,
+      false,
+    );
+    final house3 = _calculatePlacidusIntermediate(
+      ramc,
+      latRad,
+      obliquity,
+      2 / 3,
+      false,
+    );
 
     // Build house array
     final houseLongitudes = <double>[
-      ascendant,           // 1st house
-      house2,              // 2nd house
-      house3,              // 3rd house
-      ic,                  // 4th house (IC)
+      ascendant, // 1st house
+      house2, // 2nd house
+      house3, // 3rd house
+      ic, // 4th house (IC)
       _normalize(house11 + 180), // 5th house (opposite 11th)
       _normalize(house12 + 180), // 6th house (opposite 12th)
-      descendant,          // 7th house (Descendant)
-      _normalize(house2 + 180),  // 8th house (opposite 2nd)
-      _normalize(house3 + 180),  // 9th house (opposite 3rd)
-      mc,                  // 10th house (MC)
-      house11,             // 11th house
-      house12,             // 12th house
+      descendant, // 7th house (Descendant)
+      _normalize(house2 + 180), // 8th house (opposite 2nd)
+      _normalize(house3 + 180), // 9th house (opposite 3rd)
+      mc, // 10th house (MC)
+      house11, // 11th house
+      house12, // 12th house
     ];
 
     for (var i = 0; i < 12; i++) {
-      houses.add(HouseCusp(
-        house: House.values[i],
-        longitude: houseLongitudes[i],
-      ));
+      houses.add(
+        HouseCusp(house: House.values[i], longitude: houseLongitudes[i]),
+      );
     }
 
     return houses;
@@ -549,7 +631,12 @@ class EphemerisService {
 
   /// Calculate intermediate Placidus house cusp
   static double _calculatePlacidusIntermediate(
-      double ramc, double latRad, double obliquity, double fraction, bool aboveHorizon) {
+    double ramc,
+    double latRad,
+    double obliquity,
+    double fraction,
+    bool aboveHorizon,
+  ) {
     // Simplified Placidus calculation using semi-arc interpolation
     final tanLat = math.tan(latRad);
 
@@ -572,7 +659,9 @@ class EphemerisService {
 
     // Placidus formula for ecliptic longitude
     final y = math.sin(houseRaRad);
-    final x = math.cos(houseRaRad) * math.cos(obliquity) + tanLat * math.sin(obliquity);
+    final x =
+        math.cos(houseRaRad) * math.cos(obliquity) +
+        tanLat * math.sin(obliquity);
 
     var longitude = math.atan2(y, x) * _rad2deg;
     return _normalize(longitude);
@@ -590,7 +679,8 @@ class EphemerisService {
     final t = _julianCenturies(jd);
 
     // Greenwich Mean Sidereal Time at 0h UT
-    var gmst = 280.46061837 +
+    var gmst =
+        280.46061837 +
         360.98564736629 * (jd - 2451545.0) +
         0.000387933 * t * t -
         t * t * t / 38710000;
@@ -639,8 +729,8 @@ class EphemerisService {
     const obliquity = 23.4393 * _deg2rad;
 
     final lstRad = lst * _deg2rad;
-    var mc = math.atan2(math.sin(lstRad),
-            math.cos(lstRad) * math.cos(obliquity)) *
+    var mc =
+        math.atan2(math.sin(lstRad), math.cos(lstRad) * math.cos(obliquity)) *
         _rad2deg;
 
     return _normalize(mc);
@@ -670,11 +760,13 @@ class EphemerisService {
 
     // Only calculate aspects for main planets (not angles)
     final mainPlanets = planets
-        .where((p) =>
-            p.planet != Planet.ascendant &&
-            p.planet != Planet.midheaven &&
-            p.planet != Planet.ic &&
-            p.planet != Planet.descendant)
+        .where(
+          (p) =>
+              p.planet != Planet.ascendant &&
+              p.planet != Planet.midheaven &&
+              p.planet != Planet.ic &&
+              p.planet != Planet.descendant,
+        )
         .toList();
 
     for (var i = 0; i < mainPlanets.length; i++) {
@@ -689,12 +781,14 @@ class EphemerisService {
         for (final aspectType in AspectType.values) {
           final orb = (angle - aspectType.angle).abs();
           if (orb <= aspectType.orb) {
-            aspects.add(Aspect(
-              planet1: p1.planet,
-              planet2: p2.planet,
-              type: aspectType,
-              orb: orb,
-            ));
+            aspects.add(
+              Aspect(
+                planet1: p1.planet,
+                planet2: p2.planet,
+                type: aspectType,
+                orb: orb,
+              ),
+            );
             break;
           }
         }

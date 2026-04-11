@@ -10,7 +10,6 @@ class MegaDreamSymbolsPart12 {
     // ════════════════════════════════════════════════════════════════════════
     // HAREKET VE ULASIM - 30+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'jumping',
       symbolTr: 'Ziplamak',
@@ -389,7 +388,6 @@ class MegaDreamSymbolsPart12 {
     // ════════════════════════════════════════════════════════════════════════
     // SOSYAL EYLEMLER - 30+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'talking',
       symbolTr: 'Konusmak',
@@ -768,7 +766,6 @@ class MegaDreamSymbolsPart12 {
     // ════════════════════════════════════════════════════════════════════════
     // YARATICI EYLEMLER - 25+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'painting',
       symbolTr: 'Resim Yapmak',
@@ -1022,7 +1019,6 @@ class MegaDreamSymbolsPart12 {
     // ════════════════════════════════════════════════════════════════════════
     // GÜNLÜK EYLEMLER - 20+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'eating',
       symbolTr: 'Yemek Yemek',

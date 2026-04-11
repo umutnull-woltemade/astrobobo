@@ -26,9 +26,11 @@ final upcomingVocPeriodsProvider = Provider<List<VoidOfCourseMoon>>((ref) {
       final voc = VoidOfCourseMoonExtension.getVoidOfCourseStatus(checkTime);
       if (voc.isVoid && voc.startTime != null) {
         // Avoid duplicates
-        if (!periods.any((p) =>
-            p.startTime?.day == voc.startTime?.day &&
-            p.startTime?.hour == voc.startTime?.hour)) {
+        if (!periods.any(
+          (p) =>
+              p.startTime?.day == voc.startTime?.day &&
+              p.startTime?.hour == voc.startTime?.hour,
+        )) {
           periods.add(voc);
         }
       }
@@ -36,8 +38,11 @@ final upcomingVocPeriodsProvider = Provider<List<VoidOfCourseMoon>>((ref) {
   }
 
   // Sort by start time
-  periods.sort((a, b) => (a.startTime ?? DateTime.now())
-      .compareTo(b.startTime ?? DateTime.now()));
+  periods.sort(
+    (a, b) => (a.startTime ?? DateTime.now()).compareTo(
+      b.startTime ?? DateTime.now(),
+    ),
+  );
 
   return periods;
 });
@@ -108,15 +113,17 @@ class VoidOfCourseScreen extends ConsumerWidget {
               Text(
                 'Void of Course Ay',
                 style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                      color: AppColors.starGold,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  color: AppColors.starGold,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               Text(
                 'Kozmik Zamanlama Rehberi',
                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      color: isDark ? AppColors.textSecondary : AppColors.lightTextSecondary,
-                    ),
+                  color: isDark
+                      ? AppColors.textSecondary
+                      : AppColors.lightTextSecondary,
+                ),
               ),
             ],
           ),
@@ -138,7 +145,11 @@ class VoidOfCourseScreen extends ConsumerWidget {
     ).animate().fadeIn(duration: 400.ms);
   }
 
-  Widget _buildCurrentStatus(BuildContext context, VoidOfCourseMoon voc, bool isDark) {
+  Widget _buildCurrentStatus(
+    BuildContext context,
+    VoidOfCourseMoon voc,
+    bool isDark,
+  ) {
     final isVoid = voc.isVoid;
     final statusColor = isVoid ? AppColors.warning : AppColors.success;
     final moonPhase = MoonService.getCurrentPhase();
@@ -149,10 +160,7 @@ class VoidOfCourseScreen extends ConsumerWidget {
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [
-            statusColor.withOpacity(0.2),
-            statusColor.withOpacity(0.05),
-          ],
+          colors: [statusColor.withOpacity(0.2), statusColor.withOpacity(0.05)],
         ),
         borderRadius: BorderRadius.circular(20),
         border: Border.all(color: statusColor.withOpacity(0.4), width: 2),
@@ -188,10 +196,10 @@ class VoidOfCourseScreen extends ConsumerWidget {
               Text(
                 isVoid ? 'AY VOID OF COURSE' : 'AY AKTIF',
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      color: statusColor,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 2,
-                    ),
+                  color: statusColor,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 2,
+                ),
               ),
             ],
           ),
@@ -242,9 +250,9 @@ class VoidOfCourseScreen extends ConsumerWidget {
                   Text(
                     'Kalan Sure: ${voc.timeRemainingFormatted}',
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: statusColor,
-                          fontWeight: FontWeight.w600,
-                        ),
+                      color: statusColor,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 ],
               ),
@@ -257,8 +265,10 @@ class VoidOfCourseScreen extends ConsumerWidget {
                 ? 'Bu dönemde önemli kararlar almaktan ve yeni başlangıçlara girmekten kaçının.'
                 : 'Ay aktif ve enerji akışında. Yeni başlangıçlara ve kararlara açık bir dönem.',
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: isDark ? AppColors.textSecondary : AppColors.lightTextSecondary,
-                ),
+              color: isDark
+                  ? AppColors.textSecondary
+                  : AppColors.lightTextSecondary,
+            ),
             textAlign: TextAlign.center,
           ),
         ],
@@ -278,8 +288,8 @@ class VoidOfCourseScreen extends ConsumerWidget {
         Text(
           label,
           style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
-              ),
+            color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
+          ),
         ),
         const SizedBox(height: 6),
         Text(symbol, style: const TextStyle(fontSize: 28)),
@@ -287,9 +297,9 @@ class VoidOfCourseScreen extends ConsumerWidget {
         Text(
           value,
           style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
-                fontWeight: FontWeight.w600,
-              ),
+            color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
+            fontWeight: FontWeight.w600,
+          ),
         ),
       ],
     );
@@ -314,18 +324,16 @@ class VoidOfCourseScreen extends ConsumerWidget {
         children: [
           Row(
             children: [
-              Icon(
-                Icons.help_outline,
-                color: AppColors.mysticBlue,
-                size: 24,
-              ),
+              Icon(Icons.help_outline, color: AppColors.mysticBlue, size: 24),
               const SizedBox(width: 10),
               Text(
                 'Void of Course Ay Nedir?',
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  color: isDark
+                      ? AppColors.textPrimary
+                      : AppColors.lightTextPrimary,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ],
           ),
@@ -333,17 +341,21 @@ class VoidOfCourseScreen extends ConsumerWidget {
           Text(
             'Void of Course (VOC), Ay\'ın bulunduğu burçta son major aspektini yaptıktan sonra bir sonraki burca geçene kadar geçen süredir. Bu dönemde Ay hiçbir gezegenle önemli bir açı yapmaz.',
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: isDark ? AppColors.textSecondary : AppColors.lightTextSecondary,
-                  height: 1.5,
-                ),
+              color: isDark
+                  ? AppColors.textSecondary
+                  : AppColors.lightTextSecondary,
+              height: 1.5,
+            ),
           ),
           const SizedBox(height: 12),
           Text(
             'VOC dönemlerinde başlatılan projeler, alınan kararlar ve yapılan planlar genellikle beklenilen sonuçları vermez veya hiçbir sonuca ulaşmaz.',
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: isDark ? AppColors.textSecondary : AppColors.lightTextSecondary,
-                  height: 1.5,
-                ),
+              color: isDark
+                  ? AppColors.textSecondary
+                  : AppColors.lightTextSecondary,
+              height: 1.5,
+            ),
           ),
         ],
       ),
@@ -419,37 +431,36 @@ class VoidOfCourseScreen extends ConsumerWidget {
                 child: Text(
                   title,
                   style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                        color: color,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    color: color,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ],
           ),
           const SizedBox(height: 12),
-          ...items.map((item) => Padding(
-                padding: const EdgeInsets.only(bottom: 8),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      '•',
-                      style: TextStyle(color: color, fontSize: 16),
-                    ),
-                    const SizedBox(width: 8),
-                    Expanded(
-                      child: Text(
-                        item,
-                        style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                              color: isDark
-                                  ? AppColors.textSecondary
-                                  : AppColors.lightTextSecondary,
-                            ),
+          ...items.map(
+            (item) => Padding(
+              padding: const EdgeInsets.only(bottom: 8),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('•', style: TextStyle(color: color, fontSize: 16)),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      item,
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        color: isDark
+                            ? AppColors.textSecondary
+                            : AppColors.lightTextSecondary,
                       ),
                     ),
-                  ],
-                ),
-              )),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
@@ -478,18 +489,16 @@ class VoidOfCourseScreen extends ConsumerWidget {
         children: [
           Row(
             children: [
-              Icon(
-                Icons.calendar_today,
-                color: AppColors.starGold,
-                size: 24,
-              ),
+              Icon(Icons.calendar_today, color: AppColors.starGold, size: 24),
               const SizedBox(width: 10),
               Text(
                 'Yaklasan VOC Donemleri',
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  color: isDark
+                      ? AppColors.textPrimary
+                      : AppColors.lightTextPrimary,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ],
           ),
@@ -498,17 +507,23 @@ class VoidOfCourseScreen extends ConsumerWidget {
             Text(
               'Yaklasan VOC donemi bulunamadi.',
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
-                  ),
+                color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
+              ),
             )
           else
-            ...periods.take(5).map((voc) => _buildVocPeriodItem(context, voc, isDark)),
+            ...periods
+                .take(5)
+                .map((voc) => _buildVocPeriodItem(context, voc, isDark)),
         ],
       ),
     );
   }
 
-  Widget _buildVocPeriodItem(BuildContext context, VoidOfCourseMoon voc, bool isDark) {
+  Widget _buildVocPeriodItem(
+    BuildContext context,
+    VoidOfCourseMoon voc,
+    bool isDark,
+  ) {
     final start = voc.startTime;
     final end = voc.endTime;
 
@@ -542,15 +557,15 @@ class VoidOfCourseScreen extends ConsumerWidget {
                 Text(
                   '${start.day}',
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                        color: AppColors.warning,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    color: AppColors.warning,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 Text(
                   dayName,
-                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: AppColors.warning,
-                      ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.bodySmall?.copyWith(color: AppColors.warning),
                 ),
               ],
             ),
@@ -563,9 +578,11 @@ class VoidOfCourseScreen extends ConsumerWidget {
                 Text(
                   '${_formatTime(start)} - ${_formatTime(end)}',
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
-                        fontWeight: FontWeight.w600,
-                      ),
+                    color: isDark
+                        ? AppColors.textPrimary
+                        : AppColors.lightTextPrimary,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
                 const SizedBox(height: 4),
                 Row(
@@ -573,16 +590,20 @@ class VoidOfCourseScreen extends ConsumerWidget {
                     Text(
                       '${voc.currentSign.symbol} ${voc.currentSign.nameTr}',
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                            color: isDark ? AppColors.textSecondary : AppColors.lightTextSecondary,
-                          ),
+                        color: isDark
+                            ? AppColors.textSecondary
+                            : AppColors.lightTextSecondary,
+                      ),
                     ),
                     if (voc.nextSign != null) ...[
                       const Text(' → '),
                       Text(
                         '${voc.nextSign!.symbol} ${voc.nextSign!.nameTr}',
                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                              color: isDark ? AppColors.textSecondary : AppColors.lightTextSecondary,
-                            ),
+                          color: isDark
+                              ? AppColors.textSecondary
+                              : AppColors.lightTextSecondary,
+                        ),
                       ),
                     ],
                   ],
@@ -600,9 +621,9 @@ class VoidOfCourseScreen extends ConsumerWidget {
               child: Text(
                 '${duration.toStringAsFixed(1)}s',
                 style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                      color: AppColors.warning,
-                      fontWeight: FontWeight.w600,
-                    ),
+                  color: AppColors.warning,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ),
         ],

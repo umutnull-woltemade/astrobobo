@@ -30,10 +30,7 @@ class DisclaimerScreen extends ConsumerWidget {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     gradient: LinearGradient(
-                      colors: [
-                        AppColors.cosmicPurple,
-                        MysticalColors.amethyst,
-                      ],
+                      colors: [AppColors.cosmicPurple, MysticalColors.amethyst],
                     ),
                     boxShadow: [
                       BoxShadow(
@@ -49,18 +46,18 @@ class DisclaimerScreen extends ConsumerWidget {
                     size: 36,
                   ),
                 ).animate().scale(
-                      begin: const Offset(0.5, 0.5),
-                      curve: Curves.elasticOut,
-                      duration: 600.ms,
-                    ),
+                  begin: const Offset(0.5, 0.5),
+                  curve: Curves.elasticOut,
+                  duration: 600.ms,
+                ),
                 const SizedBox(height: 24),
                 // Title
                 Text(
                   'Kullanmadan Önce',
                   style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-                        color: AppColors.starGold,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    color: AppColors.starGold,
+                    fontWeight: FontWeight.bold,
+                  ),
                   textAlign: TextAlign.center,
                 ).animate().fadeIn(duration: 400.ms),
                 const SizedBox(height: 32),
@@ -90,7 +87,9 @@ class DisclaimerScreen extends ConsumerWidget {
 
   Widget _buildDisclaimerContent(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final textColor = isDark ? AppColors.textSecondary : AppColors.lightTextSecondary;
+    final textColor = isDark
+        ? AppColors.textSecondary
+        : AppColors.lightTextSecondary;
 
     return Container(
       padding: const EdgeInsets.all(20),
@@ -152,10 +151,9 @@ class DisclaimerScreen extends ConsumerWidget {
         Expanded(
           child: Text(
             text,
-            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: textColor,
-                  height: 1.6,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.bodyMedium?.copyWith(color: textColor, height: 1.6),
           ),
         ),
       ],

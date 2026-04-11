@@ -148,32 +148,32 @@ Bir harita, tek oturmada anlaşılmaz. Hayat deneyimlerinizle birlikte derinleş
     {
       'question': 'Doğum saatimi bilmiyorsam ne olur?',
       'answer':
-          'Güneş burcu, Ay burcu (yaklaşık) ve gezegen pozisyonları hesaplanabilir. Ancak yükselen burç ve ev yerleşimleri için kesin saat gerekir. Nüfus müdürlüğü veya doğduğunuz hastaneden doğum saatinizi öğrenebilirsiniz.'
+          'Güneş burcu, Ay burcu (yaklaşık) ve gezegen pozisyonları hesaplanabilir. Ancak yükselen burç ve ev yerleşimleri için kesin saat gerekir. Nüfus müdürlüğü veya doğduğunuz hastaneden doğum saatinizi öğrenebilirsiniz.',
     },
     {
       'question': 'Sezaryen doğum haritayı etkiler mi?',
       'answer':
-          'Astrolojik görüşler çeşitlidir. Bazıları fiziksel doğum anını, bazıları ilk nefesi esas alır. Pratikte, bebeğin dünyaya geldiği an kullanılır — sezaryen veya normal fark etmez.'
+          'Astrolojik görüşler çeşitlidir. Bazıları fiziksel doğum anını, bazıları ilk nefesi esas alır. Pratikte, bebeğin dünyaya geldiği an kullanılır — sezaryen veya normal fark etmez.',
     },
     {
       'question': 'İkizlerin haritası aynı mı?',
       'answer':
-          'Dakika farkıyla bile farklı olabilir. Özellikle ev bölümleri ve yükselen derece değişebilir. Ayrıca haritayı nasıl yaşadıkları, bireysel seçimlere bağlıdır.'
+          'Dakika farkıyla bile farklı olabilir. Özellikle ev bölümleri ve yükselen derece değişebilir. Ayrıca haritayı nasıl yaşadıkları, bireysel seçimlere bağlıdır.',
     },
     {
       'question': 'Haritamdaki "kötü" açılar ne anlama geliyor?',
       'answer':
-          '"Kötü" demek yerine "zorlayıcı" demeyi tercih ediyoruz. Kare ve karşıt açılar büyüme için meydan okuma sunar. En büyük dersler genellikle zorlu açılardan gelir.'
+          '"Kötü" demek yerine "zorlayıcı" demeyi tercih ediyoruz. Kare ve karşıt açılar büyüme için meydan okuma sunar. En büyük dersler genellikle zorlu açılardan gelir.',
     },
     {
       'question': 'Haritamda hiç gezegen olmayan evler ne anlama geliyor?',
       'answer':
-          'Boş evler sorunlu değildir. O evin yönetici gezegenine bakılır. Ayrıca boş ev, o alanın hayatınızda "drama" oluşturmadığı anlamına gelebilir.'
+          'Boş evler sorunlu değildir. O evin yönetici gezegenine bakılır. Ayrıca boş ev, o alanın hayatınızda "drama" oluşturmadığı anlamına gelebilir.',
     },
     {
       'question': 'Retrogradlar haritamda ne ifade ediyor?',
       'answer':
-          'Natal retrograd, o gezegenin enerjisinin içe dönük yaşandığını gösterir. "Kötü" değil, farklıdır. Örneğin, retrograd Merkür içsel düşünce ve yazarlık için güçlü olabilir.'
+          'Natal retrograd, o gezegenin enerjisinin içe dönük yaşandığını gösterir. "Kötü" değil, farklıdır. Örneğin, retrograd Merkür içsel düşünce ve yazarlık için güçlü olabilir.',
     },
   ];
 
@@ -281,32 +281,32 @@ Her gün her konu için tarot çekmek sağlıklı değildir. Kendi sezginize gü
     {
       'question': 'Tarot gerçekten işe yarıyor mu?',
       'answer':
-          'Eğer "geleceği görme" bekliyorsanız, kanıt yoktur. Ama öz-yansıtma, karar alma süreçlerinde farklı perspektif kazanma, bilinçaltı süreçleri keşfetme için güçlü bir araç olabilir.'
+          'Eğer "geleceği görme" bekliyorsanız, kanıt yoktur. Ama öz-yansıtma, karar alma süreçlerinde farklı perspektif kazanma, bilinçaltı süreçleri keşfetme için güçlü bir araç olabilir.',
     },
     {
       'question': 'Ters çıkan kartlar ne anlama gelir?',
       'answer':
-          'Ters kartlar, kartın enerjisinin bloke olduğu, içe dönük yaşandığı veya aşırıya kaçtığı anlamına gelebilir. Bazı okuyucular ters kart kullanmaz, tercih meselesidir.'
+          'Ters kartlar, kartın enerjisinin bloke olduğu, içe dönük yaşandığı veya aşırıya kaçtığı anlamına gelebilir. Bazı okuyucular ters kart kullanmaz, tercih meselesidir.',
     },
     {
       'question': 'Aynı soruyu tekrar sorabilir miyim?',
       'answer':
-          'Teknik olarak evet, ama beğenmediğiniz cevabı değiştirmek için sürekli sormak anlamlı değildir. Kartların ilk yanıtı genellikle en değerli olanıdır.'
+          'Teknik olarak evet, ama beğenmediğiniz cevabı değiştirmek için sürekli sormak anlamlı değildir. Kartların ilk yanıtı genellikle en değerli olanıdır.',
     },
     {
       'question': 'Ölüm kartı kötü mü?',
       'answer':
-          'Hayır. Ölüm kartı dönüşümü, bir döngünün sonunu ve yenisinin başlangıcını temsil eder. Fiziksel ölümle nadiren ilişkilidir. Değişim zor olabilir ama kötü değildir.'
+          'Hayır. Ölüm kartı dönüşümü, bir döngünün sonunu ve yenisinin başlangıcını temsil eder. Fiziksel ölümle nadiren ilişkilidir. Değişim zor olabilir ama kötü değildir.',
     },
     {
       'question': 'Tarot ve astroloji bağlantılı mı?',
       'answer':
-          'Evet. Major Arcana kartları zodyak işaretleri ve gezegenlerle, Minor Arcana elementlerle eşleşir. İkisi birlikte kullanılabilir.'
+          'Evet. Major Arcana kartları zodyak işaretleri ve gezegenlerle, Minor Arcana elementlerle eşleşir. İkisi birlikte kullanılabilir.',
     },
     {
       'question': 'Kendi destemi mi almalıyım?',
       'answer':
-          'Deste hediye edilmeli efsanesi doğru değildir. Kendinize çeken bir deste satın alabilirsiniz. Rider-Waite-Smith klasik ve öğrenmesi kolay bir seçenektir.'
+          'Deste hediye edilmeli efsanesi doğru değildir. Kendinize çeken bir deste satın alabilirsiniz. Rider-Waite-Smith klasik ve öğrenmesi kolay bir seçenektir.',
     },
   ];
 
@@ -415,32 +415,32 @@ Numerolojik "hesaplama" matematik değil, sembolik indirgeme sistemidir.
     {
       'question': 'Evlendikten sonra ismim değişirse sayılarım değişir mi?',
       'answer':
-          'Evet, yeni isminizin sayıları farklı olacaktır. Bazıları doğum ismi ile şu anki ismi birlikte değerlendirir. Doğum ismi "potansiyel", kullanılan isim "aktif enerji" olarak yorumlanabilir.'
+          'Evet, yeni isminizin sayıları farklı olacaktır. Bazıları doğum ismi ile şu anki ismi birlikte değerlendirir. Doğum ismi "potansiyel", kullanılan isim "aktif enerji" olarak yorumlanabilir.',
     },
     {
       'question': 'Master sayı (11, 22, 33) taşımak özel mi?',
       'answer':
-          'Master sayılar daha yoğun enerji taşır ama bu "üstünlük" değil, "daha fazla sorumluluk" anlamına gelir. Potansiyel yüksek, ama beklentiler de öyle.'
+          'Master sayılar daha yoğun enerji taşır ama bu "üstünlük" değil, "daha fazla sorumluluk" anlamına gelir. Potansiyel yüksek, ama beklentiler de öyle.',
     },
     {
       'question': 'Şanssız sayı var mı?',
       'answer':
-          'Numerolojide "kötü" sayı yoktur. Her sayının ışık ve gölge yönleri vardır. 13 veya 4 gibi kültürel olarak "şanssız" görülen sayılar bile güçlü enerjiler taşır.'
+          'Numerolojide "kötü" sayı yoktur. Her sayının ışık ve gölge yönleri vardır. 13 veya 4 gibi kültürel olarak "şanssız" görülen sayılar bile güçlü enerjiler taşır.',
     },
     {
       'question': 'Numeroloji ve astroloji nasıl birlikte kullanılır?',
       'answer':
-          'Birbirini tamamlarlar. Astroloji kozmik kalıpları, numeroloji sayısal kalıpları inceler. Örneğin, Yaşam Yolu sayınız ile Güneş burcunuz benzer temalar taşıyabilir.'
+          'Birbirini tamamlarlar. Astroloji kozmik kalıpları, numeroloji sayısal kalıpları inceler. Örneğin, Yaşam Yolu sayınız ile Güneş burcunuz benzer temalar taşıyabilir.',
     },
     {
       'question': 'Günlük/aylık/yıllık sayılar nasıl hesaplanır?',
       'answer':
-          'Kişisel Yıl Sayınız: Doğum gününüz + doğum ayınız + şu anki yıl. Kişisel Ay: Kişisel Yıl + şu anki ay. Döngüsel enerji akışını gösterir.'
+          'Kişisel Yıl Sayınız: Doğum gününüz + doğum ayınız + şu anki yıl. Kişisel Ay: Kişisel Yıl + şu anki ay. Döngüsel enerji akışını gösterir.',
     },
     {
       'question': 'Hangi sayı en iyisidir?',
       'answer':
-          'Hiçbiri "en iyi" değildir. Her sayı benzersiz bir enerji taşır. Önemli olan, kendi sayılarınızın ışık yönlerini geliştirmek, gölge yönlerinin farkında olmaktır.'
+          'Hiçbiri "en iyi" değildir. Her sayı benzersiz bir enerji taşır. Önemli olan, kendi sayılarınızın ışık yönlerini geliştirmek, gölge yönlerinin farkında olmaktır.',
     },
   ];
 
@@ -540,32 +540,32 @@ Harita uyumu, ilişkinin sadece bir boyutudur. Yaşam koşulları, değerler, il
     {
       'question': 'Partnerimle hiç uyumlu değiliz mi?',
       'answer':
-          'Zorlayıcı açılar "uyumsuzluk" değil, "büyüme alanları" anlamına gelir. En başarılı ilişkiler genellikle bazı gerilim açıları taşır — bu dinamik enerji sağlar.'
+          'Zorlayıcı açılar "uyumsuzluk" değil, "büyüme alanları" anlamına gelir. En başarılı ilişkiler genellikle bazı gerilim açıları taşır — bu dinamik enerji sağlar.',
     },
     {
       'question': 'Sadece burç uyumuna bakılabilir mi?',
       'answer':
-          'Güneş burcu uyumu sadece bir parçadır. Ay, Venüs, Mars, yükselen burç ve diğer açılar çok daha kapsamlı bir resim sunar.'
+          'Güneş burcu uyumu sadece bir parçadır. Ay, Venüs, Mars, yükselen burç ve diğer açılar çok daha kapsamlı bir resim sunar.',
     },
     {
       'question': 'Kompozit harita nedir?',
       'answer':
-          'İki haritanın matematiksel ortalamasıdır. Synastry "iki kişinin etkileşimini", kompozit "ilişkinin kendisini" gösterir.'
+          'İki haritanın matematiksel ortalamasıdır. Synastry "iki kişinin etkileşimini", kompozit "ilişkinin kendisini" gösterir.',
     },
     {
       'question': 'Zıt burçlar çekilir mi?',
       'answer':
-          'Zıt burçlar (Koç-Terazi, Boğa-Akrep vb.) genellikle güçlü çekim taşır ama aynı zamanda meydan okuma sunar. "Opposites attract" gerçek olabilir ama sürdürmek çaba gerektirir.'
+          'Zıt burçlar (Koç-Terazi, Boğa-Akrep vb.) genellikle güçlü çekim taşır ama aynı zamanda meydan okuma sunar. "Opposites attract" gerçek olabilir ama sürdürmek çaba gerektirir.',
     },
     {
       'question': 'Eski partnerimle neden bu kadar yoğun bir bağ vardı?',
       'answer':
-          'Pluto, Kuzey Düğüm veya 8. Ev bağlantıları yoğun, karmik hisseden ilişkiler oluşturabilir. Bu "soul mate" deneyimi olabilir ama her zaman uzun vadeli uyum anlamına gelmez.'
+          'Pluto, Kuzey Düğüm veya 8. Ev bağlantıları yoğun, karmik hisseden ilişkiler oluşturabilir. Bu "soul mate" deneyimi olabilir ama her zaman uzun vadeli uyum anlamına gelmez.',
     },
     {
       'question': 'Ebeveynlerimle synastry bakmak mantıklı mı?',
       'answer':
-          'Evet. Aile synastry\'si, ebeveyn-çocuk dinamiklerini, miras alınan kalıpları ve aile karmalarını anlamaya yardımcı olabilir.'
+          'Evet. Aile synastry\'si, ebeveyn-çocuk dinamiklerini, miras alınan kalıpları ve aile karmalarını anlamaya yardımcı olabilir.',
     },
   ];
 
@@ -652,32 +652,32 @@ Aura okuması, subjektif bir pratiktir.
     {
       'question': 'Auramı görebilir miyim?',
       'answer':
-          'Bazı insanlar meditasyon ve pratikle aura görmeyi öğrendiğini söyler. Başlangıç için yumuşak ışıkta, nötr bir arka plan önünde elinize veya aynada kendinize yumuşak bakışla bakmayı deneyebilirsiniz.'
+          'Bazı insanlar meditasyon ve pratikle aura görmeyi öğrendiğini söyler. Başlangıç için yumuşak ışıkta, nötr bir arka plan önünde elinize veya aynada kendinize yumuşak bakışla bakmayı deneyebilirsiniz.',
     },
     {
       'question': 'Aura rengi değişir mi?',
       'answer':
-          'Evet. Aura, anlık duygusal ve enerji durumunuzu yansıtır. Meditasyon, duygu değişimi, hatta yemek bile rengi etkileyebilir.'
+          'Evet. Aura, anlık duygusal ve enerji durumunuzu yansıtır. Meditasyon, duygu değişimi, hatta yemek bile rengi etkileyebilir.',
     },
     {
       'question': 'Aura temizliği nasıl yapılır?',
       'answer':
-          'Doğada zaman geçirme, meditasyon, tuz banyosu, tütsü (adaçayı) gibi pratikler enerji temizliği için kullanılır. Bunlar sembolik ritüellerdir, bilimsel değil.'
+          'Doğada zaman geçirme, meditasyon, tuz banyosu, tütsü (adaçayı) gibi pratikler enerji temizliği için kullanılır. Bunlar sembolik ritüellerdir, bilimsel değil.',
     },
     {
       'question': 'Negatif aura bulaşır mı?',
       'answer':
-          'Bazı gelenekler enerji transferine inanır. Kendinizi yorgun veya "ağır" hissettiğinizde, sınır koymak ve öz-bakım yapmak faydalı olabilir.'
+          'Bazı gelenekler enerji transferine inanır. Kendinizi yorgun veya "ağır" hissettiğinizde, sınır koymak ve öz-bakım yapmak faydalı olabilir.',
     },
     {
       'question': 'Aura fotoğrafı gerçek mi?',
       'answer':
-          'Kirlian fotoğrafçılığı elektrik alanlarını yakalar, ama bunun "aura" olup olmadığı tartışmalıdır. Eğlenceli bir deneyim olabilir ama kesin sonuçlar çıkarmak güçtür.'
+          'Kirlian fotoğrafçılığı elektrik alanlarını yakalar, ama bunun "aura" olup olmadığı tartışmalıdır. Eğlenceli bir deneyim olabilir ama kesin sonuçlar çıkarmak güçtür.',
     },
     {
       'question': 'Aura okumaya nasıl başlarım?',
       'answer':
-          'Kendi enerji durumunuzu fark etmeye başlayın. Farklı ortamlarda, farklı insanlarla nasıl hissettiğinizi gözlemleyin. Meditasyon pratiği, enerji farkındalığını artırabilir.'
+          'Kendi enerji durumunuzu fark etmeye başlayın. Farklı ortamlarda, farklı insanlarla nasıl hissettiğinizi gözlemleyin. Meditasyon pratiği, enerji farkındalığını artırabilir.',
     },
   ];
 
@@ -778,32 +778,32 @@ Popüler kültürdeki "Kabala sihri" yanıltıcıdır. Bu bir bilgelik yoludur, 
     {
       'question': 'Kabala öğrenmek için Yahudi olmam gerekir mi?',
       'answer':
-          'Geleneksel olarak Kabala, belirli gereksinimleri olan eğitimli Yahudi erkeklerine öğretilirdi. Modern zamanlarda daha açık hale geldi, ama otantik çalışma hâlâ Yahudi geleneği bağlamında yürütülür.'
+          'Geleneksel olarak Kabala, belirli gereksinimleri olan eğitimli Yahudi erkeklerine öğretilirdi. Modern zamanlarda daha açık hale geldi, ama otantik çalışma hâlâ Yahudi geleneği bağlamında yürütülür.',
     },
     {
       'question': 'Kabala bilekliği işe yarıyor mu?',
       'answer':
-          'Kırmızı ip bilekliği pop-kültür Kabala\'sının sembolüdür. Geleneksel Kabala\'da bu pratik yoktur. Sembolik değeri, kişisel niyetinize bağlıdır.'
+          'Kırmızı ip bilekliği pop-kültür Kabala\'sının sembolüdür. Geleneksel Kabala\'da bu pratik yoktur. Sembolik değeri, kişisel niyetinize bağlıdır.',
     },
     {
       'question': 'Kabala ve tarot bağlantılı mı?',
       'answer':
-          'Evet. 22 Major Arcana kartı, Hayat Ağacı\'nın 22 patikasıyla eşleştirilir. Bu bağlantı 19. yüzyılda Batı okültizminde sistemleştirildi.'
+          'Evet. 22 Major Arcana kartı, Hayat Ağacı\'nın 22 patikasıyla eşleştirilir. Bu bağlantı 19. yüzyılda Batı okültizminde sistemleştirildi.',
     },
     {
       'question': 'Sefirot meditasyonu nasıl yapılır?',
       'answer':
-          'Hayat Ağacı üzerinde yolculuk, sefirot\'un enerjilerini deneyimleme meditasyonlarıdır. Başlangıç için Malkut\'tan (fiziksel) Keter\'e (ruhani) yükselme pratiği yapılabilir.'
+          'Hayat Ağacı üzerinde yolculuk, sefirot\'un enerjilerini deneyimleme meditasyonlarıdır. Başlangıç için Malkut\'tan (fiziksel) Keter\'e (ruhani) yükselme pratiği yapılabilir.',
     },
     {
       'question': 'Kabala astroloji ile bağlantılı mı?',
       'answer':
-          'Evet. Sefirot, gezegenlerle eşleştirilir. Örneğin: Binah-Satürn, Hesed-Jüpiter, Gevurah-Mars. Zodiak işaretleri de patikalarla ilişkilendirilir.'
+          'Evet. Sefirot, gezegenlerle eşleştirilir. Örneğin: Binah-Satürn, Hesed-Jüpiter, Gevurah-Mars. Zodiak işaretleri de patikalarla ilişkilendirilir.',
     },
     {
       'question': 'Kendi sefirah\'ımı nasıl bulurum?',
       'answer':
-          'Kabalistik numeroloji ile doğum tarihinden veya isimden hesaplanır. Ama "tek bir sefirah\'a ait olmak" yerine, hepsini içeren bir yolculuk daha anlamlıdır.'
+          'Kabalistik numeroloji ile doğum tarihinden veya isimden hesaplanır. Ama "tek bir sefirah\'a ait olmak" yerine, hepsini içeren bir yolculuk daha anlamlıdır.',
     },
   ];
 
@@ -901,32 +901,32 @@ Transitler "şu olacak" demez. Enerji akışlarını, olası temaları gösterir
     {
       'question': 'Transit ne kadar sürer?',
       'answer':
-          'Gezegene bağlı. Ay transiti saatler, Pluto transiti yıllar sürer. Orb\'a (açının geçerli olduğu derece aralığı) göre değişir.'
+          'Gezegene bağlı. Ay transiti saatler, Pluto transiti yıllar sürer. Orb\'a (açının geçerli olduğu derece aralığı) göre değişir.',
     },
     {
       'question': 'Zor transit geçiriyorum, ne yapmalıyım?',
       'answer':
-          'Önce paniklemeyin. Transitin temasını anlayın, o alanda bilinçli çalışın. Zor transitler genellikle en büyük büyüme dönemleridir.'
+          'Önce paniklemeyin. Transitin temasını anlayın, o alanda bilinçli çalışın. Zor transitler genellikle en büyük büyüme dönemleridir.',
     },
     {
       'question': 'Aynı anda birden fazla transit olabilir mi?',
       'answer':
-          'Evet, ve genellikle öyle. Transitler katmanlar halinde çalışır. Bazı dönemler daha yoğun, bazıları daha sakin olabilir.'
+          'Evet, ve genellikle öyle. Transitler katmanlar halinde çalışır. Bazı dönemler daha yoğun, bazıları daha sakin olabilir.',
     },
     {
       'question': 'Transit takvimi nasıl takip edilir?',
       'answer':
-          'Venus One\'da kişisel transit takviminizi görebilirsiniz. Önemli transitler için bildirim ayarlayabilirsiniz.'
+          'Venus One\'da kişisel transit takviminizi görebilirsiniz. Önemli transitler için bildirim ayarlayabilirsiniz.',
     },
     {
       'question': 'Herkes aynı transitleri yaşar mı?',
       'answer':
-          'Kolektif transitler (örn. Pluto burç değişimi) herkesi etkiler, ama bireysel etki doğum haritanıza bağlıdır. Jüpiter sizin 7. evinizi geçiyorsa, partnerlik teması sizin için aktiftir.'
+          'Kolektif transitler (örn. Pluto burç değişimi) herkesi etkiler, ama bireysel etki doğum haritanıza bağlıdır. Jüpiter sizin 7. evinizi geçiyorsa, partnerlik teması sizin için aktiftir.',
     },
     {
       'question': 'Electional astroloji nedir?',
       'answer':
-          'Önemli eylemler için en uygun zamanları seçme sanatıdır. Transitler kullanılarak "iyi" zamanlar belirlenir. Örneğin iş başlangıcı, evlilik, ameliyat.'
+          'Önemli eylemler için en uygun zamanları seçme sanatıdır. Transitler kullanılarak "iyi" zamanlar belirlenir. Örneğin iş başlangıcı, evlilik, ameliyat.',
     },
   ];
 

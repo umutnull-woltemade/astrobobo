@@ -165,17 +165,17 @@ class _EclipseCalendarScreenState extends State<EclipseCalendarScreen> {
                       child: Text(
                         'Siradaki Tutulma',
                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                              color: AppColors.starGold,
-                              fontWeight: FontWeight.w600,
-                            ),
+                          color: AppColors.starGold,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                     ),
                     const SizedBox(height: 4),
                     Text(
                       eclipse.type.nameTr,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                            fontWeight: FontWeight.bold,
-                          ),
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ],
                 ),
@@ -185,16 +185,13 @@ class _EclipseCalendarScreenState extends State<EclipseCalendarScreen> {
                   Text(
                     '$daysUntil',
                     style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-                          fontWeight: FontWeight.bold,
-                          color: eclipse.type.isSolar
-                              ? Colors.orange
-                              : Colors.indigo,
-                        ),
+                      fontWeight: FontWeight.bold,
+                      color: eclipse.type.isSolar
+                          ? Colors.orange
+                          : Colors.indigo,
+                    ),
                   ),
-                  Text(
-                    'gun',
-                    style: Theme.of(context).textTheme.bodySmall,
-                  ),
+                  Text('gun', style: Theme.of(context).textTheme.bodySmall),
                 ],
               ),
             ],
@@ -215,26 +212,22 @@ class _EclipseCalendarScreenState extends State<EclipseCalendarScreen> {
                 prefix: eclipse.zodiacSign.symbol,
               ),
               const SizedBox(width: 8),
-              _buildInfoChip(
-                eclipse.peakTime,
-                Icons.access_time,
-                isDark,
-              ),
+              _buildInfoChip(eclipse.peakTime, Icons.access_time, isDark),
             ],
           ),
           const SizedBox(height: AppConstants.spacingLg),
           Text(
             eclipse.title,
-            style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: AppConstants.spacingSm),
           Text(
             eclipse.description,
-            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  height: 1.5,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.bodyMedium?.copyWith(height: 1.5),
           ),
           const SizedBox(height: AppConstants.spacingLg),
           _buildExpandableSection(
@@ -259,8 +252,12 @@ class _EclipseCalendarScreenState extends State<EclipseCalendarScreen> {
     );
   }
 
-  Widget _buildInfoChip(String label, IconData? icon, bool isDark,
-      {String? prefix}) {
+  Widget _buildInfoChip(
+    String label,
+    IconData? icon,
+    bool isDark, {
+    String? prefix,
+  }) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       decoration: BoxDecoration(
@@ -276,14 +273,8 @@ class _EclipseCalendarScreenState extends State<EclipseCalendarScreen> {
             Text(prefix, style: const TextStyle(fontSize: 12)),
             const SizedBox(width: 4),
           ],
-          if (icon != null) ...[
-            Icon(icon, size: 12),
-            const SizedBox(width: 4),
-          ],
-          Text(
-            label,
-            style: Theme.of(context).textTheme.bodySmall,
-          ),
+          if (icon != null) ...[Icon(icon, size: 12), const SizedBox(width: 4)],
+          Text(label, style: Theme.of(context).textTheme.bodySmall),
         ],
       ),
     );
@@ -314,18 +305,16 @@ class _EclipseCalendarScreenState extends State<EclipseCalendarScreen> {
               Text(
                 title,
                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      fontWeight: FontWeight.w600,
-                      color: color,
-                    ),
+                  fontWeight: FontWeight.w600,
+                  color: color,
+                ),
               ),
             ],
           ),
           const SizedBox(height: 8),
           Text(
             content,
-            style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  height: 1.5,
-                ),
+            style: Theme.of(context).textTheme.bodySmall?.copyWith(height: 1.5),
           ),
         ],
       ),
@@ -338,9 +327,9 @@ class _EclipseCalendarScreenState extends State<EclipseCalendarScreen> {
       children: [
         Text(
           'En Cok Etkilenen Burclar',
-          style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                fontWeight: FontWeight.w600,
-              ),
+          style: Theme.of(
+            context,
+          ).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w600),
         ),
         const SizedBox(height: 8),
         Wrap(
@@ -398,9 +387,9 @@ class _EclipseCalendarScreenState extends State<EclipseCalendarScreen> {
           ),
           Text(
             '$_selectedYear Tutulmalari',
-            style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  fontWeight: FontWeight.w600,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w600),
           ),
           IconButton(
             icon: const Icon(Icons.chevron_right),
@@ -419,9 +408,9 @@ class _EclipseCalendarScreenState extends State<EclipseCalendarScreen> {
         child: Center(
           child: Text(
             'Bu yil icin tutulma verisi bulunamadi.',
-            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: AppColors.textMuted,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.bodyMedium?.copyWith(color: AppColors.textMuted),
           ),
         ),
       );
@@ -444,8 +433,8 @@ class _EclipseCalendarScreenState extends State<EclipseCalendarScreen> {
         color: isDark
             ? AppColors.surfaceLight.withValues(alpha: isPast ? 0.1 : 0.2)
             : isPast
-                ? AppColors.lightSurfaceVariant.withValues(alpha: 0.5)
-                : AppColors.lightCard,
+            ? AppColors.lightSurfaceVariant.withValues(alpha: 0.5)
+            : AppColors.lightCard,
         borderRadius: BorderRadius.circular(AppConstants.radiusMd),
         border: isPast
             ? null
@@ -511,18 +500,17 @@ class _EclipseCalendarScreenState extends State<EclipseCalendarScreen> {
                         ),
                         child: Text(
                           'Gecmis',
-                          style:
-                              Theme.of(context).textTheme.labelSmall?.copyWith(
-                                    color: Colors.grey,
-                                  ),
+                          style: Theme.of(
+                            context,
+                          ).textTheme.labelSmall?.copyWith(color: Colors.grey),
                         ),
                       ),
                     Text(
                       eclipse.type.nameTr,
                       style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                            fontWeight: FontWeight.bold,
-                            color: isPast ? Colors.grey : null,
-                          ),
+                        fontWeight: FontWeight.bold,
+                        color: isPast ? Colors.grey : null,
+                      ),
                     ),
                   ],
                 ),
@@ -536,8 +524,8 @@ class _EclipseCalendarScreenState extends State<EclipseCalendarScreen> {
                 Text(
                   '${eclipse.date.day}.${eclipse.date.month}.${eclipse.date.year}',
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: isPast ? Colors.grey : null,
-                      ),
+                    color: isPast ? Colors.grey : null,
+                  ),
                 ),
                 const SizedBox(width: 8),
                 Text(
@@ -551,8 +539,8 @@ class _EclipseCalendarScreenState extends State<EclipseCalendarScreen> {
                 Text(
                   eclipse.zodiacSign.nameTr,
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: isPast ? Colors.grey : null,
-                      ),
+                    color: isPast ? Colors.grey : null,
+                  ),
                 ),
               ],
             ),
@@ -560,9 +548,9 @@ class _EclipseCalendarScreenState extends State<EclipseCalendarScreen> {
           children: [
             Text(
               eclipse.description,
-              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    height: 1.5,
-                  ),
+              style: Theme.of(
+                context,
+              ).textTheme.bodyMedium?.copyWith(height: 1.5),
             ),
             const SizedBox(height: AppConstants.spacingMd),
             _buildExpandableSection(

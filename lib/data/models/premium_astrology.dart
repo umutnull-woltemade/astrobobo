@@ -21,14 +21,14 @@ class AstroCartographyData {
   });
 
   Map<String, dynamic> toJson() => {
-        'userName': userName,
-        'birthDate': birthDate.toIso8601String(),
-        'birthLatitude': birthLatitude,
-        'birthLongitude': birthLongitude,
-        'planetaryLines': planetaryLines.map((l) => l.toJson()).toList(),
-        'powerPlaces': powerPlaces.map((p) => p.toJson()).toList(),
-        'overallAnalysis': overallAnalysis,
-      };
+    'userName': userName,
+    'birthDate': birthDate.toIso8601String(),
+    'birthLatitude': birthLatitude,
+    'birthLongitude': birthLongitude,
+    'planetaryLines': planetaryLines.map((l) => l.toJson()).toList(),
+    'powerPlaces': powerPlaces.map((p) => p.toJson()).toList(),
+    'overallAnalysis': overallAnalysis,
+  };
 
   factory AstroCartographyData.fromJson(Map<String, dynamic> json) =>
       AstroCartographyData(
@@ -64,24 +64,24 @@ class PlanetaryLine {
   });
 
   Map<String, dynamic> toJson() => {
-        'planet': planet,
-        'lineType': lineType.index,
-        'coordinates': coordinates.map((c) => c.toJson()).toList(),
-        'meaning': meaning,
-        'advice': advice,
-        'isPositive': isPositive,
-      };
+    'planet': planet,
+    'lineType': lineType.index,
+    'coordinates': coordinates.map((c) => c.toJson()).toList(),
+    'meaning': meaning,
+    'advice': advice,
+    'isPositive': isPositive,
+  };
 
   factory PlanetaryLine.fromJson(Map<String, dynamic> json) => PlanetaryLine(
-        planet: json['planet'] as String,
-        lineType: LineType.values[json['lineType'] as int],
-        coordinates: (json['coordinates'] as List)
-            .map((c) => GeoPoint.fromJson(c as Map<String, dynamic>))
-            .toList(),
-        meaning: json['meaning'] as String,
-        advice: json['advice'] as String,
-        isPositive: json['isPositive'] as bool,
-      );
+    planet: json['planet'] as String,
+    lineType: LineType.values[json['lineType'] as int],
+    coordinates: (json['coordinates'] as List)
+        .map((c) => GeoPoint.fromJson(c as Map<String, dynamic>))
+        .toList(),
+    meaning: json['meaning'] as String,
+    advice: json['advice'] as String,
+    isPositive: json['isPositive'] as bool,
+  );
 }
 
 class GeoPoint {
@@ -91,14 +91,14 @@ class GeoPoint {
   GeoPoint({required this.latitude, required this.longitude});
 
   Map<String, dynamic> toJson() => {
-        'latitude': latitude,
-        'longitude': longitude,
-      };
+    'latitude': latitude,
+    'longitude': longitude,
+  };
 
   factory GeoPoint.fromJson(Map<String, dynamic> json) => GeoPoint(
-        latitude: (json['latitude'] as num).toDouble(),
-        longitude: (json['longitude'] as num).toDouble(),
-      );
+    latitude: (json['latitude'] as num).toDouble(),
+    longitude: (json['longitude'] as num).toDouble(),
+  );
 }
 
 enum LineType {
@@ -171,26 +171,26 @@ class PowerPlace {
   });
 
   Map<String, dynamic> toJson() => {
-        'name': name,
-        'country': country,
-        'latitude': latitude,
-        'longitude': longitude,
-        'activePlanets': activePlanets,
-        'energyType': energyType,
-        'description': description,
-        'powerRating': powerRating,
-      };
+    'name': name,
+    'country': country,
+    'latitude': latitude,
+    'longitude': longitude,
+    'activePlanets': activePlanets,
+    'energyType': energyType,
+    'description': description,
+    'powerRating': powerRating,
+  };
 
   factory PowerPlace.fromJson(Map<String, dynamic> json) => PowerPlace(
-        name: json['name'] as String,
-        country: json['country'] as String,
-        latitude: (json['latitude'] as num).toDouble(),
-        longitude: (json['longitude'] as num).toDouble(),
-        activePlanets: List<String>.from(json['activePlanets'] as List),
-        energyType: json['energyType'] as String,
-        description: json['description'] as String,
-        powerRating: json['powerRating'] as int,
-      );
+    name: json['name'] as String,
+    country: json['country'] as String,
+    latitude: (json['latitude'] as num).toDouble(),
+    longitude: (json['longitude'] as num).toDouble(),
+    activePlanets: List<String>.from(json['activePlanets'] as List),
+    energyType: json['energyType'] as String,
+    description: json['description'] as String,
+    powerRating: json['powerRating'] as int,
+  );
 }
 
 /// Electional Astrology - Finding auspicious times
@@ -216,17 +216,15 @@ class ElectionalChart {
   });
 
   Map<String, dynamic> toJson() => {
-        'purpose': purpose,
-        'selectedDate': selectedDate.toIso8601String(),
-        'favorableWindows':
-            favorableWindows.map((w) => w.toJson()).toList(),
-        'unfavorableWindows':
-            unfavorableWindows.map((w) => w.toJson()).toList(),
-        'moonPhaseAdvice': moonPhaseAdvice,
-        'retrogradeWarning': retrogradeWarning,
-        'overallRecommendation': overallRecommendation,
-        'optimalScore': optimalScore,
-      };
+    'purpose': purpose,
+    'selectedDate': selectedDate.toIso8601String(),
+    'favorableWindows': favorableWindows.map((w) => w.toJson()).toList(),
+    'unfavorableWindows': unfavorableWindows.map((w) => w.toJson()).toList(),
+    'moonPhaseAdvice': moonPhaseAdvice,
+    'retrogradeWarning': retrogradeWarning,
+    'overallRecommendation': overallRecommendation,
+    'optimalScore': optimalScore,
+  };
 
   factory ElectionalChart.fromJson(Map<String, dynamic> json) =>
       ElectionalChart(
@@ -261,12 +259,12 @@ class ElectionalWindow {
   });
 
   Map<String, dynamic> toJson() => {
-        'start': start.toIso8601String(),
-        'end': end.toIso8601String(),
-        'description': description,
-        'supportingAspects': supportingAspects,
-        'score': score,
-      };
+    'start': start.toIso8601String(),
+    'end': end.toIso8601String(),
+    'description': description,
+    'supportingAspects': supportingAspects,
+    'score': score,
+  };
 
   factory ElectionalWindow.fromJson(Map<String, dynamic> json) =>
       ElectionalWindow(
@@ -395,32 +393,32 @@ class DraconicChart {
   });
 
   Map<String, dynamic> toJson() => {
-        'birthDate': birthDate.toIso8601String(),
-        'draconicSun': draconicSun.index,
-        'draconicMoon': draconicMoon.index,
-        'draconicAscendant': draconicAscendant.index,
-        'planets': planets.map((p) => p.toJson()).toList(),
-        'soulPurpose': soulPurpose,
-        'karmicLessons': karmicLessons,
-        'spiritualGifts': spiritualGifts,
-        'pastLifeIndicators': pastLifeIndicators,
-        'evolutionaryPath': evolutionaryPath,
-      };
+    'birthDate': birthDate.toIso8601String(),
+    'draconicSun': draconicSun.index,
+    'draconicMoon': draconicMoon.index,
+    'draconicAscendant': draconicAscendant.index,
+    'planets': planets.map((p) => p.toJson()).toList(),
+    'soulPurpose': soulPurpose,
+    'karmicLessons': karmicLessons,
+    'spiritualGifts': spiritualGifts,
+    'pastLifeIndicators': pastLifeIndicators,
+    'evolutionaryPath': evolutionaryPath,
+  };
 
   factory DraconicChart.fromJson(Map<String, dynamic> json) => DraconicChart(
-        birthDate: DateTime.parse(json['birthDate'] as String),
-        draconicSun: ZodiacSign.values[json['draconicSun'] as int],
-        draconicMoon: ZodiacSign.values[json['draconicMoon'] as int],
-        draconicAscendant: ZodiacSign.values[json['draconicAscendant'] as int],
-        planets: (json['planets'] as List)
-            .map((p) => DraconicPlanet.fromJson(p as Map<String, dynamic>))
-            .toList(),
-        soulPurpose: json['soulPurpose'] as String,
-        karmicLessons: json['karmicLessons'] as String,
-        spiritualGifts: json['spiritualGifts'] as String,
-        pastLifeIndicators: json['pastLifeIndicators'] as String,
-        evolutionaryPath: json['evolutionaryPath'] as String,
-      );
+    birthDate: DateTime.parse(json['birthDate'] as String),
+    draconicSun: ZodiacSign.values[json['draconicSun'] as int],
+    draconicMoon: ZodiacSign.values[json['draconicMoon'] as int],
+    draconicAscendant: ZodiacSign.values[json['draconicAscendant'] as int],
+    planets: (json['planets'] as List)
+        .map((p) => DraconicPlanet.fromJson(p as Map<String, dynamic>))
+        .toList(),
+    soulPurpose: json['soulPurpose'] as String,
+    karmicLessons: json['karmicLessons'] as String,
+    spiritualGifts: json['spiritualGifts'] as String,
+    pastLifeIndicators: json['pastLifeIndicators'] as String,
+    evolutionaryPath: json['evolutionaryPath'] as String,
+  );
 }
 
 class DraconicPlanet {
@@ -439,20 +437,20 @@ class DraconicPlanet {
   });
 
   Map<String, dynamic> toJson() => {
-        'planet': planet,
-        'sign': sign.index,
-        'degree': degree,
-        'house': house,
-        'interpretation': interpretation,
-      };
+    'planet': planet,
+    'sign': sign.index,
+    'degree': degree,
+    'house': house,
+    'interpretation': interpretation,
+  };
 
   factory DraconicPlanet.fromJson(Map<String, dynamic> json) => DraconicPlanet(
-        planet: json['planet'] as String,
-        sign: ZodiacSign.values[json['sign'] as int],
-        degree: (json['degree'] as num).toDouble(),
-        house: json['house'] as int,
-        interpretation: json['interpretation'] as String,
-      );
+    planet: json['planet'] as String,
+    sign: ZodiacSign.values[json['sign'] as int],
+    degree: (json['degree'] as num).toDouble(),
+    house: json['house'] as int,
+    interpretation: json['interpretation'] as String,
+  );
 }
 
 /// Extended Asteroids
@@ -478,28 +476,28 @@ class AsteroidChart {
   });
 
   Map<String, dynamic> toJson() => {
-        'birthDate': birthDate.toIso8601String(),
-        'asteroids': asteroids.map((a) => a.toJson()).toList(),
-        'chiron': chiron,
-        'ceres': ceres,
-        'pallas': pallas,
-        'juno': juno,
-        'vesta': vesta,
-        'overallAnalysis': overallAnalysis,
-      };
+    'birthDate': birthDate.toIso8601String(),
+    'asteroids': asteroids.map((a) => a.toJson()).toList(),
+    'chiron': chiron,
+    'ceres': ceres,
+    'pallas': pallas,
+    'juno': juno,
+    'vesta': vesta,
+    'overallAnalysis': overallAnalysis,
+  };
 
   factory AsteroidChart.fromJson(Map<String, dynamic> json) => AsteroidChart(
-        birthDate: DateTime.parse(json['birthDate'] as String),
-        asteroids: (json['asteroids'] as List)
-            .map((a) => AsteroidPosition.fromJson(a as Map<String, dynamic>))
-            .toList(),
-        chiron: json['chiron'] as String,
-        ceres: json['ceres'] as String,
-        pallas: json['pallas'] as String,
-        juno: json['juno'] as String,
-        vesta: json['vesta'] as String,
-        overallAnalysis: json['overallAnalysis'] as String,
-      );
+    birthDate: DateTime.parse(json['birthDate'] as String),
+    asteroids: (json['asteroids'] as List)
+        .map((a) => AsteroidPosition.fromJson(a as Map<String, dynamic>))
+        .toList(),
+    chiron: json['chiron'] as String,
+    ceres: json['ceres'] as String,
+    pallas: json['pallas'] as String,
+    juno: json['juno'] as String,
+    vesta: json['vesta'] as String,
+    overallAnalysis: json['overallAnalysis'] as String,
+  );
 }
 
 class AsteroidPosition {
@@ -520,13 +518,13 @@ class AsteroidPosition {
   });
 
   Map<String, dynamic> toJson() => {
-        'asteroid': asteroid.index,
-        'sign': sign.index,
-        'degree': degree,
-        'house': house,
-        'aspects': aspects,
-        'interpretation': interpretation,
-      };
+    'asteroid': asteroid.index,
+    'sign': sign.index,
+    'degree': degree,
+    'house': house,
+    'aspects': aspects,
+    'interpretation': interpretation,
+  };
 
   factory AsteroidPosition.fromJson(Map<String, dynamic> json) =>
       AsteroidPosition(

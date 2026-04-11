@@ -10,7 +10,6 @@ class MegaDreamSymbolsPart14 {
     // ════════════════════════════════════════════════════════════════════════
     // AILE ÜYELERI - 25+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'grandmother',
       symbolTr: 'Büyükanne',
@@ -264,7 +263,6 @@ class MegaDreamSymbolsPart14 {
     // ════════════════════════════════════════════════════════════════════════
     // MESLEKLER VE ROLLER - 35+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'doctor',
       symbolTr: 'Doktor',
@@ -618,7 +616,6 @@ class MegaDreamSymbolsPart14 {
     // ════════════════════════════════════════════════════════════════════════
     // ARKETIPSEL FIGÜRLER - 30+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'wise_old_man',
       symbolTr: 'Yaşlı Bilge',

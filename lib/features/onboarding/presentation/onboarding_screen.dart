@@ -15,6 +15,7 @@ import '../../../data/models/zodiac_sign.dart';
 import '../../../data/providers/app_providers.dart';
 import '../../../data/services/auth_service.dart';
 import '../../../data/services/storage_service.dart';
+import '../../../data/services/localization_service.dart';
 import '../../../shared/widgets/birth_date_picker.dart';
 import '../../../shared/widgets/cosmic_background.dart';
 import '../../../shared/widgets/gradient_button.dart';
@@ -57,6 +58,46 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
   }
 
   void _completeOnboarding() async {
+    // ignore: avoid_print
+    print(
+      '[VenusOne] _completeOnboarding called, kIsWeb=$kIsWeb, date=$_selectedDate',
+    );
+
+    // WEB: Build profile from form fields, persist via shared_preferences
+    if (kIsWeb) {
+      final name = (_userName?.trim().isNotEmpty == true)
+          ? _userName!.trim()
+          : 'Misafir';
+      final birthDate = _selectedDate ?? DateTime(1990, 1, 1);
+
+      final profile = UserProfile(
+        name: name,
+        birthDate: birthDate,
+        birthPlace: _birthPlace ?? 'İstanbul',
+        birthLatitude: _birthLatitude ?? 41.0082,
+        birthLongitude: _birthLongitude ?? 28.9784,
+      );
+
+      ref.read(userProfileProvider.notifier).setProfile(profile);
+      ref.read(onboardingCompleteProvider.notifier).state = true;
+
+      // Persist via shared_preferences (now web-safe)
+      try {
+        await StorageService.saveUserProfile(profile);
+        await StorageService.saveOnboardingComplete(true);
+      } catch (_) {}
+
+      if (mounted) {
+        // ignore: avoid_print
+        print(
+          '[VenusOne] WEB: Navigating to home with profile: $name / $birthDate',
+        );
+        context.go(Routes.home);
+      }
+      return;
+    }
+
+    // MOBILE: Require birth date
     if (_selectedDate != null) {
       String? birthTimeStr;
       if (_selectedTime != null) {
@@ -97,77 +138,24 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
     // CosmicBackground, SafeArea, PageView, _WelcomePage all have issues on web
     // ═══════════════════════════════════════════════════════════════════════════
     if (kIsWeb) {
-      // ignore: avoid_print
-      print('🌐 WEB: Using ultra-simple onboarding');
-      return Scaffold(
-        backgroundColor: const Color(0xFF0D0D1A),
-        body: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                Color(0xFF1a1a2e),
-                Color(0xFF0D0D1A),
-              ],
-            ),
-          ),
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                // Logo
-                Container(
-                  width: 120,
-                  height: 120,
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    gradient: LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      colors: [Color(0xFF667EEA), Color(0xFF764BA2)],
-                    ),
-                  ),
-                  child: const Icon(Icons.auto_awesome, color: Colors.white, size: 60),
-                ),
-                const SizedBox(height: 32),
-                // Title
-                const Text(
-                  'Venus One',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 36,
-                    fontWeight: FontWeight.w300,
-                    letterSpacing: 4,
-                  ),
-                ),
-                const SizedBox(height: 12),
-                // Subtitle
-                const Text(
-                  'Kozmik Yolculuğuna Başla',
-                  style: TextStyle(
-                    color: Colors.white70,
-                    fontSize: 16,
-                  ),
-                ),
-                const SizedBox(height: 48),
-                // Continue button
-                ElevatedButton(
-                  onPressed: _completeOnboarding,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF667EEA),
-                    foregroundColor: Colors.white,
-                    padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 16),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                  ),
-                  child: const Text('Devam Et', style: TextStyle(fontSize: 18)),
-                ),
-              ],
-            ),
-          ),
-        ),
+      final currentLang = ref.watch(languageProvider);
+      return _WebOnboardingForm(
+        initialName: _userName,
+        initialDate: _selectedDate,
+        initialTime: _selectedTime,
+        currentLanguage: currentLang,
+        onLanguageChanged: (lang) {
+          ref.read(languageProvider.notifier).state = lang;
+          StorageService.saveLanguage(lang);
+        },
+        onSubmit: (name, date, time) {
+          setState(() {
+            _userName = name;
+            _selectedDate = date;
+            _selectedTime = time;
+          });
+          _completeOnboarding();
+        },
       );
     }
 
@@ -432,7 +420,11 @@ class _WelcomePageState extends State<_WelcomePage>
                         colors: [Color(0xFF667EEA), Color(0xFF764BA2)],
                       ),
                     ),
-                    child: const Icon(Icons.auto_awesome, color: Colors.white, size: 60),
+                    child: const Icon(
+                      Icons.auto_awesome,
+                      color: Colors.white,
+                      size: 60,
+                    ),
                   );
                 },
               ),
@@ -460,7 +452,10 @@ class _WelcomePageState extends State<_WelcomePage>
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF667EEA),
                   foregroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 16),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 48,
+                    vertical: 16,
+                  ),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),
                   ),
@@ -2090,6 +2085,862 @@ class _CosmicWelcomeOverlayState extends State<_CosmicWelcomeOverlay>
               ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+// WEB ONBOARDING FORM — name + birth date, no PageView, no animations
+// Designed to never crash on web. Uses showDatePicker (web-safe).
+// ═══════════════════════════════════════════════════════════════════════════
+class _WebOnboardingForm extends StatefulWidget {
+  final String? initialName;
+  final DateTime? initialDate;
+  final TimeOfDay? initialTime;
+  final AppLanguage currentLanguage;
+  final void Function(AppLanguage lang) onLanguageChanged;
+  final void Function(String name, DateTime date, TimeOfDay? time) onSubmit;
+
+  const _WebOnboardingForm({
+    this.initialName,
+    this.initialDate,
+    this.initialTime,
+    required this.currentLanguage,
+    required this.onLanguageChanged,
+    required this.onSubmit,
+  });
+
+  @override
+  State<_WebOnboardingForm> createState() => _WebOnboardingFormState();
+}
+
+class _WebOnboardingFormState extends State<_WebOnboardingForm> {
+  late TextEditingController _nameController;
+  DateTime? _date;
+  TimeOfDay? _time;
+  String? _error;
+
+  @override
+  void initState() {
+    super.initState();
+    _nameController = TextEditingController(text: widget.initialName ?? '');
+    _date = widget.initialDate;
+    _time = widget.initialTime;
+  }
+
+  @override
+  void dispose() {
+    _nameController.dispose();
+    super.dispose();
+  }
+
+  ThemeData _pickerTheme() {
+    return ThemeData.dark().copyWith(
+      colorScheme: const ColorScheme.dark(
+        primary: Color(0xFF667EEA),
+        onPrimary: Colors.white,
+        surface: Color(0xFF1a1a2e),
+        onSurface: Colors.white,
+      ),
+      dialogTheme: const DialogThemeData(backgroundColor: Color(0xFF0D0D1A)),
+      timePickerTheme: const TimePickerThemeData(
+        backgroundColor: Color(0xFF0D0D1A),
+        hourMinuteColor: Color(0xFF1a1a2e),
+        hourMinuteTextColor: Colors.white,
+        dayPeriodColor: Color(0xFF1a1a2e),
+        dayPeriodTextColor: Colors.white,
+        dialBackgroundColor: Color(0xFF1a1a2e),
+        dialHandColor: Color(0xFF667EEA),
+        dialTextColor: Colors.white,
+        entryModeIconColor: Color(0xFFFFD700),
+      ),
+    );
+  }
+
+  Future<void> _pickDate() async {
+    final now = DateTime.now();
+    final picked = await showDatePicker(
+      context: context,
+      initialDate: _date ?? DateTime(1995, 1, 1),
+      firstDate: DateTime(1900),
+      lastDate: now,
+      helpText: L10n.get('birth_date', widget.currentLanguage),
+      cancelText: L10n.get('cancel', widget.currentLanguage),
+      confirmText: L10n.get('ok', widget.currentLanguage),
+      builder: (context, child) => Theme(data: _pickerTheme(), child: child!),
+    );
+    if (picked != null) {
+      setState(() {
+        _date = picked;
+        _error = null;
+      });
+    }
+  }
+
+  Future<void> _pickTime() async {
+    final picked = await showTimePicker(
+      context: context,
+      initialTime: _time ?? const TimeOfDay(hour: 12, minute: 0),
+      helpText: L10n.get('birth_time', widget.currentLanguage),
+      cancelText: L10n.get('cancel', widget.currentLanguage),
+      confirmText: L10n.get('ok', widget.currentLanguage),
+      builder: (context, child) => Theme(data: _pickerTheme(), child: child!),
+    );
+    if (picked != null) {
+      setState(() {
+        _time = picked;
+      });
+    }
+  }
+
+  void _submit() {
+    final name = _nameController.text.trim();
+    if (name.isEmpty) {
+      setState(
+        () => _error = L10n.get('enter_name_required', widget.currentLanguage),
+      );
+      return;
+    }
+    if (_date == null) {
+      setState(
+        () => _error = L10n.get(
+          'select_birth_date_required',
+          widget.currentLanguage,
+        ),
+      );
+      return;
+    }
+    widget.onSubmit(name, _date!, _time);
+  }
+
+  String _formatDate(DateTime d) {
+    final isEn = widget.currentLanguage == AppLanguage.en;
+    final monthsTr = const [
+      'Ocak',
+      'Şubat',
+      'Mart',
+      'Nisan',
+      'Mayıs',
+      'Haziran',
+      'Temmuz',
+      'Ağustos',
+      'Eylül',
+      'Ekim',
+      'Kasım',
+      'Aralık',
+    ];
+    final monthsEn = const [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ];
+    final months = isEn ? monthsEn : monthsTr;
+    return isEn
+        ? '${months[d.month - 1]} ${d.day}, ${d.year}'
+        : '${d.day} ${months[d.month - 1]} ${d.year}';
+  }
+
+  String _formatTime(TimeOfDay t) {
+    final h = t.hour.toString().padLeft(2, '0');
+    final m = t.minute.toString().padLeft(2, '0');
+    return '$h:$m';
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final isWide = size.width >= 980;
+
+    return Scaffold(
+      backgroundColor: const Color(0xFF0D0D1A),
+      body: Stack(
+        children: [
+          // ──── Background gradient + cosmic glow ─────────────────────
+          Container(
+            decoration: const BoxDecoration(
+              gradient: RadialGradient(
+                center: Alignment.topCenter,
+                radius: 1.5,
+                colors: [
+                  Color(0xFF1F1B3A),
+                  Color(0xFF0D0D1A),
+                  Color(0xFF000000),
+                ],
+              ),
+            ),
+          ),
+          // Decorative purple glow blob (top-right)
+          Positioned(
+            top: -150,
+            right: -150,
+            child: Container(
+              width: 400,
+              height: 400,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: RadialGradient(
+                  colors: [
+                    const Color(0xFF764BA2).withOpacity(0.35),
+                    const Color(0xFF764BA2).withOpacity(0),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          // Decorative gold glow blob (bottom-left)
+          Positioned(
+            bottom: -200,
+            left: -200,
+            child: Container(
+              width: 500,
+              height: 500,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: RadialGradient(
+                  colors: [
+                    const Color(0xFFFFD700).withOpacity(0.12),
+                    const Color(0xFFFFD700).withOpacity(0),
+                  ],
+                ),
+              ),
+            ),
+          ),
+
+          // ──── Language switcher (top-right) ─────────────────────────
+          Positioned(
+            top: 16,
+            right: 16,
+            child: SafeArea(child: _buildLangSwitcher()),
+          ),
+
+          // ──── Main scrollable content ───────────────────────────────
+          SafeArea(
+            child: SingleChildScrollView(
+              padding: EdgeInsets.symmetric(
+                horizontal: isWide ? 48 : 20,
+                vertical: 80,
+              ),
+              child: Center(
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 1100),
+                  child: isWide
+                      ? Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Expanded(flex: 5, child: _buildFormCard()),
+                            const SizedBox(width: 32),
+                            Expanded(flex: 6, child: _buildPreviewPanel()),
+                          ],
+                        )
+                      : Column(
+                          children: [
+                            _buildFormCard(),
+                            const SizedBox(height: 32),
+                            _buildPreviewPanel(),
+                          ],
+                        ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  // ─── Language switcher chip ───────────────────────────────────────
+  Widget _buildLangSwitcher() {
+    return PopupMenuButton<AppLanguage>(
+      initialValue: widget.currentLanguage,
+      onSelected: widget.onLanguageChanged,
+      color: const Color(0xFF1a1a2e),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+        side: BorderSide(color: Colors.white.withOpacity(0.15)),
+      ),
+      itemBuilder: (context) => AppLanguage.values.map((lang) {
+        return PopupMenuItem(
+          value: lang,
+          child: Row(
+            children: [
+              Text(lang.flag, style: const TextStyle(fontSize: 18)),
+              const SizedBox(width: 10),
+              Text(
+                lang.displayName,
+                style: const TextStyle(color: Colors.white, fontSize: 14),
+              ),
+              if (lang == widget.currentLanguage) ...[
+                const SizedBox(width: 8),
+                const Icon(Icons.check, color: Color(0xFFFFD700), size: 16),
+              ],
+            ],
+          ),
+        );
+      }).toList(),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+        decoration: BoxDecoration(
+          color: Colors.white.withOpacity(0.08),
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: Colors.white.withOpacity(0.15)),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              widget.currentLanguage.flag,
+              style: const TextStyle(fontSize: 16),
+            ),
+            const SizedBox(width: 6),
+            Text(
+              widget.currentLanguage.name.toUpperCase(),
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 12,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            const SizedBox(width: 4),
+            const Icon(Icons.expand_more, color: Colors.white60, size: 16),
+          ],
+        ),
+      ),
+    );
+  }
+
+  // ─── Form card (left/top) ─────────────────────────────────────────
+  Widget _buildFormCard() {
+    return Container(
+      padding: const EdgeInsets.all(32),
+      decoration: BoxDecoration(
+        color: Colors.white.withOpacity(0.04),
+        borderRadius: BorderRadius.circular(24),
+        border: Border.all(color: Colors.white.withOpacity(0.1)),
+        boxShadow: [
+          BoxShadow(
+            color: const Color(0xFF667EEA).withOpacity(0.1),
+            blurRadius: 40,
+            spreadRadius: -8,
+          ),
+        ],
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          // Logo + title
+          Row(
+            children: [
+              Container(
+                width: 64,
+                height: 64,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  gradient: const LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [Color(0xFF667EEA), Color(0xFF764BA2)],
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xFF667EEA).withOpacity(0.5),
+                      blurRadius: 24,
+                      spreadRadius: -4,
+                    ),
+                  ],
+                ),
+                child: const Icon(
+                  Icons.auto_awesome,
+                  color: Colors.white,
+                  size: 32,
+                ),
+              ),
+              const SizedBox(width: 16),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'Venus One',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 26,
+                        fontWeight: FontWeight.w300,
+                        letterSpacing: 3,
+                        height: 1,
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      L10n.get('cosmic_journey_starts', widget.currentLanguage),
+                      style: const TextStyle(
+                        color: Colors.white60,
+                        fontSize: 12,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 28),
+
+          // Name field
+          _label(
+            L10n.get('name', widget.currentLanguage),
+            Icons.person_outline,
+          ),
+          const SizedBox(height: 8),
+          TextField(
+            controller: _nameController,
+            style: const TextStyle(color: Colors.white, fontSize: 15),
+            decoration: _inputDecoration(),
+            textInputAction: TextInputAction.next,
+            onChanged: (_) {
+              if (_error != null) setState(() => _error = null);
+            },
+          ),
+          const SizedBox(height: 20),
+
+          // Date field
+          _label(
+            L10n.get('birth_date', widget.currentLanguage),
+            Icons.cake_outlined,
+          ),
+          const SizedBox(height: 8),
+          _pickerField(
+            value: _date == null ? null : _formatDate(_date!),
+            placeholder: L10n.get('select_birth_date', widget.currentLanguage),
+            icon: Icons.calendar_today,
+            onTap: _pickDate,
+          ),
+          const SizedBox(height: 20),
+
+          // Time field
+          _label(
+            L10n.get('birth_time', widget.currentLanguage),
+            Icons.access_time,
+          ),
+          const SizedBox(height: 8),
+          _pickerField(
+            value: _time == null ? null : _formatTime(_time!),
+            placeholder:
+                '12:00 (${L10n.get('optional', widget.currentLanguage)})',
+            icon: Icons.schedule,
+            onTap: _pickTime,
+          ),
+          const SizedBox(height: 4),
+          Text(
+            L10n.get('birth_time_hint', widget.currentLanguage),
+            style: TextStyle(
+              color: Colors.white.withOpacity(0.4),
+              fontSize: 11,
+            ),
+          ),
+
+          if (_error != null) ...[
+            const SizedBox(height: 16),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+              decoration: BoxDecoration(
+                color: const Color(0xFFFF6B6B).withOpacity(0.1),
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(
+                  color: const Color(0xFFFF6B6B).withOpacity(0.3),
+                ),
+              ),
+              child: Row(
+                children: [
+                  const Icon(
+                    Icons.error_outline,
+                    color: Color(0xFFFF6B6B),
+                    size: 16,
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      _error!,
+                      style: const TextStyle(
+                        color: Color(0xFFFF6B6B),
+                        fontSize: 13,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+
+          const SizedBox(height: 28),
+
+          // Submit button
+          SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(
+              onPressed: _submit,
+              style:
+                  ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF667EEA),
+                    foregroundColor: Colors.white,
+                    padding: const EdgeInsets.symmetric(vertical: 18),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(14),
+                    ),
+                    elevation: 0,
+                  ).copyWith(
+                    overlayColor: WidgetStateProperty.all(
+                      Colors.white.withOpacity(0.1),
+                    ),
+                  ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    L10n.get('start_journey', widget.currentLanguage),
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: 1,
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  const Icon(Icons.arrow_forward, size: 18),
+                ],
+              ),
+            ),
+          ),
+
+          const SizedBox(height: 12),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Icon(Icons.lock_outline, color: Colors.white38, size: 13),
+              const SizedBox(width: 6),
+              Text(
+                L10n.get('data_stays_local', widget.currentLanguage),
+                style: TextStyle(
+                  color: Colors.white.withOpacity(0.45),
+                  fontSize: 11,
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _label(String text, IconData icon) {
+    return Row(
+      children: [
+        Icon(icon, color: const Color(0xFFFFD700), size: 16),
+        const SizedBox(width: 8),
+        Text(
+          text,
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 13,
+            fontWeight: FontWeight.w500,
+            letterSpacing: 0.5,
+          ),
+        ),
+      ],
+    );
+  }
+
+  InputDecoration _inputDecoration() {
+    return InputDecoration(
+      filled: true,
+      fillColor: Colors.white.withOpacity(0.05),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(12),
+        borderSide: BorderSide(color: Colors.white.withOpacity(0.12)),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(12),
+        borderSide: const BorderSide(color: Color(0xFF667EEA), width: 2),
+      ),
+    );
+  }
+
+  Widget _pickerField({
+    required String? value,
+    required String placeholder,
+    required IconData icon,
+    required VoidCallback onTap,
+  }) {
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(12),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 18),
+        decoration: BoxDecoration(
+          color: Colors.white.withOpacity(0.05),
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: Colors.white.withOpacity(0.12)),
+        ),
+        child: Row(
+          children: [
+            Expanded(
+              child: Text(
+                value ?? placeholder,
+                style: TextStyle(
+                  color: value == null ? Colors.white60 : Colors.white,
+                  fontSize: 15,
+                ),
+              ),
+            ),
+            Icon(icon, color: Colors.white38, size: 18),
+          ],
+        ),
+      ),
+    );
+  }
+
+  // ─── Preview panel (right/bottom) ─────────────────────────────────
+  Widget _buildPreviewPanel() {
+    final lang = widget.currentLanguage;
+    final features = [
+      _PreviewFeature(
+        icon: '☀',
+        color: const Color(0xFFFFD700),
+        title: L10n.get('preview_sun_sign_title', lang),
+        subtitle: L10n.get('preview_sun_sign_desc', lang),
+      ),
+      _PreviewFeature(
+        icon: '☽',
+        color: const Color(0xFFB39DDB),
+        title: L10n.get('preview_moon_sign_title', lang),
+        subtitle: L10n.get('preview_moon_sign_desc', lang),
+      ),
+      _PreviewFeature(
+        icon: '↑',
+        color: const Color(0xFFFF8A65),
+        title: L10n.get('preview_rising_sign_title', lang),
+        subtitle: L10n.get('preview_rising_sign_desc', lang),
+      ),
+      _PreviewFeature(
+        icon: '🌐',
+        color: const Color(0xFF80DEEA),
+        title: L10n.get('preview_natal_chart_title', lang),
+        subtitle: L10n.get('preview_natal_chart_desc', lang),
+      ),
+      _PreviewFeature(
+        icon: '✦',
+        color: const Color(0xFFEC407A),
+        title: L10n.get('preview_horoscope_title', lang),
+        subtitle: L10n.get('preview_horoscope_desc', lang),
+      ),
+      _PreviewFeature(
+        icon: '♥',
+        color: const Color(0xFFF06292),
+        title: L10n.get('preview_compatibility_title', lang),
+        subtitle: L10n.get('preview_compatibility_desc', lang),
+      ),
+      _PreviewFeature(
+        icon: '⟳',
+        color: const Color(0xFF66BB6A),
+        title: L10n.get('preview_transits_title', lang),
+        subtitle: L10n.get('preview_transits_desc', lang),
+      ),
+      _PreviewFeature(
+        icon: '🃏',
+        color: const Color(0xFFBA68C8),
+        title: L10n.get('preview_tarot_title', lang),
+        subtitle: L10n.get('preview_tarot_desc', lang),
+      ),
+    ];
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        // Section header
+        Padding(
+          padding: const EdgeInsets.only(left: 4, bottom: 16),
+          child: Row(
+            children: [
+              const Icon(
+                Icons.auto_awesome,
+                color: Color(0xFFFFD700),
+                size: 18,
+              ),
+              const SizedBox(width: 8),
+              Text(
+                L10n.get('preview_section_title', lang),
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 1,
+                ),
+              ),
+            ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 4, bottom: 20),
+          child: Text(
+            L10n.get('preview_section_subtitle', lang),
+            style: TextStyle(
+              color: Colors.white.withOpacity(0.55),
+              fontSize: 12,
+            ),
+          ),
+        ),
+        // Feature grid (2 columns)
+        LayoutBuilder(
+          builder: (context, constraints) {
+            final cols = constraints.maxWidth < 460 ? 1 : 2;
+            return Wrap(
+              spacing: 12,
+              runSpacing: 12,
+              children: features.map((f) {
+                final w = (constraints.maxWidth - 12 * (cols - 1)) / cols;
+                return SizedBox(
+                  width: w,
+                  child: _PreviewCard(feature: f),
+                );
+              }).toList(),
+            );
+          },
+        ),
+        const SizedBox(height: 16),
+        // Footer trust signal
+        Container(
+          padding: const EdgeInsets.all(14),
+          decoration: BoxDecoration(
+            color: const Color(0xFFFFD700).withOpacity(0.06),
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all(color: const Color(0xFFFFD700).withOpacity(0.2)),
+          ),
+          child: Row(
+            children: [
+              const Icon(Icons.verified, color: Color(0xFFFFD700), size: 18),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Text(
+                  L10n.get('preview_swiss_ephemeris', lang),
+                  style: const TextStyle(color: Colors.white, fontSize: 12),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+// ─── Preview feature data class ──────────────────────────────────────
+class _PreviewFeature {
+  final String icon;
+  final Color color;
+  final String title;
+  final String subtitle;
+  const _PreviewFeature({
+    required this.icon,
+    required this.color,
+    required this.title,
+    required this.subtitle,
+  });
+}
+
+class _PreviewCard extends StatefulWidget {
+  final _PreviewFeature feature;
+  const _PreviewCard({required this.feature});
+
+  @override
+  State<_PreviewCard> createState() => _PreviewCardState();
+}
+
+class _PreviewCardState extends State<_PreviewCard> {
+  bool _hover = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final f = widget.feature;
+    return MouseRegion(
+      onEnter: (_) => setState(() => _hover = true),
+      onExit: (_) => setState(() => _hover = false),
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 180),
+        padding: const EdgeInsets.all(14),
+        decoration: BoxDecoration(
+          color: _hover
+              ? Colors.white.withOpacity(0.07)
+              : Colors.white.withOpacity(0.035),
+          borderRadius: BorderRadius.circular(14),
+          border: Border.all(
+            color: _hover
+                ? f.color.withOpacity(0.4)
+                : Colors.white.withOpacity(0.08),
+          ),
+          boxShadow: _hover
+              ? [
+                  BoxShadow(
+                    color: f.color.withOpacity(0.18),
+                    blurRadius: 18,
+                    spreadRadius: -2,
+                  ),
+                ]
+              : null,
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              width: 40,
+              height: 40,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: f.color.withOpacity(0.12),
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(color: f.color.withOpacity(0.3)),
+              ),
+              child: Text(
+                f.icon,
+                style: TextStyle(fontSize: 20, color: f.color),
+              ),
+            ),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    f.title,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 13,
+                      fontWeight: FontWeight.w600,
+                      height: 1.2,
+                    ),
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    f.subtitle,
+                    style: TextStyle(
+                      color: Colors.white.withOpacity(0.55),
+                      fontSize: 11,
+                      height: 1.3,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );

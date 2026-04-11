@@ -74,7 +74,8 @@ class ProfileAnalysisService {
     // First impression from Ascendant
     String firstImpression = '';
     if (asc != null) {
-      firstImpression = 'Dış dünyaya ${asc.sign.name} enerjisi yansıtır: '
+      firstImpression =
+          'Dış dünyaya ${asc.sign.name} enerjisi yansıtır: '
           '${asc.sign.traits.take(2).join(", ")}';
     }
 
@@ -106,10 +107,12 @@ class ProfileAnalysisService {
     String attachmentStyle = 'Güvenli bağlanma';
     bool hasChallengingMoonAspects = aspects.any((a) => a.type.isChallenging);
     if (hasChallengingMoonAspects) {
-      final saturnAspect = aspects.any((a) =>
-          a.planet2 == Planet.saturn && a.type.isChallenging);
-      final plutoAspect = aspects.any((a) =>
-          a.planet2 == Planet.pluto && a.type.isChallenging);
+      final saturnAspect = aspects.any(
+        (a) => a.planet2 == Planet.saturn && a.type.isChallenging,
+      );
+      final plutoAspect = aspects.any(
+        (a) => a.planet2 == Planet.pluto && a.type.isChallenging,
+      );
 
       if (saturnAspect) {
         attachmentStyle = 'Kaçıngan bağlanma eğilimi - duygusal mesafe';
@@ -157,12 +160,16 @@ class ProfileAnalysisService {
 
     // Emotional triggers
     final triggers = <String>[];
-    final moonSquares =
-        aspects.where((a) => a.type == AspectType.square).toList();
+    final moonSquares = aspects
+        .where((a) => a.type == AspectType.square)
+        .toList();
     for (final aspect in moonSquares) {
-      final otherPlanet =
-          aspect.planet1 == Planet.moon ? aspect.planet2 : aspect.planet1;
-      triggers.add('${otherPlanet.nameTr} konuları duygusal tetikleyici olabilir');
+      final otherPlanet = aspect.planet1 == Planet.moon
+          ? aspect.planet2
+          : aspect.planet1;
+      triggers.add(
+        '${otherPlanet.nameTr} konuları duygusal tetikleyici olabilir',
+      );
     }
 
     // Stress response
@@ -239,8 +246,9 @@ class ProfileAnalysisService {
     // Relationship style
     String relationshipStyle = '';
     final venusAspects = chart.aspectsForPlanet(Planet.venus);
-    final hasSaturnVenus = venusAspects.any((a) =>
-        (a.planet1 == Planet.saturn || a.planet2 == Planet.saturn));
+    final hasSaturnVenus = venusAspects.any(
+      (a) => (a.planet1 == Planet.saturn || a.planet2 == Planet.saturn),
+    );
 
     if (hasSaturnVenus) {
       relationshipStyle = 'Ciddi ve uzun vadeli ilişkilere meyilli';
@@ -256,8 +264,7 @@ class ProfileAnalysisService {
 
     // Jealousy tendency
     int jealousyTendency = 50;
-    if (venus?.sign == ZodiacSign.scorpio ||
-        mars?.sign == ZodiacSign.scorpio) {
+    if (venus?.sign == ZodiacSign.scorpio || mars?.sign == ZodiacSign.scorpio) {
       jealousyTendency = 80;
     } else if (venus?.sign == ZodiacSign.taurus) {
       jealousyTendency = 70;
@@ -270,7 +277,9 @@ class ProfileAnalysisService {
     String idealPartnerProfile = '';
     if (chart.hasExactTime) {
       final planetsIn7th = chart.planetsInHouse(House.seventh);
-      final descendant = chart.planets.where((p) => p.planet == Planet.descendant).firstOrNull;
+      final descendant = chart.planets
+          .where((p) => p.planet == Planet.descendant)
+          .firstOrNull;
       if (descendant != null) {
         idealPartnerProfile =
             '${descendant.sign.name} özelliklerine sahip partnerlere çekilir';
@@ -323,7 +332,8 @@ class ProfileAnalysisService {
     }
 
     // Leadership vs support role
-    bool isLeaderType = sun?.sign.modality == Modality.cardinal ||
+    bool isLeaderType =
+        sun?.sign.modality == Modality.cardinal ||
         chart.dominantModality == Modality.cardinal;
 
     // Risk tolerance
@@ -362,9 +372,11 @@ class ProfileAnalysisService {
   static PsychologicalProfile _analyzePsychologicalProfile(NatalChart chart) {
     // Defense mechanisms based on Moon/Saturn aspects
     List<String> defenseMechanisms = [];
-    final moonSaturnAspect = chart.aspects.any((a) =>
-        (a.planet1 == Planet.moon && a.planet2 == Planet.saturn) ||
-        (a.planet1 == Planet.saturn && a.planet2 == Planet.moon));
+    final moonSaturnAspect = chart.aspects.any(
+      (a) =>
+          (a.planet1 == Planet.moon && a.planet2 == Planet.saturn) ||
+          (a.planet1 == Planet.saturn && a.planet2 == Planet.moon),
+    );
 
     if (moonSaturnAspect) {
       defenseMechanisms.add('Duygusal baskılama');
@@ -381,7 +393,8 @@ class ProfileAnalysisService {
     String shadowSelf = '';
     final lilith = chart.lilith;
     if (lilith != null) {
-      shadowSelf = 'Bastırılmış ${lilith.sign.name} enerjisi - '
+      shadowSelf =
+          'Bastırılmış ${lilith.sign.name} enerjisi - '
           '${_getLilithMeaning(lilith.sign)}';
     }
 
@@ -390,7 +403,8 @@ class ProfileAnalysisService {
     final venusAspects = chart.aspectsForPlanet(Planet.venus);
     for (final aspect in venusAspects.where((a) => a.type.isChallenging)) {
       relationshipPatterns.add(
-          '${aspect.planet1.nameTr}-${aspect.planet2.nameTr} ${aspect.type.nameTr}: ${aspect.interpretation}');
+        '${aspect.planet1.nameTr}-${aspect.planet2.nameTr} ${aspect.type.nameTr}: ${aspect.interpretation}',
+      );
     }
 
     return PsychologicalProfile(
@@ -426,13 +440,15 @@ class ProfileAnalysisService {
     // Deepest wound from Chiron
     String deepestWound = '';
     if (chiron != null) {
-      deepestWound = '${chiron.sign.name} alanında derin bir yara var: '
+      deepestWound =
+          '${chiron.sign.name} alanında derin bir yara var: '
           '${_getChironWound(chiron.sign)}';
     }
 
     // Karmic debt numbers
-    final karmicDebts =
-        NumerologyService.findKarmicDebtNumbers(chart.birthDate);
+    final karmicDebts = NumerologyService.findKarmicDebtNumbers(
+      chart.birthDate,
+    );
 
     return KarmicProfile(
       northNodeSign: northNode?.sign,
@@ -452,7 +468,9 @@ class ProfileAnalysisService {
     final personality = NumerologyService.calculatePersonalityNumber(name);
     final birthday = NumerologyService.calculateBirthdayNumber(birthDate);
     final personalYear = NumerologyService.calculatePersonalYearNumber(
-        birthDate, DateTime.now().year);
+      birthDate,
+      DateTime.now().year,
+    );
 
     return NumerologyProfile(
       lifePathNumber: lifePath,
@@ -469,9 +487,11 @@ class ProfileAnalysisService {
   // Helper methods
   static int _calculateEmpathyLevel(NatalChart chart) {
     int level = 50;
-    final waterPlanets = chart.planets.where((p) =>
-        p.sign.element == Element.water &&
-        (p.planet.isPersonalPlanet || p.planet == Planet.moon));
+    final waterPlanets = chart.planets.where(
+      (p) =>
+          p.sign.element == Element.water &&
+          (p.planet.isPersonalPlanet || p.planet == Planet.moon),
+    );
     level += waterPlanets.length * 10;
 
     if (chart.moon?.sign == ZodiacSign.pisces ||
@@ -485,8 +505,9 @@ class ProfileAnalysisService {
   static int _calculateResilienceLevel(NatalChart chart) {
     int level = 50;
     // Fixed signs add resilience
-    final fixedPlanets = chart.planets.where((p) =>
-        p.sign.modality == Modality.fixed && p.planet.isPersonalPlanet);
+    final fixedPlanets = chart.planets.where(
+      (p) => p.sign.modality == Modality.fixed && p.planet.isPersonalPlanet,
+    );
     level += fixedPlanets.length * 8;
 
     // Saturn aspects to personal planets
@@ -503,16 +524,20 @@ class ProfileAnalysisService {
 
     // Saturn aspects to Venus
     final venusAspects = chart.aspectsForPlanet(Planet.venus);
-    if (venusAspects.any((a) =>
-        (a.planet1 == Planet.saturn || a.planet2 == Planet.saturn) &&
-        a.type.isHarmonious)) {
+    if (venusAspects.any(
+      (a) =>
+          (a.planet1 == Planet.saturn || a.planet2 == Planet.saturn) &&
+          a.type.isHarmonious,
+    )) {
       level += 20;
     }
 
     // Earth signs
-    final earthPlanets = chart.planets.where((p) =>
-        p.sign.element == Element.earth &&
-        (p.planet == Planet.venus || p.planet == Planet.moon));
+    final earthPlanets = chart.planets.where(
+      (p) =>
+          p.sign.element == Element.earth &&
+          (p.planet == Planet.venus || p.planet == Planet.moon),
+    );
     level += earthPlanets.length * 10;
 
     return level.clamp(0, 100);
@@ -522,8 +547,9 @@ class ProfileAnalysisService {
     int level = 50;
 
     // Scorpio/Pluto placements
-    final scorpioPlanets =
-        chart.planets.where((p) => p.sign == ZodiacSign.scorpio);
+    final scorpioPlanets = chart.planets.where(
+      (p) => p.sign == ZodiacSign.scorpio,
+    );
     level += scorpioPlanets.length * 8;
 
     // Pluto aspects

@@ -49,9 +49,29 @@ class _DreamGlossaryScreenState extends State<DreamGlossaryScreen>
 
   // Alphabet letters (Turkish)
   static const List<String> _alphabet = [
-    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
-    'J', 'K', 'L', 'M', 'N', 'O', 'P', 'R', 'S',
-    'T', 'U', 'V', 'Y', 'Z'
+    'A',
+    'B',
+    'C',
+    'D',
+    'E',
+    'F',
+    'G',
+    'H',
+    'I',
+    'J',
+    'K',
+    'L',
+    'M',
+    'N',
+    'O',
+    'P',
+    'R',
+    'S',
+    'T',
+    'U',
+    'V',
+    'Y',
+    'Z',
   ];
 
   // Categories with labels
@@ -188,9 +208,7 @@ class _DreamGlossaryScreenState extends State<DreamGlossaryScreen>
                 child: Row(
                   children: [
                     // Main content
-                    Expanded(
-                      child: _buildSymbolGrid(),
-                    ),
+                    Expanded(child: _buildSymbolGrid()),
 
                     // Alphabet sidebar
                     _buildAlphabetSidebar(),
@@ -221,7 +239,10 @@ class _DreamGlossaryScreenState extends State<DreamGlossaryScreen>
         children: [
           IconButton(
             onPressed: () => context.pop(),
-            icon: const Icon(Icons.arrow_back_ios, color: AppColors.textPrimary),
+            icon: const Icon(
+              Icons.arrow_back_ios,
+              color: AppColors.textPrimary,
+            ),
           ),
           const SizedBox(width: 8),
           Container(
@@ -248,15 +269,15 @@ class _DreamGlossaryScreenState extends State<DreamGlossaryScreen>
                 Text(
                   'Ruya Sembolleri',
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        color: AppColors.textPrimary,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    color: AppColors.textPrimary,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 Text(
                   '${DreamSymbolsDatabase.allSymbols.length} sembol',
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: AppColors.textSecondary,
-                      ),
+                    color: AppColors.textSecondary,
+                  ),
                 ),
               ],
             ),
@@ -284,9 +305,7 @@ class _DreamGlossaryScreenState extends State<DreamGlossaryScreen>
             ],
           ),
           borderRadius: BorderRadius.circular(Spacing.radiusLg),
-          border: Border.all(
-            color: MysticalColors.amethyst.withOpacity(0.3),
-          ),
+          border: Border.all(color: MysticalColors.amethyst.withOpacity(0.3)),
         ),
         child: TextField(
           controller: _searchController,
@@ -295,11 +314,19 @@ class _DreamGlossaryScreenState extends State<DreamGlossaryScreen>
           onChanged: _onSearchChanged,
           decoration: InputDecoration(
             hintText: 'Sembol ara...',
-            hintStyle: TextStyle(color: AppColors.textSecondary.withOpacity(0.6)),
-            prefixIcon: const Icon(Icons.search, color: MysticalColors.starGold),
+            hintStyle: TextStyle(
+              color: AppColors.textSecondary.withOpacity(0.6),
+            ),
+            prefixIcon: const Icon(
+              Icons.search,
+              color: MysticalColors.starGold,
+            ),
             suffixIcon: _searchQuery.isNotEmpty
                 ? IconButton(
-                    icon: const Icon(Icons.clear, color: AppColors.textSecondary),
+                    icon: const Icon(
+                      Icons.clear,
+                      color: AppColors.textSecondary,
+                    ),
                     onPressed: () {
                       _searchController.clear();
                       _onSearchChanged('');
@@ -330,10 +357,7 @@ class _DreamGlossaryScreenState extends State<DreamGlossaryScreen>
         indicatorWeight: 3,
         labelColor: MysticalColors.starGold,
         unselectedLabelColor: AppColors.textSecondary,
-        labelStyle: const TextStyle(
-          fontWeight: FontWeight.w600,
-          fontSize: 13,
-        ),
+        labelStyle: const TextStyle(fontWeight: FontWeight.w600, fontSize: 13),
         unselectedLabelStyle: const TextStyle(
           fontWeight: FontWeight.normal,
           fontSize: 13,
@@ -345,7 +369,10 @@ class _DreamGlossaryScreenState extends State<DreamGlossaryScreen>
               mainAxisSize: MainAxisSize.min,
               children: [
                 if (cat.category != null) ...[
-                  Text(cat.category!.emoji, style: const TextStyle(fontSize: 14)),
+                  Text(
+                    cat.category!.emoji,
+                    style: const TextStyle(fontSize: 14),
+                  ),
                   const SizedBox(width: 4),
                 ],
                 Text(cat.label),
@@ -367,16 +394,16 @@ class _DreamGlossaryScreenState extends State<DreamGlossaryScreen>
             const SizedBox(height: 16),
             Text(
               'Sembol bulunamadi',
-              style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    color: AppColors.textSecondary,
-                  ),
+              style: Theme.of(
+                context,
+              ).textTheme.titleMedium?.copyWith(color: AppColors.textSecondary),
             ),
             const SizedBox(height: 8),
             Text(
               'Farkli bir arama deneyin',
-              style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: AppColors.textMuted,
-                  ),
+              style: Theme.of(
+                context,
+              ).textTheme.bodySmall?.copyWith(color: AppColors.textMuted),
             ),
           ],
         ),
@@ -392,15 +419,14 @@ class _DreamGlossaryScreenState extends State<DreamGlossaryScreen>
         final isDreamed = _personalDictionary.hasDreamed(symbol.symbol);
 
         return _SymbolCard(
-          symbol: symbol,
-          isDreamed: isDreamed,
-          searchQuery: _searchQuery,
-          onTap: () => _showSymbolDetails(symbol),
-        ).animate().fadeIn(delay: (30 * (index % 20)).ms).slideX(
-              begin: 0.1,
-              end: 0,
-              delay: (30 * (index % 20)).ms,
-            );
+              symbol: symbol,
+              isDreamed: isDreamed,
+              searchQuery: _searchQuery,
+              onTap: () => _showSymbolDetails(symbol),
+            )
+            .animate()
+            .fadeIn(delay: (30 * (index % 20)).ms)
+            .slideX(begin: 0.1, end: 0, delay: (30 * (index % 20)).ms);
       },
     );
   }
@@ -539,9 +565,9 @@ class _SymbolCard extends StatelessWidget {
                               symbol.symbolTr,
                               searchQuery,
                               Theme.of(context).textTheme.titleMedium?.copyWith(
-                                    color: AppColors.textPrimary,
-                                    fontWeight: FontWeight.w600,
-                                  ),
+                                color: AppColors.textPrimary,
+                                fontWeight: FontWeight.w600,
+                              ),
                             ),
                           ),
                           if (isDreamed) ...[
@@ -567,8 +593,8 @@ class _SymbolCard extends StatelessWidget {
                       Text(
                         symbol.universalMeanings.first,
                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                              color: AppColors.textSecondary,
-                            ),
+                          color: AppColors.textSecondary,
+                        ),
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                       ),
@@ -666,10 +692,7 @@ class _SymbolDetailSheet extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          colors: [
-            MysticalColors.bgCosmic,
-            MysticalColors.bgDeepSpace,
-          ],
+          colors: [MysticalColors.bgCosmic, MysticalColors.bgDeepSpace],
         ),
         borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
       ),
@@ -716,7 +739,8 @@ class _SymbolDetailSheet extends StatelessWidget {
                     children: [
                       Text(
                         symbol.symbolTr,
-                        style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                        style: Theme.of(context).textTheme.headlineSmall
+                            ?.copyWith(
                               color: AppColors.textPrimary,
                               fontWeight: FontWeight.bold,
                             ),
@@ -845,9 +869,9 @@ class _SymbolDetailSheet extends StatelessWidget {
               Text(
                 title,
                 style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      color: color ?? MysticalColors.starGold,
-                      fontWeight: FontWeight.w600,
-                    ),
+                  color: color ?? MysticalColors.starGold,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ],
           ),
@@ -855,9 +879,9 @@ class _SymbolDetailSheet extends StatelessWidget {
           Text(
             content,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: AppColors.textSecondary,
-                  height: 1.6,
-                ),
+              color: AppColors.textSecondary,
+              height: 1.6,
+            ),
           ),
         ],
       ),
@@ -876,9 +900,7 @@ class _SymbolDetailSheet extends StatelessWidget {
           ],
         ),
         borderRadius: BorderRadius.circular(Spacing.radiusMd),
-        border: Border.all(
-          color: MysticalColors.nebulaTeal.withOpacity(0.2),
-        ),
+        border: Border.all(color: MysticalColors.nebulaTeal.withOpacity(0.2)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -890,9 +912,9 @@ class _SymbolDetailSheet extends StatelessWidget {
               Text(
                 'Kulturel Yorumlar',
                 style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      color: MysticalColors.etherealCyan,
-                      fontWeight: FontWeight.w600,
-                    ),
+                  color: MysticalColors.etherealCyan,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ],
           ),
@@ -931,15 +953,10 @@ class _SymbolDetailSheet extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [
-            MysticalColors.orchid.withOpacity(0.1),
-            Colors.transparent,
-          ],
+          colors: [MysticalColors.orchid.withOpacity(0.1), Colors.transparent],
         ),
         borderRadius: BorderRadius.circular(Spacing.radiusMd),
-        border: Border.all(
-          color: MysticalColors.orchid.withOpacity(0.2),
-        ),
+        border: Border.all(color: MysticalColors.orchid.withOpacity(0.2)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -951,9 +968,9 @@ class _SymbolDetailSheet extends StatelessWidget {
               Text(
                 'Psikolojik Yorumlar',
                 style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      color: MysticalColors.orchid,
-                      fontWeight: FontWeight.w600,
-                    ),
+                  color: MysticalColors.orchid,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ],
           ),
@@ -1008,9 +1025,9 @@ class _SymbolDetailSheet extends StatelessWidget {
           child: Text(
             content,
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: AppColors.textSecondary,
-                  height: 1.4,
-                ),
+              color: AppColors.textSecondary,
+              height: 1.4,
+            ),
           ),
         ),
       ],
@@ -1029,9 +1046,7 @@ class _SymbolDetailSheet extends StatelessWidget {
           ],
         ),
         borderRadius: BorderRadius.circular(Spacing.radiusMd),
-        border: Border.all(
-          color: MysticalColors.stardustBlue.withOpacity(0.2),
-        ),
+        border: Border.all(color: MysticalColors.stardustBlue.withOpacity(0.2)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -1043,9 +1058,9 @@ class _SymbolDetailSheet extends StatelessWidget {
               Text(
                 'Iliskili Semboller',
                 style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      color: MysticalColors.stardustBlue,
-                      fontWeight: FontWeight.w600,
-                    ),
+                  color: MysticalColors.stardustBlue,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ],
           ),
@@ -1195,10 +1210,7 @@ class _PersonalDictionarySheet extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          colors: [
-            MysticalColors.bgCosmic,
-            MysticalColors.bgDeepSpace,
-          ],
+          colors: [MysticalColors.bgCosmic, MysticalColors.bgDeepSpace],
         ),
         borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
       ),
@@ -1229,15 +1241,15 @@ class _PersonalDictionarySheet extends StatelessWidget {
                       Text(
                         'Kisisel Ruya Sozlugum',
                         style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                              color: AppColors.textPrimary,
-                              fontWeight: FontWeight.bold,
-                            ),
+                          color: AppColors.textPrimary,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                       Text(
                         '${dreamedSymbols.length} sembol',
                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                              color: MysticalColors.starGold,
-                            ),
+                          color: MysticalColors.starGold,
+                        ),
                       ),
                     ],
                   ),
@@ -1255,8 +1267,9 @@ class _PersonalDictionarySheet extends StatelessWidget {
                     itemCount: dreamedSymbols.length,
                     itemBuilder: (context, index) {
                       final entry = dreamedSymbols[index];
-                      final symbol =
-                          DreamSymbolsDatabase.findSymbol(entry.symbolId);
+                      final symbol = DreamSymbolsDatabase.findSymbol(
+                        entry.symbolId,
+                      );
                       if (symbol == null) return const SizedBox.shrink();
 
                       return _buildDreamedSymbolCard(context, symbol, entry);
@@ -1277,17 +1290,17 @@ class _PersonalDictionarySheet extends StatelessWidget {
           const SizedBox(height: 16),
           Text(
             'Henuz sembol eklemediniz',
-            style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  color: AppColors.textSecondary,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.titleMedium?.copyWith(color: AppColors.textSecondary),
           ),
           const SizedBox(height: 8),
           Text(
             'Ruyalarinizda gordugu sembolleri\nburaya ekleyebilirsiniz',
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: AppColors.textMuted,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.bodySmall?.copyWith(color: AppColors.textMuted),
           ),
         ],
       ),
@@ -1333,7 +1346,8 @@ class _PersonalDictionarySheet extends StatelessWidget {
                     children: [
                       Text(
                         symbol.symbolTr,
-                        style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                        style: Theme.of(context).textTheme.titleMedium
+                            ?.copyWith(
                               color: AppColors.textPrimary,
                               fontWeight: FontWeight.w600,
                             ),
@@ -1341,21 +1355,21 @@ class _PersonalDictionarySheet extends StatelessWidget {
                       const SizedBox(height: 4),
                       Row(
                         children: [
-                          const Text('\u{1F4C5}',
-                              style: TextStyle(fontSize: 12)),
+                          const Text(
+                            '\u{1F4C5}',
+                            style: TextStyle(fontSize: 12),
+                          ),
                           const SizedBox(width: 4),
                           Text(
                             '${entry.count} kez',
-                            style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                  color: MysticalColors.starGold,
-                                ),
+                            style: Theme.of(context).textTheme.bodySmall
+                                ?.copyWith(color: MysticalColors.starGold),
                           ),
                           const SizedBox(width: 12),
                           Text(
                             _formatDate(entry.lastDreamed),
-                            style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                  color: AppColors.textMuted,
-                                ),
+                            style: Theme.of(context).textTheme.bodySmall
+                                ?.copyWith(color: AppColors.textMuted),
                           ),
                         ],
                       ),
@@ -1409,12 +1423,12 @@ class PersonalSymbolEntry {
   });
 
   Map<String, dynamic> toJson() => {
-        'symbolId': symbolId,
-        'count': count,
-        'firstDreamed': firstDreamed.toIso8601String(),
-        'lastDreamed': lastDreamed.toIso8601String(),
-        'personalMeaning': personalMeaning,
-      };
+    'symbolId': symbolId,
+    'count': count,
+    'firstDreamed': firstDreamed.toIso8601String(),
+    'lastDreamed': lastDreamed.toIso8601String(),
+    'personalMeaning': personalMeaning,
+  };
 
   factory PersonalSymbolEntry.fromJson(Map<String, dynamic> json) =>
       PersonalSymbolEntry(
@@ -1429,14 +1443,13 @@ class PersonalSymbolEntry {
     int? count,
     DateTime? lastDreamed,
     String? personalMeaning,
-  }) =>
-      PersonalSymbolEntry(
-        symbolId: symbolId,
-        count: count ?? this.count,
-        firstDreamed: firstDreamed,
-        lastDreamed: lastDreamed ?? this.lastDreamed,
-        personalMeaning: personalMeaning ?? this.personalMeaning,
-      );
+  }) => PersonalSymbolEntry(
+    symbolId: symbolId,
+    count: count ?? this.count,
+    firstDreamed: firstDreamed,
+    lastDreamed: lastDreamed ?? this.lastDreamed,
+    personalMeaning: personalMeaning ?? this.personalMeaning,
+  );
 }
 
 class PersonalDictionaryService {
@@ -1489,12 +1502,14 @@ class PersonalDictionaryService {
         lastDreamed: DateTime.now(),
       );
     } else {
-      _entries.add(PersonalSymbolEntry(
-        symbolId: symbolId,
-        count: 1,
-        firstDreamed: DateTime.now(),
-        lastDreamed: DateTime.now(),
-      ));
+      _entries.add(
+        PersonalSymbolEntry(
+          symbolId: symbolId,
+          count: 1,
+          firstDreamed: DateTime.now(),
+          lastDreamed: DateTime.now(),
+        ),
+      );
     }
 
     _saveEntries();

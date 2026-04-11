@@ -3,11 +3,23 @@ import 'zodiac_sign.dart';
 
 /// Astrological aspects between planets
 enum AspectType {
-  conjunction(name: 'Conjunction', symbol: '☌', angle: 0, orb: 8, isHarmonious: true),
+  conjunction(
+    name: 'Conjunction',
+    symbol: '☌',
+    angle: 0,
+    orb: 8,
+    isHarmonious: true,
+  ),
   sextile(name: 'Sextile', symbol: '⚹', angle: 60, orb: 6, isHarmonious: true),
   square(name: 'Square', symbol: '□', angle: 90, orb: 8, isHarmonious: false),
   trine(name: 'Trine', symbol: '△', angle: 120, orb: 8, isHarmonious: true),
-  opposition(name: 'Opposition', symbol: '☍', angle: 180, orb: 8, isHarmonious: false);
+  opposition(
+    name: 'Opposition',
+    symbol: '☍',
+    angle: 180,
+    orb: 8,
+    isHarmonious: false,
+  );
 
   final String name;
   final String symbol;
@@ -78,9 +90,18 @@ class HousePosition {
 
   String get signName {
     const signs = [
-      'Aries', 'Taurus', 'Gemini', 'Cancer',
-      'Leo', 'Virgo', 'Libra', 'Scorpio',
-      'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces'
+      'Aries',
+      'Taurus',
+      'Gemini',
+      'Cancer',
+      'Leo',
+      'Virgo',
+      'Libra',
+      'Scorpio',
+      'Sagittarius',
+      'Capricorn',
+      'Aquarius',
+      'Pisces',
     ];
     return signs[signIndex];
   }
@@ -173,9 +194,9 @@ class BirthChart {
 
   /// Get aspects involving a specific planet
   List<Aspect> getAspectsFor(Planet planet) {
-    return aspects.where(
-      (a) => a.planet1 == planet || a.planet2 == planet
-    ).toList();
+    return aspects
+        .where((a) => a.planet1 == planet || a.planet2 == planet)
+        .toList();
   }
 
   /// Summary of the "Big Three" (Sun, Moon, Ascendant)
@@ -209,7 +230,9 @@ class BirthChart {
       locationName: json['locationName'] as String,
       sunSign: ZodiacSign.values.firstWhere((s) => s.name == json['sunSign']),
       moonSign: ZodiacSign.values.firstWhere((s) => s.name == json['moonSign']),
-      ascendant: ZodiacSign.values.firstWhere((s) => s.name == json['ascendant']),
+      ascendant: ZodiacSign.values.firstWhere(
+        (s) => s.name == json['ascendant'],
+      ),
       planetPositions: (json['planetPositions'] as List)
           .map((p) => PlanetPosition.fromJson(p as Map<String, dynamic>))
           .toList(),
@@ -271,8 +294,12 @@ class UserProfile {
           ? DateTime.parse(json['birthTime'] as String)
           : null,
       birthPlace: json['birthPlace'] as String?,
-      latitude: json['latitude'] != null ? (json['latitude'] as num).toDouble() : null,
-      longitude: json['longitude'] != null ? (json['longitude'] as num).toDouble() : null,
+      latitude: json['latitude'] != null
+          ? (json['latitude'] as num).toDouble()
+          : null,
+      longitude: json['longitude'] != null
+          ? (json['longitude'] as num).toDouble()
+          : null,
       sunSign: ZodiacSign.values.firstWhere((s) => s.name == json['sunSign']),
       birthChart: json['birthChart'] != null
           ? BirthChart.fromJson(json['birthChart'] as Map<String, dynamic>)

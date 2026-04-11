@@ -79,16 +79,16 @@ class _ReikiScreenState extends State<ReikiScreen>
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text(
-                          '🙏',
-                          style: TextStyle(fontSize: 24),
-                        ),
+                        const Text('🙏', style: TextStyle(fontSize: 24)),
                         const SizedBox(width: 8),
                         Text(
                           'Reiki',
-                          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                          style: Theme.of(context).textTheme.headlineSmall
+                              ?.copyWith(
                                 fontWeight: FontWeight.bold,
-                                color: isDark ? Colors.white : AppColors.textDark,
+                                color: isDark
+                                    ? Colors.white
+                                    : AppColors.textDark,
                               ),
                         ),
                       ],
@@ -172,42 +172,48 @@ class _ReikiScreenState extends State<ReikiScreen>
       _ReikiPrinciple(
         japanese: 'Kyo dake wa',
         turkish: 'Sadece bugün için',
-        description: 'Şimdiki ana odaklan. Geçmiş gitmiştir, gelecek henüz gelmedi. Sadece bugün kontrol edebilirsin.',
+        description:
+            'Şimdiki ana odaklan. Geçmiş gitmiştir, gelecek henüz gelmedi. Sadece bugün kontrol edebilirsin.',
         icon: '☀️',
         color: const Color(0xFFFFD700),
       ),
       _ReikiPrinciple(
         japanese: 'Ikaru na',
         turkish: 'Kızma',
-        description: 'Öfke enerjini tüketir ve sağlığına zarar verir. Duygularını kabul et ama bırak gitsinler.',
+        description:
+            'Öfke enerjini tüketir ve sağlığına zarar verir. Duygularını kabul et ama bırak gitsinler.',
         icon: '🔥',
         color: const Color(0xFFFF5722),
       ),
       _ReikiPrinciple(
         japanese: 'Shinpai suna',
         turkish: 'Endişelenme',
-        description: 'Endişe, olmamış şeylere enerji vermektir. Güven ve teslimiyetle yaşa.',
+        description:
+            'Endişe, olmamış şeylere enerji vermektir. Güven ve teslimiyetle yaşa.',
         icon: '🌊',
         color: const Color(0xFF2196F3),
       ),
       _ReikiPrinciple(
         japanese: 'Kansha shite',
         turkish: 'Minnettar ol',
-        description: 'Şükran, en yüksek titreşimlerden biridir. Her şeyde bir nimet bul.',
+        description:
+            'Şükran, en yüksek titreşimlerden biridir. Her şeyde bir nimet bul.',
         icon: '💚',
         color: const Color(0xFF4CAF50),
       ),
       _ReikiPrinciple(
         japanese: 'Gyo wo hageme',
         turkish: 'İşini dürüstçe yap',
-        description: 'Ne iş yaparsan yap, bütünlük ve özveriyle yap. Hayatına anlam kat.',
+        description:
+            'Ne iş yaparsan yap, bütünlük ve özveriyle yap. Hayatına anlam kat.',
         icon: '⭐',
         color: const Color(0xFF9C27B0),
       ),
       _ReikiPrinciple(
         japanese: 'Hito ni shinsetsu ni',
         turkish: 'Herkese nazik ol',
-        description: 'Şefkat ve nezaket evrensel şifa enerjileridir. Kendin dahil herkese nazik ol.',
+        description:
+            'Şefkat ve nezaket evrensel şifa enerjileridir. Kendin dahil herkese nazik ol.',
         icon: '💕',
         color: const Color(0xFFE91E63),
       ),
@@ -219,42 +225,46 @@ class _ReikiScreenState extends State<ReikiScreen>
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            padding: const EdgeInsets.all(AppConstants.spacingMd),
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  const Color(0xFFFF7043).withValues(alpha: isDark ? 0.2 : 0.1),
-                  const Color(0xFFFFD700).withValues(alpha: isDark ? 0.1 : 0.05),
-                ],
-              ),
-              borderRadius: BorderRadius.circular(AppConstants.radiusLg),
-            ),
-            child: Column(
-              children: [
-                const Text(
-                  '五戒',
-                  style: TextStyle(fontSize: 32),
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  'Gokai - Beş İlke',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: isDark ? Colors.white : AppColors.textDark,
+                padding: const EdgeInsets.all(AppConstants.spacingMd),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      const Color(
+                        0xFFFF7043,
+                      ).withValues(alpha: isDark ? 0.2 : 0.1),
+                      const Color(
+                        0xFFFFD700,
+                      ).withValues(alpha: isDark ? 0.1 : 0.05),
+                    ],
                   ),
+                  borderRadius: BorderRadius.circular(AppConstants.radiusLg),
                 ),
-                const SizedBox(height: 4),
-                Text(
-                  'Mikao Usui\'nin öğretileri',
-                  style: TextStyle(
-                    fontSize: 13,
-                    color: isDark ? Colors.white60 : AppColors.textLight,
-                  ),
+                child: Column(
+                  children: [
+                    const Text('五戒', style: TextStyle(fontSize: 32)),
+                    const SizedBox(height: 8),
+                    Text(
+                      'Gokai - Beş İlke',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: isDark ? Colors.white : AppColors.textDark,
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      'Mikao Usui\'nin öğretileri',
+                      style: TextStyle(
+                        fontSize: 13,
+                        color: isDark ? Colors.white60 : AppColors.textLight,
+                      ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
-          ).animate().fadeIn(duration: 500.ms).scale(begin: const Offset(0.95, 0.95)),
+              )
+              .animate()
+              .fadeIn(duration: 500.ms)
+              .scale(begin: const Offset(0.95, 0.95)),
           const SizedBox(height: AppConstants.spacingLg),
           ...principles.asMap().entries.map((entry) {
             return _buildPrincipleCard(entry.value, isDark)
@@ -343,9 +353,10 @@ class _ReikiScreenState extends State<ReikiScreen>
       padding: const EdgeInsets.all(AppConstants.spacingLg),
       itemCount: chakras.length,
       itemBuilder: (context, index) {
-        return _buildChakraCard(chakras[index], isDark)
-            .animate(delay: (80 * index).ms)
-            .fadeIn(duration: 400.ms);
+        return _buildChakraCard(
+          chakras[index],
+          isDark,
+        ).animate(delay: (80 * index).ms).fadeIn(duration: 400.ms);
       },
     );
   }
@@ -411,9 +422,7 @@ class _ReikiScreenState extends State<ReikiScreen>
                   ? Colors.white.withValues(alpha: 0.05)
                   : Colors.amber.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(AppConstants.radiusMd),
-              border: Border.all(
-                color: Colors.amber.withValues(alpha: 0.3),
-              ),
+              border: Border.all(color: Colors.amber.withValues(alpha: 0.3)),
             ),
             child: Row(
               children: [
@@ -452,9 +461,7 @@ class _ReikiScreenState extends State<ReikiScreen>
           ],
         ),
         borderRadius: BorderRadius.circular(AppConstants.radiusLg),
-        border: Border.all(
-          color: principle.color.withValues(alpha: 0.3),
-        ),
+        border: Border.all(color: principle.color.withValues(alpha: 0.3)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -510,9 +517,7 @@ class _ReikiScreenState extends State<ReikiScreen>
             ? Colors.white.withValues(alpha: 0.05)
             : Colors.white.withValues(alpha: 0.9),
         borderRadius: BorderRadius.circular(AppConstants.radiusLg),
-        border: Border.all(
-          color: chakra.color.withValues(alpha: 0.3),
-        ),
+        border: Border.all(color: chakra.color.withValues(alpha: 0.3)),
       ),
       child: ExpansionTile(
         tilePadding: const EdgeInsets.symmetric(
@@ -532,10 +537,7 @@ class _ReikiScreenState extends State<ReikiScreen>
             borderRadius: BorderRadius.circular(22),
           ),
           child: Center(
-            child: Text(
-              chakra.icon,
-              style: const TextStyle(fontSize: 22),
-            ),
+            child: Text(chakra.icon, style: const TextStyle(fontSize: 22)),
           ),
         ),
         title: Text(
@@ -573,7 +575,10 @@ class _ReikiScreenState extends State<ReikiScreen>
             runSpacing: 8,
             children: chakra.attributes.map((attr) {
               return Container(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 6,
+                ),
                 decoration: BoxDecoration(
                   color: chakra.color.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(16),
@@ -651,9 +656,7 @@ class _ReikiScreenState extends State<ReikiScreen>
           ],
         ),
         borderRadius: BorderRadius.circular(AppConstants.radiusLg),
-        border: Border.all(
-          color: color.withValues(alpha: 0.3),
-        ),
+        border: Border.all(color: color.withValues(alpha: 0.3)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

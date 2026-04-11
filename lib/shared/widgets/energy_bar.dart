@@ -67,7 +67,9 @@ class EnergyBar extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
-                      color: isDark ? AppColors.textSecondary : AppColors.lightTextSecondary,
+                      color: isDark
+                          ? AppColors.textSecondary
+                          : AppColors.lightTextSecondary,
                     ),
                   ),
                   if (showPercentage)
@@ -93,19 +95,19 @@ class EnergyBar extends StatelessWidget {
                 ),
                 child: LayoutBuilder(
                   builder: (context, constraints) {
-                    final barWidth = constraints.maxWidth * value.clamp(0.0, 1.0);
+                    final barWidth =
+                        constraints.maxWidth * value.clamp(0.0, 1.0);
                     return Stack(
                       children: [
                         AnimatedContainer(
-                          duration: animate ? const Duration(milliseconds: 800) : Duration.zero,
+                          duration: animate
+                              ? const Duration(milliseconds: 800)
+                              : Duration.zero,
                           curve: Curves.easeOutCubic,
                           width: barWidth,
                           decoration: BoxDecoration(
                             gradient: LinearGradient(
-                              colors: [
-                                color.withValues(alpha: 0.7),
-                                color,
-                              ],
+                              colors: [color.withValues(alpha: 0.7), color],
                             ),
                             borderRadius: BorderRadius.circular(4),
                             boxShadow: [
@@ -135,7 +137,7 @@ class EnergyBar extends StatelessWidget {
 /// Günlük enerji seviyelerini gösteren kompakt kart.
 /// Aşk, Kariyer, Sağlık ve Genel enerji bar'larını içerir.
 class DailyEnergyCard extends StatelessWidget {
-  final int loveEnergy;   // 0-100
+  final int loveEnergy; // 0-100
   final int careerEnergy; // 0-100
   final int healthEnergy; // 0-100
   final int overallEnergy; // 0-100
@@ -191,11 +193,7 @@ class DailyEnergyCard extends StatelessWidget {
                   color: accent.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(6),
                 ),
-                child: Icon(
-                  Icons.bolt,
-                  size: 16,
-                  color: accent,
-                ),
+                child: Icon(Icons.bolt, size: 16, color: accent),
               ),
               const SizedBox(width: 10),
               Flexible(
@@ -204,7 +202,9 @@ class DailyEnergyCard extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w600,
-                    color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
+                    color: isDark
+                        ? AppColors.textPrimary
+                        : AppColors.lightTextPrimary,
                   ),
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -267,11 +267,7 @@ class DailyEnergyCard extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(
-            Icons.trending_up,
-            size: 12,
-            color: badgeColor,
-          ),
+          Icon(Icons.trending_up, size: 12, color: badgeColor),
           const SizedBox(width: 4),
           Text(
             label,

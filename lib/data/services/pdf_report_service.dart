@@ -132,7 +132,8 @@ class PdfReportService {
           bold: boldFont,
           italic: italicFont,
         ),
-        header: (context) => _buildCompatibilityHeader(profile1, profile2, context),
+        header: (context) =>
+            _buildCompatibilityHeader(profile1, profile2, context),
         footer: (context) => _buildFooter(context),
         build: (context) => [
           _buildCompatibilityTitleSection(profile1, profile2),
@@ -155,9 +156,7 @@ class PdfReportService {
     return pw.Container(
       padding: const pw.EdgeInsets.only(bottom: 10),
       decoration: const pw.BoxDecoration(
-        border: pw.Border(
-          bottom: pw.BorderSide(color: _goldColor, width: 1),
-        ),
+        border: pw.Border(bottom: pw.BorderSide(color: _goldColor, width: 1)),
       ),
       child: pw.Row(
         mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
@@ -173,10 +172,7 @@ class PdfReportService {
           ),
           pw.Text(
             'Dogum Haritasi Raporu',
-            style: const pw.TextStyle(
-              fontSize: 10,
-              color: _textMuted,
-            ),
+            style: const pw.TextStyle(fontSize: 10, color: _textMuted),
           ),
         ],
       ),
@@ -187,26 +183,18 @@ class PdfReportService {
     return pw.Container(
       padding: const pw.EdgeInsets.only(top: 10),
       decoration: const pw.BoxDecoration(
-        border: pw.Border(
-          top: pw.BorderSide(color: _textMuted, width: 0.5),
-        ),
+        border: pw.Border(top: pw.BorderSide(color: _textMuted, width: 0.5)),
       ),
       child: pw.Row(
         mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
         children: [
           pw.Text(
             'Venus One - Kozmik Rehberiniz',
-            style: const pw.TextStyle(
-              fontSize: 8,
-              color: _textMuted,
-            ),
+            style: const pw.TextStyle(fontSize: 8, color: _textMuted),
           ),
           pw.Text(
             'Sayfa ${context.pageNumber}/${context.pagesCount}',
-            style: const pw.TextStyle(
-              fontSize: 8,
-              color: _textMuted,
-            ),
+            style: const pw.TextStyle(fontSize: 8, color: _textMuted),
           ),
         ],
       ),
@@ -239,10 +227,7 @@ class PdfReportService {
           pw.SizedBox(height: 5),
           pw.Text(
             '${profile.sunSign.nameTr} Burcu',
-            style: const pw.TextStyle(
-              fontSize: 16,
-              color: _textMuted,
-            ),
+            style: const pw.TextStyle(fontSize: 16, color: _textMuted),
           ),
         ],
       ),
@@ -263,14 +248,8 @@ class PdfReportService {
             'Dogum Tarihi',
             '${profile.birthDate.day}.${profile.birthDate.month}.${profile.birthDate.year}',
           ),
-          _buildBirthDataItem(
-            'Dogum Saati',
-            profile.birthTime ?? 'Bilinmiyor',
-          ),
-          _buildBirthDataItem(
-            'Dogum Yeri',
-            profile.birthPlace ?? 'Bilinmiyor',
-          ),
+          _buildBirthDataItem('Dogum Saati', profile.birthTime ?? 'Bilinmiyor'),
+          _buildBirthDataItem('Dogum Yeri', profile.birthPlace ?? 'Bilinmiyor'),
         ],
       ),
     );
@@ -281,18 +260,12 @@ class PdfReportService {
       children: [
         pw.Text(
           label,
-          style: const pw.TextStyle(
-            fontSize: 10,
-            color: _textMuted,
-          ),
+          style: const pw.TextStyle(fontSize: 10, color: _textMuted),
         ),
         pw.SizedBox(height: 4),
         pw.Text(
           value,
-          style: pw.TextStyle(
-            fontSize: 12,
-            fontWeight: pw.FontWeight.bold,
-          ),
+          style: pw.TextStyle(fontSize: 12, fontWeight: pw.FontWeight.bold),
         ),
       ],
     );
@@ -365,31 +338,19 @@ class PdfReportService {
         children: [
           pw.Text(
             title,
-            style: const pw.TextStyle(
-              fontSize: 10,
-              color: _textMuted,
-            ),
+            style: const pw.TextStyle(fontSize: 10, color: _textMuted),
           ),
           pw.SizedBox(height: 8),
-          pw.Text(
-            symbol,
-            style: const pw.TextStyle(fontSize: 24),
-          ),
+          pw.Text(symbol, style: const pw.TextStyle(fontSize: 24)),
           pw.SizedBox(height: 4),
           pw.Text(
             sign,
-            style: pw.TextStyle(
-              fontSize: 14,
-              fontWeight: pw.FontWeight.bold,
-            ),
+            style: pw.TextStyle(fontSize: 14, fontWeight: pw.FontWeight.bold),
           ),
           pw.SizedBox(height: 6),
           pw.Text(
             description,
-            style: const pw.TextStyle(
-              fontSize: 8,
-              color: _textMuted,
-            ),
+            style: const pw.TextStyle(fontSize: 8, color: _textMuted),
             textAlign: pw.TextAlign.center,
           ),
         ],
@@ -448,7 +409,11 @@ class PdfReportService {
     );
   }
 
-  pw.Widget _buildTableCell(String text, {bool isHeader = false, double fontSize = 10}) {
+  pw.Widget _buildTableCell(
+    String text, {
+    bool isHeader = false,
+    double fontSize = 10,
+  }) {
     return pw.Padding(
       padding: const pw.EdgeInsets.all(8),
       child: pw.Text(
@@ -462,7 +427,9 @@ class PdfReportService {
     );
   }
 
-  pw.Widget _buildElementDistributionSection(Map<Planet, ZodiacSign> positions) {
+  pw.Widget _buildElementDistributionSection(
+    Map<Planet, ZodiacSign> positions,
+  ) {
     final elementCounts = <Element, int>{};
     for (final sign in positions.values) {
       elementCounts[sign.element] = (elementCounts[sign.element] ?? 0) + 1;
@@ -495,31 +462,24 @@ class PdfReportService {
     final percentage = (count / total * 100).round();
     return pw.Column(
       children: [
-        pw.Text(
-          element.symbol,
-          style: const pw.TextStyle(fontSize: 24),
-        ),
+        pw.Text(element.symbol, style: const pw.TextStyle(fontSize: 24)),
         pw.SizedBox(height: 4),
         pw.Text(
           element.nameTr,
-          style: pw.TextStyle(
-            fontSize: 12,
-            fontWeight: pw.FontWeight.bold,
-          ),
+          style: pw.TextStyle(fontSize: 12, fontWeight: pw.FontWeight.bold),
         ),
         pw.SizedBox(height: 2),
         pw.Text(
           '$count gezegen ($percentage%)',
-          style: const pw.TextStyle(
-            fontSize: 10,
-            color: _textMuted,
-          ),
+          style: const pw.TextStyle(fontSize: 10, color: _textMuted),
         ),
       ],
     );
   }
 
-  pw.Widget _buildModalityDistributionSection(Map<Planet, ZodiacSign> positions) {
+  pw.Widget _buildModalityDistributionSection(
+    Map<Planet, ZodiacSign> positions,
+  ) {
     final modalityCounts = <Modality, int>{};
     for (final sign in positions.values) {
       modalityCounts[sign.modality] = (modalityCounts[sign.modality] ?? 0) + 1;
@@ -561,26 +521,17 @@ class PdfReportService {
         children: [
           pw.Text(
             modality.nameTr,
-            style: pw.TextStyle(
-              fontSize: 14,
-              fontWeight: pw.FontWeight.bold,
-            ),
+            style: pw.TextStyle(fontSize: 14, fontWeight: pw.FontWeight.bold),
           ),
           pw.SizedBox(height: 4),
           pw.Text(
             '$count gezegen ($percentage%)',
-            style: const pw.TextStyle(
-              fontSize: 10,
-              color: _textMuted,
-            ),
+            style: const pw.TextStyle(fontSize: 10, color: _textMuted),
           ),
           pw.SizedBox(height: 4),
           pw.Text(
             _getModalityMeaning(modality),
-            style: const pw.TextStyle(
-              fontSize: 8,
-              color: _textMuted,
-            ),
+            style: const pw.TextStyle(fontSize: 8, color: _textMuted),
             textAlign: pw.TextAlign.center,
           ),
         ],
@@ -681,10 +632,7 @@ class PdfReportService {
       padding: const pw.EdgeInsets.all(20),
       decoration: pw.BoxDecoration(
         gradient: const pw.LinearGradient(
-          colors: [
-            PdfColor.fromInt(0xFFF3E8FF),
-            PdfColor.fromInt(0xFFE8F4FF),
-          ],
+          colors: [PdfColor.fromInt(0xFFF3E8FF), PdfColor.fromInt(0xFFE8F4FF)],
         ),
         borderRadius: pw.BorderRadius.circular(10),
       ),
@@ -717,10 +665,7 @@ class PdfReportService {
               ),
               pw.Text(
                 '${date.day}.${date.month}.${date.year}',
-                style: const pw.TextStyle(
-                  fontSize: 12,
-                  color: _textMuted,
-                ),
+                style: const pw.TextStyle(fontSize: 12, color: _textMuted),
               ),
             ],
           ),
@@ -741,17 +686,11 @@ class PdfReportService {
         children: [
           pw.Column(
             children: [
-              pw.Text(
-                phase.emoji,
-                style: const pw.TextStyle(fontSize: 24),
-              ),
+              pw.Text(phase.emoji, style: const pw.TextStyle(fontSize: 24)),
               pw.SizedBox(height: 4),
               pw.Text(
                 'Ay Evresi',
-                style: const pw.TextStyle(
-                  fontSize: 8,
-                  color: _textMuted,
-                ),
+                style: const pw.TextStyle(fontSize: 8, color: _textMuted),
               ),
               pw.Text(
                 phase.nameTr,
@@ -764,17 +703,11 @@ class PdfReportService {
           ),
           pw.Column(
             children: [
-              pw.Text(
-                sign.symbol,
-                style: const pw.TextStyle(fontSize: 24),
-              ),
+              pw.Text(sign.symbol, style: const pw.TextStyle(fontSize: 24)),
               pw.SizedBox(height: 4),
               pw.Text(
                 'Ay Burcu',
-                style: const pw.TextStyle(
-                  fontSize: 8,
-                  color: _textMuted,
-                ),
+                style: const pw.TextStyle(fontSize: 8, color: _textMuted),
               ),
               pw.Text(
                 sign.nameTr,
@@ -799,10 +732,7 @@ class PdfReportService {
       ),
       child: pw.Text(
         horoscope,
-        style: const pw.TextStyle(
-          fontSize: 11,
-          lineSpacing: 1.5,
-        ),
+        style: const pw.TextStyle(fontSize: 11, lineSpacing: 1.5),
       ),
     );
   }
@@ -837,10 +767,7 @@ class PdfReportService {
             ),
             pw.SizedBox(width: 10),
             pw.Expanded(
-              child: _buildRecommendationItem(
-                'Dikkat',
-                _getCautionArea(sign),
-              ),
+              child: _buildRecommendationItem('Dikkat', _getCautionArea(sign)),
             ),
           ],
         ),
@@ -859,18 +786,12 @@ class PdfReportService {
         children: [
           pw.Text(
             label,
-            style: const pw.TextStyle(
-              fontSize: 8,
-              color: _textMuted,
-            ),
+            style: const pw.TextStyle(fontSize: 8, color: _textMuted),
           ),
           pw.SizedBox(height: 4),
           pw.Text(
             value,
-            style: pw.TextStyle(
-              fontSize: 11,
-              fontWeight: pw.FontWeight.bold,
-            ),
+            style: pw.TextStyle(fontSize: 11, fontWeight: pw.FontWeight.bold),
             textAlign: pw.TextAlign.center,
           ),
         ],
@@ -888,9 +809,7 @@ class PdfReportService {
     return pw.Container(
       padding: const pw.EdgeInsets.only(bottom: 10),
       decoration: const pw.BoxDecoration(
-        border: pw.Border(
-          bottom: pw.BorderSide(color: _goldColor, width: 1),
-        ),
+        border: pw.Border(bottom: pw.BorderSide(color: _goldColor, width: 1)),
       ),
       child: pw.Row(
         mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
@@ -906,10 +825,7 @@ class PdfReportService {
           ),
           pw.Text(
             'Uyum Raporu',
-            style: const pw.TextStyle(
-              fontSize: 10,
-              color: _textMuted,
-            ),
+            style: const pw.TextStyle(fontSize: 10, color: _textMuted),
           ),
         ],
       ),
@@ -924,10 +840,7 @@ class PdfReportService {
       padding: const pw.EdgeInsets.all(20),
       decoration: pw.BoxDecoration(
         gradient: const pw.LinearGradient(
-          colors: [
-            PdfColor.fromInt(0xFFFFE8F0),
-            PdfColor.fromInt(0xFFF3E8FF),
-          ],
+          colors: [PdfColor.fromInt(0xFFFFE8F0), PdfColor.fromInt(0xFFF3E8FF)],
         ),
         borderRadius: pw.BorderRadius.circular(10),
       ),
@@ -950,19 +863,13 @@ class PdfReportService {
               ),
               pw.Text(
                 profile1.sunSign.nameTr,
-                style: const pw.TextStyle(
-                  fontSize: 10,
-                  color: _textMuted,
-                ),
+                style: const pw.TextStyle(fontSize: 10, color: _textMuted),
               ),
             ],
           ),
           pw.Text(
             '+',
-            style: const pw.TextStyle(
-              fontSize: 24,
-              color: _goldColor,
-            ),
+            style: const pw.TextStyle(fontSize: 24, color: _goldColor),
           ),
           pw.Column(
             children: [
@@ -980,10 +887,7 @@ class PdfReportService {
               ),
               pw.Text(
                 profile2.sunSign.nameTr,
-                style: const pw.TextStyle(
-                  fontSize: 10,
-                  color: _textMuted,
-                ),
+                style: const pw.TextStyle(fontSize: 10, color: _textMuted),
               ),
             ],
           ),
@@ -1011,10 +915,7 @@ class PdfReportService {
             height: 100,
             decoration: pw.BoxDecoration(
               shape: pw.BoxShape.circle,
-              border: pw.Border.all(
-                color: _getScoreColor(score),
-                width: 4,
-              ),
+              border: pw.Border.all(color: _getScoreColor(score), width: 4),
             ),
             child: pw.Center(
               child: pw.Text(
@@ -1045,10 +946,12 @@ class PdfReportService {
           ),
         ),
         pw.SizedBox(height: 15),
-        ...categoryScores.entries.map((entry) => pw.Padding(
-          padding: const pw.EdgeInsets.only(bottom: 10),
-          child: _buildCategoryScoreBar(entry.key, entry.value),
-        )),
+        ...categoryScores.entries.map(
+          (entry) => pw.Padding(
+            padding: const pw.EdgeInsets.only(bottom: 10),
+            child: _buildCategoryScoreBar(entry.key, entry.value),
+          ),
+        ),
       ],
     );
   }
@@ -1058,10 +961,7 @@ class PdfReportService {
       children: [
         pw.SizedBox(
           width: 100,
-          child: pw.Text(
-            category,
-            style: const pw.TextStyle(fontSize: 10),
-          ),
+          child: pw.Text(category, style: const pw.TextStyle(fontSize: 10)),
         ),
         pw.Expanded(
           child: pw.Stack(
@@ -1087,10 +987,7 @@ class PdfReportService {
         pw.SizedBox(width: 10),
         pw.Text(
           '%$score',
-          style: pw.TextStyle(
-            fontSize: 10,
-            fontWeight: pw.FontWeight.bold,
-          ),
+          style: pw.TextStyle(fontSize: 10, fontWeight: pw.FontWeight.bold),
         ),
       ],
     );
@@ -1117,10 +1014,7 @@ class PdfReportService {
           pw.SizedBox(height: 10),
           pw.Text(
             analysis,
-            style: const pw.TextStyle(
-              fontSize: 10,
-              lineSpacing: 1.5,
-            ),
+            style: const pw.TextStyle(fontSize: 10, lineSpacing: 1.5),
           ),
         ],
       ),
@@ -1180,54 +1074,90 @@ class PdfReportService {
 
   String _getSunSignInterpretation(ZodiacSign sign) {
     final interpretations = <ZodiacSign, String>{
-      ZodiacSign.aries: 'Doğal bir lider olarak, cesur ve girişimcisiniz. Yeni başlangıçlara atılmaktan çekinmiyorsunuz ve rekabetçi ruhunuz sizi ileriye taşıyor.',
-      ZodiacSign.taurus: 'Kararlı ve güvenilir bir yapıya sahipsiniz. Maddi güvenlik ve konfor sizin için önemli, sabır ve inatçılığınız hedeflerinize ulaşmanızı sağlıyor.',
-      ZodiacSign.gemini: 'Meraklı ve çeşitli ilgi alanlarına sahip birisiniz. İletişim yetenekleriniz güçlü ve sosyal çevrenizdeki entelektüel sohbetleri seviyorsunuz.',
-      ZodiacSign.cancer: 'Duygusal derinliğiniz ve sezgilerinizle öne çıkıyorsunuz. Aile ve ev sizin için büyük önem taşıyor, koruyucu ve besleyici bir doğanız var.',
-      ZodiacSign.leo: 'Yaratıcılığınız ve çekiciliğinizle dikkat çekiyorsunuz. Liderlik özellikleri taşıyor ve ilgi odağı olmaktan hoşlanıyorsunuz.',
-      ZodiacSign.virgo: 'Analitik zekanız ve detaylara verdiğiniz önemle tanınıyorsunuz. Mükemmeliyetçi yaklaşımınız hem gücünüz hem de geliştirmeniz gereken bir alan.',
-      ZodiacSign.libra: 'Denge ve harmoni arayışındasınız. İlişkileriniz sizin için çok önemli ve adalet duygunuz güçlü, diplomatik yeteneklerinizle tanınıyorsunuz.',
-      ZodiacSign.scorpio: 'Derin ve yoğun bir yapınız var. Gizleri çözme yeteneğiniz ve dönüşüm gücü sizi farklı kılıyor, sadakatiniz tartışmasız.',
-      ZodiacSign.sagittarius: 'Özgür ruhunuz ve macera arayışınızla tanınıyorsunuz. Felsefi bir yapıya sahip, sürekli öğrenme ve keşfetme arzusu içerisindesiniz.',
-      ZodiacSign.capricorn: 'Hırsınız ve azminizle hedeflerinize ulaşıyorsunuz. Disiplinli ve sorumluluk sahibisiniz, uzun vadeli planlara değer veriyorsunuz.',
-      ZodiacSign.aquarius: 'Yenilikçi ve bağımsız düşüncenizle öne çıkıyorsunuz. İnsanlık için büyük ideallere sahipsiniz ve sıra dışı olmaktan çekinmiyorsunuz.',
-      ZodiacSign.pisces: 'Sezgisel ve empatik doğanızla tanınıyorsunuz. Sanatsal yetenekleriniz ve spiritüel eğilimleriniz sizi özel kılıyor.',
+      ZodiacSign.aries:
+          'Doğal bir lider olarak, cesur ve girişimcisiniz. Yeni başlangıçlara atılmaktan çekinmiyorsunuz ve rekabetçi ruhunuz sizi ileriye taşıyor.',
+      ZodiacSign.taurus:
+          'Kararlı ve güvenilir bir yapıya sahipsiniz. Maddi güvenlik ve konfor sizin için önemli, sabır ve inatçılığınız hedeflerinize ulaşmanızı sağlıyor.',
+      ZodiacSign.gemini:
+          'Meraklı ve çeşitli ilgi alanlarına sahip birisiniz. İletişim yetenekleriniz güçlü ve sosyal çevrenizdeki entelektüel sohbetleri seviyorsunuz.',
+      ZodiacSign.cancer:
+          'Duygusal derinliğiniz ve sezgilerinizle öne çıkıyorsunuz. Aile ve ev sizin için büyük önem taşıyor, koruyucu ve besleyici bir doğanız var.',
+      ZodiacSign.leo:
+          'Yaratıcılığınız ve çekiciliğinizle dikkat çekiyorsunuz. Liderlik özellikleri taşıyor ve ilgi odağı olmaktan hoşlanıyorsunuz.',
+      ZodiacSign.virgo:
+          'Analitik zekanız ve detaylara verdiğiniz önemle tanınıyorsunuz. Mükemmeliyetçi yaklaşımınız hem gücünüz hem de geliştirmeniz gereken bir alan.',
+      ZodiacSign.libra:
+          'Denge ve harmoni arayışındasınız. İlişkileriniz sizin için çok önemli ve adalet duygunuz güçlü, diplomatik yeteneklerinizle tanınıyorsunuz.',
+      ZodiacSign.scorpio:
+          'Derin ve yoğun bir yapınız var. Gizleri çözme yeteneğiniz ve dönüşüm gücü sizi farklı kılıyor, sadakatiniz tartışmasız.',
+      ZodiacSign.sagittarius:
+          'Özgür ruhunuz ve macera arayışınızla tanınıyorsunuz. Felsefi bir yapıya sahip, sürekli öğrenme ve keşfetme arzusu içerisindesiniz.',
+      ZodiacSign.capricorn:
+          'Hırsınız ve azminizle hedeflerinize ulaşıyorsunuz. Disiplinli ve sorumluluk sahibisiniz, uzun vadeli planlara değer veriyorsunuz.',
+      ZodiacSign.aquarius:
+          'Yenilikçi ve bağımsız düşüncenizle öne çıkıyorsunuz. İnsanlık için büyük ideallere sahipsiniz ve sıra dışı olmaktan çekinmiyorsunuz.',
+      ZodiacSign.pisces:
+          'Sezgisel ve empatik doğanızla tanınıyorsunuz. Sanatsal yetenekleriniz ve spiritüel eğilimleriniz sizi özel kılıyor.',
     };
     return interpretations[sign] ?? 'Birçok benzersiz yeteneğe sahipsiniz.';
   }
 
   String _getMoonSignInterpretation(ZodiacSign sign) {
     final interpretations = <ZodiacSign, String>{
-      ZodiacSign.aries: 'Duygusal tepkileriniz hızlı ve tutkulu. Sabırsızlık yaşayabilirsiniz ama duygusal cesaretiniz etkileyici.',
-      ZodiacSign.taurus: 'Duygusal güvenlik sizin için çok önemli. Sabit ve güvenilir duygusal yapınız var, değişime direnç gösterebilirsiniz.',
-      ZodiacSign.gemini: 'Duygularınızı ifade etmekte yeteneklisiniz. Merak ve iletişim duygusal ihtiyaçlarınızın bir parçası.',
-      ZodiacSign.cancer: 'Ay kendi evinde olduğu için duygusal sezgileriniz çok güçlü. Evrensel anne/baba arketipini taşıyorsunuz.',
-      ZodiacSign.leo: 'Sıcak ve coşkulu bir duygusal yapınız var. Sevilmek ve takdir edilmek duygusal ihtiyacınız.',
-      ZodiacSign.virgo: 'Duygusal analiz yeteneğiniz güçlü. Başkalarına hizmet etmek size duygusal tatmin getiriyor.',
-      ZodiacSign.libra: 'İlişkiler duygusal dengeniz için çok önemli. Harmoni ve estetik size huzur veriyor.',
-      ZodiacSign.scorpio: 'Derin ve yoğun duygusal deneyimler yaşıyorsunuz. Duygusal dönüşüm ve iyileşme temel temalarınız.',
-      ZodiacSign.sagittarius: 'Duygusal özgürlüğe ihtiyaç duyuyorsunuz. İyimserlik ve macera ruhunuz sizi besliyor.',
-      ZodiacSign.capricorn: 'Duygularınızı kontrol altına almaya çalışıyorsunuz. Duygusal olgunluk ve sorumluluk önemli temalarınız.',
-      ZodiacSign.aquarius: 'Duygusal bağımsızlık sizin için önemli. İnsanlık için duyduğunuz duygu güçlü.',
-      ZodiacSign.pisces: 'Sezgisel ve empatik duygusal yapınız var. Spiritüel deneyimler duygusal beslenmenizin parçası.',
+      ZodiacSign.aries:
+          'Duygusal tepkileriniz hızlı ve tutkulu. Sabırsızlık yaşayabilirsiniz ama duygusal cesaretiniz etkileyici.',
+      ZodiacSign.taurus:
+          'Duygusal güvenlik sizin için çok önemli. Sabit ve güvenilir duygusal yapınız var, değişime direnç gösterebilirsiniz.',
+      ZodiacSign.gemini:
+          'Duygularınızı ifade etmekte yeteneklisiniz. Merak ve iletişim duygusal ihtiyaçlarınızın bir parçası.',
+      ZodiacSign.cancer:
+          'Ay kendi evinde olduğu için duygusal sezgileriniz çok güçlü. Evrensel anne/baba arketipini taşıyorsunuz.',
+      ZodiacSign.leo:
+          'Sıcak ve coşkulu bir duygusal yapınız var. Sevilmek ve takdir edilmek duygusal ihtiyacınız.',
+      ZodiacSign.virgo:
+          'Duygusal analiz yeteneğiniz güçlü. Başkalarına hizmet etmek size duygusal tatmin getiriyor.',
+      ZodiacSign.libra:
+          'İlişkiler duygusal dengeniz için çok önemli. Harmoni ve estetik size huzur veriyor.',
+      ZodiacSign.scorpio:
+          'Derin ve yoğun duygusal deneyimler yaşıyorsunuz. Duygusal dönüşüm ve iyileşme temel temalarınız.',
+      ZodiacSign.sagittarius:
+          'Duygusal özgürlüğe ihtiyaç duyuyorsunuz. İyimserlik ve macera ruhunuz sizi besliyor.',
+      ZodiacSign.capricorn:
+          'Duygularınızı kontrol altına almaya çalışıyorsunuz. Duygusal olgunluk ve sorumluluk önemli temalarınız.',
+      ZodiacSign.aquarius:
+          'Duygusal bağımsızlık sizin için önemli. İnsanlık için duyduğunuz duygu güçlü.',
+      ZodiacSign.pisces:
+          'Sezgisel ve empatik duygusal yapınız var. Spiritüel deneyimler duygusal beslenmenizin parçası.',
     };
     return interpretations[sign] ?? 'Duygusal dünyanız zengin ve çeşitli.';
   }
 
   String _getAscendantInterpretation(ZodiacSign sign) {
     final interpretations = <ZodiacSign, String>{
-      ZodiacSign.aries: 'İlk izlenim olarak enerjik, kararlı ve lider ruhlu görünüyorsunuz. Cesur ve girişimci bir imaj çiziyorsunuz.',
-      ZodiacSign.taurus: 'Sakin, güvenilir ve ayakları yere basan biri olarak algılanıyorsunuz. Fiziksel görünümünüz etkileyici.',
-      ZodiacSign.gemini: 'Meraklı, iletişime açık ve genç bir enerji yansıtıyorsunuz. Çevik ve esprili olarak algılanıyorsunuz.',
-      ZodiacSign.cancer: 'Sıcak, koruyucu ve besleyici biri olarak görülüyorsunuz. Ev ve aile temaları hayatınızda belirgin.',
-      ZodiacSign.leo: 'Karizmatik, dikkat çekici ve kendine güvenen biri olarak algılanıyorsunuz. Sahne sizin için doğal bir alan.',
-      ZodiacSign.virgo: 'Düzenli, analitik ve detaycı biri olarak görülüyorsunuz. Yardımsever ve pratik bir imaj çiziyorsunuz.',
-      ZodiacSign.libra: 'Zarif, dengeli ve diplomatik biri olarak algılanıyorsunuz. İlişkiler hayatınızın merkezinde.',
-      ZodiacSign.scorpio: 'Gizemli, yoğun ve manyetik biri olarak görülüyorsunuz. Güçlü bir var oluşunuz var.',
-      ZodiacSign.sagittarius: 'İyimser, maceracı ve özgür ruhlu biri olarak algılanıyorsunuz. Felsefi bir hava taşıyorsunuz.',
-      ZodiacSign.capricorn: 'Ciddi, profesyonel ve hırslı biri olarak görülüyorsunuz. Otorite figürü olarak algılanabilirsiniz.',
-      ZodiacSign.aquarius: 'Farklı, yenilikçi ve bağımsız biri olarak algılanıyorsunuz. Orijinal bir stil sergiliyorsunuz.',
-      ZodiacSign.pisces: 'Hayalperest, sanatsal ve spiritüel biri olarak görülüyorsunuz. Empatik ve anlayışlı bir enerji yayıyorsunuz.',
+      ZodiacSign.aries:
+          'İlk izlenim olarak enerjik, kararlı ve lider ruhlu görünüyorsunuz. Cesur ve girişimci bir imaj çiziyorsunuz.',
+      ZodiacSign.taurus:
+          'Sakin, güvenilir ve ayakları yere basan biri olarak algılanıyorsunuz. Fiziksel görünümünüz etkileyici.',
+      ZodiacSign.gemini:
+          'Meraklı, iletişime açık ve genç bir enerji yansıtıyorsunuz. Çevik ve esprili olarak algılanıyorsunuz.',
+      ZodiacSign.cancer:
+          'Sıcak, koruyucu ve besleyici biri olarak görülüyorsunuz. Ev ve aile temaları hayatınızda belirgin.',
+      ZodiacSign.leo:
+          'Karizmatik, dikkat çekici ve kendine güvenen biri olarak algılanıyorsunuz. Sahne sizin için doğal bir alan.',
+      ZodiacSign.virgo:
+          'Düzenli, analitik ve detaycı biri olarak görülüyorsunuz. Yardımsever ve pratik bir imaj çiziyorsunuz.',
+      ZodiacSign.libra:
+          'Zarif, dengeli ve diplomatik biri olarak algılanıyorsunuz. İlişkiler hayatınızın merkezinde.',
+      ZodiacSign.scorpio:
+          'Gizemli, yoğun ve manyetik biri olarak görülüyorsunuz. Güçlü bir var oluşunuz var.',
+      ZodiacSign.sagittarius:
+          'İyimser, maceracı ve özgür ruhlu biri olarak algılanıyorsunuz. Felsefi bir hava taşıyorsunuz.',
+      ZodiacSign.capricorn:
+          'Ciddi, profesyonel ve hırslı biri olarak görülüyorsunuz. Otorite figürü olarak algılanabilirsiniz.',
+      ZodiacSign.aquarius:
+          'Farklı, yenilikçi ve bağımsız biri olarak algılanıyorsunuz. Orijinal bir stil sergiliyorsunuz.',
+      ZodiacSign.pisces:
+          'Hayalperest, sanatsal ve spiritüel biri olarak görülüyorsunuz. Empatik ve anlayışlı bir enerji yayıyorsunuz.',
     };
     return interpretations[sign] ?? 'Benzersiz bir dış görünümünüz var.';
   }
@@ -1239,21 +1169,23 @@ class PdfReportService {
   }
 
   String _getLuckyColor(ZodiacSign sign) {
-    final colors = ['Kırmızı', 'Mavi', 'Yeşil', 'Mor', 'Turuncu', 'Sarı', 'Pembe', 'Beyaz'];
+    final colors = [
+      'Kırmızı',
+      'Mavi',
+      'Yeşil',
+      'Mor',
+      'Turuncu',
+      'Sarı',
+      'Pembe',
+      'Beyaz',
+    ];
     final now = DateTime.now();
     final index = (now.day + sign.index) % colors.length;
     return colors[index];
   }
 
   String _getCautionArea(ZodiacSign sign) {
-    final areas = [
-      'İletişim',
-      'Finans',
-      'Sağlık',
-      'İlişkiler',
-      'İş',
-      'Aile',
-    ];
+    final areas = ['İletişim', 'Finans', 'Sağlık', 'İlişkiler', 'İş', 'Aile'];
     final now = DateTime.now();
     final index = (now.day + sign.index + 3) % areas.length;
     return areas[index];
@@ -1263,26 +1195,18 @@ class PdfReportService {
 
   /// Preview PDF in system viewer
   Future<void> previewPdf(Uint8List pdfData) async {
-    await Printing.layoutPdf(
-      onLayout: (_) => pdfData,
-    );
+    await Printing.layoutPdf(onLayout: (_) => pdfData);
   }
 
   /// Share PDF
   Future<void> sharePdf(Uint8List pdfData, String filename) async {
-    await Printing.sharePdf(
-      bytes: pdfData,
-      filename: filename,
-    );
+    await Printing.sharePdf(bytes: pdfData, filename: filename);
   }
 
   /// Save PDF to device
   Future<bool> savePdf(Uint8List pdfData, String filename) async {
     try {
-      await Printing.sharePdf(
-        bytes: pdfData,
-        filename: filename,
-      );
+      await Printing.sharePdf(bytes: pdfData, filename: filename);
       return true;
     } catch (e) {
       return false;

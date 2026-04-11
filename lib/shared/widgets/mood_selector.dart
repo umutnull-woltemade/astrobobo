@@ -65,7 +65,9 @@ class _MoodSelectorState extends State<MoodSelector> {
               style: TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.w600,
-                color: isDark ? AppColors.textSecondary : AppColors.lightTextSecondary,
+                color: isDark
+                    ? AppColors.textSecondary
+                    : AppColors.lightTextSecondary,
               ),
             ),
           ),
@@ -124,81 +126,87 @@ class _MoodChip extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return MouseRegion(
-      onEnter: (_) => onHover(true),
-      onExit: (_) => onHover(false),
-      child: GestureDetector(
-        onTap: onTap,
-        child: AnimatedContainer(
-          duration: const Duration(milliseconds: 200),
-          curve: Curves.easeOutCubic,
-          padding: EdgeInsets.symmetric(
-            horizontal: showLabel ? 16 : 12,
-            vertical: 12,
-          ),
-          decoration: BoxDecoration(
-            gradient: isSelected
-                ? LinearGradient(
-                    colors: [
-                      mood.color.withOpacity(0.4),
-                      mood.color.withOpacity(0.2),
-                    ],
-                  )
-                : null,
-            color: isSelected
-                ? null
-                : isDark
+          onEnter: (_) => onHover(true),
+          onExit: (_) => onHover(false),
+          child: GestureDetector(
+            onTap: onTap,
+            child: AnimatedContainer(
+              duration: const Duration(milliseconds: 200),
+              curve: Curves.easeOutCubic,
+              padding: EdgeInsets.symmetric(
+                horizontal: showLabel ? 16 : 12,
+                vertical: 12,
+              ),
+              decoration: BoxDecoration(
+                gradient: isSelected
+                    ? LinearGradient(
+                        colors: [
+                          mood.color.withOpacity(0.4),
+                          mood.color.withOpacity(0.2),
+                        ],
+                      )
+                    : null,
+                color: isSelected
+                    ? null
+                    : isDark
                     ? AppColors.surfaceLight.withOpacity(isHovered ? 0.8 : 0.5)
-                    : AppColors.lightSurfaceVariant.withOpacity(isHovered ? 1 : 0.7),
-            borderRadius: BorderRadius.circular(showLabel ? 24 : 16),
-            border: Border.all(
-              color: isSelected
-                  ? mood.color
-                  : isDark
+                    : AppColors.lightSurfaceVariant.withOpacity(
+                        isHovered ? 1 : 0.7,
+                      ),
+                borderRadius: BorderRadius.circular(showLabel ? 24 : 16),
+                border: Border.all(
+                  color: isSelected
+                      ? mood.color
+                      : isDark
                       ? Colors.white.withOpacity(0.1)
                       : Colors.black.withOpacity(0.05),
-              width: isSelected ? 2 : 1,
-            ),
-            boxShadow: isSelected
-                ? [
-                    BoxShadow(
-                      color: mood.color.withOpacity(0.3),
-                      blurRadius: 12,
-                      spreadRadius: 0,
-                    ),
-                  ]
-                : null,
-          ),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              AnimatedScale(
-                scale: isSelected ? 1.2 : (isHovered ? 1.1 : 1.0),
-                duration: const Duration(milliseconds: 200),
-                child: Text(
-                  mood.emoji,
-                  style: const TextStyle(fontSize: 24),
+                  width: isSelected ? 2 : 1,
                 ),
+                boxShadow: isSelected
+                    ? [
+                        BoxShadow(
+                          color: mood.color.withOpacity(0.3),
+                          blurRadius: 12,
+                          spreadRadius: 0,
+                        ),
+                      ]
+                    : null,
               ),
-              if (showLabel) ...[
-                const SizedBox(width: 8),
-                Text(
-                  mood.label,
-                  style: TextStyle(
-                    fontSize: 13,
-                    fontWeight: isSelected ? FontWeight.w600 : FontWeight.w500,
-                    color: isSelected
-                        ? mood.color
-                        : isDark
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  AnimatedScale(
+                    scale: isSelected ? 1.2 : (isHovered ? 1.1 : 1.0),
+                    duration: const Duration(milliseconds: 200),
+                    child: Text(
+                      mood.emoji,
+                      style: const TextStyle(fontSize: 24),
+                    ),
+                  ),
+                  if (showLabel) ...[
+                    const SizedBox(width: 8),
+                    Text(
+                      mood.label,
+                      style: TextStyle(
+                        fontSize: 13,
+                        fontWeight: isSelected
+                            ? FontWeight.w600
+                            : FontWeight.w500,
+                        color: isSelected
+                            ? mood.color
+                            : isDark
                             ? AppColors.textSecondary
                             : AppColors.lightTextSecondary,
-                  ),
-                ),
-              ],
-            ],
+                      ),
+                    ),
+                  ],
+                ],
+              ),
+            ),
           ),
-        ),
-      ),
-    ).animate(target: isSelected ? 1 : 0).scale(
+        )
+        .animate(target: isSelected ? 1 : 0)
+        .scale(
           begin: const Offset(1, 1),
           end: const Offset(1.05, 1.05),
           duration: 200.ms,
@@ -234,15 +242,10 @@ class MoodCheckCard extends StatelessWidget {
                   AppColors.mystic.withOpacity(0.15),
                   AppColors.surfaceDark.withOpacity(0.9),
                 ]
-              : [
-                  AppColors.mystic.withOpacity(0.1),
-                  Colors.white,
-                ],
+              : [AppColors.mystic.withOpacity(0.1), Colors.white],
         ),
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(
-          color: AppColors.mystic.withOpacity(0.3),
-        ),
+        border: Border.all(color: AppColors.mystic.withOpacity(0.3)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -271,7 +274,9 @@ class MoodCheckCard extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
-                        color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
+                        color: isDark
+                            ? AppColors.textPrimary
+                            : AppColors.lightTextPrimary,
                       ),
                     ),
                     const SizedBox(height: 2),
@@ -279,7 +284,9 @@ class MoodCheckCard extends StatelessWidget {
                       'Ruh halin yorumlarini kisisellestirir',
                       style: TextStyle(
                         fontSize: 12,
-                        color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
+                        color: isDark
+                            ? AppColors.textMuted
+                            : AppColors.lightTextMuted,
                       ),
                     ),
                   ],
@@ -292,7 +299,9 @@ class MoodCheckCard extends StatelessWidget {
                     'Atla',
                     style: TextStyle(
                       fontSize: 12,
-                      color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
+                      color: isDark
+                          ? AppColors.textMuted
+                          : AppColors.lightTextMuted,
                     ),
                   ),
                 ),
@@ -308,35 +317,41 @@ class MoodCheckCard extends StatelessWidget {
           if (currentMood != null) ...[
             const SizedBox(height: 12),
             Center(
-              child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                decoration: BoxDecoration(
-                  color: currentMood!.color.withOpacity(0.15),
-                  borderRadius: BorderRadius.circular(20),
-                  border: Border.all(
-                    color: currentMood!.color.withOpacity(0.3),
-                  ),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      currentMood!.emoji,
-                      style: const TextStyle(fontSize: 16),
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 16,
+                      vertical: 8,
                     ),
-                    const SizedBox(width: 8),
-                    Text(
-                      '${currentMood!.label} hissediyorsun',
-                      style: TextStyle(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w500,
-                        color: currentMood!.color,
+                    decoration: BoxDecoration(
+                      color: currentMood!.color.withOpacity(0.15),
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(
+                        color: currentMood!.color.withOpacity(0.3),
                       ),
                     ),
-                  ],
-                ),
-              ),
-            ).animate().fadeIn(duration: 300.ms).scale(begin: const Offset(0.9, 0.9)),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          currentMood!.emoji,
+                          style: const TextStyle(fontSize: 16),
+                        ),
+                        const SizedBox(width: 8),
+                        Text(
+                          '${currentMood!.label} hissediyorsun',
+                          style: TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w500,
+                            color: currentMood!.color,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                )
+                .animate()
+                .fadeIn(duration: 300.ms)
+                .scale(begin: const Offset(0.9, 0.9)),
           ],
         ],
       ),
@@ -350,19 +365,16 @@ class MoodHistoryItem {
   final DateTime timestamp;
   final String? note;
 
-  MoodHistoryItem({
-    required this.mood,
-    required this.timestamp,
-    this.note,
-  });
+  MoodHistoryItem({required this.mood, required this.timestamp, this.note});
 
   Map<String, dynamic> toJson() => {
-        'mood': mood.name,
-        'timestamp': timestamp.toIso8601String(),
-        'note': note,
-      };
+    'mood': mood.name,
+    'timestamp': timestamp.toIso8601String(),
+    'note': note,
+  };
 
-  factory MoodHistoryItem.fromJson(Map<String, dynamic> json) => MoodHistoryItem(
+  factory MoodHistoryItem.fromJson(Map<String, dynamic> json) =>
+      MoodHistoryItem(
         mood: Mood.values.firstWhere((m) => m.name == json['mood']),
         timestamp: DateTime.parse(json['timestamp']),
         note: json['note'],

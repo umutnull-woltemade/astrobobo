@@ -10,7 +10,6 @@ class MegaDreamSymbolsPart7 {
     // ════════════════════════════════════════════════════════════════════════
     // AILE ILISKILERI - 25+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'grandmother',
       symbolTr: 'Buyukanne',
@@ -264,7 +263,6 @@ class MegaDreamSymbolsPart7 {
     // ════════════════════════════════════════════════════════════════════════
     // ROMANTIK ILISKILER - 20+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'lover',
       symbolTr: 'Sevgili',
@@ -518,7 +516,6 @@ class MegaDreamSymbolsPart7 {
     // ════════════════════════════════════════════════════════════════════════
     // SOSYAL ILISKILER - 20+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'best_friend',
       symbolTr: 'En Yakin Arkadas',
@@ -772,7 +769,6 @@ class MegaDreamSymbolsPart7 {
     // ════════════════════════════════════════════════════════════════════════
     // TOPLUMSAL ROLLER - 15+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'king',
       symbolTr: 'Kral',

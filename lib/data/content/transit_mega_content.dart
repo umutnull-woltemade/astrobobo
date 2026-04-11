@@ -31,7 +31,8 @@ Yavaş gezegenler (Uranüs, Neptün, Plüton) nesil dönüştürücü etkiler b�
       symbol: '⚹',
       nature: 'Uyumlu, fırsat',
       orb: 4.0,
-      description: 'Enerjiler uyumlu akar. Fırsatlar sunar ama eylem gerektirir.',
+      description:
+          'Enerjiler uyumlu akar. Fırsatlar sunar ama eylem gerektirir.',
       keywords: ['Fırsat', 'Kolaylık', 'Destek', 'İşbirliği'],
     ),
     'square': TransitType(
@@ -39,7 +40,8 @@ Yavaş gezegenler (Uranüs, Neptün, Plüton) nesil dönüştürücü etkiler b�
       symbol: '□',
       nature: 'Gerilim, mücadele',
       orb: 8.0,
-      description: 'Çatışma ve gerilim. Zorlu ama büyüme getirir. Eylem zorlar.',
+      description:
+          'Çatışma ve gerilim. Zorlu ama büyüme getirir. Eylem zorlar.',
       keywords: ['Gerilim', 'Mücadele', 'Büyüme', 'Kriz'],
     ),
     'trine': TransitType(
@@ -55,7 +57,8 @@ Yavaş gezegenler (Uranüs, Neptün, Plüton) nesil dönüştürücü etkiler b�
       symbol: '☍',
       nature: 'Gerilim, farkındalık',
       orb: 8.0,
-      description: 'Zıtlıklar yüzleşir. İlişki ve denge konuları. Farkındalık getirir.',
+      description:
+          'Zıtlıklar yüzleşir. İlişki ve denge konuları. Farkındalık getirir.',
       keywords: ['Yüzleşme', 'Denge', 'İlişki', 'Farkındalık'],
     ),
   };
@@ -380,7 +383,8 @@ Satürn Dönüşü, Satürn'ün doğum haritanızdaki orijinal konumuna dönmesi
       'Sorumluluklardan kaçmayın, kabul edin',
       'Bu bir "ölüm ve yeniden doğuş" dönemidir',
     ],
-    affirmation: 'Gerçek yetişkinliğe adım atıyorum. Her zorluk beni olgunlaştırıyor.',
+    affirmation:
+        'Gerçek yetişkinliğe adım atıyorum. Her zorluk beni olgunlaştırıyor.',
   );
 }
 
@@ -494,11 +498,7 @@ Ancak harcamalar da artabilir. Değerler sisteminiz genişler.
         'Değerli edinimler',
         'Yatırım fırsatları',
       ],
-      warnings: [
-        'Aşırı harcama',
-        'Mali aşırılık',
-        'Materyalizme kapılma',
-      ],
+      warnings: ['Aşırı harcama', 'Mali aşırılık', 'Materyalizme kapılma'],
       bestActivities: [
         'Maaş artışı isteme',
         'Yatırım',
@@ -549,11 +549,7 @@ Kariyer ve toplumsal statüde yükselme dönemi. Tanınma, terfi, başarı şans
         'Liderlik pozisyonları',
         'Kamusal görünürlük',
       ],
-      warnings: [
-        'Kibirlenme',
-        'Aşırı iş yükü alma',
-        'Özel hayatı ihmal',
-      ],
+      warnings: ['Kibirlenme', 'Aşırı iş yükü alma', 'Özel hayatı ihmal'],
       bestActivities: [
         'Terfi isteme',
         'Büyük proje başlatma',

@@ -67,9 +67,9 @@ class GradientButton extends StatelessWidget {
                     ],
                     Text(
                       label,
-                      style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                            color: Colors.white,
-                          ),
+                      style: Theme.of(
+                        context,
+                      ).textTheme.labelLarge?.copyWith(color: Colors.white),
                     ),
                   ],
                 ],
@@ -121,9 +121,9 @@ class OutlineButton extends StatelessWidget {
               ],
               Text(
                 label,
-                style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                      color: color,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.labelLarge?.copyWith(color: color),
               ),
             ],
           ),

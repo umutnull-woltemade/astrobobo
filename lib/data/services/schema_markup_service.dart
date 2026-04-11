@@ -56,7 +56,11 @@ class SchemaMarkupService {
     }
 
     // Return as script tags
-    return schemas.map((s) => '<script type="application/ld+json">${jsonEncode(s)}</script>').join('\n');
+    return schemas
+        .map(
+          (s) => '<script type="application/ld+json">${jsonEncode(s)}</script>',
+        )
+        .join('\n');
   }
 
   /// Organization schema - appears on all pages
@@ -87,7 +91,8 @@ class SchemaMarkupService {
       '@type': 'WebSite',
       'name': _orgName,
       'url': _baseUrl,
-      'description': "Türkiye'nin en kapsamlı astroloji, numeroloji ve tarot uygulaması",
+      'description':
+          "Türkiye'nin en kapsamlı astroloji, numeroloji ve tarot uygulaması",
       'potentialAction': {
         '@type': 'SearchAction',
         'target': '$_baseUrl/search?q={search_term_string}',
@@ -99,7 +104,9 @@ class SchemaMarkupService {
 
   /// Breadcrumb schema
   static Map<String, dynamic> _breadcrumbSchema(String route, String title) {
-    final normalizedRoute = route.replaceAll(RegExp(r'^/+|/+$'), '').toLowerCase();
+    final normalizedRoute = route
+        .replaceAll(RegExp(r'^/+|/+$'), '')
+        .toLowerCase();
     final items = <Map<String, dynamic>>[
       {
         '@type': 'ListItem',
@@ -135,15 +142,8 @@ class SchemaMarkupService {
       'description': meta.description,
       'applicationCategory': 'LifestyleApplication',
       'operatingSystem': 'Web, iOS, Android',
-      'offers': {
-        '@type': 'Offer',
-        'price': '0',
-        'priceCurrency': 'TRY',
-      },
-      'author': {
-        '@type': 'Organization',
-        'name': _orgName,
-      },
+      'offers': {'@type': 'Offer', 'price': '0', 'priceCurrency': 'TRY'},
+      'author': {'@type': 'Organization', 'name': _orgName},
       'inLanguage': 'tr-TR',
     };
   }
@@ -159,18 +159,11 @@ class SchemaMarkupService {
       'url': meta.getCanonicalUrl(_baseUrl),
       'datePublished': now,
       'dateModified': now,
-      'author': {
-        '@type': 'Organization',
-        'name': _orgName,
-        'url': _baseUrl,
-      },
+      'author': {'@type': 'Organization', 'name': _orgName, 'url': _baseUrl},
       'publisher': {
         '@type': 'Organization',
         'name': _orgName,
-        'logo': {
-          '@type': 'ImageObject',
-          'url': _logoUrl,
-        },
+        'logo': {'@type': 'ImageObject', 'url': _logoUrl},
       },
       'mainEntityOfPage': {
         '@type': 'WebPage',
@@ -217,10 +210,7 @@ class SchemaMarkupService {
       'name': 'Venus One Premium',
       'description': meta.description,
       'url': meta.getCanonicalUrl(_baseUrl),
-      'brand': {
-        '@type': 'Brand',
-        'name': _orgName,
-      },
+      'brand': {'@type': 'Brand', 'name': _orgName},
       'offers': {
         '@type': 'Offer',
         'priceCurrency': 'TRY',
@@ -291,7 +281,9 @@ class SchemaMarkupService {
   }
 
   /// Generate FAQ schema from a list of FAQ items
-  static Map<String, dynamic> generateFaqSchema(List<Map<String, String>> faqs) {
+  static Map<String, dynamic> generateFaqSchema(
+    List<Map<String, String>> faqs,
+  ) {
     return {
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
@@ -299,10 +291,7 @@ class SchemaMarkupService {
         return {
           '@type': 'Question',
           'name': faq['question'],
-          'acceptedAnswer': {
-            '@type': 'Answer',
-            'text': faq['answer'],
-          },
+          'acceptedAnswer': {'@type': 'Answer', 'text': faq['answer']},
         };
       }).toList(),
     };
@@ -324,17 +313,11 @@ class SchemaMarkupService {
       'url': '$_baseUrl/horoscope/${signName.toLowerCase()}',
       'datePublished': now,
       'dateModified': now,
-      'author': {
-        '@type': 'Organization',
-        'name': _orgName,
-      },
+      'author': {'@type': 'Organization', 'name': _orgName},
       'publisher': {
         '@type': 'Organization',
         'name': _orgName,
-        'logo': {
-          '@type': 'ImageObject',
-          'url': _logoUrl,
-        },
+        'logo': {'@type': 'ImageObject', 'url': _logoUrl},
       },
       'about': {
         '@type': 'Thing',

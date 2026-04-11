@@ -54,10 +54,7 @@ class InsightCard extends StatelessWidget {
                   ],
           ),
           borderRadius: BorderRadius.circular(20),
-          border: Border.all(
-            color: color.withOpacity(0.3),
-            width: 1,
-          ),
+          border: Border.all(color: color.withOpacity(0.3), width: 1),
           boxShadow: [
             BoxShadow(
               color: color.withOpacity(0.15),
@@ -76,10 +73,7 @@ class InsightCard extends StatelessWidget {
                 Row(
                   children: [
                     if (emoji != null) ...[
-                      Text(
-                        emoji!,
-                        style: const TextStyle(fontSize: 24),
-                      ),
+                      Text(emoji!, style: const TextStyle(fontSize: 24)),
                       const SizedBox(width: 10),
                     ],
                     Expanded(
@@ -95,7 +89,10 @@ class InsightCard extends StatelessWidget {
                     ),
                     if (isPremium)
                       Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 8,
+                          vertical: 4,
+                        ),
                         decoration: BoxDecoration(
                           color: AppColors.starGold.withOpacity(0.2),
                           borderRadius: BorderRadius.circular(8),
@@ -133,7 +130,9 @@ class InsightCard extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 15,
                     height: 1.5,
-                    color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
+                    color: isDark
+                        ? AppColors.textPrimary
+                        : AppColors.lightTextPrimary,
                   ),
                   maxLines: 4,
                   overflow: TextOverflow.ellipsis,
@@ -166,7 +165,9 @@ class InsightCard extends StatelessWidget {
                     else
                       const SizedBox(),
                     Icon(
-                      isPremium ? Icons.lock_outline : Icons.arrow_forward_rounded,
+                      isPremium
+                          ? Icons.lock_outline
+                          : Icons.arrow_forward_rounded,
                       size: 16,
                       color: isPremium ? AppColors.starGold : color,
                     ),
@@ -187,7 +188,8 @@ class InsightCard extends StatelessWidget {
                         end: Alignment.bottomCenter,
                         colors: [
                           Colors.transparent,
-                          (isDark ? AppColors.surfaceDark : Colors.white).withOpacity(0.7),
+                          (isDark ? AppColors.surfaceDark : Colors.white)
+                              .withOpacity(0.7),
                         ],
                         stops: const [0.3, 1.0],
                       ),
@@ -240,7 +242,9 @@ class InsightCarousel extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
+                    color: isDark
+                        ? AppColors.textPrimary
+                        : AppColors.lightTextPrimary,
                   ),
                 ),
                 const Spacer(),
@@ -311,13 +315,15 @@ class InsightThemes {
     return [
       InsightCardData(
         title: 'Bugunun Enerjisi',
-        content: 'Ay\'in mevcut konumu duygusal derinlik getiriyor. Ic sesinize kulak vermenin tam zamani.',
+        content:
+            'Ay\'in mevcut konumu duygusal derinlik getiriyor. Ic sesinize kulak vermenin tam zamani.',
         emoji: '🌙',
         color: AppColors.mystic,
       ),
       InsightCardData(
         title: 'Transit Etkisi',
-        content: 'Venus\'un hareketleri iliskilerinizi ve degerlerinizi on plana cikariyor.',
+        content:
+            'Venus\'un hareketleri iliskilerinizi ve degerlerinizi on plana cikariyor.',
         emoji: '💫',
         color: AppColors.venusColor,
         isPremium: true,
@@ -330,13 +336,15 @@ class InsightThemes {
       ),
       InsightCardData(
         title: 'Ruya Rehberi',
-        content: 'Bu gece gordugunuz ruyalar onemli mesajlar tasiyabilir. Ruyalarinizi kaydetmeyi unutmayin.',
+        content:
+            'Bu gece gordugunuz ruyalar onemli mesajlar tasiyabilir. Ruyalarinizi kaydetmeyi unutmayin.',
         emoji: '🌠',
         color: AppColors.nebulaPurple,
       ),
       InsightCardData(
         title: 'Haftalik Ongoruu',
-        content: 'Haftanin geri kalani icin kozmik enerjiler sizin lehinize calisiyor.',
+        content:
+            'Haftanin geri kalani icin kozmik enerjiler sizin lehinize calisiyor.',
         emoji: '📅',
         color: AppColors.auroraStart,
         isPremium: true,
@@ -359,6 +367,7 @@ class InsightThemes {
       'aquarius': 'Yenilikçi fikirlerin değerli. Farklı düşün.',
       'pisces': 'Hayal gücün ve empatın güçlü. Sanatla ifade et.',
     };
-    return messages[sign.toLowerCase()] ?? 'Evrenin enerjisiyle uyum içinde kal.';
+    return messages[sign.toLowerCase()] ??
+        'Evrenin enerjisiyle uyum içinde kal.';
   }
 }

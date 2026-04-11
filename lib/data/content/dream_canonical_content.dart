@@ -28,19 +28,30 @@ class DreamCanonicalContent {
       return DreamContentData.empty();
     }
     return DreamContentData(
-      title: content['title']?[language] ?? content['title']?[AppLanguage.en] ?? '',
-      sections: (content['sections'] as List?)?.map((section) {
-        return DreamSection(
-          title: section['title']?[language] ?? section['title']?[AppLanguage.en] ?? '',
-          bullets: (section['bullets']?[language] as List<String>?) ??
-              (section['bullets']?[AppLanguage.en] as List<String>?) ??
-              [],
-        );
-      }).toList() ?? [],
+      title:
+          content['title']?[language] ??
+          content['title']?[AppLanguage.en] ??
+          '',
+      sections:
+          (content['sections'] as List?)?.map((section) {
+            return DreamSection(
+              title:
+                  section['title']?[language] ??
+                  section['title']?[AppLanguage.en] ??
+                  '',
+              bullets:
+                  (section['bullets']?[language] as List<String>?) ??
+                  (section['bullets']?[AppLanguage.en] as List<String>?) ??
+                  [],
+            );
+          }).toList() ??
+          [],
       suggestion: DreamSuggestion(
         emoji: content['suggestion']?['emoji'] ?? '🔮',
-        text: content['suggestion']?['text']?[language] ??
-            content['suggestion']?['text']?[AppLanguage.en] ?? '',
+        text:
+            content['suggestion']?['text']?[language] ??
+            content['suggestion']?['text']?[AppLanguage.en] ??
+            '',
         route: content['suggestion']?['route'] ?? '',
       ),
     );
@@ -171,11 +182,7 @@ class DreamCanonicalContent {
               'Вы можете беспокоиться о работе, отношениях или здоровье.',
               'Скорость падения указывает на интенсивность тревоги.',
             ],
-            AppLanguage.zh: [
-              '在不确定时期更常见。',
-              '你可能在担心工作、关系或健康。',
-              '下落的速度表示焦虑的强度。',
-            ],
+            AppLanguage.zh: ['在不确定时期更常见。', '你可能在担心工作、关系或健康。', '下落的速度表示焦虑的强度。'],
             AppLanguage.ar: [
               'أكثر شيوعاً خلال فترات عدم اليقين.',
               'قد تكون قلقاً بشأن العمل أو العلاقات أو الصحة.',
@@ -237,11 +244,7 @@ class DreamCanonicalContent {
               'Страх неудачи.',
               'Поиск поддержки.',
             ],
-            AppLanguage.zh: [
-              '不安全感或不足感。',
-              '害怕失败。',
-              '寻求支持。',
-            ],
+            AppLanguage.zh: ['不安全感或不足感。', '害怕失败。', '寻求支持。'],
             AppLanguage.ar: [
               'مشاعر عدم الأمان أو عدم الكفاءة.',
               'الخوف من الفشل.',
@@ -457,10 +460,10 @@ class DreamContentData {
   });
 
   factory DreamContentData.empty() => const DreamContentData(
-        title: '',
-        sections: [],
-        suggestion: DreamSuggestion(emoji: '', text: '', route: ''),
-      );
+    title: '',
+    sections: [],
+    suggestion: DreamSuggestion(emoji: '', text: '', route: ''),
+  );
 }
 
 /// Data class for dream section
@@ -468,10 +471,7 @@ class DreamSection {
   final String title;
   final List<String> bullets;
 
-  const DreamSection({
-    required this.title,
-    required this.bullets,
-  });
+  const DreamSection({required this.title, required this.bullets});
 }
 
 /// Data class for dream suggestion

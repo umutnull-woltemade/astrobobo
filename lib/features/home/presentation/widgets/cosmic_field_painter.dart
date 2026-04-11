@@ -33,11 +33,7 @@ class CosmicFieldPainter extends CustomPainter {
     final voidGradient = RadialGradient(
       center: Alignment.topCenter,
       radius: 1.4,
-      colors: const [
-        Color(0xFF0B0618),
-        Color(0xFF05010A),
-        Color(0xFF000000),
-      ],
+      colors: const [Color(0xFF0B0618), Color(0xFF05010A), Color(0xFF000000)],
       stops: const [0.0, 0.6, 1.0],
     );
     canvas.drawRect(
@@ -93,12 +89,14 @@ class CosmicFieldPainter extends CustomPainter {
       final twinkle =
           0.55 + 0.45 * (0.5 + 0.5 * math.sin(time * 1.6 + particle.seed));
       final depthAlpha = 0.45 + particle.depth * 0.55;
-      final color = Color.lerp(
-        const Color(0xFFA78BFA),
-        const Color(0xFF67E8F9),
-        (particle.seed % 5) / 5.0,
-      )!
-          .withValues(alpha: (twinkle * depthAlpha * (0.6 + life * 0.4)).clamp(0.0, 1.0));
+      final color =
+          Color.lerp(
+            const Color(0xFFA78BFA),
+            const Color(0xFF67E8F9),
+            (particle.seed % 5) / 5.0,
+          )!.withValues(
+            alpha: (twinkle * depthAlpha * (0.6 + life * 0.4)).clamp(0.0, 1.0),
+          );
       p.color = color;
       // Draw a soft dot: core + halo.
       final radius = 0.6 + particle.depth * 1.6;

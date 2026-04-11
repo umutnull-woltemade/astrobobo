@@ -50,10 +50,7 @@ class ChartApiService {
   }) async {
     return _client.post<ChartResponse>(
       '/charts/natal',
-      body: {
-        'birthProfileId': birthProfileId,
-        'houseSystem': houseSystem,
-      },
+      body: {'birthProfileId': birthProfileId, 'houseSystem': houseSystem},
       fromJson: (json) => ChartResponse.fromJson(json),
     );
   }
@@ -93,7 +90,8 @@ class ChartApiService {
       '/charts/transit',
       body: {
         'natalChartId': natalChartId,
-        'transitDate': transitDate?.toIso8601String() ?? DateTime.now().toIso8601String(),
+        'transitDate':
+            transitDate?.toIso8601String() ?? DateTime.now().toIso8601String(),
       },
       fromJson: (json) => ChartResponse.fromJson(json),
     );
@@ -241,26 +239,30 @@ class ChartResponse {
       for (final p in planetsData) {
         final planet = _stringToPlanet(p['name'] as String?);
         if (planet != null) {
-          planets.add(PlanetPosition(
-            planet: planet,
-            longitude: (p['longitude'] as num?)?.toDouble() ?? 0,
-            latitude: (p['latitude'] as num?)?.toDouble() ?? 0,
-            isRetrograde: p['retrograde'] as bool? ?? false,
-            house: p['house'] as int? ?? 1,
-          ));
+          planets.add(
+            PlanetPosition(
+              planet: planet,
+              longitude: (p['longitude'] as num?)?.toDouble() ?? 0,
+              latitude: (p['latitude'] as num?)?.toDouble() ?? 0,
+              isRetrograde: p['retrograde'] as bool? ?? false,
+              house: p['house'] as int? ?? 1,
+            ),
+          );
         }
       }
     } else if (planetsData is Map) {
       planetsData.forEach((key, value) {
         final planet = _stringToPlanet(key as String);
         if (planet != null && value is Map) {
-          planets.add(PlanetPosition(
-            planet: planet,
-            longitude: (value['longitude'] as num?)?.toDouble() ?? 0,
-            latitude: (value['latitude'] as num?)?.toDouble() ?? 0,
-            isRetrograde: value['retrograde'] as bool? ?? false,
-            house: value['house'] as int? ?? 1,
-          ));
+          planets.add(
+            PlanetPosition(
+              planet: planet,
+              longitude: (value['longitude'] as num?)?.toDouble() ?? 0,
+              latitude: (value['latitude'] as num?)?.toDouble() ?? 0,
+              isRetrograde: value['retrograde'] as bool? ?? false,
+              house: value['house'] as int? ?? 1,
+            ),
+          );
         }
       });
     }
@@ -278,20 +280,24 @@ class ChartResponse {
         final degree = cusp is num
             ? cusp.toDouble()
             : (cusp['degree'] as num?)?.toDouble() ?? (i * 30.0);
-        houses.add(HousePosition(
-          houseNumber: i + 1,
-          signIndex: (degree / 30).floor() % 12,
-          cuspDegree: degree,
-        ));
+        houses.add(
+          HousePosition(
+            houseNumber: i + 1,
+            signIndex: (degree / 30).floor() % 12,
+            cuspDegree: degree,
+          ),
+        );
       }
     } else if (housesData is List) {
       for (int i = 0; i < housesData.length && i < 12; i++) {
         final h = housesData[i];
-        houses.add(HousePosition(
-          houseNumber: i + 1,
-          signIndex: (h['cusp'] as num?)?.toInt() ?? 0,
-          cuspDegree: (h['degree'] as num?)?.toDouble() ?? (i * 30.0),
-        ));
+        houses.add(
+          HousePosition(
+            houseNumber: i + 1,
+            signIndex: (h['cusp'] as num?)?.toInt() ?? 0,
+            cuspDegree: (h['degree'] as num?)?.toDouble() ?? (i * 30.0),
+          ),
+        );
       }
     }
     return houses;
@@ -305,16 +311,22 @@ class ChartResponse {
       for (final a in aspectsData) {
         final planet1 = _stringToPlanet(a['planet1'] as String?);
         final planet2 = _stringToPlanet(a['planet2'] as String?);
-        final aspectType = _stringToAspectType(a['aspect'] as String? ?? a['aspectType'] as String?);
+        final aspectType = _stringToAspectType(
+          a['aspect'] as String? ?? a['aspectType'] as String?,
+        );
 
         if (planet1 != null && planet2 != null && aspectType != null) {
-          aspects.add(Aspect(
-            planet1: planet1,
-            planet2: planet2,
-            type: aspectType,
-            exactAngle: (a['exactAngle'] as num?)?.toDouble() ?? aspectType.angle.toDouble(),
-            orb: (a['orb'] as num?)?.toDouble() ?? 0,
-          ));
+          aspects.add(
+            Aspect(
+              planet1: planet1,
+              planet2: planet2,
+              type: aspectType,
+              exactAngle:
+                  (a['exactAngle'] as num?)?.toDouble() ??
+                  aspectType.angle.toDouble(),
+              orb: (a['orb'] as num?)?.toDouble() ?? 0,
+            ),
+          );
         }
       }
     }

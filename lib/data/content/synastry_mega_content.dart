@@ -183,7 +183,8 @@ Dikkat edilecek noktalar:
 Bu kombinasyon güçlü bir temel sağlar ama her iki tarafın da
 kendi ışığını söndürmeden birlikte parlaması gerekir.
 ''',
-      advice: 'Işığınızı paylaşın ama gölgede kalmayı da kabul edin. Birbirinizi yükseltmek için yarışmak yerine işbirliği yapın.',
+      advice:
+          'Işığınızı paylaşın ama gölgede kalmayı da kabul edin. Birbirinizi yükseltmek için yarışmak yerine işbirliği yapın.',
     ),
 
     'sun_moon_conjunction': SynastryAspectInterpretation(
@@ -214,7 +215,8 @@ Dikkat edilmesi gerekenler:
 
 Bu kombinasyon, iki kişinin bir bütün oluşturduğu nadir bağlantılardandır.
 ''',
-      advice: 'Bu bağlantının değerini bilin ama birbirinize bağımlılık yerine karşılıklı bağlılık geliştirin.',
+      advice:
+          'Bu bağlantının değerini bilin ama birbirinize bağımlılık yerine karşılıklı bağlılık geliştirin.',
     ),
 
     'sun_venus_conjunction': SynastryAspectInterpretation(
@@ -278,7 +280,8 @@ Zorluklar:
 
 Bu kombinasyon "birlikte dağ taşıyabilir" ama öfke yönetimi kritik.
 ''',
-      advice: 'Enerjinizi birlikte yapıcı hedeflere yönlendirin. Fiziksel aktiviteler ve ortak projeler çatışmayı önler.',
+      advice:
+          'Enerjinizi birlikte yapıcı hedeflere yönlendirin. Fiziksel aktiviteler ve ortak projeler çatışmayı önler.',
     ),
 
     'sun_jupiter_conjunction': SynastryAspectInterpretation(
@@ -343,7 +346,8 @@ Zorluklar:
 
 Bu ilişki kolay değil ama bilinçli çalışmayla derin olgunluk getirir.
 ''',
-      advice: 'Satürn\'ün derslerini kabul edin ama kimliğinizi koruyun. Yapıcı eleştiri ile yıkıcı eleştiriyi ayırt edin.',
+      advice:
+          'Satürn\'ün derslerini kabul edin ama kimliğinizi koruyun. Yapıcı eleştiri ile yıkıcı eleştiriyi ayırt edin.',
     ),
 
     'sun_uranus_conjunction': SynastryAspectInterpretation(
@@ -376,7 +380,8 @@ Zorluklar:
 
 Bu ilişki sıkıcı olmayacak - soru ne kadar süreceği.
 ''',
-      advice: 'Özgürlük alanı tanıyın ama temel istikrarı koruyun. Sürprizlere açık olun.',
+      advice:
+          'Özgürlük alanı tanıyın ama temel istikrarı koruyun. Sürprizlere açık olun.',
     ),
 
     'sun_neptune_conjunction': SynastryAspectInterpretation(
@@ -409,7 +414,8 @@ Dikkat edilmesi gerekenler:
 
 Büyülü ama ayakları yere basmalı - rüya gerçekliği karşıladığında ne olur?
 ''',
-      advice: 'Büyüyü koruyun ama gerçekçi kalın. Birbirinizi olduğu gibi görmeye çalışın.',
+      advice:
+          'Büyüyü koruyun ama gerçekçi kalın. Birbirinizi olduğu gibi görmeye çalışın.',
     ),
 
     'sun_pluto_conjunction': SynastryAspectInterpretation(
@@ -442,7 +448,8 @@ Karanlık yönler:
 
 Bu ilişki ya sizi dönüştürür ya yok eder - orta yol yok.
 ''',
-      advice: 'Gücü bilinçli kullanın. Kontrol yerine dönüşümü hedefleyin. Gerekirse profesyonel destek alın.',
+      advice:
+          'Gücü bilinçli kullanın. Kontrol yerine dönüşümü hedefleyin. Gerekirse profesyonel destek alın.',
     ),
   };
 
@@ -541,7 +548,8 @@ Zorluklar:
 
 Tutku güçlü - öfke yönetimi kritik.
 ''',
-      advice: 'Tutkunuzu besleyin ama birbirinizi incitmeden ifade etmeyi öğrenin.',
+      advice:
+          'Tutkunuzu besleyin ama birbirinizi incitmeden ifade etmeyi öğrenin.',
     ),
 
     'moon_jupiter_conjunction': SynastryAspectInterpretation(
@@ -705,7 +713,8 @@ Dikkat edilecekler:
 
 Cinsel kimya mükemmel - diğer alanlarda da bağlantı kurun.
 ''',
-      advice: 'Fiziksel çekimi koruyun ama duygusal ve entelektüel bağı da geliştirin.',
+      advice:
+          'Fiziksel çekimi koruyun ama duygusal ve entelektüel bağı da geliştirin.',
     ),
 
     'venus_jupiter_conjunction': SynastryAspectInterpretation(
@@ -838,7 +847,8 @@ Zorluklar:
 
 Enerji güçlü - yapıcı kanallara yönlendirin.
 ''',
-      advice: 'Enerjinizi birlikte pozitif hedeflere yönlendirin. Spor ve fiziksel aktiviteler öfkeyi dönüştürür.',
+      advice:
+          'Enerjinizi birlikte pozitif hedeflere yönlendirin. Spor ve fiziksel aktiviteler öfkeyi dönüştürür.',
     ),
 
     'mars_jupiter_conjunction': SynastryAspectInterpretation(

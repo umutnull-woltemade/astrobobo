@@ -62,8 +62,7 @@ class LucidRuyaRehberi {
       name: 'MILD',
       nameTr: 'Mnemonic Induction of Lucid Dreams',
       difficulty: 'Orta',
-      description:
-          'Uyumadan önce niyet kurarak rüyada farkındalık tetiklemek.',
+      description: 'Uyumadan önce niyet kurarak rüyada farkındalık tetiklemek.',
       steps: [
         'Uyumadan önce bir rüyayı detaylı hatırla',
         'O rüyada farkındalığın olduğunu hayal et',
@@ -161,8 +160,7 @@ class LucidRuyaRehberi {
         'Heyecanı kontrol et. Stabilizasyon tekniklerini kullan. İlk lucid rüyalar kısa olur - normal.',
     'Lucid olamıyorum':
         'Rüya hatırlama kapasiteni geliştir. Günde 3-5 rüya hatırlamadan lucid zor.',
-    'Rüya bulanık':
-        '"Netlik!" komutu ver. Ellerine bak. Detaylara odaklan.',
+    'Rüya bulanık': '"Netlik!" komutu ver. Ellerine bak. Detaylara odaklan.',
     'Kontrol edemiyorum':
         'Kontrol etmeye çalışma, akışa bırak. Niyet kur ama zorlamadan.',
     'Kötü deneyimler':
@@ -235,7 +233,8 @@ class AstroRuyaKorelasyonlari {
       generalInfluence:
           'İletişim, mesajlar, haberler. Merkür retro dönemlerinde rüyalar kafa karıştırıcı olabilir.',
       signInfluences: {
-        'Retro': 'Geçmişle ilgili rüyalar, eski insanlar, tamamlanmamış konuşmalar',
+        'Retro':
+            'Geçmişle ilgili rüyalar, eski insanlar, tamamlanmamış konuşmalar',
         'Direkt': 'Net mesajlar, berrak semboller, iletişim temaları',
       },
       dreamIntensityNotes:
@@ -318,7 +317,8 @@ class AstroRuyaKorelasyonlari {
       generalInfluence:
           'Rüyaların doğal yöneticisi. Neptün transitlerinde rüyalar çok canlı, mistik ve bazen kafa karıştırıcı.',
       signInfluences: {
-        'Balık': 'En yoğun rüya dönemi. Spiritüel mesajlar, geçmiş yaşam anıları',
+        'Balık':
+            'En yoğun rüya dönemi. Spiritüel mesajlar, geçmiş yaşam anıları',
         'Kova': 'Kolektif bilinç rüyaları, insanlık temaları',
       },
       dreamIntensityNotes:
@@ -419,28 +419,55 @@ class AstroRuyaKorelasyonlari {
     'aries': ZodiacDreamProfile(
       sign: 'Koç',
       emoji: '♈',
-      commonThemes: ['Savaş', 'yarış', 'yangın', 'kırmızı', 'baş/kafa', 'öncülük'],
+      commonThemes: [
+        'Savaş',
+        'yarış',
+        'yangın',
+        'kırmızı',
+        'baş/kafa',
+        'öncülük',
+      ],
       nightmareThemes: ['Yenilgi', 'geç kalma', 'güçsüzlük', 'hareketsizlik'],
       lucidTendency: 'Yüksek - güçlü irade',
-      dreamAdvice: 'Rüyalarında eylem çağrısı ara. Pasif izleme sana göre değil.',
+      dreamAdvice:
+          'Rüyalarında eylem çağrısı ara. Pasif izleme sana göre değil.',
       healingSymbols: ['Kılıç', 'ateş', 'kırmızı', 'at'],
     ),
     'taurus': ZodiacDreamProfile(
       sign: 'Boğa',
       emoji: '♉',
       commonThemes: ['Doğa', 'yemek', 'para', 'bahçe', 'konfor', 'boyun'],
-      nightmareThemes: ['Yoksulluk', 'açlık', 'değişim zorlaması', 'istikrarsızlık'],
+      nightmareThemes: [
+        'Yoksulluk',
+        'açlık',
+        'değişim zorlaması',
+        'istikrarsızlık',
+      ],
       lucidTendency: 'Orta - sabırlı ama yavaş',
-      dreamAdvice: 'Duyusal detaylara dikkat et. Rüyandaki koku, tat, dokunuş önemli.',
+      dreamAdvice:
+          'Duyusal detaylara dikkat et. Rüyandaki koku, tat, dokunuş önemli.',
       healingSymbols: ['Çiçek', 'toprak', 'yeşil', 'boğa'],
     ),
     'gemini': ZodiacDreamProfile(
       sign: 'İkizler',
       emoji: '♊',
-      commonThemes: ['İletişim', 'yolculuk', 'ikizler', 'kitaplar', 'telefon', 'eller'],
-      nightmareThemes: ['Konuşamama', 'yanlış anlaşılma', 'kaybolma', 'bölünme'],
+      commonThemes: [
+        'İletişim',
+        'yolculuk',
+        'ikizler',
+        'kitaplar',
+        'telefon',
+        'eller',
+      ],
+      nightmareThemes: [
+        'Konuşamama',
+        'yanlış anlaşılma',
+        'kaybolma',
+        'bölünme',
+      ],
       lucidTendency: 'Yüksek - meraklı zihin',
-      dreamAdvice: 'Rüyalardaki konuşmalara dikkat et. Mesajlar kelimelerle gelir.',
+      dreamAdvice:
+          'Rüyalardaki konuşmalara dikkat et. Mesajlar kelimelerle gelir.',
       healingSymbols: ['Kuş', 'kanat', 'sarı', 'kitap'],
     ),
     'cancer': ZodiacDreamProfile(
@@ -455,8 +482,21 @@ class AstroRuyaKorelasyonlari {
     'leo': ZodiacDreamProfile(
       sign: 'Aslan',
       emoji: '♌',
-      commonThemes: ['Sahne', 'tanınma', 'altın', 'güneş', 'kalp', 'çocuklar', 'yaratıcılık'],
-      nightmareThemes: ['Görmezden gelinme', 'alay', 'tahttan düşme', 'kalp sorunları'],
+      commonThemes: [
+        'Sahne',
+        'tanınma',
+        'altın',
+        'güneş',
+        'kalp',
+        'çocuklar',
+        'yaratıcılık',
+      ],
+      nightmareThemes: [
+        'Görmezden gelinme',
+        'alay',
+        'tahttan düşme',
+        'kalp sorunları',
+      ],
       lucidTendency: 'Çok yüksek - güçlü irade ve ego',
       dreamAdvice: 'Rüyalarında kraliyet gibi davran. Liderliğini kullan.',
       healingSymbols: ['Aslan', 'güneş', 'altın', 'taç'],
@@ -465,7 +505,12 @@ class AstroRuyaKorelasyonlari {
       sign: 'Başak',
       emoji: '♍',
       commonThemes: ['İş', 'sağlık', 'detay', 'temizlik', 'sindirim', 'analiz'],
-      nightmareThemes: ['Düzensizlik', 'hastalık', 'eleştiri', 'mükemmel olmama'],
+      nightmareThemes: [
+        'Düzensizlik',
+        'hastalık',
+        'eleştiri',
+        'mükemmel olmama',
+      ],
       lucidTendency: 'Orta - analitik ama skeptik',
       dreamAdvice: 'Detaylara odaklan ama büyük resmi kaçırma.',
       healingSymbols: ['Başak', 'buğday', 'yeşil', 'kristal'],
@@ -473,8 +518,20 @@ class AstroRuyaKorelasyonlari {
     'libra': ZodiacDreamProfile(
       sign: 'Terazi',
       emoji: '♎',
-      commonThemes: ['İlişki', 'denge', 'güzellik', 'adalet', 'evlilik', 'böbrekler'],
-      nightmareThemes: ['Adaletsizlik', 'yalnızlık', 'karar verememe', 'çirkinlik'],
+      commonThemes: [
+        'İlişki',
+        'denge',
+        'güzellik',
+        'adalet',
+        'evlilik',
+        'böbrekler',
+      ],
+      nightmareThemes: [
+        'Adaletsizlik',
+        'yalnızlık',
+        'karar verememe',
+        'çirkinlik',
+      ],
       lucidTendency: 'Orta - kararsızlık engelleyebilir',
       dreamAdvice: 'İlişki rüyalarına dikkat et. Denge nerede bozuk?',
       healingSymbols: ['Terazi', 'gül', 'pembe', 'ayna'],
@@ -482,7 +539,14 @@ class AstroRuyaKorelasyonlari {
     'scorpio': ZodiacDreamProfile(
       sign: 'Akrep',
       emoji: '♏',
-      commonThemes: ['Dönüşüm', 'ölüm', 'cinsellik', 'gizem', 'yeraltı', 'üreme organları'],
+      commonThemes: [
+        'Dönüşüm',
+        'ölüm',
+        'cinsellik',
+        'gizem',
+        'yeraltı',
+        'üreme organları',
+      ],
       nightmareThemes: ['İhanet', 'güç kaybı', 'açığa çıkma', 'zehir'],
       lucidTendency: 'Çok yüksek - derin bilinçdışı erişim',
       dreamAdvice: 'Karanlık rüyalardan korkma. En derin şifa oradan gelir.',
@@ -491,7 +555,14 @@ class AstroRuyaKorelasyonlari {
     'sagittarius': ZodiacDreamProfile(
       sign: 'Yay',
       emoji: '♐',
-      commonThemes: ['Seyahat', 'felsefe', 'at', 'eğitim', 'yabancı ülkeler', 'kalça'],
+      commonThemes: [
+        'Seyahat',
+        'felsefe',
+        'at',
+        'eğitim',
+        'yabancı ülkeler',
+        'kalça',
+      ],
       nightmareThemes: ['Hapis', 'kısıtlanma', 'dogma', 'anlamsızlık'],
       lucidTendency: 'Yüksek - maceraperest ruh',
       dreamAdvice: 'Rüyalardaki yolculuklar spiritüel arayışını yansıtır.',
@@ -500,7 +571,15 @@ class AstroRuyaKorelasyonlari {
     'capricorn': ZodiacDreamProfile(
       sign: 'Oğlak',
       emoji: '♑',
-      commonThemes: ['Kariyer', 'dağ', 'baba', 'yapı', 'zaman', 'kemikler', 'dizler'],
+      commonThemes: [
+        'Kariyer',
+        'dağ',
+        'baba',
+        'yapı',
+        'zaman',
+        'kemikler',
+        'dizler',
+      ],
       nightmareThemes: ['Başarısızlık', 'düşüş', 'rezil olma', 'yaşlanma'],
       lucidTendency: 'Orta - disiplinli ama rüyalara mesafeli',
       dreamAdvice: 'Kariyer rüyaları gerçek hedeflerini yansıtır.',
@@ -509,7 +588,14 @@ class AstroRuyaKorelasyonlari {
     'aquarius': ZodiacDreamProfile(
       sign: 'Kova',
       emoji: '♒',
-      commonThemes: ['Grup', 'teknoloji', 'gelecek', 'uzay', 'reform', 'bacaklar'],
+      commonThemes: [
+        'Grup',
+        'teknoloji',
+        'gelecek',
+        'uzay',
+        'reform',
+        'bacaklar',
+      ],
       nightmareThemes: ['Uyumsuzluk', 'yalnızlık', 'distopya', 'makineleşme'],
       lucidTendency: 'Yüksek - alışılmadık zihin',
       dreamAdvice: 'Sıra dışı rüyaların sıra dışı yeteneklerini yansıtır.',
@@ -518,7 +604,14 @@ class AstroRuyaKorelasyonlari {
     'pisces': ZodiacDreamProfile(
       sign: 'Balık',
       emoji: '♓',
-      commonThemes: ['Su', 'spiritüellik', 'kaybolma', 'mistisizm', 'ayaklar', 'hayal'],
+      commonThemes: [
+        'Su',
+        'spiritüellik',
+        'kaybolma',
+        'mistisizm',
+        'ayaklar',
+        'hayal',
+      ],
       nightmareThemes: ['Boğulma', 'bulanıklık', 'aldatılma', 'bağımlılık'],
       lucidTendency: 'Çok yüksek - doğal rüya yeteneği',
       dreamAdvice: 'Rüyaların en güçlü süper gücün. Spiritüel mesajlara aç ol.',

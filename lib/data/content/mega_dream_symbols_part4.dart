@@ -10,7 +10,6 @@ class MegaDreamSymbolsPart4 {
     // ════════════════════════════════════════════════════════════════════════
     // EV ESYALARI - 40+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'door',
       symbolTr: 'Kapı',
@@ -314,7 +313,6 @@ class MegaDreamSymbolsPart4 {
     // ════════════════════════════════════════════════════════════════════════
     // GIYSILER - 30+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'clothes',
       symbolTr: 'Kıyafetler',
@@ -468,7 +466,6 @@ class MegaDreamSymbolsPart4 {
     // ════════════════════════════════════════════════════════════════════════
     // ARAÇLAR & TEKNOLOJI - 35+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'car',
       symbolTr: 'Araba',
@@ -697,7 +694,6 @@ class MegaDreamSymbolsPart4 {
     // ════════════════════════════════════════════════════════════════════════
     // PARA & DEGERLI ESYALAR - 25+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'money',
       symbolTr: 'Para',
@@ -801,7 +797,6 @@ class MegaDreamSymbolsPart4 {
     // ════════════════════════════════════════════════════════════════════════
     // YIYECEK & IÇECEK - 30+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'food',
       symbolTr: 'Yemek',
@@ -930,7 +925,6 @@ class MegaDreamSymbolsPart4 {
     // ════════════════════════════════════════════════════════════════════════
     // SEMBOLIK NESNELER - 30+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'cross',
       symbolTr: 'Haç',

@@ -28,9 +28,9 @@ class MasterNumberScreen extends StatelessWidget {
           child: Center(
             child: Text(
               'Master sayı bulunamadı',
-              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                color: AppColors.textSecondary,
-              ),
+              style: Theme.of(
+                context,
+              ).textTheme.bodyLarge?.copyWith(color: AppColors.textSecondary),
             ),
           ),
         ),
@@ -49,7 +49,10 @@ class MasterNumberScreen extends StatelessWidget {
                 expandedHeight: 220,
                 flexibleSpace: _buildHeader(context, content),
                 leading: IconButton(
-                  icon: const Icon(Icons.arrow_back, color: AppColors.textPrimary),
+                  icon: const Icon(
+                    Icons.arrow_back,
+                    color: AppColors.textPrimary,
+                  ),
                   onPressed: () => context.pop(),
                 ),
               ),
@@ -149,72 +152,71 @@ class MasterNumberScreen extends StatelessWidget {
           children: [
             // Master Number with glow
             Stack(
-              alignment: Alignment.center,
-              children: [
-                // Glow effect
-                Container(
-                  width: 120,
-                  height: 120,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    boxShadow: [
-                      BoxShadow(
-                        color: color.withValues(alpha: 0.6),
-                        blurRadius: 40,
-                        spreadRadius: 10,
-                      ),
-                    ],
-                  ),
-                ),
-                // Number circle
-                Container(
-                  width: 90,
-                  height: 90,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    gradient: LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      colors: [
-                        color,
-                        color.withValues(alpha: 0.7),
-                      ],
-                    ),
-                    border: Border.all(
-                      color: Colors.white.withValues(alpha: 0.3),
-                      width: 2,
-                    ),
-                  ),
-                  child: Center(
-                    child: Text(
-                      number.toString(),
-                      style: Theme.of(context).textTheme.displayMedium?.copyWith(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        shadows: [
-                          Shadow(
-                            color: Colors.black.withValues(alpha: 0.3),
-                            blurRadius: 4,
+                  alignment: Alignment.center,
+                  children: [
+                    // Glow effect
+                    Container(
+                      width: 120,
+                      height: 120,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                            color: color.withValues(alpha: 0.6),
+                            blurRadius: 40,
+                            spreadRadius: 10,
                           ),
                         ],
                       ),
                     ),
-                  ),
-                ),
-                // Decorative ring
-                Container(
-                  width: 110,
-                  height: 110,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(
-                      color: color.withValues(alpha: 0.5),
-                      width: 1,
+                    // Number circle
+                    Container(
+                      width: 90,
+                      height: 90,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [color, color.withValues(alpha: 0.7)],
+                        ),
+                        border: Border.all(
+                          color: Colors.white.withValues(alpha: 0.3),
+                          width: 2,
+                        ),
+                      ),
+                      child: Center(
+                        child: Text(
+                          number.toString(),
+                          style: Theme.of(context).textTheme.displayMedium
+                              ?.copyWith(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                shadows: [
+                                  Shadow(
+                                    color: Colors.black.withValues(alpha: 0.3),
+                                    blurRadius: 4,
+                                  ),
+                                ],
+                              ),
+                        ),
+                      ),
                     ),
-                  ),
-                ),
-              ],
-            ).animate()
+                    // Decorative ring
+                    Container(
+                      width: 110,
+                      height: 110,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: color.withValues(alpha: 0.5),
+                          width: 1,
+                        ),
+                      ),
+                    ),
+                  ],
+                )
+                .animate()
                 .fadeIn(duration: 400.ms)
                 .scale(begin: const Offset(0.8, 0.8), curve: Curves.elasticOut),
             const SizedBox(height: 16),
@@ -284,9 +286,9 @@ class MasterNumberScreen extends StatelessWidget {
               const SizedBox(width: 8),
               Text(
                 'Master Sayı Özelliği',
-                style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                  color: AppColors.starGold,
-                ),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleSmall?.copyWith(color: AppColors.starGold),
               ),
               const SizedBox(width: 8),
               Icon(Icons.star, color: AppColors.starGold, size: 20),
@@ -335,10 +337,7 @@ class MasterNumberScreen extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [
-            color.withValues(alpha: 0.15),
-            AppColors.surfaceDark,
-          ],
+          colors: [color.withValues(alpha: 0.15), AppColors.surfaceDark],
         ),
         borderRadius: BorderRadius.circular(AppConstants.radiusMd),
         border: Border.all(color: color.withValues(alpha: 0.3)),
@@ -405,7 +404,11 @@ class MasterNumberScreen extends StatelessWidget {
                   color: AppColors.warning.withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: const Icon(Icons.warning_amber, color: AppColors.warning, size: 20),
+                child: const Icon(
+                  Icons.warning_amber,
+                  color: AppColors.warning,
+                  size: 20,
+                ),
               ),
               const SizedBox(width: 12),
               Text(
@@ -448,9 +451,9 @@ class MasterNumberScreen extends StatelessWidget {
               const SizedBox(width: 8),
               Text(
                 'Anahtar Kelimeler',
-                style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                  color: color,
-                ),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleSmall?.copyWith(color: color),
               ),
             ],
           ),
@@ -460,7 +463,10 @@ class MasterNumberScreen extends StatelessWidget {
             runSpacing: 8,
             children: keywords.map((keyword) {
               return Container(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 6,
+                ),
                 decoration: BoxDecoration(
                   color: color.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(16),
@@ -468,9 +474,9 @@ class MasterNumberScreen extends StatelessWidget {
                 ),
                 child: Text(
                   keyword,
-                  style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                    color: color,
-                  ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.labelSmall?.copyWith(color: color),
                 ),
               );
             }).toList(),
@@ -511,7 +517,11 @@ class MasterNumberScreen extends StatelessWidget {
                   color: AppColors.auroraStart.withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: const Icon(Icons.tips_and_updates, color: AppColors.auroraStart, size: 20),
+                child: const Icon(
+                  Icons.tips_and_updates,
+                  color: AppColors.auroraStart,
+                  size: 20,
+                ),
               ),
               const SizedBox(width: 12),
               Text(

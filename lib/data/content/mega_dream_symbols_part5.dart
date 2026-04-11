@@ -10,7 +10,6 @@ class MegaDreamSymbolsPart5 {
     // ════════════════════════════════════════════════════════════════════════
     // SOYUT KAVRAMLAR - 50+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'death',
       symbolTr: 'Ölüm',
@@ -314,7 +313,6 @@ class MegaDreamSymbolsPart5 {
     // ════════════════════════════════════════════════════════════════════════
     // SPIRITUEL VARLIKLAR - 40+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'angel',
       symbolTr: 'Melek',
@@ -518,7 +516,6 @@ class MegaDreamSymbolsPart5 {
     // ════════════════════════════════════════════════════════════════════════
     // MEKANLAR - 50+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'house',
       symbolTr: 'Ev',
@@ -922,7 +919,6 @@ class MegaDreamSymbolsPart5 {
     // ════════════════════════════════════════════════════════════════════════
     // INSANLAR - 40+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'mother',
       symbolTr: 'Anne',

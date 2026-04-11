@@ -58,13 +58,7 @@ extension SacredGeometryCategoryExtension on SacredGeometryCategory {
 }
 
 /// Element Tipleri
-enum GeometricElement {
-  fire,
-  earth,
-  air,
-  water,
-  ether,
-}
+enum GeometricElement { fire, earth, air, water, ether }
 
 extension GeometricElementExtension on GeometricElement {
   String get nameTr {
@@ -550,7 +544,7 @@ SPİRİTÜEL:
       'Birlik',
       'Sonsuzluk',
       'Kutsal geometri',
-      'Kozmik düzen'
+      'Kozmik düzen',
     ],
     colorHex: '#FFD700',
     numberOfPoints: 19,
@@ -853,7 +847,7 @@ SPİRİTÜEL:
       'Boyutlar',
       'Akashik',
       'Geometri',
-      'Melek'
+      'Melek',
     ],
     colorHex: '#E6E6FA',
     numberOfPoints: 13,
@@ -1014,7 +1008,7 @@ SPİRİTÜEL:
       'Tanrıça',
       'Manifestasyon',
       'Shakti',
-      'Supreme yantra'
+      'Supreme yantra',
     ],
     colorHex: '#FF1493',
     numberOfPoints: 9,
@@ -1183,7 +1177,7 @@ SPİRİTÜEL:
       'Ascension',
       'Boyutlar arası',
       'Tetrahedron',
-      'Koruma'
+      'Koruma',
     ],
     colorHex: '#FFD700',
     numberOfPoints: 8,
@@ -1319,14 +1313,7 @@ SPİRİTÜEL:
 ''',
     associatedChakras: ['Sakral (Svadhisthana)', 'Kök (Muladhara)'],
     associatedPlanets: ['Ay', 'Venüs'],
-    keywords: [
-      'Dişil',
-      'Portal',
-      'Yaratılış',
-      'Doğum',
-      'Rahm',
-      'Ana Tanrıça'
-    ],
+    keywords: ['Dişil', 'Portal', 'Yaratılış', 'Doğum', 'Rahm', 'Ana Tanrıça'],
     colorHex: '#FF69B4',
     numberOfPoints: 2,
     geometricFormula: '2 eşit daire, merkezler arası mesafe = yarıçap',
@@ -2606,8 +2593,7 @@ YAPISAL ELEMENTLER:
         'Daireler, tutulma döngülerini ve karanlık-aydınlık geçişlerini temsil eder.',
     lotusGates:
         '18 yapraklı lotus, 18 gizli siddhi\'yi ve Rahu\'nun 18 yıllık döngüsünü temsil eder.',
-    outerSquare:
-        'Bhupura, illüzyonun ve maya\'nın sınırlarını temsil eder.',
+    outerSquare: 'Bhupura, illüzyonun ve maya\'nın sınırlarını temsil eder.',
     activationRitual: '''
 RAHU YANTRA AKTİVASYON RİTÜELİ:
 
@@ -3053,8 +3039,7 @@ Bu çakranın Shakti'si Dakini'dir. O, kırmızı gözlü, dört kollu tanrıça
 
 Dakini, en temel korkularımızla yüzleşmemizi sağlar.
 ''',
-    viralQuote:
-        '"Gökyüzüne uzanmak istiyorsan, önce köklerini derine sal." 🌳',
+    viralQuote: '"Gökyüzüne uzanmak istiyorsan, önce köklerini derine sal." 🌳',
   ),
 
   // ─────────────────────────────────────────────────────────────────────────
@@ -4680,8 +4665,7 @@ AKTİVASYON:
     zodiacSign: 'Aslan',
     symbol: '♌',
     element: GeometricElement.fire,
-    geometricSignature:
-        'Güneş Mandala - Merkezi radyal yapı, ışığın yayılımı',
+    geometricSignature: 'Güneş Mandala - Merkezi radyal yapı, ışığın yayılımı',
     sacredShape: '''
 Aslan'ın kutsal şekli GÜNEŞ MANDALASI'dır.
 
@@ -4754,14 +4738,12 @@ AKTİVASYON:
   ),
 
   // Diğer burçlar için kısa versiyonlar...
-
   'virgo': const ZodiacGeometryContent(
     id: 'virgo',
     zodiacSign: 'Başak',
     symbol: '♍',
     element: GeometricElement.earth,
-    geometricSignature:
-        'Altıgen Grid - Mükemmel düzen, arı kovanı geometrisi',
+    geometricSignature: 'Altıgen Grid - Mükemmel düzen, arı kovanı geometrisi',
     sacredShape:
         'Başak\'ın kutsal şekli ALTI KENLI GRID\'dir - doğanın en verimli yapısı, arı kovanı paterni.',
     mandalaDescription:
@@ -4811,8 +4793,7 @@ AKTİVASYON:
     zodiacSign: 'Akrep',
     symbol: '♏',
     element: GeometricElement.water,
-    geometricSignature:
-        'Spiral - Derinlere inen gizem, dönüşüm geometrisi',
+    geometricSignature: 'Spiral - Derinlere inen gizem, dönüşüm geometrisi',
     sacredShape:
         'Akrep\'in kutsal şekli SPİRAL\'dir - içe doğru dönen, derinleşen, dönüştüren.',
     mandalaDescription:
@@ -4837,8 +4818,7 @@ AKTİVASYON:
     zodiacSign: 'Yay',
     symbol: '♐',
     element: GeometricElement.fire,
-    geometricSignature:
-        'Ok ve Yay - Hedef odaklı genişleme, vizyon geometrisi',
+    geometricSignature: 'Ok ve Yay - Hedef odaklı genişleme, vizyon geometrisi',
     sacredShape:
         'Yay\'ın kutsal şekli OK ve YAY\'dır - hedefe yönelik enerji, genişleyen vizyon.',
     mandalaDescription:
@@ -4855,7 +4835,8 @@ AKTİVASYON:
         'Perşembe günleri, yolculuk ve keşif, öğretme ve öğrenme, vizyon çalışması',
     sacredNumbers: ['3', '9', '12'],
     powerSymbols: ['Ok ve Yay', 'Centaur', 'Ateş', 'Kitap'],
-    viralQuote: '"Hedefin büyük olsun - evren küçük hayallere zamanını vermez." 🏹',
+    viralQuote:
+        '"Hedefin büyük olsun - evren küçük hayallere zamanını vermez." 🏹',
   ),
 
   'capricorn': const ZodiacGeometryContent(
@@ -4863,8 +4844,7 @@ AKTİVASYON:
     zodiacSign: 'Oğlak',
     symbol: '♑',
     element: GeometricElement.earth,
-    geometricSignature:
-        'Piramit - Yükselen yapı, başarı geometrisi',
+    geometricSignature: 'Piramit - Yükselen yapı, başarı geometrisi',
     sacredShape:
         'Oğlak\'ın kutsal şekli PİRAMİT\'tir - temelden zirveye yükselen, kademeli başarı.',
     mandalaDescription:
@@ -4889,8 +4869,7 @@ AKTİVASYON:
     zodiacSign: 'Kova',
     symbol: '♒',
     element: GeometricElement.air,
-    geometricSignature:
-        'Dalga Paterni - Elektrik akışı, inovasyon geometrisi',
+    geometricSignature: 'Dalga Paterni - Elektrik akışı, inovasyon geometrisi',
     sacredShape:
         'Kova\'nın kutsal şekli DALGA PATERNİ\'dir - sürekli hareket, yenilik ve devrim.',
     mandalaDescription:
@@ -5031,7 +5010,8 @@ GÖZLER KAPALI:
 • Enerjiyi hissedin
 ''',
     mantra: 'İsteğe bağlı: Yantra\'nın bija mantrası sessizce tekrarlanabilir',
-    mudra: 'Jnana Mudra (işaret ve başparmak birleşik) veya ellerinizi dizlere koyun',
+    mudra:
+        'Jnana Mudra (işaret ve başparmak birleşik) veya ellerinizi dizlere koyun',
     expectedExperience: '''
 OLASI DENEYİMLER:
 
@@ -5903,7 +5883,9 @@ List<SacredGeometrySymbol> getAllSacredGeometrySymbols() {
 }
 
 /// Belirli bir kategorideki sembolleri getirir
-List<SacredGeometrySymbol> getSymbolsByCategory(SacredGeometryCategory category) {
+List<SacredGeometrySymbol> getSymbolsByCategory(
+  SacredGeometryCategory category,
+) {
   return sacredGeometryFundamentals.values
       .where((symbol) => symbol.category == category)
       .toList();
@@ -5955,7 +5937,9 @@ List<GeometryMeditationTechnique> getAllMeditationTechniques() {
 }
 
 /// Zorluk seviyesine göre meditasyon tekniklerini getirir
-List<GeometryMeditationTechnique> getMeditationsByDifficulty(String difficulty) {
+List<GeometryMeditationTechnique> getMeditationsByDifficulty(
+  String difficulty,
+) {
   return geometryMeditationTechniques
       .where((technique) => technique.difficulty.contains(difficulty))
       .toList();

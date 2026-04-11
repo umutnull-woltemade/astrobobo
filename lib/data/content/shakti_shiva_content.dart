@@ -7,11 +7,7 @@ library;
 // ENUMS & MODELS
 // ════════════════════════════════════════════════════════════════════════════
 
-enum DivineEnergyType {
-  shakti,
-  shiva,
-  union,
-}
+enum DivineEnergyType { shakti, shiva, union }
 
 enum ShaktiForm {
   durga,
@@ -46,10 +42,7 @@ enum EnergyImbalanceType {
   excessiveMasculine,
 }
 
-enum ZodiacPolarity {
-  feminine,
-  masculine,
-}
+enum ZodiacPolarity { feminine, masculine }
 
 extension ShaktiFormExtension on ShaktiForm {
   String get nameTr {
@@ -628,7 +621,8 @@ Dört Lakshmi Formu:
 • Gaja Lakshmi: Kraliyet zenginliği
 • Vidya Lakshmi: Bilgi zenginliği
 ''',
-      cosmicRole: 'Bereket Dağıtıcı, Refah Koruyucu, Şans Getiren, Güzellik Kaynağı',
+      cosmicRole:
+          'Bereket Dağıtıcı, Refah Koruyucu, Şans Getiren, Güzellik Kaynağı',
       mantra: 'Om Shreem Mahalakshmiyei Namaha',
       yantra: 'Shri Yantra - En kutsal geometri, dokuz iç içe üçgen',
       qualities: [
@@ -696,7 +690,8 @@ Saraswati'nin Boyutları:
 • Kala: Sanat ve yaratıcılık
 • Buddhi: Zekanın tanrıçası
 ''',
-      cosmicRole: 'Bilgi Kaynağı, Sanat İlham Vericisi, Konuşma Tanrıçası, Öğretmen',
+      cosmicRole:
+          'Bilgi Kaynağı, Sanat İlham Vericisi, Konuşma Tanrıçası, Öğretmen',
       mantra: 'Om Aim Saraswatyai Namaha',
       yantra: 'Saraswati Yantra - Altı köşeli yıldız merkezde',
       qualities: [
@@ -765,7 +760,8 @@ Kali'nin Sırları:
 • Chamunda: Savaşçı form
 • Smashana Kali: Mezarlık tanrıçası, ölümün ustası
 ''',
-      cosmicRole: 'Yok Edici, Özgürleştirici, Zaman Tanrıçası, Ego Katili, Dönüştürücü',
+      cosmicRole:
+          'Yok Edici, Özgürleştirici, Zaman Tanrıçası, Ego Katili, Dönüştürücü',
       mantra: 'Om Krim Kalikayai Namaha',
       yantra: 'Kali Yantra - Beş aşağı bakan üçgen',
       qualities: [
@@ -788,7 +784,8 @@ Kali'nin Sırları:
         'Kol kuşağı - Karma bağlarının çözülmesi',
       ],
       planetaryConnection: 'Satürn ve Pluto - Sınırlar, ölüm ve dönüşüm',
-      chakraConnection: 'Kök (Muladhara) ve Taç (Sahasrara) - Hayatta kalma ve aşkınlık',
+      chakraConnection:
+          'Kök (Muladhara) ve Taç (Sahasrara) - Hayatta kalma ve aşkınlık',
       moonPhase: 'Karanlık Ay (Yeni Ay öncesi) - Yok etme ve yeniden doğuş',
       ritual: '''
 Kali Puja - Diwali gecesi (karanlık gece) yapılır. Gece yarısı
@@ -833,7 +830,8 @@ dört yukarı bakan (Shiva) ve beş aşağı bakan (Shakti), kozmik
 birliği simgeler. Sri Yantra'nın merkezindeki bindu,
 Lalita'nın tahtıdır.
 ''',
-      cosmicRole: 'Güzellik Kaynağı, Aşk Tanrıçası, Yaratıcı İlham, Tantrik Kraliçe',
+      cosmicRole:
+          'Güzellik Kaynağı, Aşk Tanrıçası, Yaratıcı İlham, Tantrik Kraliçe',
       mantra: 'Om Aim Hreem Shreem Sri Lalita Tripurasundaryai Namaha',
       yantra: 'Sri Yantra - En kutsal ve karmaşık yantra',
       qualities: [
@@ -2020,7 +2018,8 @@ Bugün bir şeyi koru. Bir sınır koy, bir değeri savun, birini
 destekle. Koruma enerjisini hisset. Bu güç sana ait, onu
 kullanmak hakkındır.
 ''',
-      affirmation: 'Koruyucu gücüm içimde. Sevdiklerimi ve değerlerimi savunurum.',
+      affirmation:
+          'Koruyucu gücüm içimde. Sevdiklerimi ve değerlerimi savunurum.',
     ),
 
     DivineMasculineWisdom(
@@ -2065,7 +2064,8 @@ Bugün fazladan konuşma. Dinle. Cevap vermeden önce 3 saniye
 bekle. Sessizliğin rahatsızlığını hisset, ona alış. Sessizlikte
 güç var.
 ''',
-      affirmation: 'Sessizliğim bilgeliktir. Dinliyorum, anlıyorum, sonra konuşurum.',
+      affirmation:
+          'Sessizliğim bilgeliktir. Dinliyorum, anlıyorum, sonra konuşurum.',
     ),
 
     DivineMasculineWisdom(
@@ -2870,7 +2870,9 @@ Shiva'nın farkındalığı ile birleştirmek.
 
   static List<SacredRitual> getRitualsByMoonPhase(String moonPhase) {
     return sacredRituals
-        .where((r) => r.moonPhase.toLowerCase().contains(moonPhase.toLowerCase()))
+        .where(
+          (r) => r.moonPhase.toLowerCase().contains(moonPhase.toLowerCase()),
+        )
         .toList();
   }
 

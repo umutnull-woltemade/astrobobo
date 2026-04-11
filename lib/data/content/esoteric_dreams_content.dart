@@ -504,8 +504,7 @@ Gördükleri, rüya olarak hatırlanır." - Platon, Devlet
       sanskritAdi: 'Pranamaya Kosha',
       turkceAdi: 'Enerji/Prana Kılıfı',
       element: 'Su',
-      tanim:
-          'Yaşam enerjisi bedeni. Nefes, çakralar, nadiler, prana akışı.',
+      tanim: 'Yaşam enerjisi bedeni. Nefes, çakralar, nadiler, prana akışı.',
       ruyaIliskisi:
           'Rüyada enerji bedeni aktiftir. Rüyadaki uçma hissi, prana bedeninin serbestliğidir.',
       pratik: 'Pranayama, nadi shodhana, enerji çalışması',
@@ -532,8 +531,7 @@ Gördükleri, rüya olarak hatırlanır." - Platon, Devlet
       sanskritAdi: 'Anandamaya Kosha',
       turkceAdi: 'Mutluluk/Neşe Kılıfı',
       element: 'Ether/Akasha',
-      tanim:
-          'Saf mutluluk bedeni. Nedensel beden, karma tohumlarının deposu.',
+      tanim: 'Saf mutluluk bedeni. Nedensel beden, karma tohumlarının deposu.',
       ruyaIliskisi:
           'Derin uykuda (sushupti) aktif. Rüyasız ama tazeleyici uykunun kaynağı.',
       pratik: 'Samadhi, yoga nidra, turiya bilinci',
@@ -1030,14 +1028,14 @@ Tavsiye: Sessiz meditasyon, ilahi bağlantı duası, hizmet pratiği.
 
   /// Tüm çakra bilgilerinin listesi
   static List<CakraRuyaBilgisi> tumCakralar() => [
-        kokCakra,
-        sakralCakra,
-        solarPleksusCakra,
-        kalpCakra,
-        bogazCakra,
-        ucuncuGozCakra,
-        tacCakra,
-      ];
+    kokCakra,
+    sakralCakra,
+    solarPleksusCakra,
+    kalpCakra,
+    bogazCakra,
+    ucuncuGozCakra,
+    tacCakra,
+  ];
 }
 
 /// Çakra rüya bilgisi modeli
@@ -1258,8 +1256,7 @@ Mars rüyası gördüğünüzde: Enerjinizi nasıl kullanıyorsunuz?
     metal: 'Cıva',
     gun: 'Çarşamba',
     arketip: 'Haberci, Tüccar, Hırsız, Trickster',
-    yonettigiAlanlar:
-        'İletişim, zeka, öğrenme, ticaret, yolculuk, bilgi, yazı',
+    yonettigiAlanlar: 'İletişim, zeka, öğrenme, ticaret, yolculuk, bilgi, yazı',
     renkler: ['Sarı', 'Açık yeşil', 'Çok renkli'],
     semboller: [
       'Mektup, kitap, yazı',
@@ -1616,17 +1613,17 @@ Neyin ölmesi gerekiyor? Neyin yeniden doğması gerekiyor?
 
   /// Tüm gezegen bilgilerinin listesi
   static List<GezegenRuyaBilgisi> tumGezegenler() => [
-        gunes,
-        ay,
-        mars,
-        merkur,
-        jupiter,
-        venus,
-        saturn,
-        uranus,
-        neptun,
-        pluton,
-      ];
+    gunes,
+    ay,
+    mars,
+    merkur,
+    jupiter,
+    venus,
+    saturn,
+    uranus,
+    neptun,
+    pluton,
+  ];
 }
 
 /// Gezegen rüya bilgisi modeli
@@ -2179,19 +2176,19 @@ Ayrıca elementlere göre rüya kalıpları da farklılaşır:
 
   /// Tüm burç bilgilerinin listesi
   static List<BurcRuyaBilgisi> tumBurclar() => [
-        koc,
-        boga,
-        ikizler,
-        yengec,
-        aslan,
-        basak,
-        terazi,
-        akrep,
-        yay,
-        oglak,
-        kova,
-        balik,
-      ];
+    koc,
+    boga,
+    ikizler,
+    yengec,
+    aslan,
+    basak,
+    terazi,
+    akrep,
+    yay,
+    oglak,
+    kova,
+    balik,
+  ];
 }
 
 /// Burç rüya bilgisi modeli
@@ -2494,13 +2491,13 @@ Bu deneyimler gerçektir - sadece farklı bir algı katmanındadır.
 
   /// Tüm tantrik sembol bilgilerinin listesi
   static List<TantrikSembolBilgisi> tumSemboller() => [
-        kundalini,
-        birlesim,
-        tanriGorunumleri,
-        mantra,
-        yantra,
-        enerjiBedeni,
-      ];
+    kundalini,
+    birlesim,
+    tanriGorunumleri,
+    mantra,
+    yantra,
+    enerjiBedeni,
+  ];
 }
 
 /// Tantrik sembol bilgisi modeli
@@ -2967,25 +2964,28 @@ NOTLAR: _______________
 
   /// Tüm pratiklerin listesi
   static List<RuyaPratigi> tumPratikler() => [
-        ruyaGunlugu,
-        ruyaInkubasyonu,
-        tibetRuyaYogasi,
-        uykuOncesiMantra,
-        mildTeknigi,
-        samanikYolculuk,
-        korumaRitueli,
-      ];
+    ruyaGunlugu,
+    ruyaInkubasyonu,
+    tibetRuyaYogasi,
+    uykuOncesiMantra,
+    mildTeknigi,
+    samanikYolculuk,
+    korumaRitueli,
+  ];
 
   /// Zorluk seviyesine göre pratikler
   static List<RuyaPratigi> baslangicPratikleri() => tumPratikler()
-      .where((p) =>
-          p.zorlukSeviyesi == 'Başlangıç' ||
-          p.zorlukSeviyesi == 'Başlangıç-Orta')
+      .where(
+        (p) =>
+            p.zorlukSeviyesi == 'Başlangıç' ||
+            p.zorlukSeviyesi == 'Başlangıç-Orta',
+      )
       .toList();
 
   static List<RuyaPratigi> ortaPratikler() => tumPratikler()
-      .where((p) =>
-          p.zorlukSeviyesi == 'Orta' || p.zorlukSeviyesi == 'Orta-İleri')
+      .where(
+        (p) => p.zorlukSeviyesi == 'Orta' || p.zorlukSeviyesi == 'Orta-İleri',
+      )
       .toList();
 
   static List<RuyaPratigi> ileriPratikler() =>
@@ -3204,12 +3204,12 @@ Mantra seçerken:
 
   /// Tüm mantra ve dualar
   static List<RuyaMantrasi> tumMantralar() => [
-        ...hinduMantralar,
-        ...budistMantralar,
-        ...islamiDualar,
-        ...sufiZikirleri,
-        ...hristiyanDualar,
-      ];
+    ...hinduMantralar,
+    ...budistMantralar,
+    ...islamiDualar,
+    ...sufiZikirleri,
+    ...hristiyanDualar,
+  ];
 }
 
 /// Rüya mantrası modeli
@@ -3319,38 +3319,43 @@ class EzoterikRuyaIcerikServisi {
 
     // Çakra eşleştirmesi
     for (final cakra in cakraRuyalari()) {
-      if (cakra.pozitifRuyalar
-              .any((r) => r.toLowerCase().contains(sembolLower)) ||
-          cakra.dengesizRuyalar
-              .any((r) => r.toLowerCase().contains(sembolLower))) {
+      if (cakra.pozitifRuyalar.any(
+            (r) => r.toLowerCase().contains(sembolLower),
+          ) ||
+          cakra.dengesizRuyalar.any(
+            (r) => r.toLowerCase().contains(sembolLower),
+          )) {
         (sonuc['cakra'] as List).add(cakra);
       }
     }
 
     // Gezegen eşleştirmesi
     for (final gezegen in gezegenRuyalari()) {
-      if (gezegen.semboller
-              .any((s) => s.toLowerCase().contains(sembolLower)) ||
-          gezegen.pozitifRuyalar
-              .any((r) => r.toLowerCase().contains(sembolLower)) ||
-          gezegen.olumsuzRuyalar
-              .any((r) => r.toLowerCase().contains(sembolLower))) {
+      if (gezegen.semboller.any((s) => s.toLowerCase().contains(sembolLower)) ||
+          gezegen.pozitifRuyalar.any(
+            (r) => r.toLowerCase().contains(sembolLower),
+          ) ||
+          gezegen.olumsuzRuyalar.any(
+            (r) => r.toLowerCase().contains(sembolLower),
+          )) {
         (sonuc['gezegen'] as List).add(gezegen);
       }
     }
 
     // Burç eşleştirmesi
     for (final burc in burcRuyalari()) {
-      if (burc.tipikRuyaSembolleri
-          .any((s) => s.toLowerCase().contains(sembolLower))) {
+      if (burc.tipikRuyaSembolleri.any(
+        (s) => s.toLowerCase().contains(sembolLower),
+      )) {
         (sonuc['burc'] as List).add(burc);
       }
     }
 
     // Tantrik eşleştirme
     for (final tantrik in tantrikSemboller()) {
-      if (tantrik.ruyaTurleri
-          .any((r) => r.toLowerCase().contains(sembolLower))) {
+      if (tantrik.ruyaTurleri.any(
+        (r) => r.toLowerCase().contains(sembolLower),
+      )) {
         (sonuc['tantrik'] as List).add(tantrik);
       }
     }

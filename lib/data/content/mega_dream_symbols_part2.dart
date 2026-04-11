@@ -742,7 +742,6 @@ class MegaDreamSymbolsPart2 {
     // ════════════════════════════════════════════════════════════════════════
     // INSANLAR VE ARKETIPLER - 100+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'mother',
       symbolTr: 'Anne',
@@ -1146,7 +1145,6 @@ class MegaDreamSymbolsPart2 {
     // ════════════════════════════════════════════════════════════════════════
     // BEDEN VE BEDENSEL SEMBOLLER - 80+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'eye',
       symbolTr: 'Goz',

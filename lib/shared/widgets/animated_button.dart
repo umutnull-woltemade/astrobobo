@@ -49,9 +49,10 @@ class _AnimatedGradientButtonState extends State<AnimatedGradientButton>
       vsync: this,
       duration: const Duration(milliseconds: 100),
     );
-    _scaleAnimation = Tween<double>(begin: 1.0, end: 0.95).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
-    );
+    _scaleAnimation = Tween<double>(
+      begin: 1.0,
+      end: 0.95,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
   }
 
   @override
@@ -79,7 +80,8 @@ class _AnimatedGradientButtonState extends State<AnimatedGradientButton>
   }
 
   void _onTap() {
-    if (widget.isDisabled || widget.isLoading || widget.onPressed == null) return;
+    if (widget.isDisabled || widget.isLoading || widget.onPressed == null)
+      return;
     if (widget.hapticFeedback) {
       HapticFeedback.mediumImpact();
     }
@@ -89,10 +91,7 @@ class _AnimatedGradientButtonState extends State<AnimatedGradientButton>
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final defaultGradient = [
-      AppColors.cosmicPurple,
-      AppColors.mysticBlue,
-    ];
+    final defaultGradient = [AppColors.cosmicPurple, AppColors.mysticBlue];
     final colors = widget.gradientColors ?? defaultGradient;
 
     return GestureDetector(
@@ -124,7 +123,9 @@ class _AnimatedGradientButtonState extends State<AnimatedGradientButton>
                       ? null
                       : [
                           BoxShadow(
-                            color: colors.first.withOpacity(_isPressed ? 0.3 : 0.5),
+                            color: colors.first.withOpacity(
+                              _isPressed ? 0.3 : 0.5,
+                            ),
                             blurRadius: _isPressed ? 8 : 16,
                             offset: Offset(0, _isPressed ? 2 : 6),
                           ),
@@ -158,11 +159,14 @@ class _AnimatedGradientButtonState extends State<AnimatedGradientButton>
                               ],
                               Text(
                                 widget.label,
-                                style: widget.textStyle ??
-                                    Theme.of(context).textTheme.titleMedium?.copyWith(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                        ),
+                                style:
+                                    widget.textStyle ??
+                                    Theme.of(
+                                      context,
+                                    ).textTheme.titleMedium?.copyWith(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                               ),
                             ],
                           ),
@@ -208,9 +212,11 @@ class _AnimatedIconButtonState extends State<AnimatedIconButton> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final iconColor = widget.color ??
+    final iconColor =
+        widget.color ??
         (isDark ? AppColors.textPrimary : AppColors.lightTextPrimary);
-    final bgColor = widget.backgroundColor ??
+    final bgColor =
+        widget.backgroundColor ??
         (isDark
             ? AppColors.surfaceLight.withOpacity(0.1)
             : AppColors.lightSurfaceVariant);
@@ -247,20 +253,13 @@ class _AnimatedIconButtonState extends State<AnimatedIconButton> {
                     ),
                   ],
           ),
-          child: Icon(
-            widget.icon,
-            color: iconColor,
-            size: widget.size * 0.5,
-          ),
+          child: Icon(widget.icon, color: iconColor, size: widget.size * 0.5),
         ),
       ),
     );
 
     if (widget.tooltip != null) {
-      button = Tooltip(
-        message: widget.tooltip!,
-        child: button,
-      );
+      button = Tooltip(message: widget.tooltip!, child: button);
     }
 
     return button;
@@ -292,68 +291,56 @@ class _CosmicFloatingButtonState extends State<CosmicFloatingButton> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTapDown: (_) => setState(() => _isPressed = true),
-      onTapUp: (_) => setState(() => _isPressed = false),
-      onTapCancel: () => setState(() => _isPressed = false),
-      onTap: () {
-        HapticFeedback.mediumImpact();
-        widget.onPressed?.call();
-      },
-      child: AnimatedScale(
-        scale: _isPressed ? 0.95 : 1.0,
-        duration: const Duration(milliseconds: 100),
-        child: Container(
-          padding: widget.extended
-              ? const EdgeInsets.symmetric(horizontal: 20, vertical: 14)
-              : const EdgeInsets.all(16),
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-                AppColors.starGold,
-                AppColors.cosmicPurple,
-              ],
-            ),
-            borderRadius: BorderRadius.circular(widget.extended ? 30 : 56),
-            boxShadow: [
-              BoxShadow(
-                color: AppColors.starGold.withOpacity(0.4),
-                blurRadius: _isPressed ? 8 : 16,
-                offset: Offset(0, _isPressed ? 2 : 6),
+          onTapDown: (_) => setState(() => _isPressed = true),
+          onTapUp: (_) => setState(() => _isPressed = false),
+          onTapCancel: () => setState(() => _isPressed = false),
+          onTap: () {
+            HapticFeedback.mediumImpact();
+            widget.onPressed?.call();
+          },
+          child: AnimatedScale(
+            scale: _isPressed ? 0.95 : 1.0,
+            duration: const Duration(milliseconds: 100),
+            child: Container(
+              padding: widget.extended
+                  ? const EdgeInsets.symmetric(horizontal: 20, vertical: 14)
+                  : const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [AppColors.starGold, AppColors.cosmicPurple],
+                ),
+                borderRadius: BorderRadius.circular(widget.extended ? 30 : 56),
+                boxShadow: [
+                  BoxShadow(
+                    color: AppColors.starGold.withOpacity(0.4),
+                    blurRadius: _isPressed ? 8 : 16,
+                    offset: Offset(0, _isPressed ? 2 : 6),
+                  ),
+                ],
               ),
-            ],
-          ),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(
-                widget.icon,
-                color: Colors.white,
-                size: 24,
-              ),
-              if (widget.extended && widget.label != null) ...[
-                const SizedBox(width: 10),
-                Text(
-                  widget.label!,
-                  style: Theme.of(context).textTheme.titleSmall?.copyWith(
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(widget.icon, color: Colors.white, size: 24),
+                  if (widget.extended && widget.label != null) ...[
+                    const SizedBox(width: 10),
+                    Text(
+                      widget.label!,
+                      style: Theme.of(context).textTheme.titleSmall?.copyWith(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                       ),
-                ),
-              ],
-            ],
+                    ),
+                  ],
+                ],
+              ),
+            ),
           ),
-        ),
-      ),
-    )
+        )
         .animate(onPlay: (c) => c.repeat(reverse: true))
-        .moveY(
-          begin: 0,
-          end: -4,
-          duration: 2000.ms,
-          curve: Curves.easeInOut,
-        );
+        .moveY(begin: 0, end: -4, duration: 2000.ms, curve: Curves.easeInOut);
   }
 }
 
@@ -403,29 +390,22 @@ class _AnimatedOutlinedButtonState extends State<AnimatedOutlinedButton> {
           decoration: BoxDecoration(
             color: _isPressed ? color.withOpacity(0.1) : Colors.transparent,
             borderRadius: BorderRadius.circular(12),
-            border: Border.all(
-              color: color,
-              width: _isPressed ? 2 : 1.5,
-            ),
+            border: Border.all(color: color, width: _isPressed ? 2 : 1.5),
           ),
           child: Row(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               if (widget.icon != null) ...[
-                Icon(
-                  widget.icon,
-                  color: color,
-                  size: 20,
-                ),
+                Icon(widget.icon, color: color, size: 20),
                 const SizedBox(width: 8),
               ],
               Text(
                 widget.label,
                 style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      color: color,
-                      fontWeight: FontWeight.w600,
-                    ),
+                  color: color,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ],
           ),
@@ -468,17 +448,14 @@ class AnimatedChip extends StatelessWidget {
         decoration: BoxDecoration(
           gradient: isSelected
               ? LinearGradient(
-                  colors: [
-                    color.withOpacity(0.8),
-                    color.withOpacity(0.6),
-                  ],
+                  colors: [color.withOpacity(0.8), color.withOpacity(0.6)],
                 )
               : null,
           color: isSelected
               ? null
               : (isDark
-                  ? AppColors.surfaceLight.withOpacity(0.1)
-                  : AppColors.lightSurfaceVariant),
+                    ? AppColors.surfaceLight.withOpacity(0.1)
+                    : AppColors.lightSurfaceVariant),
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
             color: isSelected ? color : Colors.transparent,
@@ -503,18 +480,22 @@ class AnimatedChip extends StatelessWidget {
                 size: 16,
                 color: isSelected
                     ? Colors.white
-                    : (isDark ? AppColors.textSecondary : AppColors.lightTextSecondary),
+                    : (isDark
+                          ? AppColors.textSecondary
+                          : AppColors.lightTextSecondary),
               ),
               const SizedBox(width: 6),
             ],
             Text(
               label,
               style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                    color: isSelected
-                        ? Colors.white
-                        : (isDark ? AppColors.textSecondary : AppColors.lightTextSecondary),
-                    fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
-                  ),
+                color: isSelected
+                    ? Colors.white
+                    : (isDark
+                          ? AppColors.textSecondary
+                          : AppColors.lightTextSecondary),
+                fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+              ),
             ),
           ],
         ),

@@ -37,16 +37,30 @@ class MysticalColors {
   static const Color bgNightSky = Color(0xFF12121C);
   static const Color bgCosmic = Color(0xFF1A1A2E);
   static const Color bgElevated = Color(0xFF252536);
-  static const Color bgLight = Color(0xFFE8E0F0);           // Softer lavender-gray background
-  static const Color bgLightElevated = Color(0xFFF0EBF5);   // Slightly darker cards
+  static const Color bgLight = Color(
+    0xFFE8E0F0,
+  ); // Softer lavender-gray background
+  static const Color bgLightElevated = Color(
+    0xFFF0EBF5,
+  ); // Slightly darker cards
 
   // === TEXT COLORS ===
-  static const Color textPrimary = Color(0xFFFFFFFF);      // Pure white for maximum visibility
-  static const Color textSecondary = Color(0xFFD4C8E8);    // Lighter lavender for better contrast
-  static const Color textMuted = Color(0xFF9A8AAF);        // Lighter muted for better readability
+  static const Color textPrimary = Color(
+    0xFFFFFFFF,
+  ); // Pure white for maximum visibility
+  static const Color textSecondary = Color(
+    0xFFD4C8E8,
+  ); // Lighter lavender for better contrast
+  static const Color textMuted = Color(
+    0xFF9A8AAF,
+  ); // Lighter muted for better readability
   static const Color textGold = Color(0xFFFFD700);
-  static const Color textDark = Color(0xFF1A1020);            // Darker for light mode visibility
-  static const Color textDarkSecondary = Color(0xFF3A3050);   // Darker secondary text
+  static const Color textDark = Color(
+    0xFF1A1020,
+  ); // Darker for light mode visibility
+  static const Color textDarkSecondary = Color(
+    0xFF3A3050,
+  ); // Darker secondary text
 
   // === ZODIAC ELEMENT COLORS ===
   static const Color elementFire = Color(0xFFFF6B35);
@@ -154,11 +168,11 @@ class MysticalColors {
   );
 
   static ColorScheme get lightScheme => ColorScheme.light(
-    primary: cosmicPurple,                    // Darker primary for better contrast
+    primary: cosmicPurple, // Darker primary for better contrast
     onPrimary: Colors.white,
     primaryContainer: amethyst,
     onPrimaryContainer: Colors.white,
-    secondary: bronzeGlow,                    // Darker gold
+    secondary: bronzeGlow, // Darker gold
     onSecondary: Colors.white,
     secondaryContainer: champagne,
     onSecondaryContainer: textDark,
@@ -170,7 +184,7 @@ class MysticalColors {
     onSurface: textDark,
     surfaceContainerHighest: bgLightElevated,
     onSurfaceVariant: textDarkSecondary,
-    outline: amethyst,                        // Darker outline
+    outline: amethyst, // Darker outline
     shadow: cosmicPurple.withValues(alpha: 0.2),
   );
 }

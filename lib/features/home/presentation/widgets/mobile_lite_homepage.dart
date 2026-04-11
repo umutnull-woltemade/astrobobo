@@ -33,7 +33,9 @@ class MobileLiteHomepage extends ConsumerWidget {
     final userProfile = ref.watch(userProfileProvider);
 
     // Guard: Redirect to onboarding if no valid profile
-    if (userProfile == null || userProfile.name == null || userProfile.name!.isEmpty) {
+    if (userProfile == null ||
+        userProfile.name == null ||
+        userProfile.name!.isEmpty) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (context.mounted) {
           context.go(Routes.onboarding);
@@ -59,24 +61,24 @@ class MobileLiteHomepage extends ConsumerWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-              // ════════════════════════════════════════════════════════════
-              // ABOVE THE FOLD - Ultra simple, instant load
-              // ════════════════════════════════════════════════════════════
-              _AboveTheFold(
-                userName: userProfile.name ?? '',
-                sign: sign,
-                isDark: isDark,
-              ),
+                // ════════════════════════════════════════════════════════════
+                // ABOVE THE FOLD - Ultra simple, instant load
+                // ════════════════════════════════════════════════════════════
+                _AboveTheFold(
+                  userName: userProfile.name ?? '',
+                  sign: sign,
+                  isDark: isDark,
+                ),
 
-              // ════════════════════════════════════════════════════════════
-              // BELOW THE FOLD - Simple list of entry points
-              // ════════════════════════════════════════════════════════════
-              _BelowTheFold(isDark: isDark),
+                // ════════════════════════════════════════════════════════════
+                // BELOW THE FOLD - Simple list of entry points
+                // ════════════════════════════════════════════════════════════
+                _BelowTheFold(isDark: isDark),
 
-              const SizedBox(height: 32),
-            ],
+                const SizedBox(height: 32),
+              ],
+            ),
           ),
-        ),
         ),
       ),
     );
@@ -107,9 +109,7 @@ class _AboveTheFold extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.fromLTRB(20, 24, 20, 32),
       decoration: BoxDecoration(
-        color: isDark
-            ? const Color(0xFF1A1A2E)
-            : const Color(0xFFF0F2F8),
+        color: isDark ? const Color(0xFF1A1A2E) : const Color(0xFFF0F2F8),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -132,7 +132,9 @@ class _AboveTheFold extends StatelessWidget {
                     sign.symbol,
                     style: TextStyle(
                       fontSize: 24,
-                      color: isDark ? AppColors.starGold : AppColors.lightStarGold,
+                      color: isDark
+                          ? AppColors.starGold
+                          : AppColors.lightStarGold,
                     ),
                   ),
                 ),
@@ -148,7 +150,9 @@ class _AboveTheFold extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
-                        color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
+                        color: isDark
+                            ? AppColors.textPrimary
+                            : AppColors.lightTextPrimary,
                       ),
                       overflow: TextOverflow.ellipsis,
                       maxLines: 1,
@@ -158,7 +162,9 @@ class _AboveTheFold extends StatelessWidget {
                       sign.nameTr,
                       style: TextStyle(
                         fontSize: 13,
-                        color: isDark ? AppColors.textSecondary : AppColors.lightTextSecondary,
+                        color: isDark
+                            ? AppColors.textSecondary
+                            : AppColors.lightTextSecondary,
                       ),
                     ),
                   ],
@@ -169,7 +175,9 @@ class _AboveTheFold extends StatelessWidget {
                 onPressed: () => context.push(Routes.settings),
                 icon: Icon(
                   Icons.settings_outlined,
-                  color: isDark ? AppColors.textSecondary : AppColors.lightTextSecondary,
+                  color: isDark
+                      ? AppColors.textSecondary
+                      : AppColors.lightTextSecondary,
                   size: 22,
                 ),
               ),
@@ -269,7 +277,9 @@ class _AboveTheFold extends StatelessWidget {
             sentence,
             style: TextStyle(
               fontSize: 15,
-              color: isDark ? AppColors.textSecondary : AppColors.lightTextSecondary,
+              color: isDark
+                  ? AppColors.textSecondary
+                  : AppColors.lightTextSecondary,
               height: 1.5,
             ),
           ),
@@ -282,7 +292,9 @@ class _AboveTheFold extends StatelessWidget {
             child: ElevatedButton(
               onPressed: () => context.push(Routes.cosmicShare),
               style: ElevatedButton.styleFrom(
-                backgroundColor: isDark ? AppColors.starGold : AppColors.lightStarGold,
+                backgroundColor: isDark
+                    ? AppColors.starGold
+                    : AppColors.lightStarGold,
                 foregroundColor: AppColors.deepSpace,
                 padding: const EdgeInsets.symmetric(vertical: 16),
                 shape: RoundedRectangleBorder(
@@ -316,13 +328,17 @@ class _AboveTheFold extends StatelessWidget {
 
   // Pre-computed headlines - no runtime calculation
   String _getDailyHeadline(ZodiacSign sign) {
-    final dayOfYear = DateTime.now().difference(DateTime(DateTime.now().year, 1, 1)).inDays;
+    final dayOfYear = DateTime.now()
+        .difference(DateTime(DateTime.now().year, 1, 1))
+        .inDays;
     final index = (dayOfYear + sign.index) % _headlines[sign.index].length;
     return _headlines[sign.index][index];
   }
 
   String _getDailySentence(ZodiacSign sign) {
-    final dayOfYear = DateTime.now().difference(DateTime(DateTime.now().year, 1, 1)).inDays;
+    final dayOfYear = DateTime.now()
+        .difference(DateTime(DateTime.now().year, 1, 1))
+        .inDays;
     final index = (dayOfYear + sign.index) % _sentences[sign.index].length;
     return _sentences[sign.index][index];
   }
@@ -330,56 +346,152 @@ class _AboveTheFold extends StatelessWidget {
   // Static content - no API calls, instant load
   static const List<List<String>> _headlines = [
     // Aries
-    ['Cesaretin bugün test ediliyor.', 'Ateşin içinden geçme zamanı.', 'Liderlik enerjin yükseliyor.'],
+    [
+      'Cesaretin bugün test ediliyor.',
+      'Ateşin içinden geçme zamanı.',
+      'Liderlik enerjin yükseliyor.',
+    ],
     // Taurus
-    ['Köklerin seni taşıyor.', 'Sabır bugün en büyük gücün.', 'Değerini bil, taviz verme.'],
+    [
+      'Köklerin seni taşıyor.',
+      'Sabır bugün en büyük gücün.',
+      'Değerini bil, taviz verme.',
+    ],
     // Gemini
-    ['İki dünya arasında dans ediyorsun.', 'Kelimeler bugün silahın.', 'Merakın kapıları açıyor.'],
+    [
+      'İki dünya arasında dans ediyorsun.',
+      'Kelimeler bugün silahın.',
+      'Merakın kapıları açıyor.',
+    ],
     // Cancer
-    ['Ay seninle konuşuyor.', 'Duygularında cevap var.', 'Koruyucu kabuğun altında güç.'],
+    [
+      'Ay seninle konuşuyor.',
+      'Duygularında cevap var.',
+      'Koruyucu kabuğun altında güç.',
+    ],
     // Leo
-    ['Güneş senin için doğuyor.', 'Işığın karanlığı yırtıyor.', 'Tahtın hazır, sahip çık.'],
+    [
+      'Güneş senin için doğuyor.',
+      'Işığın karanlığı yırtıyor.',
+      'Tahtın hazır, sahip çık.',
+    ],
     // Virgo
-    ['Detaylarda evren gizli.', 'Mükemmellik değil, anlam ara.', 'Şifa veren ellerin var.'],
+    [
+      'Detaylarda evren gizli.',
+      'Mükemmellik değil, anlam ara.',
+      'Şifa veren ellerin var.',
+    ],
     // Libra
-    ['Denge noktasındasın.', 'Güzellik ve adalet senin.', 'İlişkilerde dönüşüm zamanı.'],
+    [
+      'Denge noktasındasın.',
+      'Güzellik ve adalet senin.',
+      'İlişkilerde dönüşüm zamanı.',
+    ],
     // Scorpio
-    ['Karanlıktan korkmuyorsun.', 'Dönüşüm kapıda.', 'Derinliklerde hazine var.'],
+    [
+      'Karanlıktan korkmuyorsun.',
+      'Dönüşüm kapıda.',
+      'Derinliklerde hazine var.',
+    ],
     // Sagittarius
-    ['Ufuk seni çağırıyor.', 'Ok yaydan çıkmak üzere.', 'Özgürlük senin doğum hakkın.'],
+    [
+      'Ufuk seni çağırıyor.',
+      'Ok yaydan çıkmak üzere.',
+      'Özgürlük senin doğum hakkın.',
+    ],
     // Capricorn
-    ['Zirve görüş mesafesinde.', 'Disiplin bugün süper gücün.', 'Zamanın ustası sensin.'],
+    [
+      'Zirve görüş mesafesinde.',
+      'Disiplin bugün süper gücün.',
+      'Zamanın ustası sensin.',
+    ],
     // Aquarius
-    ['Geleceği sen yazıyorsun.', 'Farklılığın senin armağanın.', 'Devrim içinden başlıyor.'],
+    [
+      'Geleceği sen yazıyorsun.',
+      'Farklılığın senin armağanın.',
+      'Devrim içinden başlıyor.',
+    ],
     // Pisces
-    ['Rüyalar gerçeğe dönüşüyor.', 'Sezgilerin keskin.', 'Okyanus derinliğinde yüzüyorsun.'],
+    [
+      'Rüyalar gerçeğe dönüşüyor.',
+      'Sezgilerin keskin.',
+      'Okyanus derinliğinde yüzüyorsun.',
+    ],
   ];
 
   static const List<List<String>> _sentences = [
     // Aries
-    ['Bugün enerjin yüksek ama sabırlı ol.', 'Yeni başlangıçlar için ideal bir gün.', 'İçindeki ateşi kontrollü kullan.'],
+    [
+      'Bugün enerjin yüksek ama sabırlı ol.',
+      'Yeni başlangıçlar için ideal bir gün.',
+      'İçindeki ateşi kontrollü kullan.',
+    ],
     // Taurus
-    ['Bugün maddi konularda şanslısın.', 'Rahatlığını korurken ilerlemeye bak.', 'Doğayla vakit geçirmek iyi gelecek.'],
+    [
+      'Bugün maddi konularda şanslısın.',
+      'Rahatlığını korurken ilerlemeye bak.',
+      'Doğayla vakit geçirmek iyi gelecek.',
+    ],
     // Gemini
-    ['Bugün iletişim yıldızın parlıyor.', 'Yeni bilgiler seni heyecanlandıracak.', 'Sosyal ağın genişliyor.'],
+    [
+      'Bugün iletişim yıldızın parlıyor.',
+      'Yeni bilgiler seni heyecanlandıracak.',
+      'Sosyal ağın genişliyor.',
+    ],
     // Cancer
-    ['Bugün ev ve aile ön planda.', 'Duygusal sezgilerin güçlü.', 'Kendine bakmayı ihmal etme.'],
+    [
+      'Bugün ev ve aile ön planda.',
+      'Duygusal sezgilerin güçlü.',
+      'Kendine bakmayı ihmal etme.',
+    ],
     // Leo
-    ['Bugün sahne senin.', 'Yaratıcılığın zirve yapıyor.', 'Kalbin seni doğru yöne çekiyor.'],
+    [
+      'Bugün sahne senin.',
+      'Yaratıcılığın zirve yapıyor.',
+      'Kalbin seni doğru yöne çekiyor.',
+    ],
     // Virgo
-    ['Bugün detaylara dikkat et.', 'Organizasyon becerilerin işe yarayacak.', 'Sağlığına önem ver.'],
+    [
+      'Bugün detaylara dikkat et.',
+      'Organizasyon becerilerin işe yarayacak.',
+      'Sağlığına önem ver.',
+    ],
     // Libra
-    ['Bugün ilişkiler ön planda.', 'Estetik zevkin takdir görecek.', 'Denge arayışın meyvelerini veriyor.'],
+    [
+      'Bugün ilişkiler ön planda.',
+      'Estetik zevkin takdir görecek.',
+      'Denge arayışın meyvelerini veriyor.',
+    ],
     // Scorpio
-    ['Bugün içsel dönüşüm zamanı.', 'Gizli konular açığa çıkabilir.', 'Sezgilerin seni yanıltmaz.'],
+    [
+      'Bugün içsel dönüşüm zamanı.',
+      'Gizli konular açığa çıkabilir.',
+      'Sezgilerin seni yanıltmaz.',
+    ],
     // Sagittarius
-    ['Bugün macera ruhun uyanıyor.', 'Yeni fikirler ilham veriyor.', 'Optimizmin bulaşıcı.'],
+    [
+      'Bugün macera ruhun uyanıyor.',
+      'Yeni fikirler ilham veriyor.',
+      'Optimizmin bulaşıcı.',
+    ],
     // Capricorn
-    ['Bugün kariyer fırsatları var.', 'Disiplinli çalışman ödüllendirilecek.', 'Uzun vadeli planlar yap.'],
+    [
+      'Bugün kariyer fırsatları var.',
+      'Disiplinli çalışman ödüllendirilecek.',
+      'Uzun vadeli planlar yap.',
+    ],
     // Aquarius
-    ['Bugün yenilikçi fikirlerin öne çıkıyor.', 'Arkadaşlarınla vakit geçir.', 'Farklı olmaktan çekinme.'],
+    [
+      'Bugün yenilikçi fikirlerin öne çıkıyor.',
+      'Arkadaşlarınla vakit geçir.',
+      'Farklı olmaktan çekinme.',
+    ],
     // Pisces
-    ['Bugün ruhsal farkındalık yüksek.', 'Sanat ve müzik ilham veriyor.', 'Hayallerine güven.'],
+    [
+      'Bugün ruhsal farkındalık yüksek.',
+      'Sanat ve müzik ilham veriyor.',
+      'Hayallerine güven.',
+    ],
   ];
 }
 
@@ -406,7 +518,9 @@ class _BelowTheFold extends StatelessWidget {
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.w600,
-              color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
+              color: isDark
+                  ? AppColors.textPrimary
+                  : AppColors.lightTextPrimary,
             ),
           ),
 
@@ -462,7 +576,9 @@ class _BelowTheFold extends StatelessWidget {
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.w600,
-              color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
+              color: isDark
+                  ? AppColors.textPrimary
+                  : AppColors.lightTextPrimary,
             ),
           ),
 
@@ -510,7 +626,9 @@ class _BelowTheFold extends StatelessWidget {
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.w600,
-              color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
+              color: isDark
+                  ? AppColors.textPrimary
+                  : AppColors.lightTextPrimary,
             ),
           ),
 
@@ -527,16 +645,18 @@ class _BelowTheFold extends StatelessWidget {
           const SizedBox(height: 16),
 
           // Venus content tiles (first 6)
-          ...VenusHomepageContent.sections.take(6).map((section) =>
-            _VenusContentTile(
-              emoji: section.emoji,
-              title: section.title,
-              subtitle: section.subtitle,
-              badge: section.badge,
-              route: section.route,
-              isDark: isDark,
-            ),
-          ),
+          ...VenusHomepageContent.sections
+              .take(6)
+              .map(
+                (section) => _VenusContentTile(
+                  emoji: section.emoji,
+                  title: section.title,
+                  subtitle: section.subtitle,
+                  badge: section.badge,
+                  route: section.route,
+                  isDark: isDark,
+                ),
+              ),
 
           const SizedBox(height: 24),
 
@@ -546,23 +666,27 @@ class _BelowTheFold extends StatelessWidget {
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.w600,
-              color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
+              color: isDark
+                  ? AppColors.textPrimary
+                  : AppColors.lightTextPrimary,
             ),
           ),
 
           const SizedBox(height: 16),
 
           // Venus content tiles (remaining 6)
-          ...VenusHomepageContent.sections.skip(6).map((section) =>
-            _VenusContentTile(
-              emoji: section.emoji,
-              title: section.title,
-              subtitle: section.subtitle,
-              badge: section.badge,
-              route: section.route,
-              isDark: isDark,
-            ),
-          ),
+          ...VenusHomepageContent.sections
+              .skip(6)
+              .map(
+                (section) => _VenusContentTile(
+                  emoji: section.emoji,
+                  title: section.title,
+                  subtitle: section.subtitle,
+                  badge: section.badge,
+                  route: section.route,
+                  isDark: isDark,
+                ),
+              ),
 
           const SizedBox(height: 32),
 
@@ -570,10 +694,10 @@ class _BelowTheFold extends StatelessWidget {
           Text(
             '🏠 Astrolojik Evler',
             style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                  color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
-                  fontWeight: FontWeight.w600,
-                  letterSpacing: 0.5,
-                ),
+              color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
+              fontWeight: FontWeight.w600,
+              letterSpacing: 0.5,
+            ),
           ),
           const SizedBox(height: 12),
           _EntryPointTile(
@@ -683,13 +807,18 @@ class _VenusContentTile extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w600,
-                                color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
+                                color: isDark
+                                    ? AppColors.textPrimary
+                                    : AppColors.lightTextPrimary,
                               ),
                             ),
                           ),
                           if (badge != null)
                             Container(
-                              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 8,
+                                vertical: 2,
+                              ),
                               decoration: BoxDecoration(
                                 color: badge == 'Yeni'
                                     ? AppColors.starGold.withOpacity(0.2)
@@ -703,7 +832,9 @@ class _VenusContentTile extends StatelessWidget {
                                   fontWeight: FontWeight.w600,
                                   color: badge == 'Yeni'
                                       ? AppColors.starGold
-                                      : (isDark ? AppColors.textSecondary : AppColors.lightTextSecondary),
+                                      : (isDark
+                                            ? AppColors.textSecondary
+                                            : AppColors.lightTextSecondary),
                                 ),
                               ),
                             ),
@@ -714,7 +845,9 @@ class _VenusContentTile extends StatelessWidget {
                         subtitle,
                         style: TextStyle(
                           fontSize: 13,
-                          color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
+                          color: isDark
+                              ? AppColors.textMuted
+                              : AppColors.lightTextMuted,
                         ),
                       ),
                     ],
@@ -724,7 +857,9 @@ class _VenusContentTile extends StatelessWidget {
                 Icon(
                   Icons.chevron_right,
                   size: 20,
-                  color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
+                  color: isDark
+                      ? AppColors.textMuted
+                      : AppColors.lightTextMuted,
                 ),
               ],
             ),
@@ -788,7 +923,9 @@ class _QuickDiscoveryChip extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 13,
                   fontWeight: FontWeight.w600,
-                  color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
+                  color: isDark
+                      ? AppColors.textPrimary
+                      : AppColors.lightTextPrimary,
                 ),
               ),
             ],
@@ -835,11 +972,9 @@ class _EntryPointTile extends StatelessWidget {
             decoration: BoxDecoration(
               color: isHighlighted
                   ? (isDark
-                      ? AppColors.starGold.withOpacity(0.1)
-                      : AppColors.lightStarGold.withOpacity(0.1))
-                  : (isDark
-                      ? AppColors.surfaceDark
-                      : AppColors.lightCard),
+                        ? AppColors.starGold.withOpacity(0.1)
+                        : AppColors.lightStarGold.withOpacity(0.1))
+                  : (isDark ? AppColors.surfaceDark : AppColors.lightCard),
               borderRadius: BorderRadius.circular(12),
               border: isHighlighted
                   ? Border.all(
@@ -866,8 +1001,12 @@ class _EntryPointTile extends StatelessWidget {
                     icon,
                     size: 22,
                     color: isHighlighted
-                        ? (isDark ? AppColors.starGold : AppColors.lightStarGold)
-                        : (isDark ? AppColors.auroraStart : AppColors.lightAuroraStart),
+                        ? (isDark
+                              ? AppColors.starGold
+                              : AppColors.lightStarGold)
+                        : (isDark
+                              ? AppColors.auroraStart
+                              : AppColors.lightAuroraStart),
                   ),
                 ),
 

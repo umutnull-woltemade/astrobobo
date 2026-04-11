@@ -168,8 +168,7 @@ class JungianDreamPsychology {
         'Neyi kurtarmaya çalışıyorum?',
         'Cesaret nereden geliyor?',
       ],
-      healingAffirmation:
-          'Kendi kahramanımım. Zorluklarla yüzleşme gücüm var.',
+      healingAffirmation: 'Kendi kahramanımım. Zorluklarla yüzleşme gücüm var.',
       relatedSymbols: ['kılıç', 'ejderha', 'yol', 'dağ', 'hazine'],
     ),
     'trickster': ArchetypeDeepAnalysis(
@@ -514,24 +513,24 @@ class FreudianDreamPsychology {
   /// Serbest çağrışım tekniği
   static const FreeAssociationTechnique serbestCagrisim =
       FreeAssociationTechnique(
-    description:
-        'Freud\'un temel tekniği. Rüya öğelerinden başlayarak akla gelen '
-        'her şeyi sansürsüz söyleme.',
-    steps: [
-      'Rüyadan bir imaj seç',
-      'O imajla ilgili aklına gelen ilk şeyi söyle',
-      'Sonra onunla ilgili aklına geleni...',
-      'Zinciri takip et, sansürleme',
-      'Direnç noktalarına dikkat et',
-      'Duyguların yoğunlaştığı yere bak',
-    ],
-    tips: [
-      'Mantıklı olmaya çalışma',
-      'Utanç verici düşünceleri sansürleme',
-      'Duraksadığın yerlere dikkat et',
-      'Duygusal tepkileri not et',
-    ],
-  );
+        description:
+            'Freud\'un temel tekniği. Rüya öğelerinden başlayarak akla gelen '
+            'her şeyi sansürsüz söyleme.',
+        steps: [
+          'Rüyadan bir imaj seç',
+          'O imajla ilgili aklına gelen ilk şeyi söyle',
+          'Sonra onunla ilgili aklına geleni...',
+          'Zinciri takip et, sansürleme',
+          'Direnç noktalarına dikkat et',
+          'Duyguların yoğunlaştığı yere bak',
+        ],
+        tips: [
+          'Mantıklı olmaya çalışma',
+          'Utanç verici düşünceleri sansürleme',
+          'Duraksadığın yerlere dikkat et',
+          'Duygusal tepkileri not et',
+        ],
+      );
 }
 
 // ════════════════════════════════════════════════════════════════════════════
@@ -663,8 +662,7 @@ class CognitiveDreamTheory {
       name: 'Problem Çözme',
       description:
           'Beyin uyurken de problem üzerinde çalışır. Yaratıcı çözümler gelebilir.',
-      dreamManifestation:
-          'Uyandığında "Ah!" anları. Rüyada çözüm bulma.',
+      dreamManifestation: 'Uyandığında "Ah!" anları. Rüyada çözüm bulma.',
       practicalUse:
           'Uyumadan önce problemi düşün. Sabah yeni fikirler olabilir.',
     ),
@@ -674,8 +672,7 @@ class CognitiveDreamTheory {
           'Evrimsel teori: Rüyalar tehlikeli durumları güvenle prova etmemizi sağlar.',
       dreamManifestation:
           'Kovalanma, savaş, kaçış rüyaları. Tehdit senaryoları.',
-      practicalUse:
-          'Kâbuslar "antrenman" olabilir. Bilinçaltı hazırlık.',
+      practicalUse: 'Kâbuslar "antrenman" olabilir. Bilinçaltı hazırlık.',
     ),
   ];
 
@@ -720,10 +717,7 @@ class IndividuationProcess {
   final String description;
   final List<IndividuationStage> stages;
 
-  const IndividuationProcess({
-    required this.description,
-    required this.stages,
-  });
+  const IndividuationProcess({required this.description, required this.stages});
 }
 
 class IndividuationStage {

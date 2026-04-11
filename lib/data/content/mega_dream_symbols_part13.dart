@@ -10,7 +10,6 @@ class MegaDreamSymbolsPart13 {
     // ════════════════════════════════════════════════════════════════════════
     // EV EŞYALARI - 30+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'table',
       symbolTr: 'Masa',
@@ -314,7 +313,6 @@ class MegaDreamSymbolsPart13 {
     // ════════════════════════════════════════════════════════════════════════
     // ARAÇLAR VE ALETLER - 30+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'hammer',
       symbolTr: 'Çekiç',
@@ -693,7 +691,6 @@ class MegaDreamSymbolsPart13 {
     // ════════════════════════════════════════════════════════════════════════
     // DEĞERLI EŞYALAR - 25+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'diamond',
       symbolTr: 'Elmas',
@@ -947,7 +944,6 @@ class MegaDreamSymbolsPart13 {
     // ════════════════════════════════════════════════════════════════════════
     // GÜNLÜK NESNELER - 25+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'bag',
       symbolTr: 'Çanta',

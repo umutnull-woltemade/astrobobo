@@ -10,7 +10,6 @@ class MegaDreamSymbolsPart9 {
     // ════════════════════════════════════════════════════════════════════════
     // BEDEN PARCALARI - 25+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'face',
       symbolTr: 'Yuz',
@@ -289,7 +288,6 @@ class MegaDreamSymbolsPart9 {
     // ════════════════════════════════════════════════════════════════════════
     // SAGLIK DURUMLARI - 20+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'illness',
       symbolTr: 'Hastalik',
@@ -493,7 +491,6 @@ class MegaDreamSymbolsPart9 {
     // ════════════════════════════════════════════════════════════════════════
     // DUYGUSAL DURUMLAR - 25+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'anxiety',
       symbolTr: 'Kaygi',

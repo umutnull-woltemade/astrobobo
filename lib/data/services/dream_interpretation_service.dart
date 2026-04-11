@@ -42,8 +42,12 @@ class DreamInterpretationService {
         moonPhase: currentMoonPhase,
         moonSign: aiResponse['moonSign'],
         relevantTransit: aiResponse['relevantTransit'],
-        timingMessage: aiResponse['timingMessage'] ?? _getMoonPhaseMessage(currentMoonPhase),
-        whyNow: aiResponse['whyNow'] ?? 'Bu rüya tam da şu an geldi çünkü evren sana bir mesaj gönderiyor.',
+        timingMessage:
+            aiResponse['timingMessage'] ??
+            _getMoonPhaseMessage(currentMoonPhase),
+        whyNow:
+            aiResponse['whyNow'] ??
+            'Bu rüya tam da şu an geldi çünkü evren sana bir mesaj gönderiyor.',
         isRetrograde: aiResponse['isRetrograde'] ?? false,
       ),
       lightShadow: aiResponse['lightShadow'] != null
@@ -75,8 +79,9 @@ class DreamInterpretationService {
     String? userId,
   }) {
     // Sembolleri tespit et
-    final detectedSymbols =
-        DreamSymbolsDatabase.detectSymbolsInText(input.dreamDescription);
+    final detectedSymbols = DreamSymbolsDatabase.detectSymbolsInText(
+      input.dreamDescription,
+    );
 
     // Dominant duyguyı belirle
     final dominantEmotion = input.dominantEmotion ?? EmotionalTone.merak;
@@ -87,7 +92,8 @@ class DreamInterpretationService {
         symbol: symbolData.symbolTr,
         symbolEmoji: symbolData.emoji,
         universalMeaning: symbolData.universalMeanings.first,
-        personalContext: symbolData.emotionVariants[dominantEmotion] ??
+        personalContext:
+            symbolData.emotionVariants[dominantEmotion] ??
             symbolData.universalMeanings.first,
         shadowAspect: symbolData.shadowAspect,
         lightAspect: symbolData.lightAspect,
@@ -96,11 +102,16 @@ class DreamInterpretationService {
     }).toList();
 
     // Arketip bağlantısı
-    final archetype = _detectDominantArchetype(detectedSymbols, dominantEmotion);
+    final archetype = _detectDominantArchetype(
+      detectedSymbols,
+      dominantEmotion,
+    );
     final archetypeData = ArchetypeDatabase.findArchetype(archetype);
 
     // Zaman katmanı
-    final timeLayer = input.isRecurring ? TimeLayer.dongusel : _inferTimeLayer(input);
+    final timeLayer = input.isRecurring
+        ? TimeLayer.dongusel
+        : _inferTimeLayer(input);
 
     // Rol
     final role = input.perceivedRole ?? _inferRole(input.dreamDescription);
@@ -124,7 +135,8 @@ class DreamInterpretationService {
         currentMoonPhase,
       ),
       symbols: symbolInterpretations,
-      archetypeConnection: archetypeData?.description ??
+      archetypeConnection:
+          archetypeData?.description ??
           'Bilinçaltının derinliklerinden bir figür beliriyor.',
       archetypeName: archetypeData?.nameTr ?? archetype,
       emotionalReading: EmotionalReading(
@@ -164,13 +176,18 @@ class DreamInterpretationService {
           ? RecurringDreamAnalyzer.detectPattern(input.dreamDescription)?.title
           : null,
       nightmareType: _detectNightmare(input.dreamDescription),
-      lucidPotential: _calculateLucidPotential(dominantEmotion, currentMoonPhase),
+      lucidPotential: _calculateLucidPotential(
+        dominantEmotion,
+        currentMoonPhase,
+      ),
     );
   }
 
   /// Kâbus tipi tespit et
   String? _detectNightmare(String dreamText) {
-    final nightmare = NightmareTransformationService.detectNightmareType(dreamText);
+    final nightmare = NightmareTransformationService.detectNightmareType(
+      dreamText,
+    );
     return nightmare?.title;
   }
 
@@ -213,8 +230,9 @@ class DreamInterpretationService {
 
   /// AI için detaylı prompt oluştur
   String generateAIPrompt(DreamInput input, MoonPhase moonPhase) {
-    final detectedSymbols =
-        DreamSymbolsDatabase.detectSymbolsInText(input.dreamDescription);
+    final detectedSymbols = DreamSymbolsDatabase.detectSymbolsInText(
+      input.dreamDescription,
+    );
 
     return '''
 SEN: Kadim rüya bilgeliğinin modern yorumcusu. Jung, Campbell ve Sufizm'in derinliğini taşıyan bir oraküllsün. Rüyaları 7 boyutta analiz eder, şiirsel ama derin içgörüler sunarsın.
@@ -334,7 +352,11 @@ JSON FORMATI:
   // YARDIMCI FONKSİYONLAR
   // ═══════════════════════════════════════════════════════════════
 
-  String _generateKadimGiris({MoonPhase? moonPhase, SymbolCategory? symbolCategory, EmotionalTone? emotion}) {
+  String _generateKadimGiris({
+    MoonPhase? moonPhase,
+    SymbolCategory? symbolCategory,
+    EmotionalTone? emotion,
+  }) {
     // KadimGirisTemplates.rastgeleSecim kullan
     return KadimGirisTemplates.rastgeleSecim(
       ayFazi: moonPhase,
@@ -515,16 +537,13 @@ JSON FORMATI:
     final messages = {
       EmotionalTone.korku:
           'Yüzeyde bir alarm çalıyor - dikkatini çeken bir tehdit var.',
-      EmotionalTone.huzur:
-          'İç dünyanda bir denge hissediyorsun - bu değerli.',
+      EmotionalTone.huzur: 'İç dünyanda bir denge hissediyorsun - bu değerli.',
       EmotionalTone.merak:
           'Keşfetme dürtüsü aktif - sorular cevaplardan daha önemli.',
       EmotionalTone.sucluluk:
           'Bir şey yanlış hissettiriyor - ama gerçekten öyle mi?',
-      EmotionalTone.ozlem:
-          'Kalbinde bir boşluk var - doldurulması gereken.',
-      EmotionalTone.heyecan:
-          'Enerji yükseliyor - yeni bir şey kapıda.',
+      EmotionalTone.ozlem: 'Kalbinde bir boşluk var - doldurulması gereken.',
+      EmotionalTone.heyecan: 'Enerji yükseliyor - yeni bir şey kapıda.',
       EmotionalTone.donukluk:
           'Duygular geçici olarak susturulmuş - koruma mekanizması.',
       EmotionalTone.ofke: 'Sınırlar zorlanmış - güç geri alınmak istiyor.',
@@ -548,7 +567,8 @@ JSON FORMATI:
           'Heyecan, yaşam enerjisinin doruğudur. Bu enerjiyi nereye yönlendireceksin?',
       EmotionalTone.donukluk:
           'Donukluk, çok fazla hissetmekten korumadır. Neyi hissetmekten kaçınıyorsun?',
-      EmotionalTone.ofke: 'Öfke, bastırılmış gücün sesidir. Gücünü nerede geri istiyorsun?',
+      EmotionalTone.ofke:
+          'Öfke, bastırılmış gücün sesidir. Gücünü nerede geri istiyorsun?',
     };
     return messages[tone]!;
   }
@@ -559,7 +579,8 @@ JSON FORMATI:
       EmotionalTone.huzur: 'Bu huzuru sabote eden düşünce hangisi?',
       EmotionalTone.merak: 'Cevabını bulmaktan korktuğun soru ne?',
       EmotionalTone.sucluluk: 'Kendini affetsen ne değişirdi?',
-      EmotionalTone.ozlem: 'Özlediğin şey geri gelse, onu kabul edebilir misin?',
+      EmotionalTone.ozlem:
+          'Özlediğin şey geri gelse, onu kabul edebilir misin?',
       EmotionalTone.heyecan: 'Bu heyecan sönse ne kalır?',
       EmotionalTone.donukluk: 'Hissetseydin ne hissederdin?',
       EmotionalTone.ofke: 'Öfkenin altında hangi acı var?',
@@ -579,8 +600,7 @@ JSON FORMATI:
           'Suçluluğu incele: gerçek mi, öğrenilmiş mi? Kendine mektup yaz.',
       EmotionalTone.ozlem:
           'Özlemi onurlandır ama şimdide kal. Kaybı kabul, geleceğe kapı açar.',
-      EmotionalTone.heyecan:
-          'Heyecanı eyleme dönüştür. Bugün bir adım at.',
+      EmotionalTone.heyecan: 'Heyecanı eyleme dönüştür. Bugün bir adım at.',
       EmotionalTone.donukluk:
           'Bedenine dön. Hareket et, nefes al, yavaş yavaş hisset.',
       EmotionalTone.ofke:
@@ -617,7 +637,8 @@ JSON FORMATI:
       'Düzenbaz': 'Oyunculuğunu yıkıcı değil yaratıcı kullan.',
       'Çocuk': 'İç çocuğunla bağlantını koru, merakını besle.',
     };
-    return paths[archetype] ?? 'Bu arketipi tanı ve günlük hayatına entegre et.';
+    return paths[archetype] ??
+        'Bu arketipi tanı ve günlük hayatına entegre et.';
   }
 
   // Pratik rehberlik
@@ -650,7 +671,8 @@ JSON FORMATI:
 
   String _generateAvoidance(EmotionalTone emotion) {
     final avoidances = {
-      EmotionalTone.korku: 'Bu hafta korkudan kaçmak için yapılan impulsif kararlardan kaçın.',
+      EmotionalTone.korku:
+          'Bu hafta korkudan kaçmak için yapılan impulsif kararlardan kaçın.',
       EmotionalTone.huzur: 'Huzuru bozmak isteyenlerden nazikçe mesafe koy.',
       EmotionalTone.merak: 'Cevapsız sorulara tahammülsüzlükten kaçın.',
       EmotionalTone.sucluluk: 'Kendini aşırı yargılamaktan kaçın.',
@@ -708,23 +730,27 @@ JSON FORMATI:
 
     // Sembollere göre özel linkler ekle
     if (symbols.contains('water') || symbols.contains('ocean')) {
-      links.add(const DreamExplorationLink(
-        title: 'Neptün Transiti',
-        description: 'Su sembolleri Neptün enerjisiyle bağlantılı',
-        route: '/transits',
-        emoji: '🌊',
-        category: 'Astroloji',
-      ));
+      links.add(
+        const DreamExplorationLink(
+          title: 'Neptün Transiti',
+          description: 'Su sembolleri Neptün enerjisiyle bağlantılı',
+          route: '/transits',
+          emoji: '🌊',
+          category: 'Astroloji',
+        ),
+      );
     }
 
     if (symbols.contains('death') || symbols.contains('transformation')) {
-      links.add(const DreamExplorationLink(
-        title: 'Plüton Analizi',
-        description: 'Dönüşüm sembolleri Plüton ile resonansa girer',
-        route: '/transits',
-        emoji: '♇',
-        category: 'Astroloji',
-      ));
+      links.add(
+        const DreamExplorationLink(
+          title: 'Plüton Analizi',
+          description: 'Dönüşüm sembolleri Plüton ile resonansa girer',
+          route: '/transits',
+          emoji: '♇',
+          category: 'Astroloji',
+        ),
+      );
     }
 
     return links.take(4).toList();
@@ -734,9 +760,7 @@ JSON FORMATI:
   DreamRole? _parseRole(String? role) {
     if (role == null) return null;
     try {
-      return DreamRole.values.firstWhere(
-        (r) => r.name == role,
-      );
+      return DreamRole.values.firstWhere((r) => r.name == role);
     } catch (_) {
       return null;
     }
@@ -745,9 +769,7 @@ JSON FORMATI:
   TimeLayer? _parseTimeLayer(String? layer) {
     if (layer == null) return null;
     try {
-      return TimeLayer.values.firstWhere(
-        (t) => t.name == layer,
-      );
+      return TimeLayer.values.firstWhere((t) => t.name == layer);
     } catch (_) {
       return null;
     }
@@ -995,7 +1017,11 @@ class DreamRitualService {
 
   /// İhtiyaca göre ritüel öner
   static DreamRitual? suggestRitual(String need) {
-    final allRituals = [...preSleepRituals, ...morningRituals, ...weeklyRituals];
+    final allRituals = [
+      ...preSleepRituals,
+      ...morningRituals,
+      ...weeklyRituals,
+    ];
     final normalizedNeed = need.toLowerCase();
 
     for (final ritual in allRituals) {

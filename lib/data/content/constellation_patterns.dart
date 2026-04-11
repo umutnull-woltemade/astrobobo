@@ -13,7 +13,13 @@ class ConstellationPatterns {
     ZodiacSign.aries: ConstellationPattern(
       sign: ZodiacSign.aries,
       stars: const [
-        ConstellationStar(x: 0.20, y: 0.30, magnitude: 2.0, name: 'Hamal', isBrightest: true),
+        ConstellationStar(
+          x: 0.20,
+          y: 0.30,
+          magnitude: 2.0,
+          name: 'Hamal',
+          isBrightest: true,
+        ),
         ConstellationStar(x: 0.40, y: 0.40, magnitude: 2.6, name: 'Sheratan'),
         ConstellationStar(x: 0.60, y: 0.55, magnitude: 4.0, name: 'Mesarthim'),
         ConstellationStar(x: 0.80, y: 0.70, magnitude: 4.5, name: '41 Arietis'),
@@ -32,7 +38,13 @@ class ConstellationPatterns {
     ZodiacSign.taurus: ConstellationPattern(
       sign: ZodiacSign.taurus,
       stars: const [
-        ConstellationStar(x: 0.15, y: 0.45, magnitude: 0.9, name: 'Aldebaran', isBrightest: true),
+        ConstellationStar(
+          x: 0.15,
+          y: 0.45,
+          magnitude: 0.9,
+          name: 'Aldebaran',
+          isBrightest: true,
+        ),
         ConstellationStar(x: 0.30, y: 0.50, magnitude: 3.5, name: 'Ain'),
         ConstellationStar(x: 0.40, y: 0.55, magnitude: 3.0, name: 'Hyadum I'),
         ConstellationStar(x: 0.50, y: 0.45, magnitude: 3.4, name: 'Hyadum II'),
@@ -57,7 +69,13 @@ class ConstellationPatterns {
     ZodiacSign.gemini: ConstellationPattern(
       sign: ZodiacSign.gemini,
       stars: const [
-        ConstellationStar(x: 0.25, y: 0.15, magnitude: 1.2, name: 'Pollux', isBrightest: true),
+        ConstellationStar(
+          x: 0.25,
+          y: 0.15,
+          magnitude: 1.2,
+          name: 'Pollux',
+          isBrightest: true,
+        ),
         ConstellationStar(x: 0.45, y: 0.15, magnitude: 1.6, name: 'Castor'),
         ConstellationStar(x: 0.30, y: 0.45, magnitude: 3.0, name: 'Wasat'),
         ConstellationStar(x: 0.50, y: 0.45, magnitude: 2.9, name: 'Mebsuta'),
@@ -80,11 +98,32 @@ class ConstellationPatterns {
     ZodiacSign.cancer: ConstellationPattern(
       sign: ZodiacSign.cancer,
       stars: const [
-        ConstellationStar(x: 0.50, y: 0.25, magnitude: 3.5, name: 'Al Tarf', isBrightest: true),
-        ConstellationStar(x: 0.35, y: 0.45, magnitude: 4.0, name: 'Asellus Australis'),
-        ConstellationStar(x: 0.60, y: 0.50, magnitude: 4.7, name: 'Asellus Borealis'),
+        ConstellationStar(
+          x: 0.50,
+          y: 0.25,
+          magnitude: 3.5,
+          name: 'Al Tarf',
+          isBrightest: true,
+        ),
+        ConstellationStar(
+          x: 0.35,
+          y: 0.45,
+          magnitude: 4.0,
+          name: 'Asellus Australis',
+        ),
+        ConstellationStar(
+          x: 0.60,
+          y: 0.50,
+          magnitude: 4.7,
+          name: 'Asellus Borealis',
+        ),
         ConstellationStar(x: 0.20, y: 0.75, magnitude: 4.0, name: 'Acubens'),
-        ConstellationStar(x: 0.75, y: 0.70, magnitude: 5.0, name: 'Iota Cancri'),
+        ConstellationStar(
+          x: 0.75,
+          y: 0.70,
+          magnitude: 5.0,
+          name: 'Iota Cancri',
+        ),
       ],
       connections: const [
         StarConnection(0, 1),
@@ -101,11 +140,22 @@ class ConstellationPatterns {
     ZodiacSign.leo: ConstellationPattern(
       sign: ZodiacSign.leo,
       stars: const [
-        ConstellationStar(x: 0.20, y: 0.40, magnitude: 1.4, name: 'Regulus', isBrightest: true),
+        ConstellationStar(
+          x: 0.20,
+          y: 0.40,
+          magnitude: 1.4,
+          name: 'Regulus',
+          isBrightest: true,
+        ),
         ConstellationStar(x: 0.30, y: 0.25, magnitude: 2.1, name: 'Algieba'),
         ConstellationStar(x: 0.15, y: 0.55, magnitude: 2.6, name: 'Adhafera'),
         ConstellationStar(x: 0.25, y: 0.65, magnitude: 3.4, name: 'Rasalas'),
-        ConstellationStar(x: 0.40, y: 0.15, magnitude: 3.5, name: 'Epsilon Leonis'),
+        ConstellationStar(
+          x: 0.40,
+          y: 0.15,
+          magnitude: 3.5,
+          name: 'Epsilon Leonis',
+        ),
         ConstellationStar(x: 0.55, y: 0.30, magnitude: 2.2, name: 'Zosma'),
         ConstellationStar(x: 0.70, y: 0.40, magnitude: 2.6, name: 'Chertan'),
         ConstellationStar(x: 0.85, y: 0.55, magnitude: 2.0, name: 'Denebola'),
@@ -130,15 +180,51 @@ class ConstellationPatterns {
     ZodiacSign.virgo: ConstellationPattern(
       sign: ZodiacSign.virgo,
       stars: const [
-        ConstellationStar(x: 0.50, y: 0.85, magnitude: 1.0, name: 'Spica', isBrightest: true),
+        ConstellationStar(
+          x: 0.50,
+          y: 0.85,
+          magnitude: 1.0,
+          name: 'Spica',
+          isBrightest: true,
+        ),
         ConstellationStar(x: 0.45, y: 0.60, magnitude: 2.7, name: 'Porrima'),
         ConstellationStar(x: 0.55, y: 0.45, magnitude: 3.4, name: 'Auva'),
-        ConstellationStar(x: 0.40, y: 0.35, magnitude: 2.8, name: 'Vindemiatrix'),
-        ConstellationStar(x: 0.30, y: 0.25, magnitude: 3.9, name: 'Eta Virginis'),
-        ConstellationStar(x: 0.65, y: 0.30, magnitude: 3.6, name: 'Zeta Virginis'),
-        ConstellationStar(x: 0.75, y: 0.20, magnitude: 3.9, name: 'Tau Virginis'),
-        ConstellationStar(x: 0.60, y: 0.15, magnitude: 4.2, name: 'Omicron Virginis'),
-        ConstellationStar(x: 0.20, y: 0.15, magnitude: 4.5, name: 'Beta Virginis'),
+        ConstellationStar(
+          x: 0.40,
+          y: 0.35,
+          magnitude: 2.8,
+          name: 'Vindemiatrix',
+        ),
+        ConstellationStar(
+          x: 0.30,
+          y: 0.25,
+          magnitude: 3.9,
+          name: 'Eta Virginis',
+        ),
+        ConstellationStar(
+          x: 0.65,
+          y: 0.30,
+          magnitude: 3.6,
+          name: 'Zeta Virginis',
+        ),
+        ConstellationStar(
+          x: 0.75,
+          y: 0.20,
+          magnitude: 3.9,
+          name: 'Tau Virginis',
+        ),
+        ConstellationStar(
+          x: 0.60,
+          y: 0.15,
+          magnitude: 4.2,
+          name: 'Omicron Virginis',
+        ),
+        ConstellationStar(
+          x: 0.20,
+          y: 0.15,
+          magnitude: 4.5,
+          name: 'Beta Virginis',
+        ),
       ],
       connections: const [
         StarConnection(0, 1),
@@ -159,12 +245,38 @@ class ConstellationPatterns {
     ZodiacSign.libra: ConstellationPattern(
       sign: ZodiacSign.libra,
       stars: const [
-        ConstellationStar(x: 0.50, y: 0.25, magnitude: 2.6, name: 'Zubeneschamali', isBrightest: true),
-        ConstellationStar(x: 0.30, y: 0.45, magnitude: 2.7, name: 'Zubenelgenubi'),
+        ConstellationStar(
+          x: 0.50,
+          y: 0.25,
+          magnitude: 2.6,
+          name: 'Zubeneschamali',
+          isBrightest: true,
+        ),
+        ConstellationStar(
+          x: 0.30,
+          y: 0.45,
+          magnitude: 2.7,
+          name: 'Zubenelgenubi',
+        ),
         ConstellationStar(x: 0.70, y: 0.45, magnitude: 3.9, name: 'Brachium'),
-        ConstellationStar(x: 0.20, y: 0.70, magnitude: 4.5, name: 'Gamma Librae'),
-        ConstellationStar(x: 0.50, y: 0.55, magnitude: 4.5, name: 'Upsilon Librae'),
-        ConstellationStar(x: 0.80, y: 0.70, magnitude: 4.0, name: 'Theta Librae'),
+        ConstellationStar(
+          x: 0.20,
+          y: 0.70,
+          magnitude: 4.5,
+          name: 'Gamma Librae',
+        ),
+        ConstellationStar(
+          x: 0.50,
+          y: 0.55,
+          magnitude: 4.5,
+          name: 'Upsilon Librae',
+        ),
+        ConstellationStar(
+          x: 0.80,
+          y: 0.70,
+          magnitude: 4.0,
+          name: 'Theta Librae',
+        ),
       ],
       connections: const [
         StarConnection(0, 1),
@@ -183,14 +295,25 @@ class ConstellationPatterns {
     ZodiacSign.scorpio: ConstellationPattern(
       sign: ZodiacSign.scorpio,
       stars: const [
-        ConstellationStar(x: 0.30, y: 0.30, magnitude: 1.0, name: 'Antares', isBrightest: true),
+        ConstellationStar(
+          x: 0.30,
+          y: 0.30,
+          magnitude: 1.0,
+          name: 'Antares',
+          isBrightest: true,
+        ),
         ConstellationStar(x: 0.20, y: 0.20, magnitude: 2.6, name: 'Dschubba'),
         ConstellationStar(x: 0.25, y: 0.10, magnitude: 2.3, name: 'Acrab'),
         ConstellationStar(x: 0.15, y: 0.15, magnitude: 2.9, name: 'Pi Scorpii'),
         ConstellationStar(x: 0.40, y: 0.40, magnitude: 2.8, name: 'Alniyat'),
         ConstellationStar(x: 0.50, y: 0.50, magnitude: 2.4, name: 'Larawag'),
         ConstellationStar(x: 0.55, y: 0.65, magnitude: 2.3, name: 'Sargas'),
-        ConstellationStar(x: 0.65, y: 0.75, magnitude: 3.0, name: 'Iota Scorpii'),
+        ConstellationStar(
+          x: 0.65,
+          y: 0.75,
+          magnitude: 3.0,
+          name: 'Iota Scorpii',
+        ),
         ConstellationStar(x: 0.75, y: 0.80, magnitude: 2.4, name: 'Girtab'),
         ConstellationStar(x: 0.85, y: 0.70, magnitude: 1.6, name: 'Shaula'),
       ],
@@ -214,14 +337,35 @@ class ConstellationPatterns {
     ZodiacSign.sagittarius: ConstellationPattern(
       sign: ZodiacSign.sagittarius,
       stars: const [
-        ConstellationStar(x: 0.50, y: 0.50, magnitude: 1.8, name: 'Kaus Australis', isBrightest: true),
+        ConstellationStar(
+          x: 0.50,
+          y: 0.50,
+          magnitude: 1.8,
+          name: 'Kaus Australis',
+          isBrightest: true,
+        ),
         ConstellationStar(x: 0.40, y: 0.35, magnitude: 2.0, name: 'Nunki'),
         ConstellationStar(x: 0.55, y: 0.35, magnitude: 2.7, name: 'Ascella'),
         ConstellationStar(x: 0.65, y: 0.50, magnitude: 2.8, name: 'Kaus Media'),
-        ConstellationStar(x: 0.75, y: 0.65, magnitude: 2.6, name: 'Kaus Borealis'),
-        ConstellationStar(x: 0.35, y: 0.55, magnitude: 3.0, name: 'Phi Sagittarii'),
+        ConstellationStar(
+          x: 0.75,
+          y: 0.65,
+          magnitude: 2.6,
+          name: 'Kaus Borealis',
+        ),
+        ConstellationStar(
+          x: 0.35,
+          y: 0.55,
+          magnitude: 3.0,
+          name: 'Phi Sagittarii',
+        ),
         ConstellationStar(x: 0.25, y: 0.70, magnitude: 3.2, name: 'Alnasl'),
-        ConstellationStar(x: 0.45, y: 0.65, magnitude: 2.9, name: 'Tau Sagittarii'),
+        ConstellationStar(
+          x: 0.45,
+          y: 0.65,
+          magnitude: 2.9,
+          name: 'Tau Sagittarii',
+        ),
       ],
       connections: const [
         StarConnection(0, 1),
@@ -242,13 +386,34 @@ class ConstellationPatterns {
     ZodiacSign.capricorn: ConstellationPattern(
       sign: ZodiacSign.capricorn,
       stars: const [
-        ConstellationStar(x: 0.15, y: 0.45, magnitude: 2.9, name: 'Deneb Algedi', isBrightest: true),
+        ConstellationStar(
+          x: 0.15,
+          y: 0.45,
+          magnitude: 2.9,
+          name: 'Deneb Algedi',
+          isBrightest: true,
+        ),
         ConstellationStar(x: 0.25, y: 0.30, magnitude: 3.6, name: 'Nashira'),
         ConstellationStar(x: 0.40, y: 0.20, magnitude: 3.0, name: 'Dabih'),
         ConstellationStar(x: 0.55, y: 0.30, magnitude: 3.7, name: 'Algedi'),
-        ConstellationStar(x: 0.70, y: 0.45, magnitude: 4.1, name: 'Zeta Capricorni'),
-        ConstellationStar(x: 0.80, y: 0.60, magnitude: 4.5, name: 'Omega Capricorni'),
-        ConstellationStar(x: 0.60, y: 0.70, magnitude: 4.0, name: 'Psi Capricorni'),
+        ConstellationStar(
+          x: 0.70,
+          y: 0.45,
+          magnitude: 4.1,
+          name: 'Zeta Capricorni',
+        ),
+        ConstellationStar(
+          x: 0.80,
+          y: 0.60,
+          magnitude: 4.5,
+          name: 'Omega Capricorni',
+        ),
+        ConstellationStar(
+          x: 0.60,
+          y: 0.70,
+          magnitude: 4.0,
+          name: 'Psi Capricorni',
+        ),
       ],
       connections: const [
         StarConnection(0, 1),
@@ -268,13 +433,29 @@ class ConstellationPatterns {
     ZodiacSign.aquarius: ConstellationPattern(
       sign: ZodiacSign.aquarius,
       stars: const [
-        ConstellationStar(x: 0.40, y: 0.20, magnitude: 2.9, name: 'Sadalsuud', isBrightest: true),
+        ConstellationStar(
+          x: 0.40,
+          y: 0.20,
+          magnitude: 2.9,
+          name: 'Sadalsuud',
+          isBrightest: true,
+        ),
         ConstellationStar(x: 0.55, y: 0.15, magnitude: 2.9, name: 'Sadalmelik'),
         ConstellationStar(x: 0.50, y: 0.40, magnitude: 3.8, name: 'Sadachbia'),
         ConstellationStar(x: 0.35, y: 0.50, magnitude: 3.3, name: 'Skat'),
         ConstellationStar(x: 0.25, y: 0.65, magnitude: 3.8, name: 'Albali'),
-        ConstellationStar(x: 0.60, y: 0.60, magnitude: 4.2, name: 'Eta Aquarii'),
-        ConstellationStar(x: 0.75, y: 0.75, magnitude: 3.8, name: 'Lambda Aquarii'),
+        ConstellationStar(
+          x: 0.60,
+          y: 0.60,
+          magnitude: 4.2,
+          name: 'Eta Aquarii',
+        ),
+        ConstellationStar(
+          x: 0.75,
+          y: 0.75,
+          magnitude: 3.8,
+          name: 'Lambda Aquarii',
+        ),
       ],
       connections: const [
         StarConnection(0, 1),
@@ -293,13 +474,49 @@ class ConstellationPatterns {
     ZodiacSign.pisces: ConstellationPattern(
       sign: ZodiacSign.pisces,
       stars: const [
-        ConstellationStar(x: 0.25, y: 0.35, magnitude: 3.6, name: 'Alrescha', isBrightest: true),
-        ConstellationStar(x: 0.15, y: 0.50, magnitude: 4.5, name: 'Omega Piscium'),
-        ConstellationStar(x: 0.20, y: 0.65, magnitude: 4.3, name: 'Iota Piscium'),
-        ConstellationStar(x: 0.30, y: 0.20, magnitude: 4.4, name: 'Omicron Piscium'),
-        ConstellationStar(x: 0.50, y: 0.30, magnitude: 4.0, name: 'Eta Piscium'),
-        ConstellationStar(x: 0.70, y: 0.40, magnitude: 4.5, name: 'Gamma Piscium'),
-        ConstellationStar(x: 0.85, y: 0.55, magnitude: 4.3, name: 'Kullat Nunu'),
+        ConstellationStar(
+          x: 0.25,
+          y: 0.35,
+          magnitude: 3.6,
+          name: 'Alrescha',
+          isBrightest: true,
+        ),
+        ConstellationStar(
+          x: 0.15,
+          y: 0.50,
+          magnitude: 4.5,
+          name: 'Omega Piscium',
+        ),
+        ConstellationStar(
+          x: 0.20,
+          y: 0.65,
+          magnitude: 4.3,
+          name: 'Iota Piscium',
+        ),
+        ConstellationStar(
+          x: 0.30,
+          y: 0.20,
+          magnitude: 4.4,
+          name: 'Omicron Piscium',
+        ),
+        ConstellationStar(
+          x: 0.50,
+          y: 0.30,
+          magnitude: 4.0,
+          name: 'Eta Piscium',
+        ),
+        ConstellationStar(
+          x: 0.70,
+          y: 0.40,
+          magnitude: 4.5,
+          name: 'Gamma Piscium',
+        ),
+        ConstellationStar(
+          x: 0.85,
+          y: 0.55,
+          magnitude: 4.3,
+          name: 'Kullat Nunu',
+        ),
       ],
       connections: const [
         StarConnection(0, 1),

@@ -5,9 +5,13 @@ import '../models/extended_horoscope.dart';
 class ExtendedHoroscopeService {
   // ============ WEEKLY HOROSCOPE ============
 
-  static WeeklyHoroscope generateWeeklyHoroscope(ZodiacSign sign, DateTime weekStart) {
+  static WeeklyHoroscope generateWeeklyHoroscope(
+    ZodiacSign sign,
+    DateTime weekStart,
+  ) {
     final weekEnd = weekStart.add(const Duration(days: 6));
-    final seed = weekStart.year * 10000 + _getWeekOfYear(weekStart) * 100 + sign.index;
+    final seed =
+        weekStart.year * 10000 + _getWeekOfYear(weekStart) * 100 + sign.index;
     final seededRandom = Random(seed);
 
     final overviews = _getWeeklyOverviews(sign);
@@ -16,7 +20,15 @@ class ExtendedHoroscopeService {
     final healths = _getWeeklyHealthContent(sign);
     final financials = _getWeeklyFinancialContent(sign);
     final affirmations = _getWeeklyAffirmations(sign);
-    final days = ['Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi', 'Pazar'];
+    final days = [
+      'Pazartesi',
+      'Salı',
+      'Çarşamba',
+      'Perşembe',
+      'Cuma',
+      'Cumartesi',
+      'Pazar',
+    ];
 
     return WeeklyHoroscope(
       sign: sign,
@@ -29,7 +41,8 @@ class ExtendedHoroscopeService {
       financialWeek: financials[seededRandom.nextInt(financials.length)],
       overallRating: seededRandom.nextInt(5) + 1,
       luckyDay: days[seededRandom.nextInt(days.length)],
-      weeklyAffirmation: affirmations[seededRandom.nextInt(affirmations.length)],
+      weeklyAffirmation:
+          affirmations[seededRandom.nextInt(affirmations.length)],
       keyDates: _generateKeyDates(weekStart, seededRandom),
     );
   }
@@ -40,7 +53,10 @@ class ExtendedHoroscopeService {
     return (daysDiff / 7).ceil() + 1;
   }
 
-  static List<String> _generateKeyDates(DateTime weekStart, Random seededRandom) {
+  static List<String> _generateKeyDates(
+    DateTime weekStart,
+    Random seededRandom,
+  ) {
     final keyDates = <String>[];
     final numDates = seededRandom.nextInt(3) + 1;
     final events = [
@@ -62,7 +78,11 @@ class ExtendedHoroscopeService {
 
   // ============ MONTHLY HOROSCOPE ============
 
-  static MonthlyHoroscope generateMonthlyHoroscope(ZodiacSign sign, int month, int year) {
+  static MonthlyHoroscope generateMonthlyHoroscope(
+    ZodiacSign sign,
+    int month,
+    int year,
+  ) {
     final seed = year * 10000 + month * 100 + sign.index;
     final seededRandom = Random(seed);
 
@@ -132,7 +152,8 @@ class ExtendedHoroscopeService {
       romanceRating: seededRandom.nextInt(5) + 1,
       communicationRating: seededRandom.nextInt(5) + 1,
       bestMatch: compatibleSigns[seededRandom.nextInt(compatibleSigns.length)],
-      challengingMatch: challengingSigns[seededRandom.nextInt(challengingSigns.length)],
+      challengingMatch:
+          challengingSigns[seededRandom.nextInt(challengingSigns.length)],
       venusInfluence: venus[seededRandom.nextInt(venus.length)],
       intimacyAdvice: intimacy[seededRandom.nextInt(intimacy.length)],
     );
@@ -161,8 +182,20 @@ class ExtendedHoroscopeService {
 
     final luckyMonths = <String>[];
     final challengingMonths = <String>[];
-    final months = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran',
-                    'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
+    final months = [
+      'Ocak',
+      'Şubat',
+      'Mart',
+      'Nisan',
+      'Mayıs',
+      'Haziran',
+      'Temmuz',
+      'Ağustos',
+      'Eylül',
+      'Ekim',
+      'Kasım',
+      'Aralık',
+    ];
 
     for (int i = 0; i < 3; i++) {
       luckyMonths.add(months[seededRandom.nextInt(12)]);
@@ -185,7 +218,8 @@ class ExtendedHoroscopeService {
       majorTransits: transits,
       luckyMonths: luckyMonths,
       challengingMonths: challengingMonths,
-      yearlyAffirmation: affirmations[seededRandom.nextInt(affirmations.length)],
+      yearlyAffirmation:
+          affirmations[seededRandom.nextInt(affirmations.length)],
       keyTheme: themes[seededRandom.nextInt(themes.length)],
     );
   }
@@ -204,9 +238,16 @@ class ExtendedHoroscopeService {
           zodiacSign: ZodiacSign.libra,
           title: 'Terazi Burcunda Yarıgölge Ay Tutulması',
           description: 'Bu tutulma ilişkilerinizde denge arayışını tetikliyor.',
-          spiritualMeaning: 'İlişkilerdeki dengesizlikleri fark etme ve düzeltme zamanı. Terazi enerjisi, adalet ve harmoni arayışını güçlendiriyor.',
-          practicalAdvice: 'Partnerlilkte karşılıklı ihtiyaçları gözden geçirin. Taviz vermek ile sınır koymak arasındaki dengeyi bulun.',
-          mostAffectedSigns: [ZodiacSign.libra, ZodiacSign.aries, ZodiacSign.cancer, ZodiacSign.capricorn],
+          spiritualMeaning:
+              'İlişkilerdeki dengesizlikleri fark etme ve düzeltme zamanı. Terazi enerjisi, adalet ve harmoni arayışını güçlendiriyor.',
+          practicalAdvice:
+              'Partnerlilkte karşılıklı ihtiyaçları gözden geçirin. Taviz vermek ile sınır koymak arasındaki dengeyi bulun.',
+          mostAffectedSigns: [
+            ZodiacSign.libra,
+            ZodiacSign.aries,
+            ZodiacSign.cancer,
+            ZodiacSign.capricorn,
+          ],
           isVisible: true,
           peakTime: '10:13 UTC',
           magnitude: 0.96,
@@ -216,10 +257,18 @@ class ExtendedHoroscopeService {
           type: EclipseType.solarTotal,
           zodiacSign: ZodiacSign.aries,
           title: 'Koç Burcunda Tam Güneş Tutulması',
-          description: 'Güçlü bir yeni başlangıç enerjisi. Cesaretle ileri atılma zamanı.',
-          spiritualMeaning: 'Kimlik dönüşümü ve yeniden doğuş. Eski benliği bırakıp, yeni bir sayfa açma fırsatı.',
-          practicalAdvice: 'Büyük kararlar almak için ideal. Yeni projelere başlayın, cesur adımlar atın.',
-          mostAffectedSigns: [ZodiacSign.aries, ZodiacSign.libra, ZodiacSign.cancer, ZodiacSign.capricorn],
+          description:
+              'Güçlü bir yeni başlangıç enerjisi. Cesaretle ileri atılma zamanı.',
+          spiritualMeaning:
+              'Kimlik dönüşümü ve yeniden doğuş. Eski benliği bırakıp, yeni bir sayfa açma fırsatı.',
+          practicalAdvice:
+              'Büyük kararlar almak için ideal. Yeni projelere başlayın, cesur adımlar atın.',
+          mostAffectedSigns: [
+            ZodiacSign.aries,
+            ZodiacSign.libra,
+            ZodiacSign.cancer,
+            ZodiacSign.capricorn,
+          ],
           isVisible: false,
           peakTime: '18:17 UTC',
           magnitude: 1.0,
@@ -230,9 +279,16 @@ class ExtendedHoroscopeService {
           zodiacSign: ZodiacSign.pisces,
           title: 'Balık Burcunda Kısmi Ay Tutulması',
           description: 'Duygusal derinlik ve ruhsal uyanış.',
-          spiritualMeaning: 'İç sesin güçlendiği bir dönem. Sezgilerinize güvenin, rüyalarınıza dikkat edin.',
-          practicalAdvice: 'Meditasyon ve içe dönüş pratikleri için ideal. Duygusal bagajlarınızı bırakın.',
-          mostAffectedSigns: [ZodiacSign.pisces, ZodiacSign.virgo, ZodiacSign.gemini, ZodiacSign.sagittarius],
+          spiritualMeaning:
+              'İç sesin güçlendiği bir dönem. Sezgilerinize güvenin, rüyalarınıza dikkat edin.',
+          practicalAdvice:
+              'Meditasyon ve içe dönüş pratikleri için ideal. Duygusal bagajlarınızı bırakın.',
+          mostAffectedSigns: [
+            ZodiacSign.pisces,
+            ZodiacSign.virgo,
+            ZodiacSign.gemini,
+            ZodiacSign.sagittarius,
+          ],
           isVisible: true,
           peakTime: '02:44 UTC',
           magnitude: 0.08,
@@ -243,9 +299,16 @@ class ExtendedHoroscopeService {
           zodiacSign: ZodiacSign.libra,
           title: 'Terazi Burcunda Halkalı Güneş Tutulması',
           description: 'İlişki dinamiklerinde köklü değişiklikler.',
-          spiritualMeaning: 'Ortaklıklar ve bağlantılar konusunda yeni bir vizyon. Karşılıklılık ilkesini yeniden tanımlama.',
-          practicalAdvice: 'Sözleşmeler, anlaşmalar ve resmi birliktelikler için dikkatli olun. Yeni ortaklıklar kurulabilir.',
-          mostAffectedSigns: [ZodiacSign.libra, ZodiacSign.aries, ZodiacSign.cancer, ZodiacSign.capricorn],
+          spiritualMeaning:
+              'Ortaklıklar ve bağlantılar konusunda yeni bir vizyon. Karşılıklılık ilkesini yeniden tanımlama.',
+          practicalAdvice:
+              'Sözleşmeler, anlaşmalar ve resmi birliktelikler için dikkatli olun. Yeni ortaklıklar kurulabilir.',
+          mostAffectedSigns: [
+            ZodiacSign.libra,
+            ZodiacSign.aries,
+            ZodiacSign.cancer,
+            ZodiacSign.capricorn,
+          ],
           isVisible: false,
           peakTime: '18:45 UTC',
           magnitude: 0.93,
@@ -259,9 +322,16 @@ class ExtendedHoroscopeService {
           zodiacSign: ZodiacSign.virgo,
           title: 'Başak Burcunda Tam Ay Tutulması',
           description: 'Detaylara dikkat ve mükemmeliyetçilikle yüzleşme.',
-          spiritualMeaning: 'Kendini eleştirme kalıplarını bırakma. Kusurlarınızı kabullenme ve şefkat geliştirme.',
-          practicalAdvice: 'Sağlık rutinlerinizi gözden geçirin. İş süreçlerini iyileştirin ama takıntılı olmayın.',
-          mostAffectedSigns: [ZodiacSign.virgo, ZodiacSign.pisces, ZodiacSign.gemini, ZodiacSign.sagittarius],
+          spiritualMeaning:
+              'Kendini eleştirme kalıplarını bırakma. Kusurlarınızı kabullenme ve şefkat geliştirme.',
+          practicalAdvice:
+              'Sağlık rutinlerinizi gözden geçirin. İş süreçlerini iyileştirin ama takıntılı olmayın.',
+          mostAffectedSigns: [
+            ZodiacSign.virgo,
+            ZodiacSign.pisces,
+            ZodiacSign.gemini,
+            ZodiacSign.sagittarius,
+          ],
           isVisible: true,
           peakTime: '06:58 UTC',
           magnitude: 1.0,
@@ -272,9 +342,16 @@ class ExtendedHoroscopeService {
           zodiacSign: ZodiacSign.aries,
           title: 'Koç Burcunda Kısmi Güneş Tutulması',
           description: 'Yeni başlangıçlar için enerji patlaması.',
-          spiritualMeaning: 'Öncü ruhunuzu kucaklayın. Liderlik potansiyelinizi aktive edin.',
-          practicalAdvice: 'Girişimcilik ve yeni projeler için ideal. Korku yerine cesareti seçin.',
-          mostAffectedSigns: [ZodiacSign.aries, ZodiacSign.libra, ZodiacSign.cancer, ZodiacSign.capricorn],
+          spiritualMeaning:
+              'Öncü ruhunuzu kucaklayın. Liderlik potansiyelinizi aktive edin.',
+          practicalAdvice:
+              'Girişimcilik ve yeni projeler için ideal. Korku yerine cesareti seçin.',
+          mostAffectedSigns: [
+            ZodiacSign.aries,
+            ZodiacSign.libra,
+            ZodiacSign.cancer,
+            ZodiacSign.capricorn,
+          ],
           isVisible: false,
           peakTime: '10:50 UTC',
           magnitude: 0.94,
@@ -285,9 +362,16 @@ class ExtendedHoroscopeService {
           zodiacSign: ZodiacSign.pisces,
           title: 'Balık Burcunda Tam Ay Tutulması',
           description: 'Derin duygusal arınma ve ruhsal yükseliş.',
-          spiritualMeaning: 'Kolektif bilinçle bağlantı. Şifa ve sezgisel yeteneklerin güçlenmesi.',
-          practicalAdvice: 'Sanatsal ve yaratıcı çalışmalar için bereketli. Bağımlılıklarla yüzleşme zamanı.',
-          mostAffectedSigns: [ZodiacSign.pisces, ZodiacSign.virgo, ZodiacSign.gemini, ZodiacSign.sagittarius],
+          spiritualMeaning:
+              'Kolektif bilinçle bağlantı. Şifa ve sezgisel yeteneklerin güçlenmesi.',
+          practicalAdvice:
+              'Sanatsal ve yaratıcı çalışmalar için bereketli. Bağımlılıklarla yüzleşme zamanı.',
+          mostAffectedSigns: [
+            ZodiacSign.pisces,
+            ZodiacSign.virgo,
+            ZodiacSign.gemini,
+            ZodiacSign.sagittarius,
+          ],
           isVisible: true,
           peakTime: '18:11 UTC',
           magnitude: 1.0,
@@ -298,9 +382,16 @@ class ExtendedHoroscopeService {
           zodiacSign: ZodiacSign.virgo,
           title: 'Başak Burcunda Kısmi Güneş Tutulması',
           description: 'Pratik düzenlemeler ve sağlık odağı.',
-          spiritualMeaning: 'Hizmet ve alçakgönüllülük temalı bir döngü. Günlük ritüellerin kutsallığını keşfetme.',
-          practicalAdvice: 'Sağlık check-up\'ları planlayın. İş yerinde verimlilik artışı için adımlar atın.',
-          mostAffectedSigns: [ZodiacSign.virgo, ZodiacSign.pisces, ZodiacSign.gemini, ZodiacSign.sagittarius],
+          spiritualMeaning:
+              'Hizmet ve alçakgönüllülük temalı bir döngü. Günlük ritüellerin kutsallığını keşfetme.',
+          practicalAdvice:
+              'Sağlık check-up\'ları planlayın. İş yerinde verimlilik artışı için adımlar atın.',
+          mostAffectedSigns: [
+            ZodiacSign.virgo,
+            ZodiacSign.pisces,
+            ZodiacSign.gemini,
+            ZodiacSign.sagittarius,
+          ],
           isVisible: false,
           peakTime: '19:42 UTC',
           magnitude: 0.86,
@@ -314,9 +405,16 @@ class ExtendedHoroscopeService {
           zodiacSign: ZodiacSign.aquarius,
           title: 'Kova Burcunda Halkalı Güneş Tutulması',
           description: 'İnsanlık ve topluluk bilinci öne çıkıyor.',
-          spiritualMeaning: 'Kolektif amaçlarla bireysel hedeflerin uyumu. Gelecek vizyonu netleşiyor.',
-          practicalAdvice: 'Sosyal projeler ve grup çalışmaları için ideal. Teknoloji ve inovasyon alanında fırsatlar.',
-          mostAffectedSigns: [ZodiacSign.aquarius, ZodiacSign.leo, ZodiacSign.taurus, ZodiacSign.scorpio],
+          spiritualMeaning:
+              'Kolektif amaçlarla bireysel hedeflerin uyumu. Gelecek vizyonu netleşiyor.',
+          practicalAdvice:
+              'Sosyal projeler ve grup çalışmaları için ideal. Teknoloji ve inovasyon alanında fırsatlar.',
+          mostAffectedSigns: [
+            ZodiacSign.aquarius,
+            ZodiacSign.leo,
+            ZodiacSign.taurus,
+            ZodiacSign.scorpio,
+          ],
           isVisible: false,
           peakTime: '12:02 UTC',
           magnitude: 0.96,
@@ -327,9 +425,16 @@ class ExtendedHoroscopeService {
           zodiacSign: ZodiacSign.virgo,
           title: 'Başak Burcunda Tam Ay Tutulması',
           description: 'Mükemmeliyetçilik ve hizmet temalarının doruk noktası.',
-          spiritualMeaning: 'Eleştirici zihni şefkatle dengeleme. İyileştirme ve arınma süreçleri.',
-          practicalAdvice: 'Sağlık konularına öncelik verin. Organizasyon ve planlama zamanı.',
-          mostAffectedSigns: [ZodiacSign.virgo, ZodiacSign.pisces, ZodiacSign.gemini, ZodiacSign.sagittarius],
+          spiritualMeaning:
+              'Eleştirici zihni şefkatle dengeleme. İyileştirme ve arınma süreçleri.',
+          practicalAdvice:
+              'Sağlık konularına öncelik verin. Organizasyon ve planlama zamanı.',
+          mostAffectedSigns: [
+            ZodiacSign.virgo,
+            ZodiacSign.pisces,
+            ZodiacSign.gemini,
+            ZodiacSign.sagittarius,
+          ],
           isVisible: true,
           peakTime: '11:33 UTC',
           magnitude: 1.0,
@@ -340,9 +445,16 @@ class ExtendedHoroscopeService {
           zodiacSign: ZodiacSign.leo,
           title: 'Aslan Burcunda Tam Güneş Tutulması',
           description: 'Yaratıcılık ve kendini ifade patlaması.',
-          spiritualMeaning: 'İç güneşinizi parlatın. Otantik benliğinizi cesaretle ortaya koyun.',
-          practicalAdvice: 'Sanat, eğlence ve yaratıcı projeler için mükemmel. Çocuklarla ilgili konular öne çıkabilir.',
-          mostAffectedSigns: [ZodiacSign.leo, ZodiacSign.aquarius, ZodiacSign.taurus, ZodiacSign.scorpio],
+          spiritualMeaning:
+              'İç güneşinizi parlatın. Otantik benliğinizi cesaretle ortaya koyun.',
+          practicalAdvice:
+              'Sanat, eğlence ve yaratıcı projeler için mükemmel. Çocuklarla ilgili konular öne çıkabilir.',
+          mostAffectedSigns: [
+            ZodiacSign.leo,
+            ZodiacSign.aquarius,
+            ZodiacSign.taurus,
+            ZodiacSign.scorpio,
+          ],
           isVisible: true,
           peakTime: '17:46 UTC',
           magnitude: 1.0,
@@ -353,9 +465,16 @@ class ExtendedHoroscopeService {
           zodiacSign: ZodiacSign.pisces,
           title: 'Balık Burcunda Kısmi Ay Tutulması',
           description: 'Duygusal ve ruhsal boyutlarda son düzenlemeler.',
-          spiritualMeaning: 'Mistik deneyimler ve sezgisel açılımlar. Geçmişle barışma.',
-          practicalAdvice: 'Meditatif pratikler ve ruhsal çalışmalar için ideal. Bağımlılık konularına dikkat.',
-          mostAffectedSigns: [ZodiacSign.pisces, ZodiacSign.virgo, ZodiacSign.gemini, ZodiacSign.sagittarius],
+          spiritualMeaning:
+              'Mistik deneyimler ve sezgisel açılımlar. Geçmişle barışma.',
+          practicalAdvice:
+              'Meditatif pratikler ve ruhsal çalışmalar için ideal. Bağımlılık konularına dikkat.',
+          mostAffectedSigns: [
+            ZodiacSign.pisces,
+            ZodiacSign.virgo,
+            ZodiacSign.gemini,
+            ZodiacSign.sagittarius,
+          ],
           isVisible: true,
           peakTime: '04:13 UTC',
           magnitude: 0.93,
@@ -588,17 +707,41 @@ class ExtendedHoroscopeService {
     // Same element + complementary elements
     switch (sign.element) {
       case Element.fire:
-        return [ZodiacSign.aries, ZodiacSign.leo, ZodiacSign.sagittarius,
-                ZodiacSign.gemini, ZodiacSign.libra, ZodiacSign.aquarius];
+        return [
+          ZodiacSign.aries,
+          ZodiacSign.leo,
+          ZodiacSign.sagittarius,
+          ZodiacSign.gemini,
+          ZodiacSign.libra,
+          ZodiacSign.aquarius,
+        ];
       case Element.earth:
-        return [ZodiacSign.taurus, ZodiacSign.virgo, ZodiacSign.capricorn,
-                ZodiacSign.cancer, ZodiacSign.scorpio, ZodiacSign.pisces];
+        return [
+          ZodiacSign.taurus,
+          ZodiacSign.virgo,
+          ZodiacSign.capricorn,
+          ZodiacSign.cancer,
+          ZodiacSign.scorpio,
+          ZodiacSign.pisces,
+        ];
       case Element.air:
-        return [ZodiacSign.gemini, ZodiacSign.libra, ZodiacSign.aquarius,
-                ZodiacSign.aries, ZodiacSign.leo, ZodiacSign.sagittarius];
+        return [
+          ZodiacSign.gemini,
+          ZodiacSign.libra,
+          ZodiacSign.aquarius,
+          ZodiacSign.aries,
+          ZodiacSign.leo,
+          ZodiacSign.sagittarius,
+        ];
       case Element.water:
-        return [ZodiacSign.cancer, ZodiacSign.scorpio, ZodiacSign.pisces,
-                ZodiacSign.taurus, ZodiacSign.virgo, ZodiacSign.capricorn];
+        return [
+          ZodiacSign.cancer,
+          ZodiacSign.scorpio,
+          ZodiacSign.pisces,
+          ZodiacSign.taurus,
+          ZodiacSign.virgo,
+          ZodiacSign.capricorn,
+        ];
     }
   }
 

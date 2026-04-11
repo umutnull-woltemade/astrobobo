@@ -10,7 +10,6 @@ class MegaDreamSymbolsPart3 {
     // ════════════════════════════════════════════════════════════════════════
     // HAREKET & SEYAHAT - 50+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'flying',
       symbolTr: 'Ucmak',
@@ -314,7 +313,6 @@ class MegaDreamSymbolsPart3 {
     // ════════════════════════════════════════════════════════════════════════
     // ILETISIM & SOSYAL EYLEMLER - 30+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'speaking',
       symbolTr: 'Konusmak',
@@ -468,7 +466,6 @@ class MegaDreamSymbolsPart3 {
     // ════════════════════════════════════════════════════════════════════════
     // FIZIKSEL DURUMLAR - 30+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'naked',
       symbolTr: 'Ciplak Olmak',
@@ -672,7 +669,6 @@ class MegaDreamSymbolsPart3 {
     // ════════════════════════════════════════════════════════════════════════
     // MESLEKI & GUNLUK EYLEMLER - 30+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'working',
       symbolTr: 'Calismak',
@@ -876,7 +872,6 @@ class MegaDreamSymbolsPart3 {
     // ════════════════════════════════════════════════════════════════════════
     // DINI & SPIRITÜEL EYLEMLER - 20+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'praying',
       symbolTr: 'Dua Etmek',
@@ -980,7 +975,6 @@ class MegaDreamSymbolsPart3 {
     // ════════════════════════════════════════════════════════════════════════
     // OYUN & EGLENCE EYLEMLERI - 15+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'playing',
       symbolTr: 'Oynamak',
@@ -1059,7 +1053,6 @@ class MegaDreamSymbolsPart3 {
     // ════════════════════════════════════════════════════════════════════════
     // SIDDET & CATISMA EYLEMLERI - 15+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'killing',
       symbolTr: 'Oldurme',
@@ -1138,7 +1131,6 @@ class MegaDreamSymbolsPart3 {
     // ════════════════════════════════════════════════════════════════════════
     // TRANSFORMATIF EYLEMLER - 15+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'transforming',
       symbolTr: 'Dönüşmek',

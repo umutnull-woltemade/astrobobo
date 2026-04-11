@@ -42,9 +42,7 @@ class PaywallService {
         'offering_id': offering?.identifier ?? 'default',
       });
 
-      final result = await RevenueCatUI.presentPaywall(
-        offering: offering,
-      );
+      final result = await RevenueCatUI.presentPaywall(offering: offering);
 
       _handlePaywallResult(result);
       return result;
@@ -77,7 +75,8 @@ class PaywallService {
       return PaywallResult.error;
     }
 
-    final entitlementId = requiredEntitlementIdentifier ?? AppConstants.entitlementId;
+    final entitlementId =
+        requiredEntitlementIdentifier ?? AppConstants.entitlementId;
 
     try {
       _analytics.logEvent('paywall_if_needed_triggered', {
@@ -193,7 +192,9 @@ class PaywallService {
       case PaywallResult.notPresented:
         _analytics.logEvent('paywall_not_presented', {});
         if (kDebugMode) {
-          debugPrint('PaywallService: Paywall not presented (user has entitlement)');
+          debugPrint(
+            'PaywallService: Paywall not presented (user has entitlement)',
+          );
         }
         break;
     }

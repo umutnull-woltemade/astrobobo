@@ -66,8 +66,20 @@ class _ChartWheelPainter extends CustomPainter {
 
     // Draw layers from outer to inner
     _drawOuterRing(canvas, center, outerRingRadius);
-    _drawZodiacRing(canvas, center, zodiacOuterRadius, zodiacInnerRadius, ascDegree);
-    _drawHouseDivisions(canvas, center, zodiacInnerRadius, aspectCircleRadius, ascDegree);
+    _drawZodiacRing(
+      canvas,
+      center,
+      zodiacOuterRadius,
+      zodiacInnerRadius,
+      ascDegree,
+    );
+    _drawHouseDivisions(
+      canvas,
+      center,
+      zodiacInnerRadius,
+      aspectCircleRadius,
+      ascDegree,
+    );
     _drawInnerCircle(canvas, center, aspectCircleRadius);
 
     if (showAspects) {
@@ -86,8 +98,13 @@ class _ChartWheelPainter extends CustomPainter {
     canvas.drawCircle(center, radius, paint);
   }
 
-  void _drawZodiacRing(Canvas canvas, Offset center, double outerRadius,
-      double innerRadius, double ascDegree) {
+  void _drawZodiacRing(
+    Canvas canvas,
+    Offset center,
+    double outerRadius,
+    double innerRadius,
+    double ascDegree,
+  ) {
     final zodiacSigns = ZodiacSign.values;
 
     for (int i = 0; i < 12; i++) {
@@ -153,13 +170,21 @@ class _ChartWheelPainter extends CustomPainter {
 
       textPainter.paint(
         canvas,
-        Offset(symbolX - textPainter.width / 2, symbolY - textPainter.height / 2),
+        Offset(
+          symbolX - textPainter.width / 2,
+          symbolY - textPainter.height / 2,
+        ),
       );
     }
   }
 
-  void _drawHouseDivisions(Canvas canvas, Offset center, double outerRadius,
-      double innerRadius, double ascDegree) {
+  void _drawHouseDivisions(
+    Canvas canvas,
+    Offset center,
+    double outerRadius,
+    double innerRadius,
+    double ascDegree,
+  ) {
     if (!showHouses || chart.houses.isEmpty) return;
 
     final housePaint = Paint()
@@ -201,7 +226,8 @@ class _ChartWheelPainter extends CustomPainter {
       // Draw house number
       final numberRadius = innerRadius + (outerRadius - innerRadius) * 0.3;
       final nextHouse = chart.houses[(i + 1) % 12];
-      final midCusp = (houseCusp.longitude + nextHouse.longitude) / 2 +
+      final midCusp =
+          (houseCusp.longitude + nextHouse.longitude) / 2 +
           (nextHouse.longitude < houseCusp.longitude ? 180 : 0);
       final numberAngle = _degreeToRadians(midCusp - ascDegree + 180);
 
@@ -211,17 +237,17 @@ class _ChartWheelPainter extends CustomPainter {
       final textPainter = TextPainter(
         text: TextSpan(
           text: houseCusp.house.number.toString(),
-          style: TextStyle(
-            color: AppColors.textMuted,
-            fontSize: 10,
-          ),
+          style: TextStyle(color: AppColors.textMuted, fontSize: 10),
         ),
         textDirection: TextDirection.ltr,
       )..layout();
 
       textPainter.paint(
         canvas,
-        Offset(numberX - textPainter.width / 2, numberY - textPainter.height / 2),
+        Offset(
+          numberX - textPainter.width / 2,
+          numberY - textPainter.height / 2,
+        ),
       );
     }
   }
@@ -241,7 +267,12 @@ class _ChartWheelPainter extends CustomPainter {
     canvas.drawCircle(center, radius, borderPaint);
   }
 
-  void _drawAspectLines(Canvas canvas, Offset center, double radius, double ascDegree) {
+  void _drawAspectLines(
+    Canvas canvas,
+    Offset center,
+    double radius,
+    double ascDegree,
+  ) {
     // Only draw major aspects
     final aspects = chart.majorAspects;
 
@@ -296,14 +327,22 @@ class _ChartWheelPainter extends CustomPainter {
     }
   }
 
-  void _drawPlanets(Canvas canvas, Offset center, double radius, double ascDegree) {
+  void _drawPlanets(
+    Canvas canvas,
+    Offset center,
+    double radius,
+    double ascDegree,
+  ) {
     // Filter to main planets only (exclude angles and some points for clarity)
-    final planetsToShow = chart.planets.where((p) =>
-      p.planet != Planet.ascendant &&
-      p.planet != Planet.midheaven &&
-      p.planet != Planet.ic &&
-      p.planet != Planet.descendant
-    ).toList();
+    final planetsToShow = chart.planets
+        .where(
+          (p) =>
+              p.planet != Planet.ascendant &&
+              p.planet != Planet.midheaven &&
+              p.planet != Planet.ic &&
+              p.planet != Planet.descendant,
+        )
+        .toList();
 
     // Group planets that are close together to prevent overlap
     final planetGroups = _groupClosePlanets(planetsToShow, 8);
@@ -317,7 +356,10 @@ class _ChartWheelPainter extends CustomPainter {
     }
   }
 
-  List<List<PlanetPosition>> _groupClosePlanets(List<PlanetPosition> planets, double threshold) {
+  List<List<PlanetPosition>> _groupClosePlanets(
+    List<PlanetPosition> planets,
+    double threshold,
+  ) {
     if (planets.isEmpty) return [];
 
     // Sort by longitude
@@ -341,8 +383,13 @@ class _ChartWheelPainter extends CustomPainter {
     return groups;
   }
 
-  void _drawSinglePlanet(Canvas canvas, Offset center, double radius,
-      PlanetPosition planet, double ascDegree) {
+  void _drawSinglePlanet(
+    Canvas canvas,
+    Offset center,
+    double radius,
+    PlanetPosition planet,
+    double ascDegree,
+  ) {
     final angle = _degreeToRadians(planet.longitude - ascDegree + 180);
     final x = center.dx + radius * math.cos(angle);
     final y = center.dy + radius * math.sin(angle);
@@ -394,10 +441,7 @@ class _ChartWheelPainter extends CustomPainter {
         textDirection: TextDirection.ltr,
       )..layout();
 
-      retroPainter.paint(
-        canvas,
-        Offset(x + 8, y - 12),
-      );
+      retroPainter.paint(canvas, Offset(x + 8, y - 12));
     }
 
     // Draw degree indicator line to zodiac ring
@@ -413,10 +457,16 @@ class _ChartWheelPainter extends CustomPainter {
     canvas.drawLine(Offset(x, y), Offset(lineEndX, lineEndY), linePaint);
   }
 
-  void _drawPlanetGroup(Canvas canvas, Offset center, double radius,
-      List<PlanetPosition> group, double ascDegree) {
+  void _drawPlanetGroup(
+    Canvas canvas,
+    Offset center,
+    double radius,
+    List<PlanetPosition> group,
+    double ascDegree,
+  ) {
     // Calculate average position for the group
-    final avgLongitude = group.map((p) => p.longitude).reduce((a, b) => a + b) / group.length;
+    final avgLongitude =
+        group.map((p) => p.longitude).reduce((a, b) => a + b) / group.length;
 
     // Spread planets around the average position
     final spreadAngle = 15.0; // degrees to spread
@@ -431,7 +481,13 @@ class _ChartWheelPainter extends CustomPainter {
         isRetrograde: planet.isRetrograde,
         house: planet.house,
       );
-      _drawSinglePlanet(canvas, center, radius * (0.95 + i * 0.08), adjustedPlanet, ascDegree);
+      _drawSinglePlanet(
+        canvas,
+        center,
+        radius * (0.95 + i * 0.08),
+        adjustedPlanet,
+        ascDegree,
+      );
     }
   }
 

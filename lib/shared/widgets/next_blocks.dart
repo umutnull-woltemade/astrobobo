@@ -45,7 +45,9 @@ class NextBlocks extends StatelessWidget {
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.w600,
-              color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
+              color: isDark
+                  ? AppColors.textPrimary
+                  : AppColors.lightTextPrimary,
             ),
           ),
         ),
@@ -55,10 +57,9 @@ class NextBlocks extends StatelessWidget {
         Wrap(
           spacing: 12,
           runSpacing: 12,
-          children: blocks.map((block) => _NextBlockCard(
-            block: block,
-            isDark: isDark,
-          )).toList(),
+          children: blocks
+              .map((block) => _NextBlockCard(block: block, isDark: isDark))
+              .toList(),
         ),
       ],
     );
@@ -1041,15 +1042,13 @@ class _NextBlockCard extends StatelessWidget {
   final _NextBlock block;
   final bool isDark;
 
-  const _NextBlockCard({
-    required this.block,
-    required this.isDark,
-  });
+  const _NextBlockCard({required this.block, required this.isDark});
 
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-    final cardWidth = (screenWidth - 32 - 12) / 2; // 2 columns with padding and gap
+    final cardWidth =
+        (screenWidth - 32 - 12) / 2; // 2 columns with padding and gap
 
     return SizedBox(
       width: cardWidth,
@@ -1063,11 +1062,9 @@ class _NextBlockCard extends StatelessWidget {
             decoration: BoxDecoration(
               color: block.isHighlighted
                   ? (isDark
-                      ? AppColors.starGold.withValues(alpha: 0.1)
-                      : AppColors.lightStarGold.withValues(alpha: 0.1))
-                  : (isDark
-                      ? AppColors.surfaceDark
-                      : AppColors.lightCard),
+                        ? AppColors.starGold.withValues(alpha: 0.1)
+                        : AppColors.lightStarGold.withValues(alpha: 0.1))
+                  : (isDark ? AppColors.surfaceDark : AppColors.lightCard),
               borderRadius: BorderRadius.circular(12),
               border: block.isHighlighted
                   ? Border.all(
@@ -1094,8 +1091,12 @@ class _NextBlockCard extends StatelessWidget {
                     block.icon,
                     size: 20,
                     color: block.isHighlighted
-                        ? (isDark ? AppColors.starGold : AppColors.lightStarGold)
-                        : (isDark ? AppColors.auroraStart : AppColors.lightAuroraStart),
+                        ? (isDark
+                              ? AppColors.starGold
+                              : AppColors.lightStarGold)
+                        : (isDark
+                              ? AppColors.auroraStart
+                              : AppColors.lightAuroraStart),
                   ),
                 ),
                 const SizedBox(width: 12),
@@ -1153,9 +1154,6 @@ class NextBlocksCompact extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return NextBlocks(
-      currentPage: currentPage,
-      title: 'Sonraki',
-    );
+    return NextBlocks(currentPage: currentPage, title: 'Sonraki');
   }
 }

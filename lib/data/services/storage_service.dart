@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../models/user_profile.dart';
 import '../providers/app_providers.dart';
 import 'package:flutter/material.dart';
@@ -22,21 +23,108 @@ class StorageService {
   static Box? _profileBox;
   static Box? _settingsBox;
 
+  // ═══════════════════════════════════════════════════════════════════════
+  // WEB persistence — uses shared_preferences (localStorage backend).
+  // Loaded into memory map at init() so existing sync API keeps working.
+  // ═══════════════════════════════════════════════════════════════════════
+  static SharedPreferences? _webPrefs;
+  static final Map<String, dynamic> _webCache = {};
+
   static bool get _isInitialized => _profileBox != null && _settingsBox != null;
+  static bool get _hasWebStorage => kIsWeb && _webPrefs != null;
 
   static void _warnIfNotInitialized(String method) {
-    if (!_isInitialized && kDebugMode) {
+    if (!_isInitialized && !_hasWebStorage && kDebugMode) {
       debugPrint('StorageService.$method called before initialize()');
     }
   }
 
-  /// Initialize Hive and open boxes (skipped on web to prevent white screen)
-  static Future<void> initialize() async {
-    // Skip Hive entirely on web - IndexedDB can hang and cause white screen
-    // Web will work in memory-only mode (no persistence between sessions)
+  /// Generic key-value getters that work on both Hive (mobile) and prefs (web)
+  static dynamic _get(String key, {dynamic defaultValue}) {
     if (kIsWeb) {
-      if (kDebugMode) {
-        debugPrint('StorageService: Skipping Hive on web (memory-only mode)');
+      return _webCache[key] ?? defaultValue;
+    }
+    return _settingsBox?.get(key, defaultValue: defaultValue);
+  }
+
+  static dynamic _getProfile(String key) {
+    if (kIsWeb) {
+      return _webCache[key];
+    }
+    return _profileBox?.get(key);
+  }
+
+  static Future<void> _put(String key, dynamic value) async {
+    if (kIsWeb) {
+      _webCache[key] = value;
+      final prefs = _webPrefs;
+      if (prefs == null) return;
+      if (value is String)
+        await prefs.setString(key, value);
+      else if (value is int)
+        await prefs.setInt(key, value);
+      else if (value is bool)
+        await prefs.setBool(key, value);
+      else if (value is double)
+        await prefs.setDouble(key, value);
+      else
+        await prefs.setString(key, jsonEncode(value));
+      return;
+    }
+    await _settingsBox?.put(key, value);
+  }
+
+  static Future<void> _putProfile(String key, dynamic value) async {
+    if (kIsWeb) {
+      _webCache[key] = value;
+      final prefs = _webPrefs;
+      if (prefs == null) return;
+      if (value is String)
+        await prefs.setString(key, value);
+      else
+        await prefs.setString(key, jsonEncode(value));
+      return;
+    }
+    await _profileBox?.put(key, value);
+  }
+
+  static Future<void> _delete(String key) async {
+    if (kIsWeb) {
+      _webCache.remove(key);
+      await _webPrefs?.remove(key);
+      return;
+    }
+    await _profileBox?.delete(key);
+    await _settingsBox?.delete(key);
+  }
+
+  /// Initialize Hive and open boxes (web uses shared_preferences instead)
+  static Future<void> initialize() async {
+    // ═══════════════════════════════════════════════════════════════════
+    // WEB: Use shared_preferences (localStorage) for persistence.
+    // Preload all keys into memory map so sync API still works.
+    // ═══════════════════════════════════════════════════════════════════
+    if (kIsWeb) {
+      try {
+        _webPrefs = await SharedPreferences.getInstance().timeout(
+          const Duration(seconds: 5),
+        );
+        // Preload all known keys into memory cache for sync access
+        final prefs = _webPrefs!;
+        for (final key in prefs.getKeys()) {
+          _webCache[key] = prefs.get(key);
+        }
+        if (kDebugMode) {
+          debugPrint(
+            'StorageService: Web prefs loaded (${_webCache.length} keys)',
+          );
+        }
+      } catch (e) {
+        if (kDebugMode) {
+          debugPrint(
+            'StorageService: Web prefs failed: $e (memory-only fallback)',
+          );
+        }
       }
       return;
     }
@@ -81,37 +169,53 @@ class StorageService {
   /// Save user profile to local storage
   static Future<void> saveUserProfile(UserProfile profile) async {
     _warnIfNotInitialized('saveUserProfile');
+    final json = jsonEncode(profile.toJson());
+
+    if (kIsWeb) {
+      await _putProfile(_profileKey, json);
+      return;
+    }
+
     final box = _profileBox;
     if (box == null) return;
-
-    final json = jsonEncode(profile.toJson());
     await box.put(_profileKey, json);
   }
 
   /// Load user profile from local storage
   static UserProfile? loadUserProfile() {
     _warnIfNotInitialized('loadUserProfile');
-    final box = _profileBox;
-    if (box == null) return null;
 
-    final json = box.get(_profileKey) as String?;
+    String? json;
+    if (kIsWeb) {
+      json = _getProfile(_profileKey) as String?;
+    } else {
+      final box = _profileBox;
+      if (box == null) return null;
+      json = box.get(_profileKey) as String?;
+    }
+
     if (json == null) return null;
 
     try {
       final data = jsonDecode(json) as Map<String, dynamic>;
       final profile = UserProfile.fromJson(data);
 
-      // Validate profile has required data (name must exist and not be empty)
       if (profile.name == null || profile.name!.isEmpty) {
-        // Clear invalid data
-        box.delete(_profileKey);
+        if (kIsWeb) {
+          _delete(_profileKey);
+        } else {
+          _profileBox?.delete(_profileKey);
+        }
         return null;
       }
 
       return profile;
     } catch (e) {
-      // Clear corrupted data
-      box.delete(_profileKey);
+      if (kIsWeb) {
+        _delete(_profileKey);
+      } else {
+        _profileBox?.delete(_profileKey);
+      }
       return null;
     }
   }
@@ -119,18 +223,17 @@ class StorageService {
   /// Delete user profile from local storage
   static Future<void> deleteUserProfile() async {
     _warnIfNotInitialized('deleteUserProfile');
-    final box = _profileBox;
-    if (box == null) return;
-
-    await box.delete(_profileKey);
+    if (kIsWeb) {
+      await _delete(_profileKey);
+      return;
+    }
+    await _profileBox?.delete(_profileKey);
   }
 
   // ========== MULTIPLE PROFILES ==========
 
   static Future<void> saveProfile(UserProfile profile) async {
     _warnIfNotInitialized('saveProfile');
-    final box = _profileBox;
-    if (box == null) return;
 
     final profiles = loadAllProfiles();
     final index = profiles.indexWhere((p) => p.id == profile.id);
@@ -142,7 +245,15 @@ class StorageService {
     }
 
     final jsonList = profiles.map((p) => p.toJson()).toList();
-    await box.put(_allProfilesKey, jsonEncode(jsonList));
+    final encoded = jsonEncode(jsonList);
+
+    if (kIsWeb) {
+      await _putProfile(_allProfilesKey, encoded);
+    } else {
+      final box = _profileBox;
+      if (box == null) return;
+      await box.put(_allProfilesKey, encoded);
+    }
 
     if (profile.isPrimary || profiles.length == 1) {
       await setPrimaryProfileId(profile.id);
@@ -151,10 +262,16 @@ class StorageService {
 
   static List<UserProfile> loadAllProfiles() {
     _warnIfNotInitialized('loadAllProfiles');
-    final box = _profileBox;
-    if (box == null) return [];
 
-    final json = box.get(_allProfilesKey) as String?;
+    String? json;
+    if (kIsWeb) {
+      json = _getProfile(_allProfilesKey) as String?;
+    } else {
+      final box = _profileBox;
+      if (box == null) return [];
+      json = box.get(_allProfilesKey) as String?;
+    }
+
     if (json == null) {
       final legacy = loadUserProfile();
       if (legacy != null) {
@@ -176,14 +293,20 @@ class StorageService {
 
   static Future<void> deleteProfile(String id) async {
     _warnIfNotInitialized('deleteProfile');
-    final box = _profileBox;
-    if (box == null) return;
 
     final profiles = loadAllProfiles();
     profiles.removeWhere((p) => p.id == id);
 
     final jsonList = profiles.map((p) => p.toJson()).toList();
-    await box.put(_allProfilesKey, jsonEncode(jsonList));
+    final encoded = jsonEncode(jsonList);
+
+    if (kIsWeb) {
+      await _putProfile(_allProfilesKey, encoded);
+    } else {
+      final box = _profileBox;
+      if (box == null) return;
+      await box.put(_allProfilesKey, encoded);
+    }
 
     final primaryId = getPrimaryProfileId();
     if (primaryId == id && profiles.isNotEmpty) {
@@ -193,16 +316,19 @@ class StorageService {
 
   static Future<void> setPrimaryProfileId(String id) async {
     _warnIfNotInitialized('setPrimaryProfileId');
-    final box = _profileBox;
-    if (box == null) return;
-    await box.put(_primaryProfileIdKey, id);
+    if (kIsWeb) {
+      await _putProfile(_primaryProfileIdKey, id);
+      return;
+    }
+    await _profileBox?.put(_primaryProfileIdKey, id);
   }
 
   static String? getPrimaryProfileId() {
     _warnIfNotInitialized('getPrimaryProfileId');
-    final box = _profileBox;
-    if (box == null) return null;
-    return box.get(_primaryProfileIdKey) as String?;
+    if (kIsWeb) {
+      return _getProfile(_primaryProfileIdKey) as String?;
+    }
+    return _profileBox?.get(_primaryProfileIdKey) as String?;
   }
 
   static UserProfile? getPrimaryProfile() {
@@ -227,27 +353,37 @@ class StorageService {
   /// Save onboarding completion status
   static Future<void> saveOnboardingComplete(bool complete) async {
     _warnIfNotInitialized('saveOnboardingComplete');
-    final box = _settingsBox;
-    if (box == null) return;
-
-    await box.put(_onboardingKey, complete);
+    if (kIsWeb) {
+      await _put(_onboardingKey, complete);
+      return;
+    }
+    await _settingsBox?.put(_onboardingKey, complete);
   }
 
   /// Load onboarding completion status
   /// Returns false if there's no valid user profile (to force onboarding)
   static bool loadOnboardingComplete() {
     _warnIfNotInitialized('loadOnboardingComplete');
-    final box = _settingsBox;
-    if (box == null) return false;
 
-    final isComplete = box.get(_onboardingKey, defaultValue: false) as bool;
+    bool isComplete;
+    if (kIsWeb) {
+      isComplete =
+          (_get(_onboardingKey, defaultValue: false) as bool?) ?? false;
+    } else {
+      final box = _settingsBox;
+      if (box == null) return false;
+      isComplete = box.get(_onboardingKey, defaultValue: false) as bool;
+    }
 
     // If onboarding is marked complete but there's no valid profile, reset it
     if (isComplete) {
       final profile = loadUserProfile();
       if (profile == null) {
-        // Reset onboarding flag since profile is invalid
-        box.put(_onboardingKey, false);
+        if (kIsWeb) {
+          _put(_onboardingKey, false);
+        } else {
+          _settingsBox?.put(_onboardingKey, false);
+        }
         return false;
       }
     }
@@ -260,18 +396,21 @@ class StorageService {
   /// Save disclaimer accepted status
   static Future<void> saveDisclaimerAccepted(bool accepted) async {
     _warnIfNotInitialized('saveDisclaimerAccepted');
-    final box = _settingsBox;
-    if (box == null) return;
-
-    await box.put(_disclaimerKey, accepted);
+    if (kIsWeb) {
+      await _put(_disclaimerKey, accepted);
+      return;
+    }
+    await _settingsBox?.put(_disclaimerKey, accepted);
   }
 
   /// Load disclaimer accepted status
   static bool loadDisclaimerAccepted() {
     _warnIfNotInitialized('loadDisclaimerAccepted');
+    if (kIsWeb) {
+      return (_get(_disclaimerKey, defaultValue: false) as bool?) ?? false;
+    }
     final box = _settingsBox;
     if (box == null) return false;
-
     return box.get(_disclaimerKey, defaultValue: false) as bool;
   }
 
@@ -280,19 +419,26 @@ class StorageService {
   /// Save selected language
   static Future<void> saveLanguage(AppLanguage language) async {
     _warnIfNotInitialized('saveLanguage');
-    final box = _settingsBox;
-    if (box == null) return;
-
-    await box.put(_languageKey, language.index);
+    if (kIsWeb) {
+      await _put(_languageKey, language.index);
+      return;
+    }
+    await _settingsBox?.put(_languageKey, language.index);
   }
 
   /// Load selected language
   static AppLanguage loadLanguage() {
     _warnIfNotInitialized('loadLanguage');
-    final box = _settingsBox;
-    if (box == null) return AppLanguage.tr;
-
-    final index = box.get(_languageKey, defaultValue: AppLanguage.tr.index) as int;
+    int index;
+    if (kIsWeb) {
+      index =
+          (_get(_languageKey, defaultValue: AppLanguage.tr.index) as int?) ??
+          AppLanguage.tr.index;
+    } else {
+      final box = _settingsBox;
+      if (box == null) return AppLanguage.tr;
+      index = box.get(_languageKey, defaultValue: AppLanguage.tr.index) as int;
+    }
     if (index >= 0 && index < AppLanguage.values.length) {
       return AppLanguage.values[index];
     }
@@ -304,19 +450,26 @@ class StorageService {
   /// Save theme mode
   static Future<void> saveThemeMode(ThemeMode mode) async {
     _warnIfNotInitialized('saveThemeMode');
-    final box = _settingsBox;
-    if (box == null) return;
-
-    await box.put(_themeModeKey, mode.index);
+    if (kIsWeb) {
+      await _put(_themeModeKey, mode.index);
+      return;
+    }
+    await _settingsBox?.put(_themeModeKey, mode.index);
   }
 
   /// Load theme mode (defaults to dark)
   static ThemeMode loadThemeMode() {
     _warnIfNotInitialized('loadThemeMode');
-    final box = _settingsBox;
-    if (box == null) return ThemeMode.dark;
-
-    final index = box.get(_themeModeKey, defaultValue: ThemeMode.dark.index) as int;
+    int index;
+    if (kIsWeb) {
+      index =
+          (_get(_themeModeKey, defaultValue: ThemeMode.dark.index) as int?) ??
+          ThemeMode.dark.index;
+    } else {
+      final box = _settingsBox;
+      if (box == null) return ThemeMode.dark;
+      index = box.get(_themeModeKey, defaultValue: ThemeMode.dark.index) as int;
+    }
     if (index >= 0 && index < ThemeMode.values.length) {
       return ThemeMode.values[index];
     }
@@ -330,26 +483,33 @@ class StorageService {
   /// Save selected house system
   static Future<void> saveHouseSystem(int index) async {
     _warnIfNotInitialized('saveHouseSystem');
-    final box = _settingsBox;
-    if (box == null) return;
-
-    await box.put(_houseSystemKey, index);
+    if (kIsWeb) {
+      await _put(_houseSystemKey, index);
+      return;
+    }
+    await _settingsBox?.put(_houseSystemKey, index);
   }
 
   /// Load selected house system index (defaults to 0 = Placidus)
   static int loadHouseSystemIndex() {
     _warnIfNotInitialized('loadHouseSystemIndex');
+    if (kIsWeb) {
+      return (_get(_houseSystemKey, defaultValue: 0) as int?) ?? 0;
+    }
     final box = _settingsBox;
     if (box == null) return 0;
-
-    final index = box.get(_houseSystemKey, defaultValue: 0) as int;
-    return index;
+    return box.get(_houseSystemKey, defaultValue: 0) as int;
   }
 
   // ========== CLEAR ALL DATA ==========
 
   /// Clear all stored data
   static Future<void> clearAllData() async {
+    if (kIsWeb) {
+      _webCache.clear();
+      await _webPrefs?.clear();
+      return;
+    }
     await _profileBox?.clear();
     await _settingsBox?.clear();
   }

@@ -13,10 +13,12 @@ class AstroCartographyScreen extends ConsumerStatefulWidget {
   const AstroCartographyScreen({super.key});
 
   @override
-  ConsumerState<AstroCartographyScreen> createState() => _AstroCartographyScreenState();
+  ConsumerState<AstroCartographyScreen> createState() =>
+      _AstroCartographyScreenState();
 }
 
-class _AstroCartographyScreenState extends ConsumerState<AstroCartographyScreen> {
+class _AstroCartographyScreenState
+    extends ConsumerState<AstroCartographyScreen> {
   final _service = PremiumAstrologyService();
 
   AstroCartographyData? _data;
@@ -65,16 +67,16 @@ class _AstroCartographyScreenState extends ConsumerState<AstroCartographyScreen>
                 const SizedBox(height: 16),
                 Text(
                   'Profil Bulunamadı',
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        color: Colors.white,
-                      ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.titleLarge?.copyWith(color: Colors.white),
                 ),
                 const SizedBox(height: 8),
                 Text(
                   'Astrokatografi haritanızı görmek için\nönce doğum bilgilerinizi girin',
-                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        color: Colors.white70,
-                      ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.bodyMedium?.copyWith(color: Colors.white70),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 24),
@@ -85,13 +87,19 @@ class _AstroCartographyScreenState extends ConsumerState<AstroCartographyScreen>
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF667EEA),
                     foregroundColor: Colors.white,
-                    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 24,
+                      vertical: 12,
+                    ),
                   ),
                 ),
                 const SizedBox(height: 12),
                 TextButton(
                   onPressed: () => context.pop(),
-                  child: const Text('Geri Dön', style: TextStyle(color: Colors.white70)),
+                  child: const Text(
+                    'Geri Dön',
+                    style: TextStyle(color: Colors.white70),
+                  ),
                 ),
               ],
             ),
@@ -128,12 +136,16 @@ class _AstroCartographyScreenState extends ConsumerState<AstroCartographyScreen>
                         const SizedBox(height: AppConstants.spacingXxl),
                       ] else ...[
                         const SizedBox(height: 100),
-                        const CircularProgressIndicator(color: AppColors.cosmic),
+                        const CircularProgressIndicator(
+                          color: AppColors.cosmic,
+                        ),
                         const SizedBox(height: 16),
                         Text(
                           'Harita olusturuluyor...',
                           style: TextStyle(
-                            color: isDark ? Colors.white70 : AppColors.textLight,
+                            color: isDark
+                                ? Colors.white70
+                                : AppColors.textLight,
                           ),
                         ),
                       ],
@@ -164,9 +176,9 @@ class _AstroCartographyScreenState extends ConsumerState<AstroCartographyScreen>
             child: Text(
               'AstroCartography',
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                    fontWeight: FontWeight.bold,
-                    color: isDark ? Colors.white : AppColors.textDark,
-                  ),
+                fontWeight: FontWeight.bold,
+                color: isDark ? Colors.white : AppColors.textDark,
+              ),
               textAlign: TextAlign.center,
             ),
           ),
@@ -187,9 +199,7 @@ class _AstroCartographyScreenState extends ConsumerState<AstroCartographyScreen>
           ],
         ),
         borderRadius: BorderRadius.circular(AppConstants.radiusLg),
-        border: Border.all(
-          color: AppColors.cosmic.withValues(alpha: 0.5),
-        ),
+        border: Border.all(color: AppColors.cosmic.withValues(alpha: 0.5)),
       ),
       child: Row(
         children: [
@@ -222,7 +232,8 @@ class _AstroCartographyScreenState extends ConsumerState<AstroCartographyScreen>
   }
 
   Widget _buildProfileCard(bool isDark, dynamic userProfile) {
-    final hasCoordinates = userProfile.birthLatitude != null && userProfile.birthLongitude != null;
+    final hasCoordinates =
+        userProfile.birthLatitude != null && userProfile.birthLongitude != null;
 
     return Container(
       padding: const EdgeInsets.all(AppConstants.spacingLg),
@@ -231,20 +242,14 @@ class _AstroCartographyScreenState extends ConsumerState<AstroCartographyScreen>
             ? Colors.white.withValues(alpha: 0.05)
             : Colors.white.withValues(alpha: 0.9),
         borderRadius: BorderRadius.circular(AppConstants.radiusLg),
-        border: Border.all(
-          color: AppColors.cosmic.withValues(alpha: 0.3),
-        ),
+        border: Border.all(color: AppColors.cosmic.withValues(alpha: 0.3)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [
-              Icon(
-                Icons.person,
-                color: AppColors.cosmic,
-                size: 20,
-              ),
+              Icon(Icons.person, color: AppColors.cosmic, size: 20),
               const SizedBox(width: 8),
               Text(
                 'Profil Bilgileri',
@@ -274,7 +279,9 @@ class _AstroCartographyScreenState extends ConsumerState<AstroCartographyScreen>
                       hasCoordinates ? 'Tam Veri' : 'Varsayilan Konum',
                       style: TextStyle(
                         fontSize: 11,
-                        color: hasCoordinates ? AppColors.cosmic : Colors.orange,
+                        color: hasCoordinates
+                            ? AppColors.cosmic
+                            : Colors.orange,
                       ),
                     ),
                   ],
@@ -283,9 +290,24 @@ class _AstroCartographyScreenState extends ConsumerState<AstroCartographyScreen>
             ],
           ),
           const SizedBox(height: AppConstants.spacingMd),
-          _buildInfoRow(isDark, Icons.person_outline, 'Isim', userProfile.name ?? 'Kullanici'),
-          _buildInfoRow(isDark, Icons.cake_outlined, 'Dogum Tarihi', _formatDate(userProfile.birthDate)),
-          _buildInfoRow(isDark, Icons.location_on_outlined, 'Dogum Yeri', userProfile.birthPlace ?? 'Belirtilmedi'),
+          _buildInfoRow(
+            isDark,
+            Icons.person_outline,
+            'Isim',
+            userProfile.name ?? 'Kullanici',
+          ),
+          _buildInfoRow(
+            isDark,
+            Icons.cake_outlined,
+            'Dogum Tarihi',
+            _formatDate(userProfile.birthDate),
+          ),
+          _buildInfoRow(
+            isDark,
+            Icons.location_on_outlined,
+            'Dogum Yeri',
+            userProfile.birthPlace ?? 'Belirtilmedi',
+          ),
           if (hasCoordinates)
             _buildInfoRow(
               isDark,
@@ -303,7 +325,11 @@ class _AstroCartographyScreenState extends ConsumerState<AstroCartographyScreen>
       padding: const EdgeInsets.symmetric(vertical: 4),
       child: Row(
         children: [
-          Icon(icon, size: 16, color: isDark ? Colors.white54 : AppColors.textLight),
+          Icon(
+            icon,
+            size: 16,
+            color: isDark ? Colors.white54 : AppColors.textLight,
+          ),
           const SizedBox(width: 8),
           Text(
             '$label: ',
@@ -330,8 +356,18 @@ class _AstroCartographyScreenState extends ConsumerState<AstroCartographyScreen>
 
   String _formatDate(DateTime date) {
     const months = [
-      'Ocak', 'Subat', 'Mart', 'Nisan', 'Mayis', 'Haziran',
-      'Temmuz', 'Agustos', 'Eylul', 'Ekim', 'Kasim', 'Aralik'
+      'Ocak',
+      'Subat',
+      'Mart',
+      'Nisan',
+      'Mayis',
+      'Haziran',
+      'Temmuz',
+      'Agustos',
+      'Eylul',
+      'Ekim',
+      'Kasim',
+      'Aralik',
     ];
     return '${date.day} ${months[date.month - 1]} ${date.year}';
   }
@@ -382,9 +418,7 @@ class _AstroCartographyScreenState extends ConsumerState<AstroCartographyScreen>
           ],
         ),
         borderRadius: BorderRadius.circular(AppConstants.radiusLg),
-        border: Border.all(
-          color: AppColors.cosmic.withValues(alpha: 0.5),
-        ),
+        border: Border.all(color: AppColors.cosmic.withValues(alpha: 0.5)),
       ),
       child: Stack(
         children: [
@@ -392,11 +426,7 @@ class _AstroCartographyScreenState extends ConsumerState<AstroCartographyScreen>
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Icon(
-                  Icons.public,
-                  size: 64,
-                  color: Colors.white54,
-                ),
+                const Icon(Icons.public, size: 64, color: Colors.white54),
                 const SizedBox(height: AppConstants.spacingMd),
                 Text(
                   'Dunya Haritasi',
@@ -479,7 +509,9 @@ class _AstroCartographyScreenState extends ConsumerState<AstroCartographyScreen>
             ],
           ),
           const SizedBox(height: AppConstants.spacingMd),
-          ..._data!.powerPlaces.take(5).map((place) => _buildPowerPlaceTile(place, isDark)),
+          ..._data!.powerPlaces
+              .take(5)
+              .map((place) => _buildPowerPlaceTile(place, isDark)),
         ],
       ),
     );
@@ -571,8 +603,8 @@ class _AstroCartographyScreenState extends ConsumerState<AstroCartographyScreen>
     final filteredPlanets = _selectedFilter == 'all'
         ? linesByPlanet.keys.toList()
         : linesByPlanet.keys
-            .where((p) => p.toLowerCase().contains(_selectedFilter))
-            .toList();
+              .where((p) => p.toLowerCase().contains(_selectedFilter))
+              .toList();
 
     return Container(
       padding: const EdgeInsets.all(AppConstants.spacingLg),
@@ -614,7 +646,11 @@ class _AstroCartographyScreenState extends ConsumerState<AstroCartographyScreen>
     );
   }
 
-  Widget _buildPlanetSection(String planet, List<PlanetaryLine> lines, bool isDark) {
+  Widget _buildPlanetSection(
+    String planet,
+    List<PlanetaryLine> lines,
+    bool isDark,
+  ) {
     return ExpansionTile(
       tilePadding: EdgeInsets.zero,
       title: Text(
@@ -714,9 +750,7 @@ class _AstroCartographyScreenState extends ConsumerState<AstroCartographyScreen>
           ],
         ),
         borderRadius: BorderRadius.circular(AppConstants.radiusLg),
-        border: Border.all(
-          color: AppColors.mystic.withValues(alpha: 0.3),
-        ),
+        border: Border.all(color: AppColors.mystic.withValues(alpha: 0.3)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

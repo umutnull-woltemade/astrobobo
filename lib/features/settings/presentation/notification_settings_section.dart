@@ -6,7 +6,9 @@ import '../../../data/services/notification_service.dart';
 import '../../../data/providers/app_providers.dart';
 
 /// Notification settings provider
-final notificationSettingsProvider = FutureProvider<NotificationSettings>((ref) async {
+final notificationSettingsProvider = FutureProvider<NotificationSettings>((
+  ref,
+) async {
   return NotificationService().getSettings();
 });
 
@@ -15,10 +17,12 @@ class NotificationSettingsSection extends ConsumerStatefulWidget {
   const NotificationSettingsSection({super.key});
 
   @override
-  ConsumerState<NotificationSettingsSection> createState() => _NotificationSettingsSectionState();
+  ConsumerState<NotificationSettingsSection> createState() =>
+      _NotificationSettingsSectionState();
 }
 
-class _NotificationSettingsSectionState extends ConsumerState<NotificationSettingsSection> {
+class _NotificationSettingsSectionState
+    extends ConsumerState<NotificationSettingsSection> {
   final NotificationService _notificationService = NotificationService();
   bool _isInitialized = false;
   bool _permissionsGranted = false;
@@ -151,7 +155,9 @@ class _NotificationSettingsSectionState extends ConsumerState<NotificationSettin
         color: isDark ? AppColors.surfaceLight.withAlpha(20) : Colors.white,
         borderRadius: BorderRadius.circular(AppConstants.radiusMd),
         border: Border.all(
-          color: isDark ? AppColors.surfaceLight.withAlpha(30) : Colors.grey.shade200,
+          color: isDark
+              ? AppColors.surfaceLight.withAlpha(30)
+              : Colors.grey.shade200,
         ),
       ),
       child: Column(
@@ -168,17 +174,18 @@ class _NotificationSettingsSectionState extends ConsumerState<NotificationSettin
               Text(
                 'Bildirimler',
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  color: isDark
+                      ? AppColors.textPrimary
+                      : AppColors.lightTextPrimary,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ],
           ),
           const SizedBox(height: AppConstants.spacingMd),
 
           // Permission banner if needed
-          if (!_permissionsGranted)
-            _buildPermissionBanner(context, isDark),
+          if (!_permissionsGranted) _buildPermissionBanner(context, isDark),
 
           if (_permissionsGranted) ...[
             // Daily horoscope notification
@@ -256,8 +263,10 @@ class _NotificationSettingsSectionState extends ConsumerState<NotificationSettin
             child: Text(
               'Bildirimleri alabilmek icin izin vermeniz gerekiyor.',
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: isDark ? AppColors.textSecondary : AppColors.lightTextSecondary,
-                  ),
+                color: isDark
+                    ? AppColors.textSecondary
+                    : AppColors.lightTextSecondary,
+              ),
             ),
           ),
           TextButton(
@@ -290,7 +299,8 @@ class _NotificationSettingsSectionState extends ConsumerState<NotificationSettin
           Container(
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-              color: (value ? AppColors.starGold : AppColors.textMuted).withAlpha(20),
+              color: (value ? AppColors.starGold : AppColors.textMuted)
+                  .withAlpha(20),
               borderRadius: BorderRadius.circular(8),
             ),
             child: Icon(
@@ -307,25 +317,25 @@ class _NotificationSettingsSectionState extends ConsumerState<NotificationSettin
                 Text(
                   title,
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
-                        fontWeight: FontWeight.w500,
-                      ),
+                    color: isDark
+                        ? AppColors.textPrimary
+                        : AppColors.lightTextPrimary,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
                 Text(
                   subtitle,
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: isDark ? AppColors.textMuted : AppColors.lightTextSecondary,
-                      ),
+                    color: isDark
+                        ? AppColors.textMuted
+                        : AppColors.lightTextSecondary,
+                  ),
                 ),
               ],
             ),
           ),
           if (onTap != null && value)
-            Icon(
-              Icons.chevron_right,
-              color: AppColors.textMuted,
-              size: 20,
-            ),
+            Icon(Icons.chevron_right, color: AppColors.textMuted, size: 20),
           const SizedBox(width: 8),
           Switch.adaptive(
             value: value,

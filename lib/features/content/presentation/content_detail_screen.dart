@@ -8,10 +8,7 @@ import '../../../data/content/venus_homepage_content.dart';
 class ContentDetailScreen extends StatelessWidget {
   final String contentId;
 
-  const ContentDetailScreen({
-    super.key,
-    required this.contentId,
-  });
+  const ContentDetailScreen({super.key, required this.contentId});
 
   @override
   Widget build(BuildContext context) {
@@ -28,17 +25,11 @@ class ContentDetailScreen extends StatelessWidget {
         child: CustomScrollView(
           slivers: [
             // Header with back button
-            SliverToBoxAdapter(
-              child: _buildHeader(context, section, isDark),
-            ),
+            SliverToBoxAdapter(child: _buildHeader(context, section, isDark)),
             // Content
-            SliverToBoxAdapter(
-              child: _buildContent(context, section, isDark),
-            ),
+            SliverToBoxAdapter(child: _buildContent(context, section, isDark)),
             // Bottom spacing
-            const SliverToBoxAdapter(
-              child: SizedBox(height: 48),
-            ),
+            const SliverToBoxAdapter(child: SizedBox(height: 48)),
           ],
         ),
       ),
@@ -57,14 +48,8 @@ class ContentDetailScreen extends StatelessWidget {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: isDark
-              ? [
-                  const Color(0xFF1A1A2E),
-                  AppColors.deepSpace,
-                ]
-              : [
-                  const Color(0xFFF5F0FF),
-                  AppColors.lightBackground,
-                ],
+              ? [const Color(0xFF1A1A2E), AppColors.deepSpace]
+              : [const Color(0xFFF5F0FF), AppColors.lightBackground],
         ),
       ),
       child: Column(
@@ -127,8 +112,8 @@ class ContentDetailScreen extends StatelessWidget {
                               color: section.badge == 'Yeni'
                                   ? AppColors.starGold
                                   : (isDark
-                                      ? AppColors.textSecondary
-                                      : AppColors.lightTextSecondary),
+                                        ? AppColors.textSecondary
+                                        : AppColors.lightTextSecondary),
                             ),
                           ),
                         ),
@@ -373,10 +358,7 @@ class ContentDetailScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text(
-                  '🔮',
-                  style: TextStyle(fontSize: 64),
-                ),
+                const Text('🔮', style: TextStyle(fontSize: 64)),
                 const SizedBox(height: 24),
                 Text(
                   'İçerik Bulunamadı',
@@ -404,8 +386,9 @@ class ContentDetailScreen extends StatelessWidget {
                   icon: const Icon(Icons.arrow_back),
                   label: const Text('Geri Dön'),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor:
-                        isDark ? AppColors.starGold : AppColors.lightStarGold,
+                    backgroundColor: isDark
+                        ? AppColors.starGold
+                        : AppColors.lightStarGold,
                     foregroundColor: AppColors.deepSpace,
                     padding: const EdgeInsets.symmetric(
                       horizontal: 24,

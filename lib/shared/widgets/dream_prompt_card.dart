@@ -21,7 +21,8 @@ class DreamPromptCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final hasRecentDream = lastDreamDate != null &&
+    final hasRecentDream =
+        lastDreamDate != null &&
         DateTime.now().difference(lastDreamDate!).inHours < 24;
     final greeting = _getTimeBasedPrompt();
 
@@ -39,10 +40,7 @@ class DreamPromptCard extends StatelessWidget {
                     const Color(0xFF1A1A3E).withOpacity(0.9),
                     const Color(0xFF0D0D2A).withOpacity(0.95),
                   ]
-                : [
-                    const Color(0xFFF0F0FF),
-                    Colors.white,
-                  ],
+                : [const Color(0xFFF0F0FF), Colors.white],
           ),
           borderRadius: BorderRadius.circular(24),
           border: Border.all(
@@ -75,7 +73,9 @@ class DreamPromptCard extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                          color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
+                          color: isDark
+                              ? AppColors.textPrimary
+                              : AppColors.lightTextPrimary,
                         ),
                       ),
                       const SizedBox(height: 4),
@@ -85,7 +85,9 @@ class DreamPromptCard extends StatelessWidget {
                             : 'Bilinçaltinin mesajlarini kesfet',
                         style: TextStyle(
                           fontSize: 13,
-                          color: isDark ? AppColors.textSecondary : AppColors.lightTextSecondary,
+                          color: isDark
+                              ? AppColors.textSecondary
+                              : AppColors.lightTextSecondary,
                         ),
                       ),
                     ],
@@ -111,11 +113,7 @@ class DreamPromptCard extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Icon(
-                      Icons.edit_note,
-                      color: AppColors.mystic,
-                      size: 24,
-                    ),
+                    Icon(Icons.edit_note, color: AppColors.mystic, size: 24),
                     const SizedBox(width: 12),
                     Expanded(
                       child: Column(
@@ -126,7 +124,9 @@ class DreamPromptCard extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.w600,
-                              color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
+                              color: isDark
+                                  ? AppColors.textPrimary
+                                  : AppColors.lightTextPrimary,
                             ),
                           ),
                           const SizedBox(height: 2),
@@ -134,7 +134,9 @@ class DreamPromptCard extends StatelessWidget {
                             'Ruyalarini kaydet, oruntuleri kesfet',
                             style: TextStyle(
                               fontSize: 12,
-                              color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
+                              color: isDark
+                                  ? AppColors.textMuted
+                                  : AppColors.lightTextMuted,
                             ),
                           ),
                         ],
@@ -170,11 +172,7 @@ class DreamPromptCard extends StatelessWidget {
                     label: 'Kaciyordum',
                     onTap: () {},
                   ),
-                  _QuickPromptChip(
-                    emoji: '🐍',
-                    label: 'Yilan',
-                    onTap: () {},
-                  ),
+                  _QuickPromptChip(emoji: '🐍', label: 'Yilan', onTap: () {}),
                 ],
               ),
             ],
@@ -192,10 +190,7 @@ class DreamPromptCard extends StatelessWidget {
                           AppColors.mystic.withOpacity(0.3),
                           AppColors.mystic.withOpacity(0.1),
                         ]
-                      : [
-                          AppColors.mystic,
-                          AppColors.auroraEnd,
-                        ],
+                      : [AppColors.mystic, AppColors.auroraEnd],
                 ),
                 borderRadius: BorderRadius.circular(14),
                 boxShadow: hasRecentDream
@@ -238,7 +233,9 @@ class DreamPromptCard extends StatelessWidget {
                   '✨ AI destekli derin ruya analizi',
                   style: TextStyle(
                     fontSize: 11,
-                    color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
+                    color: isDark
+                        ? AppColors.textMuted
+                        : AppColors.lightTextMuted,
                     fontStyle: FontStyle.italic,
                   ),
                 ),
@@ -266,46 +263,48 @@ class _DreamIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 56,
-      height: 56,
-      decoration: BoxDecoration(
-        gradient: RadialGradient(
-          colors: hasRecentDream
-              ? [
-                  AppColors.success.withOpacity(0.3),
-                  AppColors.success.withOpacity(0.1),
-                ]
-              : [
-                  AppColors.mystic.withOpacity(0.3),
-                  AppColors.mystic.withOpacity(0.1),
-                ],
-        ),
-        shape: BoxShape.circle,
-        border: Border.all(
-          color: hasRecentDream
-              ? AppColors.success.withOpacity(0.5)
-              : AppColors.mystic.withOpacity(0.5),
-          width: 2,
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: (hasRecentDream ? AppColors.success : AppColors.mystic)
-                .withOpacity(0.3),
-            blurRadius: 16,
-            spreadRadius: 2,
+          width: 56,
+          height: 56,
+          decoration: BoxDecoration(
+            gradient: RadialGradient(
+              colors: hasRecentDream
+                  ? [
+                      AppColors.success.withOpacity(0.3),
+                      AppColors.success.withOpacity(0.1),
+                    ]
+                  : [
+                      AppColors.mystic.withOpacity(0.3),
+                      AppColors.mystic.withOpacity(0.1),
+                    ],
+            ),
+            shape: BoxShape.circle,
+            border: Border.all(
+              color: hasRecentDream
+                  ? AppColors.success.withOpacity(0.5)
+                  : AppColors.mystic.withOpacity(0.5),
+              width: 2,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: (hasRecentDream ? AppColors.success : AppColors.mystic)
+                    .withOpacity(0.3),
+                blurRadius: 16,
+                spreadRadius: 2,
+              ),
+            ],
           ),
-        ],
-      ),
-      child: Center(
-        child: Text(
-          hasRecentDream ? '✓' : '🌙',
-          style: TextStyle(
-            fontSize: hasRecentDream ? 24 : 28,
-            color: hasRecentDream ? AppColors.success : null,
+          child: Center(
+            child: Text(
+              hasRecentDream ? '✓' : '🌙',
+              style: TextStyle(
+                fontSize: hasRecentDream ? 24 : 28,
+                color: hasRecentDream ? AppColors.success : null,
+              ),
+            ),
           ),
-        ),
-      ),
-    ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(
+        )
+        .animate(onPlay: (c) => c.repeat(reverse: true))
+        .scale(
           begin: const Offset(1, 1),
           end: const Offset(1.05, 1.05),
           duration: 2000.ms,
@@ -321,41 +320,35 @@ class _StreakBadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            AppColors.starGold.withOpacity(0.3),
-            AppColors.starGold.withOpacity(0.1),
-          ],
-        ),
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(
-          color: AppColors.starGold.withOpacity(0.5),
-        ),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(
-            '🔥',
-            style: const TextStyle(fontSize: 14),
-          ),
-          const SizedBox(width: 4),
-          Text(
-            '$streak',
-            style: TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.bold,
-              color: AppColors.starGold,
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                AppColors.starGold.withOpacity(0.3),
+                AppColors.starGold.withOpacity(0.1),
+              ],
             ),
+            borderRadius: BorderRadius.circular(20),
+            border: Border.all(color: AppColors.starGold.withOpacity(0.5)),
           ),
-        ],
-      ),
-    ).animate(onPlay: (c) => c.repeat(reverse: true)).shimmer(
-          duration: 2000.ms,
-          color: AppColors.starGold.withOpacity(0.3),
-        );
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text('🔥', style: const TextStyle(fontSize: 14)),
+              const SizedBox(width: 4),
+              Text(
+                '$streak',
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.starGold,
+                ),
+              ),
+            ],
+          ),
+        )
+        .animate(onPlay: (c) => c.repeat(reverse: true))
+        .shimmer(duration: 2000.ms, color: AppColors.starGold.withOpacity(0.3));
   }
 }
 
@@ -398,7 +391,9 @@ class _QuickPromptChip extends StatelessWidget {
               label,
               style: TextStyle(
                 fontSize: 12,
-                color: isDark ? AppColors.textSecondary : AppColors.lightTextSecondary,
+                color: isDark
+                    ? AppColors.textSecondary
+                    : AppColors.lightTextSecondary,
               ),
             ),
           ],
@@ -413,11 +408,7 @@ class CompactDreamPrompt extends StatelessWidget {
   final VoidCallback? onTap;
   final int? streak;
 
-  const CompactDreamPrompt({
-    super.key,
-    this.onTap,
-    this.streak,
-  });
+  const CompactDreamPrompt({super.key, this.onTap, this.streak});
 
   @override
   Widget build(BuildContext context) {
@@ -435,9 +426,7 @@ class CompactDreamPrompt extends StatelessWidget {
             ],
           ),
           borderRadius: BorderRadius.circular(16),
-          border: Border.all(
-            color: AppColors.mystic.withOpacity(0.3),
-          ),
+          border: Border.all(color: AppColors.mystic.withOpacity(0.3)),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
@@ -449,7 +438,9 @@ class CompactDreamPrompt extends StatelessWidget {
               style: TextStyle(
                 fontSize: 13,
                 fontWeight: FontWeight.w600,
-                color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
+                color: isDark
+                    ? AppColors.textPrimary
+                    : AppColors.lightTextPrimary,
               ),
             ),
             if (streak != null && streak! > 0) ...[
@@ -460,10 +451,7 @@ class CompactDreamPrompt extends StatelessWidget {
                   color: AppColors.starGold.withOpacity(0.3),
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: Text(
-                  '🔥$streak',
-                  style: const TextStyle(fontSize: 11),
-                ),
+                child: Text('🔥$streak', style: const TextStyle(fontSize: 11)),
               ),
             ],
           ],

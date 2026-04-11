@@ -181,7 +181,11 @@ class QuizService {
         emoji: '🗺️',
         answers: [
           QuizAnswer(text: 'Detaylı biliyorum', emoji: '📊', weight: 5),
-          QuizAnswer(text: 'Güneş ve Ay burcumu biliyorum', emoji: '☀️', weight: 4),
+          QuizAnswer(
+            text: 'Güneş ve Ay burcumu biliyorum',
+            emoji: '☀️',
+            weight: 4,
+          ),
           QuizAnswer(text: 'Sadece güneş burcumu', emoji: '♈', weight: 2),
           QuizAnswer(text: 'Hiç bakmadım', emoji: '🤷', weight: 1),
         ],
@@ -259,8 +263,16 @@ class QuizService {
         text: 'Yaşam yolu sayını biliyor musun?',
         emoji: '🛤️',
         answers: [
-          QuizAnswer(text: 'Evet ve anlamını biliyorum', emoji: '📖', weight: 5),
-          QuizAnswer(text: 'Hesapladım ama anlamını bilmiyorum', emoji: '🔍', weight: 3),
+          QuizAnswer(
+            text: 'Evet ve anlamını biliyorum',
+            emoji: '📖',
+            weight: 5,
+          ),
+          QuizAnswer(
+            text: 'Hesapladım ama anlamını bilmiyorum',
+            emoji: '🔍',
+            weight: 3,
+          ),
           QuizAnswer(text: 'Duydum ama hesaplamadım', emoji: '💭', weight: 2),
           QuizAnswer(text: 'Hiç duymadım', emoji: '❓', weight: 1),
         ],
@@ -269,7 +281,11 @@ class QuizService {
         text: 'Önemli tarihlerde sayılara anlam yükler misin?',
         emoji: '📅',
         answers: [
-          QuizAnswer(text: 'Kesinlikle, tarih seçerken dikkat ederim', emoji: '✅', weight: 5),
+          QuizAnswer(
+            text: 'Kesinlikle, tarih seçerken dikkat ederim',
+            emoji: '✅',
+            weight: 5,
+          ),
           QuizAnswer(text: 'Bazen düşünürüm', emoji: '🤔', weight: 3),
           QuizAnswer(text: 'Nadiren', emoji: '🌙', weight: 2),
           QuizAnswer(text: 'Hiç düşünmedim', emoji: '❌', weight: 1),
@@ -328,9 +344,17 @@ class QuizService {
         text: 'Kendini en çok ne zaman huzurlu hissedersin?',
         emoji: '🧘',
         answers: [
-          QuizAnswer(text: 'Meditasyon veya sessizlikte', emoji: '🕯️', weight: 5),
+          QuizAnswer(
+            text: 'Meditasyon veya sessizlikte',
+            emoji: '🕯️',
+            weight: 5,
+          ),
           QuizAnswer(text: 'Doğada yürürken', emoji: '🌿', weight: 4),
-          QuizAnswer(text: 'Sevdiklerimle birlikteyken', emoji: '💕', weight: 3),
+          QuizAnswer(
+            text: 'Sevdiklerimle birlikteyken',
+            emoji: '💕',
+            weight: 3,
+          ),
           QuizAnswer(text: 'Aktif bir şeyler yaparken', emoji: '🏃', weight: 2),
         ],
       ),

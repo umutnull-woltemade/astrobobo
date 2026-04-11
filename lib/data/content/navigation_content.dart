@@ -61,7 +61,8 @@ class HomepageNavigation {
     alsoViewed: [
       NavigationCard(
         title: 'Bugünün Kozmik Enerjisi',
-        description: 'Gökyüzü bugün ne fısıldıyor? Günlük burç yorumlarına göz at.',
+        description:
+            'Gökyüzü bugün ne fısıldıyor? Günlük burç yorumlarına göz at.',
         route: '/horoscope',
         emoji: '🌟',
       ),
@@ -1482,7 +1483,9 @@ class MoonRitualsNavigation {
 class NavigationService {
   static PageNavigation getNavigationForRoute(String route) {
     // Normalize route
-    final normalizedRoute = route.replaceAll(RegExp(r'^/+|/+$'), '').toLowerCase();
+    final normalizedRoute = route
+        .replaceAll(RegExp(r'^/+|/+$'), '')
+        .toLowerCase();
 
     // Check for zodiac sign pages
     if (normalizedRoute.startsWith('horoscope/')) {

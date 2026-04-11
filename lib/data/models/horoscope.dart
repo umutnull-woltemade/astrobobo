@@ -13,49 +13,49 @@ class DailyHoroscope {
   final String mood;
 
   // Kozmik Fısıltı - Geçmiş, Şimdi, Gelecek
-  final String pastInsight;      // Geçmişin Yankısı
-  final String presentEnergy;    // Şimdinin Enerjisi
-  final String futureGuidance;   // Geleceğin Fısıltısı
-  final String cosmicMessage;    // Evrenin Mesajı (kısa özet)
+  final String pastInsight; // Geçmişin Yankısı
+  final String presentEnergy; // Şimdinin Enerjisi
+  final String futureGuidance; // Geleceğin Fısıltısı
+  final String cosmicMessage; // Evrenin Mesajı (kısa özet)
 
   // Element ve Modalite Analizi
-  final String elementAnalysis;   // Element derinlemesine analizi
-  final String modalityAnalysis;  // Modalite yorumu
+  final String elementAnalysis; // Element derinlemesine analizi
+  final String modalityAnalysis; // Modalite yorumu
 
   // Gezegensel Saatler ve Enerjiler
-  final String planetaryHourInfo;  // Günün gezegensel saatleri
+  final String planetaryHourInfo; // Günün gezegensel saatleri
   final String rulingPlanetMessage; // Yönetici gezegen mesajı
 
   // Ritüeller ve Pratikler
-  final String dailyRitual;       // Günlük ritüel önerisi
-  final String meditationFocus;   // Meditasyon odağı
-  final String affirmation;       // Günün olumlaması
+  final String dailyRitual; // Günlük ritüel önerisi
+  final String meditationFocus; // Meditasyon odağı
+  final String affirmation; // Günün olumlaması
 
   // Kristaller ve Taşlar
-  final String crystalOfDay;      // Günün kristali
-  final String crystalMeaning;    // Kristal anlamı ve kullanımı
+  final String crystalOfDay; // Günün kristali
+  final String crystalMeaning; // Kristal anlamı ve kullanımı
 
   // Çakra ve Enerji Çalışması
-  final String chakraFocus;       // Odaklanılacak çakra
-  final String chakraExercise;    // Çakra egzersizi
+  final String chakraFocus; // Odaklanılacak çakra
+  final String chakraExercise; // Çakra egzersizi
 
   // Ruh Hayvanı ve Semboller
-  final String spiritAnimal;      // Günün ruh hayvanı
+  final String spiritAnimal; // Günün ruh hayvanı
   final String spiritAnimalMessage; // Ruh hayvanı mesajı
 
   // Numeroloji
   final String numerologyInsight; // Numerolojik analiz
 
   // Tarot Kartı
-  final String tarotCard;         // Günün tarot kartı
-  final String tarotMeaning;      // Tarot kartı yorumu
+  final String tarotCard; // Günün tarot kartı
+  final String tarotMeaning; // Tarot kartı yorumu
 
   // Ay Fazı Etkisi
-  final String moonPhaseEffect;   // Ay fazının burca etkisi
+  final String moonPhaseEffect; // Ay fazının burca etkisi
 
   // Özel Uyarılar
-  final String specialWarning;    // Özel dikkat edilecek konu
-  final String luckyTime;         // Şanslı saat aralığı
+  final String specialWarning; // Özel dikkat edilecek konu
+  final String luckyTime; // Şanslı saat aralığı
 
   DailyHoroscope({
     required this.sign,
@@ -94,38 +94,38 @@ class DailyHoroscope {
   });
 
   Map<String, dynamic> toJson() => {
-        'sign': sign.index,
-        'date': date.toIso8601String(),
-        'summary': summary,
-        'loveAdvice': loveAdvice,
-        'careerAdvice': careerAdvice,
-        'healthAdvice': healthAdvice,
-        'luckRating': luckRating,
-        'luckyNumber': luckyNumber,
-        'luckyColor': luckyColor,
-        'mood': mood,
-        'pastInsight': pastInsight,
-        'presentEnergy': presentEnergy,
-        'futureGuidance': futureGuidance,
-        'cosmicMessage': cosmicMessage,
-      };
+    'sign': sign.index,
+    'date': date.toIso8601String(),
+    'summary': summary,
+    'loveAdvice': loveAdvice,
+    'careerAdvice': careerAdvice,
+    'healthAdvice': healthAdvice,
+    'luckRating': luckRating,
+    'luckyNumber': luckyNumber,
+    'luckyColor': luckyColor,
+    'mood': mood,
+    'pastInsight': pastInsight,
+    'presentEnergy': presentEnergy,
+    'futureGuidance': futureGuidance,
+    'cosmicMessage': cosmicMessage,
+  };
 
   factory DailyHoroscope.fromJson(Map<String, dynamic> json) => DailyHoroscope(
-        sign: ZodiacSign.values[json['sign'] as int],
-        date: DateTime.parse(json['date'] as String),
-        summary: json['summary'] as String,
-        loveAdvice: json['loveAdvice'] as String,
-        careerAdvice: json['careerAdvice'] as String,
-        healthAdvice: json['healthAdvice'] as String,
-        luckRating: json['luckRating'] as int,
-        luckyNumber: json['luckyNumber'] as String,
-        luckyColor: json['luckyColor'] as String,
-        mood: json['mood'] as String,
-        pastInsight: json['pastInsight'] as String? ?? '',
-        presentEnergy: json['presentEnergy'] as String? ?? '',
-        futureGuidance: json['futureGuidance'] as String? ?? '',
-        cosmicMessage: json['cosmicMessage'] as String? ?? '',
-      );
+    sign: ZodiacSign.values[json['sign'] as int],
+    date: DateTime.parse(json['date'] as String),
+    summary: json['summary'] as String,
+    loveAdvice: json['loveAdvice'] as String,
+    careerAdvice: json['careerAdvice'] as String,
+    healthAdvice: json['healthAdvice'] as String,
+    luckRating: json['luckRating'] as int,
+    luckyNumber: json['luckyNumber'] as String,
+    luckyColor: json['luckyColor'] as String,
+    mood: json['mood'] as String,
+    pastInsight: json['pastInsight'] as String? ?? '',
+    presentEnergy: json['presentEnergy'] as String? ?? '',
+    futureGuidance: json['futureGuidance'] as String? ?? '',
+    cosmicMessage: json['cosmicMessage'] as String? ?? '',
+  );
 }
 
 class Compatibility {

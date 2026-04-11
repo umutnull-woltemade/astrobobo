@@ -200,9 +200,7 @@ class ExperimentService {
         .difference(_cachedAssignment!.assignedAt)
         .inHours;
 
-    _cachedAssignment = _cachedAssignment!.copyWith(
-      hasConverted: true,
-    );
+    _cachedAssignment = _cachedAssignment!.copyWith(hasConverted: true);
     await _saveAssignment();
 
     _analytics.logEvent('paywall_converted', {
@@ -314,7 +312,8 @@ class ExperimentService {
     }
 
     // Activate critical level defense
-    if (newLevel == ChurnLevel.critical && previousLevel != ChurnLevel.critical) {
+    if (newLevel == ChurnLevel.critical &&
+        previousLevel != ChurnLevel.critical) {
       await _activateCriticalDefense();
     }
 
@@ -340,7 +339,9 @@ class ExperimentService {
     });
 
     if (kDebugMode) {
-      debugPrint('ExperimentService: Warning defense activated at ${_churnDefenseState.currentChurnRate * 100}% churn');
+      debugPrint(
+        'ExperimentService: Warning defense activated at ${_churnDefenseState.currentChurnRate * 100}% churn',
+      );
     }
   }
 
@@ -359,7 +360,9 @@ class ExperimentService {
     });
 
     if (kDebugMode) {
-      debugPrint('ExperimentService: CRITICAL defense activated at ${_churnDefenseState.currentChurnRate * 100}% churn');
+      debugPrint(
+        'ExperimentService: CRITICAL defense activated at ${_churnDefenseState.currentChurnRate * 100}% churn',
+      );
     }
   }
 
@@ -392,7 +395,9 @@ final experimentServiceProvider = Provider<ExperimentService>((ref) {
 });
 
 /// Provider for current experiment assignment
-final experimentAssignmentProvider = FutureProvider<ExperimentAssignment>((ref) async {
+final experimentAssignmentProvider = FutureProvider<ExperimentAssignment>((
+  ref,
+) async {
   final service = ref.watch(experimentServiceProvider);
   return service.getOrCreateAssignment();
 });

@@ -16,13 +16,13 @@
 
 /// Kundalini uyaniş aşamalari
 enum KundaliniStage {
-  dormant,        // Uyuyan - Muladhara'da sarili
-  stirring,       // Kivrilma - İlk hareketler
-  awakening,      // Uyaniş - Aktif yükseliş
-  rising,         // Yükseliş - Chakralardan geçiş
-  piercing,       // Delme - Granthileri aşma
-  flowering,      // Çiçeklenme - Üst chakralarda açiliş
-  union,          // Birleşme - Shiva-Shakti buluşmasi
+  dormant, // Uyuyan - Muladhara'da sarili
+  stirring, // Kivrilma - İlk hareketler
+  awakening, // Uyaniş - Aktif yükseliş
+  rising, // Yükseliş - Chakralardan geçiş
+  piercing, // Delme - Granthileri aşma
+  flowering, // Çiçeklenme - Üst chakralarda açiliş
+  union, // Birleşme - Shiva-Shakti buluşmasi
 }
 
 extension KundaliniStageExtension on KundaliniStage {
@@ -86,13 +86,13 @@ extension KundaliniStageExtension on KundaliniStage {
 
 /// Yedi ana chakra
 enum Chakra {
-  muladhara,      // Kök
-  svadhisthana,   // Sakral
-  manipura,       // Solar Pleksus
-  anahata,        // Kalp
-  vishuddha,      // Boğaz
-  ajna,           // Üçüncü Göz
-  sahasrara,      // Taç
+  muladhara, // Kök
+  svadhisthana, // Sakral
+  manipura, // Solar Pleksus
+  anahata, // Kalp
+  vishuddha, // Boğaz
+  ajna, // Üçüncü Göz
+  sahasrara, // Taç
 }
 
 extension ChakraExtension on Chakra {
@@ -156,9 +156,9 @@ extension ChakraExtension on Chakra {
 
 /// Üç ana nadi
 enum Nadi {
-  sushumna,       // Merkezi kanal
-  ida,            // Ay/dişil kanal
-  pingala,        // Güneş/eril kanal
+  sushumna, // Merkezi kanal
+  ida, // Ay/dişil kanal
+  pingala, // Güneş/eril kanal
 }
 
 extension NadiExtension on Nadi {
@@ -3985,15 +3985,18 @@ final List<KundaliniSymptom> kundaliniSymptoms = [
     category: 'Fiziksel',
     description: 'Omurga boyunca yükselen sıcaklık veya ateş hissi',
     meaning: 'Kundalini enerjisinin Sushumna boyunca hareketi',
-    guidance: 'Korkmayın. Serinletici yiyecekler, hafif giysiler. Aşırı ısınırsa pratikleri yavaşlatın.',
+    guidance:
+        'Korkmayın. Serinletici yiyecekler, hafif giysiler. Aşırı ısınırsa pratikleri yavaşlatın.',
     isCommon: true,
   ),
   const KundaliniSymptom(
     name: 'Spontan Titremeler',
     category: 'Fiziksel',
-    description: 'Kontrol dışı beden titremeleri, özellikle meditasyon sırasında',
+    description:
+        'Kontrol dışı beden titremeleri, özellikle meditasyon sırasında',
     meaning: 'Enerji blokajlarının çözülmesi, sinir sisteminin uyarılması',
-    guidance: 'Bırakın olsun. Bastırmaya çalışmayın. Güvenli bir ortamda pratik yapın.',
+    guidance:
+        'Bırakın olsun. Bastırmaya çalışmayın. Güvenli bir ortamda pratik yapın.',
     isCommon: true,
   ),
   const KundaliniSymptom(
@@ -4001,7 +4004,8 @@ final List<KundaliniSymptom> kundaliniSymptoms = [
     category: 'Fiziksel',
     description: 'İstemsiz yoga pozları, el hareketleri, nefes kalıpları',
     meaning: 'Enerji bedenin kendini yeniden düzenlemesi',
-    guidance: 'Akışa izin verin. Güvenli bir ortamda. Çok yoğunsa topraklama yapın.',
+    guidance:
+        'Akışa izin verin. Güvenli bir ortamda. Çok yoğunsa topraklama yapın.',
     isCommon: true,
   ),
   const KundaliniSymptom(
@@ -4033,7 +4037,8 @@ final List<KundaliniSymptom> kundaliniSymptoms = [
     category: 'Fiziksel',
     description: 'Kaşlar arasında veya başın tepesinde basınç, ağrı',
     meaning: 'Üst chakraların aktivasyonu, enerji birikimi',
-    guidance: 'Topraklama pratikleri. Fiziksel aktivite. Çok yoğunsa doktora danışın.',
+    guidance:
+        'Topraklama pratikleri. Fiziksel aktivite. Çok yoğunsa doktora danışın.',
     isCommon: true,
   ),
 
@@ -4043,7 +4048,8 @@ final List<KundaliniSymptom> kundaliniSymptoms = [
     category: 'Duygusal',
     description: 'Ani duygu değişimleri, açıklanamayan ağlamalar veya gülmeler',
     meaning: 'Eski duyguların temizlenmesi, duygusal arınma',
-    guidance: 'Yargılamadan deneyimleyin. Bırakın aksın. Güvenli kişilerle paylaşın.',
+    guidance:
+        'Yargılamadan deneyimleyin. Bırakın aksın. Güvenli kişilerle paylaşın.',
     isCommon: true,
   ),
   const KundaliniSymptom(
@@ -4059,7 +4065,8 @@ final List<KundaliniSymptom> kundaliniSymptoms = [
     category: 'Duygusal',
     description: 'Açıklanamayan korku, panik ataklar, varoluşsal kaygı',
     meaning: 'Ego yapılarının sarsılması, bilinçdışı korkuların yüzeye çıkması',
-    guidance: 'Bu normal bir aşama. Topraklama. Derin nefes. Gerekirse profesyonel yardım.',
+    guidance:
+        'Bu normal bir aşama. Topraklama. Derin nefes. Gerekirse profesyonel yardım.',
     isCommon: true,
   ),
   const KundaliniSymptom(
@@ -4067,13 +4074,15 @@ final List<KundaliniSymptom> kundaliniSymptoms = [
     category: 'Duygusal',
     description: 'Herkese ve her şeye yoğun sevgi hissi',
     meaning: 'Kalp chakrasının açılması',
-    guidance: 'Kucaklayın ama davranışlarınızda dengeli kalın. Sınırları koruyun.',
+    guidance:
+        'Kucaklayın ama davranışlarınızda dengeli kalın. Sınırları koruyun.',
     isCommon: true,
   ),
   const KundaliniSymptom(
     name: 'Travma Anılarının Canlanması',
     category: 'Duygusal',
-    description: 'Geçmiş travmaların, çocukluk anılarının canlı şekilde geri gelmesi',
+    description:
+        'Geçmiş travmaların, çocukluk anılarının canlı şekilde geri gelmesi',
     meaning: 'Psişik temizlenme, bilinçdışının arınması',
     guidance: 'Terapist desteği düşünün. Güvenli ortamda işleyin. Zorlamayın.',
     isCommon: true,
@@ -4125,7 +4134,8 @@ final List<KundaliniSymptom> kundaliniSymptoms = [
     category: 'Psişik',
     description: 'Bedenden ayrılma hissi, astral seyahat',
     meaning: 'Astral bedenin aktivasyonu',
-    guidance: 'Güvenli ortamda olun. Korku duymayın. Geri dönüş her zaman mümkün.',
+    guidance:
+        'Güvenli ortamda olun. Korku duymayın. Geri dönüş her zaman mümkün.',
     isCommon: false,
   ),
 
@@ -4143,7 +4153,8 @@ final List<KundaliniSymptom> kundaliniSymptoms = [
     category: 'Spiritüel',
     description: '"Ben" hissinin zayıflaması veya geçici olarak kaybolması',
     meaning: 'Ahamkara\'nın (ego) dönüşümü',
-    guidance: 'Korkutucu olabilir ama doğal. Ego geri gelecek, dönüşmüş olarak.',
+    guidance:
+        'Korkutucu olabilir ama doğal. Ego geri gelecek, dönüşmüş olarak.',
     isCommon: true,
   ),
   const KundaliniSymptom(
@@ -4159,7 +4170,8 @@ final List<KundaliniSymptom> kundaliniSymptoms = [
     category: 'Spiritüel',
     description: 'Eski anlamların düşmesi, "karanlık gece" deneyimi',
     meaning: 'Eski kimliğin ölümü, yenisinin henüz doğmaması',
-    guidance: 'Zor ama geçici. Profesyonel destek alın. İntihar düşünceleri varsa acil yardım.',
+    guidance:
+        'Zor ama geçici. Profesyonel destek alın. İntihar düşünceleri varsa acil yardım.',
     isCommon: true,
   ),
   const KundaliniSymptom(
@@ -5813,10 +5825,10 @@ class KundaliniContent {
   static List<KundaliniPractice> getAllMudras() => mudraPractices;
 
   static List<KundaliniPractice> getAllPractices() => [
-        ...pranayamaPractices,
-        ...bandhaPractices,
-        ...mudraPractices,
-      ];
+    ...pranayamaPractices,
+    ...bandhaPractices,
+    ...mudraPractices,
+  ];
 
   static List<KundaliniPractice> getPracticesByDifficulty(String difficulty) =>
       getAllPractices()
@@ -5845,7 +5857,8 @@ class KundaliniContent {
   static GranthiContent? getGranthiByName(String name) {
     try {
       return granthiContents.firstWhere(
-          (g) => g.name.toLowerCase() == name.toLowerCase());
+        (g) => g.name.toLowerCase() == name.toLowerCase(),
+      );
     } catch (_) {
       return null;
     }
@@ -5873,37 +5886,50 @@ class KundaliniContent {
 
   // Fundamentals
   static String get fundamentalsIntro => KundaliniFundamentals.introduction;
-  static String get serpentPower => KundaliniFundamentals.serpentPowerExplanation;
-  static String get shaktiExplanation => KundaliniFundamentals.shaktiExplanation;
-  static String get historicalOrigins => KundaliniFundamentals.historicalOrigins;
-  static String get pranaRelationship => KundaliniFundamentals.pranaRelationship;
-  static String get subtleBodyAnatomy => KundaliniFundamentals.subtleBodyAnatomy;
+  static String get serpentPower =>
+      KundaliniFundamentals.serpentPowerExplanation;
+  static String get shaktiExplanation =>
+      KundaliniFundamentals.shaktiExplanation;
+  static String get historicalOrigins =>
+      KundaliniFundamentals.historicalOrigins;
+  static String get pranaRelationship =>
+      KundaliniFundamentals.pranaRelationship;
+  static String get subtleBodyAnatomy =>
+      KundaliniFundamentals.subtleBodyAnatomy;
 
   // Nadi System
   static String get nadiSystemOverview => NadiSystem.overview;
   static String get nadiBlockagesAndClearing => NadiSystem.blockagesAndClearing;
 
   // Güvenlik
-  static String get safetyPreparation => KundaliniSafety.importanceOfPreparation;
-  static String get prematureAwakening => KundaliniSafety.signsOfPrematureAwakening;
+  static String get safetyPreparation =>
+      KundaliniSafety.importanceOfPreparation;
+  static String get prematureAwakening =>
+      KundaliniSafety.signsOfPrematureAwakening;
   static String get groundingTechniques => KundaliniSafety.groundingTechniques;
   static String get whenToSlowDown => KundaliniSafety.whenToSlowDown;
-  static String get teacherGuidance => KundaliniSafety.teacherGuidanceImportance;
+  static String get teacherGuidance =>
+      KundaliniSafety.teacherGuidanceImportance;
 
   // Astroloji
   static String get astrologyOverview => KundaliniAstrology.overview;
-  static String get marsPlutoConnection => KundaliniAstrology.marsPlutoConnection;
-  static String get eighthHouseIndicators => KundaliniAstrology.eighthHouseIndicators;
+  static String get marsPlutoConnection =>
+      KundaliniAstrology.marsPlutoConnection;
+  static String get eighthHouseIndicators =>
+      KundaliniAstrology.eighthHouseIndicators;
   static String get scorpioEnergy => KundaliniAstrology.scorpioEnergy;
   static String get triggeringTransits => KundaliniAstrology.triggeringTransits;
-  static String get natalChartIndicators => KundaliniAstrology.natalChartIndicators;
+  static String get natalChartIndicators =>
+      KundaliniAstrology.natalChartIndicators;
 
   // Tantrik
   static String get tantricOverview => TantricKundalini.overview;
   static String get partnerPractices => TantricKundalini.partnerPractices;
-  static String get sexualTransmutation => TantricKundalini.sexualEnergyTransmutation;
+  static String get sexualTransmutation =>
+      TantricKundalini.sexualEnergyTransmutation;
   static String get shivaShaktiUnion => TantricKundalini.shivaShaktiUnion;
-  static String get sacredSexuality => TantricKundalini.sacredSexualityConnection;
+  static String get sacredSexuality =>
+      TantricKundalini.sacredSexualityConnection;
 
   // Günlük pratik önerisi
   static KundaliniPractice getDailyPractice() {

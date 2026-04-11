@@ -8,12 +8,7 @@ import 'ad_service.dart';
 import 'analytics_service.dart';
 
 /// Premium subscription tiers
-enum PremiumTier {
-  free,
-  monthly,
-  yearly,
-  lifetime,
-}
+enum PremiumTier { free, monthly, yearly, lifetime }
 
 extension PremiumTierExtension on PremiumTier {
   String get displayName {
@@ -250,7 +245,8 @@ class PremiumNotifier extends Notifier<PremiumState> {
 
     try {
       final customerInfo = await Purchases.getCustomerInfo();
-      final entitlement = customerInfo.entitlements.all[AppConstants.entitlementId];
+      final entitlement =
+          customerInfo.entitlements.all[AppConstants.entitlementId];
       return entitlement?.isActive ?? false;
     } catch (e) {
       // GUARDRAIL: On verification error, use cached state
@@ -289,7 +285,8 @@ class PremiumNotifier extends Notifier<PremiumState> {
 
   /// Handle customer info updates from RevenueCat
   void _handleCustomerInfoUpdate(CustomerInfo customerInfo) {
-    final entitlement = customerInfo.entitlements.all[AppConstants.entitlementId];
+    final entitlement =
+        customerInfo.entitlements.all[AppConstants.entitlementId];
     final isPremium = entitlement?.isActive ?? false;
 
     PremiumTier tier = PremiumTier.free;
@@ -335,7 +332,9 @@ class PremiumNotifier extends Notifier<PremiumState> {
     _savePremiumStatusLocally(isPremium, tier, expiryDate, isLifetime);
 
     if (kDebugMode) {
-      debugPrint('RevenueCat: Premium status updated - isPremium: $isPremium, tier: ${tier.name}, isLifetime: $isLifetime');
+      debugPrint(
+        'RevenueCat: Premium status updated - isPremium: $isPremium, tier: ${tier.name}, isLifetime: $isLifetime',
+      );
     }
   }
 
@@ -370,7 +369,9 @@ class PremiumNotifier extends Notifier<PremiumState> {
   Future<PaywallResult> presentPaywall() async {
     if (kIsWeb || !_isInitialized) {
       if (kDebugMode) {
-        debugPrint('RevenueCat: Paywall not available on web or SDK not initialized');
+        debugPrint(
+          'RevenueCat: Paywall not available on web or SDK not initialized',
+        );
       }
       return PaywallResult.cancelled;
     }
@@ -378,9 +379,7 @@ class PremiumNotifier extends Notifier<PremiumState> {
     try {
       final result = await RevenueCatUI.presentPaywall();
 
-      _analytics.logEvent('paywall_presented', {
-        'result': result.name,
-      });
+      _analytics.logEvent('paywall_presented', {'result': result.name});
 
       // Refresh subscription status after paywall closes
       await _checkSubscriptionStatus();
@@ -398,7 +397,9 @@ class PremiumNotifier extends Notifier<PremiumState> {
   Future<PaywallResult> presentPaywallIfNeeded() async {
     if (kIsWeb || !_isInitialized) {
       if (kDebugMode) {
-        debugPrint('RevenueCat: Paywall not available on web or SDK not initialized');
+        debugPrint(
+          'RevenueCat: Paywall not available on web or SDK not initialized',
+        );
       }
       return PaywallResult.cancelled;
     }
@@ -428,7 +429,9 @@ class PremiumNotifier extends Notifier<PremiumState> {
   Future<void> presentCustomerCenter() async {
     if (kIsWeb || !_isInitialized) {
       if (kDebugMode) {
-        debugPrint('RevenueCat: Customer Center not available on web or SDK not initialized');
+        debugPrint(
+          'RevenueCat: Customer Center not available on web or SDK not initialized',
+        );
       }
       return;
     }
@@ -661,7 +664,8 @@ class PremiumNotifier extends Notifier<PremiumState> {
 
       state = PremiumState(
         isPremium: isPremium,
-        tier: PremiumTier.values[tierIndex.clamp(0, PremiumTier.values.length - 1)],
+        tier: PremiumTier
+            .values[tierIndex.clamp(0, PremiumTier.values.length - 1)],
         expiryDate: expiryDate,
         isLoading: false,
         isLifetime: isLifetime,
@@ -761,4 +765,3 @@ final isPremiumUserProvider = Provider<bool>((ref) {
 final isLifetimeUserProvider = Provider<bool>((ref) {
   return ref.watch(premiumProvider).isLifetime;
 });
-

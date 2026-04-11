@@ -256,9 +256,9 @@ class _DreamOracleScreenState extends State<DreamOracleScreen>
                 Text(
                   'Ruya Orakeli',
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        color: MysticalColors.textPrimary,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    color: MysticalColors.textPrimary,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 Row(
                   children: [
@@ -270,8 +270,8 @@ class _DreamOracleScreenState extends State<DreamOracleScreen>
                     Text(
                       _currentMoonPhase.label,
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                            color: MysticalColors.textSecondary,
-                          ),
+                        color: MysticalColors.textSecondary,
+                      ),
                     ),
                   ],
                 ),
@@ -299,25 +299,24 @@ class _DreamOracleScreenState extends State<DreamOracleScreen>
           decoration: BoxDecoration(
             gradient: RadialGradient(
               colors: [
-                MysticalColors.amethyst
-                    .withOpacity(0.5 + _pulseController.value * 0.3),
+                MysticalColors.amethyst.withOpacity(
+                  0.5 + _pulseController.value * 0.3,
+                ),
                 MysticalColors.cosmicPurple.withOpacity(0.3),
               ],
             ),
             shape: BoxShape.circle,
             boxShadow: [
               BoxShadow(
-                color:
-                    MysticalColors.amethyst.withOpacity(0.4 * _pulseController.value),
+                color: MysticalColors.amethyst.withOpacity(
+                  0.4 * _pulseController.value,
+                ),
                 blurRadius: 15 + _pulseController.value * 10,
                 spreadRadius: 2,
               ),
             ],
           ),
-          child: const Text(
-            '\u{1F319}',
-            style: TextStyle(fontSize: 24),
-          ),
+          child: const Text('\u{1F319}', style: TextStyle(fontSize: 24)),
         );
       },
     );
@@ -396,9 +395,7 @@ class _DreamOracleScreenState extends State<DreamOracleScreen>
                 ],
         ),
         borderRadius: BorderRadius.circular(Spacing.radiusLg),
-        border: Border.all(
-          color: MysticalColors.amethyst.withOpacity(0.3),
-        ),
+        border: Border.all(color: MysticalColors.amethyst.withOpacity(0.3)),
         boxShadow: [
           BoxShadow(
             color: MysticalColors.amethyst.withOpacity(0.1),
@@ -427,11 +424,11 @@ class _DreamOracleScreenState extends State<DreamOracleScreen>
                 Text(
                   'Ruyani Anlat',
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                        color: isDark
-                            ? MysticalColors.textPrimary
-                            : MysticalColors.textDark,
-                        fontWeight: FontWeight.w600,
-                      ),
+                    color: isDark
+                        ? MysticalColors.textPrimary
+                        : MysticalColors.textDark,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
                 const Spacer(),
                 // Voice-to-text icon (placeholder)
@@ -464,10 +461,11 @@ class _DreamOracleScreenState extends State<DreamOracleScreen>
                 hintText:
                     'Gordugum ruyada...\n\nNe gordun? Kimler vardi? Neler oldu? Ne hissettin?',
                 hintStyle: TextStyle(
-                  color: (isDark
-                          ? MysticalColors.textSecondary
-                          : MysticalColors.textDarkSecondary)
-                      .withOpacity(0.6),
+                  color:
+                      (isDark
+                              ? MysticalColors.textSecondary
+                              : MysticalColors.textDarkSecondary)
+                          .withOpacity(0.6),
                   height: 1.6,
                 ),
                 border: InputBorder.none,
@@ -489,8 +487,8 @@ class _DreamOracleScreenState extends State<DreamOracleScreen>
                 Text(
                   '${_dreamController.text.length} karakter',
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: MysticalColors.textMuted,
-                      ),
+                    color: MysticalColors.textMuted,
+                  ),
                 ),
               ],
             ),
@@ -514,11 +512,11 @@ class _DreamOracleScreenState extends State<DreamOracleScreen>
             Text(
               'Ruyandaki Duygu',
               style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                    color: isDark
-                        ? MysticalColors.textPrimary
-                        : MysticalColors.textDark,
-                    fontWeight: FontWeight.w600,
-                  ),
+                color: isDark
+                    ? MysticalColors.textPrimary
+                    : MysticalColors.textDark,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ],
         ),
@@ -578,17 +576,17 @@ class _DreamOracleScreenState extends State<DreamOracleScreen>
                 Text(
                   'Bu ruya tekrarliyor mu?',
                   style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                        color: isDark
-                            ? MysticalColors.textPrimary
-                            : MysticalColors.textDark,
-                        fontWeight: FontWeight.w500,
-                      ),
+                    color: isDark
+                        ? MysticalColors.textPrimary
+                        : MysticalColors.textDark,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
                 Text(
                   'Tekrarlayan ruyalar ozel mesajlar tasir',
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: MysticalColors.textMuted,
-                      ),
+                    color: MysticalColors.textMuted,
+                  ),
                 ),
               ],
             ),
@@ -619,11 +617,11 @@ class _DreamOracleScreenState extends State<DreamOracleScreen>
             Text(
               'Hayatindaki Durum (Istege Bagli)',
               style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                    color: isDark
-                        ? MysticalColors.textPrimary
-                        : MysticalColors.textDark,
-                    fontWeight: FontWeight.w600,
-                  ),
+                color: isDark
+                    ? MysticalColors.textPrimary
+                    : MysticalColors.textDark,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ],
         ),
@@ -642,8 +640,9 @@ class _DreamOracleScreenState extends State<DreamOracleScreen>
             controller: _lifeContextController,
             maxLines: 2,
             style: TextStyle(
-              color:
-                  isDark ? MysticalColors.textPrimary : MysticalColors.textDark,
+              color: isDark
+                  ? MysticalColors.textPrimary
+                  : MysticalColors.textDark,
             ),
             decoration: InputDecoration(
               hintText: 'Su an hayatinda neler oluyor? (kariyer, iliski, vb.)',
@@ -672,11 +671,11 @@ class _DreamOracleScreenState extends State<DreamOracleScreen>
             Text(
               'Yorum Turu',
               style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                    color: isDark
-                        ? MysticalColors.textPrimary
-                        : MysticalColors.textDark,
-                    fontWeight: FontWeight.w600,
-                  ),
+                color: isDark
+                    ? MysticalColors.textPrimary
+                    : MysticalColors.textDark,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ],
         ),
@@ -717,16 +716,11 @@ class _DreamOracleScreenState extends State<DreamOracleScreen>
           ],
         ),
         borderRadius: BorderRadius.circular(Spacing.radiusMd),
-        border: Border.all(
-          color: MysticalColors.moonSilver.withOpacity(0.3),
-        ),
+        border: Border.all(color: MysticalColors.moonSilver.withOpacity(0.3)),
       ),
       child: Row(
         children: [
-          Text(
-            _currentMoonPhase.emoji,
-            style: const TextStyle(fontSize: 40),
-          ),
+          Text(_currentMoonPhase.emoji, style: const TextStyle(fontSize: 40)),
           const SizedBox(width: Spacing.lg),
           Expanded(
             child: Column(
@@ -735,26 +729,26 @@ class _DreamOracleScreenState extends State<DreamOracleScreen>
                 Text(
                   'Gunun Ay Fazi',
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: MysticalColors.textSecondary,
-                      ),
+                    color: MysticalColors.textSecondary,
+                  ),
                 ),
                 const SizedBox(height: 4),
                 Text(
                   _currentMoonPhase.label,
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                        color: isDark
-                            ? MysticalColors.textPrimary
-                            : MysticalColors.textDark,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    color: isDark
+                        ? MysticalColors.textPrimary
+                        : MysticalColors.textDark,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 const SizedBox(height: 4),
                 Text(
                   _currentMoonPhase.meaning,
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: MysticalColors.textSecondary,
-                        fontStyle: FontStyle.italic,
-                      ),
+                    color: MysticalColors.textSecondary,
+                    fontStyle: FontStyle.italic,
+                  ),
                 ),
               ],
             ),
@@ -766,22 +760,19 @@ class _DreamOracleScreenState extends State<DreamOracleScreen>
 
   Widget _buildInterpretButton() {
     return SizedBox(
-      width: double.infinity,
-      child: GradientButton(
-        label: 'Ruyami Yorumla',
-        icon: Icons.auto_awesome,
-        onPressed: _interpretDream,
-        gradient: LinearGradient(
-          colors: [
-            MysticalColors.amethyst,
-            MysticalColors.orchid,
-          ],
-        ),
-      ),
-    ).animate().fadeIn(duration: 400.ms, delay: 600.ms).scale(
-          begin: const Offset(0.95, 0.95),
-          end: const Offset(1, 1),
-        );
+          width: double.infinity,
+          child: GradientButton(
+            label: 'Ruyami Yorumla',
+            icon: Icons.auto_awesome,
+            onPressed: _interpretDream,
+            gradient: LinearGradient(
+              colors: [MysticalColors.amethyst, MysticalColors.orchid],
+            ),
+          ),
+        )
+        .animate()
+        .fadeIn(duration: 400.ms, delay: 600.ms)
+        .scale(begin: const Offset(0.95, 0.95), end: const Offset(1, 1));
   }
 
   // ============================================================================
@@ -798,16 +789,14 @@ class _DreamOracleScreenState extends State<DreamOracleScreen>
           const SizedBox(height: Spacing.xxl),
           // Loading message
           Text(
-            _loadingMessages[_currentLoadingIndex],
-            style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                _loadingMessages[_currentLoadingIndex],
+                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                   color: MysticalColors.textSecondary,
                   fontStyle: FontStyle.italic,
                 ),
-            textAlign: TextAlign.center,
-          )
-              .animate(
-                key: ValueKey(_currentLoadingIndex),
+                textAlign: TextAlign.center,
               )
+              .animate(key: ValueKey(_currentLoadingIndex))
               .fadeIn(duration: 300.ms)
               .slideY(begin: 0.1, end: 0),
           const SizedBox(height: Spacing.xl),
@@ -942,10 +931,7 @@ class _DreamOracleScreenState extends State<DreamOracleScreen>
                   ),
                 ),
                 child: const Center(
-                  child: Text(
-                    '\u{1F441}',
-                    style: TextStyle(fontSize: 32),
-                  ),
+                  child: Text('\u{1F441}', style: TextStyle(fontSize: 32)),
                 ),
               );
             },
@@ -1031,69 +1017,60 @@ class _DreamOracleScreenState extends State<DreamOracleScreen>
     final color = accentColor ?? MysticalColors.amethyst;
 
     return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: isDark
-              ? [
-                  color.withOpacity(0.15),
-                  MysticalColors.bgCosmic,
-                ]
-              : [
-                  color.withOpacity(0.1),
-                  MysticalColors.bgLightElevated,
-                ],
-        ),
-        borderRadius: BorderRadius.circular(Spacing.radiusLg),
-        border: Border.all(
-          color: color.withOpacity(0.3),
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: color.withOpacity(0.1),
-            blurRadius: 16,
-            offset: const Offset(0, 6),
-          ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // Header
-          Container(
-            padding: const EdgeInsets.all(Spacing.lg),
-            decoration: BoxDecoration(
-              border: Border(
-                bottom: BorderSide(
-                  color: color.withOpacity(0.2),
-                ),
-              ),
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: isDark
+                  ? [color.withOpacity(0.15), MysticalColors.bgCosmic]
+                  : [color.withOpacity(0.1), MysticalColors.bgLightElevated],
             ),
-            child: Row(
-              children: [
-                Text(emoji, style: const TextStyle(fontSize: 24)),
-                const SizedBox(width: Spacing.md),
-                Expanded(
-                  child: Text(
-                    title,
-                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: color,
-                          fontWeight: FontWeight.bold,
-                        ),
+            borderRadius: BorderRadius.circular(Spacing.radiusLg),
+            border: Border.all(color: color.withOpacity(0.3)),
+            boxShadow: [
+              BoxShadow(
+                color: color.withOpacity(0.1),
+                blurRadius: 16,
+                offset: const Offset(0, 6),
+              ),
+            ],
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Header
+              Container(
+                padding: const EdgeInsets.all(Spacing.lg),
+                decoration: BoxDecoration(
+                  border: Border(
+                    bottom: BorderSide(color: color.withOpacity(0.2)),
                   ),
                 ),
-              ],
-            ),
+                child: Row(
+                  children: [
+                    Text(emoji, style: const TextStyle(fontSize: 24)),
+                    const SizedBox(width: Spacing.md),
+                    Expanded(
+                      child: Text(
+                        title,
+                        style: Theme.of(context).textTheme.titleMedium
+                            ?.copyWith(
+                              color: color,
+                              fontWeight: FontWeight.bold,
+                            ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              // Content
+              Padding(
+                padding: const EdgeInsets.all(Spacing.lg),
+                child: content,
+              ),
+            ],
           ),
-          // Content
-          Padding(
-            padding: const EdgeInsets.all(Spacing.lg),
-            child: content,
-          ),
-        ],
-      ),
-    )
+        )
         .animate()
         .fadeIn(duration: 400.ms, delay: (100 * delayIndex).ms)
         .slideY(begin: 0.1, end: 0);
@@ -1110,11 +1087,10 @@ class _DreamOracleScreenState extends State<DreamOracleScreen>
       content: Text(
         _interpretation!.ancientIntro,
         style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-              color:
-                  isDark ? MysticalColors.textPrimary : MysticalColors.textDark,
-              height: 1.8,
-              fontStyle: FontStyle.italic,
-            ),
+          color: isDark ? MysticalColors.textPrimary : MysticalColors.textDark,
+          height: 1.8,
+          fontStyle: FontStyle.italic,
+        ),
       ),
     );
   }
@@ -1132,18 +1108,17 @@ class _DreamOracleScreenState extends State<DreamOracleScreen>
         decoration: BoxDecoration(
           color: MysticalColors.starGold.withOpacity(0.1),
           borderRadius: BorderRadius.circular(Spacing.radiusMd),
-          border: Border.all(
-            color: MysticalColors.starGold.withOpacity(0.3),
-          ),
+          border: Border.all(color: MysticalColors.starGold.withOpacity(0.3)),
         ),
         child: Text(
           _interpretation!.coreMessage,
           style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                color:
-                    isDark ? MysticalColors.textPrimary : MysticalColors.textDark,
-                height: 1.6,
-                fontWeight: FontWeight.w500,
-              ),
+            color: isDark
+                ? MysticalColors.textPrimary
+                : MysticalColors.textDark,
+            height: 1.6,
+            fontWeight: FontWeight.w500,
+          ),
           textAlign: TextAlign.center,
         ),
       ),
@@ -1179,10 +1154,9 @@ class _DreamOracleScreenState extends State<DreamOracleScreen>
       content: Text(
         _interpretation!.archetypeConnection,
         style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-              color:
-                  isDark ? MysticalColors.textPrimary : MysticalColors.textDark,
-              height: 1.7,
-            ),
+          color: isDark ? MysticalColors.textPrimary : MysticalColors.textDark,
+          height: 1.7,
+        ),
       ),
     );
   }
@@ -1228,17 +1202,9 @@ class _DreamOracleScreenState extends State<DreamOracleScreen>
             ),
           ),
           const SizedBox(height: Spacing.lg),
-          _buildEmotionalItem(
-            'Yuzey Mesaji',
-            reading.surfaceMessage,
-            isDark,
-          ),
+          _buildEmotionalItem('Yuzey Mesaji', reading.surfaceMessage, isDark),
           const SizedBox(height: Spacing.md),
-          _buildEmotionalItem(
-            'Derin Anlam',
-            reading.deeperMeaning,
-            isDark,
-          ),
+          _buildEmotionalItem('Derin Anlam', reading.deeperMeaning, isDark),
           const SizedBox(height: Spacing.md),
           _buildEmotionalItem(
             'Golge Sorusu',
@@ -1257,8 +1223,12 @@ class _DreamOracleScreenState extends State<DreamOracleScreen>
     );
   }
 
-  Widget _buildEmotionalItem(String label, String text, bool isDark,
-      {bool isQuestion = false}) {
+  Widget _buildEmotionalItem(
+    String label,
+    String text,
+    bool isDark, {
+    bool isQuestion = false,
+  }) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -1275,7 +1245,9 @@ class _DreamOracleScreenState extends State<DreamOracleScreen>
         Text(
           isQuestion ? '"$text"' : text,
           style: TextStyle(
-            color: isDark ? MysticalColors.textPrimary : MysticalColors.textDark,
+            color: isDark
+                ? MysticalColors.textPrimary
+                : MysticalColors.textDark,
             height: 1.5,
             fontStyle: isQuestion ? FontStyle.italic : FontStyle.normal,
           ),
@@ -1299,7 +1271,10 @@ class _DreamOracleScreenState extends State<DreamOracleScreen>
           // Moon phase badge
           Row(
             children: [
-              Text(timing.moonPhase.emoji, style: const TextStyle(fontSize: 32)),
+              Text(
+                timing.moonPhase.emoji,
+                style: const TextStyle(fontSize: 32),
+              ),
               const SizedBox(width: Spacing.md),
               Expanded(
                 child: Column(
@@ -1329,8 +1304,9 @@ class _DreamOracleScreenState extends State<DreamOracleScreen>
           Text(
             timing.timingMessage,
             style: TextStyle(
-              color:
-                  isDark ? MysticalColors.textPrimary : MysticalColors.textDark,
+              color: isDark
+                  ? MysticalColors.textPrimary
+                  : MysticalColors.textDark,
               height: 1.6,
             ),
           ),
@@ -1341,10 +1317,7 @@ class _DreamOracleScreenState extends State<DreamOracleScreen>
               color: MysticalColors.stardustBlue.withOpacity(0.1),
               borderRadius: BorderRadius.circular(Spacing.radiusMd),
               border: Border(
-                left: BorderSide(
-                  color: MysticalColors.stardustBlue,
-                  width: 3,
-                ),
+                left: BorderSide(color: MysticalColors.stardustBlue, width: 3),
               ),
             ),
             child: Column(
@@ -1423,8 +1396,10 @@ class _DreamOracleScreenState extends State<DreamOracleScreen>
               children: [
                 Row(
                   children: [
-                    const Text('\u{267E}\u{FE0F}',
-                        style: TextStyle(fontSize: 16)),
+                    const Text(
+                      '\u{267E}\u{FE0F}',
+                      style: TextStyle(fontSize: 16),
+                    ),
                     const SizedBox(width: Spacing.sm),
                     Text(
                       'Entegrasyon Yolu',
@@ -1555,9 +1530,7 @@ class _DreamOracleScreenState extends State<DreamOracleScreen>
       decoration: BoxDecoration(
         color: color.withOpacity(0.1),
         borderRadius: BorderRadius.circular(Spacing.radiusMd),
-        border: Border(
-          left: BorderSide(color: color, width: 3),
-        ),
+        border: Border(left: BorderSide(color: color, width: 3)),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -1636,10 +1609,7 @@ class _DreamOracleScreenState extends State<DreamOracleScreen>
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(4),
                         gradient: LinearGradient(
-                          colors: [
-                            getColor().withOpacity(0.5),
-                            getColor(),
-                          ],
+                          colors: [getColor().withOpacity(0.5), getColor()],
                         ),
                       ),
                     ),
@@ -1672,8 +1642,9 @@ class _DreamOracleScreenState extends State<DreamOracleScreen>
             'Bu ruyada lucid (bilinçli) ruya gorme potansiyeliniz yukseldi. '
             'Gelecek gece uyumadan once niyet koymayi deneyin.',
             style: TextStyle(
-              color:
-                  isDark ? MysticalColors.textSecondary : MysticalColors.textDarkSecondary,
+              color: isDark
+                  ? MysticalColors.textSecondary
+                  : MysticalColors.textDarkSecondary,
               height: 1.5,
             ),
           ),
@@ -1697,56 +1668,53 @@ class _DreamOracleScreenState extends State<DreamOracleScreen>
 
   Widget _buildWhisperQuoteSection() {
     return Container(
-      padding: const EdgeInsets.all(Spacing.xl),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            MysticalColors.cosmicPurple.withOpacity(0.8),
-            MysticalColors.midnightBlue.withOpacity(0.9),
-          ],
-        ),
-        borderRadius: BorderRadius.circular(Spacing.radiusLg),
-        boxShadow: [
-          BoxShadow(
-            color: MysticalColors.amethyst.withOpacity(0.3),
-            blurRadius: 20,
-            offset: const Offset(0, 8),
-          ),
-        ],
-      ),
-      child: Column(
-        children: [
-          const Text(
-            '\u{1F54A}\u{FE0F}',
-            style: TextStyle(fontSize: 36),
-          ),
-          const SizedBox(height: Spacing.lg),
-          Text(
-            'Fisildayan Cumle',
-            style: TextStyle(
-              color: MysticalColors.starGold,
-              fontSize: 12,
-              fontWeight: FontWeight.w600,
-              letterSpacing: 2,
+          padding: const EdgeInsets.all(Spacing.xl),
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                MysticalColors.cosmicPurple.withOpacity(0.8),
+                MysticalColors.midnightBlue.withOpacity(0.9),
+              ],
             ),
+            borderRadius: BorderRadius.circular(Spacing.radiusLg),
+            boxShadow: [
+              BoxShadow(
+                color: MysticalColors.amethyst.withOpacity(0.3),
+                blurRadius: 20,
+                offset: const Offset(0, 8),
+              ),
+            ],
           ),
-          const SizedBox(height: Spacing.md),
-          Text(
-            '"${_interpretation!.whisperQuote}"',
-            style: const TextStyle(
-              color: MysticalColors.starlightWhite,
-              fontSize: 20,
-              fontWeight: FontWeight.w500,
-              fontStyle: FontStyle.italic,
-              height: 1.6,
-            ),
-            textAlign: TextAlign.center,
+          child: Column(
+            children: [
+              const Text('\u{1F54A}\u{FE0F}', style: TextStyle(fontSize: 36)),
+              const SizedBox(height: Spacing.lg),
+              Text(
+                'Fisildayan Cumle',
+                style: TextStyle(
+                  color: MysticalColors.starGold,
+                  fontSize: 12,
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 2,
+                ),
+              ),
+              const SizedBox(height: Spacing.md),
+              Text(
+                '"${_interpretation!.whisperQuote}"',
+                style: const TextStyle(
+                  color: MysticalColors.starlightWhite,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                  fontStyle: FontStyle.italic,
+                  height: 1.6,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ],
           ),
-        ],
-      ),
-    )
+        )
         .animate()
         .fadeIn(duration: 600.ms, delay: 900.ms)
         .scale(begin: const Offset(0.95, 0.95), end: const Offset(1, 1));
@@ -1799,9 +1767,9 @@ class _DreamOracleScreenState extends State<DreamOracleScreen>
             Text(
               'Daha Fazla Kesfet',
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    color: MysticalColors.textPrimary,
-                    fontWeight: FontWeight.w600,
-                  ),
+                color: MysticalColors.textPrimary,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ],
         ),
@@ -1877,7 +1845,8 @@ class _DreamOracleScreenState extends State<DreamOracleScreen>
   void _shareDream() {
     if (_interpretation == null) return;
 
-    final shareText = '${_interpretation!.shareCard.emoji} '
+    final shareText =
+        '${_interpretation!.shareCard.emoji} '
         '"${_interpretation!.shareCard.quote}"\n\n'
         '- Ruya Orakeli\n'
         '#RuyaYorumu #Bilinçaltı';
@@ -1940,8 +1909,8 @@ class _EmotionChip extends StatelessWidget {
           color: isSelected
               ? null
               : isDark
-                  ? MysticalColors.bgElevated.withOpacity(0.5)
-                  : MysticalColors.bgLightElevated,
+              ? MysticalColors.bgElevated.withOpacity(0.5)
+              : MysticalColors.bgLightElevated,
           borderRadius: BorderRadius.circular(Spacing.radiusFull),
           border: Border.all(
             color: isSelected
@@ -2016,8 +1985,8 @@ class _StyleChip extends StatelessWidget {
           color: isSelected
               ? null
               : isDark
-                  ? MysticalColors.bgElevated.withOpacity(0.5)
-                  : MysticalColors.bgLightElevated,
+              ? MysticalColors.bgElevated.withOpacity(0.5)
+              : MysticalColors.bgLightElevated,
           borderRadius: BorderRadius.circular(Spacing.radiusMd),
           border: Border.all(
             color: isSelected
@@ -2026,12 +1995,7 @@ class _StyleChip extends StatelessWidget {
             width: isSelected ? 2 : 1,
           ),
           boxShadow: isSelected
-              ? [
-                  BoxShadow(
-                    color: style.color.withOpacity(0.3),
-                    blurRadius: 8,
-                  ),
-                ]
+              ? [BoxShadow(color: style.color.withOpacity(0.3), blurRadius: 8)]
               : null,
         ),
         child: Column(
@@ -2044,8 +2008,8 @@ class _StyleChip extends StatelessWidget {
                 color: isSelected
                     ? style.color
                     : isDark
-                        ? MysticalColors.textSecondary
-                        : MysticalColors.textDarkSecondary,
+                    ? MysticalColors.textSecondary
+                    : MysticalColors.textDarkSecondary,
                 fontWeight: isSelected ? FontWeight.bold : FontWeight.w500,
                 fontSize: 12,
               ),
@@ -2081,9 +2045,7 @@ class _ExpandableSymbolCardState extends State<_ExpandableSymbolCard> {
             ? MysticalColors.bgElevated.withOpacity(0.5)
             : MysticalColors.bgLightElevated,
         borderRadius: BorderRadius.circular(Spacing.radiusMd),
-        border: Border.all(
-          color: MysticalColors.nebulaTeal.withOpacity(0.3),
-        ),
+        border: Border.all(color: MysticalColors.nebulaTeal.withOpacity(0.3)),
       ),
       child: Column(
         children: [
@@ -2124,8 +2086,7 @@ class _ExpandableSymbolCardState extends State<_ExpandableSymbolCard> {
                             fontSize: 12,
                           ),
                           maxLines: _isExpanded ? null : 1,
-                          overflow:
-                              _isExpanded ? null : TextOverflow.ellipsis,
+                          overflow: _isExpanded ? null : TextOverflow.ellipsis,
                         ),
                       ],
                     ),
@@ -2203,8 +2164,9 @@ class _ExpandableSymbolCardState extends State<_ExpandableSymbolCard> {
                             ),
                             decoration: BoxDecoration(
                               color: MysticalColors.nebulaTeal.withOpacity(0.2),
-                              borderRadius:
-                                  BorderRadius.circular(Spacing.radiusSm),
+                              borderRadius: BorderRadius.circular(
+                                Spacing.radiusSm,
+                              ),
                             ),
                             child: Text(
                               s,
@@ -2247,8 +2209,9 @@ class _ExpandableSymbolCardState extends State<_ExpandableSymbolCard> {
         Text(
           text,
           style: TextStyle(
-            color:
-                isDark ? MysticalColors.textPrimary : MysticalColors.textDark,
+            color: isDark
+                ? MysticalColors.textPrimary
+                : MysticalColors.textDark,
             fontSize: 13,
             height: 1.4,
           ),
@@ -2263,11 +2226,7 @@ class _ExpandableSymbolCardState extends State<_ExpandableSymbolCard> {
 // ============================================================================
 
 /// Screen state
-enum DreamOracleState {
-  input,
-  loading,
-  results,
-}
+enum DreamOracleState { input, loading, results }
 
 /// Interpretation styles
 enum InterpretationStyle {
@@ -2277,30 +2236,15 @@ enum InterpretationStyle {
     'Derinlik Psikolojisi',
     MysticalColors.amethyst,
   ),
-  spiritual(
-    'Spiritüel',
-    '\u{2728}',
-    'Mistik Yorum',
-    MysticalColors.starGold,
-  ),
+  spiritual('Spiritüel', '\u{2728}', 'Mistik Yorum', MysticalColors.starGold),
   turkishFolk(
     'Halk Tabiri',
     '\u{1F9FF}',
     'Turk Gelenegine Gore',
     MysticalColors.nebulaRose,
   ),
-  islamic(
-    'Islami',
-    '\u{1F54C}',
-    'Islami Tabir',
-    MysticalColors.auroraGreen,
-  ),
-  quick(
-    'Hizli',
-    '\u{26A1}',
-    '3 Dakikada Yorum',
-    MysticalColors.etherealCyan,
-  );
+  islamic('Islami', '\u{1F54C}', 'Islami Tabir', MysticalColors.auroraGreen),
+  quick('Hizli', '\u{26A1}', '3 Dakikada Yorum', MysticalColors.etherealCyan);
 
   final String label;
   final String emoji;

@@ -63,16 +63,16 @@ class _VedicChartScreenState extends ConsumerState<VedicChartScreen> {
                 const SizedBox(height: 16),
                 Text(
                   'Profil bulunamadı',
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        color: Colors.white,
-                      ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.titleLarge?.copyWith(color: Colors.white),
                 ),
                 const SizedBox(height: 8),
                 Text(
                   'Lütfen önce doğum bilgilerinizi girin',
-                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        color: Colors.white70,
-                      ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.bodyMedium?.copyWith(color: Colors.white70),
                 ),
                 const SizedBox(height: 24),
                 ElevatedButton(
@@ -123,7 +123,9 @@ class _VedicChartScreenState extends ConsumerState<VedicChartScreen> {
                         Text(
                           'Vedik harita oluşturuluyor...',
                           style: TextStyle(
-                            color: isDark ? Colors.white70 : AppColors.textLight,
+                            color: isDark
+                                ? Colors.white70
+                                : AppColors.textLight,
                           ),
                         ),
                       ],
@@ -203,11 +205,7 @@ class _VedicChartScreenState extends ConsumerState<VedicChartScreen> {
         children: [
           Row(
             children: [
-              Icon(
-                Icons.person,
-                color: Colors.orange,
-                size: 20,
-              ),
+              Icon(Icons.person, color: Colors.orange, size: 20),
               const SizedBox(width: 8),
               Text(
                 'Profil Bilgileri',
@@ -220,13 +218,38 @@ class _VedicChartScreenState extends ConsumerState<VedicChartScreen> {
             ],
           ),
           const SizedBox(height: AppConstants.spacingMd),
-          _buildInfoRow(isDark, Icons.person_outline, 'İsim', userProfile.name ?? 'Kullanıcı'),
-          _buildInfoRow(isDark, Icons.cake_outlined, 'Doğum Tarihi', _formatDate(userProfile.birthDate)),
-          _buildInfoRow(isDark, Icons.wb_sunny_outlined, 'Batı Güneş', userProfile.sunSign.nameTr),
+          _buildInfoRow(
+            isDark,
+            Icons.person_outline,
+            'İsim',
+            userProfile.name ?? 'Kullanıcı',
+          ),
+          _buildInfoRow(
+            isDark,
+            Icons.cake_outlined,
+            'Doğum Tarihi',
+            _formatDate(userProfile.birthDate),
+          ),
+          _buildInfoRow(
+            isDark,
+            Icons.wb_sunny_outlined,
+            'Batı Güneş',
+            userProfile.sunSign.nameTr,
+          ),
           if (userProfile.moonSign != null)
-            _buildInfoRow(isDark, Icons.nightlight_outlined, 'Batı Ay', userProfile.moonSign!.nameTr),
+            _buildInfoRow(
+              isDark,
+              Icons.nightlight_outlined,
+              'Batı Ay',
+              userProfile.moonSign!.nameTr,
+            ),
           if (userProfile.risingSign != null)
-            _buildInfoRow(isDark, Icons.arrow_upward, 'Batı Yükselen', userProfile.risingSign!.nameTr),
+            _buildInfoRow(
+              isDark,
+              Icons.arrow_upward,
+              'Batı Yükselen',
+              userProfile.risingSign!.nameTr,
+            ),
         ],
       ),
     );
@@ -237,7 +260,11 @@ class _VedicChartScreenState extends ConsumerState<VedicChartScreen> {
       padding: const EdgeInsets.symmetric(vertical: 4),
       child: Row(
         children: [
-          Icon(icon, size: 16, color: isDark ? Colors.white54 : AppColors.textLight),
+          Icon(
+            icon,
+            size: 16,
+            color: isDark ? Colors.white54 : AppColors.textLight,
+          ),
           const SizedBox(width: 8),
           Text(
             '$label: ',
@@ -264,8 +291,18 @@ class _VedicChartScreenState extends ConsumerState<VedicChartScreen> {
 
   String _formatDate(DateTime date) {
     const months = [
-      'Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran',
-      'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'
+      'Ocak',
+      'Şubat',
+      'Mart',
+      'Nisan',
+      'Mayıs',
+      'Haziran',
+      'Temmuz',
+      'Ağustos',
+      'Eylül',
+      'Ekim',
+      'Kasım',
+      'Aralık',
     ];
     return '${date.day} ${months[date.month - 1]} ${date.year}';
   }
@@ -307,15 +344,14 @@ class _VedicChartScreenState extends ConsumerState<VedicChartScreen> {
                   children: [
                     Text(
                       'Rasi (Ay Burcu)',
-                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                            color: Colors.orange,
-                          ),
+                      style: Theme.of(
+                        context,
+                      ).textTheme.bodySmall?.copyWith(color: Colors.orange),
                     ),
                     Text(
                       _chart!.moonSign.nameTr,
-                      style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                            fontWeight: FontWeight.bold,
-                          ),
+                      style: Theme.of(context).textTheme.headlineSmall
+                          ?.copyWith(fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -325,9 +361,9 @@ class _VedicChartScreenState extends ConsumerState<VedicChartScreen> {
                 children: [
                   Text(
                     'Lagna',
-                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                          color: Colors.orange,
-                        ),
+                    style: Theme.of(
+                      context,
+                    ).textTheme.bodySmall?.copyWith(color: Colors.orange),
                   ),
                   Row(
                     children: [
@@ -339,8 +375,8 @@ class _VedicChartScreenState extends ConsumerState<VedicChartScreen> {
                       Text(
                         _chart!.ascendant.nameTr,
                         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                              fontWeight: FontWeight.bold,
-                            ),
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ],
                   ),
@@ -378,9 +414,9 @@ class _VedicChartScreenState extends ConsumerState<VedicChartScreen> {
               const SizedBox(width: 12),
               Text(
                 'Nakshatra',
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
               ),
             ],
           ),
@@ -401,8 +437,8 @@ class _VedicChartScreenState extends ConsumerState<VedicChartScreen> {
                     Text(
                       '${_chart!.nakshatra}. ${_chart!.nakshatraName}',
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                            fontWeight: FontWeight.bold,
-                          ),
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     Container(
                       padding: const EdgeInsets.symmetric(
@@ -415,9 +451,9 @@ class _VedicChartScreenState extends ConsumerState<VedicChartScreen> {
                       ),
                       child: Text(
                         'Pada ${_chart!.nakshatraPada}',
-                        style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                              color: Colors.purple,
-                            ),
+                        style: Theme.of(
+                          context,
+                        ).textTheme.labelSmall?.copyWith(color: Colors.purple),
                       ),
                     ),
                   ],
@@ -447,15 +483,12 @@ class _VedicChartScreenState extends ConsumerState<VedicChartScreen> {
       ),
       child: Row(
         children: [
-          Text(
-            '$label: ',
-            style: Theme.of(context).textTheme.bodySmall,
-          ),
+          Text('$label: ', style: Theme.of(context).textTheme.bodySmall),
           Text(
             value,
-            style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.bold),
           ),
         ],
       ),
@@ -486,9 +519,9 @@ class _VedicChartScreenState extends ConsumerState<VedicChartScreen> {
               const SizedBox(width: 8),
               Text(
                 'Dasha Dönemi',
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
               ),
             ],
           ),
@@ -528,7 +561,12 @@ class _VedicChartScreenState extends ConsumerState<VedicChartScreen> {
     );
   }
 
-  Widget _buildDashaPeriod(String label, String planet, Color color, bool isDark) {
+  Widget _buildDashaPeriod(
+    String label,
+    String planet,
+    Color color,
+    bool isDark,
+  ) {
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
@@ -541,16 +579,16 @@ class _VedicChartScreenState extends ConsumerState<VedicChartScreen> {
         children: [
           Text(
             label,
-            style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                  color: color,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.labelSmall?.copyWith(color: color),
           ),
           const SizedBox(height: 4),
           Text(
             planet,
-            style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.titleSmall?.copyWith(fontWeight: FontWeight.bold),
           ),
         ],
       ),
@@ -571,9 +609,9 @@ class _VedicChartScreenState extends ConsumerState<VedicChartScreen> {
         children: [
           Text(
             'Gezegen Pozisyonları (Sidereal)',
-            style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: AppConstants.spacingMd),
           ..._chart!.planets.map((planet) {
@@ -597,8 +635,8 @@ class _VedicChartScreenState extends ConsumerState<VedicChartScreen> {
                     child: Text(
                       planet.planet,
                       style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                            fontWeight: FontWeight.w600,
-                          ),
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
                   Text(
@@ -640,9 +678,9 @@ class _VedicChartScreenState extends ConsumerState<VedicChartScreen> {
                       child: Text(
                         'R',
                         style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                              color: Colors.orange,
-                              fontWeight: FontWeight.bold,
-                            ),
+                          color: Colors.orange,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   const SizedBox(width: 8),
@@ -658,9 +696,9 @@ class _VedicChartScreenState extends ConsumerState<VedicChartScreen> {
                     child: Text(
                       planet.dignity,
                       style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                            color: dignityColor,
-                            fontSize: 10,
-                          ),
+                        color: dignityColor,
+                        fontSize: 10,
+                      ),
                     ),
                   ),
                 ],
@@ -697,9 +735,9 @@ class _VedicChartScreenState extends ConsumerState<VedicChartScreen> {
               const SizedBox(width: 12),
               Text(
                 'Yogalar',
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
               ),
             ],
           ),
@@ -711,9 +749,7 @@ class _VedicChartScreenState extends ConsumerState<VedicChartScreen> {
               decoration: BoxDecoration(
                 color: Colors.green.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(8),
-                border: Border.all(
-                  color: Colors.green.withValues(alpha: 0.3),
-                ),
+                border: Border.all(color: Colors.green.withValues(alpha: 0.3)),
               ),
               child: Row(
                 children: [
@@ -748,9 +784,9 @@ class _VedicChartScreenState extends ConsumerState<VedicChartScreen> {
         children: [
           Text(
             'Dosha Analizi',
-            style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: AppConstants.spacingMd),
           _buildDoshaItem('Manglik Dosha', _chart!.manglikStatus, isDark),
@@ -762,7 +798,8 @@ class _VedicChartScreenState extends ConsumerState<VedicChartScreen> {
   }
 
   Widget _buildDoshaItem(String title, String content, bool isDark) {
-    final hasDosha = content.contains('mevcut') || content.contains('belirtileri');
+    final hasDosha =
+        content.contains('mevcut') || content.contains('belirtileri');
 
     return Container(
       padding: const EdgeInsets.all(12),
@@ -790,17 +827,14 @@ class _VedicChartScreenState extends ConsumerState<VedicChartScreen> {
               const SizedBox(width: 8),
               Text(
                 title,
-                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold),
               ),
             ],
           ),
           const SizedBox(height: 4),
-          Text(
-            content,
-            style: Theme.of(context).textTheme.bodySmall,
-          ),
+          Text(content, style: Theme.of(context).textTheme.bodySmall),
         ],
       ),
     );
@@ -828,16 +862,16 @@ class _VedicChartScreenState extends ConsumerState<VedicChartScreen> {
           Text(
             'Vedik Yorum',
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.starGold,
-                ),
+              fontWeight: FontWeight.bold,
+              color: AppColors.starGold,
+            ),
           ),
           const SizedBox(height: AppConstants.spacingSm),
           Text(
             _chart!.generalPrediction,
-            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  height: 1.6,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.bodyMedium?.copyWith(height: 1.6),
             textAlign: TextAlign.center,
           ),
         ],

@@ -1983,11 +1983,7 @@ Cinsel enerji görkemli, cömert ve ifade dolu. Takdir edilmek ister.
 Tantrik yaklaşım: Partner karşılıklı takdir, kutlama, ifade.
 Performans kaygısı varsa, onu farkındalıkla çözün.
 ''',
-      avoidPractices: [
-        'Ego baskılama',
-        'Gölgede kalma',
-        'Kendini küçümseme',
-      ],
+      avoidPractices: ['Ego baskılama', 'Gölgede kalma', 'Kendini küçümseme'],
       idealPartnerPractices: [
         'Karşılıklı takdir ritüeli',
         'Yaratıcı, spontan sevişme',
@@ -2896,7 +2892,8 @@ Bu niyeti güneşin ilk ışıklarına tutun - kozmik mühür.
       name: 'Ay Tutulması',
       date: 'Değişken (yılda 2-4 kez)',
       cosmicEvent: 'Dünya Ay ile Güneş arasına girer, Ay kararır',
-      energyQuality: 'Duygusal arınma, bilinçaltı açığa çıkması, karmik serbest bırakma',
+      energyQuality:
+          'Duygusal arınma, bilinçaltı açığa çıkması, karmik serbest bırakma',
       duration: 'Tutulma günü + 2 hafta öncesi/sonrası (etki alanı)',
       tantricSignificance: '''
 Ay Tutulması, Shakti'nin geçici olarak gölgelenmesidir. Dünya'nın gölgesi
@@ -2951,7 +2948,8 @@ Tutulma sonrası ilk yemek, hafif ve sattvik olsun.
       name: 'Güneş Tutulması',
       date: 'Değişken (yılda 2-4 kez)',
       cosmicEvent: 'Ay, Güneş ile Dünya arasına girer, Güneş kararır',
-      energyQuality: 'Bilinç sıfırlama, kimlik dönüşümü, yeni başlangıç potansiyeli',
+      energyQuality:
+          'Bilinç sıfırlama, kimlik dönüşümü, yeni başlangıç potansiyeli',
       duration: 'Tutulma günü + 2 hafta öncesi/sonrası (etki alanı)',
       tantricSignificance: '''
 Güneş Tutulması, Shiva'nın geçici olarak gölgelenmesidir. Bilinç prensibi
@@ -3086,7 +3084,14 @@ eski kalıpları çözme ve daha derin entegrasyon için fırsatlar sunar.
       planet: 'Venüs',
       frequency: '18 ayda bir',
       duration: 'Yaklaşık 40 gün',
-      generalThemes: ['Aşk', 'İlişkiler', 'Değerler', 'Para', 'Güzellik', 'Zevk'],
+      generalThemes: [
+        'Aşk',
+        'İlişkiler',
+        'Değerler',
+        'Para',
+        'Güzellik',
+        'Zevk',
+      ],
       tantricSignificance: '''
 Venüs retrosu, aşk ve ilişki alanında derin bir içe dönüş dönemidir.
 Eski aşklar geri dönebilir, mevcut ilişkiler sorgulanabilir, değerlerimiz
@@ -3182,7 +3187,14 @@ Bu pratiği birkaç oturumda, yavaş yavaş yapın. Zorlamayın.
       planet: 'Mars',
       frequency: '2 yılda bir',
       duration: 'Yaklaşık 80 gün',
-      generalThemes: ['Eylem', 'Enerji', 'Öfke', 'Cinsel dürtü', 'Motivasyon', 'Savaş'],
+      generalThemes: [
+        'Eylem',
+        'Enerji',
+        'Öfke',
+        'Cinsel dürtü',
+        'Motivasyon',
+        'Savaş',
+      ],
       tantricSignificance: '''
 Mars retrosu, eylem ve enerji alanında içe dönüşü zorunlu kılar. Dışa
 dönük agresyon engellenirken, içsel öfke birikebilir. Cinsel enerji
@@ -3278,7 +3290,14 @@ Düşman, müttefike dönüşür. Gölge entegre olur.
       planet: 'Merkür',
       frequency: 'Yılda 3-4 kez',
       duration: 'Yaklaşık 21 gün',
-      generalThemes: ['İletişim', 'Teknoloji', 'Seyahat', 'Sözleşmeler', 'Düşünce', 'Öğrenme'],
+      generalThemes: [
+        'İletişim',
+        'Teknoloji',
+        'Seyahat',
+        'Sözleşmeler',
+        'Düşünce',
+        'Öğrenme',
+      ],
       tantricSignificance: '''
 Merkür retrosu, zihinsel dünyada karışıklık yaratır. İletişim aksar,
 teknoloji bozulur, yanlış anlaşılmalar artar. Ama bu aynı zamanda
@@ -3530,11 +3549,7 @@ Yeni teknikler, yeni öğretmenler, yeni yollar keşfedilebilir.
         'Nazik, keşfedici seks',
         'Parfüm ve koku ritüelleri',
       ],
-      avoidPractices: [
-        'Tek yönteme bağlanma',
-        'Durağanlık',
-        'Merak bastırma',
-      ],
+      avoidPractices: ['Tek yönteme bağlanma', 'Durağanlık', 'Merak bastırma'],
       mantra: 'OM SOMAYA NAMAHA',
       tantraRating: 3,
     ),
@@ -3600,11 +3615,7 @@ Zor dönemlerin ardından şifa gelir.
         'Bolluk çağırma',
         'Eve dönüş (iç huzur)',
       ],
-      avoidPractices: [
-        'Karamsarlık',
-        'Geçmişe takılma',
-        'Umutsuzluk',
-      ],
+      avoidPractices: ['Karamsarlık', 'Geçmişe takılma', 'Umutsuzluk'],
       mantra: 'OM ADITYE NAMAHA',
       tantraRating: 4,
     ),
@@ -3671,11 +3682,7 @@ Yılan enerjisi uyandırılabilir, ama dikkatli olmak gerekir - yılan hem
         'Hipnoz ve trance',
         'Cinsel enerji çalışmaları',
       ],
-      avoidPractices: [
-        'Naiflik',
-        'Güvensiz ortamlar',
-        'Kontrolsüz pratikler',
-      ],
+      avoidPractices: ['Naiflik', 'Güvensiz ortamlar', 'Kontrolsüz pratikler'],
       mantra: 'OM SARPEBHYO NAMAHA',
       tantraRating: 5,
     ),
@@ -3741,11 +3748,7 @@ spiritüel yol olarak kullanma zamanıdır.
         'Zevk meditasyonları',
         'Partner pratikleri',
       ],
-      avoidPractices: [
-        'Çilecilik',
-        'Zevk reddi',
-        'Yalnızlık pratikleri',
-      ],
+      avoidPractices: ['Çilecilik', 'Zevk reddi', 'Yalnızlık pratikleri'],
       mantra: 'OM BHAGAYA NAMAHA',
       tantraRating: 5,
     ),
@@ -3776,11 +3779,7 @@ ve birlikte spiritüel yolda yürüme zamanıdır.
         'Cömertlik pratikleri',
         'Hizmet (seva)',
       ],
-      avoidPractices: [
-        'Kaçıngan bağlanma',
-        'Taahhütsüzlük',
-        'Bencillik',
-      ],
+      avoidPractices: ['Kaçıngan bağlanma', 'Taahhütsüzlük', 'Bencillik'],
       mantra: 'OM ARYAMNE NAMAHA',
       tantraRating: 4,
     ),
@@ -3812,11 +3811,7 @@ enerji çalışması için mükemmel zamandır.
         'El sanatları',
         'Beceri geliştirme',
       ],
-      avoidPractices: [
-        'Pasiflik',
-        'El kullanmadan pratik',
-        'Beceri ihmal',
-      ],
+      avoidPractices: ['Pasiflik', 'El kullanmadan pratik', 'Beceri ihmal'],
       mantra: 'OM SAVITRE NAMAHA',
       tantraRating: 4,
     ),
@@ -3846,11 +3841,7 @@ estetik spiritüellik zamanıdır.
         'Estetik meditasyonlar',
         'Beden tapınağı bakımı',
       ],
-      avoidPractices: [
-        'Çirkinlik',
-        'Estetik ihmal',
-        'Sadece fonksiyonellik',
-      ],
+      avoidPractices: ['Çirkinlik', 'Estetik ihmal', 'Sadece fonksiyonellik'],
       mantra: 'OM TVASHTRI NAMAHA',
       tantraRating: 3,
     ),
@@ -3880,11 +3871,7 @@ bağımsız sadhana için mükemmel zamandır.
         'Rüzgar ritüelleri',
         'Esneklik pratikleri',
       ],
-      avoidPractices: [
-        'Katı yapılar',
-        'Bağımlılık',
-        'Durağanlık',
-      ],
+      avoidPractices: ['Katı yapılar', 'Bağımlılık', 'Durağanlık'],
       mantra: 'OM VAYAVE NAMAHA',
       tantraRating: 3,
     ),
@@ -3914,11 +3901,7 @@ zafere ulaşma zamanıdır.
         'Rekabet (kendinle)',
         'Zafer ritüelleri',
       ],
-      avoidPractices: [
-        'Gevşeklik',
-        'Hedefsizlik',
-        'Yarı bırakma',
-      ],
+      avoidPractices: ['Gevşeklik', 'Hedefsizlik', 'Yarı bırakma'],
       mantra: 'OM INDRAGNIBHYAM NAMAHA',
       tantraRating: 4,
     ),
@@ -3949,11 +3932,7 @@ Tantrik açıdan Anuradha, bhakti yoga, guru devotion ve tantrik sanga
         'Lotus meditasyonları',
         'Sevgi ve adanmışlık',
       ],
-      avoidPractices: [
-        'Yalnızlık',
-        'Kibirli bağımsızlık',
-        'Sevgisiz pratik',
-      ],
+      avoidPractices: ['Yalnızlık', 'Kibirli bağımsızlık', 'Sevgisiz pratik'],
       mantra: 'OM MITRAYA NAMAHA',
       tantraRating: 4,
     ),
@@ -3983,11 +3962,7 @@ spiritüel liderlik için zamandır.
         'Sınır belirleme',
         'Düşmanları dönüştürme',
       ],
-      avoidPractices: [
-        'Kibir',
-        'Güç suistimali',
-        'Zorbalık',
-      ],
+      avoidPractices: ['Kibir', 'Güç suistimali', 'Zorbalık'],
       mantra: 'OM INDRAYA NAMAHA',
       tantraRating: 4,
     ),
@@ -4019,11 +3994,7 @@ dönüşüm için en güçlü zamandır.
         'Ata şifası',
         'Temel dönüşüm',
       ],
-      avoidPractices: [
-        'Yüzeysel pratikler',
-        'Kaçış',
-        'Güvenlik arayışı',
-      ],
+      avoidPractices: ['Yüzeysel pratikler', 'Kaçış', 'Güvenlik arayışı'],
       mantra: 'OM NIRRITAYE NAMAHA',
       tantraRating: 5,
     ),
@@ -4053,11 +4024,7 @@ için mükemmel zamandır.
         'Duygusal arınma',
         'Akış pratikleri',
       ],
-      avoidPractices: [
-        'Kuruyan pratikler',
-        'Katılık',
-        'Akışı engelleme',
-      ],
+      avoidPractices: ['Kuruyan pratikler', 'Katılık', 'Akışı engelleme'],
       mantra: 'OM APOBHYO NAMAHA',
       tantraRating: 4,
     ),
@@ -4087,11 +4054,7 @@ spiritüel zafer için güçlü zamandır.
         'Dharma çalışmaları',
         'Evrensel hizmet',
       ],
-      avoidPractices: [
-        'Geçici odak',
-        'Bencillik',
-        'Dar bakış',
-      ],
+      avoidPractices: ['Geçici odak', 'Bencillik', 'Dar bakış'],
       mantra: 'OM VISHWADEVEBHYO NAMAHA',
       tantraRating: 4,
     ),
@@ -4122,11 +4085,7 @@ sesin işitilmesi için mükemmel zamandır.
         'İçsel sesi dinleme',
         'Spiritüel çalışma',
       ],
-      avoidPractices: [
-        'Konuşmak (dinlemek yerine)',
-        'Gürültü',
-        'Dikkatsizlik',
-      ],
+      avoidPractices: ['Konuşmak (dinlemek yerine)', 'Gürültü', 'Dikkatsizlik'],
       mantra: 'OM VISHNAVE NAMAHA',
       tantraRating: 5,
     ),
@@ -4551,7 +4510,15 @@ class NakshatraWisdom {
 class TantricTimingService {
   /// Günün tantrik enerjisini al
   static SacredDay? getDayEnergy(int weekday) {
-    final days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+    final days = [
+      'monday',
+      'tuesday',
+      'wednesday',
+      'thursday',
+      'friday',
+      'saturday',
+      'sunday',
+    ];
     final dayKey = days[(weekday - 1) % 7];
     return SacredDays.days[dayKey];
   }
@@ -4580,24 +4547,27 @@ class TantricTimingService {
 
     // Ay fazlarını kontrol et
     for (final entry in MoonPhaseTantra.phases.entries) {
-      if (entry.value.idealActivities.any((a) =>
-          a.toLowerCase().contains(practiceType.toLowerCase()))) {
+      if (entry.value.idealActivities.any(
+        (a) => a.toLowerCase().contains(practiceType.toLowerCase()),
+      )) {
         times.add('Ay Fazı: ${entry.value.name}');
       }
     }
 
     // Günleri kontrol et
     for (final entry in SacredDays.days.entries) {
-      if (entry.value.idealPractices.any((p) =>
-          p.toLowerCase().contains(practiceType.toLowerCase()))) {
+      if (entry.value.idealPractices.any(
+        (p) => p.toLowerCase().contains(practiceType.toLowerCase()),
+      )) {
         times.add('Gün: ${entry.value.name}');
       }
     }
 
     // Nakshatra'ları kontrol et
     for (final nakshatra in NakshatraTantra.nakshatras) {
-      if (nakshatra.bestForPractices.any((p) =>
-          p.toLowerCase().contains(practiceType.toLowerCase()))) {
+      if (nakshatra.bestForPractices.any(
+        (p) => p.toLowerCase().contains(practiceType.toLowerCase()),
+      )) {
         times.add('Nakshatra: ${nakshatra.name} (${nakshatra.nameTr})');
       }
     }

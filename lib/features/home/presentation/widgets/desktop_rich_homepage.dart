@@ -30,7 +30,9 @@ class DesktopRichHomepage extends ConsumerWidget {
     final userProfile = ref.watch(userProfileProvider);
 
     // Guard: Redirect to onboarding if no valid profile
-    if (userProfile == null || userProfile.name == null || userProfile.name!.isEmpty) {
+    if (userProfile == null ||
+        userProfile.name == null ||
+        userProfile.name!.isEmpty) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (context.mounted) {
           context.go(Routes.onboarding);
@@ -67,9 +69,10 @@ class DesktopRichHomepage extends ConsumerWidget {
                   // ══════════════════════════════════════════════════════
                   // QUICK DISCOVERY BAR - Lightweight tool access
                   // ══════════════════════════════════════════════════════
-                  const _QuickDiscoveryBar()
-                      .animate()
-                      .fadeIn(duration: 400.ms, delay: 100.ms),
+                  const _QuickDiscoveryBar().animate().fadeIn(
+                    duration: 400.ms,
+                    delay: 100.ms,
+                  ),
 
                   const SizedBox(height: 24),
 
@@ -86,18 +89,20 @@ class DesktopRichHomepage extends ConsumerWidget {
                   // ══════════════════════════════════════════════════════
                   // MOON PHASE - Interactive moon widget
                   // ══════════════════════════════════════════════════════
-                  _MoonPhaseSection()
-                      .animate()
-                      .fadeIn(duration: 500.ms, delay: 400.ms),
+                  _MoonPhaseSection().animate().fadeIn(
+                    duration: 500.ms,
+                    delay: 400.ms,
+                  ),
 
                   const SizedBox(height: 40),
 
                   // ══════════════════════════════════════════════════════
                   // QUICK ACTIONS GRID - Premium cards
                   // ══════════════════════════════════════════════════════
-                  _QuickActionsGrid()
-                      .animate()
-                      .fadeIn(duration: 500.ms, delay: 500.ms),
+                  _QuickActionsGrid().animate().fadeIn(
+                    duration: 500.ms,
+                    delay: 500.ms,
+                  ),
 
                   const SizedBox(height: 40),
 
@@ -114,18 +119,20 @@ class DesktopRichHomepage extends ConsumerWidget {
                   // ══════════════════════════════════════════════════════
                   // DISCOVERY SECTION - Featured tools
                   // ══════════════════════════════════════════════════════
-                  _DiscoverySection()
-                      .animate()
-                      .fadeIn(duration: 500.ms, delay: 700.ms),
+                  _DiscoverySection().animate().fadeIn(
+                    duration: 500.ms,
+                    delay: 700.ms,
+                  ),
 
                   const SizedBox(height: 32),
 
                   // ══════════════════════════════════════════════════════
                   // EV SİSTEMİ SECTION - Astrolojik Evler
                   // ══════════════════════════════════════════════════════
-                  _HouseSystemSection()
-                      .animate()
-                      .fadeIn(duration: 500.ms, delay: 800.ms),
+                  _HouseSystemSection().animate().fadeIn(
+                    duration: 500.ms,
+                    delay: 800.ms,
+                  ),
 
                   const SizedBox(height: 32),
 
@@ -160,9 +167,7 @@ class _QuickDiscoveryBar extends StatelessWidget {
           ],
         ),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(
-          color: Colors.white.withOpacity(0.08),
-        ),
+        border: Border.all(color: Colors.white.withOpacity(0.08)),
       ),
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
@@ -218,11 +223,7 @@ class _QuickDiscoveryBar extends StatelessWidget {
               route: Routes.chakraAnalysis,
             ),
             const SizedBox(width: 24),
-            _QuickDiscoveryItem(
-              icon: '✨',
-              label: 'Aura',
-              route: Routes.aura,
-            ),
+            _QuickDiscoveryItem(icon: '✨', label: 'Aura', route: Routes.aura),
             const SizedBox(width: 24),
             _QuickDiscoveryItem(
               icon: '🕯️',
@@ -301,10 +302,7 @@ class _DesktopHeader extends StatelessWidget {
   final String userName;
   final ZodiacSign sign;
 
-  const _DesktopHeader({
-    required this.userName,
-    required this.sign,
-  });
+  const _DesktopHeader({required this.userName, required this.sign});
 
   @override
   Widget build(BuildContext context) {
@@ -318,10 +316,7 @@ class _DesktopHeader extends StatelessWidget {
           ],
         ),
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(
-          color: Colors.white.withOpacity(0.1),
-          width: 1,
-        ),
+        border: Border.all(color: Colors.white.withOpacity(0.1), width: 1),
       ),
       child: Row(
         children: [
@@ -385,9 +380,7 @@ class _DesktopHeader extends StatelessWidget {
                 ),
 
                 // Kozmoz Button - En sağda
-                _KozmozHeaderButton(
-                  onTap: () => context.push(Routes.kozmoz),
-                ),
+                _KozmozHeaderButton(onTap: () => context.push(Routes.kozmoz)),
               ],
             ),
           ),
@@ -399,10 +392,7 @@ class _DesktopHeader extends StatelessWidget {
             children: [
               Text(
                 sign.symbol,
-                style: const TextStyle(
-                  fontSize: 28,
-                  color: AppColors.starGold,
-                ),
+                style: const TextStyle(fontSize: 28, color: AppColors.starGold),
               ),
               const SizedBox(width: 12),
               ConstrainedBox(
@@ -460,10 +450,7 @@ class _HeaderIconButton extends StatelessWidget {
   final IconData icon;
   final VoidCallback onTap;
 
-  const _HeaderIconButton({
-    required this.icon,
-    required this.onTap,
-  });
+  const _HeaderIconButton({required this.icon, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -478,15 +465,9 @@ class _HeaderIconButton extends StatelessWidget {
           decoration: BoxDecoration(
             color: Colors.white.withOpacity(0.05),
             borderRadius: BorderRadius.circular(12),
-            border: Border.all(
-              color: Colors.white.withOpacity(0.1),
-            ),
+            border: Border.all(color: Colors.white.withOpacity(0.1)),
           ),
-          child: Icon(
-            icon,
-            color: AppColors.textSecondary,
-            size: 20,
-          ),
+          child: Icon(icon, color: AppColors.textSecondary, size: 20),
         ),
       ),
     );
@@ -542,7 +523,10 @@ class _HeroSection extends StatelessWidget {
               children: [
                 // Today's date badge
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 12,
+                    vertical: 6,
+                  ),
                   decoration: BoxDecoration(
                     color: AppColors.starGold.withOpacity(0.15),
                     borderRadius: BorderRadius.circular(20),
@@ -593,7 +577,10 @@ class _HeroSection extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppColors.starGold,
                     foregroundColor: AppColors.deepSpace,
-                    padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 32,
+                      vertical: 16,
+                    ),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16),
                     ),
@@ -626,9 +613,7 @@ class _HeroSection extends StatelessWidget {
           // Right side - Animated zodiac symbol
           Expanded(
             flex: 2,
-            child: Center(
-              child: _AnimatedZodiacSymbol(sign: sign),
-            ),
+            child: Center(child: _AnimatedZodiacSymbol(sign: sign)),
           ),
         ],
       ),
@@ -638,14 +623,26 @@ class _HeroSection extends StatelessWidget {
   String _getTodayString() {
     final now = DateTime.now();
     final months = [
-      'Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran',
-      'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'
+      'Ocak',
+      'Şubat',
+      'Mart',
+      'Nisan',
+      'Mayıs',
+      'Haziran',
+      'Temmuz',
+      'Ağustos',
+      'Eylül',
+      'Ekim',
+      'Kasım',
+      'Aralık',
     ];
     return '${now.day} ${months[now.month - 1]} ${now.year}';
   }
 
   String _getCosmicHeadline(ZodiacSign sign) {
-    final dayOfYear = DateTime.now().difference(DateTime(DateTime.now().year, 1, 1)).inDays;
+    final dayOfYear = DateTime.now()
+        .difference(DateTime(DateTime.now().year, 1, 1))
+        .inDays;
     final headlines = <String>[
       'Kozmik enerjiler senin yanında.',
       'Evren sana gülümsüyor.',
@@ -657,7 +654,9 @@ class _HeroSection extends StatelessWidget {
   }
 
   String _getCosmicMessage(ZodiacSign sign) {
-    final dayOfYear = DateTime.now().difference(DateTime(DateTime.now().year, 1, 1)).inDays;
+    final dayOfYear = DateTime.now()
+        .difference(DateTime(DateTime.now().year, 1, 1))
+        .inDays;
     final messages = <String>[
       'Bugün içsel gücünü keşfetmek için mükemmel bir gün. Sezgilerine güven ve kalbinin sesini dinle.',
       'Evrenin enerjisi seninle akıyor. Bu fırsatı değerlendir ve hayallerine bir adım daha yaklaş.',
@@ -792,99 +791,102 @@ class _MoonPhaseSection extends StatelessWidget {
     return GestureDetector(
       onTap: () => context.push(Routes.timing),
       child: Container(
-      padding: const EdgeInsets.all(24),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            Colors.white.withOpacity(0.05),
-            Colors.white.withOpacity(0.02),
-          ],
-        ),
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(
-          color: Colors.white.withOpacity(0.1),
-        ),
-      ),
-      child: Row(
-        children: [
-          // Moon icon
-          Container(
-            width: 80,
-            height: 80,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              gradient: RadialGradient(
-                colors: [
-                  AppColors.moonSilver.withOpacity(0.3),
-                  Colors.transparent,
-                ],
-              ),
-            ),
-            child: Center(
-              child: Text(
-                moonPhase.emoji,
-                style: const TextStyle(fontSize: 48),
-              ),
-            ),
+        padding: const EdgeInsets.all(24),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Colors.white.withOpacity(0.05),
+              Colors.white.withOpacity(0.02),
+            ],
           ),
-
-          const SizedBox(width: 24),
-
-          // Moon info
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  moonPhase.nameTr,
-                  style: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.textPrimary,
-                  ),
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  'Ay ${moonSign.nameTr} burcunda',
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: AppColors.textSecondary.withOpacity(0.8),
-                  ),
-                ),
-              ],
-            ),
-          ),
-
-          // Mercury retrograde badge if active
-          if (MoonService.isPlanetRetrograde('mercury'))
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: Colors.white.withOpacity(0.1)),
+        ),
+        child: Row(
+          children: [
+            // Moon icon
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+              width: 80,
+              height: 80,
               decoration: BoxDecoration(
-                color: AppColors.error.withOpacity(0.15),
-                borderRadius: BorderRadius.circular(8),
-                border: Border.all(
-                  color: AppColors.error.withOpacity(0.3),
+                shape: BoxShape.circle,
+                gradient: RadialGradient(
+                  colors: [
+                    AppColors.moonSilver.withOpacity(0.3),
+                    Colors.transparent,
+                  ],
                 ),
               ),
-              child: const Row(
-                mainAxisSize: MainAxisSize.min,
+              child: Center(
+                child: Text(
+                  moonPhase.emoji,
+                  style: const TextStyle(fontSize: 48),
+                ),
+              ),
+            ),
+
+            const SizedBox(width: 24),
+
+            // Moon info
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Icon(Icons.warning_amber_rounded, color: AppColors.error, size: 16),
-                  SizedBox(width: 4),
                   Text(
-                    'Merkür Geri',
-                    style: TextStyle(
-                      fontSize: 12,
+                    moonPhase.nameTr,
+                    style: const TextStyle(
+                      fontSize: 20,
                       fontWeight: FontWeight.w600,
-                      color: AppColors.error,
+                      color: AppColors.textPrimary,
+                    ),
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    'Ay ${moonSign.nameTr} burcunda',
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: AppColors.textSecondary.withOpacity(0.8),
                     ),
                   ),
                 ],
               ),
             ),
-        ],
+
+            // Mercury retrograde badge if active
+            if (MoonService.isPlanetRetrograde('mercury'))
+              Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 6,
+                ),
+                decoration: BoxDecoration(
+                  color: AppColors.error.withOpacity(0.15),
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(color: AppColors.error.withOpacity(0.3)),
+                ),
+                child: const Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.warning_amber_rounded,
+                      color: AppColors.error,
+                      size: 16,
+                    ),
+                    SizedBox(width: 4),
+                    Text(
+                      'Merkür Geri',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w600,
+                        color: AppColors.error,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+          ],
+        ),
       ),
-    ),
     );
   }
 }
@@ -898,7 +900,8 @@ class _QuickActionsGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        final cardWidth = (constraints.maxWidth - 48) / 4; // 4 columns with gaps
+        final cardWidth =
+            (constraints.maxWidth - 48) / 4; // 4 columns with gaps
 
         return Wrap(
           spacing: 16,
@@ -1023,11 +1026,7 @@ class _QuickActionCardState extends State<_QuickActionCard> {
                   color: widget.color.withOpacity(0.15),
                   borderRadius: BorderRadius.circular(12),
                 ),
-                child: Icon(
-                  widget.icon,
-                  color: widget.color,
-                  size: 24,
-                ),
+                child: Icon(widget.icon, color: widget.color, size: 24),
               ),
               const SizedBox(height: 16),
               Text(
@@ -1075,9 +1074,7 @@ class _ZodiacWheelSection extends StatelessWidget {
           ],
         ),
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(
-          color: Colors.white.withOpacity(0.1),
-        ),
+        border: Border.all(color: Colors.white.withOpacity(0.1)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -1106,10 +1103,7 @@ class _ZodiacWheelSection extends StatelessWidget {
             runSpacing: 12,
             children: ZodiacSign.values.map((sign) {
               final isCurrentSign = sign == currentSign;
-              return _ZodiacChip(
-                sign: sign,
-                isSelected: isCurrentSign,
-              );
+              return _ZodiacChip(sign: sign, isSelected: isCurrentSign);
             }).toList(),
           ),
         ],
@@ -1122,10 +1116,7 @@ class _ZodiacChip extends StatefulWidget {
   final ZodiacSign sign;
   final bool isSelected;
 
-  const _ZodiacChip({
-    required this.sign,
-    required this.isSelected,
-  });
+  const _ZodiacChip({required this.sign, required this.isSelected});
 
   @override
   State<_ZodiacChip> createState() => _ZodiacChipState();
@@ -1140,7 +1131,8 @@ class _ZodiacChipState extends State<_ZodiacChip> {
       onEnter: (_) => setState(() => _isHovered = true),
       onExit: (_) => setState(() => _isHovered = false),
       child: GestureDetector(
-        onTap: () => context.push('/horoscope/${widget.sign.name.toLowerCase()}'),
+        onTap: () =>
+            context.push('/horoscope/${widget.sign.name.toLowerCase()}'),
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 200),
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
@@ -1180,7 +1172,9 @@ class _ZodiacChipState extends State<_ZodiacChip> {
                 widget.sign.nameTr,
                 style: TextStyle(
                   fontSize: 14,
-                  fontWeight: widget.isSelected ? FontWeight.w600 : FontWeight.w500,
+                  fontWeight: widget.isSelected
+                      ? FontWeight.w600
+                      : FontWeight.w500,
                   color: widget.isSelected || _isHovered
                       ? AppColors.textPrimary
                       : AppColors.textSecondary,
@@ -1211,9 +1205,7 @@ class _DiscoverySection extends StatelessWidget {
           ],
         ),
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(
-          color: Colors.white.withOpacity(0.1),
-        ),
+        border: Border.all(color: Colors.white.withOpacity(0.1)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -1223,9 +1215,17 @@ class _DiscoverySection extends StatelessWidget {
             children: [
               ShaderMask(
                 shaderCallback: (bounds) => const LinearGradient(
-                  colors: [Color(0xFFFFD700), Color(0xFFFF6B9D), Color(0xFF9D4EDD)],
+                  colors: [
+                    Color(0xFFFFD700),
+                    Color(0xFFFF6B9D),
+                    Color(0xFF9D4EDD),
+                  ],
                 ).createShader(bounds),
-                child: const Icon(Icons.auto_awesome, color: Colors.white, size: 24),
+                child: const Icon(
+                  Icons.auto_awesome,
+                  color: Colors.white,
+                  size: 24,
+                ),
               ),
               const SizedBox(width: 10),
               const Text(
@@ -1238,7 +1238,10 @@ class _DiscoverySection extends StatelessWidget {
               ),
               const Spacer(),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 4,
+                ),
                 decoration: BoxDecoration(
                   gradient: const LinearGradient(
                     colors: [Color(0xFFE91E63), Color(0xFFFF5722)],
@@ -1262,18 +1265,51 @@ class _DiscoverySection extends StatelessWidget {
           // ═══════════════════════════════════════════════════════════════
           // BURÇ & YORUMLAR
           // ═══════════════════════════════════════════════════════════════
-          _DiscoveryCategoryHeader(title: '⭐ Burç Yorumları', color: const Color(0xFFFFD700)),
+          _DiscoveryCategoryHeader(
+            title: '⭐ Burç Yorumları',
+            color: const Color(0xFFFFD700),
+          ),
           const SizedBox(height: 12),
           Wrap(
             spacing: 12,
             runSpacing: 12,
             children: [
-              _DiscoveryCard(icon: Icons.wb_sunny_rounded, title: 'Günlük Yorum', color: const Color(0xFFFFD700), route: Routes.horoscope),
-              _DiscoveryCard(icon: Icons.calendar_view_week_rounded, title: 'Haftalık Yorum', color: const Color(0xFFFF9800), route: Routes.weeklyHoroscope),
-              _DiscoveryCard(icon: Icons.calendar_month_rounded, title: 'Aylık Yorum', color: const Color(0xFFFF5722), route: Routes.monthlyHoroscope),
-              _DiscoveryCard(icon: Icons.calendar_today_rounded, title: 'Yıllık Yorum', color: const Color(0xFFF44336), route: Routes.yearlyHoroscope),
-              _DiscoveryCard(icon: Icons.favorite_rounded, title: 'Aşk Yorumu', color: const Color(0xFFE91E63), route: Routes.loveHoroscope),
-              _DiscoveryCard(icon: Icons.people_rounded, title: 'Burç Uyumu', color: const Color(0xFFFF4081), route: Routes.compatibility),
+              _DiscoveryCard(
+                icon: Icons.wb_sunny_rounded,
+                title: 'Günlük Yorum',
+                color: const Color(0xFFFFD700),
+                route: Routes.horoscope,
+              ),
+              _DiscoveryCard(
+                icon: Icons.calendar_view_week_rounded,
+                title: 'Haftalık Yorum',
+                color: const Color(0xFFFF9800),
+                route: Routes.weeklyHoroscope,
+              ),
+              _DiscoveryCard(
+                icon: Icons.calendar_month_rounded,
+                title: 'Aylık Yorum',
+                color: const Color(0xFFFF5722),
+                route: Routes.monthlyHoroscope,
+              ),
+              _DiscoveryCard(
+                icon: Icons.calendar_today_rounded,
+                title: 'Yıllık Yorum',
+                color: const Color(0xFFF44336),
+                route: Routes.yearlyHoroscope,
+              ),
+              _DiscoveryCard(
+                icon: Icons.favorite_rounded,
+                title: 'Aşk Yorumu',
+                color: const Color(0xFFE91E63),
+                route: Routes.loveHoroscope,
+              ),
+              _DiscoveryCard(
+                icon: Icons.people_rounded,
+                title: 'Burç Uyumu',
+                color: const Color(0xFFFF4081),
+                route: Routes.compatibility,
+              ),
             ],
           ),
 
@@ -1282,18 +1318,51 @@ class _DiscoverySection extends StatelessWidget {
           // ═══════════════════════════════════════════════════════════════
           // DOĞUM HARİTASI & ANALİZLER
           // ═══════════════════════════════════════════════════════════════
-          _DiscoveryCategoryHeader(title: '🌌 Doğum Haritası & Analizler', color: const Color(0xFF9C27B0)),
+          _DiscoveryCategoryHeader(
+            title: '🌌 Doğum Haritası & Analizler',
+            color: const Color(0xFF9C27B0),
+          ),
           const SizedBox(height: 12),
           Wrap(
             spacing: 12,
             runSpacing: 12,
             children: [
-              _DiscoveryCard(icon: Icons.pie_chart_rounded, title: 'Doğum Haritası', color: const Color(0xFF9C27B0), route: Routes.birthChart),
-              _DiscoveryCard(icon: Icons.compare_arrows_rounded, title: 'Synastry', color: const Color(0xFFE91E63), route: Routes.synastry),
-              _DiscoveryCard(icon: Icons.group_rounded, title: 'Composite', color: const Color(0xFFFF4081), route: Routes.compositeChart),
-              _DiscoveryCard(icon: Icons.auto_graph_rounded, title: 'Vedic Harita', color: const Color(0xFFFF9800), route: Routes.vedicChart),
-              _DiscoveryCard(icon: Icons.timeline_rounded, title: 'Progressions', color: const Color(0xFF3F51B5), route: Routes.progressions),
-              _DiscoveryCard(icon: Icons.all_inclusive_rounded, title: 'Draconic', color: const Color(0xFF673AB7), route: Routes.draconicChart),
+              _DiscoveryCard(
+                icon: Icons.pie_chart_rounded,
+                title: 'Doğum Haritası',
+                color: const Color(0xFF9C27B0),
+                route: Routes.birthChart,
+              ),
+              _DiscoveryCard(
+                icon: Icons.compare_arrows_rounded,
+                title: 'Synastry',
+                color: const Color(0xFFE91E63),
+                route: Routes.synastry,
+              ),
+              _DiscoveryCard(
+                icon: Icons.group_rounded,
+                title: 'Composite',
+                color: const Color(0xFFFF4081),
+                route: Routes.compositeChart,
+              ),
+              _DiscoveryCard(
+                icon: Icons.auto_graph_rounded,
+                title: 'Vedic Harita',
+                color: const Color(0xFFFF9800),
+                route: Routes.vedicChart,
+              ),
+              _DiscoveryCard(
+                icon: Icons.timeline_rounded,
+                title: 'Progressions',
+                color: const Color(0xFF3F51B5),
+                route: Routes.progressions,
+              ),
+              _DiscoveryCard(
+                icon: Icons.all_inclusive_rounded,
+                title: 'Draconic',
+                color: const Color(0xFF673AB7),
+                route: Routes.draconicChart,
+              ),
             ],
           ),
 
@@ -1302,20 +1371,63 @@ class _DiscoverySection extends StatelessWidget {
           // ═══════════════════════════════════════════════════════════════
           // ZAMAN & TRANSİTLER
           // ═══════════════════════════════════════════════════════════════
-          _DiscoveryCategoryHeader(title: '⏰ Zaman & Transitler', color: const Color(0xFF2196F3)),
+          _DiscoveryCategoryHeader(
+            title: '⏰ Zaman & Transitler',
+            color: const Color(0xFF2196F3),
+          ),
           const SizedBox(height: 12),
           Wrap(
             spacing: 12,
             runSpacing: 12,
             children: [
-              _DiscoveryCard(icon: Icons.compare_arrows_rounded, title: 'Transitler', color: const Color(0xFF2196F3), route: Routes.transits),
-              _DiscoveryCard(icon: Icons.access_time_rounded, title: 'Zamanlama', color: const Color(0xFF00BCD4), route: Routes.timing),
-              _DiscoveryCard(icon: Icons.cake_rounded, title: 'Solar Return', color: const Color(0xFFFF9800), route: Routes.solarReturn),
-              _DiscoveryCard(icon: Icons.loop_rounded, title: 'Saturn Dönüşü', color: const Color(0xFF607D8B), route: Routes.saturnReturn),
-              _DiscoveryCard(icon: Icons.calendar_view_month_rounded, title: 'Yıllık Öngörü', color: const Color(0xFF4CAF50), route: Routes.yearAhead),
-              _DiscoveryCard(icon: Icons.do_not_disturb_rounded, title: 'Void of Course', color: const Color(0xFF9E9E9E), route: Routes.voidOfCourse),
-              _DiscoveryCard(icon: Icons.dark_mode_rounded, title: 'Tutulma Takvimi', color: const Color(0xFF37474F), route: Routes.eclipseCalendar),
-              _DiscoveryCard(icon: Icons.event_note_rounded, title: 'Transit Takvimi', color: const Color(0xFF00ACC1), route: Routes.transitCalendar),
+              _DiscoveryCard(
+                icon: Icons.compare_arrows_rounded,
+                title: 'Transitler',
+                color: const Color(0xFF2196F3),
+                route: Routes.transits,
+              ),
+              _DiscoveryCard(
+                icon: Icons.access_time_rounded,
+                title: 'Zamanlama',
+                color: const Color(0xFF00BCD4),
+                route: Routes.timing,
+              ),
+              _DiscoveryCard(
+                icon: Icons.cake_rounded,
+                title: 'Solar Return',
+                color: const Color(0xFFFF9800),
+                route: Routes.solarReturn,
+              ),
+              _DiscoveryCard(
+                icon: Icons.loop_rounded,
+                title: 'Saturn Dönüşü',
+                color: const Color(0xFF607D8B),
+                route: Routes.saturnReturn,
+              ),
+              _DiscoveryCard(
+                icon: Icons.calendar_view_month_rounded,
+                title: 'Yıllık Öngörü',
+                color: const Color(0xFF4CAF50),
+                route: Routes.yearAhead,
+              ),
+              _DiscoveryCard(
+                icon: Icons.do_not_disturb_rounded,
+                title: 'Void of Course',
+                color: const Color(0xFF9E9E9E),
+                route: Routes.voidOfCourse,
+              ),
+              _DiscoveryCard(
+                icon: Icons.dark_mode_rounded,
+                title: 'Tutulma Takvimi',
+                color: const Color(0xFF37474F),
+                route: Routes.eclipseCalendar,
+              ),
+              _DiscoveryCard(
+                icon: Icons.event_note_rounded,
+                title: 'Transit Takvimi',
+                color: const Color(0xFF00ACC1),
+                route: Routes.transitCalendar,
+              ),
             ],
           ),
 
@@ -1324,18 +1436,51 @@ class _DiscoverySection extends StatelessWidget {
           // ═══════════════════════════════════════════════════════════════
           // NUMEROLOJİ & MİSTİK ARAÇLAR
           // ═══════════════════════════════════════════════════════════════
-          _DiscoveryCategoryHeader(title: '🔢 Numeroloji & Mistik Araçlar', color: const Color(0xFF7C4DFF)),
+          _DiscoveryCategoryHeader(
+            title: '🔢 Numeroloji & Mistik Araçlar',
+            color: const Color(0xFF7C4DFF),
+          ),
           const SizedBox(height: 12),
           Wrap(
             spacing: 12,
             runSpacing: 12,
             children: [
-              _DiscoveryCard(icon: Icons.numbers_rounded, title: 'Numeroloji', color: const Color(0xFF7C4DFF), route: Routes.numerology),
-              _DiscoveryCard(icon: Icons.style_rounded, title: 'Tarot', color: const Color(0xFF9C27B0), route: Routes.tarot),
-              _DiscoveryCard(icon: Icons.account_tree_rounded, title: 'Kabala', color: const Color(0xFF4CAF50), route: Routes.kabbalah),
-              _DiscoveryCard(icon: Icons.brightness_7_rounded, title: 'Aura', color: const Color(0xFFAB47BC), route: Routes.aura),
-              _DiscoveryCard(icon: Icons.blur_circular_rounded, title: 'Chakra', color: const Color(0xFFFF5722), route: Routes.chakraAnalysis),
-              _DiscoveryCard(icon: Icons.diamond_rounded, title: 'Kristal Rehberi', color: const Color(0xFF00BCD4), route: Routes.crystalGuide),
+              _DiscoveryCard(
+                icon: Icons.numbers_rounded,
+                title: 'Numeroloji',
+                color: const Color(0xFF7C4DFF),
+                route: Routes.numerology,
+              ),
+              _DiscoveryCard(
+                icon: Icons.style_rounded,
+                title: 'Tarot',
+                color: const Color(0xFF9C27B0),
+                route: Routes.tarot,
+              ),
+              _DiscoveryCard(
+                icon: Icons.account_tree_rounded,
+                title: 'Kabala',
+                color: const Color(0xFF4CAF50),
+                route: Routes.kabbalah,
+              ),
+              _DiscoveryCard(
+                icon: Icons.brightness_7_rounded,
+                title: 'Aura',
+                color: const Color(0xFFAB47BC),
+                route: Routes.aura,
+              ),
+              _DiscoveryCard(
+                icon: Icons.blur_circular_rounded,
+                title: 'Chakra',
+                color: const Color(0xFFFF5722),
+                route: Routes.chakraAnalysis,
+              ),
+              _DiscoveryCard(
+                icon: Icons.diamond_rounded,
+                title: 'Kristal Rehberi',
+                color: const Color(0xFF00BCD4),
+                route: Routes.crystalGuide,
+              ),
             ],
           ),
 
@@ -1344,17 +1489,45 @@ class _DiscoverySection extends StatelessWidget {
           // ═══════════════════════════════════════════════════════════════
           // RUHSAL & WELLNESS
           // ═══════════════════════════════════════════════════════════════
-          _DiscoveryCategoryHeader(title: '🧘 Ruhsal & Wellness', color: const Color(0xFF4CAF50)),
+          _DiscoveryCategoryHeader(
+            title: '🧘 Ruhsal & Wellness',
+            color: const Color(0xFF4CAF50),
+          ),
           const SizedBox(height: 12),
           Wrap(
             spacing: 12,
             runSpacing: 12,
             children: [
-              _DiscoveryCard(icon: Icons.spa_rounded, title: 'Günlük Ritüeller', color: const Color(0xFF4CAF50), route: Routes.dailyRituals),
-              _DiscoveryCard(icon: Icons.nightlight_rounded, title: 'Ay Ritüelleri', color: const Color(0xFFC0C0C0), route: Routes.moonRituals),
-              _DiscoveryCard(icon: Icons.grass_rounded, title: 'Ay Bahçeciliği', color: const Color(0xFF8BC34A), route: Routes.gardeningMoon),
-              _DiscoveryCard(icon: Icons.psychology_rounded, title: 'Theta Healing', color: const Color(0xFF7C4DFF), route: Routes.thetaHealing),
-              _DiscoveryCard(icon: Icons.self_improvement_rounded, title: 'Reiki', color: const Color(0xFFFF7043), route: Routes.reiki),
+              _DiscoveryCard(
+                icon: Icons.spa_rounded,
+                title: 'Günlük Ritüeller',
+                color: const Color(0xFF4CAF50),
+                route: Routes.dailyRituals,
+              ),
+              _DiscoveryCard(
+                icon: Icons.nightlight_rounded,
+                title: 'Ay Ritüelleri',
+                color: const Color(0xFFC0C0C0),
+                route: Routes.moonRituals,
+              ),
+              _DiscoveryCard(
+                icon: Icons.grass_rounded,
+                title: 'Ay Bahçeciliği',
+                color: const Color(0xFF8BC34A),
+                route: Routes.gardeningMoon,
+              ),
+              _DiscoveryCard(
+                icon: Icons.psychology_rounded,
+                title: 'Theta Healing',
+                color: const Color(0xFF7C4DFF),
+                route: Routes.thetaHealing,
+              ),
+              _DiscoveryCard(
+                icon: Icons.self_improvement_rounded,
+                title: 'Reiki',
+                color: const Color(0xFFFF7043),
+                route: Routes.reiki,
+              ),
             ],
           ),
 
@@ -1363,16 +1536,39 @@ class _DiscoverySection extends StatelessWidget {
           // ═══════════════════════════════════════════════════════════════
           // İLERİ SEVİYE ASTROLOJİ
           // ═══════════════════════════════════════════════════════════════
-          _DiscoveryCategoryHeader(title: '🔮 İleri Seviye Astroloji', color: const Color(0xFFFFD700)),
+          _DiscoveryCategoryHeader(
+            title: '🔮 İleri Seviye Astroloji',
+            color: const Color(0xFFFFD700),
+          ),
           const SizedBox(height: 12),
           Wrap(
             spacing: 12,
             runSpacing: 12,
             children: [
-              _DiscoveryCard(icon: Icons.public_rounded, title: 'Dünya Haritası', color: const Color(0xFFFFD700), route: Routes.astroCartography),
-              _DiscoveryCard(icon: Icons.event_available_rounded, title: 'Electional', color: const Color(0xFFFF9800), route: Routes.electional),
-              _DiscoveryCard(icon: Icons.star_rounded, title: 'Asteroidler', color: const Color(0xFF9E9E9E), route: Routes.asteroids),
-              _DiscoveryCard(icon: Icons.location_on_rounded, title: 'Local Space', color: const Color(0xFF795548), route: Routes.localSpace),
+              _DiscoveryCard(
+                icon: Icons.public_rounded,
+                title: 'Dünya Haritası',
+                color: const Color(0xFFFFD700),
+                route: Routes.astroCartography,
+              ),
+              _DiscoveryCard(
+                icon: Icons.event_available_rounded,
+                title: 'Electional',
+                color: const Color(0xFFFF9800),
+                route: Routes.electional,
+              ),
+              _DiscoveryCard(
+                icon: Icons.star_rounded,
+                title: 'Asteroidler',
+                color: const Color(0xFF9E9E9E),
+                route: Routes.asteroids,
+              ),
+              _DiscoveryCard(
+                icon: Icons.location_on_rounded,
+                title: 'Local Space',
+                color: const Color(0xFF795548),
+                route: Routes.localSpace,
+              ),
             ],
           ),
 
@@ -1381,15 +1577,33 @@ class _DiscoverySection extends StatelessWidget {
           // ═══════════════════════════════════════════════════════════════
           // REFERANS & İÇERİK
           // ═══════════════════════════════════════════════════════════════
-          _DiscoveryCategoryHeader(title: '📚 Referans & İçerik', color: const Color(0xFF607D8B)),
+          _DiscoveryCategoryHeader(
+            title: '📚 Referans & İçerik',
+            color: const Color(0xFF607D8B),
+          ),
           const SizedBox(height: 12),
           Wrap(
             spacing: 12,
             runSpacing: 12,
             children: [
-              _DiscoveryCard(icon: Icons.menu_book_rounded, title: 'Sözlük', color: const Color(0xFF607D8B), route: Routes.glossary),
-              _DiscoveryCard(icon: Icons.stars_rounded, title: 'Ünlüler', color: const Color(0xFFFFB74D), route: Routes.celebrities),
-              _DiscoveryCard(icon: Icons.article_rounded, title: 'Makaleler', color: const Color(0xFF78909C), route: Routes.articles),
+              _DiscoveryCard(
+                icon: Icons.menu_book_rounded,
+                title: 'Sözlük',
+                color: const Color(0xFF607D8B),
+                route: Routes.glossary,
+              ),
+              _DiscoveryCard(
+                icon: Icons.stars_rounded,
+                title: 'Ünlüler',
+                color: const Color(0xFFFFB74D),
+                route: Routes.celebrities,
+              ),
+              _DiscoveryCard(
+                icon: Icons.article_rounded,
+                title: 'Makaleler',
+                color: const Color(0xFF78909C),
+                route: Routes.articles,
+              ),
             ],
           ),
 
@@ -1398,15 +1612,33 @@ class _DiscoverySection extends StatelessWidget {
           // ═══════════════════════════════════════════════════════════════
           // RÜYA YORUMLARI
           // ═══════════════════════════════════════════════════════════════
-          _DiscoveryCategoryHeader(title: '🌙 Rüya Yorumları', color: const Color(0xFF5C6BC0)),
+          _DiscoveryCategoryHeader(
+            title: '🌙 Rüya Yorumları',
+            color: const Color(0xFF5C6BC0),
+          ),
           const SizedBox(height: 12),
           Wrap(
             spacing: 12,
             runSpacing: 12,
             children: [
-              _DiscoveryCard(icon: Icons.nights_stay_rounded, title: 'Rüya İzi', color: const Color(0xFF5C6BC0), route: Routes.dreamInterpretation),
-              _DiscoveryCard(icon: Icons.auto_stories_rounded, title: 'Rüya Sözlüğü', color: const Color(0xFF7C4DFF), route: Routes.dreamGlossary),
-              _DiscoveryCard(icon: Icons.share_rounded, title: 'Rüya Paylaş', color: const Color(0xFF9575CD), route: Routes.dreamShare),
+              _DiscoveryCard(
+                icon: Icons.nights_stay_rounded,
+                title: 'Rüya İzi',
+                color: const Color(0xFF5C6BC0),
+                route: Routes.dreamInterpretation,
+              ),
+              _DiscoveryCard(
+                icon: Icons.auto_stories_rounded,
+                title: 'Rüya Sözlüğü',
+                color: const Color(0xFF7C4DFF),
+                route: Routes.dreamGlossary,
+              ),
+              _DiscoveryCard(
+                icon: Icons.share_rounded,
+                title: 'Rüya Paylaş',
+                color: const Color(0xFF9575CD),
+                route: Routes.dreamShare,
+              ),
             ],
           ),
 
@@ -1422,18 +1654,51 @@ class _DiscoverySection extends StatelessWidget {
           // ═══════════════════════════════════════════════════════════════
           // KİŞİLİK ANALİZLERİ
           // ═══════════════════════════════════════════════════════════════
-          _DiscoveryCategoryHeader(title: '🎭 Kişilik Analizleri', color: const Color(0xFFFF4081)),
+          _DiscoveryCategoryHeader(
+            title: '🎭 Kişilik Analizleri',
+            color: const Color(0xFFFF4081),
+          ),
           const SizedBox(height: 12),
           Wrap(
             spacing: 12,
             runSpacing: 12,
             children: [
-              _DiscoveryCard(icon: Icons.contrast_rounded, title: 'Gölge Benliğin', color: const Color(0xFF37474F), route: Routes.shadowSelf),
-              _DiscoveryCard(icon: Icons.leaderboard_rounded, title: 'Liderlik Stilin', color: const Color(0xFFFF9800), route: Routes.leadershipStyle),
-              _DiscoveryCard(icon: Icons.heart_broken_rounded, title: 'Kalp Yaran', color: const Color(0xFFE91E63), route: Routes.heartbreak),
-              _DiscoveryCard(icon: Icons.flag_rounded, title: 'Red Flaglerin', color: const Color(0xFFF44336), route: Routes.redFlags),
-              _DiscoveryCard(icon: Icons.verified_rounded, title: 'Green Flaglerin', color: const Color(0xFF4CAF50), route: Routes.greenFlags),
-              _DiscoveryCard(icon: Icons.local_fire_department_rounded, title: 'Flört Stilin', color: const Color(0xFFFF6B9D), route: Routes.flirtStyle),
+              _DiscoveryCard(
+                icon: Icons.contrast_rounded,
+                title: 'Gölge Benliğin',
+                color: const Color(0xFF37474F),
+                route: Routes.shadowSelf,
+              ),
+              _DiscoveryCard(
+                icon: Icons.leaderboard_rounded,
+                title: 'Liderlik Stilin',
+                color: const Color(0xFFFF9800),
+                route: Routes.leadershipStyle,
+              ),
+              _DiscoveryCard(
+                icon: Icons.heart_broken_rounded,
+                title: 'Kalp Yaran',
+                color: const Color(0xFFE91E63),
+                route: Routes.heartbreak,
+              ),
+              _DiscoveryCard(
+                icon: Icons.flag_rounded,
+                title: 'Red Flaglerin',
+                color: const Color(0xFFF44336),
+                route: Routes.redFlags,
+              ),
+              _DiscoveryCard(
+                icon: Icons.verified_rounded,
+                title: 'Green Flaglerin',
+                color: const Color(0xFF4CAF50),
+                route: Routes.greenFlags,
+              ),
+              _DiscoveryCard(
+                icon: Icons.local_fire_department_rounded,
+                title: 'Flört Stilin',
+                color: const Color(0xFFFF6B9D),
+                route: Routes.flirtStyle,
+              ),
             ],
           ),
 
@@ -1442,17 +1707,45 @@ class _DiscoverySection extends StatelessWidget {
           // ═══════════════════════════════════════════════════════════════
           // MİSTİK KEŞİFLER
           // ═══════════════════════════════════════════════════════════════
-          _DiscoveryCategoryHeader(title: '🔮 Mistik Keşifler', color: const Color(0xFF9D4EDD)),
+          _DiscoveryCategoryHeader(
+            title: '🔮 Mistik Keşifler',
+            color: const Color(0xFF9D4EDD),
+          ),
           const SizedBox(height: 12),
           Wrap(
             spacing: 12,
             runSpacing: 12,
             children: [
-              _DiscoveryCard(icon: Icons.style_rounded, title: 'Tarot Kartın', color: const Color(0xFF9C27B0), route: Routes.tarotCard),
-              _DiscoveryCard(icon: Icons.lens_blur_rounded, title: 'Aura Rengin', color: const Color(0xFFAB47BC), route: Routes.auraColor),
-              _DiscoveryCard(icon: Icons.radio_button_checked_rounded, title: 'Çakra Dengen', color: const Color(0xFFFF5722), route: Routes.chakraBalance),
-              _DiscoveryCard(icon: Icons.tag_rounded, title: 'Yaşam Sayın', color: const Color(0xFF7C4DFF), route: Routes.lifeNumber),
-              _DiscoveryCard(icon: Icons.account_tree_rounded, title: 'Kabala Yolun', color: const Color(0xFF4CAF50), route: Routes.kabbalaPath),
+              _DiscoveryCard(
+                icon: Icons.style_rounded,
+                title: 'Tarot Kartın',
+                color: const Color(0xFF9C27B0),
+                route: Routes.tarotCard,
+              ),
+              _DiscoveryCard(
+                icon: Icons.lens_blur_rounded,
+                title: 'Aura Rengin',
+                color: const Color(0xFFAB47BC),
+                route: Routes.auraColor,
+              ),
+              _DiscoveryCard(
+                icon: Icons.radio_button_checked_rounded,
+                title: 'Çakra Dengen',
+                color: const Color(0xFFFF5722),
+                route: Routes.chakraBalance,
+              ),
+              _DiscoveryCard(
+                icon: Icons.tag_rounded,
+                title: 'Yaşam Sayın',
+                color: const Color(0xFF7C4DFF),
+                route: Routes.lifeNumber,
+              ),
+              _DiscoveryCard(
+                icon: Icons.account_tree_rounded,
+                title: 'Kabala Yolun',
+                color: const Color(0xFF4CAF50),
+                route: Routes.kabbalaPath,
+              ),
             ],
           ),
 
@@ -1461,16 +1754,39 @@ class _DiscoverySection extends StatelessWidget {
           // ═══════════════════════════════════════════════════════════════
           // İLİŞKİ ANALİZLERİ
           // ═══════════════════════════════════════════════════════════════
-          _DiscoveryCategoryHeader(title: '💕 İlişki Analizleri', color: const Color(0xFFE91E63)),
+          _DiscoveryCategoryHeader(
+            title: '💕 İlişki Analizleri',
+            color: const Color(0xFFE91E63),
+          ),
           const SizedBox(height: 12),
           Wrap(
             spacing: 12,
             runSpacing: 12,
             children: [
-              _DiscoveryCard(icon: Icons.favorite_border_rounded, title: 'Uyum Analizi', color: const Color(0xFFE91E63), route: Routes.compatibilityAnalysis),
-              _DiscoveryCard(icon: Icons.favorite_rounded, title: 'Ruh Eşin', color: const Color(0xFFFF4081), route: Routes.soulMate),
-              _DiscoveryCard(icon: Icons.loop_rounded, title: 'İlişki Karman', color: const Color(0xFF9C27B0), route: Routes.relationshipKarma),
-              _DiscoveryCard(icon: Icons.star_rounded, title: 'Ünlü İkizin', color: const Color(0xFFFFD700), route: Routes.celebrityTwin),
+              _DiscoveryCard(
+                icon: Icons.favorite_border_rounded,
+                title: 'Uyum Analizi',
+                color: const Color(0xFFE91E63),
+                route: Routes.compatibilityAnalysis,
+              ),
+              _DiscoveryCard(
+                icon: Icons.favorite_rounded,
+                title: 'Ruh Eşin',
+                color: const Color(0xFFFF4081),
+                route: Routes.soulMate,
+              ),
+              _DiscoveryCard(
+                icon: Icons.loop_rounded,
+                title: 'İlişki Karman',
+                color: const Color(0xFF9C27B0),
+                route: Routes.relationshipKarma,
+              ),
+              _DiscoveryCard(
+                icon: Icons.star_rounded,
+                title: 'Ünlü İkizin',
+                color: const Color(0xFFFFD700),
+                route: Routes.celebrityTwin,
+              ),
             ],
           ),
 
@@ -1479,15 +1795,33 @@ class _DiscoverySection extends StatelessWidget {
           // ═══════════════════════════════════════════════════════════════
           // AI ASİSTANLAR
           // ═══════════════════════════════════════════════════════════════
-          _DiscoveryCategoryHeader(title: '🤖 AI Asistanlar', color: const Color(0xFF6A1B9A)),
+          _DiscoveryCategoryHeader(
+            title: '🤖 AI Asistanlar',
+            color: const Color(0xFF6A1B9A),
+          ),
           const SizedBox(height: 12),
           Wrap(
             spacing: 12,
             runSpacing: 12,
             children: [
-              _DiscoveryCard(icon: Icons.auto_awesome_rounded, title: 'Kozmoz İzi', color: const Color(0xFF6A1B9A), route: Routes.kozmoz),
-              _DiscoveryCard(icon: Icons.nights_stay_rounded, title: 'Rüya İzi', color: const Color(0xFF5C6BC0), route: Routes.dreamInterpretation),
-              _DiscoveryCard(icon: Icons.star_rounded, title: 'Burç Yorumcusu', color: const Color(0xFFFF6B9D), route: Routes.horoscope),
+              _DiscoveryCard(
+                icon: Icons.auto_awesome_rounded,
+                title: 'Kozmoz İzi',
+                color: const Color(0xFF6A1B9A),
+                route: Routes.kozmoz,
+              ),
+              _DiscoveryCard(
+                icon: Icons.nights_stay_rounded,
+                title: 'Rüya İzi',
+                color: const Color(0xFF5C6BC0),
+                route: Routes.dreamInterpretation,
+              ),
+              _DiscoveryCard(
+                icon: Icons.star_rounded,
+                title: 'Burç Yorumcusu',
+                color: const Color(0xFFFF6B9D),
+                route: Routes.horoscope,
+              ),
             ],
           ),
 
@@ -1496,16 +1830,39 @@ class _DiscoverySection extends StatelessWidget {
           // ═══════════════════════════════════════════════════════════════
           // PAYLAŞIM & PROFİL
           // ═══════════════════════════════════════════════════════════════
-          _DiscoveryCategoryHeader(title: '📱 Paylaşım & Profil', color: const Color(0xFFE91E63)),
+          _DiscoveryCategoryHeader(
+            title: '📱 Paylaşım & Profil',
+            color: const Color(0xFFE91E63),
+          ),
           const SizedBox(height: 12),
           Wrap(
             spacing: 12,
             runSpacing: 12,
             children: [
-              _DiscoveryCard(icon: Icons.share_rounded, title: 'Kozmik Paylaşım', color: const Color(0xFFE91E63), route: Routes.cosmicShare),
-              _DiscoveryCard(icon: Icons.people_alt_rounded, title: 'Kayıtlı Profiller', color: const Color(0xFF9C27B0), route: Routes.savedProfiles),
-              _DiscoveryCard(icon: Icons.compare_rounded, title: 'Karşılaştır', color: const Color(0xFFFF4081), route: Routes.comparison),
-              _DiscoveryCard(icon: Icons.workspace_premium_rounded, title: 'Premium', color: const Color(0xFFFFD700), route: Routes.premium),
+              _DiscoveryCard(
+                icon: Icons.share_rounded,
+                title: 'Kozmik Paylaşım',
+                color: const Color(0xFFE91E63),
+                route: Routes.cosmicShare,
+              ),
+              _DiscoveryCard(
+                icon: Icons.people_alt_rounded,
+                title: 'Kayıtlı Profiller',
+                color: const Color(0xFF9C27B0),
+                route: Routes.savedProfiles,
+              ),
+              _DiscoveryCard(
+                icon: Icons.compare_rounded,
+                title: 'Karşılaştır',
+                color: const Color(0xFFFF4081),
+                route: Routes.comparison,
+              ),
+              _DiscoveryCard(
+                icon: Icons.workspace_premium_rounded,
+                title: 'Premium',
+                color: const Color(0xFFFFD700),
+                route: Routes.premium,
+              ),
             ],
           ),
         ],
@@ -1519,10 +1876,7 @@ class _DiscoveryCategoryHeader extends StatelessWidget {
   final String title;
   final Color color;
 
-  const _DiscoveryCategoryHeader({
-    required this.title,
-    required this.color,
-  });
+  const _DiscoveryCategoryHeader({required this.title, required this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -1594,11 +1948,7 @@ class _DiscoveryCardState extends State<_DiscoveryCard> {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(
-                widget.icon,
-                color: widget.color,
-                size: 22,
-              ),
+              Icon(widget.icon, color: widget.color, size: 22),
               const SizedBox(width: 10),
               Text(
                 widget.title,
@@ -1710,11 +2060,7 @@ class _AllServicesButtonState extends State<_AllServicesButton>
                         const Color(0xFFFFD700),
                         const Color(0xFFE040FB),
                       ],
-                      stops: [
-                        0.0,
-                        _controller.value,
-                        1.0,
-                      ],
+                      stops: [0.0, _controller.value, 1.0],
                     ).createShader(bounds),
                     child: const Icon(
                       Icons.explore_rounded,
@@ -1794,10 +2140,7 @@ class _HouseSystemSection extends StatelessWidget {
           ],
         ),
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(
-          color: Colors.white.withOpacity(0.1),
-          width: 1,
-        ),
+        border: Border.all(color: Colors.white.withOpacity(0.1), width: 1),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -1848,7 +2191,10 @@ class _HouseSystemSection extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
               child: Container(
                 width: double.infinity,
-                padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 20),
+                padding: const EdgeInsets.symmetric(
+                  vertical: 14,
+                  horizontal: 20,
+                ),
                 decoration: BoxDecoration(
                   gradient: const LinearGradient(
                     colors: [Color(0xFF4A90A4), Color(0xFF357ABD)],
@@ -1964,7 +2310,13 @@ class _VenusOneLogoState extends State<_VenusOneLogo>
                           shape: BoxShape.circle,
                           gradient: RadialGradient(
                             colors: [
-                              AppColors.starGold.withOpacity(0.3 + 0.1 * math.sin(_controller.value * 2 * math.pi)),
+                              AppColors.starGold.withOpacity(
+                                0.3 +
+                                    0.1 *
+                                        math.sin(
+                                          _controller.value * 2 * math.pi,
+                                        ),
+                              ),
                               Colors.transparent,
                             ],
                           ),
@@ -2028,11 +2380,10 @@ class _VenusOneLogoState extends State<_VenusOneLogo>
                 animation: _controller,
                 builder: (context, child) {
                   return Transform.rotate(
-                    angle: _isHovered ? 0.1 * math.sin(_controller.value * 4 * math.pi) : 0,
-                    child: const Text(
-                      '🪄',
-                      style: TextStyle(fontSize: 18),
-                    ),
+                    angle: _isHovered
+                        ? 0.1 * math.sin(_controller.value * 4 * math.pi)
+                        : 0,
+                    child: const Text('🪄', style: TextStyle(fontSize: 18)),
                   );
                 },
               ),
@@ -2102,7 +2453,9 @@ class _KozmozHeaderButtonState extends State<_KozmozHeaderButton>
                 ),
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(
-                  color: const Color(0xFFE040FB).withOpacity(_isHovered ? 0.8 : 0.5),
+                  color: const Color(
+                    0xFFE040FB,
+                  ).withOpacity(_isHovered ? 0.8 : 0.5),
                   width: 1.5,
                 ),
                 boxShadow: [
@@ -2196,7 +2549,9 @@ class _DreamHeaderButtonState extends State<_DreamHeaderButton>
                 ),
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(
-                  color: const Color(0xFF7C4DFF).withOpacity(_isHovered ? 0.8 : 0.5),
+                  color: const Color(
+                    0xFF7C4DFF,
+                  ).withOpacity(_isHovered ? 0.8 : 0.5),
                   width: 1.5,
                 ),
                 boxShadow: [
@@ -2290,7 +2645,9 @@ class _HoroscopeHeaderButtonState extends State<_HoroscopeHeaderButton>
                 ),
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(
-                  color: const Color(0xFFFF6B9D).withOpacity(_isHovered ? 0.8 : 0.5),
+                  color: const Color(
+                    0xFFFF6B9D,
+                  ).withOpacity(_isHovered ? 0.8 : 0.5),
                   width: 1.5,
                 ),
                 boxShadow: [

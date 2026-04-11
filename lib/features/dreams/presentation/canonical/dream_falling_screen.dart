@@ -59,7 +59,10 @@ class DreamFallingScreen extends StatelessWidget {
 
                 // Branded tag
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 10,
+                    vertical: 4,
+                  ),
                   decoration: BoxDecoration(
                     color: AppColors.cosmicPurple.withOpacity(0.15),
                     borderRadius: BorderRadius.circular(12),
@@ -163,32 +166,34 @@ class DreamFallingScreen extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 12),
-        ...bullets.map((bullet) => Padding(
-              padding: const EdgeInsets.only(bottom: 8),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    '•',
+        ...bullets.map(
+          (bullet) => Padding(
+            padding: const EdgeInsets.only(bottom: 8),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  '•',
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: isDark ? Colors.white54 : AppColors.textLight,
+                  ),
+                ),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Text(
+                    bullet,
                     style: TextStyle(
-                      fontSize: 14,
-                      color: isDark ? Colors.white54 : AppColors.textLight,
+                      fontSize: 15,
+                      height: 1.5,
+                      color: isDark ? Colors.white70 : AppColors.textDark,
                     ),
                   ),
-                  const SizedBox(width: 8),
-                  Expanded(
-                    child: Text(
-                      bullet,
-                      style: TextStyle(
-                        fontSize: 15,
-                        height: 1.5,
-                        color: isDark ? Colors.white70 : AppColors.textDark,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            )),
+                ),
+              ],
+            ),
+          ),
+        ),
       ],
     ).animate().fadeIn(duration: 400.ms);
   }

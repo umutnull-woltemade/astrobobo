@@ -4447,7 +4447,13 @@ const lifePathMega7 = LifePathMegaContent(
   tarotMajorArcana: 'Savaş Arabası (VII) - İç Zafer',
   runicSymbol: 'Algiz ᛉ - Koruma ve Üst Benlik',
   colors: ['Mor', 'Lacivert', 'Gümüş', 'Siyah'],
-  crystals: ['Ametist', 'Labradorit', 'Lapis Lazuli', 'Seleneit', 'Siyah Turmalin'],
+  crystals: [
+    'Ametist',
+    'Labradorit',
+    'Lapis Lazuli',
+    'Seleneit',
+    'Siyah Turmalin',
+  ],
   chakraAlignment: 'Üçüncü Göz (Ajna) - İçsel Görüş',
   sacredGeometry: 'Heptagram - Yedi Köşeli Yıldız',
   frequencyHz: '852 Hz - Üçüncü Göz Aktivasyonu',
@@ -5392,7 +5398,13 @@ Sonra fark et: Varoluşun kendisi zaten olağanüstü.
 6. Ego ve ruh arasındaki farkı öğren
 7. Hizmet odaklı yaratıcılık geliştir
 ''',
-    soulKeywords: ['Özgürlük', 'Benzersizlik', 'Başarı', 'Tanınma', 'Yaratıcılık'],
+    soulKeywords: [
+      'Özgürlük',
+      'Benzersizlik',
+      'Başarı',
+      'Tanınma',
+      'Yaratıcılık',
+    ],
   ),
 
   // Diğer ruh dürtüsü sayıları için içerikler eklenecek (2-9, 11, 22, 33)

@@ -1,7 +1,7 @@
-import 'dart:io';
 import 'dart:ui' as ui;
 
 import 'package:flutter/foundation.dart';
+import 'io_stub.dart' if (dart.library.io) 'io_real.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:path_provider/path_provider.dart';
@@ -60,9 +60,9 @@ class InstagramShareService {
         );
       }
 
-      if (Platform.isIOS) {
+      if (defaultTargetPlatform == TargetPlatform.iOS) {
         return await _shareOnIOS(file, shareText, hashtags);
-      } else if (Platform.isAndroid) {
+      } else if (defaultTargetPlatform == TargetPlatform.android) {
         return await _shareOnAndroid(file, shareText, hashtags);
       } else {
         return await _shareGeneric(file, shareText, hashtags);

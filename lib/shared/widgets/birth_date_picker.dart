@@ -213,7 +213,10 @@ class _BirthDatePickerState extends State<BirthDatePicker> {
                 if (value != null) {
                   setState(() {
                     _selectedMonth = value;
-                    final newDaysInMonth = _getDaysInMonth(_selectedMonth, _selectedYear);
+                    final newDaysInMonth = _getDaysInMonth(
+                      _selectedMonth,
+                      _selectedYear,
+                    );
                     if (_selectedDay > newDaysInMonth) {
                       _selectedDay = newDaysInMonth;
                     }
@@ -235,7 +238,10 @@ class _BirthDatePickerState extends State<BirthDatePicker> {
                 if (value != null) {
                   setState(() {
                     _selectedYear = value;
-                    final newDaysInMonth = _getDaysInMonth(_selectedMonth, _selectedYear);
+                    final newDaysInMonth = _getDaysInMonth(
+                      _selectedMonth,
+                      _selectedYear,
+                    );
                     if (_selectedDay > newDaysInMonth) {
                       _selectedDay = newDaysInMonth;
                     }
@@ -282,10 +288,7 @@ class _BirthDatePickerState extends State<BirthDatePicker> {
             isExpanded: true,
             underline: const SizedBox(),
             dropdownColor: const Color(0xFF1a1a2e),
-            style: TextStyle(
-              color: AppColors.textPrimary,
-              fontSize: 16,
-            ),
+            style: TextStyle(color: AppColors.textPrimary, fontSize: 16),
             items: items.map((item) {
               return DropdownMenuItem<T>(
                 value: item,

@@ -1,2 +1,2 @@
 json_key_file("fastlane/play-service-account.json")
-package_name(ENV["ANDROID_PACKAGE_NAME"] || "com.umut.astrology_app")
+package_name(ENV["ANDROID_PACKAGE_NAME"] || "com.venusone.innercycles")

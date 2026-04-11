@@ -182,7 +182,8 @@ class MonetizationService {
   Map<String, String> getRetentionMessage() {
     return {
       'title': "We'll be here",
-      'body': "Take all the time you need. Your journey continues whenever you're ready.",
+      'body':
+          "Take all the time you need. Your journey continues whenever you're ready.",
       'cta': 'Got it',
     };
   }

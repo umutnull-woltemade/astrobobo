@@ -76,7 +76,8 @@ class ReferenceContentService {
 
       // Related terms match
       if (entry.relatedTerms.any(
-          (term) => term.toLowerCase().contains(normalizedQuery))) {
+        (term) => term.toLowerCase().contains(normalizedQuery),
+      )) {
         relatedMatches.add(entry);
       }
     }
@@ -174,7 +175,10 @@ class ReferenceContentService {
     return activities.toSet().toList();
   }
 
-  List<GardeningActivity> _getAvoidActivities(MoonPhase phase, ZodiacSign sign) {
+  List<GardeningActivity> _getAvoidActivities(
+    MoonPhase phase,
+    ZodiacSign sign,
+  ) {
     final activities = <GardeningActivity>[];
 
     if (phase == MoonPhase.newMoon || phase == MoonPhase.fullMoon) {
@@ -795,7 +799,8 @@ class ReferenceContentService {
       AstrologyArticle(
         id: '1',
         title: 'Astrolojiye Başlangıç: Temel Kavramlar',
-        summary: 'Astroloji dünyasına ilk adımınızı atın. Burçlar, gezegenler ve evler hakkında temel bilgiler.',
+        summary:
+            'Astroloji dünyasına ilk adımınızı atın. Burçlar, gezegenler ve evler hakkında temel bilgiler.',
         content: '''
 Astroloji, gökyüzündeki gök cisimlerinin konumlarının dünya üzerindeki olayları ve insan davranışlarını etkilediği inancına dayanan kadim bir bilim dalıdır.
 
@@ -857,7 +862,8 @@ Doğum haritası 12 eve bölünür ve her ev yaşamın farklı bir alanını tem
       AstrologyArticle(
         id: '2',
         title: 'İlişkilerde Astroloji: Sinastri Rehberi',
-        summary: 'Sevgilinizle uyumunuzu astrolojik açıdan nasıl değerlendirebilirsiniz?',
+        summary:
+            'Sevgilinizle uyumunuzu astrolojik açıdan nasıl değerlendirebilirsiniz?',
         content: '''
 Sinastri, iki kişinin doğum haritalarını karşılaştırarak ilişki dinamiklerini anlama sanatıdır.
 
@@ -895,7 +901,8 @@ Her iki kişinin de 7. evi ilişki beklentilerini gösterir. 7. ev yöneticisini
       AstrologyArticle(
         id: '3',
         title: 'Merkür Retrosu: Korkulacak Bir Şey Yok',
-        summary: 'Merkür retrosunun gerçek anlamı ve bu dönemi nasıl verimli geçirebilirsiniz.',
+        summary:
+            'Merkür retrosunun gerçek anlamı ve bu dönemi nasıl verimli geçirebilirsiniz.',
         content: '''
 Merkür retrosu, astrolojide en çok konuşulan ve korkulan dönemlerden biridir. Ancak doğru anlayışla bu dönem fırsata dönüşebilir.
 

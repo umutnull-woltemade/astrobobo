@@ -78,32 +78,32 @@ Başak'ın rüyaları genellikle düzen, kaos, temizlik ve iş temalıdır. List
       {
         'question': 'Başak burcu neden bu kadar eleştiriyor?',
         'answer':
-            'Başak kusurları görmek için programlanmıştır — bu onun iyileştirme kapasitesidir. Eleştiri, aslında yardım etme çabasıdır ama iletilme şekli önemlidir.'
+            'Başak kusurları görmek için programlanmıştır — bu onun iyileştirme kapasitesidir. Eleştiri, aslında yardım etme çabasıdır ama iletilme şekli önemlidir.',
       },
       {
         'question': 'Başak burcu mükemmeliyetçi mi?',
         'answer':
-            'Genellikle evet. Bu hem güç hem de zayıflıktır. Mükemmeliyetçilik kaliteli iş üretir ama tükenmişliğe de yol açabilir.'
+            'Genellikle evet. Bu hem güç hem de zayıflıktır. Mükemmeliyetçilik kaliteli iş üretir ama tükenmişliğe de yol açabilir.',
       },
       {
         'question': 'Başak burcu duyguları nasıl ifade eder?',
         'answer':
-            'Eylemlerle. "Seni seviyorum" demek yerine kahvaltı hazırlar, arabasını temizler, hastalığında yanında olur. Hizmet, Başak\'ın sevgi dilidir.'
+            'Eylemlerle. "Seni seviyorum" demek yerine kahvaltı hazırlar, arabasını temizler, hastalığında yanında olur. Hizmet, Başak\'ın sevgi dilidir.',
       },
       {
         'question': 'Başak burcuyla nasıl iletişim kurulur?',
         'answer':
-            'Mantıklı, düzenli ve spesifik olun. Abartıdan kaçının, gerçeklere odaklanın. Eleştirilerine savunmaya geçmeden dinleyin.'
+            'Mantıklı, düzenli ve spesifik olun. Abartıdan kaçının, gerçeklere odaklanın. Eleştirilerine savunmaya geçmeden dinleyin.',
       },
       {
         'question': 'Başak burcu kaygısıyla nasıl başa çıkıyor?',
         'answer':
-            'Liste yaparak, planlayarak, temizlik yaparak, bilgi toplayarak. Kontrolsüzlük kaygısını tetikler. Mindfulness ve "bırakma" pratikleri yardımcı olabilir.'
+            'Liste yaparak, planlayarak, temizlik yaparak, bilgi toplayarak. Kontrolsüzlük kaygısını tetikler. Mindfulness ve "bırakma" pratikleri yardımcı olabilir.',
       },
       {
         'question': 'Başak burcu rahatlamayı bilebilir mi?',
         'answer':
-            'Zor ama mümkün. Başak için "üretken rahatlama" daha kolaydır — hobi, bahçecilik, el işi. Tam boş kalmak kaygı yaratabilir.'
+            'Zor ama mümkün. Başak için "üretken rahatlama" daha kolaydır — hobi, bahçecilik, el işi. Tam boş kalmak kaygı yaratabilir.',
       },
     ],
     dailyAffirmation:
@@ -191,36 +191,35 @@ Terazi'nin rüyaları genellikle ilişki, güzellik, terazi/denge ve sosyal orta
       {
         'question': 'Terazi burcu neden bu kadar kararsız?',
         'answer':
-            'Terazi tüm açıları görebilir — bu hem lütuf hem de lanet. Her seçeneğin artıları ve eksileri vardır, hangisini seçerse seçsin bir şey kaybedecek gibi hisseder.'
+            'Terazi tüm açıları görebilir — bu hem lütuf hem de lanet. Her seçeneğin artıları ve eksileri vardır, hangisini seçerse seçsin bir şey kaybedecek gibi hisseder.',
       },
       {
         'question': 'Terazi burcu çatışmadan neden bu kadar kaçıyor?',
         'answer':
-            'Uyumsuzluk, Terazi için fiziksel olarak rahatsız edicidir. Ama çatışmadan kaçınmak, sorunların birikmesine yol açar. Yapıcı çatışma öğrenilebilir.'
+            'Uyumsuzluk, Terazi için fiziksel olarak rahatsız edicidir. Ama çatışmadan kaçınmak, sorunların birikmesine yol açar. Yapıcı çatışma öğrenilebilir.',
       },
       {
         'question': 'Terazi burcu tek başına kalabilir mi?',
         'answer':
-            'Zor ama öğrenilebilir. Terazi için "ben" kimliğini geliştirmek, sağlıklı ilişkiler için gereklidir. Yalnız kalmak, kaybolmak demek değildir.'
+            'Zor ama öğrenilebilir. Terazi için "ben" kimliğini geliştirmek, sağlıklı ilişkiler için gereklidir. Yalnız kalmak, kaybolmak demek değildir.',
       },
       {
         'question': 'Terazi burcunun sevgi dili nedir?',
         'answer':
-            'Kaliteli zaman, güzel ortamlar, iltifatlar ve karşılıklı saygı. Terazi estetik deneyimler ve uyumlu anlar üzerinden bağ kurar.'
+            'Kaliteli zaman, güzel ortamlar, iltifatlar ve karşılıklı saygı. Terazi estetik deneyimler ve uyumlu anlar üzerinden bağ kurar.',
       },
       {
         'question': 'Terazi burcu öfkelendiğinde ne yapar?',
         'answer':
-            'Genellikle bastırır veya pasif-agresif olur. Doğrudan çatışma yerine soğukluk, iğnelemeler veya sessizlik kullanabilir. Öfkeyi sağlıklı ifade etmeyi öğrenmesi gerekir.'
+            'Genellikle bastırır veya pasif-agresif olur. Doğrudan çatışma yerine soğukluk, iğnelemeler veya sessizlik kullanabilir. Öfkeyi sağlıklı ifade etmeyi öğrenmesi gerekir.',
       },
       {
         'question': 'Terazi burcu nasıl karar verir?',
         'answer':
-            'Uzun sürer. Tüm seçenekleri tartması, başkalarına danışması, artı eksi listesi yapması gerekir. Deadline koymak yardımcı olabilir.'
+            'Uzun sürer. Tüm seçenekleri tartması, başkalarına danışması, artı eksi listesi yapması gerekir. Deadline koymak yardımcı olabilir.',
       },
     ],
-    dailyAffirmation:
-        'Dengemi korurken, kendi sesimi de duyuyorum.',
+    dailyAffirmation: 'Dengemi korurken, kendi sesimi de duyuyorum.',
     internalLinks: {
       '/compatibility': 'Terazi burcu ile uyumlu burçlar →',
       '/birth-chart': 'Venüs\'ün haritandaki yeri →',
@@ -304,32 +303,32 @@ Akrep'in rüyaları genellikle yoğun, karanlık ve dönüşüm temalıdır. Öl
       {
         'question': 'Akrep burcu neden bu kadar gizemli?',
         'answer':
-            'Akrep kendini korumak için maske takar. Güvenmeden açılmaz. Gizem, savunma mekanizmasıdır ama aynı zamanda onun çekiciliğinin kaynağıdır.'
+            'Akrep kendini korumak için maske takar. Güvenmeden açılmaz. Gizem, savunma mekanizmasıdır ama aynı zamanda onun çekiciliğinin kaynağıdır.',
       },
       {
         'question': 'Akrep burcu intikamcı mı?',
         'answer':
-            'Potansiyel olarak evet. Akrep unutmaz, affetmesi zordur. Ama gelişmiş bir Akrep, intikam yerine dönüşümü seçer. "Bırakma" onun en büyük sınavıdır.'
+            'Potansiyel olarak evet. Akrep unutmaz, affetmesi zordur. Ama gelişmiş bir Akrep, intikam yerine dönüşümü seçer. "Bırakma" onun en büyük sınavıdır.',
       },
       {
         'question': 'Akrep burcuna nasıl güven verilir?',
         'answer':
-            'Tutarlılık, dürüstlük ve zaman. Sırlarını koruyun, sözünüzü tutun, onu asla halka açık rezil etmeyin. Güven bir kere kırılırsa, nadiren düzelir.'
+            'Tutarlılık, dürüstlük ve zaman. Sırlarını koruyun, sözünüzü tutun, onu asla halka açık rezil etmeyin. Güven bir kere kırılırsa, nadiren düzelir.',
       },
       {
         'question': 'Akrep burcu neden bu kadar yoğun?',
         'answer':
-            'Pluto yönetimi, yaşamın "hayat-ölüm" meselelerini taşır. Akrep için her şey derinden yaşanır — yüzeysel kalmak zordur.'
+            'Pluto yönetimi, yaşamın "hayat-ölüm" meselelerini taşır. Akrep için her şey derinden yaşanır — yüzeysel kalmak zordur.',
       },
       {
         'question': 'Akrep burcu aşık olduğunda nasıl davranır?',
         'answer':
-            'Obsesif olabilir. Sevdiği kişiyi her yönüyle tanımak, onunla birleşmek ister. Bu yoğunluk bazıları için çok fazla olabilir.'
+            'Obsesif olabilir. Sevdiği kişiyi her yönüyle tanımak, onunla birleşmek ister. Bu yoğunluk bazıları için çok fazla olabilir.',
       },
       {
         'question': 'Akrep burcu ağlar mı?',
         'answer':
-            'Nadiren ve gizlice. Duygularını göstermekten kaçınır çünkü zafiyet olarak görür. Ama iç dünyası derin bir okyanustur.'
+            'Nadiren ve gizlice. Duygularını göstermekten kaçınır çünkü zafiyet olarak görür. Ama iç dünyası derin bir okyanustur.',
       },
     ],
     dailyAffirmation:
@@ -417,36 +416,35 @@ Yay'ın rüyaları genellikle seyahat, keşif ve özgürlük temalıdır. Uçuş
       {
         'question': 'Yay burcu neden yerinde duramıyor?',
         'answer':
-            'Jüpiter\'in genişleme enerjisi, Yay\'ı sürekli "daha fazla" aramaya iter. Sabitlik sıkıntı, hareket özgürlük demektir.'
+            'Jüpiter\'in genişleme enerjisi, Yay\'ı sürekli "daha fazla" aramaya iter. Sabitlik sıkıntı, hareket özgürlük demektir.',
       },
       {
         'question': 'Yay burcu taahhüt edebilir mi?',
         'answer':
-            'Zor ama mümkün. Özgürlüğünü tehdit etmeyen, maceracı bir ortaklık bulursa sadık olabilir. Ama kafes hissederse kaçar.'
+            'Zor ama mümkün. Özgürlüğünü tehdit etmeyen, maceracı bir ortaklık bulursa sadık olabilir. Ama kafes hissederse kaçar.',
       },
       {
         'question': 'Yay burcu neden bu kadar dobra?',
         'answer':
-            'Yay için dürüstlük temeldir. Diplomasi düşünmez, aklından geçeni söyler. Bu dürüstlük bazen kırıcı olabilir — niyet kötü değildir ama etki olabilir.'
+            'Yay için dürüstlük temeldir. Diplomasi düşünmez, aklından geçeni söyler. Bu dürüstlük bazen kırıcı olabilir — niyet kötü değildir ama etki olabilir.',
       },
       {
         'question': 'Yay burcunu nasıl etkilersiniz?',
         'answer':
-            'Kısıtlamayın, yeni fikirler sunun, macera teklif edin, entelektüel sohbetler yapın. Yay ilhamla hareket eder.'
+            'Kısıtlamayın, yeni fikirler sunun, macera teklif edin, entelektüel sohbetler yapın. Yay ilhamla hareket eder.',
       },
       {
         'question': 'Yay burcu üzüldüğünde ne yapar?',
         'answer':
-            'Kaçar — seyahat, yeni insanlar, eğlence. Duyguyla yüzleşmek yerine hareket eder. Ama sonunda durması ve hissetmesi gerekir.'
+            'Kaçar — seyahat, yeni insanlar, eğlence. Duyguyla yüzleşmek yerine hareket eder. Ama sonunda durması ve hissetmesi gerekir.',
       },
       {
         'question': 'Yay burcu sıkıldığında ne yapar?',
         'answer':
-            'Hemen çıkış arar. Sıkıntı Yay için fiziksel acıya yakındır. Yeni bir şey öğrenir, yeni biri tanışır, yeni bir yere gider.'
+            'Hemen çıkış arar. Sıkıntı Yay için fiziksel acıya yakındır. Yeni bir şey öğrenir, yeni biri tanışır, yeni bir yere gider.',
       },
     ],
-    dailyAffirmation:
-        'Özgürlüğüm içimde, nereye gidersem gideyim yanımda.',
+    dailyAffirmation: 'Özgürlüğüm içimde, nereye gidersem gideyim yanımda.',
     internalLinks: {
       '/compatibility': 'Yay burcu ile uyumlu burçlar →',
       '/birth-chart': 'Jüpiter\'in haritandaki yeri →',
@@ -530,36 +528,35 @@ Oğlak'ın rüyaları genellikle iş, başarı, yapılar ve tırmanma temalıdı
       {
         'question': 'Oğlak burcu neden bu kadar ciddi?',
         'answer':
-            'Satürn yönetimi, Oğlak\'a "zaman" ve "sonuç" bilinci verir. Her şeyin bir bedeli var, emeğin karşılığı alınmalı — bu ciddi bir yaklaşım gerektirir.'
+            'Satürn yönetimi, Oğlak\'a "zaman" ve "sonuç" bilinci verir. Her şeyin bir bedeli var, emeğin karşılığı alınmalı — bu ciddi bir yaklaşım gerektirir.',
       },
       {
         'question': 'Oğlak burcu eğlenmesini bilir mi?',
         'answer':
-            'Gençken zor olabilir ama yaşla birlikte Oğlak gevşer. "İş bittikten sonra" eğlenebilir. Yapılandırılmış eğlence (planlı tatil, özel akşam) daha kolaydır.'
+            'Gençken zor olabilir ama yaşla birlikte Oğlak gevşer. "İş bittikten sonra" eğlenebilir. Yapılandırılmış eğlence (planlı tatil, özel akşam) daha kolaydır.',
       },
       {
         'question': 'Oğlak burcu duygularını neden göstermiyor?',
         'answer':
-            'Duygular Oğlak için "kontrol edilmesi gereken" şeylerdir. Zayıflık olarak görür. Güven inşa edilirse, özel anlarda açılabilir.'
+            'Duygular Oğlak için "kontrol edilmesi gereken" şeylerdir. Zayıflık olarak görür. Güven inşa edilirse, özel anlarda açılabilir.',
       },
       {
         'question': 'Oğlak burcuyla nasıl yakınlaşılır?',
         'answer':
-            'Sabır, tutarlılık, saygı. Değerlerini takdir edin, emeğini görün, güvenilir olun. Oğlak yavaş ama derin bağlar kurar.'
+            'Sabır, tutarlılık, saygı. Değerlerini takdir edin, emeğini görün, güvenilir olun. Oğlak yavaş ama derin bağlar kurar.',
       },
       {
         'question': 'Oğlak burcu neden bu kadar hırslı?',
         'answer':
-            'Güvenlik ihtiyacından. Başarı, Oğlak için kontrol ve güvenlik demektir. Ayrıca toplumsal statü, değerli olduğunun kanıtıdır.'
+            'Güvenlik ihtiyacından. Başarı, Oğlak için kontrol ve güvenlik demektir. Ayrıca toplumsal statü, değerli olduğunun kanıtıdır.',
       },
       {
         'question': 'Oğlak burcu neden yaşlandıkça gençleşiyor?',
         'answer':
-            'Astrolojik gözlem. Oğlaklar gençken "yaşlı ruh" gibi ciddi, ama yaşla birlikte "ödedikleri bedeller" azaldıkça rahatlarlar.'
+            'Astrolojik gözlem. Oğlaklar gençken "yaşlı ruh" gibi ciddi, ama yaşla birlikte "ödedikleri bedeller" azaldıkça rahatlarlar.',
       },
     ],
-    dailyAffirmation:
-        'Başarı yolculuğumda, dinlenmeye de hakkım var.',
+    dailyAffirmation: 'Başarı yolculuğumda, dinlenmeye de hakkım var.',
     internalLinks: {
       '/compatibility': 'Oğlak burcu ile uyumlu burçlar →',
       '/birth-chart': 'Satürn\'ün haritandaki yeri →',
@@ -643,32 +640,33 @@ Kova'nın rüyaları genellikle gelecek, teknoloji, uzay ve grup temalıdır. UF
       {
         'question': 'Kova burcu neden bu kadar "garip"?',
         'answer':
-            'Uranüs yönetimi, Kova\'ya sıra dışı perspektif verir. "Normal" sıkıcı gelir. Farklılık, Kova\'nın kimliğinin parçasıdır.'
+            'Uranüs yönetimi, Kova\'ya sıra dışı perspektif verir. "Normal" sıkıcı gelir. Farklılık, Kova\'nın kimliğinin parçasıdır.',
       },
       {
         'question': 'Kova burcu duygusuz mu?',
         'answer':
-            'Hayır, ama duygularını entelektüelleştirir. Hissetmek yerine analiz eder. Duyguları vardır ama ifade etmekte zorlanabilir.'
+            'Hayır, ama duygularını entelektüelleştirir. Hissetmek yerine analiz eder. Duyguları vardır ama ifade etmekte zorlanabilir.',
       },
       {
         'question': 'Kova burcu neden bu kadar mesafeli?',
         'answer':
-            'Bireyselliğini koruma ihtiyacından. Çok yakın olmak, kimlik kaybı gibi hissedilebilir. Ama güvendiği insanlara açılabilir.'
+            'Bireyselliğini koruma ihtiyacından. Çok yakın olmak, kimlik kaybı gibi hissedilebilir. Ama güvendiği insanlara açılabilir.',
       },
       {
         'question': 'Kova burcuyla nasıl bağ kurulur?',
         'answer':
-            'Entelektüel sohbetler, özgünlüğüne saygı, bağımsızlığına alan tanıma. "Normal" olmaya zorlamayın.'
+            'Entelektüel sohbetler, özgünlüğüne saygı, bağımsızlığına alan tanıma. "Normal" olmaya zorlamayın.',
       },
       {
-        'question': 'Kova burcu insanlığı neden seviyor ama insanları zor mu buluyor?',
+        'question':
+            'Kova burcu insanlığı neden seviyor ama insanları zor mu buluyor?',
         'answer':
-            'Paradoks! Kova kolektif ideallere inanır ama bireylerle yakınlaşmakta zorlanır. "İnsanlık" soyut ve güvenlidir, "insanlar" karmaşık ve talepkardır.'
+            'Paradoks! Kova kolektif ideallere inanır ama bireylerle yakınlaşmakta zorlanır. "İnsanlık" soyut ve güvenlidir, "insanlar" karmaşık ve talepkardır.',
       },
       {
         'question': 'Kova burcu değişir mi?',
         'answer':
-            'Çok zor. Sabit modalite, Kova\'yı fikirlerinde inatçı yapar. Değişimi savunur ama kendisi değişmekte direnir — bu onun en büyük körlüğüdür.'
+            'Çok zor. Sabit modalite, Kova\'yı fikirlerinde inatçı yapar. Değişimi savunur ama kendisi değişmekte direnir — bu onun en büyük körlüğüdür.',
       },
     ],
     dailyAffirmation:
@@ -756,36 +754,35 @@ Balık'ın rüyaları genellikle canlı, sembolik ve profetik olabilir. Su, deni
       {
         'question': 'Balık burcu neden bu kadar hassas?',
         'answer':
-            'Neptün yönetimi, sınırları eritir. Balık, çevreden gelen enerjileri süngür gibi emer. Bu empati kapasitesidir ama aynı zamanda korunma gerektirir.'
+            'Neptün yönetimi, sınırları eritir. Balık, çevreden gelen enerjileri süngür gibi emer. Bu empati kapasitesidir ama aynı zamanda korunma gerektirir.',
       },
       {
         'question': 'Balık burcu gerçeklikten kaçıyor mu?',
         'answer':
-            'Bazen. Neptün hayal dünyasını, Balık da kaçışı temsil eder. Ama sağlıklı kaçış (sanat, meditasyon) ile zararlı kaçış (bağımlılık) arasında fark vardır.'
+            'Bazen. Neptün hayal dünyasını, Balık da kaçışı temsil eder. Ama sağlıklı kaçış (sanat, meditasyon) ile zararlı kaçış (bağımlılık) arasında fark vardır.',
       },
       {
         'question': 'Balık burcu neden bu kadar zor anlaşılıyor?',
         'answer':
-            'Çünkü tüm zodyağın enerjilerini taşır — son burç olarak her şeyin bir parçasıdır. Çelişkili görünebilir çünkü çok katmanlıdır.'
+            'Çünkü tüm zodyağın enerjilerini taşır — son burç olarak her şeyin bir parçasıdır. Çelişkili görünebilir çünkü çok katmanlıdır.',
       },
       {
         'question': 'Balık burcuyla nasıl iletişim kurulur?',
         'answer':
-            'Nazik, sezgisel ve duygusal olun. Mantık değil, his üzerinden bağlanır. Eleştiri yerine anlayış, zorlama yerine nazik davet işe yarar.'
+            'Nazik, sezgisel ve duygusal olun. Mantık değil, his üzerinden bağlanır. Eleştiri yerine anlayış, zorlama yerine nazik davet işe yarar.',
       },
       {
         'question': 'Balık burcu bağımlılığa yatkın mı?',
         'answer':
-            'Risk taşır. Neptün kaçışı, Balık da acıdan kaçmayı temsil eder. Sağlıklı başa çıkma mekanizmaları geliştirmek önemlidir.'
+            'Risk taşır. Neptün kaçışı, Balık da acıdan kaçmayı temsil eder. Sağlıklı başa çıkma mekanizmaları geliştirmek önemlidir.',
       },
       {
         'question': 'Balık burcu nasıl sevilir?',
         'answer':
-            'Rüyalarına inanarak, hassasiyetini yargılamadan kabul ederek, romantik ve şiirsel anlar yaratarak. Balık, günlük olanda sihir arar.'
+            'Rüyalarına inanarak, hassasiyetini yargılamadan kabul ederek, romantik ve şiirsel anlar yaratarak. Balık, günlük olanda sihir arar.',
       },
     ],
-    dailyAffirmation:
-        'Hassasiyetim benim gücüm, sınırlarım beni koruyor.',
+    dailyAffirmation: 'Hassasiyetim benim gücüm, sınırlarım beni koruyor.',
     internalLinks: {
       '/compatibility': 'Balık burcu ile uyumlu burçlar →',
       '/birth-chart': 'Neptün\'ün haritandaki yeri →',
@@ -797,12 +794,12 @@ Balık'ın rüyaları genellikle canlı, sembolik ve profetik olabilir. Su, deni
   );
 
   static List<ZodiacSignContent> get allSigns => [
-        virgo,
-        libra,
-        scorpio,
-        sagittarius,
-        capricorn,
-        aquarius,
-        pisces,
-      ];
+    virgo,
+    libra,
+    scorpio,
+    sagittarius,
+    capricorn,
+    aquarius,
+    pisces,
+  ];
 }

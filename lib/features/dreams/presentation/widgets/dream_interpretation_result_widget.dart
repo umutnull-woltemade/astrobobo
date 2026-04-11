@@ -34,9 +34,7 @@ class DreamInterpretationResultWidget extends StatelessWidget {
           ],
         ),
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(
-          color: AppColors.mystic.withValues(alpha: 0.3),
-        ),
+        border: Border.all(color: AppColors.mystic.withValues(alpha: 0.3)),
         boxShadow: [
           BoxShadow(
             color: AppColors.mystic.withValues(alpha: 0.2),
@@ -146,18 +144,18 @@ class DreamInterpretationResultWidget extends StatelessWidget {
                 Text(
                   '7 BOYUTLU RÜYA YORUMU',
                   style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                        color: AppColors.starGold,
-                        fontWeight: FontWeight.w600,
-                        letterSpacing: 1.5,
-                      ),
+                    color: AppColors.starGold,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: 1.5,
+                  ),
                 ),
                 const SizedBox(height: 4),
                 Text(
                   'Bilinçaltının Mesajı',
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                        color: AppColors.textPrimary,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    color: AppColors.textPrimary,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ],
             ),
@@ -183,8 +181,8 @@ class DreamInterpretationResultWidget extends StatelessWidget {
                 Text(
                   interpretation.astroTiming.moonPhase.label,
                   style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                        color: AppColors.textSecondary,
-                      ),
+                    color: AppColors.textSecondary,
+                  ),
                 ),
               ],
             ),
@@ -202,81 +200,87 @@ class DreamInterpretationResultWidget extends StatelessWidget {
     int delay = 0,
   }) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(emoji, style: const TextStyle(fontSize: 18)),
-              const SizedBox(width: 8),
-              Text(
-                title,
-                style: Theme.of(context).textTheme.titleSmall?.copyWith(
+              Row(
+                children: [
+                  Text(emoji, style: const TextStyle(fontSize: 18)),
+                  const SizedBox(width: 8),
+                  Text(
+                    title,
+                    style: Theme.of(context).textTheme.titleSmall?.copyWith(
                       color: AppColors.starGold,
                       fontWeight: FontWeight.w600,
                     ),
+                  ),
+                ],
               ),
-            ],
-          ),
-          const SizedBox(height: 8),
-          Text(
-            content,
-            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+              const SizedBox(height: 8),
+              Text(
+                content,
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   color: AppColors.textPrimary,
                   height: 1.6,
                 ),
+              ),
+            ],
           ),
-        ],
-      ),
-    ).animate().fadeIn(duration: 300.ms, delay: delay.ms).slideX(begin: -0.05, end: 0);
+        )
+        .animate()
+        .fadeIn(duration: 300.ms, delay: delay.ms)
+        .slideX(begin: -0.05, end: 0);
   }
 
   Widget _buildCoreMessage(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            AppColors.starGold.withValues(alpha: 0.15),
-            AppColors.cosmicPurple.withValues(alpha: 0.1),
-          ],
-        ),
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(
-          color: AppColors.starGold.withValues(alpha: 0.3),
-        ),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
+          margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+          padding: const EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                AppColors.starGold.withValues(alpha: 0.15),
+                AppColors.cosmicPurple.withValues(alpha: 0.1),
+              ],
+            ),
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(
+              color: AppColors.starGold.withValues(alpha: 0.3),
+            ),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text('✨', style: TextStyle(fontSize: 18)),
-              const SizedBox(width: 8),
-              Text(
-                'ANA MESAJ',
-                style: Theme.of(context).textTheme.labelSmall?.copyWith(
+              Row(
+                children: [
+                  const Text('✨', style: TextStyle(fontSize: 18)),
+                  const SizedBox(width: 8),
+                  Text(
+                    'ANA MESAJ',
+                    style: Theme.of(context).textTheme.labelSmall?.copyWith(
                       color: AppColors.starGold,
                       fontWeight: FontWeight.w700,
                       letterSpacing: 1,
                     ),
+                  ),
+                ],
               ),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Text(
-            interpretation.coreMessage,
-            style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+              const SizedBox(height: 12),
+              Text(
+                interpretation.coreMessage,
+                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                   color: AppColors.textPrimary,
                   fontWeight: FontWeight.w500,
                   height: 1.5,
                 ),
+              ),
+            ],
           ),
-        ],
-      ),
-    ).animate().fadeIn(duration: 400.ms, delay: 200.ms).scale(begin: const Offset(0.95, 0.95), end: const Offset(1, 1));
+        )
+        .animate()
+        .fadeIn(duration: 400.ms, delay: 200.ms)
+        .scale(begin: const Offset(0.95, 0.95), end: const Offset(1, 1));
   }
 
   Widget _buildSymbolsSection(BuildContext context) {
@@ -292,9 +296,9 @@ class DreamInterpretationResultWidget extends StatelessWidget {
               Text(
                 'SEMBOL ANALİZİ',
                 style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      color: AppColors.starGold,
-                      fontWeight: FontWeight.w600,
-                    ),
+                  color: AppColors.starGold,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ],
           ),
@@ -309,46 +313,69 @@ class DreamInterpretationResultWidget extends StatelessWidget {
     ).animate().fadeIn(duration: 300.ms, delay: 300.ms);
   }
 
-  Widget _buildSymbolCard(BuildContext context, SymbolInterpretation symbol, int index) {
+  Widget _buildSymbolCard(
+    BuildContext context,
+    SymbolInterpretation symbol,
+    int index,
+  ) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 12),
-      padding: const EdgeInsets.all(14),
-      decoration: BoxDecoration(
-        color: AppColors.mystic.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(14),
-        border: Border.all(
-          color: AppColors.mystic.withValues(alpha: 0.2),
-        ),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
+          margin: const EdgeInsets.only(bottom: 12),
+          padding: const EdgeInsets.all(14),
+          decoration: BoxDecoration(
+            color: AppColors.mystic.withValues(alpha: 0.1),
+            borderRadius: BorderRadius.circular(14),
+            border: Border.all(color: AppColors.mystic.withValues(alpha: 0.2)),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(symbol.symbolEmoji, style: const TextStyle(fontSize: 24)),
-              const SizedBox(width: 10),
-              Expanded(
-                child: Text(
-                  symbol.symbol.toUpperCase(),
-                  style: Theme.of(context).textTheme.titleSmall?.copyWith(
+              Row(
+                children: [
+                  Text(
+                    symbol.symbolEmoji,
+                    style: const TextStyle(fontSize: 24),
+                  ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: Text(
+                      symbol.symbol.toUpperCase(),
+                      style: Theme.of(context).textTheme.titleSmall?.copyWith(
                         color: AppColors.textPrimary,
                         fontWeight: FontWeight.bold,
                       ),
-                ),
+                    ),
+                  ),
+                ],
               ),
+              const SizedBox(height: 10),
+              _buildSymbolDetail(
+                context,
+                '🌍',
+                'Evrensel',
+                symbol.universalMeaning,
+              ),
+              _buildSymbolDetail(
+                context,
+                '👤',
+                'Kişisel',
+                symbol.personalContext,
+              ),
+              _buildSymbolDetail(context, '🌑', 'Gölge', symbol.shadowAspect),
+              _buildSymbolDetail(context, '☀️', 'Işık', symbol.lightAspect),
             ],
           ),
-          const SizedBox(height: 10),
-          _buildSymbolDetail(context, '🌍', 'Evrensel', symbol.universalMeaning),
-          _buildSymbolDetail(context, '👤', 'Kişisel', symbol.personalContext),
-          _buildSymbolDetail(context, '🌑', 'Gölge', symbol.shadowAspect),
-          _buildSymbolDetail(context, '☀️', 'Işık', symbol.lightAspect),
-        ],
-      ),
-    ).animate().fadeIn(duration: 200.ms, delay: (400 + index * 100).ms).slideX(begin: 0.05, end: 0);
+        )
+        .animate()
+        .fadeIn(duration: 200.ms, delay: (400 + index * 100).ms)
+        .slideX(begin: 0.05, end: 0);
   }
 
-  Widget _buildSymbolDetail(BuildContext context, String emoji, String label, String content) {
+  Widget _buildSymbolDetail(
+    BuildContext context,
+    String emoji,
+    String label,
+    String content,
+  ) {
     return Padding(
       padding: const EdgeInsets.only(top: 6),
       child: Row(
@@ -359,16 +386,16 @@ class DreamInterpretationResultWidget extends StatelessWidget {
           Text(
             '$label: ',
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: AppColors.textSecondary,
-                  fontWeight: FontWeight.w600,
-                ),
+              color: AppColors.textSecondary,
+              fontWeight: FontWeight.w600,
+            ),
           ),
           Expanded(
             child: Text(
               content,
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: AppColors.textPrimary.withValues(alpha: 0.9),
-                  ),
+                color: AppColors.textPrimary.withValues(alpha: 0.9),
+              ),
             ),
           ),
         ],
@@ -402,9 +429,9 @@ class DreamInterpretationResultWidget extends StatelessWidget {
               Text(
                 'ARKETİP: ${interpretation.archetypeName.toUpperCase()}',
                 style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      color: AppColors.textPrimary,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  color: AppColors.textPrimary,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ],
           ),
@@ -412,9 +439,9 @@ class DreamInterpretationResultWidget extends StatelessWidget {
           Text(
             interpretation.archetypeConnection,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: AppColors.textPrimary.withValues(alpha: 0.9),
-                  height: 1.5,
-                ),
+              color: AppColors.textPrimary.withValues(alpha: 0.9),
+              height: 1.5,
+            ),
           ),
         ],
       ),
@@ -430,28 +457,51 @@ class DreamInterpretationResultWidget extends StatelessWidget {
         children: [
           Row(
             children: [
-              Text(emotional.dominantEmotion.emoji, style: const TextStyle(fontSize: 20)),
+              Text(
+                emotional.dominantEmotion.emoji,
+                style: const TextStyle(fontSize: 20),
+              ),
               const SizedBox(width: 10),
               Text(
                 'DUYGUSAL OKUMA: ${emotional.dominantEmotion.label.toUpperCase()}',
                 style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      color: AppColors.starGold,
-                      fontWeight: FontWeight.w600,
-                    ),
+                  color: AppColors.starGold,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ],
           ),
           const SizedBox(height: 12),
           _buildEmotionalRow(context, '📍', 'Yüzey', emotional.surfaceMessage),
-          _buildEmotionalRow(context, '🔮', 'Derinlik', emotional.deeperMeaning),
-          _buildEmotionalRow(context, '❓', 'Gölge Sorusu', emotional.shadowQuestion),
-          _buildEmotionalRow(context, '🛤️', 'Entegrasyon', emotional.integrationPath),
+          _buildEmotionalRow(
+            context,
+            '🔮',
+            'Derinlik',
+            emotional.deeperMeaning,
+          ),
+          _buildEmotionalRow(
+            context,
+            '❓',
+            'Gölge Sorusu',
+            emotional.shadowQuestion,
+          ),
+          _buildEmotionalRow(
+            context,
+            '🛤️',
+            'Entegrasyon',
+            emotional.integrationPath,
+          ),
         ],
       ),
     ).animate().fadeIn(duration: 300.ms, delay: 600.ms);
   }
 
-  Widget _buildEmotionalRow(BuildContext context, String emoji, String label, String content) {
+  Widget _buildEmotionalRow(
+    BuildContext context,
+    String emoji,
+    String label,
+    String content,
+  ) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 8),
       child: Row(
@@ -462,17 +512,17 @@ class DreamInterpretationResultWidget extends StatelessWidget {
           Text(
             '$label: ',
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: AppColors.textSecondary,
-                  fontWeight: FontWeight.w600,
-                ),
+              color: AppColors.textSecondary,
+              fontWeight: FontWeight.w600,
+            ),
           ),
           Expanded(
             child: Text(
               content,
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: AppColors.textPrimary,
-                    height: 1.4,
-                  ),
+                color: AppColors.textPrimary,
+                height: 1.4,
+              ),
             ),
           ),
         ],
@@ -507,23 +557,26 @@ class DreamInterpretationResultWidget extends StatelessWidget {
               Text(
                 'ASTROLOJİK ZAMANLAMA',
                 style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      color: AppColors.textPrimary,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  color: AppColors.textPrimary,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               const Spacer(),
               if (astro.isRetrograde)
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 8,
+                    vertical: 4,
+                  ),
                   decoration: BoxDecoration(
                     color: Colors.orange.withValues(alpha: 0.2),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Text(
                     '℞ Retro',
-                    style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                          color: Colors.orange,
-                        ),
+                    style: Theme.of(
+                      context,
+                    ).textTheme.labelSmall?.copyWith(color: Colors.orange),
                   ),
                 ),
             ],
@@ -532,9 +585,9 @@ class DreamInterpretationResultWidget extends StatelessWidget {
           Text(
             astro.timingMessage,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: AppColors.textPrimary,
-                  height: 1.5,
-                ),
+              color: AppColors.textPrimary,
+              height: 1.5,
+            ),
           ),
           const SizedBox(height: 10),
           Container(
@@ -551,9 +604,9 @@ class DreamInterpretationResultWidget extends StatelessWidget {
                   child: Text(
                     'Neden şimdi? ${astro.whyNow}',
                     style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                          color: AppColors.textSecondary,
-                          fontStyle: FontStyle.italic,
-                        ),
+                      color: AppColors.textSecondary,
+                      fontStyle: FontStyle.italic,
+                    ),
                   ),
                 ),
               ],
@@ -583,9 +636,7 @@ class DreamInterpretationResultWidget extends StatelessWidget {
                   ],
                 ),
                 borderRadius: BorderRadius.circular(14),
-                border: Border.all(
-                  color: Colors.amber.withValues(alpha: 0.3),
-                ),
+                border: Border.all(color: Colors.amber.withValues(alpha: 0.3)),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -597,9 +648,9 @@ class DreamInterpretationResultWidget extends StatelessWidget {
                       Text(
                         'IŞIK',
                         style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                              color: Colors.amber,
-                              fontWeight: FontWeight.bold,
-                            ),
+                          color: Colors.amber,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ],
                   ),
@@ -607,9 +658,9 @@ class DreamInterpretationResultWidget extends StatelessWidget {
                   Text(
                     ls.lightMessage,
                     style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                          color: AppColors.textPrimary,
-                          height: 1.4,
-                        ),
+                      color: AppColors.textPrimary,
+                      height: 1.4,
+                    ),
                   ),
                 ],
               ),
@@ -629,9 +680,7 @@ class DreamInterpretationResultWidget extends StatelessWidget {
                   ],
                 ),
                 borderRadius: BorderRadius.circular(14),
-                border: Border.all(
-                  color: Colors.indigo.withValues(alpha: 0.3),
-                ),
+                border: Border.all(color: Colors.indigo.withValues(alpha: 0.3)),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -643,9 +692,9 @@ class DreamInterpretationResultWidget extends StatelessWidget {
                       Text(
                         'GÖLGE',
                         style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                              color: Colors.indigo[300],
-                              fontWeight: FontWeight.bold,
-                            ),
+                          color: Colors.indigo[300],
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ],
                   ),
@@ -653,9 +702,9 @@ class DreamInterpretationResultWidget extends StatelessWidget {
                   Text(
                     ls.shadowMessage,
                     style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                          color: AppColors.textPrimary,
-                          height: 1.4,
-                        ),
+                      color: AppColors.textPrimary,
+                      height: 1.4,
+                    ),
                   ),
                 ],
               ),
@@ -674,9 +723,7 @@ class DreamInterpretationResultWidget extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.mystic.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(
-          color: AppColors.mystic.withValues(alpha: 0.2),
-        ),
+        border: Border.all(color: AppColors.mystic.withValues(alpha: 0.2)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -688,9 +735,9 @@ class DreamInterpretationResultWidget extends StatelessWidget {
               Text(
                 'PRATİK REHBERLİK',
                 style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      color: AppColors.starGold,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  color: AppColors.starGold,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ],
           ),
@@ -717,16 +764,16 @@ class DreamInterpretationResultWidget extends StatelessWidget {
                       Text(
                         'Yansıtma Sorusu',
                         style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                              color: AppColors.textSecondary,
-                            ),
+                          color: AppColors.textSecondary,
+                        ),
                       ),
                       const SizedBox(height: 4),
                       Text(
                         guidance.reflectionQuestion,
                         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                              color: AppColors.textPrimary,
-                              fontStyle: FontStyle.italic,
-                            ),
+                          color: AppColors.textPrimary,
+                          fontStyle: FontStyle.italic,
+                        ),
                       ),
                     ],
                   ),
@@ -739,7 +786,12 @@ class DreamInterpretationResultWidget extends StatelessWidget {
     ).animate().fadeIn(duration: 300.ms, delay: 900.ms);
   }
 
-  Widget _buildGuidanceItem(BuildContext context, String emoji, String label, String content) {
+  Widget _buildGuidanceItem(
+    BuildContext context,
+    String emoji,
+    String label,
+    String content,
+  ) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 10),
       child: Row(
@@ -752,17 +804,17 @@ class DreamInterpretationResultWidget extends StatelessWidget {
             child: Text(
               label,
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: AppColors.textSecondary,
-                    fontWeight: FontWeight.w600,
-                  ),
+                color: AppColors.textSecondary,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ),
           Expanded(
             child: Text(
               content,
-              style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: AppColors.textPrimary,
-                  ),
+              style: Theme.of(
+                context,
+              ).textTheme.bodySmall?.copyWith(color: AppColors.textPrimary),
             ),
           ),
         ],
@@ -772,131 +824,138 @@ class DreamInterpretationResultWidget extends StatelessWidget {
 
   Widget _buildWhisperQuote(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            AppColors.mystic.withValues(alpha: 0.25),
-            AppColors.nebulaPurple.withValues(alpha: 0.2),
-          ],
-        ),
-        borderRadius: BorderRadius.circular(20),
-        boxShadow: [
-          BoxShadow(
-            color: AppColors.mystic.withValues(alpha: 0.15),
-            blurRadius: 20,
-            spreadRadius: 2,
+          margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                AppColors.mystic.withValues(alpha: 0.25),
+                AppColors.nebulaPurple.withValues(alpha: 0.2),
+              ],
+            ),
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: [
+              BoxShadow(
+                color: AppColors.mystic.withValues(alpha: 0.15),
+                blurRadius: 20,
+                spreadRadius: 2,
+              ),
+            ],
           ),
-        ],
-      ),
-      child: Column(
-        children: [
-          const Text('🌙', style: TextStyle(fontSize: 28)),
-          const SizedBox(height: 12),
-          Text(
-            '"${interpretation.whisperQuote}"',
-            textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+          child: Column(
+            children: [
+              const Text('🌙', style: TextStyle(fontSize: 28)),
+              const SizedBox(height: 12),
+              Text(
+                '"${interpretation.whisperQuote}"',
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                   color: AppColors.textPrimary,
                   fontStyle: FontStyle.italic,
                   height: 1.5,
                   letterSpacing: 0.5,
                 ),
-          ),
-          const SizedBox(height: 8),
-          Text(
-            '— Fısıldayan Bilgelik',
-            style: Theme.of(context).textTheme.labelSmall?.copyWith(
+              ),
+              const SizedBox(height: 8),
+              Text(
+                '— Fısıldayan Bilgelik',
+                style: Theme.of(context).textTheme.labelSmall?.copyWith(
                   color: AppColors.textSecondary,
                 ),
+              ),
+            ],
           ),
-        ],
-      ),
-    )
+        )
         .animate()
         .fadeIn(duration: 500.ms, delay: 1000.ms)
-        .shimmer(duration: 2000.ms, delay: 1200.ms, color: AppColors.starGold.withValues(alpha: 0.3));
+        .shimmer(
+          duration: 2000.ms,
+          delay: 1200.ms,
+          color: AppColors.starGold.withValues(alpha: 0.3),
+        );
   }
 
   Widget _buildShareCard(BuildContext context) {
     final card = interpretation.shareCard;
     return GestureDetector(
-      onTap: () => _shareCard(context, card),
-      child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-        padding: const EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              AppColors.cosmicPurple,
-              AppColors.nebulaPurple,
-            ],
-          ),
-          borderRadius: BorderRadius.circular(20),
-          boxShadow: [
-            BoxShadow(
-              color: AppColors.cosmicPurple.withValues(alpha: 0.4),
-              blurRadius: 15,
-              spreadRadius: 2,
-            ),
-          ],
-        ),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  card.emoji,
-                  style: const TextStyle(fontSize: 32),
-                ),
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                  decoration: BoxDecoration(
-                    color: Colors.white.withValues(alpha: 0.2),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Row(
-                    children: [
-                      const Icon(Icons.share, color: Colors.white, size: 14),
-                      const SizedBox(width: 4),
-                      Text(
-                        'Paylaş',
-                        style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                              color: Colors.white,
-                            ),
-                      ),
-                    ],
-                  ),
+          onTap: () => _shareCard(context, card),
+          child: Container(
+            margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+            padding: const EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [AppColors.cosmicPurple, AppColors.nebulaPurple],
+              ),
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: AppColors.cosmicPurple.withValues(alpha: 0.4),
+                  blurRadius: 15,
+                  spreadRadius: 2,
                 ),
               ],
             ),
-            const SizedBox(height: 16),
-            Text(
-              '"${card.quote}"',
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(card.emoji, style: const TextStyle(fontSize: 32)),
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 10,
+                        vertical: 4,
+                      ),
+                      decoration: BoxDecoration(
+                        color: Colors.white.withValues(alpha: 0.2),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Row(
+                        children: [
+                          const Icon(
+                            Icons.share,
+                            color: Colors.white,
+                            size: 14,
+                          ),
+                          const SizedBox(width: 4),
+                          Text(
+                            'Paylaş',
+                            style: Theme.of(context).textTheme.labelSmall
+                                ?.copyWith(color: Colors.white),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 16),
+                Text(
+                  '"${card.quote}"',
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     color: Colors.white,
                     fontWeight: FontWeight.w600,
                     height: 1.4,
                   ),
-            ),
-            const SizedBox(height: 12),
-            Text(
-              '— Rüya Yorumu | venusone.com',
-              style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                ),
+                const SizedBox(height: 12),
+                Text(
+                  '— Rüya Yorumu | venusone.com',
+                  style: Theme.of(context).textTheme.labelSmall?.copyWith(
                     color: Colors.white.withValues(alpha: 0.7),
                   ),
+                ),
+              ],
             ),
-          ],
-        ),
-      ),
-    ).animate().fadeIn(duration: 400.ms, delay: 1100.ms).scale(begin: const Offset(0.95, 0.95), end: const Offset(1, 1));
+          ),
+        )
+        .animate()
+        .fadeIn(duration: 400.ms, delay: 1100.ms)
+        .scale(begin: const Offset(0.95, 0.95), end: const Offset(1, 1));
   }
 
   Widget _buildExplorationLinks(BuildContext context) {
@@ -912,9 +971,9 @@ class DreamInterpretationResultWidget extends StatelessWidget {
               Text(
                 'KEŞFET',
                 style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      color: AppColors.starGold,
-                      fontWeight: FontWeight.w600,
-                    ),
+                  color: AppColors.starGold,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ],
           ),
@@ -927,7 +986,10 @@ class DreamInterpretationResultWidget extends StatelessWidget {
                 onTap: onExploreLink,
                 borderRadius: BorderRadius.circular(12),
                 child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 14,
+                    vertical: 10,
+                  ),
                   decoration: BoxDecoration(
                     color: AppColors.cosmicPurple.withValues(alpha: 0.2),
                     borderRadius: BorderRadius.circular(12),
@@ -943,8 +1005,8 @@ class DreamInterpretationResultWidget extends StatelessWidget {
                       Text(
                         link.title,
                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                              color: AppColors.textPrimary,
-                            ),
+                          color: AppColors.textPrimary,
+                        ),
                       ),
                       const SizedBox(width: 4),
                       Icon(

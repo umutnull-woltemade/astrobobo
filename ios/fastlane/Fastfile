@@ -9,7 +9,7 @@ platform :ios do
       readonly: true,
       keychain_name: "fastlane_keychain",
       keychain_password: ENV["KEYCHAIN_PASSWORD"],
-      app_identifier: ENV["IOS_BUNDLE_ID"] || "com.umut.astrologyApp",
+      app_identifier: ENV["IOS_BUNDLE_ID"] || "com.venusone.innercycles",
     )
   end
 
@@ -29,7 +29,7 @@ platform :ios do
       git_url: ENV["MATCH_GIT_URL"],
       keychain_name: "fastlane_keychain",
       keychain_password: ENV["KEYCHAIN_PASSWORD"],
-      app_identifier: ENV["IOS_BUNDLE_ID"] || "com.umut.astrologyApp",
+      app_identifier: ENV["IOS_BUNDLE_ID"] || "com.venusone.innercycles",
     )
 
     # Upload to TestFlight via App Store Connect API
@@ -42,7 +42,7 @@ platform :ios do
 
     upload_to_testflight(
       api_key: api_key,
-      ipa: "../build/ios/ipa/astrology_app.ipa",
+      ipa: "../build/ios/ipa/innercycles.ipa",
       skip_waiting_for_build_processing: true,
       changelog: changelog,
       distribute_external: false,
@@ -70,7 +70,7 @@ platform :ios do
       skip_metadata: true,
       submit_for_review: false,
       automatic_release: false,
-      app_identifier: ENV["IOS_BUNDLE_ID"] || "com.umut.astrologyApp",
+      app_identifier: ENV["IOS_BUNDLE_ID"] || "com.venusone.innercycles",
     )
   end
 

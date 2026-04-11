@@ -353,9 +353,7 @@ class InstagramStoryCard extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 52,
                     color: Colors.white,
-                    shadows: [
-                      Shadow(color: sign.color, blurRadius: 25),
-                    ],
+                    shadows: [Shadow(color: sign.color, blurRadius: 25)],
                   ),
                 ),
               ),
@@ -569,7 +567,11 @@ class InstagramStoryCard extends StatelessWidget {
     );
   }
 
-  Widget _buildBigThreeItem(String emoji, String label, zodiac.ZodiacSign itemSign) {
+  Widget _buildBigThreeItem(
+    String emoji,
+    String label,
+    zodiac.ZodiacSign itemSign,
+  ) {
     return Column(
       children: [
         Row(
@@ -606,44 +608,108 @@ class InstagramStoryCard extends StatelessWidget {
       alignment: WrapAlignment.center,
       spacing: 6,
       runSpacing: 6,
-      children: traits.map((trait) => Container(
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              sign.color.withOpacity(0.35),
-              sign.color.withOpacity(0.15),
-            ],
-          ),
-          borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: sign.color.withOpacity(0.5)),
-        ),
-        child: Text(
-          trait,
-          style: GoogleFonts.inter(
-            fontSize: 10,
-            fontWeight: FontWeight.w700,
-            color: Colors.white,
-          ),
-        ),
-      )).toList(),
+      children: traits
+          .map(
+            (trait) => Container(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    sign.color.withOpacity(0.35),
+                    sign.color.withOpacity(0.15),
+                  ],
+                ),
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(color: sign.color.withOpacity(0.5)),
+              ),
+              child: Text(
+                trait,
+                style: GoogleFonts.inter(
+                  fontSize: 10,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          )
+          .toList(),
     );
   }
 
   List<String> _getViralTraits(zodiac.ZodiacSign sign) {
     final traits = {
-      zodiac.ZodiacSign.aries: ['🔥 ATEŞLI', '💪 GÜÇLÜ', '🏃 HIZLI', '👑 LİDER'],
-      zodiac.ZodiacSign.taurus: ['💰 ZENGİN VİBE', '🍕 GURME', '💎 LÜKS', '🐂 SADIK'],
-      zodiac.ZodiacSign.gemini: ['🎭 ÇİFT KİŞİLİK', '💬 KONUŞKAN', '🧠 ZEKİ', '🦋 DEĞİŞKEN'],
-      zodiac.ZodiacSign.cancer: ['🏠 EV KURDU', '🥲 DUYGUSAL', '🦀 KORUYUCU', '💕 SEVGİ DOLU'],
-      zodiac.ZodiacSign.leo: ['👑 KRAL/KRALİÇE', '✨ PARLAK', '🦁 CESUR', '💅 DRAMA'],
-      zodiac.ZodiacSign.virgo: ['💯 MÜKEMMELİYETÇİ', '🔍 DETAYCI', '📝 ORGANİZE', '🧹 TEMİZ'],
-      zodiac.ZodiacSign.libra: ['⚖️ DENGELİ', '🎨 ESTETİK', '💋 FLÖRTÖZ', '🥰 UYUMLU'],
-      zodiac.ZodiacSign.scorpio: ['🦂 GİZEMLİ', '🔥 TUTKULU', '👀 SEZGİSEL', '💀 YOĞUN'],
-      zodiac.ZodiacSign.sagittarius: ['✈️ MACERACI', '🌍 GEZGN', '🎯 DÜRÜST', '🌈 POZİTİF'],
-      zodiac.ZodiacSign.capricorn: ['💼 CEO VİBE', '🎯 HEDEF ODAKLI', '📈 BAŞARILI', '🏆 HIRSLII'],
-      zodiac.ZodiacSign.aquarius: ['👽 FARKLI', '🦄 ÖZGÜN', '🚀 YENİLİKÇİ', '🔥 ASİ'],
-      zodiac.ZodiacSign.pisces: ['🌙 HAYALPEREST', '💫 SEZGİSEL', '🐟 AKIŞKAN', '🔮 MİSTİK'],
+      zodiac.ZodiacSign.aries: [
+        '🔥 ATEŞLI',
+        '💪 GÜÇLÜ',
+        '🏃 HIZLI',
+        '👑 LİDER',
+      ],
+      zodiac.ZodiacSign.taurus: [
+        '💰 ZENGİN VİBE',
+        '🍕 GURME',
+        '💎 LÜKS',
+        '🐂 SADIK',
+      ],
+      zodiac.ZodiacSign.gemini: [
+        '🎭 ÇİFT KİŞİLİK',
+        '💬 KONUŞKAN',
+        '🧠 ZEKİ',
+        '🦋 DEĞİŞKEN',
+      ],
+      zodiac.ZodiacSign.cancer: [
+        '🏠 EV KURDU',
+        '🥲 DUYGUSAL',
+        '🦀 KORUYUCU',
+        '💕 SEVGİ DOLU',
+      ],
+      zodiac.ZodiacSign.leo: [
+        '👑 KRAL/KRALİÇE',
+        '✨ PARLAK',
+        '🦁 CESUR',
+        '💅 DRAMA',
+      ],
+      zodiac.ZodiacSign.virgo: [
+        '💯 MÜKEMMELİYETÇİ',
+        '🔍 DETAYCI',
+        '📝 ORGANİZE',
+        '🧹 TEMİZ',
+      ],
+      zodiac.ZodiacSign.libra: [
+        '⚖️ DENGELİ',
+        '🎨 ESTETİK',
+        '💋 FLÖRTÖZ',
+        '🥰 UYUMLU',
+      ],
+      zodiac.ZodiacSign.scorpio: [
+        '🦂 GİZEMLİ',
+        '🔥 TUTKULU',
+        '👀 SEZGİSEL',
+        '💀 YOĞUN',
+      ],
+      zodiac.ZodiacSign.sagittarius: [
+        '✈️ MACERACI',
+        '🌍 GEZGN',
+        '🎯 DÜRÜST',
+        '🌈 POZİTİF',
+      ],
+      zodiac.ZodiacSign.capricorn: [
+        '💼 CEO VİBE',
+        '🎯 HEDEF ODAKLI',
+        '📈 BAŞARILI',
+        '🏆 HIRSLII',
+      ],
+      zodiac.ZodiacSign.aquarius: [
+        '👽 FARKLI',
+        '🦄 ÖZGÜN',
+        '🚀 YENİLİKÇİ',
+        '🔥 ASİ',
+      ],
+      zodiac.ZodiacSign.pisces: [
+        '🌙 HAYALPEREST',
+        '💫 SEZGİSEL',
+        '🐟 AKIŞKAN',
+        '🔮 MİSTİK',
+      ],
     };
     return traits[sign] ?? ['✨ ÖZEL', '🌟 BENZERSİZ'];
   }
@@ -673,7 +739,12 @@ class InstagramStoryCard extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          _buildEsotericItem('💎', 'KRİSTAL', crystal['name']!, crystal['emoji']!),
+          _buildEsotericItem(
+            '💎',
+            'KRİSTAL',
+            crystal['name']!,
+            crystal['emoji']!,
+          ),
           Container(width: 1, height: 35, color: Colors.white.withOpacity(0.1)),
           _buildEsotericItem('🃏', 'TAROT', tarot['name']!, tarot['emoji']!),
           Container(width: 1, height: 35, color: Colors.white.withOpacity(0.1)),
@@ -683,7 +754,12 @@ class InstagramStoryCard extends StatelessWidget {
     );
   }
 
-  Widget _buildEsotericItem(String emoji, String label, String value, String valueEmoji) {
+  Widget _buildEsotericItem(
+    String emoji,
+    String label,
+    String value,
+    String valueEmoji,
+  ) {
     return Column(
       children: [
         Row(
@@ -798,7 +874,11 @@ class InstagramStoryCard extends StatelessWidget {
         {'name': 'Lepidolit', 'emoji': '💜'},
       ],
     };
-    final signCrystals = crystals[sign] ?? [{'name': 'Kuvars', 'emoji': '💎'}];
+    final signCrystals =
+        crystals[sign] ??
+        [
+          {'name': 'Kuvars', 'emoji': '💎'},
+        ];
     return signCrystals[day];
   }
 
@@ -878,7 +958,11 @@ class InstagramStoryCard extends StatelessWidget {
         {'name': 'Yüksek Rahibe', 'emoji': '🧙‍♀️'},
       ],
     };
-    final signTarots = tarots[sign] ?? [{'name': 'Aptal', 'emoji': '🃏'}];
+    final signTarots =
+        tarots[sign] ??
+        [
+          {'name': 'Aptal', 'emoji': '🃏'},
+        ];
     return signTarots[day];
   }
 
@@ -1037,8 +1121,13 @@ class InstagramStoryCard extends StatelessWidget {
   // LUCK METER - Gamification
   // ═══════════════════════════════════════════════════════════════════════════
   Widget _buildLuckMeter() {
-    final luck = (sign.index + DateTime.now().day + DateTime.now().hour) % 5 + 6;
-    final luckEmoji = luck >= 9 ? '🔥' : luck >= 7 ? '✨' : '💫';
+    final luck =
+        (sign.index + DateTime.now().day + DateTime.now().hour) % 5 + 6;
+    final luckEmoji = luck >= 9
+        ? '🔥'
+        : luck >= 7
+        ? '✨'
+        : '💫';
 
     return Container(
       padding: const EdgeInsets.all(12),
@@ -1068,7 +1157,10 @@ class InstagramStoryCard extends StatelessWidget {
                 ],
               ),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 4,
+                ),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [MysticalColors.starGold, Colors.orange],
@@ -1093,7 +1185,11 @@ class InstagramStoryCard extends StatelessWidget {
               value: luck / 10,
               backgroundColor: Colors.white.withOpacity(0.1),
               valueColor: AlwaysStoppedAnimation<Color>(
-                luck >= 8 ? Colors.green : luck >= 6 ? MysticalColors.starGold : Colors.orange,
+                luck >= 8
+                    ? Colors.green
+                    : luck >= 6
+                    ? MysticalColors.starGold
+                    : Colors.orange,
               ),
               minHeight: 6,
             ),
@@ -1133,7 +1229,12 @@ class InstagramStoryCard extends StatelessWidget {
     );
   }
 
-  Widget _buildMatchItem(String emoji, String label, zodiac.ZodiacSign matchSign, bool isGood) {
+  Widget _buildMatchItem(
+    String emoji,
+    String label,
+    zodiac.ZodiacSign matchSign,
+    bool isGood,
+  ) {
     return Column(
       children: [
         Row(
@@ -1260,7 +1361,11 @@ class InstagramStoryCard extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(width: 30, height: 1, color: MysticalColors.starGold.withOpacity(0.4)),
+            Container(
+              width: 30,
+              height: 1,
+              color: MysticalColors.starGold.withOpacity(0.4),
+            ),
             const SizedBox(width: 10),
             Text(
               '✨ ASTROBOBO ✨',
@@ -1272,7 +1377,11 @@ class InstagramStoryCard extends StatelessWidget {
               ),
             ),
             const SizedBox(width: 10),
-            Container(width: 30, height: 1, color: MysticalColors.starGold.withOpacity(0.4)),
+            Container(
+              width: 30,
+              height: 1,
+              color: MysticalColors.starGold.withOpacity(0.4),
+            ),
           ],
         ),
       ],
@@ -1284,19 +1393,27 @@ class InstagramStoryCard extends StatelessWidget {
   // ═══════════════════════════════════════════════════════════════════════════
   String _getElementEmoji(zodiac.Element element) {
     switch (element) {
-      case zodiac.Element.fire: return '🔥';
-      case zodiac.Element.earth: return '🌍';
-      case zodiac.Element.air: return '💨';
-      case zodiac.Element.water: return '💧';
+      case zodiac.Element.fire:
+        return '🔥';
+      case zodiac.Element.earth:
+        return '🌍';
+      case zodiac.Element.air:
+        return '💨';
+      case zodiac.Element.water:
+        return '💧';
     }
   }
 
   String _getElementName(zodiac.Element element) {
     switch (element) {
-      case zodiac.Element.fire: return 'ATEŞ';
-      case zodiac.Element.earth: return 'TOPRAK';
-      case zodiac.Element.air: return 'HAVA';
-      case zodiac.Element.water: return 'SU';
+      case zodiac.Element.fire:
+        return 'ATEŞ';
+      case zodiac.Element.earth:
+        return 'TOPRAK';
+      case zodiac.Element.air:
+        return 'HAVA';
+      case zodiac.Element.water:
+        return 'SU';
     }
   }
 }

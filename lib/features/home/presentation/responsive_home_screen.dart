@@ -58,7 +58,8 @@ class ResponsiveHomeScreen extends StatelessWidget {
     // regardless of screen size (tablets can use mobile for performance)
     if (!kIsWeb) {
       final platform = Theme.of(context).platform;
-      if (platform == TargetPlatform.iOS || platform == TargetPlatform.android) {
+      if (platform == TargetPlatform.iOS ||
+          platform == TargetPlatform.android) {
         // For tablets (width >= 768), still use desktop
         // For phones, use mobile
         return screenWidth < _mobileBreakpoint;
@@ -155,12 +156,7 @@ extension ResponsiveExtension on BuildContext {
   EdgeInsets get responsivePadding => ResponsiveBreakpoints.getPadding(this);
   double get fontScale => ResponsiveBreakpoints.getFontScale(this);
 
-  T responsive<T>({
-    required T mobile,
-    T? tablet,
-    T? desktop,
-    T? widescreen,
-  }) {
+  T responsive<T>({required T mobile, T? tablet, T? desktop, T? widescreen}) {
     return ResponsiveBreakpoints.value(
       context: this,
       mobile: mobile,

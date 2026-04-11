@@ -23,17 +23,18 @@ class LocalSpaceChart {
   });
 
   Map<String, dynamic> toJson() => {
-        'userName': userName,
-        'birthDate': birthDate.toIso8601String(),
-        'latitude': latitude,
-        'longitude': longitude,
-        'planetLines': planetLines.map((l) => l.toJson()).toList(),
-        'directions': directions.map((d) => d.toJson()).toList(),
-        'homeAnalysis': homeAnalysis,
-        'officeAnalysis': officeAnalysis,
-      };
+    'userName': userName,
+    'birthDate': birthDate.toIso8601String(),
+    'latitude': latitude,
+    'longitude': longitude,
+    'planetLines': planetLines.map((l) => l.toJson()).toList(),
+    'directions': directions.map((d) => d.toJson()).toList(),
+    'homeAnalysis': homeAnalysis,
+    'officeAnalysis': officeAnalysis,
+  };
 
-  factory LocalSpaceChart.fromJson(Map<String, dynamic> json) => LocalSpaceChart(
+  factory LocalSpaceChart.fromJson(Map<String, dynamic> json) =>
+      LocalSpaceChart(
         userName: json['userName'] as String,
         birthDate: DateTime.parse(json['birthDate'] as String),
         latitude: (json['latitude'] as num).toDouble(),
@@ -42,7 +43,9 @@ class LocalSpaceChart {
             .map((l) => LocalSpaceLine.fromJson(l as Map<String, dynamic>))
             .toList(),
         directions: (json['directions'] as List)
-            .map((d) => DirectionalInfluence.fromJson(d as Map<String, dynamic>))
+            .map(
+              (d) => DirectionalInfluence.fromJson(d as Map<String, dynamic>),
+            )
             .toList(),
         homeAnalysis: json['homeAnalysis'] as String,
         officeAnalysis: json['officeAnalysis'] as String,
@@ -67,22 +70,22 @@ class LocalSpaceLine {
   });
 
   Map<String, dynamic> toJson() => {
-        'planet': planet,
-        'azimuth': azimuth,
-        'direction': direction.index,
-        'meaning': meaning,
-        'homeAdvice': homeAdvice,
-        'travelAdvice': travelAdvice,
-      };
+    'planet': planet,
+    'azimuth': azimuth,
+    'direction': direction.index,
+    'meaning': meaning,
+    'homeAdvice': homeAdvice,
+    'travelAdvice': travelAdvice,
+  };
 
   factory LocalSpaceLine.fromJson(Map<String, dynamic> json) => LocalSpaceLine(
-        planet: json['planet'] as String,
-        azimuth: (json['azimuth'] as num).toDouble(),
-        direction: CardinalDirection.values[json['direction'] as int],
-        meaning: json['meaning'] as String,
-        homeAdvice: json['homeAdvice'] as String,
-        travelAdvice: json['travelAdvice'] as String,
-      );
+    planet: json['planet'] as String,
+    azimuth: (json['azimuth'] as num).toDouble(),
+    direction: CardinalDirection.values[json['direction'] as int],
+    meaning: json['meaning'] as String,
+    homeAdvice: json['homeAdvice'] as String,
+    travelAdvice: json['travelAdvice'] as String,
+  );
 }
 
 class DirectionalInfluence {
@@ -101,12 +104,12 @@ class DirectionalInfluence {
   });
 
   Map<String, dynamic> toJson() => {
-        'direction': direction.index,
-        'activePlanets': activePlanets,
-        'theme': theme,
-        'advice': advice,
-        'strengthRating': strengthRating,
-      };
+    'direction': direction.index,
+    'activePlanets': activePlanets,
+    'theme': theme,
+    'advice': advice,
+    'strengthRating': strengthRating,
+  };
 
   factory DirectionalInfluence.fromJson(Map<String, dynamic> json) =>
       DirectionalInfluence(
@@ -236,22 +239,25 @@ class FamilyHoroscope {
   });
 
   Map<String, dynamic> toJson() => {
-        'members': members.map((m) => m.toJson()).toList(),
-        'familyDynamics': familyDynamics,
-        'strengthsAsFamily': strengthsAsFamily,
-        'challengesAsFamily': challengesAsFamily,
-        'communicationStyle': communicationStyle,
-        'familyAdvice': familyAdvice,
-        'date': date.toIso8601String(),
-      };
+    'members': members.map((m) => m.toJson()).toList(),
+    'familyDynamics': familyDynamics,
+    'strengthsAsFamily': strengthsAsFamily,
+    'challengesAsFamily': challengesAsFamily,
+    'communicationStyle': communicationStyle,
+    'familyAdvice': familyAdvice,
+    'date': date.toIso8601String(),
+  };
 
-  factory FamilyHoroscope.fromJson(Map<String, dynamic> json) => FamilyHoroscope(
+  factory FamilyHoroscope.fromJson(Map<String, dynamic> json) =>
+      FamilyHoroscope(
         members: (json['members'] as List)
             .map((m) => FamilyMember.fromJson(m as Map<String, dynamic>))
             .toList(),
         familyDynamics: json['familyDynamics'] as String,
         strengthsAsFamily: List<String>.from(json['strengthsAsFamily'] as List),
-        challengesAsFamily: List<String>.from(json['challengesAsFamily'] as List),
+        challengesAsFamily: List<String>.from(
+          json['challengesAsFamily'] as List,
+        ),
         communicationStyle: json['communicationStyle'] as String,
         familyAdvice: json['familyAdvice'] as String,
         date: DateTime.parse(json['date'] as String),
@@ -278,34 +284,27 @@ class FamilyMember {
   });
 
   Map<String, dynamic> toJson() => {
-        'name': name,
-        'role': role.index,
-        'birthDate': birthDate.toIso8601String(),
-        'sunSign': sunSign.index,
-        'dailyAdvice': dailyAdvice,
-        'relationshipTip': relationshipTip,
-        'energyLevel': energyLevel,
-      };
+    'name': name,
+    'role': role.index,
+    'birthDate': birthDate.toIso8601String(),
+    'sunSign': sunSign.index,
+    'dailyAdvice': dailyAdvice,
+    'relationshipTip': relationshipTip,
+    'energyLevel': energyLevel,
+  };
 
   factory FamilyMember.fromJson(Map<String, dynamic> json) => FamilyMember(
-        name: json['name'] as String,
-        role: FamilyRole.values[json['role'] as int],
-        birthDate: DateTime.parse(json['birthDate'] as String),
-        sunSign: ZodiacSign.values[json['sunSign'] as int],
-        dailyAdvice: json['dailyAdvice'] as String,
-        relationshipTip: json['relationshipTip'] as String,
-        energyLevel: json['energyLevel'] as int,
-      );
+    name: json['name'] as String,
+    role: FamilyRole.values[json['role'] as int],
+    birthDate: DateTime.parse(json['birthDate'] as String),
+    sunSign: ZodiacSign.values[json['sunSign'] as int],
+    dailyAdvice: json['dailyAdvice'] as String,
+    relationshipTip: json['relationshipTip'] as String,
+    energyLevel: json['energyLevel'] as int,
+  );
 }
 
-enum FamilyRole {
-  parent,
-  child,
-  sibling,
-  grandparent,
-  spouse,
-  other,
-}
+enum FamilyRole { parent, child, sibling, grandparent, spouse, other }
 
 extension FamilyRoleExtension on FamilyRole {
   String get nameTr {
@@ -380,40 +379,40 @@ class ChildHoroscope {
   });
 
   Map<String, dynamic> toJson() => {
-        'childName': childName,
-        'birthDate': birthDate.toIso8601String(),
-        'sunSign': sunSign.index,
-        'moonSign': moonSign?.index,
-        'personalityProfile': personalityProfile,
-        'learningStyle': learningStyle,
-        'socialStyle': socialStyle,
-        'emotionalNeeds': emotionalNeeds,
-        'talents': talents,
-        'challenges': challenges,
-        'parentingTips': parentingTips,
-        'dailyHoroscope': dailyHoroscope,
-        'moodRating': moodRating,
-        'energyRating': energyRating,
-        'focusRating': focusRating,
-      };
+    'childName': childName,
+    'birthDate': birthDate.toIso8601String(),
+    'sunSign': sunSign.index,
+    'moonSign': moonSign?.index,
+    'personalityProfile': personalityProfile,
+    'learningStyle': learningStyle,
+    'socialStyle': socialStyle,
+    'emotionalNeeds': emotionalNeeds,
+    'talents': talents,
+    'challenges': challenges,
+    'parentingTips': parentingTips,
+    'dailyHoroscope': dailyHoroscope,
+    'moodRating': moodRating,
+    'energyRating': energyRating,
+    'focusRating': focusRating,
+  };
 
   factory ChildHoroscope.fromJson(Map<String, dynamic> json) => ChildHoroscope(
-        childName: json['childName'] as String,
-        birthDate: DateTime.parse(json['birthDate'] as String),
-        sunSign: ZodiacSign.values[json['sunSign'] as int],
-        moonSign: json['moonSign'] != null
-            ? ZodiacSign.values[json['moonSign'] as int]
-            : null,
-        personalityProfile: json['personalityProfile'] as String,
-        learningStyle: json['learningStyle'] as String,
-        socialStyle: json['socialStyle'] as String,
-        emotionalNeeds: json['emotionalNeeds'] as String,
-        talents: List<String>.from(json['talents'] as List),
-        challenges: List<String>.from(json['challenges'] as List),
-        parentingTips: json['parentingTips'] as String,
-        dailyHoroscope: json['dailyHoroscope'] as String,
-        moodRating: json['moodRating'] as int,
-        energyRating: json['energyRating'] as int,
-        focusRating: json['focusRating'] as int,
-      );
+    childName: json['childName'] as String,
+    birthDate: DateTime.parse(json['birthDate'] as String),
+    sunSign: ZodiacSign.values[json['sunSign'] as int],
+    moonSign: json['moonSign'] != null
+        ? ZodiacSign.values[json['moonSign'] as int]
+        : null,
+    personalityProfile: json['personalityProfile'] as String,
+    learningStyle: json['learningStyle'] as String,
+    socialStyle: json['socialStyle'] as String,
+    emotionalNeeds: json['emotionalNeeds'] as String,
+    talents: List<String>.from(json['talents'] as List),
+    challenges: List<String>.from(json['challenges'] as List),
+    parentingTips: json['parentingTips'] as String,
+    dailyHoroscope: json['dailyHoroscope'] as String,
+    moodRating: json['moodRating'] as int,
+    energyRating: json['energyRating'] as int,
+    focusRating: json['focusRating'] as int,
+  );
 }

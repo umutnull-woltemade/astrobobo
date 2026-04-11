@@ -13,11 +13,7 @@ import 'package:flutter/material.dart';
 /// bounding rect. Everything else animates off an internal Ticker so the
 /// parent only needs to feed proximity.
 class AICoreWidget extends StatefulWidget {
-  const AICoreWidget({
-    super.key,
-    required this.proximity,
-    this.size = 220,
-  });
+  const AICoreWidget({super.key, required this.proximity, this.size = 220});
 
   /// 0..1 — how close the user's pointer is. 1 = right on top of the orb.
   final double proximity;
@@ -90,9 +86,7 @@ class _AICoreWidgetState extends State<AICoreWidget>
                 angle: _ringRotation.value * 2 * math.pi,
                 child: CustomPaint(
                   size: Size(widget.size * 1.25, widget.size * 1.25),
-                  painter: _EnergyRingPainter(
-                    intensity: 0.55 + prox * 0.45,
-                  ),
+                  painter: _EnergyRingPainter(intensity: 0.55 + prox * 0.45),
                 ),
               );
             },

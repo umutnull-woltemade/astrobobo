@@ -99,32 +99,32 @@ Astroloji ampirik bilim değildir. Binlerce yıllık sembolik bir dil sistemidir
     {
       'question': 'Astroloji gerçekten işe yarıyor mu?',
       'answer':
-          'Astroloji, binlerce yıllık sembolik bir dil sistemidir. "İşe yaramak" tanımınıza bağlıdır — eğer kesin kehanetler bekliyorsanız, hayal kırıklığına uğrayabilirsiniz. Ancak öz-keşif, içsel yansıma ve farklı perspektifler için güçlü bir araç olabilir. Bilimsel kanıt aramak yerine, sizde ne çağrıştırdığına odaklanmanızı öneririz.'
+          'Astroloji, binlerce yıllık sembolik bir dil sistemidir. "İşe yaramak" tanımınıza bağlıdır — eğer kesin kehanetler bekliyorsanız, hayal kırıklığına uğrayabilirsiniz. Ancak öz-keşif, içsel yansıma ve farklı perspektifler için güçlü bir araç olabilir. Bilimsel kanıt aramak yerine, sizde ne çağrıştırdığına odaklanmanızı öneririz.',
     },
     {
       'question': 'Doğum saatimi bilmiyorsam ne olur?',
       'answer':
-          'Doğum saati olmadan da Güneş burcu, Ay burcu (yaklaşık) ve gezegen pozisyonları hesaplanabilir. Ancak yükselen burç ve ev yerleşimleri için kesin saat gerekir. "Öğlen 12:00" gibi varsayılan bir saat kullanabilirsiniz, ama bu durumda ev yorumlarını atlayın.'
+          'Doğum saati olmadan da Güneş burcu, Ay burcu (yaklaşık) ve gezegen pozisyonları hesaplanabilir. Ancak yükselen burç ve ev yerleşimleri için kesin saat gerekir. "Öğlen 12:00" gibi varsayılan bir saat kullanabilirsiniz, ama bu durumda ev yorumlarını atlayın.',
     },
     {
       'question': 'Günlük burç yorumları herkese aynı mı?',
       'answer':
-          'Aynı burçtaki herkes aynı genel enerjiyi paylaşır, ama bireysel haritanızdaki diğer faktörler (Ay burcu, yükselen, gezegen açıları) deneyiminizi kişiselleştirir. Bu yüzden bazen "tam tuttu" bazen "hiç tutmadı" hissedebilirsiniz.'
+          'Aynı burçtaki herkes aynı genel enerjiyi paylaşır, ama bireysel haritanızdaki diğer faktörler (Ay burcu, yükselen, gezegen açıları) deneyiminizi kişiselleştirir. Bu yüzden bazen "tam tuttu" bazen "hiç tutmadı" hissedebilirsiniz.',
     },
     {
       'question': 'Tarot ve astroloji aynı şey mi?',
       'answer':
-          "Hayır. Astroloji gezegen konumlarına dayalı bir sistem, tarot ise sembolik kartlarla yapılan bir okuma pratiğidir. İkisi de içsel yansıma araçlarıdır ama farklı diller kullanırlar. Venus One'da her ikisini de bulabilirsiniz."
+          "Hayır. Astroloji gezegen konumlarına dayalı bir sistem, tarot ise sembolik kartlarla yapılan bir okuma pratiğidir. İkisi de içsel yansıma araçlarıdır ama farklı diller kullanırlar. Venus One'da her ikisini de bulabilirsiniz.",
     },
     {
       'question': 'Premium üyelik ne fark yaratır?',
       'answer':
-          'Premium üyelik ile detaylı transit raporları, sınırsız synastry analizi, gelişmiş progresyon takibi ve reklamsız deneyim elde edersiniz. Temel özellikler ücretsizdir.'
+          'Premium üyelik ile detaylı transit raporları, sınırsız synastry analizi, gelişmiş progresyon takibi ve reklamsız deneyim elde edersiniz. Temel özellikler ücretsizdir.',
     },
     {
       'question': 'Verilerim güvende mi?',
       'answer':
-          'Doğum bilgileriniz cihazınızda şifreli olarak saklanır. Üçüncü taraflarla paylaşılmaz. Hesabınızı istediğiniz zaman silebilirsiniz.'
+          'Doğum bilgileriniz cihazınızda şifreli olarak saklanır. Üçüncü taraflarla paylaşılmaz. Hesabınızı istediğiniz zaman silebilirsiniz.',
     },
   ];
 
@@ -232,32 +232,32 @@ Duygular, sezgiler ve derinlik. Su burçları için bugün içsel süreçler ve 
     {
       'question': 'Neden bazen burç yorumum hiç tutmuyor?',
       'answer':
-          'Çünkü sadece Güneş burcunuza bakıyorsunuz. Haritanızda 10 gezegen, 12 ev ve sayısız açı var. Güneş burcu sadece bir parça. Ayrıca, yorumlar olasılıkları anlatır, kesinlikleri değil.'
+          'Çünkü sadece Güneş burcunuza bakıyorsunuz. Haritanızda 10 gezegen, 12 ev ve sayısız açı var. Güneş burcu sadece bir parça. Ayrıca, yorumlar olasılıkları anlatır, kesinlikleri değil.',
     },
     {
       'question': 'Yükselen burcumu mu yoksa Güneş burcumu mu okumalıyım?',
       'answer':
-          'İkisini de okuyun. Güneş burcu içsel kimliğinizi, yükselen burç dış dünyadaki deneyimlerinizi yansıtır. Bazı astrologlar yükseleni daha önemli bulur, bazıları Güneşi. Hangisi size daha çok "oturuyorsa" onu öncelikli tutabilirsiniz.'
+          'İkisini de okuyun. Güneş burcu içsel kimliğinizi, yükselen burç dış dünyadaki deneyimlerinizi yansıtır. Bazı astrologlar yükseleni daha önemli bulur, bazıları Güneşi. Hangisi size daha çok "oturuyorsa" onu öncelikli tutabilirsiniz.',
     },
     {
       'question': 'Günlük yorumlar gerçekten her gün değişiyor mu?',
       'answer':
-          'Evet. Ay her 2.5 günde bir burç değiştirir, gezegenler sürekli hareket eder. Bu yüzden kozmik enerji gerçekten her gün farklıdır.'
+          'Evet. Ay her 2.5 günde bir burç değiştirir, gezegenler sürekli hareket eder. Bu yüzden kozmik enerji gerçekten her gün farklıdır.',
     },
     {
       'question': 'Olumsuz yorum gördüğümde ne yapmalıyım?',
       'answer':
-          'Olumsuz yorumları "uyarı" olarak değil, "farkındalık daveti" olarak okuyun. "Bugün iletişimde dikkatli ol" demek "bugün tartışacaksın" demek değildir. Sadece o alana biraz daha özen göstermenizi önerir.'
+          'Olumsuz yorumları "uyarı" olarak değil, "farkındalık daveti" olarak okuyun. "Bugün iletişimde dikkatli ol" demek "bugün tartışacaksın" demek değildir. Sadece o alana biraz daha özen göstermenizi önerir.',
     },
     {
       'question': 'Burç uyumu yorumları doğru mu?',
       'answer':
-          'Genel eğilimleri gösterir ama hiçbir burç kombinasyonu "imkansız" veya "mükemmel" değildir. Bireysel haritalar, kişisel gelişim ve iletişim kalitesi çok daha belirleyicidir.'
+          'Genel eğilimleri gösterir ama hiçbir burç kombinasyonu "imkansız" veya "mükemmel" değildir. Bireysel haritalar, kişisel gelişim ve iletişim kalitesi çok daha belirleyicidir.',
     },
     {
       'question': 'Haftalık ve aylık yorumlar günlükten daha mı doğru?',
       'answer':
-          'Daha geniş perspektif sundukları için daha tutarlı hissedebilirler. Günlük yorumlar mikro enerjiyi, haftalık/aylık yorumlar makro temaları anlatır.'
+          'Daha geniş perspektif sundukları için daha tutarlı hissedebilirler. Günlük yorumlar mikro enerjiyi, haftalık/aylık yorumlar makro temaları anlatır.',
     },
   ];
 
@@ -269,7 +269,7 @@ Duygular, sezgiler ve derinlik. Su burçları için bugün içsel süreçler ve 
       'symbol': '♈',
       'dates': '21 Mart - 19 Nisan',
       'element': 'Ateş',
-      'hook': 'Bugün hangi kapıyı kırmak istiyorsun?'
+      'hook': 'Bugün hangi kapıyı kırmak istiyorsun?',
     },
     {
       'sign': 'taurus',
@@ -277,7 +277,7 @@ Duygular, sezgiler ve derinlik. Su burçları için bugün içsel süreçler ve 
       'symbol': '♉',
       'dates': '20 Nisan - 20 Mayıs',
       'element': 'Toprak',
-      'hook': 'Bugün neyi korumak, neyi büyütmek istiyorsun?'
+      'hook': 'Bugün neyi korumak, neyi büyütmek istiyorsun?',
     },
     {
       'sign': 'gemini',
@@ -285,7 +285,7 @@ Duygular, sezgiler ve derinlik. Su burçları için bugün içsel süreçler ve 
       'symbol': '♊',
       'dates': '21 Mayıs - 20 Haziran',
       'element': 'Hava',
-      'hook': 'Bugün hangi hikayeyi anlatacaksın?'
+      'hook': 'Bugün hangi hikayeyi anlatacaksın?',
     },
     {
       'sign': 'cancer',
@@ -293,7 +293,7 @@ Duygular, sezgiler ve derinlik. Su burçları için bugün içsel süreçler ve 
       'symbol': '♋',
       'dates': '21 Haziran - 22 Temmuz',
       'element': 'Su',
-      'hook': 'Bugün kalbini kime açacaksın?'
+      'hook': 'Bugün kalbini kime açacaksın?',
     },
     {
       'sign': 'leo',
@@ -301,7 +301,7 @@ Duygular, sezgiler ve derinlik. Su burçları için bugün içsel süreçler ve 
       'symbol': '♌',
       'dates': '23 Temmuz - 22 Ağustos',
       'element': 'Ateş',
-      'hook': 'Bugün hangi sahnede parlayacaksın?'
+      'hook': 'Bugün hangi sahnede parlayacaksın?',
     },
     {
       'sign': 'virgo',
@@ -309,7 +309,7 @@ Duygular, sezgiler ve derinlik. Su burçları için bugün içsel süreçler ve 
       'symbol': '♍',
       'dates': '23 Ağustos - 22 Eylül',
       'element': 'Toprak',
-      'hook': 'Bugün neyi iyileştirmek istiyorsun?'
+      'hook': 'Bugün neyi iyileştirmek istiyorsun?',
     },
     {
       'sign': 'libra',
@@ -317,7 +317,7 @@ Duygular, sezgiler ve derinlik. Su burçları için bugün içsel süreçler ve 
       'symbol': '♎',
       'dates': '23 Eylül - 22 Ekim',
       'element': 'Hava',
-      'hook': 'Bugün dengeyi nerede arıyorsun?'
+      'hook': 'Bugün dengeyi nerede arıyorsun?',
     },
     {
       'sign': 'scorpio',
@@ -325,7 +325,7 @@ Duygular, sezgiler ve derinlik. Su burçları için bugün içsel süreçler ve 
       'symbol': '♏',
       'dates': '23 Ekim - 21 Kasım',
       'element': 'Su',
-      'hook': 'Bugün hangi derinliğe dalacaksın?'
+      'hook': 'Bugün hangi derinliğe dalacaksın?',
     },
     {
       'sign': 'sagittarius',
@@ -333,7 +333,7 @@ Duygular, sezgiler ve derinlik. Su burçları için bugün içsel süreçler ve 
       'symbol': '♐',
       'dates': '22 Kasım - 21 Aralık',
       'element': 'Ateş',
-      'hook': 'Bugün hangi ufka doğru koşuyorsun?'
+      'hook': 'Bugün hangi ufka doğru koşuyorsun?',
     },
     {
       'sign': 'capricorn',
@@ -341,7 +341,7 @@ Duygular, sezgiler ve derinlik. Su burçları için bugün içsel süreçler ve 
       'symbol': '♑',
       'dates': '22 Aralık - 19 Ocak',
       'element': 'Toprak',
-      'hook': 'Bugün hangi zirveye tırmanıyorsun?'
+      'hook': 'Bugün hangi zirveye tırmanıyorsun?',
     },
     {
       'sign': 'aquarius',
@@ -349,7 +349,7 @@ Duygular, sezgiler ve derinlik. Su burçları için bugün içsel süreçler ve 
       'symbol': '♒',
       'dates': '20 Ocak - 18 Şubat',
       'element': 'Hava',
-      'hook': 'Bugün hangi kuralı yeniden yazacaksın?'
+      'hook': 'Bugün hangi kuralı yeniden yazacaksın?',
     },
     {
       'sign': 'pisces',
@@ -357,7 +357,7 @@ Duygular, sezgiler ve derinlik. Su burçları için bugün içsel süreçler ve 
       'symbol': '♓',
       'dates': '19 Şubat - 20 Mart',
       'element': 'Su',
-      'hook': 'Bugün hangi rüyaya dalacaksın?'
+      'hook': 'Bugün hangi rüyaya dalacaksın?',
     },
   ];
 
@@ -503,32 +503,32 @@ Koç'un rüyaları genellikle aksiyon dolu ve yoğundur. Kovalamacalar, yarışl
       {
         'question': 'Koç burcu neden bu kadar sabırsız?',
         'answer':
-            'Mars yönetimi ve kardinal modalite, Koç\'a "şimdi" odaklı bir enerji verir. Gelecek veya geçmiş değil, an önemlidir. Bu sabırsızlık aslında hayata duyulan yoğun bir tutkunun yansımasıdır.'
+            'Mars yönetimi ve kardinal modalite, Koç\'a "şimdi" odaklı bir enerji verir. Gelecek veya geçmiş değil, an önemlidir. Bu sabırsızlık aslında hayata duyulan yoğun bir tutkunun yansımasıdır.',
       },
       {
         'question': 'Koç burcu liderlik mi ister yoksa diktatörlük mü?',
         'answer':
-            'Gelişmiş bir Koç, başkalarını güçlendiren bir liderdir. Gelişmemiş Koç, kontrolü elde tutmak için ezer. Fark, öz-farkındalık ve duygusal olgunluktadır.'
+            'Gelişmiş bir Koç, başkalarını güçlendiren bir liderdir. Gelişmemiş Koç, kontrolü elde tutmak için ezer. Fark, öz-farkındalık ve duygusal olgunluktadır.',
       },
       {
         'question': 'Koç burcu ile ilişki nasıl sürdürülür?',
         'answer':
-            'Heyecanı canlı tutun, meydan okuyan ama saygılı olun, pasif-agresif olmayın (Koç doğrudan iletişim ister), ve bağımsızlığına saygı gösterin.'
+            'Heyecanı canlı tutun, meydan okuyan ama saygılı olun, pasif-agresif olmayın (Koç doğrudan iletişim ister), ve bağımsızlığına saygı gösterin.',
       },
       {
         'question': 'Koç burcu neden çabuk sıkılıyor?',
         'answer':
-            'Yenilik arayışı Koç\'un doğasında var. Kovalamak, keşfetmek onu canlı tutar. "Kazandıktan" sonra ilgisini kaybedebilir — bu onun bilinçli olarak çalışması gereken bir alandır.'
+            'Yenilik arayışı Koç\'un doğasında var. Kovalamak, keşfetmek onu canlı tutar. "Kazandıktan" sonra ilgisini kaybedebilir — bu onun bilinçli olarak çalışması gereken bir alandır.',
       },
       {
         'question': 'Koç burcunun en büyük korkusu nedir?',
         'answer':
-            'Önemsiz olmak, görünmez olmak, yavaşlamak veya "kaybetmek". Koç\'un gizli korkusu güçsüzlüktür.'
+            'Önemsiz olmak, görünmez olmak, yavaşlamak veya "kaybetmek". Koç\'un gizli korkusu güçsüzlüktür.',
       },
       {
         'question': 'Koç burcu nasıl sakinleşir?',
         'answer':
-            'Fiziksel aktivite (spor, yürüyüş, boks), rekabetçi oyunlar, yeni projeler başlatmak. Meditasyon zordur ama hareket halinde meditasyon (koşu, yüzme) işe yarayabilir.'
+            'Fiziksel aktivite (spor, yürüyüş, boks), rekabetçi oyunlar, yeni projeler başlatmak. Meditasyon zordur ama hareket halinde meditasyon (koşu, yüzme) işe yarayabilir.',
       },
     ],
     dailyAffirmation:
@@ -615,32 +615,32 @@ Boğa'nın rüyaları genellikle duyusal ve somuttur. Yemek, bahçe, ev, para, c
       {
         'question': 'Boğa burcu neden bu kadar inatçı?',
         'answer':
-            'Sabit modalite ve toprak elementi, Boğa\'ya derin bir "kök salma" enerjisi verir. Değişim tehdittir çünkü güvenliği sarsar. İnat aslında koruma mekanizmasıdır.'
+            'Sabit modalite ve toprak elementi, Boğa\'ya derin bir "kök salma" enerjisi verir. Değişim tehdittir çünkü güvenliği sarsar. İnat aslında koruma mekanizmasıdır.',
       },
       {
         'question': 'Boğa burcu paraya neden bu kadar düşkün?',
         'answer':
-            'Para Boğa için sadece para değil, güvenlik ve özgürlük sembolüdür. Maddi istikrar, Boğa\'nın iç huzurunun temelidir.'
+            'Para Boğa için sadece para değil, güvenlik ve özgürlük sembolüdür. Maddi istikrar, Boğa\'nın iç huzurunun temelidir.',
       },
       {
         'question': 'Boğa burcu ile kavga edilir mi?',
         'answer':
-            'Boğa uzun süre sabreder ama bir kere patlarsa şiddetli olabilir. Doğrudan, sakin ve saygılı iletişim en iyisidir. Baskı yaparsanız duvar örer.'
+            'Boğa uzun süre sabreder ama bir kere patlarsa şiddetli olabilir. Doğrudan, sakin ve saygılı iletişim en iyisidir. Baskı yaparsanız duvar örer.',
       },
       {
         'question': 'Boğa burcunu nasıl etkilersiniz?',
         'answer':
-            'Mantık değil, deneyim ile. Bir şeyi söylemek yerine gösterin, tattırın, yaşatın. Boğa duyularıyla ikna olur.'
+            'Mantık değil, deneyim ile. Bir şeyi söylemek yerine gösterin, tattırın, yaşatın. Boğa duyularıyla ikna olur.',
       },
       {
         'question': 'Boğa burcu aşık olduğunda nasıl davranır?',
         'answer':
-            'Yavaş ve temkinli başlar ama bir kere bağlandığında sadık ve adanmıştır. Hediyeler, fiziksel yakınlık ve istikrar arar.'
+            'Yavaş ve temkinli başlar ama bir kere bağlandığında sadık ve adanmıştır. Hediyeler, fiziksel yakınlık ve istikrar arar.',
       },
       {
         'question': 'Boğa burcu değişime nasıl adapte olur?',
         'answer':
-            'Çok zor ama zorunlu olduğunda uyum sağlar. Küçük adımlarla, kendi hızında ve kontrol hissi korunarak geçiş yapabilir.'
+            'Çok zor ama zorunlu olduğunda uyum sağlar. Küçük adımlarla, kendi hızında ve kontrol hissi korunarak geçiş yapabilir.',
       },
     ],
     dailyAffirmation:
@@ -727,32 +727,32 @@ Değişken burçlar adaptördür. İkizler ortama, kişiye, duruma göre şekil 
       {
         'question': 'İkizler gerçekten iki yüzlü mü?',
         'answer':
-            'Hayır, ama çok yönlüdür. Farklı ortamlarda farklı taraflarını gösterir — bu sahtelik değil, adaptasyondur. Ancak tutarsızlık güven sorunlarına yol açabilir.'
+            'Hayır, ama çok yönlüdür. Farklı ortamlarda farklı taraflarını gösterir — bu sahtelik değil, adaptasyondur. Ancak tutarsızlık güven sorunlarına yol açabilir.',
       },
       {
         'question': 'İkizler neden bu kadar kararsız?',
         'answer':
-            'Tüm seçenekleri görebilmek hem bir lütuf hem de bir lanet. İkizler için "en iyi" seçimi yapmak zor çünkü her şeyde potansiyel görür.'
+            'Tüm seçenekleri görebilmek hem bir lütuf hem de bir lanet. İkizler için "en iyi" seçimi yapmak zor çünkü her şeyde potansiyel görür.',
       },
       {
         'question': 'İkizler ile derin bir ilişki kurulabilir mi?',
         'answer':
-            'Evet, ama sabır gerektirir. İkizler yüzeyde kalmayı tercih edebilir ama güvendiği kişiye açılabilir. Zihinsel bağ kurulduktan sonra duygusal derinlik gelebilir.'
+            'Evet, ama sabır gerektirir. İkizler yüzeyde kalmayı tercih edebilir ama güvendiği kişiye açılabilir. Zihinsel bağ kurulduktan sonra duygusal derinlik gelebilir.',
       },
       {
         'question': 'İkizler neden bu kadar konuşuyor?',
         'answer':
-            'Merkür yönetimi ve hava elementi İkizler\'i doğal bir iletişimci yapar. Düşünceler sürekli akar ve paylaşma ihtiyacı yoğundur. Bazen dinlemek de öğrenilmesi gereken bir beceridir.'
+            'Merkür yönetimi ve hava elementi İkizler\'i doğal bir iletişimci yapar. Düşünceler sürekli akar ve paylaşma ihtiyacı yoğundur. Bazen dinlemek de öğrenilmesi gereken bir beceridir.',
       },
       {
         'question': 'İkizler burcu nasıl sakinleştirilir?',
         'answer':
-            'Dikkatini dağıtmak (yeni konu), mantıksal açıklama yapmak, fiziksel aktivite (yürüyüş, dans), yazı yazmak veya konuşmak. Zihinsel meşguliyet sakinleştirir.'
+            'Dikkatini dağıtmak (yeni konu), mantıksal açıklama yapmak, fiziksel aktivite (yürüyüş, dans), yazı yazmak veya konuşmak. Zihinsel meşguliyet sakinleştirir.',
       },
       {
         'question': 'İkizler sıkıldığında ne yapar?',
         'answer':
-            'Kaçar — mental veya fiziksel olarak. Yeni insanlar, yeni fikirler, yeni projeler arar. Sıkıntı İkizler için en büyük tehdittir.'
+            'Kaçar — mental veya fiziksel olarak. Yeni insanlar, yeni fikirler, yeni projeler arar. Sıkıntı İkizler için en büyük tehdittir.',
       },
     ],
     dailyAffirmation:
@@ -840,36 +840,35 @@ Yengeç'in rüyaları genellikle ev, aile, su ve geçmiş temalıdır. Eski evle
       {
         'question': 'Yengeç burcu neden bu kadar duygusal?',
         'answer':
-            'Ay yönetimi Yengeç\'e dalgalanan, döngüsel bir duygusal yaşam verir. Ay gibi, Yengeç de sürekli değişen iç manzaralar yaşar. Bu duygusal derinlik, aynı zamanda derin empati kapasitesidir.'
+            'Ay yönetimi Yengeç\'e dalgalanan, döngüsel bir duygusal yaşam verir. Ay gibi, Yengeç de sürekli değişen iç manzaralar yaşar. Bu duygusal derinlik, aynı zamanda derin empati kapasitesidir.',
       },
       {
         'question': 'Yengeç burcu neden küser?',
         'answer':
-            'Yengeç doğrudan çatışmadan kaçınır, bunun yerine geri çekilir ve kabuk bağlar. Bu koruma mekanizmasıdır ama ilişkilere zarar verebilir. Güvenli hissederse açılabilir.'
+            'Yengeç doğrudan çatışmadan kaçınır, bunun yerine geri çekilir ve kabuk bağlar. Bu koruma mekanizmasıdır ama ilişkilere zarar verebilir. Güvenli hissederse açılabilir.',
       },
       {
         'question': 'Yengeç burcu ile nasıl bağ kurulur?',
         'answer':
-            'Sabır, tutarlılık ve duygusal güvenlik sunarak. Acele etmeyin, kendinizi açın, geçmişinizi paylaşın. Yengeç güven inşa etmek için zamana ihtiyaç duyar.'
+            'Sabır, tutarlılık ve duygusal güvenlik sunarak. Acele etmeyin, kendinizi açın, geçmişinizi paylaşın. Yengeç güven inşa etmek için zamana ihtiyaç duyar.',
       },
       {
         'question': 'Yengeç burcu neden geçmişe takılıyor?',
         'answer':
-            'Ay güçlü bir hafıza verir. Yengeç geçmiş deneyimlerden öğrenir, hatıralar onu besler. Ama bazen bu nostaljik eğilim "şimdi"yi yaşamayı zorlaştırabilir.'
+            'Ay güçlü bir hafıza verir. Yengeç geçmiş deneyimlerden öğrenir, hatıralar onu besler. Ama bazen bu nostaljik eğilim "şimdi"yi yaşamayı zorlaştırabilir.',
       },
       {
         'question': 'Yengeç burcu öfkelendiğinde ne yapar?',
         'answer':
-            'Önce içe çekilir (kabuk), sonra pasif-agresif olabilir (iğnelemeler), en son patlar. Patlama nadir ama şiddetli olabilir. Duyguların birikmesine izin vermemek önemlidir.'
+            'Önce içe çekilir (kabuk), sonra pasif-agresif olabilir (iğnelemeler), en son patlar. Patlama nadir ama şiddetli olabilir. Duyguların birikmesine izin vermemek önemlidir.',
       },
       {
         'question': 'Yengeç burcu nasıl sevilir?',
         'answer':
-            'Dinleyerek, hatırlayarak, küçük jestlerle, ailesiyle ilgilenerek, evinde onunla vakit geçirerek. Yengeç görkemli değil, samimi ifadeler ister.'
+            'Dinleyerek, hatırlayarak, küçük jestlerle, ailesiyle ilgilenerek, evinde onunla vakit geçirerek. Yengeç görkemli değil, samimi ifadeler ister.',
       },
     ],
-    dailyAffirmation:
-        'Kalbimi korurken, sevgimi paylaşmaktan korkmuyorum.',
+    dailyAffirmation: 'Kalbimi korurken, sevgimi paylaşmaktan korkmuyorum.',
     internalLinks: {
       '/compatibility': 'Yengeç burcu ile uyumlu burçlar →',
       '/birth-chart': 'Ay\'ın haritandaki yeri →',
@@ -954,32 +953,32 @@ Aslan'ın rüyaları genellikle performans, sahne, ışık ve tanınma temalıd�
       {
         'question': 'Aslan burcu neden bu kadar dikkat istiyor?',
         'answer':
-            'Güneş yönetimi, Aslan\'a "merkez" enerjisi verir. Dikkat, Aslan için onaylama ve varoluş hissidir. Bu ihtiyaç sağlıklı özgüvenle dengelenebilir.'
+            'Güneş yönetimi, Aslan\'a "merkez" enerjisi verir. Dikkat, Aslan için onaylama ve varoluş hissidir. Bu ihtiyaç sağlıklı özgüvenle dengelenebilir.',
       },
       {
         'question': 'Aslan burcu kibirli mi?',
         'answer':
-            'Dışarıdan öyle görünebilir ama çoğu Aslan\'ın iç dünyasında derin bir güvensizlik olabilir. Kibir, aslında savunma mekanizmasıdır. Gerçek özgüven kibre ihtiyaç duymaz.'
+            'Dışarıdan öyle görünebilir ama çoğu Aslan\'ın iç dünyasında derin bir güvensizlik olabilir. Kibir, aslında savunma mekanizmasıdır. Gerçek özgüven kibre ihtiyaç duymaz.',
       },
       {
         'question': 'Aslan burcu eleştiriyi nasıl alır?',
         'answer':
-            'Genellikle zor alır, özellikle kamusal ortamda. Özel ve nazik geri bildirim daha iyi işe yarar. Eleştirinin kişisel saldırı olmadığını anlaması zaman alabilir.'
+            'Genellikle zor alır, özellikle kamusal ortamda. Özel ve nazik geri bildirim daha iyi işe yarar. Eleştirinin kişisel saldırı olmadığını anlaması zaman alabilir.',
       },
       {
         'question': 'Aslan burcunu nasıl mutlu edersiniz?',
         'answer':
-            'Takdir edin, iltifat edin, dinleyin, özel hissettirin. Aslan cömert övgü ister ama samimiyetsizliği hisseder. Gerçekten etkilendiğiniz şeyleri söyleyin.'
+            'Takdir edin, iltifat edin, dinleyin, özel hissettirin. Aslan cömert övgü ister ama samimiyetsizliği hisseder. Gerçekten etkilendiğiniz şeyleri söyleyin.',
       },
       {
         'question': 'Aslan burcu sadık mı?',
         'answer':
-            'Çok sadıktır — ailesine, dostlarına, sevdiklerine. Ama sadakat karşılıklı olmalı. Aslan kendini değersiz hissederse, ilgiyi başka yerde arayabilir.'
+            'Çok sadıktır — ailesine, dostlarına, sevdiklerine. Ama sadakat karşılıklı olmalı. Aslan kendini değersiz hissederse, ilgiyi başka yerde arayabilir.',
       },
       {
         'question': 'Aslan burcunun korkusu nedir?',
         'answer':
-            'Görülmemek, önemsiz olmak, sıradan olmak. Aslan\'ın en derin korkusu fark edilmemektir.'
+            'Görülmemek, önemsiz olmak, sıradan olmak. Aslan\'ın en derin korkusu fark edilmemektir.',
       },
     ],
     dailyAffirmation:
@@ -998,11 +997,11 @@ Aslan'ın rüyaları genellikle performans, sahne, ışık ve tanınma temalıd�
   // VIRGO, LIBRA, SCORPIO, SAGITTARIUS, CAPRICORN, AQUARIUS, PISCES
 
   static List<ZodiacSignContent> get allSigns => [
-        aries,
-        taurus,
-        gemini,
-        cancer,
-        leo,
-        // virgo, libra, scorpio, sagittarius, capricorn, aquarius, pisces
-      ];
+    aries,
+    taurus,
+    gemini,
+    cancer,
+    leo,
+    // virgo, libra, scorpio, sagittarius, capricorn, aquarius, pisces
+  ];
 }

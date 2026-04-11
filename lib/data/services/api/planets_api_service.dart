@@ -10,9 +10,8 @@ class PlanetsApiService {
   Future<ApiResponse<List<PlanetPositionDto>>> getCurrentPositions() async {
     return _client.get<List<PlanetPositionDto>>(
       '/planets/current',
-      fromJson: (json) => (json as List)
-          .map((p) => PlanetPositionDto.fromJson(p))
-          .toList(),
+      fromJson: (json) =>
+          (json as List).map((p) => PlanetPositionDto.fromJson(p)).toList(),
     );
   }
 
@@ -155,11 +154,7 @@ class RetrogradeDto {
   final String sign;
   final int degree;
 
-  RetrogradeDto({
-    required this.name,
-    required this.sign,
-    required this.degree,
-  });
+  RetrogradeDto({required this.name, required this.sign, required this.degree});
 
   factory RetrogradeDto.fromJson(Map<String, dynamic> json) {
     return RetrogradeDto(

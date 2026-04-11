@@ -131,9 +131,7 @@ class DreamShareCard extends StatelessWidget {
         child: Stack(
           children: [
             // Background
-            Positioned.fill(
-              child: _buildBackground(),
-            ),
+            Positioned.fill(child: _buildBackground()),
             // Decorative elements
             ..._buildDecorations(),
             // Content
@@ -145,21 +143,14 @@ class DreamShareCard extends StatelessWidget {
             ),
             // Watermark
             if (config.showWatermark)
-              Positioned(
-                bottom: 16,
-                right: 20,
-                child: _buildWatermark(),
-              ),
+              Positioned(bottom: 16, right: 20, child: _buildWatermark()),
           ],
         ),
       ),
     );
 
     if (repaintKey != null) {
-      return RepaintBoundary(
-        key: repaintKey,
-        child: card,
-      );
+      return RepaintBoundary(key: repaintKey, child: card);
     }
     return card;
   }
@@ -215,9 +206,7 @@ class DreamShareCard extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.white.withOpacity(0.1),
               borderRadius: BorderRadius.circular(20),
-              border: Border.all(
-                color: Colors.white.withOpacity(0.2),
-              ),
+              border: Border.all(color: Colors.white.withOpacity(0.2)),
             ),
             child: Row(
               mainAxisSize: MainAxisSize.min,
@@ -248,18 +237,11 @@ class DreamShareCard extends StatelessWidget {
       children: [
         // Header emoji
         if (headerEmoji != null) ...[
-          Text(
-            headerEmoji!,
-            style: const TextStyle(fontSize: 48),
-          ),
+          Text(headerEmoji!, style: const TextStyle(fontSize: 48)),
           const SizedBox(height: 20),
         ],
         // Main text
-        Text(
-          mainText,
-          textAlign: TextAlign.center,
-          style: _getMainTextStyle(),
-        ),
+        Text(mainText, textAlign: TextAlign.center, style: _getMainTextStyle()),
         // Subtitle
         if (subtitle != null) ...[
           const SizedBox(height: 16),
@@ -337,10 +319,7 @@ class DreamShareCard extends StatelessWidget {
       children: [
         Text(
           '\u{2728}',
-          style: TextStyle(
-            fontSize: 12,
-            color: Colors.white.withOpacity(0.5),
-          ),
+          style: TextStyle(fontSize: 12, color: Colors.white.withOpacity(0.5)),
         ),
         const SizedBox(width: 4),
         Text(
@@ -399,9 +378,7 @@ class _MysticalBackground extends StatelessWidget {
           stops: const [0.0, 0.3, 0.7, 1.0],
         ),
       ),
-      child: CustomPaint(
-        painter: _StarsPainter(starCount: 50),
-      ),
+      child: CustomPaint(painter: _StarsPainter(starCount: 50)),
     );
   }
 }
@@ -417,10 +394,7 @@ class _MinimalBackground extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          colors: [
-            const Color(0xFF1A1A2E),
-            const Color(0xFF16213E),
-          ],
+          colors: [const Color(0xFF1A1A2E), const Color(0xFF16213E)],
         ),
       ),
       child: Center(
@@ -462,9 +436,7 @@ class _CosmicBackground extends StatelessWidget {
       ),
       child: Stack(
         children: [
-          CustomPaint(
-            painter: _StarsPainter(starCount: 80),
-          ),
+          CustomPaint(painter: _StarsPainter(starCount: 80)),
           // Nebula effect
           Positioned(
             top: 50,
@@ -517,11 +489,7 @@ class _AuroraBackground extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [
-            Color(0xFF0F2027),
-            Color(0xFF203A43),
-            Color(0xFF2C5364),
-          ],
+          colors: [Color(0xFF0F2027), Color(0xFF203A43), Color(0xFF2C5364)],
         ),
       ),
       child: Stack(
@@ -536,9 +504,7 @@ class _AuroraBackground extends StatelessWidget {
               painter: _AuroraPainter(),
             ),
           ),
-          CustomPaint(
-            painter: _StarsPainter(starCount: 40),
-          ),
+          CustomPaint(painter: _StarsPainter(starCount: 40)),
         ],
       ),
     );
@@ -556,10 +522,7 @@ class _MoonlitBackground extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.topRight,
           end: Alignment.bottomLeft,
-          colors: [
-            Color(0xFF1A1A3E),
-            Color(0xFF0D0D1F),
-          ],
+          colors: [Color(0xFF1A1A3E), Color(0xFF0D0D1F)],
         ),
       ),
       child: Stack(
@@ -584,9 +547,7 @@ class _MoonlitBackground extends StatelessWidget {
               ),
             ),
           ),
-          CustomPaint(
-            painter: _StarsPainter(starCount: 30),
-          ),
+          CustomPaint(painter: _StarsPainter(starCount: 30)),
         ],
       ),
     );
@@ -615,9 +576,7 @@ class _GoldenBackground extends StatelessWidget {
       child: Stack(
         children: [
           // Golden sparkles
-          CustomPaint(
-            painter: _SparklesPainter(color: AppColors.starGold),
-          ),
+          CustomPaint(painter: _SparklesPainter(color: AppColors.starGold)),
         ],
       ),
     );
@@ -657,15 +616,11 @@ class _AuroraPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
       ..style = PaintingStyle.fill
-      ..shader = ui.Gradient.linear(
-        Offset.zero,
-        Offset(size.width, 0),
-        [
-          Colors.green.withOpacity(0.1),
-          Colors.cyan.withOpacity(0.15),
-          Colors.purple.withOpacity(0.1),
-        ],
-      );
+      ..shader = ui.Gradient.linear(Offset.zero, Offset(size.width, 0), [
+        Colors.green.withOpacity(0.1),
+        Colors.cyan.withOpacity(0.15),
+        Colors.purple.withOpacity(0.1),
+      ]);
 
     final path = Path();
     path.moveTo(0, size.height);
@@ -742,7 +697,8 @@ class DreamCardCapture {
   static Future<Uint8List?> captureCard(GlobalKey repaintKey) async {
     try {
       final boundary =
-          repaintKey.currentContext?.findRenderObject() as RenderRepaintBoundary?;
+          repaintKey.currentContext?.findRenderObject()
+              as RenderRepaintBoundary?;
       if (boundary == null) return null;
 
       final image = await boundary.toImage(pixelRatio: 3.0);
@@ -773,7 +729,9 @@ class DreamCardTemplates {
       headerEmoji: symbol ?? '\u{1F319}',
       mainText: '"$dreamQuote"',
       footerText: 'Ruya Yorumu',
-      config: config ?? const DreamShareCardConfig(template: DreamCardTemplate.dreamQuote),
+      config:
+          config ??
+          const DreamShareCardConfig(template: DreamCardTemplate.dreamQuote),
     );
   }
 
@@ -791,7 +749,9 @@ class DreamCardTemplates {
       mainText: symbol,
       subtitle: meaning,
       footerText: 'Sembol Icgorusu',
-      config: config ?? const DreamShareCardConfig(template: DreamCardTemplate.symbolInsight),
+      config:
+          config ??
+          const DreamShareCardConfig(template: DreamCardTemplate.symbolInsight),
     );
   }
 
@@ -808,7 +768,8 @@ class DreamCardTemplates {
       mainText: moonMessage,
       subtitle: '${moonPhase.nameTr} Enerjisi',
       footerText: 'Ay Fazi Bilgeligi',
-      config: config ??
+      config:
+          config ??
           const DreamShareCardConfig(
             template: DreamCardTemplate.moonPhase,
             theme: DreamCardTheme.moonlit,
@@ -830,7 +791,8 @@ class DreamCardTemplates {
       mainText: archetypeName,
       subtitle: archetypeMessage,
       footerText: 'Arketip Kesfi',
-      config: config ??
+      config:
+          config ??
           const DreamShareCardConfig(
             template: DreamCardTemplate.archetypeDiscovery,
             theme: DreamCardTheme.cosmic,
@@ -850,7 +812,11 @@ class DreamCardTemplates {
       headerEmoji: emoji ?? '\u{2728}',
       mainText: insight,
       footerText: 'Kisisel Icgoru',
-      config: config ?? const DreamShareCardConfig(template: DreamCardTemplate.personalInsight),
+      config:
+          config ??
+          const DreamShareCardConfig(
+            template: DreamCardTemplate.personalInsight,
+          ),
     );
   }
 
@@ -865,7 +831,8 @@ class DreamCardTemplates {
       headerEmoji: '\u{1F31F}',
       mainText: message,
       footerText: 'Gunluk Ruya Mesaji',
-      config: config ??
+      config:
+          config ??
           const DreamShareCardConfig(
             template: DreamCardTemplate.dailyMessage,
             theme: DreamCardTheme.golden,
@@ -886,7 +853,8 @@ class DreamCardTemplates {
       mainText: summary,
       subtitle: '$dreamCount ruya yorumlandi',
       footerText: 'Haftalik Ozet',
-      config: config ??
+      config:
+          config ??
           const DreamShareCardConfig(
             template: DreamCardTemplate.weeklySummary,
             theme: DreamCardTheme.aurora,

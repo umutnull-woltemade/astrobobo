@@ -66,16 +66,16 @@ class _ProgressionsScreenState extends ConsumerState<ProgressionsScreen> {
                 const SizedBox(height: 16),
                 Text(
                   'Profil bulunamadı',
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        color: Colors.white,
-                      ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.titleLarge?.copyWith(color: Colors.white),
                 ),
                 const SizedBox(height: 8),
                 Text(
                   'Lütfen önce doğum bilgilerinizi girin',
-                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        color: Colors.white70,
-                      ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.bodyMedium?.copyWith(color: Colors.white70),
                 ),
                 const SizedBox(height: 24),
                 ElevatedButton(
@@ -123,7 +123,8 @@ class _ProgressionsScreenState extends ConsumerState<ProgressionsScreen> {
                         KadimNotCard(
                           category: KadimCategory.astrology,
                           title: 'Bir Gün = Bir Yıl',
-                          content: 'İkincil İlerlemeler, astrolojinin en incelikli tahmin tekniklerinden biridir. '
+                          content:
+                              'İkincil İlerlemeler, astrolojinin en incelikli tahmin tekniklerinden biridir. '
                               '"Bir gün = bir yıl" formülüyle çalışır: doğumunuzdan 30 gün sonraki gökyüzü, '
                               '30 yaşınızdaki enerjileri yansıtır. Bu kadim teknik, içsel evriminizi ve '
                               'ruhsal olgunlaşmanızı gösterir - dış olaylardan ziyade iç dönüşümü.',
@@ -141,12 +142,16 @@ class _ProgressionsScreenState extends ConsumerState<ProgressionsScreen> {
                         const SizedBox(height: AppConstants.spacingLg),
                       ] else ...[
                         const SizedBox(height: 100),
-                        const CircularProgressIndicator(color: AppColors.auroraStart),
+                        const CircularProgressIndicator(
+                          color: AppColors.auroraStart,
+                        ),
                         const SizedBox(height: 16),
                         Text(
                           'İlerlemeler hesaplanıyor...',
                           style: TextStyle(
-                            color: isDark ? Colors.white70 : AppColors.textLight,
+                            color: isDark
+                                ? Colors.white70
+                                : AppColors.textLight,
                           ),
                         ),
                       ],
@@ -175,7 +180,11 @@ class _ProgressionsScreenState extends ConsumerState<ProgressionsScreen> {
           Expanded(
             child: Row(
               children: [
-                const Icon(Icons.trending_up, color: AppColors.auroraStart, size: 24),
+                const Icon(
+                  Icons.trending_up,
+                  color: AppColors.auroraStart,
+                  size: 24,
+                ),
                 const SizedBox(width: 8),
                 Text(
                   'İkincil İlerlemeler',
@@ -226,11 +235,7 @@ class _ProgressionsScreenState extends ConsumerState<ProgressionsScreen> {
         children: [
           Row(
             children: [
-              Icon(
-                Icons.person,
-                color: AppColors.auroraStart,
-                size: 20,
-              ),
+              Icon(Icons.person, color: AppColors.auroraStart, size: 20),
               const SizedBox(width: 8),
               Text(
                 'Profil Bilgileri',
@@ -243,13 +248,38 @@ class _ProgressionsScreenState extends ConsumerState<ProgressionsScreen> {
             ],
           ),
           const SizedBox(height: AppConstants.spacingMd),
-          _buildInfoRow(isDark, Icons.person_outline, 'İsim', userProfile.name ?? 'Kullanıcı'),
-          _buildInfoRow(isDark, Icons.cake_outlined, 'Doğum Tarihi', _formatDate(userProfile.birthDate)),
-          _buildInfoRow(isDark, Icons.wb_sunny_outlined, 'Güneş Burcu', userProfile.sunSign.nameTr),
+          _buildInfoRow(
+            isDark,
+            Icons.person_outline,
+            'İsim',
+            userProfile.name ?? 'Kullanıcı',
+          ),
+          _buildInfoRow(
+            isDark,
+            Icons.cake_outlined,
+            'Doğum Tarihi',
+            _formatDate(userProfile.birthDate),
+          ),
+          _buildInfoRow(
+            isDark,
+            Icons.wb_sunny_outlined,
+            'Güneş Burcu',
+            userProfile.sunSign.nameTr,
+          ),
           if (userProfile.moonSign != null)
-            _buildInfoRow(isDark, Icons.nightlight_outlined, 'Ay Burcu', userProfile.moonSign!.nameTr),
+            _buildInfoRow(
+              isDark,
+              Icons.nightlight_outlined,
+              'Ay Burcu',
+              userProfile.moonSign!.nameTr,
+            ),
           if (userProfile.risingSign != null)
-            _buildInfoRow(isDark, Icons.arrow_upward, 'Yükselen', userProfile.risingSign!.nameTr),
+            _buildInfoRow(
+              isDark,
+              Icons.arrow_upward,
+              'Yükselen',
+              userProfile.risingSign!.nameTr,
+            ),
         ],
       ),
     );
@@ -260,7 +290,11 @@ class _ProgressionsScreenState extends ConsumerState<ProgressionsScreen> {
       padding: const EdgeInsets.symmetric(vertical: 4),
       child: Row(
         children: [
-          Icon(icon, size: 16, color: isDark ? Colors.white54 : AppColors.textLight),
+          Icon(
+            icon,
+            size: 16,
+            color: isDark ? Colors.white54 : AppColors.textLight,
+          ),
           const SizedBox(width: 8),
           Text(
             '$label: ',
@@ -287,8 +321,18 @@ class _ProgressionsScreenState extends ConsumerState<ProgressionsScreen> {
 
   String _formatDate(DateTime date) {
     const months = [
-      'Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran',
-      'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'
+      'Ocak',
+      'Şubat',
+      'Mart',
+      'Nisan',
+      'Mayıs',
+      'Haziran',
+      'Temmuz',
+      'Ağustos',
+      'Eylül',
+      'Ekim',
+      'Kasım',
+      'Aralık',
     ];
     return '${date.day} ${months[date.month - 1]} ${date.year}';
   }
@@ -320,12 +364,15 @@ class _ProgressionsScreenState extends ConsumerState<ProgressionsScreen> {
             children: [
               Text(
                 'İlerlemiş Pozisyonlar',
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
               ),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 6,
+                ),
                 decoration: BoxDecoration(
                   color: AppColors.starGold.withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(AppConstants.radiusFull),
@@ -333,9 +380,9 @@ class _ProgressionsScreenState extends ConsumerState<ProgressionsScreen> {
                 child: Text(
                   '${_progressions!.progressedAge} yaş',
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: AppColors.starGold,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    color: AppColors.starGold,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ],
@@ -437,20 +484,14 @@ class _ProgressionsScreenState extends ConsumerState<ProgressionsScreen> {
         children: [
           Text(icon, style: const TextStyle(fontSize: 18)),
           const SizedBox(height: 4),
-          Text(
-            name,
-            style: Theme.of(context).textTheme.labelSmall,
-          ),
+          Text(name, style: Theme.of(context).textTheme.labelSmall),
           const SizedBox(height: 4),
-          Text(
-            progressed.symbol,
-            style: const TextStyle(fontSize: 16),
-          ),
+          Text(progressed.symbol, style: const TextStyle(fontSize: 16)),
           Text(
             progressed.nameTr,
-            style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.labelSmall?.copyWith(fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
           if (hasChanged) ...[
@@ -458,9 +499,9 @@ class _ProgressionsScreenState extends ConsumerState<ProgressionsScreen> {
             Text(
               '(${natal.nameTr}\'dan)',
               style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                    color: AppColors.starGold,
-                    fontSize: 8,
-                  ),
+                color: AppColors.starGold,
+                fontSize: 8,
+              ),
             ),
           ],
         ],
@@ -493,18 +534,18 @@ class _ProgressionsScreenState extends ConsumerState<ProgressionsScreen> {
               const SizedBox(width: 12),
               Text(
                 'Mevcut Yaşam Evresi',
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
               ),
             ],
           ),
           const SizedBox(height: AppConstants.spacingMd),
           Text(
             _progressions!.currentLifePhase,
-            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  height: 1.6,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.bodyMedium?.copyWith(height: 1.6),
           ),
         ],
       ),
@@ -535,18 +576,18 @@ class _ProgressionsScreenState extends ConsumerState<ProgressionsScreen> {
               const SizedBox(width: 8),
               Text(
                 'Duygusal Tema',
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
               ),
             ],
           ),
           const SizedBox(height: AppConstants.spacingMd),
           Text(
             _progressions!.emotionalTheme,
-            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  height: 1.6,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.bodyMedium?.copyWith(height: 1.6),
           ),
         ],
       ),
@@ -573,23 +614,27 @@ class _ProgressionsScreenState extends ConsumerState<ProgressionsScreen> {
                   color: Colors.orange.withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: const Icon(Icons.auto_awesome, color: Colors.orange, size: 20),
+                child: const Icon(
+                  Icons.auto_awesome,
+                  color: Colors.orange,
+                  size: 20,
+                ),
               ),
               const SizedBox(width: 12),
               Text(
                 'Kimlik Evrimi',
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
               ),
             ],
           ),
           const SizedBox(height: AppConstants.spacingMd),
           Text(
             _progressions!.identityEvolution,
-            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  height: 1.6,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.bodyMedium?.copyWith(height: 1.6),
           ),
         ],
       ),
@@ -610,9 +655,9 @@ class _ProgressionsScreenState extends ConsumerState<ProgressionsScreen> {
         children: [
           Text(
             'Aktif Açılar',
-            style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: AppConstants.spacingMd),
           ..._progressions!.activeAspects.map((aspect) {
@@ -633,8 +678,8 @@ class _ProgressionsScreenState extends ConsumerState<ProgressionsScreen> {
                       Text(
                         'P.${aspect.progressedPlanet} ${aspect.type.symbol} N.${aspect.natalPlanet}',
                         style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                              fontWeight: FontWeight.bold,
-                            ),
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                       const Spacer(),
                       Container(
@@ -650,7 +695,8 @@ class _ProgressionsScreenState extends ConsumerState<ProgressionsScreen> {
                         ),
                         child: Text(
                           aspect.isApplying ? 'Yaklaşan' : 'Ayrılan',
-                          style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                          style: Theme.of(context).textTheme.labelSmall
+                              ?.copyWith(
                                 color: aspect.isApplying
                                     ? Colors.green
                                     : Colors.orange,
@@ -698,9 +744,9 @@ class _ProgressionsScreenState extends ConsumerState<ProgressionsScreen> {
               const SizedBox(width: 12),
               Text(
                 'Önemli Olaylar',
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
               ),
             ],
           ),
@@ -724,10 +770,7 @@ class _ProgressionsScreenState extends ConsumerState<ProgressionsScreen> {
               ),
               child: Row(
                 children: [
-                  Text(
-                    event.type.icon,
-                    style: const TextStyle(fontSize: 24),
-                  ),
+                  Text(event.type.icon, style: const TextStyle(fontSize: 24)),
                   const SizedBox(width: 12),
                   Expanded(
                     child: Column(
@@ -737,14 +780,14 @@ class _ProgressionsScreenState extends ConsumerState<ProgressionsScreen> {
                           children: [
                             Text(
                               event.event,
-                              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                              style: Theme.of(context).textTheme.bodyMedium
+                                  ?.copyWith(fontWeight: FontWeight.bold),
                             ),
                             const Spacer(),
                             Text(
                               '${event.date.day}.${event.date.month}.${event.date.year}',
-                              style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                              style: Theme.of(context).textTheme.labelSmall
+                                  ?.copyWith(
                                     color: isPast ? Colors.grey : Colors.purple,
                                   ),
                             ),
@@ -784,25 +827,21 @@ class _ProgressionsScreenState extends ConsumerState<ProgressionsScreen> {
       ),
       child: Column(
         children: [
-          const Icon(
-            Icons.upcoming,
-            color: AppColors.starGold,
-            size: 32,
-          ),
+          const Icon(Icons.upcoming, color: AppColors.starGold, size: 32),
           const SizedBox(height: AppConstants.spacingMd),
           Text(
             'Gelecek Değişimler',
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.starGold,
-                ),
+              fontWeight: FontWeight.bold,
+              color: AppColors.starGold,
+            ),
           ),
           const SizedBox(height: AppConstants.spacingSm),
           Text(
             _progressions!.upcomingChanges,
-            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  height: 1.6,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.bodyMedium?.copyWith(height: 1.6),
             textAlign: TextAlign.center,
           ),
         ],

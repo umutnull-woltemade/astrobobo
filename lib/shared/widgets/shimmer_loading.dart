@@ -30,21 +30,16 @@ class ShimmerLoading extends StatelessWidget {
         : Colors.grey.shade100;
 
     return Container(
-      width: width,
-      height: height,
-      decoration: BoxDecoration(
-        color: baseColor,
-        borderRadius: isCircle
-            ? null
-            : BorderRadius.circular(borderRadius),
-        shape: isCircle ? BoxShape.circle : BoxShape.rectangle,
-      ),
-    )
+          width: width,
+          height: height,
+          decoration: BoxDecoration(
+            color: baseColor,
+            borderRadius: isCircle ? null : BorderRadius.circular(borderRadius),
+            shape: isCircle ? BoxShape.circle : BoxShape.rectangle,
+          ),
+        )
         .animate(onPlay: (controller) => controller.repeat())
-        .shimmer(
-          duration: 1500.ms,
-          color: highlightColor,
-        );
+        .shimmer(duration: 1500.ms, color: highlightColor);
   }
 }
 
@@ -53,11 +48,7 @@ class SkeletonCard extends StatelessWidget {
   final double? width;
   final double height;
 
-  const SkeletonCard({
-    super.key,
-    this.width,
-    this.height = 120,
-  });
+  const SkeletonCard({super.key, this.width, this.height = 120});
 
   @override
   Widget build(BuildContext context) {
@@ -83,43 +74,24 @@ class SkeletonCard extends StatelessWidget {
         children: [
           Row(
             children: [
-              const ShimmerLoading(
-                width: 40,
-                height: 40,
-                isCircle: true,
-              ),
+              const ShimmerLoading(width: 40, height: 40, isCircle: true),
               const SizedBox(width: AppConstants.spacingMd),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    ShimmerLoading(
-                      width: 120,
-                      height: 16,
-                      borderRadius: 4,
-                    ),
+                    ShimmerLoading(width: 120, height: 16, borderRadius: 4),
                     const SizedBox(height: 8),
-                    ShimmerLoading(
-                      width: 80,
-                      height: 12,
-                      borderRadius: 4,
-                    ),
+                    ShimmerLoading(width: 80, height: 12, borderRadius: 4),
                   ],
                 ),
               ),
             ],
           ),
           const Spacer(),
-          ShimmerLoading(
-            height: 12,
-            borderRadius: 4,
-          ),
+          ShimmerLoading(height: 12, borderRadius: 4),
           const SizedBox(height: 8),
-          ShimmerLoading(
-            width: 200,
-            height: 12,
-            borderRadius: 4,
-          ),
+          ShimmerLoading(width: 200, height: 12, borderRadius: 4),
         ],
       ),
     );
@@ -156,10 +128,7 @@ class SkeletonList extends StatelessWidget {
 class SkeletonListItem extends StatelessWidget {
   final double height;
 
-  const SkeletonListItem({
-    super.key,
-    this.height = 80,
-  });
+  const SkeletonListItem({super.key, this.height = 80});
 
   @override
   Widget build(BuildContext context) {
@@ -192,23 +161,11 @@ class SkeletonListItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ShimmerLoading(
-                  width: 150,
-                  height: 14,
-                  borderRadius: 4,
-                ),
+                ShimmerLoading(width: 150, height: 14, borderRadius: 4),
                 const SizedBox(height: 8),
-                ShimmerLoading(
-                  width: 100,
-                  height: 10,
-                  borderRadius: 4,
-                ),
+                ShimmerLoading(width: 100, height: 10, borderRadius: 4),
                 const SizedBox(height: 6),
-                ShimmerLoading(
-                  width: 200,
-                  height: 10,
-                  borderRadius: 4,
-                ),
+                ShimmerLoading(width: 200, height: 10, borderRadius: 4),
               ],
             ),
           ),
@@ -274,23 +231,11 @@ class SkeletonGridItem extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const ShimmerLoading(
-            width: 48,
-            height: 48,
-            isCircle: true,
-          ),
+          const ShimmerLoading(width: 48, height: 48, isCircle: true),
           const SizedBox(height: AppConstants.spacingMd),
-          ShimmerLoading(
-            width: 80,
-            height: 14,
-            borderRadius: 4,
-          ),
+          ShimmerLoading(width: 80, height: 14, borderRadius: 4),
           const SizedBox(height: 8),
-          ShimmerLoading(
-            width: 60,
-            height: 10,
-            borderRadius: 4,
-          ),
+          ShimmerLoading(width: 60, height: 10, borderRadius: 4),
         ],
       ),
     );
@@ -316,10 +261,7 @@ class HoroscopeCardSkeleton extends StatelessWidget {
                   AppColors.surfaceDark.withOpacity(0.8),
                   AppColors.surfaceDark.withOpacity(0.5),
                 ]
-              : [
-                  AppColors.lightCard,
-                  AppColors.lightSurfaceVariant,
-                ],
+              : [AppColors.lightCard, AppColors.lightSurfaceVariant],
         ),
         borderRadius: BorderRadius.circular(AppConstants.radiusLg),
         border: Border.all(
@@ -333,35 +275,19 @@ class HoroscopeCardSkeleton extends StatelessWidget {
         children: [
           Row(
             children: [
-              const ShimmerLoading(
-                width: 56,
-                height: 56,
-                isCircle: true,
-              ),
+              const ShimmerLoading(width: 56, height: 56, isCircle: true),
               const SizedBox(width: AppConstants.spacingMd),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    ShimmerLoading(
-                      width: 100,
-                      height: 20,
-                      borderRadius: 4,
-                    ),
+                    ShimmerLoading(width: 100, height: 20, borderRadius: 4),
                     const SizedBox(height: 8),
-                    ShimmerLoading(
-                      width: 150,
-                      height: 14,
-                      borderRadius: 4,
-                    ),
+                    ShimmerLoading(width: 150, height: 14, borderRadius: 4),
                   ],
                 ),
               ),
-              const ShimmerLoading(
-                width: 40,
-                height: 40,
-                borderRadius: 20,
-              ),
+              const ShimmerLoading(width: 40, height: 40, borderRadius: 20),
             ],
           ),
           const SizedBox(height: AppConstants.spacingXl),
@@ -376,17 +302,9 @@ class HoroscopeCardSkeleton extends StatelessWidget {
             children: List.generate(4, (index) {
               return Column(
                 children: [
-                  const ShimmerLoading(
-                    width: 36,
-                    height: 36,
-                    isCircle: true,
-                  ),
+                  const ShimmerLoading(width: 36, height: 36, isCircle: true),
                   const SizedBox(height: 8),
-                  ShimmerLoading(
-                    width: 50,
-                    height: 10,
-                    borderRadius: 4,
-                  ),
+                  ShimmerLoading(width: 50, height: 10, borderRadius: 4),
                 ],
               );
             }),
@@ -402,11 +320,7 @@ class CosmicLoadingIndicator extends StatelessWidget {
   final double size;
   final String? message;
 
-  const CosmicLoadingIndicator({
-    super.key,
-    this.size = 60,
-    this.message,
-  });
+  const CosmicLoadingIndicator({super.key, this.size = 60, this.message});
 
   @override
   Widget build(BuildContext context) {
@@ -423,46 +337,46 @@ class CosmicLoadingIndicator extends StatelessWidget {
             children: [
               // Outer ring
               Container(
-                width: size,
-                height: size,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(
-                    color: AppColors.starGold.withOpacity(0.3),
-                    width: 2,
-                  ),
-                ),
-              )
+                    width: size,
+                    height: size,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: AppColors.starGold.withOpacity(0.3),
+                        width: 2,
+                      ),
+                    ),
+                  )
                   .animate(onPlay: (c) => c.repeat())
                   .rotate(duration: 3000.ms, curve: Curves.linear),
               // Middle ring
               Container(
-                width: size * 0.7,
-                height: size * 0.7,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(
-                    color: AppColors.cosmicPurple.withOpacity(0.4),
-                    width: 2,
-                  ),
-                ),
-              )
+                    width: size * 0.7,
+                    height: size * 0.7,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: AppColors.cosmicPurple.withOpacity(0.4),
+                        width: 2,
+                      ),
+                    ),
+                  )
                   .animate(onPlay: (c) => c.repeat())
                   .rotate(duration: 2000.ms, curve: Curves.linear, begin: 1),
               // Center dot
               Container(
-                width: size * 0.3,
-                height: size * 0.3,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  gradient: RadialGradient(
-                    colors: [
-                      AppColors.starGold,
-                      AppColors.starGold.withOpacity(0.5),
-                    ],
-                  ),
-                ),
-              )
+                    width: size * 0.3,
+                    height: size * 0.3,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      gradient: RadialGradient(
+                        colors: [
+                          AppColors.starGold,
+                          AppColors.starGold.withOpacity(0.5),
+                        ],
+                      ),
+                    ),
+                  )
                   .animate(onPlay: (c) => c.repeat(reverse: true))
                   .scale(
                     begin: const Offset(1, 1),
@@ -475,18 +389,19 @@ class CosmicLoadingIndicator extends StatelessWidget {
                 return Positioned(
                   left: size / 2 + (size / 2 - 4) * _cos(angle) - 4,
                   top: size / 2 + (size / 2 - 4) * _sin(angle) - 4,
-                  child: Container(
-                    width: 8,
-                    height: 8,
-                    decoration: BoxDecoration(
-                      color: AppColors.starGold,
-                      shape: BoxShape.circle,
-                    ),
-                  )
-                      .animate(onPlay: (c) => c.repeat(reverse: true))
-                      .fadeIn(delay: (index * 200).ms, duration: 500.ms)
-                      .then()
-                      .fadeOut(duration: 500.ms),
+                  child:
+                      Container(
+                            width: 8,
+                            height: 8,
+                            decoration: BoxDecoration(
+                              color: AppColors.starGold,
+                              shape: BoxShape.circle,
+                            ),
+                          )
+                          .animate(onPlay: (c) => c.repeat(reverse: true))
+                          .fadeIn(delay: (index * 200).ms, duration: 500.ms)
+                          .then()
+                          .fadeOut(duration: 500.ms),
                 );
               }),
             ],
@@ -495,12 +410,14 @@ class CosmicLoadingIndicator extends StatelessWidget {
         if (message != null) ...[
           const SizedBox(height: 20),
           Text(
-            message!,
-            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: isDark ? AppColors.textSecondary : AppColors.lightTextSecondary,
+                message!,
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  color: isDark
+                      ? AppColors.textSecondary
+                      : AppColors.lightTextSecondary,
                 ),
-            textAlign: TextAlign.center,
-          )
+                textAlign: TextAlign.center,
+              )
               .animate(onPlay: (c) => c.repeat(reverse: true))
               .fadeIn(duration: 1000.ms)
               .then()
@@ -510,10 +427,8 @@ class CosmicLoadingIndicator extends StatelessWidget {
     );
   }
 
-  double _cos(double degrees) =>
-      math.cos(degrees * math.pi / 180);
-  double _sin(double degrees) =>
-      math.sin(degrees * math.pi / 180);
+  double _cos(double degrees) => math.cos(degrees * math.pi / 180);
+  double _sin(double degrees) => math.sin(degrees * math.pi / 180);
 }
 
 /// Pulsating dot indicator
@@ -530,19 +445,16 @@ class PulsatingDot extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: size,
-      height: size,
-      decoration: BoxDecoration(
-        color: color,
-        shape: BoxShape.circle,
-        boxShadow: [
-          BoxShadow(
-            color: color.withOpacity(0.5),
-            blurRadius: 4,
+          width: size,
+          height: size,
+          decoration: BoxDecoration(
+            color: color,
+            shape: BoxShape.circle,
+            boxShadow: [
+              BoxShadow(color: color.withOpacity(0.5), blurRadius: 4),
+            ],
           ),
-        ],
-      ),
-    )
+        )
         .animate(onPlay: (c) => c.repeat(reverse: true))
         .scale(
           begin: const Offset(1, 1),

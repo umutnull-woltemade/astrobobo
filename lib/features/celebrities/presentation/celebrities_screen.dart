@@ -40,7 +40,8 @@ class _CelebritiesScreenState extends State<CelebritiesScreen> {
   void _filterCelebrities() {
     setState(() {
       _filteredCelebrities = _celebrities.where((celeb) {
-        final matchesSearch = _searchQuery.isEmpty ||
+        final matchesSearch =
+            _searchQuery.isEmpty ||
             celeb.name.toLowerCase().contains(_searchQuery.toLowerCase()) ||
             celeb.profession.toLowerCase().contains(_searchQuery.toLowerCase());
 
@@ -100,9 +101,9 @@ class _CelebritiesScreenState extends State<CelebritiesScreen> {
             child: Text(
               _selectedCelebrity?.name ?? 'Ünlü Haritaları',
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                    fontWeight: FontWeight.bold,
-                    color: isDark ? Colors.white : AppColors.textDark,
-                  ),
+                fontWeight: FontWeight.bold,
+                color: isDark ? Colors.white : AppColors.textDark,
+              ),
               textAlign: TextAlign.center,
             ),
           ),
@@ -173,7 +174,11 @@ class _CelebritiesScreenState extends State<CelebritiesScreen> {
   }
 
   Widget _buildCategoryChip(
-      CelebrityCategory? category, String label, String icon, bool isDark) {
+    CelebrityCategory? category,
+    String label,
+    String icon,
+    bool isDark,
+  ) {
     final isSelected = _selectedCategory == category;
 
     return Padding(
@@ -182,11 +187,7 @@ class _CelebritiesScreenState extends State<CelebritiesScreen> {
         selected: isSelected,
         label: Row(
           mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(icon),
-            const SizedBox(width: 4),
-            Text(label),
-          ],
+          children: [Text(icon), const SizedBox(width: 4), Text(label)],
         ),
         onSelected: (_) {
           setState(() {
@@ -335,10 +336,7 @@ class _CelebritiesScreenState extends State<CelebritiesScreen> {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(emoji, style: const TextStyle(fontSize: 10)),
-          Text(
-            sign.symbol,
-            style: const TextStyle(fontSize: 10),
-          ),
+          Text(sign.symbol, style: const TextStyle(fontSize: 10)),
         ],
       ),
     );
@@ -463,7 +461,11 @@ class _CelebritiesScreenState extends State<CelebritiesScreen> {
   }
 
   Widget _buildDetailedSign(
-      String label, String emoji, ZodiacSign sign, bool isDark) {
+    String label,
+    String emoji,
+    ZodiacSign sign,
+    bool isDark,
+  ) {
     return Column(
       children: [
         Text(emoji, style: const TextStyle(fontSize: 24)),

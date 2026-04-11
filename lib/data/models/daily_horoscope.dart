@@ -66,7 +66,16 @@ class DailyHoroscope {
   factory DailyHoroscope.generate(ZodiacSign sign, DateTime date) {
     final seed = date.day + date.month * 31 + sign.index;
     final luckyNumbers = [3, 7, 9, 11, 13, 17, 21, 22, 27, 33, 42, 77];
-    final colors = ['Gold', 'Silver', 'Purple', 'Blue', 'Green', 'Red', 'White', 'Pink'];
+    final colors = [
+      'Gold',
+      'Silver',
+      'Purple',
+      'Blue',
+      'Green',
+      'Red',
+      'White',
+      'Pink',
+    ];
 
     return DailyHoroscope(
       sign: sign,
@@ -190,13 +199,15 @@ class DailyHoroscope {
   static String _getCompatibility(ZodiacSign sign, DateTime date) {
     // Get compatible signs based on element
     final compatibleSigns = _getCompatibleSigns(sign);
-    return compatibleSigns[(date.day + date.month) % compatibleSigns.length].name;
+    return compatibleSigns[(date.day + date.month) % compatibleSigns.length]
+        .name;
   }
 
   static List<ZodiacSign> _getCompatibleSigns(ZodiacSign sign) {
     final compatible = <ZodiacSign>[];
     for (final s in ZodiacSign.values) {
-      if (s.element == sign.element || _isComplementaryElement(sign.element, s.element)) {
+      if (s.element == sign.element ||
+          _isComplementaryElement(sign.element, s.element)) {
         compatible.add(s);
       }
     }
@@ -205,8 +216,8 @@ class DailyHoroscope {
 
   static bool _isComplementaryElement(Element e1, Element e2) {
     return (e1 == Element.fire && e2 == Element.air) ||
-           (e1 == Element.air && e2 == Element.fire) ||
-           (e1 == Element.earth && e2 == Element.water) ||
-           (e1 == Element.water && e2 == Element.earth);
+        (e1 == Element.air && e2 == Element.fire) ||
+        (e1 == Element.earth && e2 == Element.water) ||
+        (e1 == Element.water && e2 == Element.earth);
   }
 }

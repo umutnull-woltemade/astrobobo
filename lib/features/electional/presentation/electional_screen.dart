@@ -91,16 +91,16 @@ class _ElectionalScreenState extends ConsumerState<ElectionalScreen> {
                 const SizedBox(height: 16),
                 Text(
                   'Profil bulunamadi',
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        color: Colors.white,
-                      ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.titleLarge?.copyWith(color: Colors.white),
                 ),
                 const SizedBox(height: 8),
                 Text(
                   'Lutfen once dogum bilgilerinizi girin',
-                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        color: Colors.white70,
-                      ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.bodyMedium?.copyWith(color: Colors.white70),
                 ),
                 const SizedBox(height: 24),
                 ElevatedButton(
@@ -151,7 +151,9 @@ class _ElectionalScreenState extends ConsumerState<ElectionalScreen> {
                         Text(
                           'Analiz yapiliyor...',
                           style: TextStyle(
-                            color: isDark ? Colors.white70 : AppColors.textLight,
+                            color: isDark
+                                ? Colors.white70
+                                : AppColors.textLight,
                           ),
                         ),
                       ],
@@ -182,9 +184,9 @@ class _ElectionalScreenState extends ConsumerState<ElectionalScreen> {
             child: Text(
               'Secim Astrolojisi',
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                    fontWeight: FontWeight.bold,
-                    color: isDark ? Colors.white : AppColors.textDark,
-                  ),
+                fontWeight: FontWeight.bold,
+                color: isDark ? Colors.white : AppColors.textDark,
+              ),
               textAlign: TextAlign.center,
             ),
           ),
@@ -205,9 +207,7 @@ class _ElectionalScreenState extends ConsumerState<ElectionalScreen> {
           ],
         ),
         borderRadius: BorderRadius.circular(AppConstants.radiusLg),
-        border: Border.all(
-          color: AppColors.gold.withValues(alpha: 0.5),
-        ),
+        border: Border.all(color: AppColors.gold.withValues(alpha: 0.5)),
       ),
       child: Row(
         children: [
@@ -247,20 +247,14 @@ class _ElectionalScreenState extends ConsumerState<ElectionalScreen> {
             ? Colors.white.withValues(alpha: 0.05)
             : Colors.white.withValues(alpha: 0.9),
         borderRadius: BorderRadius.circular(AppConstants.radiusLg),
-        border: Border.all(
-          color: AppColors.gold.withValues(alpha: 0.3),
-        ),
+        border: Border.all(color: AppColors.gold.withValues(alpha: 0.3)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [
-              Icon(
-                Icons.person,
-                color: AppColors.gold,
-                size: 20,
-              ),
+              Icon(Icons.person, color: AppColors.gold, size: 20),
               const SizedBox(width: 8),
               Text(
                 'Profil Bilgileri',
@@ -273,9 +267,24 @@ class _ElectionalScreenState extends ConsumerState<ElectionalScreen> {
             ],
           ),
           const SizedBox(height: AppConstants.spacingMd),
-          _buildInfoRow(isDark, Icons.person_outline, 'Isim', userProfile.name ?? 'Kullanici'),
-          _buildInfoRow(isDark, Icons.cake_outlined, 'Dogum Tarihi', _formatDate(userProfile.birthDate)),
-          _buildInfoRow(isDark, Icons.location_on_outlined, 'Dogum Yeri', userProfile.birthPlace ?? 'Belirtilmedi'),
+          _buildInfoRow(
+            isDark,
+            Icons.person_outline,
+            'Isim',
+            userProfile.name ?? 'Kullanici',
+          ),
+          _buildInfoRow(
+            isDark,
+            Icons.cake_outlined,
+            'Dogum Tarihi',
+            _formatDate(userProfile.birthDate),
+          ),
+          _buildInfoRow(
+            isDark,
+            Icons.location_on_outlined,
+            'Dogum Yeri',
+            userProfile.birthPlace ?? 'Belirtilmedi',
+          ),
         ],
       ),
     );
@@ -286,7 +295,11 @@ class _ElectionalScreenState extends ConsumerState<ElectionalScreen> {
       padding: const EdgeInsets.symmetric(vertical: 4),
       child: Row(
         children: [
-          Icon(icon, size: 16, color: isDark ? Colors.white54 : AppColors.textLight),
+          Icon(
+            icon,
+            size: 16,
+            color: isDark ? Colors.white54 : AppColors.textLight,
+          ),
           const SizedBox(width: 8),
           Text(
             '$label: ',
@@ -313,8 +326,18 @@ class _ElectionalScreenState extends ConsumerState<ElectionalScreen> {
 
   String _formatDate(DateTime date) {
     const months = [
-      'Ocak', 'Subat', 'Mart', 'Nisan', 'Mayis', 'Haziran',
-      'Temmuz', 'Agustos', 'Eylul', 'Ekim', 'Kasim', 'Aralik'
+      'Ocak',
+      'Subat',
+      'Mart',
+      'Nisan',
+      'Mayis',
+      'Haziran',
+      'Temmuz',
+      'Agustos',
+      'Eylul',
+      'Ekim',
+      'Kasim',
+      'Aralik',
     ];
     return '${date.day} ${months[date.month - 1]} ${date.year}';
   }
@@ -366,13 +389,11 @@ class _ElectionalScreenState extends ConsumerState<ElectionalScreen> {
                     color: isSelected
                         ? AppColors.cosmic.withValues(alpha: 0.3)
                         : (isDark
-                            ? Colors.white.withValues(alpha: 0.05)
-                            : Colors.grey.withValues(alpha: 0.1)),
+                              ? Colors.white.withValues(alpha: 0.05)
+                              : Colors.grey.withValues(alpha: 0.1)),
                     borderRadius: BorderRadius.circular(20),
                     border: Border.all(
-                      color: isSelected
-                          ? AppColors.cosmic
-                          : Colors.transparent,
+                      color: isSelected ? AppColors.cosmic : Colors.transparent,
                       width: 2,
                     ),
                   ),
@@ -385,8 +406,9 @@ class _ElectionalScreenState extends ConsumerState<ElectionalScreen> {
                         purpose.nameTr,
                         style: TextStyle(
                           fontSize: 13,
-                          fontWeight:
-                              isSelected ? FontWeight.bold : FontWeight.normal,
+                          fontWeight: isSelected
+                              ? FontWeight.bold
+                              : FontWeight.normal,
                           color: isDark ? Colors.white : AppColors.textDark,
                         ),
                       ),
@@ -436,8 +458,9 @@ class _ElectionalScreenState extends ConsumerState<ElectionalScreen> {
                     padding: const EdgeInsets.all(AppConstants.spacingMd),
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.grey),
-                      borderRadius:
-                          BorderRadius.circular(AppConstants.radiusMd),
+                      borderRadius: BorderRadius.circular(
+                        AppConstants.radiusMd,
+                      ),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -446,7 +469,9 @@ class _ElectionalScreenState extends ConsumerState<ElectionalScreen> {
                           'Baslangic',
                           style: TextStyle(
                             fontSize: 12,
-                            color: isDark ? Colors.white60 : AppColors.textLight,
+                            color: isDark
+                                ? Colors.white60
+                                : AppColors.textLight,
                           ),
                         ),
                         const SizedBox(height: 4),
@@ -473,8 +498,9 @@ class _ElectionalScreenState extends ConsumerState<ElectionalScreen> {
                     padding: const EdgeInsets.all(AppConstants.spacingMd),
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.grey),
-                      borderRadius:
-                          BorderRadius.circular(AppConstants.radiusMd),
+                      borderRadius: BorderRadius.circular(
+                        AppConstants.radiusMd,
+                      ),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -483,7 +509,9 @@ class _ElectionalScreenState extends ConsumerState<ElectionalScreen> {
                           'Bitis',
                           style: TextStyle(
                             fontSize: 12,
-                            color: isDark ? Colors.white60 : AppColors.textLight,
+                            color: isDark
+                                ? Colors.white60
+                                : AppColors.textLight,
                           ),
                         ),
                         const SizedBox(height: 4),
@@ -519,9 +547,7 @@ class _ElectionalScreenState extends ConsumerState<ElectionalScreen> {
           ],
         ),
         borderRadius: BorderRadius.circular(AppConstants.radiusLg),
-        border: Border.all(
-          color: AppColors.gold.withValues(alpha: 0.5),
-        ),
+        border: Border.all(color: AppColors.gold.withValues(alpha: 0.5)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -558,7 +584,9 @@ class _ElectionalScreenState extends ConsumerState<ElectionalScreen> {
                   vertical: 6,
                 ),
                 decoration: BoxDecoration(
-                  color: _getScoreColor(_chart!.optimalScore).withValues(alpha: 0.2),
+                  color: _getScoreColor(
+                    _chart!.optimalScore,
+                  ).withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Text(
@@ -670,10 +698,7 @@ class _ElectionalScreenState extends ConsumerState<ElectionalScreen> {
         children: [
           Row(
             children: [
-              Text(
-                isWarning ? '' : '',
-                style: const TextStyle(fontSize: 24),
-              ),
+              Text(isWarning ? '' : '', style: const TextStyle(fontSize: 24)),
               const SizedBox(width: AppConstants.spacingMd),
               Text(
                 'Retro Durumu',
@@ -735,7 +760,9 @@ class _ElectionalScreenState extends ConsumerState<ElectionalScreen> {
             ],
           ),
           const SizedBox(height: AppConstants.spacingMd),
-          ..._chart!.favorableWindows.take(5).map(
+          ..._chart!.favorableWindows
+              .take(5)
+              .map(
                 (window) => _buildWindowTile(window, isDark, isPositive: true),
               ),
         ],
@@ -779,7 +806,9 @@ class _ElectionalScreenState extends ConsumerState<ElectionalScreen> {
             ],
           ),
           const SizedBox(height: AppConstants.spacingMd),
-          ..._chart!.unfavorableWindows.take(3).map(
+          ..._chart!.unfavorableWindows
+              .take(3)
+              .map(
                 (window) => _buildWindowTile(window, isDark, isPositive: false),
               ),
         ],
@@ -787,8 +816,11 @@ class _ElectionalScreenState extends ConsumerState<ElectionalScreen> {
     );
   }
 
-  Widget _buildWindowTile(ElectionalWindow window, bool isDark,
-      {required bool isPositive}) {
+  Widget _buildWindowTile(
+    ElectionalWindow window,
+    bool isDark, {
+    required bool isPositive,
+  }) {
     final startStr =
         '${window.start.day}/${window.start.month} ${window.start.hour.toString().padLeft(2, '0')}:${window.start.minute.toString().padLeft(2, '0')}';
     final endStr =

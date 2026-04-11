@@ -22,10 +22,7 @@ class WebErrorService {
     _errorBoundaryActivations++;
 
     // Track recent errors for spike detection
-    final entry = _ErrorEntry(
-      message: errorMessage,
-      timestamp: DateTime.now(),
-    );
+    final entry = _ErrorEntry(message: errorMessage, timestamp: DateTime.now());
     _recentErrors.add(entry);
 
     // Keep only recent errors
@@ -41,7 +38,9 @@ class WebErrorService {
     });
 
     if (kDebugMode) {
-      debugPrint('WebErrorService: Error logged (#$_errorBoundaryActivations): $errorMessage');
+      debugPrint(
+        'WebErrorService: Error logged (#$_errorBoundaryActivations): $errorMessage',
+      );
     }
 
     // Check for error spike
@@ -99,7 +98,9 @@ class WebErrorService {
       });
 
       if (kDebugMode) {
-        debugPrint('WebErrorService: ERROR SPIKE DETECTED! $recentCount errors in last 60 seconds');
+        debugPrint(
+          'WebErrorService: ERROR SPIKE DETECTED! $recentCount errors in last 60 seconds',
+        );
       }
     }
   }
@@ -142,8 +143,5 @@ class _ErrorEntry {
   final String message;
   final DateTime timestamp;
 
-  _ErrorEntry({
-    required this.message,
-    required this.timestamp,
-  });
+  _ErrorEntry({required this.message, required this.timestamp});
 }

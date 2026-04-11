@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:in_app_review/in_app_review.dart';
@@ -25,10 +24,7 @@ class UrlLauncherService {
         );
 
         if (launched && source != null) {
-          _analytics.logEvent('url_launched', {
-            'url': url,
-            'source': source,
-          });
+          _analytics.logEvent('url_launched', {'url': url, 'source': source});
         }
 
         return launched;
@@ -112,7 +108,7 @@ class UrlLauncherService {
       final InAppReview inAppReview = InAppReview.instance;
 
       String? appStoreId;
-      if (Platform.isIOS) {
+      if (defaultTargetPlatform == TargetPlatform.iOS) {
         appStoreId = AppConstants.appStoreId;
       }
 
@@ -136,14 +132,15 @@ class UrlLauncherService {
     try {
       String storeUrl;
 
-      if (Platform.isIOS) {
+      if (defaultTargetPlatform == TargetPlatform.iOS) {
         if (AppConstants.appStoreId.isNotEmpty) {
           storeUrl = 'https://apps.apple.com/app/id${AppConstants.appStoreId}';
         } else {
           return false;
         }
-      } else if (Platform.isAndroid) {
-        storeUrl = 'https://play.google.com/store/apps/details?id=${AppConstants.playStoreId}';
+      } else if (defaultTargetPlatform == TargetPlatform.android) {
+        storeUrl =
+            'https://play.google.com/store/apps/details?id=${AppConstants.playStoreId}';
       } else {
         return false;
       }
@@ -160,9 +157,10 @@ class UrlLauncherService {
     if (kIsWeb) return 'https://venusone.com';
 
     try {
-      if (Platform.isIOS && AppConstants.appStoreId.isNotEmpty) {
+      if (defaultTargetPlatform == TargetPlatform.iOS &&
+          AppConstants.appStoreId.isNotEmpty) {
         return 'https://apps.apple.com/app/id${AppConstants.appStoreId}';
-      } else if (Platform.isAndroid) {
+      } else if (defaultTargetPlatform == TargetPlatform.android) {
         return 'https://play.google.com/store/apps/details?id=${AppConstants.playStoreId}';
       }
     } catch (_) {
@@ -173,7 +171,10 @@ class UrlLauncherService {
 }
 
 // Helper to use url_launcher's launchUrl with different name
-Future<bool> launchUrl2(Uri uri, {LaunchMode mode = LaunchMode.platformDefault}) async {
+Future<bool> launchUrl2(
+  Uri uri, {
+  LaunchMode mode = LaunchMode.platformDefault,
+}) async {
   return launchUrl(uri, mode: mode);
 }
 

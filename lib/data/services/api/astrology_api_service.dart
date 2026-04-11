@@ -22,10 +22,8 @@ class AstrologyApiService {
   late final CompatibilityApiService compatibility;
   late final EphemerisApiService ephemeris;
 
-  AstrologyApiService({
-    String? baseUrl,
-    ApiClient? client,
-  }) : _client = client ?? ApiClient(baseUrl: baseUrl) {
+  AstrologyApiService({String? baseUrl, ApiClient? client})
+    : _client = client ?? ApiClient(baseUrl: baseUrl) {
     charts = ChartApiService(_client);
     planets = PlanetsApiService(_client);
     horoscopes = HoroscopeApiService(_client);

@@ -1,4 +1,4 @@
-app_identifier(ENV["IOS_BUNDLE_ID"] || "com.umut.astrologyApp")
+app_identifier(ENV["IOS_BUNDLE_ID"] || "com.venusone.innercycles")
 team_id(ENV["TEAM_ID"])
 
 apple_id(ENV["APPLE_ID"]) if ENV["APPLE_ID"]

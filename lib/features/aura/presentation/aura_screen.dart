@@ -30,8 +30,13 @@ class AuraScreen extends ConsumerWidget {
       birthDate: userProfile.birthDate,
       name: userProfile.name,
     );
-    final dailyEnergy = AuraService.getDailyAuraEnergy(userProfile.birthDate, DateTime.now());
-    final cleansingTips = AuraService.getCleansingTips(auraProfile.primaryColor);
+    final dailyEnergy = AuraService.getDailyAuraEnergy(
+      userProfile.birthDate,
+      DateTime.now(),
+    );
+    final cleansingTips = AuraService.getCleansingTips(
+      auraProfile.primaryColor,
+    );
 
     return Scaffold(
       body: CosmicBackground(
@@ -45,11 +50,14 @@ class AuraScreen extends ConsumerWidget {
                 title: Text(
                   'Aura Analizi',
                   style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                        color: AppColors.starGold,
-                      ),
+                    color: AppColors.starGold,
+                  ),
                 ),
                 leading: IconButton(
-                  icon: const Icon(Icons.arrow_back, color: AppColors.textPrimary),
+                  icon: const Icon(
+                    Icons.arrow_back,
+                    color: AppColors.textPrimary,
+                  ),
                   onPressed: () => Navigator.pop(context),
                 ),
               ),
@@ -62,25 +70,28 @@ class AuraScreen extends ConsumerWidget {
                     const SizedBox(height: AppConstants.spacingLg),
 
                     // Ana aura kartı
-                    _buildMainAuraCard(context, auraProfile)
-                        .animate()
-                        .fadeIn(duration: 400.ms),
+                    _buildMainAuraCard(
+                      context,
+                      auraProfile,
+                    ).animate().fadeIn(duration: 400.ms),
                     const SizedBox(height: AppConstants.spacingLg),
 
                     // Chakra dengesi
                     _buildSectionTitle(context, 'Chakra Dengesi'),
                     const SizedBox(height: AppConstants.spacingMd),
-                    _buildChakraBalance(context, auraProfile.chakraAlignment)
-                        .animate()
-                        .fadeIn(delay: 200.ms, duration: 400.ms),
+                    _buildChakraBalance(
+                      context,
+                      auraProfile.chakraAlignment,
+                    ).animate().fadeIn(delay: 200.ms, duration: 400.ms),
                     const SizedBox(height: AppConstants.spacingLg),
 
                     // Günlük enerji
                     _buildSectionTitle(context, 'Günlük Aura Enerjisi'),
                     const SizedBox(height: AppConstants.spacingMd),
-                    _buildDailyEnergyCard(context, dailyEnergy)
-                        .animate()
-                        .fadeIn(delay: 300.ms, duration: 400.ms),
+                    _buildDailyEnergyCard(
+                      context,
+                      dailyEnergy,
+                    ).animate().fadeIn(delay: 300.ms, duration: 400.ms),
                     const SizedBox(height: AppConstants.spacingLg),
 
                     // Aura temizleme
@@ -88,10 +99,18 @@ class AuraScreen extends ConsumerWidget {
                     const SizedBox(height: AppConstants.spacingMd),
                     ...cleansingTips.asMap().entries.map((entry) {
                       return Padding(
-                        padding: const EdgeInsets.only(bottom: AppConstants.spacingMd),
-                        child: _buildCleansingTip(context, entry.value, auraProfile.primaryColor)
-                            .animate()
-                            .fadeIn(delay: (400 + entry.key * 100).ms, duration: 400.ms),
+                        padding: const EdgeInsets.only(
+                          bottom: AppConstants.spacingMd,
+                        ),
+                        child:
+                            _buildCleansingTip(
+                              context,
+                              entry.value,
+                              auraProfile.primaryColor,
+                            ).animate().fadeIn(
+                              delay: (400 + entry.key * 100).ms,
+                              duration: 400.ms,
+                            ),
                       );
                     }),
 
@@ -101,7 +120,8 @@ class AuraScreen extends ConsumerWidget {
                     KadimNotCard(
                       category: KadimCategory.chakra,
                       title: 'Enerji Bedenin Sırrı',
-                      content: 'Aura kavramı binlerce yıllık ezoterik geleneğe dayanır. Eski Mısır\'da "ka" '
+                      content:
+                          'Aura kavramı binlerce yıllık ezoterik geleneğe dayanır. Eski Mısır\'da "ka" '
                           'olarak bilinen enerji bedeni, Hint geleneğinde "prana maya kosha" (yaşam enerjisi '
                           'kılıfı) adını alır. Modern Kirlian fotoğrafçılığı bu kadim bilgeliği doğrulamış, '
                           'canlı organizmaların çevresindeki biyoelektrik alanı görünür kılmıştır.',
@@ -153,9 +173,9 @@ class AuraScreen extends ConsumerWidget {
               Text(
                 'Enerji Bedenin',
                 style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      color: AppColors.auroraStart,
-                      fontStyle: FontStyle.italic,
-                    ),
+                  color: AppColors.auroraStart,
+                  fontStyle: FontStyle.italic,
+                ),
               ),
             ],
           ),
@@ -163,10 +183,10 @@ class AuraScreen extends ConsumerWidget {
           Text(
             'Aura, fiziksel bedenini çevreleyen enerji alanıdır. Her düşünce, duygu ve deneyim auranın rengini ve yoğunluğunu etkiler. Doğum tarihin ve ismin, temel aura rengini belirler - bu senin ruhsal imzandır. Auranı anlamak, enerjini yönetmenin ve korumanın anahtarıdır.',
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: AppColors.textSecondary,
-                  height: 1.6,
-                  fontStyle: FontStyle.italic,
-                ),
+              color: AppColors.textSecondary,
+              height: 1.6,
+              fontStyle: FontStyle.italic,
+            ),
           ),
         ],
       ),
@@ -232,36 +252,32 @@ class AuraScreen extends ConsumerWidget {
                   color: AppColors.surfaceDark,
                   border: Border.all(color: auraColor, width: 2),
                 ),
-                child: Icon(
-                  Icons.person,
-                  color: auraColor,
-                  size: 40,
-                ),
+                child: Icon(Icons.person, color: auraColor, size: 40),
               ),
             ),
           ),
           const SizedBox(height: AppConstants.spacingLg),
           Text(
             'Birincil Auran',
-            style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                  color: AppColors.textMuted,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.labelMedium?.copyWith(color: AppColors.textMuted),
           ),
           const SizedBox(height: 4),
           Text(
             profile.primaryColor.nameTr,
             style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                  color: auraColor,
-                  fontWeight: FontWeight.bold,
-                ),
+              color: auraColor,
+              fontWeight: FontWeight.bold,
+            ),
           ),
           const SizedBox(height: AppConstants.spacingLg),
           Text(
             profile.primaryColor.meaning,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: AppColors.textSecondary,
-                  height: 1.6,
-                ),
+              color: AppColors.textSecondary,
+              height: 1.6,
+            ),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: AppConstants.spacingLg),
@@ -314,15 +330,13 @@ class AuraScreen extends ConsumerWidget {
                       children: [
                         Text(
                           'İkincil Aura',
-                          style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                                color: AppColors.textMuted,
-                              ),
+                          style: Theme.of(context).textTheme.labelSmall
+                              ?.copyWith(color: AppColors.textMuted),
                         ),
                         Text(
                           profile.secondaryColor!.nameTr,
-                          style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                                color: profile.secondaryColor!.color,
-                              ),
+                          style: Theme.of(context).textTheme.titleSmall
+                              ?.copyWith(color: profile.secondaryColor!.color),
                         ),
                       ],
                     ),
@@ -348,9 +362,9 @@ class AuraScreen extends ConsumerWidget {
                     const SizedBox(width: 8),
                     Text(
                       'Spiritüel Tavsiye',
-                      style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                            color: auraColor,
-                          ),
+                      style: Theme.of(
+                        context,
+                      ).textTheme.labelMedium?.copyWith(color: auraColor),
                     ),
                   ],
                 ),
@@ -358,10 +372,10 @@ class AuraScreen extends ConsumerWidget {
                 Text(
                   profile.spiritualAdvice,
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: AppColors.textSecondary,
-                        fontStyle: FontStyle.italic,
-                        height: 1.5,
-                      ),
+                    color: AppColors.textSecondary,
+                    fontStyle: FontStyle.italic,
+                    height: 1.5,
+                  ),
                 ),
               ],
             ),
@@ -388,18 +402,18 @@ class AuraScreen extends ConsumerWidget {
         children: [
           Text(
             label,
-            style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                  color: AppColors.textMuted,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.labelSmall?.copyWith(color: AppColors.textMuted),
           ),
           const SizedBox(height: 4),
           if (progress != null) ...[
             Text(
               value,
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    color: color,
-                    fontWeight: FontWeight.bold,
-                  ),
+                color: color,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             const SizedBox(height: 8),
             LinearProgressIndicator(
@@ -411,9 +425,9 @@ class AuraScreen extends ConsumerWidget {
           ] else
             Text(
               value,
-              style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                    color: color,
-                  ),
+              style: Theme.of(
+                context,
+              ).textTheme.titleSmall?.copyWith(color: color),
             ),
         ],
       ),
@@ -447,15 +461,19 @@ class AuraScreen extends ConsumerWidget {
             ),
             child: Row(
               children: [
-                Icon(Icons.info_outline, color: AppColors.auroraStart, size: 18),
+                Icon(
+                  Icons.info_outline,
+                  color: AppColors.auroraStart,
+                  size: 18,
+                ),
                 const SizedBox(width: 8),
                 Expanded(
                   child: Text(
                     'Chakralar bedenindeki enerji merkezleridir. Her biri farklı yaşam alanlarını yönetir.',
                     style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                          color: AppColors.textSecondary,
-                          fontStyle: FontStyle.italic,
-                        ),
+                      color: AppColors.textSecondary,
+                      fontStyle: FontStyle.italic,
+                    ),
                   ),
                 ),
               ],
@@ -475,7 +493,13 @@ class AuraScreen extends ConsumerWidget {
                     final value = alignment[chakra] ?? 50;
                     final isStrong = value >= 80;
                     final isWeak = value < 60;
-                    return _buildChakraSpineNode(context, chakra, value, isStrong, isWeak);
+                    return _buildChakraSpineNode(
+                      context,
+                      chakra,
+                      value,
+                      isStrong,
+                      isWeak,
+                    );
                   }).toList(),
                 ),
               ),
@@ -486,7 +510,9 @@ class AuraScreen extends ConsumerWidget {
                   children: Chakra.values.reversed.map((chakra) {
                     final value = alignment[chakra] ?? 50;
                     return Padding(
-                      padding: const EdgeInsets.only(bottom: AppConstants.spacingMd),
+                      padding: const EdgeInsets.only(
+                        bottom: AppConstants.spacingMd,
+                      ),
                       child: _buildChakraDetailRow(context, chakra, value),
                     );
                   }).toList(),
@@ -530,10 +556,7 @@ class AuraScreen extends ConsumerWidget {
             padding: const EdgeInsets.all(AppConstants.spacingMd),
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [
-                  weakest.key.color.withAlpha(30),
-                  Colors.transparent,
-                ],
+                colors: [weakest.key.color.withAlpha(30), Colors.transparent],
               ),
               borderRadius: BorderRadius.circular(AppConstants.radiusSm),
               border: Border.all(color: weakest.key.color.withAlpha(50)),
@@ -548,8 +571,8 @@ class AuraScreen extends ConsumerWidget {
                     Text(
                       'Dengeleme Tavsiyesi',
                       style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                            color: weakest.key.color,
-                          ),
+                        color: weakest.key.color,
+                      ),
                     ),
                   ],
                 ),
@@ -557,13 +580,16 @@ class AuraScreen extends ConsumerWidget {
                 Text(
                   _getChakraBalancingAdvice(weakest.key),
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: AppColors.textSecondary,
-                        height: 1.5,
-                      ),
+                    color: AppColors.textSecondary,
+                    height: 1.5,
+                  ),
                 ),
                 const SizedBox(height: 8),
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 10,
+                    vertical: 6,
+                  ),
                   decoration: BoxDecoration(
                     color: weakest.key.color.withAlpha(25),
                     borderRadius: BorderRadius.circular(20),
@@ -571,9 +597,9 @@ class AuraScreen extends ConsumerWidget {
                   child: Text(
                     'Mantra: ${weakest.key.mantras}',
                     style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                          color: weakest.key.color,
-                          fontWeight: FontWeight.bold,
-                        ),
+                      color: weakest.key.color,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ],
@@ -584,7 +610,13 @@ class AuraScreen extends ConsumerWidget {
     );
   }
 
-  Widget _buildChakraSpineNode(BuildContext context, Chakra chakra, int value, bool isStrong, bool isWeak) {
+  Widget _buildChakraSpineNode(
+    BuildContext context,
+    Chakra chakra,
+    int value,
+    bool isStrong,
+    bool isWeak,
+  ) {
     final size = isStrong ? 28.0 : (isWeak ? 20.0 : 24.0);
 
     return Column(
@@ -595,10 +627,7 @@ class AuraScreen extends ConsumerWidget {
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             gradient: RadialGradient(
-              colors: [
-                chakra.color,
-                chakra.color.withAlpha(150),
-              ],
+              colors: [chakra.color, chakra.color.withAlpha(150)],
             ),
             boxShadow: [
               BoxShadow(
@@ -665,16 +694,16 @@ class AuraScreen extends ConsumerWidget {
                     Text(
                       chakra.nameTr,
                       style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                            color: chakra.color,
-                            fontWeight: FontWeight.bold,
-                          ),
+                        color: chakra.color,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     Text(
                       _getChakraArea(chakra),
                       style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                            color: AppColors.textMuted,
-                            fontSize: 10,
-                          ),
+                        color: AppColors.textMuted,
+                        fontSize: 10,
+                      ),
                     ),
                   ],
                 ),
@@ -688,10 +717,10 @@ class AuraScreen extends ConsumerWidget {
                 child: Text(
                   '$value% $status',
                   style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                        color: statusColor,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 10,
-                      ),
+                    color: statusColor,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 10,
+                  ),
                 ),
               ),
             ],
@@ -724,10 +753,7 @@ class AuraScreen extends ConsumerWidget {
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [
-            chakra.color.withAlpha(40),
-            chakra.color.withAlpha(15),
-          ],
+          colors: [chakra.color.withAlpha(40), chakra.color.withAlpha(15)],
         ),
         borderRadius: BorderRadius.circular(AppConstants.radiusSm),
         border: Border.all(color: chakra.color.withAlpha(50)),
@@ -741,9 +767,9 @@ class AuraScreen extends ConsumerWidget {
               const SizedBox(width: 4),
               Text(
                 label,
-                style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                      color: AppColors.textMuted,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.labelSmall?.copyWith(color: AppColors.textMuted),
               ),
             ],
           ),
@@ -755,10 +781,7 @@ class AuraScreen extends ConsumerWidget {
               shape: BoxShape.circle,
               color: chakra.color,
               boxShadow: [
-                BoxShadow(
-                  color: chakra.color.withAlpha(100),
-                  blurRadius: 10,
-                ),
+                BoxShadow(color: chakra.color.withAlpha(100), blurRadius: 10),
               ],
             ),
           ),
@@ -766,16 +789,16 @@ class AuraScreen extends ConsumerWidget {
           Text(
             chakra.nameTr,
             style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                  color: chakra.color,
-                  fontWeight: FontWeight.bold,
-                ),
+              color: chakra.color,
+              fontWeight: FontWeight.bold,
+            ),
             textAlign: TextAlign.center,
           ),
           Text(
             '$value%',
-            style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                  color: AppColors.textSecondary,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.labelSmall?.copyWith(color: AppColors.textSecondary),
           ),
         ],
       ),
@@ -784,13 +807,20 @@ class AuraScreen extends ConsumerWidget {
 
   String _getChakraArea(Chakra chakra) {
     switch (chakra) {
-      case Chakra.root: return 'Güvenlik, Hayatta Kalma';
-      case Chakra.sacral: return 'Yaratıcılık, Duygular';
-      case Chakra.solarPlexus: return 'Güç, Özgüven';
-      case Chakra.heart: return 'Sevgi, Bağlantı';
-      case Chakra.throat: return 'İletişim, İfade';
-      case Chakra.thirdEye: return 'Sezgi, Bilgelik';
-      case Chakra.crown: return 'Spiritüellik, Bilinç';
+      case Chakra.root:
+        return 'Güvenlik, Hayatta Kalma';
+      case Chakra.sacral:
+        return 'Yaratıcılık, Duygular';
+      case Chakra.solarPlexus:
+        return 'Güç, Özgüven';
+      case Chakra.heart:
+        return 'Sevgi, Bağlantı';
+      case Chakra.throat:
+        return 'İletişim, İfade';
+      case Chakra.thirdEye:
+        return 'Sezgi, Bilgelik';
+      case Chakra.crown:
+        return 'Spiritüellik, Bilinç';
     }
   }
 
@@ -822,10 +852,7 @@ class AuraScreen extends ConsumerWidget {
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [
-            todayColor.withAlpha(50),
-            AppColors.surfaceDark,
-          ],
+          colors: [todayColor.withAlpha(50), AppColors.surfaceDark],
         ),
         borderRadius: BorderRadius.circular(AppConstants.radiusMd),
         border: Border.all(color: todayColor.withAlpha(76)),
@@ -853,20 +880,23 @@ class AuraScreen extends ConsumerWidget {
                     Text(
                       'Bugünün Aura Enerjisi',
                       style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                            color: AppColors.textMuted,
-                          ),
+                        color: AppColors.textMuted,
+                      ),
                     ),
                     Text(
                       energy.todayAura.nameTr,
-                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                            color: todayColor,
-                          ),
+                      style: Theme.of(
+                        context,
+                      ).textTheme.titleMedium?.copyWith(color: todayColor),
                     ),
                   ],
                 ),
               ),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 6,
+                ),
                 decoration: BoxDecoration(
                   color: todayColor.withAlpha(50),
                   borderRadius: BorderRadius.circular(20),
@@ -874,9 +904,9 @@ class AuraScreen extends ConsumerWidget {
                 child: Text(
                   '${energy.energyLevel}%',
                   style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                        color: todayColor,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    color: todayColor,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ],
@@ -885,9 +915,9 @@ class AuraScreen extends ConsumerWidget {
           Text(
             energy.guidance,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: AppColors.textSecondary,
-                  height: 1.6,
-                ),
+              color: AppColors.textSecondary,
+              height: 1.6,
+            ),
           ),
           const SizedBox(height: AppConstants.spacingLg),
           Container(
@@ -906,9 +936,9 @@ class AuraScreen extends ConsumerWidget {
                     const SizedBox(width: 8),
                     Text(
                       'Günlük Olumlamanız',
-                      style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                            color: todayColor,
-                          ),
+                      style: Theme.of(
+                        context,
+                      ).textTheme.labelMedium?.copyWith(color: todayColor),
                     ),
                   ],
                 ),
@@ -916,10 +946,10 @@ class AuraScreen extends ConsumerWidget {
                 Text(
                   energy.affirmation,
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        color: AppColors.textPrimary,
-                        fontStyle: FontStyle.italic,
-                        height: 1.5,
-                      ),
+                    color: AppColors.textPrimary,
+                    fontStyle: FontStyle.italic,
+                    height: 1.5,
+                  ),
                 ),
               ],
             ),
@@ -929,17 +959,27 @@ class AuraScreen extends ConsumerWidget {
     );
   }
 
-  Widget _buildCleansingTip(BuildContext context, AuraCleansingTip tip, AuraColor aura) {
+  Widget _buildCleansingTip(
+    BuildContext context,
+    AuraCleansingTip tip,
+    AuraColor aura,
+  ) {
     final color = aura.color;
 
     IconData getIcon(String iconName) {
       switch (iconName) {
-        case 'meditation': return Icons.self_improvement;
-        case 'crystal': return Icons.diamond;
-        case 'color': return Icons.palette;
-        case 'nature': return Icons.nature;
-        case 'sound': return Icons.music_note;
-        default: return Icons.auto_awesome;
+        case 'meditation':
+          return Icons.self_improvement;
+        case 'crystal':
+          return Icons.diamond;
+        case 'color':
+          return Icons.palette;
+        case 'nature':
+          return Icons.nature;
+        case 'sound':
+          return Icons.music_note;
+        default:
+          return Icons.auto_awesome;
       }
     }
 
@@ -967,17 +1007,17 @@ class AuraScreen extends ConsumerWidget {
               children: [
                 Text(
                   tip.title,
-                  style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                        color: color,
-                      ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.titleSmall?.copyWith(color: color),
                 ),
                 const SizedBox(height: 4),
                 Text(
                   tip.description,
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: AppColors.textSecondary,
-                        height: 1.4,
-                      ),
+                    color: AppColors.textSecondary,
+                    height: 1.4,
+                  ),
                 ),
               ],
             ),
@@ -990,9 +1030,9 @@ class AuraScreen extends ConsumerWidget {
   Widget _buildSectionTitle(BuildContext context, String title) {
     return Text(
       title,
-      style: Theme.of(context).textTheme.titleLarge?.copyWith(
-            color: AppColors.textPrimary,
-          ),
+      style: Theme.of(
+        context,
+      ).textTheme.titleLarge?.copyWith(color: AppColors.textPrimary),
     );
   }
 }

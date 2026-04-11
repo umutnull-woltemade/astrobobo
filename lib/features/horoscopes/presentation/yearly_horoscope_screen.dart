@@ -152,9 +152,9 @@ class _YearlyHoroscopeScreenState extends State<YearlyHoroscopeScreen> {
           Text(
             '$_selectedYear',
             style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.starGold,
-                ),
+              fontWeight: FontWeight.bold,
+              color: AppColors.starGold,
+            ),
           ),
           IconButton(
             icon: const Icon(Icons.chevron_right),
@@ -190,8 +190,8 @@ class _YearlyHoroscopeScreenState extends State<YearlyHoroscopeScreen> {
                 color: isSelected
                     ? AppColors.starGold.withValues(alpha: 0.3)
                     : isDark
-                        ? AppColors.surfaceLight.withValues(alpha: 0.2)
-                        : AppColors.lightSurfaceVariant,
+                    ? AppColors.surfaceLight.withValues(alpha: 0.2)
+                    : AppColors.lightSurfaceVariant,
                 borderRadius: BorderRadius.circular(AppConstants.radiusSm),
                 border: isSelected
                     ? Border.all(color: AppColors.starGold, width: 2)
@@ -200,17 +200,15 @@ class _YearlyHoroscopeScreenState extends State<YearlyHoroscopeScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    sign.symbol,
-                    style: const TextStyle(fontSize: 20),
-                  ),
+                  Text(sign.symbol, style: const TextStyle(fontSize: 20)),
                   Text(
                     sign.nameTr,
                     style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                          fontSize: 10,
-                          fontWeight:
-                              isSelected ? FontWeight.bold : FontWeight.normal,
-                        ),
+                      fontSize: 10,
+                      fontWeight: isSelected
+                          ? FontWeight.bold
+                          : FontWeight.normal,
+                    ),
                     textAlign: TextAlign.center,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
@@ -238,9 +236,7 @@ class _YearlyHoroscopeScreenState extends State<YearlyHoroscopeScreen> {
           ],
         ),
         borderRadius: BorderRadius.circular(AppConstants.radiusLg),
-        border: Border.all(
-          color: AppColors.starGold.withValues(alpha: 0.3),
-        ),
+        border: Border.all(color: AppColors.starGold.withValues(alpha: 0.3)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -265,14 +261,14 @@ class _YearlyHoroscopeScreenState extends State<YearlyHoroscopeScreen> {
                   Text(
                     _selectedSign.nameTr,
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          fontWeight: FontWeight.bold,
-                        ),
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   Text(
                     '$_selectedYear Kozmik Özeti',
-                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                          color: AppColors.starGold,
-                        ),
+                    style: Theme.of(
+                      context,
+                    ).textTheme.bodySmall?.copyWith(color: AppColors.starGold),
                   ),
                 ],
               ),
@@ -283,9 +279,7 @@ class _YearlyHoroscopeScreenState extends State<YearlyHoroscopeScreen> {
           const SizedBox(height: AppConstants.spacingLg),
           Text(
             _horoscope.yearOverview,
-            style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                  height: 1.6,
-                ),
+            style: Theme.of(context).textTheme.bodyLarge?.copyWith(height: 1.6),
           ),
         ],
       ),
@@ -308,9 +302,9 @@ class _YearlyHoroscopeScreenState extends State<YearlyHoroscopeScreen> {
           Text(
             '$rating/5',
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: AppColors.starGold,
-                  fontWeight: FontWeight.bold,
-                ),
+              color: AppColors.starGold,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ],
       ),
@@ -331,30 +325,24 @@ class _YearlyHoroscopeScreenState extends State<YearlyHoroscopeScreen> {
           ],
         ),
         borderRadius: BorderRadius.circular(AppConstants.radiusMd),
-        border: Border.all(
-          color: Colors.purple.withValues(alpha: 0.3),
-        ),
+        border: Border.all(color: Colors.purple.withValues(alpha: 0.3)),
       ),
       child: Column(
         children: [
-          const Icon(
-            Icons.auto_awesome,
-            color: Colors.purple,
-            size: 32,
-          ),
+          const Icon(Icons.auto_awesome, color: Colors.purple, size: 32),
           const SizedBox(height: AppConstants.spacingMd),
           Text(
             'Yılın Teması',
-            style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                  color: Colors.purple,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.titleSmall?.copyWith(color: Colors.purple),
           ),
           const SizedBox(height: AppConstants.spacingSm),
           Text(
             _horoscope.keyTheme,
-            style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
         ],
@@ -388,9 +376,9 @@ class _YearlyHoroscopeScreenState extends State<YearlyHoroscopeScreen> {
         children: [
           Text(
             'Aylık Enerji Haritası',
-            style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: AppConstants.spacingLg),
           SizedBox(
@@ -399,7 +387,8 @@ class _YearlyHoroscopeScreenState extends State<YearlyHoroscopeScreen> {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: List.generate(12, (index) {
                 final rating = _horoscope.monthlyRatings[index + 1] ?? 3;
-                final isCurrentMonth = index + 1 == DateTime.now().month &&
+                final isCurrentMonth =
+                    index + 1 == DateTime.now().month &&
                     _selectedYear == DateTime.now().year;
 
                 return Expanded(
@@ -410,13 +399,13 @@ class _YearlyHoroscopeScreenState extends State<YearlyHoroscopeScreen> {
                       children: [
                         Text(
                           '$rating',
-                          style:
-                              Theme.of(context).textTheme.bodySmall?.copyWith(
-                                    fontWeight: FontWeight.bold,
-                                    color: isCurrentMonth
-                                        ? AppColors.starGold
-                                        : null,
-                                  ),
+                          style: Theme.of(context).textTheme.bodySmall
+                              ?.copyWith(
+                                fontWeight: FontWeight.bold,
+                                color: isCurrentMonth
+                                    ? AppColors.starGold
+                                    : null,
+                              ),
                         ),
                         const SizedBox(height: 4),
                         Container(
@@ -426,28 +415,36 @@ class _YearlyHoroscopeScreenState extends State<YearlyHoroscopeScreen> {
                               begin: Alignment.bottomCenter,
                               end: Alignment.topCenter,
                               colors: isCurrentMonth
-                                  ? [AppColors.starGold, AppColors.celestialGold]
-                                  : [AppColors.auroraStart, AppColors.auroraEnd],
+                                  ? [
+                                      AppColors.starGold,
+                                      AppColors.celestialGold,
+                                    ]
+                                  : [
+                                      AppColors.auroraStart,
+                                      AppColors.auroraEnd,
+                                    ],
                             ),
                             borderRadius: BorderRadius.circular(4),
                             border: isCurrentMonth
                                 ? Border.all(
-                                    color: AppColors.starGold, width: 2)
+                                    color: AppColors.starGold,
+                                    width: 2,
+                                  )
                                 : null,
                           ),
                         ),
                         const SizedBox(height: 4),
                         Text(
                           months[index],
-                          style:
-                              Theme.of(context).textTheme.labelSmall?.copyWith(
-                                    fontWeight: isCurrentMonth
-                                        ? FontWeight.bold
-                                        : FontWeight.normal,
-                                    color: isCurrentMonth
-                                        ? AppColors.starGold
-                                        : null,
-                                  ),
+                          style: Theme.of(context).textTheme.labelSmall
+                              ?.copyWith(
+                                fontWeight: isCurrentMonth
+                                    ? FontWeight.bold
+                                    : FontWeight.normal,
+                                color: isCurrentMonth
+                                    ? AppColors.starGold
+                                    : null,
+                              ),
                         ),
                       ],
                     ),
@@ -537,17 +534,17 @@ class _YearlyHoroscopeScreenState extends State<YearlyHoroscopeScreen> {
                   Text(
                     cat['title'] as String,
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          fontWeight: FontWeight.bold,
-                        ),
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ],
               ),
               const SizedBox(height: AppConstants.spacingMd),
               Text(
                 cat['content'] as String,
-                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      height: 1.5,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.bodyMedium?.copyWith(height: 1.5),
               ),
             ],
           ),
@@ -595,9 +592,9 @@ class _YearlyHoroscopeScreenState extends State<YearlyHoroscopeScreen> {
               const SizedBox(width: AppConstants.spacingMd),
               Text(
                 'Önemli Gezegen Transitleri',
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
               ),
             ],
           ),
@@ -617,9 +614,9 @@ class _YearlyHoroscopeScreenState extends State<YearlyHoroscopeScreen> {
                   Expanded(
                     child: Text(
                       transit,
-                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                            height: 1.5,
-                          ),
+                      style: Theme.of(
+                        context,
+                      ).textTheme.bodyMedium?.copyWith(height: 1.5),
                     ),
                   ),
                 ],
@@ -655,9 +652,9 @@ class _YearlyHoroscopeScreenState extends State<YearlyHoroscopeScreen> {
         children: [
           Text(
             'Yılın Özel Ayları',
-            style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: AppConstants.spacingLg),
           Row(
@@ -672,11 +669,11 @@ class _YearlyHoroscopeScreenState extends State<YearlyHoroscopeScreen> {
                         const SizedBox(width: 4),
                         Text(
                           'Şanslı Aylar',
-                          style:
-                              Theme.of(context).textTheme.bodySmall?.copyWith(
-                                    color: Colors.green,
-                                    fontWeight: FontWeight.w600,
-                                  ),
+                          style: Theme.of(context).textTheme.bodySmall
+                              ?.copyWith(
+                                color: Colors.green,
+                                fontWeight: FontWeight.w600,
+                              ),
                         ),
                       ],
                     ),
@@ -711,16 +708,19 @@ class _YearlyHoroscopeScreenState extends State<YearlyHoroscopeScreen> {
                   children: [
                     Row(
                       children: [
-                        const Icon(Icons.warning_amber,
-                            color: Colors.orange, size: 16),
+                        const Icon(
+                          Icons.warning_amber,
+                          color: Colors.orange,
+                          size: 16,
+                        ),
                         const SizedBox(width: 4),
                         Text(
                           'Dikkat Gerektiren',
-                          style:
-                              Theme.of(context).textTheme.bodySmall?.copyWith(
-                                    color: Colors.orange,
-                                    fontWeight: FontWeight.w600,
-                                  ),
+                          style: Theme.of(context).textTheme.bodySmall
+                              ?.copyWith(
+                                color: Colors.orange,
+                                fontWeight: FontWeight.w600,
+                              ),
                         ),
                       ],
                     ),
@@ -769,32 +769,26 @@ class _YearlyHoroscopeScreenState extends State<YearlyHoroscopeScreen> {
           ],
         ),
         borderRadius: BorderRadius.circular(AppConstants.radiusMd),
-        border: Border.all(
-          color: AppColors.starGold.withValues(alpha: 0.3),
-        ),
+        border: Border.all(color: AppColors.starGold.withValues(alpha: 0.3)),
       ),
       child: Column(
         children: [
-          const Icon(
-            Icons.auto_awesome,
-            color: AppColors.starGold,
-            size: 32,
-          ),
+          const Icon(Icons.auto_awesome, color: AppColors.starGold, size: 32),
           const SizedBox(height: AppConstants.spacingMd),
           Text(
             'Yıllık Afirmasyon',
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.starGold,
-                ),
+              fontWeight: FontWeight.bold,
+              color: AppColors.starGold,
+            ),
           ),
           const SizedBox(height: AppConstants.spacingSm),
           Text(
             '"${_horoscope.yearlyAffirmation}"',
             style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                  fontStyle: FontStyle.italic,
-                  height: 1.5,
-                ),
+              fontStyle: FontStyle.italic,
+              height: 1.5,
+            ),
             textAlign: TextAlign.center,
           ),
         ],

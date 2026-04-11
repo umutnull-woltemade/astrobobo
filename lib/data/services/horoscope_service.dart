@@ -36,17 +36,24 @@ class HoroscopeService {
       luckyColor: colors[seededRandom.nextInt(colors.length)],
       mood: moods[seededRandom.nextInt(moods.length)],
       pastInsight: pastInsights[seededRandom.nextInt(pastInsights.length)],
-      presentEnergy: presentEnergies[seededRandom.nextInt(presentEnergies.length)],
-      futureGuidance: futureGuidances[seededRandom.nextInt(futureGuidances.length)],
-      cosmicMessage: cosmicMessages[seededRandom.nextInt(cosmicMessages.length)],
+      presentEnergy:
+          presentEnergies[seededRandom.nextInt(presentEnergies.length)],
+      futureGuidance:
+          futureGuidances[seededRandom.nextInt(futureGuidances.length)],
+      cosmicMessage:
+          cosmicMessages[seededRandom.nextInt(cosmicMessages.length)],
     );
   }
 
   static Compatibility calculateCompatibility(
-      ZodiacSign sign1, ZodiacSign sign2) {
+    ZodiacSign sign1,
+    ZodiacSign sign2,
+  ) {
     final elementMatch = _getElementCompatibility(sign1.element, sign2.element);
-    final modalityMatch =
-        _getModalityCompatibility(sign1.modality, sign2.modality);
+    final modalityMatch = _getModalityCompatibility(
+      sign1.modality,
+      sign2.modality,
+    );
 
     final baseScore = ((elementMatch + modalityMatch) / 2 * 100).round();
     final variation = _random.nextInt(20) - 10;
@@ -58,8 +65,10 @@ class HoroscopeService {
       overallScore: overallScore,
       loveScore: (overallScore + _random.nextInt(20) - 10).clamp(0, 100),
       friendshipScore: (overallScore + _random.nextInt(20) - 10).clamp(0, 100),
-      communicationScore:
-          (overallScore + _random.nextInt(20) - 10).clamp(0, 100),
+      communicationScore: (overallScore + _random.nextInt(20) - 10).clamp(
+        0,
+        100,
+      ),
       summary: _getEsotericCompatibilitySummary(sign1, sign2, overallScore),
       strengths: _getEsotericCompatibilityStrengths(sign1, sign2),
       challenges: _getEsotericCompatibilityChallenges(sign1, sign2),
@@ -507,15 +516,35 @@ class HoroscopeService {
   static List<String> _getSacredColors(ZodiacSign sign) {
     final signColors = {
       ZodiacSign.aries: ['Ateş Kırmızısı', 'Altın', 'Turuncu', 'Mercan'],
-      ZodiacSign.taurus: ['Zümrüt Yeşili', 'Gül Pembesi', 'Toprak Tonları', 'Bakır'],
+      ZodiacSign.taurus: [
+        'Zümrüt Yeşili',
+        'Gül Pembesi',
+        'Toprak Tonları',
+        'Bakır',
+      ],
       ZodiacSign.gemini: ['Lavanta', 'Gök Mavisi', 'Sarı', 'Gümüş'],
       ZodiacSign.cancer: ['İnci Beyazı', 'Ay Gümüşü', 'Deniz Mavisi', 'Sedef'],
-      ZodiacSign.leo: ['Güneş Altını', 'Kraliyet Kırmızısı', 'Turuncu', 'Bronz'],
+      ZodiacSign.leo: [
+        'Güneş Altını',
+        'Kraliyet Kırmızısı',
+        'Turuncu',
+        'Bronz',
+      ],
       ZodiacSign.virgo: ['Orman Yeşili', 'Bej', 'Krem', 'Buğday Rengi'],
       ZodiacSign.libra: ['Gül Kuvarsi', 'Pastel Mavi', 'Fildişi', 'Bakır'],
       ZodiacSign.scorpio: ['Bordo', 'Siyah', 'Koyu Mor', 'Kan Kırmızısı'],
-      ZodiacSign.sagittarius: ['Kraliyet Moru', 'Turkuaz', 'Safir Mavisi', 'İndigo'],
-      ZodiacSign.capricorn: ['Derin Kahve', 'Koyu Yeşil', 'Antrasit', 'Obsidyen'],
+      ZodiacSign.sagittarius: [
+        'Kraliyet Moru',
+        'Turkuaz',
+        'Safir Mavisi',
+        'İndigo',
+      ],
+      ZodiacSign.capricorn: [
+        'Derin Kahve',
+        'Koyu Yeşil',
+        'Antrasit',
+        'Obsidyen',
+      ],
       ZodiacSign.aquarius: ['Elektrik Mavisi', 'Mor', 'Teal', 'Platin'],
       ZodiacSign.pisces: ['Deniz Yeşili', 'Lavanta', 'Akuamarin', 'Opal'],
     };
@@ -524,7 +553,10 @@ class HoroscopeService {
   }
 
   static String _getEsotericCompatibilitySummary(
-      ZodiacSign sign1, ZodiacSign sign2, int score) {
+    ZodiacSign sign1,
+    ZodiacSign sign2,
+    int score,
+  ) {
     final name1 = sign1.nameTr;
     final name2 = sign2.nameTr;
 
@@ -540,26 +572,36 @@ class HoroscopeService {
   }
 
   static List<String> _getEsotericCompatibilityStrengths(
-      ZodiacSign sign1, ZodiacSign sign2) {
+    ZodiacSign sign1,
+    ZodiacSign sign2,
+  ) {
     final strengths = <String>[];
 
     if (sign1.element == sign2.element) {
       final elementName = ElementExtension(sign1.element).nameTr;
-      strengths.add('Aynı $elementName elementini paylaşmak, kelimesiz bir anlayış yaratıyor - sanki aynı dili konuşuyorsunuz.');
+      strengths.add(
+        'Aynı $elementName elementini paylaşmak, kelimesiz bir anlayış yaratıyor - sanki aynı dili konuşuyorsunuz.',
+      );
     }
 
     if (sign1.modality != sign2.modality) {
-      strengths.add('Farklı modaliteler, eksik parçaları tamamlıyor. Birinin başladığı yerde diğeri devam edebilir.');
+      strengths.add(
+        'Farklı modaliteler, eksik parçaları tamamlıyor. Birinin başladığı yerde diğeri devam edebilir.',
+      );
     }
 
     if (sign1.element == Element.fire && sign2.element == Element.air ||
         sign1.element == Element.air && sign2.element == Element.fire) {
-      strengths.add('Ateş ve Hava\'nın simyasal birleşimi: fikirler alev alıyor, tutkular kanat açıyor.');
+      strengths.add(
+        'Ateş ve Hava\'nın simyasal birleşimi: fikirler alev alıyor, tutkular kanat açıyor.',
+      );
     }
 
     if (sign1.element == Element.earth && sign2.element == Element.water ||
         sign1.element == Element.water && sign2.element == Element.earth) {
-      strengths.add('Toprak ve Su\'yun kutsal evliliği: duygular somutlaşıyor, hayaller gerçekleşiyor.');
+      strengths.add(
+        'Toprak ve Su\'yun kutsal evliliği: duygular somutlaşıyor, hayaller gerçekleşiyor.',
+      );
     }
 
     strengths.addAll([
@@ -572,21 +614,28 @@ class HoroscopeService {
   }
 
   static List<String> _getEsotericCompatibilityChallenges(
-      ZodiacSign sign1, ZodiacSign sign2) {
+    ZodiacSign sign1,
+    ZodiacSign sign2,
+  ) {
     final challenges = <String>[];
 
     if (sign1.element != sign2.element) {
       challenges.add(
-          'Farklı elementler, farklı ihtiyaçlar demek. Birinin ateşine diğer dayanabilir mi? Su soğutmak mı istiyor, beslemek mi?');
+        'Farklı elementler, farklı ihtiyaçlar demek. Birinin ateşine diğer dayanabilir mi? Su soğutmak mı istiyor, beslemek mi?',
+      );
     }
 
     if (sign1.modality == sign2.modality) {
-      challenges.add('Aynı modalite, iktidar mücadelesi riski taşıyor. Kim yön belirleyecek? Kim takip edecek?');
+      challenges.add(
+        'Aynı modalite, iktidar mücadelesi riski taşıyor. Kim yön belirleyecek? Kim takip edecek?',
+      );
     }
 
     if (sign1.element == Element.fire && sign2.element == Element.water ||
         sign1.element == Element.water && sign2.element == Element.fire) {
-      challenges.add('Ateş ve Su\'yun dansı tehlikeli olabilir - ya birbirinizi söndürürsünüz, ya da buhar olup uçarsınız.');
+      challenges.add(
+        'Ateş ve Su\'yun dansı tehlikeli olabilir - ya birbirinizi söndürürsünüz, ya da buhar olup uçarsınız.',
+      );
     }
 
     challenges.addAll([

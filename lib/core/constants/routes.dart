@@ -144,8 +144,10 @@ class Routes {
   static const String tantraIntention = '/tantra/niyet-ritueli';
 
   // Kozmik Ruhsal Araclari - Header'da
-  static const String kozmikIletisim = '/kozmik-iletisim';  // Chatbot - Ruya yorumlama sohbeti
-  static const String ruyaDongusu = '/ruya-dongusu';        // Dream Oracle - 7 boyutlu form
+  static const String kozmikIletisim =
+      '/kozmik-iletisim'; // Chatbot - Ruya yorumlama sohbeti
+  static const String ruyaDongusu =
+      '/ruya-dongusu'; // Dream Oracle - 7 boyutlu form
 
   // Profile Management
   static const String savedProfiles = '/saved-profiles';

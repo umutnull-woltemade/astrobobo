@@ -87,7 +87,10 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
     );
   }
 
-  Widget _buildPremiumActiveScreen(BuildContext context, PremiumState premiumState) {
+  Widget _buildPremiumActiveScreen(
+    BuildContext context,
+    PremiumState premiumState,
+  ) {
     return Scaffold(
       body: CosmicBackground(
         child: SafeArea(
@@ -171,16 +174,16 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
           if (premiumState.isLifetime)
             Text(
               'Ömür boyu erişiminiz var!',
-              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                color: AppColors.textSecondary,
-              ),
+              style: Theme.of(
+                context,
+              ).textTheme.bodyMedium?.copyWith(color: AppColors.textSecondary),
             )
           else if (premiumState.expiryDate != null)
             Text(
               'Yenileme: ${_formatDate(premiumState.expiryDate!)}',
-              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                color: AppColors.textSecondary,
-              ),
+              style: Theme.of(
+                context,
+              ).textTheme.bodyMedium?.copyWith(color: AppColors.textSecondary),
             ),
         ],
       ),
@@ -283,9 +286,9 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
           Expanded(
             child: Text(
               'RevenueCat Paywall',
-              style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                color: Colors.orange,
-              ),
+              style: Theme.of(
+                context,
+              ).textTheme.bodySmall?.copyWith(color: Colors.orange),
             ),
           ),
           Switch(
@@ -298,7 +301,10 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
     );
   }
 
-  Widget _buildRevenueCatPaywallButton(BuildContext context, PremiumState premiumState) {
+  Widget _buildRevenueCatPaywallButton(
+    BuildContext context,
+    PremiumState premiumState,
+  ) {
     return Column(
       children: [
         // Features preview
@@ -328,7 +334,9 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
                 onTap: premiumState.isLoading
                     ? null
                     : () async {
-                        final result = await ref.read(paywallServiceProvider).presentPaywall();
+                        final result = await ref
+                            .read(paywallServiceProvider)
+                            .presentPaywall();
                         if (mounted && result == PaywallResult.purchased) {
                           _showSuccessDialog();
                         }
@@ -343,7 +351,9 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
                             height: 24,
                             child: CircularProgressIndicator(
                               strokeWidth: 2,
-                              valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                              valueColor: AlwaysStoppedAnimation<Color>(
+                                Colors.white,
+                              ),
                             ),
                           )
                         : const Row(
@@ -698,7 +708,10 @@ class _PlanCard extends StatelessWidget {
                               ),
                               if (isLifetime) ...[
                                 const SizedBox(width: 8),
-                                const Text('♾️', style: TextStyle(fontSize: 14)),
+                                const Text(
+                                  '♾️',
+                                  style: TextStyle(fontSize: 14),
+                                ),
                               ],
                             ],
                           ),

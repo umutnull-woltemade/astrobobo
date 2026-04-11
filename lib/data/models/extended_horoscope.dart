@@ -31,21 +31,22 @@ class WeeklyHoroscope {
   });
 
   Map<String, dynamic> toJson() => {
-        'sign': sign.index,
-        'weekStart': weekStart.toIso8601String(),
-        'weekEnd': weekEnd.toIso8601String(),
-        'overview': overview,
-        'loveWeek': loveWeek,
-        'careerWeek': careerWeek,
-        'healthWeek': healthWeek,
-        'financialWeek': financialWeek,
-        'overallRating': overallRating,
-        'luckyDay': luckyDay,
-        'weeklyAffirmation': weeklyAffirmation,
-        'keyDates': keyDates,
-      };
+    'sign': sign.index,
+    'weekStart': weekStart.toIso8601String(),
+    'weekEnd': weekEnd.toIso8601String(),
+    'overview': overview,
+    'loveWeek': loveWeek,
+    'careerWeek': careerWeek,
+    'healthWeek': healthWeek,
+    'financialWeek': financialWeek,
+    'overallRating': overallRating,
+    'luckyDay': luckyDay,
+    'weeklyAffirmation': weeklyAffirmation,
+    'keyDates': keyDates,
+  };
 
-  factory WeeklyHoroscope.fromJson(Map<String, dynamic> json) => WeeklyHoroscope(
+  factory WeeklyHoroscope.fromJson(Map<String, dynamic> json) =>
+      WeeklyHoroscope(
         sign: ZodiacSign.values[json['sign'] as int],
         weekStart: DateTime.parse(json['weekStart'] as String),
         weekEnd: DateTime.parse(json['weekEnd'] as String),
@@ -97,30 +98,41 @@ class MonthlyHoroscope {
 
   String get monthName {
     const months = [
-      'Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran',
-      'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'
+      'Ocak',
+      'Şubat',
+      'Mart',
+      'Nisan',
+      'Mayıs',
+      'Haziran',
+      'Temmuz',
+      'Ağustos',
+      'Eylül',
+      'Ekim',
+      'Kasım',
+      'Aralık',
     ];
     return months[month - 1];
   }
 
   Map<String, dynamic> toJson() => {
-        'sign': sign.index,
-        'month': month,
-        'year': year,
-        'overview': overview,
-        'loveMonth': loveMonth,
-        'careerMonth': careerMonth,
-        'healthMonth': healthMonth,
-        'financialMonth': financialMonth,
-        'spiritualGuidance': spiritualGuidance,
-        'overallRating': overallRating,
-        'luckyDays': luckyDays,
-        'monthlyMantra': monthlyMantra,
-        'keyTransits': keyTransits,
-        'weeklyRatings': weeklyRatings,
-      };
+    'sign': sign.index,
+    'month': month,
+    'year': year,
+    'overview': overview,
+    'loveMonth': loveMonth,
+    'careerMonth': careerMonth,
+    'healthMonth': healthMonth,
+    'financialMonth': financialMonth,
+    'spiritualGuidance': spiritualGuidance,
+    'overallRating': overallRating,
+    'luckyDays': luckyDays,
+    'monthlyMantra': monthlyMantra,
+    'keyTransits': keyTransits,
+    'weeklyRatings': weeklyRatings,
+  };
 
-  factory MonthlyHoroscope.fromJson(Map<String, dynamic> json) => MonthlyHoroscope(
+  factory MonthlyHoroscope.fromJson(Map<String, dynamic> json) =>
+      MonthlyHoroscope(
         sign: ZodiacSign.values[json['sign'] as int],
         month: json['month'] as int,
         year: json['year'] as int,
@@ -174,36 +186,36 @@ class LoveHoroscope {
       (passionRating + romanceRating + communicationRating) / 3;
 
   Map<String, dynamic> toJson() => {
-        'sign': sign.index,
-        'date': date.toIso8601String(),
-        'romanticOutlook': romanticOutlook,
-        'singleAdvice': singleAdvice,
-        'couplesAdvice': couplesAdvice,
-        'soulConnection': soulConnection,
-        'passionRating': passionRating,
-        'romanceRating': romanceRating,
-        'communicationRating': communicationRating,
-        'bestMatch': bestMatch.index,
-        'challengingMatch': challengingMatch.index,
-        'venusInfluence': venusInfluence,
-        'intimacyAdvice': intimacyAdvice,
-      };
+    'sign': sign.index,
+    'date': date.toIso8601String(),
+    'romanticOutlook': romanticOutlook,
+    'singleAdvice': singleAdvice,
+    'couplesAdvice': couplesAdvice,
+    'soulConnection': soulConnection,
+    'passionRating': passionRating,
+    'romanceRating': romanceRating,
+    'communicationRating': communicationRating,
+    'bestMatch': bestMatch.index,
+    'challengingMatch': challengingMatch.index,
+    'venusInfluence': venusInfluence,
+    'intimacyAdvice': intimacyAdvice,
+  };
 
   factory LoveHoroscope.fromJson(Map<String, dynamic> json) => LoveHoroscope(
-        sign: ZodiacSign.values[json['sign'] as int],
-        date: DateTime.parse(json['date'] as String),
-        romanticOutlook: json['romanticOutlook'] as String,
-        singleAdvice: json['singleAdvice'] as String,
-        couplesAdvice: json['couplesAdvice'] as String,
-        soulConnection: json['soulConnection'] as String,
-        passionRating: json['passionRating'] as int,
-        romanceRating: json['romanceRating'] as int,
-        communicationRating: json['communicationRating'] as int,
-        bestMatch: ZodiacSign.values[json['bestMatch'] as int],
-        challengingMatch: ZodiacSign.values[json['challengingMatch'] as int],
-        venusInfluence: json['venusInfluence'] as String,
-        intimacyAdvice: json['intimacyAdvice'] as String,
-      );
+    sign: ZodiacSign.values[json['sign'] as int],
+    date: DateTime.parse(json['date'] as String),
+    romanticOutlook: json['romanticOutlook'] as String,
+    singleAdvice: json['singleAdvice'] as String,
+    couplesAdvice: json['couplesAdvice'] as String,
+    soulConnection: json['soulConnection'] as String,
+    passionRating: json['passionRating'] as int,
+    romanceRating: json['romanceRating'] as int,
+    communicationRating: json['communicationRating'] as int,
+    bestMatch: ZodiacSign.values[json['bestMatch'] as int],
+    challengingMatch: ZodiacSign.values[json['challengingMatch'] as int],
+    venusInfluence: json['venusInfluence'] as String,
+    intimacyAdvice: json['intimacyAdvice'] as String,
+  );
 }
 
 /// Yearly horoscope model
@@ -243,24 +255,25 @@ class YearlyHoroscope {
   });
 
   Map<String, dynamic> toJson() => {
-        'sign': sign.index,
-        'year': year,
-        'yearOverview': yearOverview,
-        'loveYear': loveYear,
-        'careerYear': careerYear,
-        'healthYear': healthYear,
-        'financialYear': financialYear,
-        'spiritualJourney': spiritualJourney,
-        'overallRating': overallRating,
-        'monthlyRatings': monthlyRatings.map((k, v) => MapEntry(k.toString(), v)),
-        'majorTransits': majorTransits,
-        'luckyMonths': luckyMonths,
-        'challengingMonths': challengingMonths,
-        'yearlyAffirmation': yearlyAffirmation,
-        'keyTheme': keyTheme,
-      };
+    'sign': sign.index,
+    'year': year,
+    'yearOverview': yearOverview,
+    'loveYear': loveYear,
+    'careerYear': careerYear,
+    'healthYear': healthYear,
+    'financialYear': financialYear,
+    'spiritualJourney': spiritualJourney,
+    'overallRating': overallRating,
+    'monthlyRatings': monthlyRatings.map((k, v) => MapEntry(k.toString(), v)),
+    'majorTransits': majorTransits,
+    'luckyMonths': luckyMonths,
+    'challengingMonths': challengingMonths,
+    'yearlyAffirmation': yearlyAffirmation,
+    'keyTheme': keyTheme,
+  };
 
-  factory YearlyHoroscope.fromJson(Map<String, dynamic> json) => YearlyHoroscope(
+  factory YearlyHoroscope.fromJson(Map<String, dynamic> json) =>
+      YearlyHoroscope(
         sign: ZodiacSign.values[json['sign'] as int],
         year: json['year'] as int,
         yearOverview: json['yearOverview'] as String,
@@ -314,34 +327,34 @@ class EclipseEvent {
   int get daysUntil => date.difference(DateTime.now()).inDays;
 
   Map<String, dynamic> toJson() => {
-        'date': date.toIso8601String(),
-        'type': type.index,
-        'zodiacSign': zodiacSign.index,
-        'title': title,
-        'description': description,
-        'spiritualMeaning': spiritualMeaning,
-        'practicalAdvice': practicalAdvice,
-        'mostAffectedSigns': mostAffectedSigns.map((s) => s.index).toList(),
-        'isVisible': isVisible,
-        'peakTime': peakTime,
-        'magnitude': magnitude,
-      };
+    'date': date.toIso8601String(),
+    'type': type.index,
+    'zodiacSign': zodiacSign.index,
+    'title': title,
+    'description': description,
+    'spiritualMeaning': spiritualMeaning,
+    'practicalAdvice': practicalAdvice,
+    'mostAffectedSigns': mostAffectedSigns.map((s) => s.index).toList(),
+    'isVisible': isVisible,
+    'peakTime': peakTime,
+    'magnitude': magnitude,
+  };
 
   factory EclipseEvent.fromJson(Map<String, dynamic> json) => EclipseEvent(
-        date: DateTime.parse(json['date'] as String),
-        type: EclipseType.values[json['type'] as int],
-        zodiacSign: ZodiacSign.values[json['zodiacSign'] as int],
-        title: json['title'] as String,
-        description: json['description'] as String,
-        spiritualMeaning: json['spiritualMeaning'] as String,
-        practicalAdvice: json['practicalAdvice'] as String,
-        mostAffectedSigns: (json['mostAffectedSigns'] as List)
-            .map((i) => ZodiacSign.values[i as int])
-            .toList(),
-        isVisible: json['isVisible'] as bool,
-        peakTime: json['peakTime'] as String,
-        magnitude: (json['magnitude'] as num).toDouble(),
-      );
+    date: DateTime.parse(json['date'] as String),
+    type: EclipseType.values[json['type'] as int],
+    zodiacSign: ZodiacSign.values[json['zodiacSign'] as int],
+    title: json['title'] as String,
+    description: json['description'] as String,
+    spiritualMeaning: json['spiritualMeaning'] as String,
+    practicalAdvice: json['practicalAdvice'] as String,
+    mostAffectedSigns: (json['mostAffectedSigns'] as List)
+        .map((i) => ZodiacSign.values[i as int])
+        .toList(),
+    isVisible: json['isVisible'] as bool,
+    peakTime: json['peakTime'] as String,
+    magnitude: (json['magnitude'] as num).toDouble(),
+  );
 }
 
 enum EclipseType {

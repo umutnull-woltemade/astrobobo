@@ -112,16 +112,16 @@ class _LocalSpaceScreenState extends ConsumerState<LocalSpaceScreen>
                 const SizedBox(height: 16),
                 Text(
                   'Profil bulunamadı',
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        color: Colors.white,
-                      ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.titleLarge?.copyWith(color: Colors.white),
                 ),
                 const SizedBox(height: 8),
                 Text(
                   'Lütfen önce doğum bilgilerinizi girin',
-                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        color: Colors.white70,
-                      ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.bodyMedium?.copyWith(color: Colors.white70),
                 ),
                 const SizedBox(height: 24),
                 ElevatedButton(
@@ -162,7 +162,9 @@ class _LocalSpaceScreenState extends ConsumerState<LocalSpaceScreen>
                         Text(
                           'Harita oluşturuluyor...',
                           style: TextStyle(
-                            color: isDark ? Colors.white70 : AppColors.textLight,
+                            color: isDark
+                                ? Colors.white70
+                                : AppColors.textLight,
                           ),
                         ),
                       ],
@@ -193,9 +195,9 @@ class _LocalSpaceScreenState extends ConsumerState<LocalSpaceScreen>
             child: Text(
               'Yerel Uzay Astrolojisi',
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                    fontWeight: FontWeight.bold,
-                    color: isDark ? Colors.white : AppColors.textDark,
-                  ),
+                fontWeight: FontWeight.bold,
+                color: isDark ? Colors.white : AppColors.textDark,
+              ),
               textAlign: TextAlign.center,
             ),
           ),
@@ -216,9 +218,7 @@ class _LocalSpaceScreenState extends ConsumerState<LocalSpaceScreen>
           ],
         ),
         borderRadius: BorderRadius.circular(AppConstants.radiusLg),
-        border: Border.all(
-          color: Colors.teal.withValues(alpha: 0.5),
-        ),
+        border: Border.all(color: Colors.teal.withValues(alpha: 0.5)),
       ),
       child: Row(
         children: [
@@ -251,7 +251,8 @@ class _LocalSpaceScreenState extends ConsumerState<LocalSpaceScreen>
   }
 
   Widget _buildProfileCard(bool isDark, dynamic userProfile) {
-    final hasCoordinates = userProfile.birthLatitude != null && userProfile.birthLongitude != null;
+    final hasCoordinates =
+        userProfile.birthLatitude != null && userProfile.birthLongitude != null;
 
     return Container(
       padding: const EdgeInsets.all(AppConstants.spacingLg),
@@ -260,20 +261,14 @@ class _LocalSpaceScreenState extends ConsumerState<LocalSpaceScreen>
             ? Colors.white.withValues(alpha: 0.05)
             : Colors.white.withValues(alpha: 0.9),
         borderRadius: BorderRadius.circular(AppConstants.radiusLg),
-        border: Border.all(
-          color: Colors.teal.withValues(alpha: 0.3),
-        ),
+        border: Border.all(color: Colors.teal.withValues(alpha: 0.3)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [
-              Icon(
-                Icons.person,
-                color: Colors.teal,
-                size: 20,
-              ),
+              Icon(Icons.person, color: Colors.teal, size: 20),
               const SizedBox(width: 8),
               Text(
                 'Profil Bilgileri',
@@ -312,9 +307,24 @@ class _LocalSpaceScreenState extends ConsumerState<LocalSpaceScreen>
             ],
           ),
           const SizedBox(height: AppConstants.spacingMd),
-          _buildInfoRow(isDark, Icons.person_outline, 'İsim', userProfile.name ?? 'Kullanıcı'),
-          _buildInfoRow(isDark, Icons.cake_outlined, 'Doğum Tarihi', _formatDate(userProfile.birthDate)),
-          _buildInfoRow(isDark, Icons.location_on_outlined, 'Doğum Yeri', userProfile.birthPlace ?? 'Belirtilmedi'),
+          _buildInfoRow(
+            isDark,
+            Icons.person_outline,
+            'İsim',
+            userProfile.name ?? 'Kullanıcı',
+          ),
+          _buildInfoRow(
+            isDark,
+            Icons.cake_outlined,
+            'Doğum Tarihi',
+            _formatDate(userProfile.birthDate),
+          ),
+          _buildInfoRow(
+            isDark,
+            Icons.location_on_outlined,
+            'Doğum Yeri',
+            userProfile.birthPlace ?? 'Belirtilmedi',
+          ),
           if (hasCoordinates)
             _buildInfoRow(
               isDark,
@@ -332,7 +342,11 @@ class _LocalSpaceScreenState extends ConsumerState<LocalSpaceScreen>
       padding: const EdgeInsets.symmetric(vertical: 4),
       child: Row(
         children: [
-          Icon(icon, size: 16, color: isDark ? Colors.white54 : AppColors.textLight),
+          Icon(
+            icon,
+            size: 16,
+            color: isDark ? Colors.white54 : AppColors.textLight,
+          ),
           const SizedBox(width: 8),
           Text(
             '$label: ',
@@ -359,8 +373,18 @@ class _LocalSpaceScreenState extends ConsumerState<LocalSpaceScreen>
 
   String _formatDate(DateTime date) {
     const months = [
-      'Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran',
-      'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'
+      'Ocak',
+      'Şubat',
+      'Mart',
+      'Nisan',
+      'Mayıs',
+      'Haziran',
+      'Temmuz',
+      'Ağustos',
+      'Eylül',
+      'Ekim',
+      'Kasım',
+      'Aralık',
     ];
     return '${date.day} ${months[date.month - 1]} ${date.year}';
   }
@@ -410,7 +434,10 @@ class _LocalSpaceScreenState extends ConsumerState<LocalSpaceScreen>
               if (_compassRotation != 0.0) ...[
                 const SizedBox(width: 8),
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 6,
+                    vertical: 2,
+                  ),
                   decoration: BoxDecoration(
                     color: Colors.teal.withValues(alpha: 0.2),
                     borderRadius: BorderRadius.circular(8),
@@ -477,7 +504,10 @@ class _LocalSpaceScreenState extends ConsumerState<LocalSpaceScreen>
               label: const Text('Sıfırla'),
               style: TextButton.styleFrom(
                 foregroundColor: Colors.teal,
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 4,
+                ),
               ),
             ),
           ],
@@ -604,7 +634,10 @@ class _LocalSpaceScreenState extends ConsumerState<LocalSpaceScreen>
               children: [
                 Row(
                   children: [
-                    Text(dir.direction.icon, style: const TextStyle(fontSize: 24)),
+                    Text(
+                      dir.direction.icon,
+                      style: const TextStyle(fontSize: 24),
+                    ),
                     const SizedBox(width: 8),
                     Text(
                       dir.direction.nameTr,
@@ -643,10 +676,7 @@ class _LocalSpaceScreenState extends ConsumerState<LocalSpaceScreen>
                           color: _getPlanetColor(p).withValues(alpha: 0.2),
                           borderRadius: BorderRadius.circular(8),
                         ),
-                        child: Text(
-                          p,
-                          style: const TextStyle(fontSize: 10),
-                        ),
+                        child: Text(p, style: const TextStyle(fontSize: 10)),
                       );
                     }).toList(),
                   ),
@@ -830,7 +860,10 @@ class _LocalSpaceScreenState extends ConsumerState<LocalSpaceScreen>
                   children: [
                     Row(
                       children: [
-                        Text(line.direction.icon, style: const TextStyle(fontSize: 18)),
+                        Text(
+                          line.direction.icon,
+                          style: const TextStyle(fontSize: 18),
+                        ),
                         const SizedBox(width: 8),
                         Text(
                           '${line.direction.nameTr} - ${line.planet}',

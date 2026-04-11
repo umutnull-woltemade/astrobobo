@@ -287,14 +287,71 @@ class MoonPhase {
   });
 
   static const List<MoonPhase> allPhases = [
-    MoonPhase(phase: 0, name: 'New Moon', nameTr: 'Yeni Ay', illumination: 0.0, symbol: '🌑', interpretation: 'Yeni baslangiclarin zamani. Niyet koyma ve tohumlama dönemi.'),
-    MoonPhase(phase: 1, name: 'Waxing Crescent', nameTr: 'Hilal (Buyuyen)', illumination: 0.25, symbol: '🌒', interpretation: 'Niyet gucleniyor. Harekete gecme zamani.'),
-    MoonPhase(phase: 2, name: 'First Quarter', nameTr: 'Ilk Dördün', illumination: 0.5, symbol: '🌓', interpretation: 'Karar verme zamani. Engelleri asma.'),
-    MoonPhase(phase: 3, name: 'Waxing Gibbous', nameTr: 'Dolunaya Yaklasan', illumination: 0.75, symbol: '🌔', interpretation: 'Ince ayarlar yapma. Sonuca hazirlık.'),
-    MoonPhase(phase: 4, name: 'Full Moon', nameTr: 'Dolunay', illumination: 1.0, symbol: '🌕', interpretation: 'Doruk noktasi. Sonuclarin ortaya ciktigi zaman.'),
-    MoonPhase(phase: 5, name: 'Waning Gibbous', nameTr: 'Dolunaydan Sonra', illumination: 0.75, symbol: '🌖', interpretation: 'Minnettarlik zamani. Paylasma ve ogretme.'),
-    MoonPhase(phase: 6, name: 'Last Quarter', nameTr: 'Son Dördün', illumination: 0.5, symbol: '🌗', interpretation: 'Birakma zamani. Eski kaliplari yikmak.'),
-    MoonPhase(phase: 7, name: 'Waning Crescent', nameTr: 'Hilal (Kuculen)', illumination: 0.25, symbol: '🌘', interpretation: 'Dinlenme ve yenilenme. Icksel calisma.'),
+    MoonPhase(
+      phase: 0,
+      name: 'New Moon',
+      nameTr: 'Yeni Ay',
+      illumination: 0.0,
+      symbol: '🌑',
+      interpretation:
+          'Yeni baslangiclarin zamani. Niyet koyma ve tohumlama dönemi.',
+    ),
+    MoonPhase(
+      phase: 1,
+      name: 'Waxing Crescent',
+      nameTr: 'Hilal (Buyuyen)',
+      illumination: 0.25,
+      symbol: '🌒',
+      interpretation: 'Niyet gucleniyor. Harekete gecme zamani.',
+    ),
+    MoonPhase(
+      phase: 2,
+      name: 'First Quarter',
+      nameTr: 'Ilk Dördün',
+      illumination: 0.5,
+      symbol: '🌓',
+      interpretation: 'Karar verme zamani. Engelleri asma.',
+    ),
+    MoonPhase(
+      phase: 3,
+      name: 'Waxing Gibbous',
+      nameTr: 'Dolunaya Yaklasan',
+      illumination: 0.75,
+      symbol: '🌔',
+      interpretation: 'Ince ayarlar yapma. Sonuca hazirlık.',
+    ),
+    MoonPhase(
+      phase: 4,
+      name: 'Full Moon',
+      nameTr: 'Dolunay',
+      illumination: 1.0,
+      symbol: '🌕',
+      interpretation: 'Doruk noktasi. Sonuclarin ortaya ciktigi zaman.',
+    ),
+    MoonPhase(
+      phase: 5,
+      name: 'Waning Gibbous',
+      nameTr: 'Dolunaydan Sonra',
+      illumination: 0.75,
+      symbol: '🌖',
+      interpretation: 'Minnettarlik zamani. Paylasma ve ogretme.',
+    ),
+    MoonPhase(
+      phase: 6,
+      name: 'Last Quarter',
+      nameTr: 'Son Dördün',
+      illumination: 0.5,
+      symbol: '🌗',
+      interpretation: 'Birakma zamani. Eski kaliplari yikmak.',
+    ),
+    MoonPhase(
+      phase: 7,
+      name: 'Waning Crescent',
+      nameTr: 'Hilal (Kuculen)',
+      illumination: 0.25,
+      symbol: '🌘',
+      interpretation: 'Dinlenme ve yenilenme. Icksel calisma.',
+    ),
   ];
 }
 
@@ -609,7 +666,18 @@ class TransitService {
   /// Get current transits affecting the natal chart
   static List<Transit> getCurrentTransits(NatalChart chart, DateTime date) {
     final transits = <Transit>[];
-    final transitingPlanets = ['Sun', 'Moon', 'Mercury', 'Venus', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune', 'Pluto'];
+    final transitingPlanets = [
+      'Sun',
+      'Moon',
+      'Mercury',
+      'Venus',
+      'Mars',
+      'Jupiter',
+      'Saturn',
+      'Uranus',
+      'Neptune',
+      'Pluto',
+    ];
     final seed = date.year * 10000 + date.month * 100 + date.day;
     final seededRandom = Random(seed);
 
@@ -621,22 +689,34 @@ class TransitService {
       for (final natalPlanet in chart.planets.entries) {
         final aspectType = _checkAspect(transitSign, natalPlanet.value.sign);
         if (aspectType != null) {
-          final importance = _calculateImportance(transitPlanet, natalPlanet.key, aspectType);
+          final importance = _calculateImportance(
+            transitPlanet,
+            natalPlanet.key,
+            aspectType,
+          );
           if (importance >= 5) {
             // Only include significant transits
-            transits.add(Transit(
-              transitingPlanet: transitPlanet,
-              natalPlanet: natalPlanet.key,
-              transitSign: transitSign,
-              aspectType: aspectType,
-              orb: (seededRandom.nextDouble() * 5).toDouble(),
-              startDate: date.subtract(Duration(days: seededRandom.nextInt(7) + 1)),
-              exactDate: date,
-              endDate: date.add(Duration(days: seededRandom.nextInt(7) + 1)),
-              isRetrograde: _isRetrograde(transitPlanet, date),
-              importance: importance,
-              interpretation: _getTransitInterpretation(transitPlanet, natalPlanet.key, aspectType),
-            ));
+            transits.add(
+              Transit(
+                transitingPlanet: transitPlanet,
+                natalPlanet: natalPlanet.key,
+                transitSign: transitSign,
+                aspectType: aspectType,
+                orb: (seededRandom.nextDouble() * 5).toDouble(),
+                startDate: date.subtract(
+                  Duration(days: seededRandom.nextInt(7) + 1),
+                ),
+                exactDate: date,
+                endDate: date.add(Duration(days: seededRandom.nextInt(7) + 1)),
+                isRetrograde: _isRetrograde(transitPlanet, date),
+                importance: importance,
+                interpretation: _getTransitInterpretation(
+                  transitPlanet,
+                  natalPlanet.key,
+                  aspectType,
+                ),
+              ),
+            );
           }
         }
       }
@@ -647,17 +727,23 @@ class TransitService {
   }
 
   /// Get upcoming transits within date range
-  static List<Transit> getUpcomingTransits(NatalChart chart, DateTime start, DateTime end) {
+  static List<Transit> getUpcomingTransits(
+    NatalChart chart,
+    DateTime start,
+    DateTime end,
+  ) {
     final transits = <Transit>[];
     var current = start;
 
     while (current.isBefore(end)) {
       final dayTransits = getCurrentTransits(chart, current);
       for (final transit in dayTransits) {
-        if (!transits.any((t) =>
-            t.transitingPlanet == transit.transitingPlanet &&
-            t.natalPlanet == transit.natalPlanet &&
-            t.aspectType == transit.aspectType)) {
+        if (!transits.any(
+          (t) =>
+              t.transitingPlanet == transit.transitingPlanet &&
+              t.natalPlanet == transit.natalPlanet &&
+              t.aspectType == transit.aspectType,
+        )) {
           transits.add(transit);
         }
       }
@@ -684,70 +770,111 @@ class TransitService {
     for (int i = 0; i < 4; i++) {
       final startMonth = (i * 3 + 1 + seededRandom.nextInt(2));
       if (startMonth <= 12) {
-        final startDate = DateTime(year, startMonth, seededRandom.nextInt(15) + 5);
-        periods.add(TransitPeriod(
-          planet: 'Mercury',
-          startDate: startDate,
-          endDate: startDate.add(Duration(days: 21 + seededRandom.nextInt(3))),
-          startSign: ZodiacSign.values[seededRandom.nextInt(12)],
-          endSign: ZodiacSign.values[seededRandom.nextInt(12)],
-          isRetrograde: true,
-          description: 'Merkur geri gidiyor. Iletisim, teknoloji ve seyahatte dikkatli olun.',
-        ));
+        final startDate = DateTime(
+          year,
+          startMonth,
+          seededRandom.nextInt(15) + 5,
+        );
+        periods.add(
+          TransitPeriod(
+            planet: 'Mercury',
+            startDate: startDate,
+            endDate: startDate.add(
+              Duration(days: 21 + seededRandom.nextInt(3)),
+            ),
+            startSign: ZodiacSign.values[seededRandom.nextInt(12)],
+            endSign: ZodiacSign.values[seededRandom.nextInt(12)],
+            isRetrograde: true,
+            description:
+                'Merkur geri gidiyor. Iletisim, teknoloji ve seyahatte dikkatli olun.',
+          ),
+        );
       }
     }
 
     // Venus retrograde (every 18 months, ~40 days)
     if (year % 2 == 0) {
-      final startDate = DateTime(year, seededRandom.nextInt(12) + 1, seededRandom.nextInt(20) + 1);
-      periods.add(TransitPeriod(
-        planet: 'Venus',
-        startDate: startDate,
-        endDate: startDate.add(Duration(days: 40 + seededRandom.nextInt(5))),
-        startSign: ZodiacSign.values[seededRandom.nextInt(12)],
-        endSign: ZodiacSign.values[seededRandom.nextInt(12)],
-        isRetrograde: true,
-        description: 'Venus geri gidiyor. Iliski ve degerler yeniden degerlendiriliyor.',
-      ));
+      final startDate = DateTime(
+        year,
+        seededRandom.nextInt(12) + 1,
+        seededRandom.nextInt(20) + 1,
+      );
+      periods.add(
+        TransitPeriod(
+          planet: 'Venus',
+          startDate: startDate,
+          endDate: startDate.add(Duration(days: 40 + seededRandom.nextInt(5))),
+          startSign: ZodiacSign.values[seededRandom.nextInt(12)],
+          endSign: ZodiacSign.values[seededRandom.nextInt(12)],
+          isRetrograde: true,
+          description:
+              'Venus geri gidiyor. Iliski ve degerler yeniden degerlendiriliyor.',
+        ),
+      );
     }
 
     // Mars retrograde (every 2 years, ~70 days)
     if (year % 2 == 1) {
-      final startDate = DateTime(year, seededRandom.nextInt(12) + 1, seededRandom.nextInt(20) + 1);
-      periods.add(TransitPeriod(
-        planet: 'Mars',
-        startDate: startDate,
-        endDate: startDate.add(Duration(days: 70 + seededRandom.nextInt(10))),
-        startSign: ZodiacSign.values[seededRandom.nextInt(12)],
-        endSign: ZodiacSign.values[seededRandom.nextInt(12)],
-        isRetrograde: true,
-        description: 'Mars geri gidiyor. Enerji icsel yonlendirilmeli. Eski projeler tamamlanabilir.',
-      ));
+      final startDate = DateTime(
+        year,
+        seededRandom.nextInt(12) + 1,
+        seededRandom.nextInt(20) + 1,
+      );
+      periods.add(
+        TransitPeriod(
+          planet: 'Mars',
+          startDate: startDate,
+          endDate: startDate.add(Duration(days: 70 + seededRandom.nextInt(10))),
+          startSign: ZodiacSign.values[seededRandom.nextInt(12)],
+          endSign: ZodiacSign.values[seededRandom.nextInt(12)],
+          isRetrograde: true,
+          description:
+              'Mars geri gidiyor. Enerji icsel yonlendirilmeli. Eski projeler tamamlanabilir.',
+        ),
+      );
     }
 
     // Jupiter retrograde (~4 months per year)
-    final jupiterStart = DateTime(year, seededRandom.nextInt(6) + 3, seededRandom.nextInt(20) + 1);
-    periods.add(TransitPeriod(
-      planet: 'Jupiter',
-      startDate: jupiterStart,
-      endDate: jupiterStart.add(Duration(days: 120 + seededRandom.nextInt(10))),
-      startSign: ZodiacSign.values[seededRandom.nextInt(12)],
-      endSign: ZodiacSign.values[seededRandom.nextInt(12)],
-      isRetrograde: true,
-      description: 'Jupiter geri gidiyor. Icki buyume ve felsefik sorgulamalar.',
-    ));
+    final jupiterStart = DateTime(
+      year,
+      seededRandom.nextInt(6) + 3,
+      seededRandom.nextInt(20) + 1,
+    );
+    periods.add(
+      TransitPeriod(
+        planet: 'Jupiter',
+        startDate: jupiterStart,
+        endDate: jupiterStart.add(
+          Duration(days: 120 + seededRandom.nextInt(10)),
+        ),
+        startSign: ZodiacSign.values[seededRandom.nextInt(12)],
+        endSign: ZodiacSign.values[seededRandom.nextInt(12)],
+        isRetrograde: true,
+        description:
+            'Jupiter geri gidiyor. Icki buyume ve felsefik sorgulamalar.',
+      ),
+    );
 
     // Saturn retrograde (~4.5 months per year)
-    final saturnStart = DateTime(year, seededRandom.nextInt(6) + 4, seededRandom.nextInt(20) + 1);
-    periods.add(TransitPeriod(
-      planet: 'Saturn',
-      startDate: saturnStart,
-      endDate: saturnStart.add(Duration(days: 140 + seededRandom.nextInt(10))),
-      startSign: ZodiacSign.values[seededRandom.nextInt(12)],
-      endSign: ZodiacSign.values[seededRandom.nextInt(12)],
-      isRetrograde: true,
-      description: 'Saturn geri gidiyor. Sorumluluklar ve sinirlar yeniden degerlendirilir.',
-    ));
+    final saturnStart = DateTime(
+      year,
+      seededRandom.nextInt(6) + 4,
+      seededRandom.nextInt(20) + 1,
+    );
+    periods.add(
+      TransitPeriod(
+        planet: 'Saturn',
+        startDate: saturnStart,
+        endDate: saturnStart.add(
+          Duration(days: 140 + seededRandom.nextInt(10)),
+        ),
+        startSign: ZodiacSign.values[seededRandom.nextInt(12)],
+        endSign: ZodiacSign.values[seededRandom.nextInt(12)],
+        isRetrograde: true,
+        description:
+            'Saturn geri gidiyor. Sorumluluklar ve sinirlar yeniden degerlendirilir.',
+      ),
+    );
 
     periods.sort((a, b) => a.startDate.compareTo(b.startDate));
     return periods;
@@ -769,15 +896,17 @@ class TransitService {
       final sign = ZodiacSign.values[seededRandom.nextInt(12)];
       final type = eclipseTypes[seededRandom.nextInt(eclipseTypes.length)];
 
-      eclipses.add(Eclipse(
-        date: DateTime(year, month, day),
-        type: type,
-        sign: sign,
-        degree: seededRandom.nextDouble() * 30,
-        sarosCycle: '${120 + seededRandom.nextInt(30)}',
-        isVisible: seededRandom.nextBool(),
-        interpretation: _getEclipseInterpretation(type, sign),
-      ));
+      eclipses.add(
+        Eclipse(
+          date: DateTime(year, month, day),
+          type: type,
+          sign: sign,
+          degree: seededRandom.nextDouble() * 30,
+          sarosCycle: '${120 + seededRandom.nextInt(30)}',
+          isVisible: seededRandom.nextBool(),
+          interpretation: _getEclipseInterpretation(type, sign),
+        ),
+      );
     }
 
     eclipses.sort((a, b) => a.date.compareTo(b.date));
@@ -816,7 +945,11 @@ class TransitService {
 
   /// Interpret a transit
   static String interpretTransit(Transit transit, NatalChart chart) {
-    return _getTransitInterpretation(transit.transitingPlanet, transit.natalPlanet, transit.aspectType);
+    return _getTransitInterpretation(
+      transit.transitingPlanet,
+      transit.natalPlanet,
+      transit.aspectType,
+    );
   }
 
   /// Get transit advice
@@ -867,7 +1000,8 @@ class TransitService {
 
   // Helper methods
   static ZodiacSign _getTransitSign(String planet, DateTime date) {
-    final seed = planet.hashCode + date.year * 1000 + date.month * 30 + date.day;
+    final seed =
+        planet.hashCode + date.year * 1000 + date.month * 30 + date.day;
     final index = seed % 12;
     return ZodiacSign.values[index.abs()];
   }
@@ -893,7 +1027,11 @@ class TransitService {
     }
   }
 
-  static int _calculateImportance(String transitPlanet, String natalPlanet, AspectType? aspect) {
+  static int _calculateImportance(
+    String transitPlanet,
+    String natalPlanet,
+    AspectType? aspect,
+  ) {
     int importance = 5;
 
     // Outer planets have more importance
@@ -922,7 +1060,11 @@ class TransitService {
     return Random(seed).nextInt(10) < 3;
   }
 
-  static String _getTransitInterpretation(String transitPlanet, String natalPlanet, AspectType? aspect) {
+  static String _getTransitInterpretation(
+    String transitPlanet,
+    String natalPlanet,
+    AspectType? aspect,
+  ) {
     final aspectName = aspect?.nameTr ?? 'gecis';
     return 'Transit $transitPlanet, natal $natalPlanet ile $aspectName yapıyor. '
         'Bu dönemde ${_getPlanetTheme(transitPlanet)} ve ${_getPlanetTheme(natalPlanet)} temaları birleşiyor.';
@@ -945,7 +1087,8 @@ class TransitService {
   }
 
   static String _getEclipseInterpretation(EclipseType type, ZodiacSign sign) {
-    final isSolar = type == EclipseType.solarTotal ||
+    final isSolar =
+        type == EclipseType.solarTotal ||
         type == EclipseType.solarAnnular ||
         type == EclipseType.solarPartial;
 
@@ -962,9 +1105,16 @@ class TransitService {
 /// Progression calculation service
 class ProgressionService {
   /// Calculate secondary progressions
-  static ProgressedChart calculateSecondaryProgressions(NatalChart natal, DateTime date) {
+  static ProgressedChart calculateSecondaryProgressions(
+    NatalChart natal,
+    DateTime date,
+  ) {
     final age = date.difference(natal.birthDate).inDays ~/ 365;
-    final seed = natal.birthDate.year * 10000 + natal.birthDate.month * 100 + natal.birthDate.day + age;
+    final seed =
+        natal.birthDate.year * 10000 +
+        natal.birthDate.month * 100 +
+        natal.birthDate.day +
+        age;
     final seededRandom = Random(seed);
 
     // Calculate progressed positions
@@ -982,17 +1132,26 @@ class ProgressionService {
         case 'Sun':
           // Sun moves ~1 degree per year
           progressedDegree = (natalPos.degree + age) % 30;
-          progressedSign = ZodiacSign.values[(natalPos.sign.index + (natalPos.degree + age) ~/ 30) % 12];
+          progressedSign =
+              ZodiacSign.values[(natalPos.sign.index +
+                      (natalPos.degree + age) ~/ 30) %
+                  12];
           break;
         case 'Moon':
           // Moon moves ~13 degrees per day, so ~13 degrees per progressed year
           progressedDegree = (natalPos.degree + (age * 13)) % 30;
-          progressedSign = ZodiacSign.values[(natalPos.sign.index + ((natalPos.degree + age * 13) ~/ 30)) % 12];
+          progressedSign =
+              ZodiacSign.values[(natalPos.sign.index +
+                      ((natalPos.degree + age * 13) ~/ 30)) %
+                  12];
           break;
         default:
           // Other planets move slowly in progressions
           progressedDegree = (natalPos.degree + (age * 0.5)) % 30;
-          progressedSign = ZodiacSign.values[(natalPos.sign.index + ((natalPos.degree + age * 0.5) ~/ 30).toInt()) % 12];
+          progressedSign =
+              ZodiacSign.values[(natalPos.sign.index +
+                      ((natalPos.degree + age * 0.5) ~/ 30).toInt()) %
+                  12];
       }
 
       progressedPlanets[planet] = PlanetPosition(
@@ -1013,16 +1172,22 @@ class ProgressionService {
     final aspects = <ProgressedAspect>[];
     for (final progPlanet in progressedPlanets.entries) {
       for (final natalPlanet in natal.planets.entries) {
-        final aspectType = _checkAspect(progPlanet.value.sign, natalPlanet.value.sign);
+        final aspectType = _checkAspect(
+          progPlanet.value.sign,
+          natalPlanet.value.sign,
+        );
         if (aspectType != null) {
-          aspects.add(ProgressedAspect(
-            progressedPlanet: progPlanet.key,
-            natalPlanet: natalPlanet.key,
-            type: aspectType,
-            interpretation: 'Progressed ${progPlanet.key} ${aspectType.nameTr} natal ${natalPlanet.key}.',
-            exactDate: date.add(Duration(days: seededRandom.nextInt(365))),
-            isApplying: seededRandom.nextBool(),
-          ));
+          aspects.add(
+            ProgressedAspect(
+              progressedPlanet: progPlanet.key,
+              natalPlanet: natalPlanet.key,
+              type: aspectType,
+              interpretation:
+                  'Progressed ${progPlanet.key} ${aspectType.nameTr} natal ${natalPlanet.key}.',
+              exactDate: date.add(Duration(days: seededRandom.nextInt(365))),
+              isApplying: seededRandom.nextBool(),
+            ),
+          );
         }
       }
     }
@@ -1046,7 +1211,10 @@ class ProgressionService {
   }
 
   /// Get progressed aspects
-  static List<ProgressedAspect> getProgressedAspects(NatalChart natal, DateTime date) {
+  static List<ProgressedAspect> getProgressedAspects(
+    NatalChart natal,
+    DateTime date,
+  ) {
     final progressedChart = calculateSecondaryProgressions(natal, date);
     return progressedChart.aspects;
   }
@@ -1063,7 +1231,8 @@ class ProgressionService {
     for (final entry in natal.planets.entries) {
       final newDegree = (entry.value.degree + arcDegrees) % 30;
       final signShift = ((entry.value.degree + arcDegrees) ~/ 30);
-      final newSign = ZodiacSign.values[(entry.value.sign.index + signShift) % 12];
+      final newSign =
+          ZodiacSign.values[(entry.value.sign.index + signShift) % 12];
 
       directedPlanets[entry.key] = PlanetPosition(
         planet: entry.key,
@@ -1079,16 +1248,22 @@ class ProgressionService {
     for (final directed in directedPlanets.entries) {
       for (final natalPlanet in natal.planets.entries) {
         if (directed.key != natalPlanet.key) {
-          final aspectType = _checkAspect(directed.value.sign, natalPlanet.value.sign);
+          final aspectType = _checkAspect(
+            directed.value.sign,
+            natalPlanet.value.sign,
+          );
           if (aspectType != null) {
-            aspects.add(SolarArcAspect(
-              directedPlanet: directed.key,
-              natalPlanet: natalPlanet.key,
-              type: aspectType,
-              orb: seededRandom.nextDouble() * 2,
-              isApplying: seededRandom.nextBool(),
-              interpretation: 'Solar Arc ${directed.key} ${aspectType.nameTr} natal ${natalPlanet.key}.',
-            ));
+            aspects.add(
+              SolarArcAspect(
+                directedPlanet: directed.key,
+                natalPlanet: natalPlanet.key,
+                type: aspectType,
+                orb: seededRandom.nextDouble() * 2,
+                isApplying: seededRandom.nextBool(),
+                interpretation:
+                    'Solar Arc ${directed.key} ${aspectType.nameTr} natal ${natalPlanet.key}.',
+              ),
+            );
           }
         }
       }
@@ -1098,7 +1273,8 @@ class ProgressionService {
       arcDegrees: arcDegrees,
       directedPlanets: directedPlanets,
       activeAspects: aspects,
-      interpretation: 'Solar Arc ilerlemeniz $arcDegrees derece. Bu donemde ${aspects.length} aktif aci mevcut.',
+      interpretation:
+          'Solar Arc ilerlemeniz $arcDegrees derece. Bu donemde ${aspects.length} aktif aci mevcut.',
     );
   }
 
@@ -1135,7 +1311,10 @@ class ProgressionService {
     return 'Bilgelik dönemi - Miras ve anlam';
   }
 
-  static String _getProgressionInterpretation(int age, Map<String, PlanetPosition> planets) {
+  static String _getProgressionInterpretation(
+    int age,
+    Map<String, PlanetPosition> planets,
+  ) {
     final sunSign = planets['Sun']?.sign.nameTr ?? 'bilinmeyen';
     final moonSign = planets['Moon']?.sign.nameTr ?? 'bilinmeyen';
 
@@ -1148,18 +1327,37 @@ class ProgressionService {
 /// Solar and Lunar return chart service
 class ReturnChartService {
   /// Calculate Solar Return chart
-  static Chart calculateSolarReturn(NatalChart natal, int year, String location) {
+  static Chart calculateSolarReturn(
+    NatalChart natal,
+    int year,
+    String location,
+  ) {
     // Solar return is when transiting Sun returns to natal Sun position
     final natalSun = natal.planets['Sun']!;
     final seed = natal.birthDate.year * 10000 + year;
     final seededRandom = Random(seed);
 
     // Approximate solar return date (within a day of birthday)
-    final returnDate = DateTime(year, natal.birthDate.month, natal.birthDate.day);
+    final returnDate = DateTime(
+      year,
+      natal.birthDate.month,
+      natal.birthDate.day,
+    );
 
     // Generate return chart planets
     final planets = <String, PlanetPosition>{};
-    final planetNames = ['Sun', 'Moon', 'Mercury', 'Venus', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune', 'Pluto'];
+    final planetNames = [
+      'Sun',
+      'Moon',
+      'Mercury',
+      'Venus',
+      'Mars',
+      'Jupiter',
+      'Saturn',
+      'Uranus',
+      'Neptune',
+      'Pluto',
+    ];
 
     for (final planet in planetNames) {
       if (planet == 'Sun') {
@@ -1173,7 +1371,10 @@ class ReturnChartService {
           sign: sign,
           degree: seededRandom.nextDouble() * 30,
           house: seededRandom.nextInt(12) + 1,
-          isRetrograde: planet != 'Sun' && planet != 'Moon' && seededRandom.nextInt(10) < 3,
+          isRetrograde:
+              planet != 'Sun' &&
+              planet != 'Moon' &&
+              seededRandom.nextInt(10) < 3,
         );
       }
     }
@@ -1206,7 +1407,11 @@ class ReturnChartService {
   }
 
   /// Calculate Lunar Return chart
-  static Chart calculateLunarReturn(NatalChart natal, DateTime month, String location) {
+  static Chart calculateLunarReturn(
+    NatalChart natal,
+    DateTime month,
+    String location,
+  ) {
     final natalMoon = natal.planets['Moon']!;
     final seed = month.year * 10000 + month.month * 100;
     final seededRandom = Random(seed);
@@ -1216,7 +1421,18 @@ class ReturnChartService {
     final returnDate = DateTime(month.year, month.month, dayInMonth);
 
     final planets = <String, PlanetPosition>{};
-    final planetNames = ['Sun', 'Moon', 'Mercury', 'Venus', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune', 'Pluto'];
+    final planetNames = [
+      'Sun',
+      'Moon',
+      'Mercury',
+      'Venus',
+      'Mars',
+      'Jupiter',
+      'Saturn',
+      'Uranus',
+      'Neptune',
+      'Pluto',
+    ];
 
     for (final planet in planetNames) {
       if (planet == 'Moon') {
@@ -1228,7 +1444,10 @@ class ReturnChartService {
           sign: sign,
           degree: seededRandom.nextDouble() * 30,
           house: seededRandom.nextInt(12) + 1,
-          isRetrograde: planet != 'Sun' && planet != 'Moon' && seededRandom.nextInt(10) < 3,
+          isRetrograde:
+              planet != 'Sun' &&
+              planet != 'Moon' &&
+              seededRandom.nextInt(10) < 3,
         );
       }
     }
@@ -1260,15 +1479,24 @@ class ReturnChartService {
 
   /// Interpret Solar Return
   static String interpretSolarReturn(Chart solarReturn) {
-    return _getSolarReturnInterpretation(solarReturn.ascendant, solarReturn.planets);
+    return _getSolarReturnInterpretation(
+      solarReturn.ascendant,
+      solarReturn.planets,
+    );
   }
 
   /// Interpret Lunar Return
   static String interpretLunarReturn(Chart lunarReturn) {
-    return _getLunarReturnInterpretation(lunarReturn.ascendant, lunarReturn.planets);
+    return _getLunarReturnInterpretation(
+      lunarReturn.ascendant,
+      lunarReturn.planets,
+    );
   }
 
-  static List<ChartAspect> _generateChartAspects(Map<String, PlanetPosition> planets, Random seededRandom) {
+  static List<ChartAspect> _generateChartAspects(
+    Map<String, PlanetPosition> planets,
+    Random seededRandom,
+  ) {
     final aspects = <ChartAspect>[];
     final planetList = planets.keys.toList();
 
@@ -1301,13 +1529,15 @@ class ReturnChartService {
         }
 
         if (type != null) {
-          aspects.add(ChartAspect(
-            planet1: planetList[i],
-            planet2: planetList[j],
-            type: type,
-            orb: seededRandom.nextDouble() * 5,
-            isApplying: seededRandom.nextBool(),
-          ));
+          aspects.add(
+            ChartAspect(
+              planet1: planetList[i],
+              planet2: planetList[j],
+              type: type,
+              orb: seededRandom.nextDouble() * 5,
+              isApplying: seededRandom.nextBool(),
+            ),
+          );
         }
       }
     }
@@ -1315,7 +1545,10 @@ class ReturnChartService {
     return aspects;
   }
 
-  static String _getSolarReturnInterpretation(ZodiacSign ascendant, Map<String, PlanetPosition> planets) {
+  static String _getSolarReturnInterpretation(
+    ZodiacSign ascendant,
+    Map<String, PlanetPosition> planets,
+  ) {
     final sunHouse = planets['Sun']?.house ?? 1;
     final moonSign = planets['Moon']?.sign.nameTr ?? 'bilinmeyen';
 
@@ -1325,7 +1558,10 @@ class ReturnChartService {
         'Ay $moonSign burcunda, duygusal ihtiyaclariniz bu burç enerjileriyle sekilleniyor.';
   }
 
-  static String _getLunarReturnInterpretation(ZodiacSign ascendant, Map<String, PlanetPosition> planets) {
+  static String _getLunarReturnInterpretation(
+    ZodiacSign ascendant,
+    Map<String, PlanetPosition> planets,
+  ) {
     final moonHouse = planets['Moon']?.house ?? 1;
     final sunSign = planets['Sun']?.sign.nameTr ?? 'bilinmeyen';
 
@@ -1360,7 +1596,8 @@ class TimingService {
         final challenging = <String>[];
 
         if (!isVoid) favorable.add('Ay bosaltmada degil');
-        if (isVoid) challenging.add('Ay boslukta - yeni baslangiclari erteleyin');
+        if (isVoid)
+          challenging.add('Ay boslukta - yeni baslangiclari erteleyin');
 
         if (moonPhase.phase <= 4) {
           favorable.add('Buyuyen Ay - baslangiclara uygun');
@@ -1368,17 +1605,19 @@ class TimingService {
           favorable.add('Kuculen Ay - tamamlama ve birakma icin uygun');
         }
 
-        windows.add(ElectionalWindow(
-          startTime: current,
-          endTime: current.add(const Duration(hours: 4)),
-          score: score,
-          moonPhase: moonPhase,
-          moonSign: ZodiacSign.values[moonSign.index],
-          isVoidMoon: isVoid,
-          favorableFactors: favorable,
-          challengingFactors: challenging,
-          recommendation: _getElectionalRecommendation(query.purpose, score),
-        ));
+        windows.add(
+          ElectionalWindow(
+            startTime: current,
+            endTime: current.add(const Duration(hours: 4)),
+            score: score,
+            moonPhase: moonPhase,
+            moonSign: ZodiacSign.values[moonSign.index],
+            isVoidMoon: isVoid,
+            favorableFactors: favorable,
+            challengingFactors: challenging,
+            recommendation: _getElectionalRecommendation(query.purpose, score),
+          ),
+        );
       }
 
       current = current.add(const Duration(hours: 6));
@@ -1389,14 +1628,26 @@ class TimingService {
   }
 
   /// Get planetary hour
-  static int getPlanetaryHour(DateTime dateTime, double latitude, double longitude) {
+  static int getPlanetaryHour(
+    DateTime dateTime,
+    double latitude,
+    double longitude,
+  ) {
     // Simplified planetary hour calculation
     // Chaldean order: Saturn, Jupiter, Mars, Sun, Venus, Mercury, Moon
     final dayOfWeek = dateTime.weekday; // 1 = Monday
     final hour = dateTime.hour;
 
     // Each day starts with its ruling planet at sunrise
-    final dayRulers = [1, 2, 3, 4, 5, 6, 0]; // Moon, Mars, Mercury, Jupiter, Venus, Saturn, Sun
+    final dayRulers = [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      0,
+    ]; // Moon, Mars, Mercury, Jupiter, Venus, Saturn, Sun
     final startPlanet = dayRulers[(dayOfWeek - 1) % 7];
 
     // Cycle through planets (reverse Chaldean order for hours)
@@ -1406,8 +1657,24 @@ class TimingService {
 
   /// Get planetary day
   static String getPlanetaryDay(DateTime date) {
-    final rulers = ['Ay', 'Mars', 'Merkur', 'Jupiter', 'Venus', 'Saturn', 'Gunes'];
-    final dayNames = ['Pazartesi', 'Sali', 'Carsamba', 'Persembe', 'Cuma', 'Cumartesi', 'Pazar'];
+    final rulers = [
+      'Ay',
+      'Mars',
+      'Merkur',
+      'Jupiter',
+      'Venus',
+      'Saturn',
+      'Gunes',
+    ];
+    final dayNames = [
+      'Pazartesi',
+      'Sali',
+      'Carsamba',
+      'Persembe',
+      'Cuma',
+      'Cumartesi',
+      'Pazar',
+    ];
     final dayIndex = (date.weekday - 1) % 7;
     return '${dayNames[dayIndex]} - ${rulers[dayIndex]} gunu';
   }
@@ -1448,13 +1715,15 @@ class TimingService {
 
     // Moon phase bonus
     final moonPhase = getMoonPhase(date);
-    if (query.preferredMoonPhase != null && moonPhase.phase == query.preferredMoonPhase) {
+    if (query.preferredMoonPhase != null &&
+        moonPhase.phase == query.preferredMoonPhase) {
       score += 15;
     }
 
     // Moon sign bonus
     final moonSign = getMoonSign(date);
-    if (query.preferredMoonSign != null && moonSign == query.preferredMoonSign) {
+    if (query.preferredMoonSign != null &&
+        moonSign == query.preferredMoonSign) {
       score += 10;
     }
 
@@ -1542,12 +1811,22 @@ class HouseService {
     final y2 = y + 4800 - a;
     final m2 = m + 12 * a - 3;
 
-    return d + ((153 * m2 + 2) ~/ 5) + 365 * y2 + (y2 ~/ 4) - (y2 ~/ 100) + (y2 ~/ 400) - 32045;
+    return d +
+        ((153 * m2 + 2) ~/ 5) +
+        365 * y2 +
+        (y2 ~/ 4) -
+        (y2 ~/ 100) +
+        (y2 ~/ 400) -
+        32045;
   }
 
   static double _getGMST(double jd) {
     final t = (jd - 2451545.0) / 36525.0;
-    var gmst = 280.46061837 + 360.98564736629 * (jd - 2451545.0) + 0.000387933 * t * t - t * t * t / 38710000.0;
+    var gmst =
+        280.46061837 +
+        360.98564736629 * (jd - 2451545.0) +
+        0.000387933 * t * t -
+        t * t * t / 38710000.0;
     gmst = gmst % 360;
     if (gmst < 0) gmst += 360;
     return gmst / 15.0;
@@ -1580,7 +1859,11 @@ class HouseService {
     }
   }
 
-  static void _calculatePlacidusHouses(Map<int, double> houses, double ramc, double lat) {
+  static void _calculatePlacidusHouses(
+    Map<int, double> houses,
+    double ramc,
+    double lat,
+  ) {
     // Simplified Placidus - uses time-based house division
     final asc = houses[1]!;
     final mc = houses[10]!;
@@ -1597,7 +1880,11 @@ class HouseService {
     }
   }
 
-  static void _calculateKochHouses(Map<int, double> houses, double ramc, double lat) {
+  static void _calculateKochHouses(
+    Map<int, double> houses,
+    double ramc,
+    double lat,
+  ) {
     // Koch uses birthplace-based calculation
     _calculatePlacidusHouses(houses, ramc, lat);
     // Adjust for Koch specifics (simplified)
@@ -1605,7 +1892,11 @@ class HouseService {
     houses[3] = (houses[3]! + 2) % 360;
   }
 
-  static void _calculateCampanusHouses(Map<int, double> houses, double ramc, double lat) {
+  static void _calculateCampanusHouses(
+    Map<int, double> houses,
+    double ramc,
+    double lat,
+  ) {
     // Campanus divides the prime vertical
     final asc = houses[1]!;
     for (int i = 1; i <= 12; i++) {
@@ -1613,7 +1904,11 @@ class HouseService {
     }
   }
 
-  static void _calculateRegiomontanusHouses(Map<int, double> houses, double ramc, double lat) {
+  static void _calculateRegiomontanusHouses(
+    Map<int, double> houses,
+    double ramc,
+    double lat,
+  ) {
     // Regiomontanus divides the equator
     final asc = houses[1]!;
     for (int i = 1; i <= 12; i++) {
@@ -1621,7 +1916,11 @@ class HouseService {
     }
   }
 
-  static void _calculatePorphyryHouses(Map<int, double> houses, double asc, double mc) {
+  static void _calculatePorphyryHouses(
+    Map<int, double> houses,
+    double asc,
+    double mc,
+  ) {
     // Porphyry trisects the quadrants
     final quadrant1 = (mc - asc + 360) % 360;
     final quadrant2 = 180 - quadrant1;
@@ -1650,7 +1949,10 @@ class HouseService {
 /// Aspect calculation service
 class AspectService {
   /// Calculate all natal aspects
-  static List<Aspect> calculateNatalAspects(NatalChart chart, {double orb = 8.0}) {
+  static List<Aspect> calculateNatalAspects(
+    NatalChart chart, {
+    double orb = 8.0,
+  }) {
     final aspects = <Aspect>[];
     final planets = chart.planets.entries.toList();
 
@@ -1663,15 +1965,22 @@ class AspectService {
         final aspect = _findAspect(diff, orb);
 
         if (aspect != null) {
-          aspects.add(Aspect(
-            planet1: p1.key,
-            planet2: p2.key,
-            type: aspect['type'] as AspectType,
-            orb: aspect['orb'] as double,
-            isApplying: true, // Would need velocity data for accurate calculation
-            exactOrb: aspect['orb'] as double,
-            interpretation: _getAspectInterpretation(p1.key, p2.key, aspect['type'] as AspectType),
-          ));
+          aspects.add(
+            Aspect(
+              planet1: p1.key,
+              planet2: p2.key,
+              type: aspect['type'] as AspectType,
+              orb: aspect['orb'] as double,
+              isApplying:
+                  true, // Would need velocity data for accurate calculation
+              exactOrb: aspect['orb'] as double,
+              interpretation: _getAspectInterpretation(
+                p1.key,
+                p2.key,
+                aspect['type'] as AspectType,
+              ),
+            ),
+          );
         }
       }
     }
@@ -1686,15 +1995,17 @@ class AspectService {
 
     for (final transit in transits) {
       if (transit.aspectType != null) {
-        aspects.add(Aspect(
-          planet1: 'Transit ${transit.transitingPlanet}',
-          planet2: 'Natal ${transit.natalPlanet}',
-          type: transit.aspectType!,
-          orb: transit.orb,
-          isApplying: true,
-          exactOrb: transit.orb,
-          interpretation: transit.interpretation,
-        ));
+        aspects.add(
+          Aspect(
+            planet1: 'Transit ${transit.transitingPlanet}',
+            planet2: 'Natal ${transit.natalPlanet}',
+            type: transit.aspectType!,
+            orb: transit.orb,
+            isApplying: true,
+            exactOrb: transit.orb,
+            interpretation: transit.interpretation,
+          ),
+        );
       }
     }
 
@@ -1744,7 +2055,11 @@ class AspectService {
     return null;
   }
 
-  static String _getAspectInterpretation(String p1, String p2, AspectType type) {
+  static String _getAspectInterpretation(
+    String p1,
+    String p2,
+    AspectType type,
+  ) {
     final harmonious = type == AspectType.trine || type == AspectType.sextile;
     final conjunction = type == AspectType.conjunction;
 
@@ -1775,17 +2090,22 @@ class AspectService {
           final involved = planets1.union(planets2).toList();
           if (involved.length == 3) {
             // Check if third pair also has trine
-            final hasTrine = trines.any((t) =>
-                (t.planet1 == involved[0] && t.planet2 == involved[2]) ||
-                (t.planet1 == involved[2] && t.planet2 == involved[0]));
+            final hasTrine = trines.any(
+              (t) =>
+                  (t.planet1 == involved[0] && t.planet2 == involved[2]) ||
+                  (t.planet1 == involved[2] && t.planet2 == involved[0]),
+            );
 
             if (hasTrine) {
-              patterns.add(AspectPattern(
-                type: AspectPatternType.grandTrine,
-                involvedPlanets: involved,
-                focusPlanet: involved[0],
-                interpretation: 'Buyuk Ucgen: ${involved.join(", ")}. Dogal yetenek ve kolay enerji akisi.',
-              ));
+              patterns.add(
+                AspectPattern(
+                  type: AspectPatternType.grandTrine,
+                  involvedPlanets: involved,
+                  focusPlanet: involved[0],
+                  interpretation:
+                      'Buyuk Ucgen: ${involved.join(", ")}. Dogal yetenek ve kolay enerji akisi.',
+                ),
+              );
             }
           }
         }
@@ -1798,7 +2118,9 @@ class AspectService {
     List<Aspect> aspects,
     List<AspectPattern> patterns,
   ) {
-    final oppositions = aspects.where((a) => a.type == AspectType.opposition).toList();
+    final oppositions = aspects
+        .where((a) => a.type == AspectType.opposition)
+        .toList();
     final squares = aspects.where((a) => a.type == AspectType.square).toList();
 
     for (final opp in oppositions) {
@@ -1814,14 +2136,19 @@ class AspectService {
           final apex1 = sq1Planets.difference(oppPlanets);
           final apex2 = sq2Planets.difference(oppPlanets);
 
-          if (apex1.length == 1 && apex2.length == 1 && apex1.first == apex2.first) {
+          if (apex1.length == 1 &&
+              apex2.length == 1 &&
+              apex1.first == apex2.first) {
             final involved = [opp.planet1, opp.planet2, apex1.first];
-            patterns.add(AspectPattern(
-              type: AspectPatternType.tSquare,
-              involvedPlanets: involved,
-              focusPlanet: apex1.first,
-              interpretation: 'T-Kare: ${involved.join(", ")}. Apex: ${apex1.first}. Dinamik gerilim ve motivasyon.',
-            ));
+            patterns.add(
+              AspectPattern(
+                type: AspectPatternType.tSquare,
+                involvedPlanets: involved,
+                focusPlanet: apex1.first,
+                interpretation:
+                    'T-Kare: ${involved.join(", ")}. Apex: ${apex1.first}. Dinamik gerilim ve motivasyon.',
+              ),
+            );
           }
         }
       }
@@ -1833,7 +2160,9 @@ class AspectService {
     List<Aspect> aspects,
     List<AspectPattern> patterns,
   ) {
-    final oppositions = aspects.where((a) => a.type == AspectType.opposition).toList();
+    final oppositions = aspects
+        .where((a) => a.type == AspectType.opposition)
+        .toList();
 
     if (oppositions.length >= 2) {
       for (int i = 0; i < oppositions.length; i++) {
@@ -1844,12 +2173,15 @@ class AspectService {
           if (opp1Planets.intersection(opp2Planets).isEmpty) {
             final involved = opp1Planets.union(opp2Planets).toList();
             if (involved.length == 4) {
-              patterns.add(AspectPattern(
-                type: AspectPatternType.grandCross,
-                involvedPlanets: involved,
-                focusPlanet: involved[0],
-                interpretation: 'Buyuk Hac: ${involved.join(", ")}. Yogun gerilim ama buyuk guc potansiyeli.',
-              ));
+              patterns.add(
+                AspectPattern(
+                  type: AspectPatternType.grandCross,
+                  involvedPlanets: involved,
+                  focusPlanet: involved[0],
+                  interpretation:
+                      'Buyuk Hac: ${involved.join(", ")}. Yogun gerilim ama buyuk guc potansiyeli.',
+                ),
+              );
             }
           }
         }
@@ -1864,15 +2196,21 @@ class AspectService {
   ) {
     // Yod requires quincunx aspects (150 degrees) which we haven't defined
     // For now, add placeholder logic
-    final sextiles = aspects.where((a) => a.type == AspectType.sextile).toList();
+    final sextiles = aspects
+        .where((a) => a.type == AspectType.sextile)
+        .toList();
 
     for (final sextile in sextiles) {
       // Would need to check for quincunx to third planet
       // Simplified: randomly identify potential Yods based on planet positions
       if (planets.length >= 3) {
-        final involved = [sextile.planet1, sextile.planet2, planets.keys.firstWhere(
-          (p) => p != sextile.planet1 && p != sextile.planet2,
-        )];
+        final involved = [
+          sextile.planet1,
+          sextile.planet2,
+          planets.keys.firstWhere(
+            (p) => p != sextile.planet1 && p != sextile.planet2,
+          ),
+        ];
 
         // Only add if configuration suggests Yod (simplified check)
         final p1Sign = planets[sextile.planet1]?.sign.index ?? 0;
@@ -1880,12 +2218,15 @@ class AspectService {
         final p3Sign = planets[involved[2]]?.sign.index ?? 0;
 
         if ((p3Sign - p1Sign).abs() == 5 || (p3Sign - p2Sign).abs() == 5) {
-          patterns.add(AspectPattern(
-            type: AspectPatternType.yod,
-            involvedPlanets: involved,
-            focusPlanet: involved[2],
-            interpretation: 'Yod (Tanri Parmagi): ${involved.join(", ")}. Ozel kader veya misyon.',
-          ));
+          patterns.add(
+            AspectPattern(
+              type: AspectPatternType.yod,
+              involvedPlanets: involved,
+              focusPlanet: involved[2],
+              interpretation:
+                  'Yod (Tanri Parmagi): ${involved.join(", ")}. Ozel kader veya misyon.',
+            ),
+          );
           break; // Only report first Yod found
         }
       }
@@ -1906,13 +2247,16 @@ class AspectService {
 
     for (final entry in signGroups.entries) {
       if (entry.value.length >= 3) {
-        patterns.add(AspectPattern(
-          type: AspectPatternType.stellium,
-          involvedPlanets: entry.value,
-          focusPlanet: entry.value.first,
-          interpretation: 'Stellium ${entry.key.nameTr} burcunda: ${entry.value.join(", ")}. '
-              'Bu alanda yogunlasmis enerji ve odak.',
-        ));
+        patterns.add(
+          AspectPattern(
+            type: AspectPatternType.stellium,
+            involvedPlanets: entry.value,
+            focusPlanet: entry.value.first,
+            interpretation:
+                'Stellium ${entry.key.nameTr} burcunda: ${entry.value.join(", ")}. '
+                'Bu alanda yogunlasmis enerji ve odak.',
+          ),
+        );
       }
     }
   }
@@ -1928,7 +2272,8 @@ class DignityService {
         sign: sign,
         type: DignityType.domicile,
         score: 5,
-        description: '$planet ${sign.nameTr} burcunda kendi evinde. Guclu ve rahat.',
+        description:
+            '$planet ${sign.nameTr} burcunda kendi evinde. Guclu ve rahat.',
       );
     }
     if (isExalted(planet, sign)) {
@@ -1937,7 +2282,8 @@ class DignityService {
         sign: sign,
         type: DignityType.exaltation,
         score: 4,
-        description: '$planet ${sign.nameTr} burcunda yukselmis. En iyi ifadesinde.',
+        description:
+            '$planet ${sign.nameTr} burcunda yukselmis. En iyi ifadesinde.',
       );
     }
     if (isInDetriment(planet, sign)) {
@@ -1964,7 +2310,8 @@ class DignityService {
       sign: sign,
       type: DignityType.peregrine,
       score: -5,
-      description: '$planet ${sign.nameTr} burcunda yabanci. Ozel bir guc veya zafiyet yok.',
+      description:
+          '$planet ${sign.nameTr} burcunda yabanci. Ozel bir guc veya zafiyet yok.',
     );
   }
 
@@ -2059,7 +2406,8 @@ class FixedStarService {
       sign: ZodiacSign.gemini,
       magnitude: 0.85,
       nature: 'Mars',
-      interpretation: 'Basari ve servet getirir ama tehlikelerle birliktedir. Liderlik ve cesaret.',
+      interpretation:
+          'Basari ve servet getirir ama tehlikelerle birliktedir. Liderlik ve cesaret.',
       isBenefic: true,
     ),
     FixedStar(
@@ -2069,7 +2417,8 @@ class FixedStarService {
       sign: ZodiacSign.virgo,
       magnitude: 1.35,
       nature: 'Mars-Jupiter',
-      interpretation: 'Krallik yildizi. Basari, soyluluk ve guc. Ama gurur dususe neden olabilir.',
+      interpretation:
+          'Krallik yildizi. Basari, soyluluk ve guc. Ama gurur dususe neden olabilir.',
       isBenefic: true,
     ),
     FixedStar(
@@ -2079,7 +2428,8 @@ class FixedStarService {
       sign: ZodiacSign.sagittarius,
       magnitude: 1.09,
       nature: 'Mars-Jupiter',
-      interpretation: 'Savascinin yildizi. Cesaret ve basari ama siddet tehlikesi.',
+      interpretation:
+          'Savascinin yildizi. Cesaret ve basari ama siddet tehlikesi.',
       isBenefic: false,
     ),
     FixedStar(
@@ -2089,7 +2439,8 @@ class FixedStarService {
       sign: ZodiacSign.pisces,
       magnitude: 1.16,
       nature: 'Venus-Mercury',
-      interpretation: 'Ruyalar ve idealler. Mistik yetenekler. Sohret ama ayaklar yerde olmali.',
+      interpretation:
+          'Ruyalar ve idealler. Mistik yetenekler. Sohret ama ayaklar yerde olmali.',
       isBenefic: true,
     ),
     FixedStar(
@@ -2099,7 +2450,8 @@ class FixedStarService {
       sign: ZodiacSign.taurus,
       magnitude: 2.12,
       nature: 'Saturn-Jupiter',
-      interpretation: 'Iblisin basi. Tehlikeli ama guclu donusum enerjisi. Dikkatli kullanilmali.',
+      interpretation:
+          'Iblisin basi. Tehlikeli ama guclu donusum enerjisi. Dikkatli kullanilmali.',
       isBenefic: false,
     ),
     FixedStar(
@@ -2109,7 +2461,8 @@ class FixedStarService {
       sign: ZodiacSign.libra,
       magnitude: 0.98,
       nature: 'Venus-Mars',
-      interpretation: 'Basak\'in yildizi. Bereket, basari ve sohret. En faydali yildizlardan biri.',
+      interpretation:
+          'Basak\'in yildizi. Bereket, basari ve sohret. En faydali yildizlardan biri.',
       isBenefic: true,
     ),
     FixedStar(
@@ -2119,7 +2472,8 @@ class FixedStarService {
       sign: ZodiacSign.cancer,
       magnitude: -1.46,
       nature: 'Jupiter-Mars',
-      interpretation: 'En parlak yildiz. Sohret, servet ve gurur. Guclu koruma ama asiri iddiacilik tehlikesi.',
+      interpretation:
+          'En parlak yildiz. Sohret, servet ve gurur. Guclu koruma ama asiri iddiacilik tehlikesi.',
       isBenefic: true,
     ),
     FixedStar(
@@ -2129,7 +2483,8 @@ class FixedStarService {
       sign: ZodiacSign.capricorn,
       magnitude: 0.03,
       nature: 'Venus-Mercury',
-      interpretation: 'Muzik ve sanat yetenegi. Cekicilik ve karizmayla basari.',
+      interpretation:
+          'Muzik ve sanat yetenegi. Cekicilik ve karizmayla basari.',
       isBenefic: true,
     ),
   ];
@@ -2204,7 +2559,8 @@ class ArabicPartsService {
       longitude: fortuneLong,
       sign: ZodiacSign.values[(fortuneLong ~/ 30) % 12],
       house: ((fortuneLong - asc + 360) ~/ 30) % 12 + 1,
-      interpretation: 'Sans ve maddi refah noktasi. Bu nokta nerede ise orada sans gelir.',
+      interpretation:
+          'Sans ve maddi refah noktasi. Bu nokta nerede ise orada sans gelir.',
     );
 
     // Part of Spirit
@@ -2228,7 +2584,8 @@ class ArabicPartsService {
       longitude: loveLong,
       sign: ZodiacSign.values[(loveLong ~/ 30) % 12],
       house: ((loveLong - asc + 360) ~/ 30) % 12 + 1,
-      interpretation: 'Romantik ask ve cekicilik noktasi. Ask hayatinin temalari.',
+      interpretation:
+          'Romantik ask ve cekicilik noktasi. Ask hayatinin temalari.',
     );
 
     // Part of Marriage
@@ -2240,7 +2597,8 @@ class ArabicPartsService {
       longitude: marriageLong,
       sign: ZodiacSign.values[(marriageLong ~/ 30) % 12],
       house: ((marriageLong - asc + 360) ~/ 30) % 12 + 1,
-      interpretation: 'Evlilik ve baglilik noktasi. Uzun sureli iliski potansiyeli.',
+      interpretation:
+          'Evlilik ve baglilik noktasi. Uzun sureli iliski potansiyeli.',
     );
 
     // Part of Commerce
@@ -2288,7 +2646,8 @@ class ArabicPartsService {
       longitude: passionLong,
       sign: ZodiacSign.values[(passionLong ~/ 30) % 12],
       house: ((passionLong - asc + 360) ~/ 30) % 12 + 1,
-      interpretation: 'Tutku ve enerji noktasi. Motivasyon ve durtulerin kaynagi.',
+      interpretation:
+          'Tutku ve enerji noktasi. Motivasyon ve durtulerin kaynagi.',
     );
 
     return parts;
@@ -2308,7 +2667,11 @@ class AdvancedAstrologyService {
     required ZodiacSign person1Moon,
     required ZodiacSign person2Moon,
   }) {
-    final seed = person1Sun.index * 100 + person2Sun.index * 10 + person1Moon.index + person2Moon.index;
+    final seed =
+        person1Sun.index * 100 +
+        person2Sun.index * 10 +
+        person1Moon.index +
+        person2Moon.index;
     final seededRandom = Random(seed);
 
     // Calculate composite positions (midpoint method)
@@ -2317,11 +2680,14 @@ class AdvancedAstrologyService {
     final compositeSun = _getMidpointSign(person1Sun, person2Sun);
     final compositeMoon = _getMidpointSign(person1Moon, person2Moon);
     // Composite Ascendant: derived from midpoint of Sun signs + 3 (traditional offset)
-    final compositeAsc = ZodiacSign.values[((person1Sun.index + person2Sun.index) ~/ 2 + 3) % 12];
+    final compositeAsc = ZodiacSign
+        .values[((person1Sun.index + person2Sun.index) ~/ 2 + 3) % 12];
     // Composite Venus: derived from Moon midpoint + 2
-    final compositeVenus = ZodiacSign.values[((person1Moon.index + person2Moon.index) ~/ 2 + 2) % 12];
+    final compositeVenus = ZodiacSign
+        .values[((person1Moon.index + person2Moon.index) ~/ 2 + 2) % 12];
     // Composite Mars: derived from Sun midpoint + 5
-    final compositeMars = ZodiacSign.values[((person1Sun.index + person2Sun.index) ~/ 2 + 5) % 12];
+    final compositeMars = ZodiacSign
+        .values[((person1Sun.index + person2Sun.index) ~/ 2 + 5) % 12];
 
     final themes = _getRelationshipThemes(compositeSun, compositeMoon);
     final emotions = _getEmotionalDynamics(compositeMoon);
@@ -2334,7 +2700,12 @@ class AdvancedAstrologyService {
     final aspects = _generateCompositeAspects(seededRandom);
 
     // Calculate compatibility
-    final compatibility = _calculateCompatibilityScore(person1Sun, person2Sun, person1Moon, person2Moon);
+    final compatibility = _calculateCompatibilityScore(
+      person1Sun,
+      person2Sun,
+      person1Moon,
+      person2Moon,
+    );
 
     return CompositeChart(
       person1Name: person1Name,
@@ -2346,7 +2717,8 @@ class AdvancedAstrologyService {
       compositeMars: compositeMars,
       relationshipTheme: themes[seededRandom.nextInt(themes.length)],
       emotionalDynamics: emotions[seededRandom.nextInt(emotions.length)],
-      communicationStyle: communication[seededRandom.nextInt(communication.length)],
+      communicationStyle:
+          communication[seededRandom.nextInt(communication.length)],
       challengesOverview: challenges[seededRandom.nextInt(challenges.length)],
       strengthsOverview: strengths[seededRandom.nextInt(strengths.length)],
       soulPurpose: purpose[seededRandom.nextInt(purpose.length)],
@@ -2360,7 +2732,12 @@ class AdvancedAstrologyService {
     return ZodiacSign.values[midpoint % 12];
   }
 
-  static int _calculateCompatibilityScore(ZodiacSign sun1, ZodiacSign sun2, ZodiacSign moon1, ZodiacSign moon2) {
+  static int _calculateCompatibilityScore(
+    ZodiacSign sun1,
+    ZodiacSign sun2,
+    ZodiacSign moon1,
+    ZodiacSign moon2,
+  ) {
     int score = 50;
 
     // Same element bonus
@@ -2382,14 +2759,28 @@ class AdvancedAstrologyService {
 
     // Deterministic variation based on sign indices for consistency
     // No randomness to ensure same input always produces same output
-    final variation = ((sun1.index * 3 + sun2.index * 7 + moon1.index * 5 + moon2.index * 11) % 11) - 5;
+    final variation =
+        ((sun1.index * 3 +
+                sun2.index * 7 +
+                moon1.index * 5 +
+                moon2.index * 11) %
+            11) -
+        5;
     score += variation;
 
     return score.clamp(0, 100);
   }
 
   static List<CompositeAspect> _generateCompositeAspects(Random seededRandom) {
-    final planets = ['Güneş', 'Ay', 'Merkür', 'Venüs', 'Mars', 'Jüpiter', 'Satürn'];
+    final planets = [
+      'Güneş',
+      'Ay',
+      'Merkür',
+      'Venüs',
+      'Mars',
+      'Jüpiter',
+      'Satürn',
+    ];
     final aspects = <CompositeAspect>[];
 
     for (int i = 0; i < 4; i++) {
@@ -2399,29 +2790,44 @@ class AdvancedAstrologyService {
         p2 = planets[seededRandom.nextInt(planets.length)];
       }
 
-      final type = AspectType.values[seededRandom.nextInt(AspectType.values.length)];
+      final type =
+          AspectType.values[seededRandom.nextInt(AspectType.values.length)];
       final interpretation = _getAspectInterpretation(p1, p2, type);
-      final isHarmonious = type == AspectType.trine || type == AspectType.sextile || type == AspectType.conjunction;
+      final isHarmonious =
+          type == AspectType.trine ||
+          type == AspectType.sextile ||
+          type == AspectType.conjunction;
 
-      aspects.add(CompositeAspect(
-        planet1: p1,
-        planet2: p2,
-        type: type,
-        interpretation: interpretation,
-        isHarmonious: isHarmonious,
-      ));
+      aspects.add(
+        CompositeAspect(
+          planet1: p1,
+          planet2: p2,
+          type: type,
+          interpretation: interpretation,
+          isHarmonious: isHarmonious,
+        ),
+      );
     }
 
     return aspects;
   }
 
-  static String _getAspectInterpretation(String p1, String p2, AspectType type) {
+  static String _getAspectInterpretation(
+    String p1,
+    String p2,
+    AspectType type,
+  ) {
     final interpretations = {
-      AspectType.conjunction: '$p1 ve $p2 enerjileri birleşik. Bu ilişki için güçlü ve yoğun bir bağlantı.',
-      AspectType.trine: '$p1 ile $p2 arasında uyumlu enerji akışı. Doğal ve kolay bir etkileşim.',
-      AspectType.sextile: '$p1 ve $p2 arasında fırsatlar yaratan pozitif açı. İşbirliği potansiyeli yüksek.',
-      AspectType.square: '$p1 ve $p2 arasında gerilim. Zorlayıcı ama büyüme potansiyeli taşıyan dinamik.',
-      AspectType.opposition: '$p1 ve $p2 karşıtlığı. Dengelenmesi gereken zıt kutuplar.',
+      AspectType.conjunction:
+          '$p1 ve $p2 enerjileri birleşik. Bu ilişki için güçlü ve yoğun bir bağlantı.',
+      AspectType.trine:
+          '$p1 ile $p2 arasında uyumlu enerji akışı. Doğal ve kolay bir etkileşim.',
+      AspectType.sextile:
+          '$p1 ve $p2 arasında fırsatlar yaratan pozitif açı. İşbirliği potansiyeli yüksek.',
+      AspectType.square:
+          '$p1 ve $p2 arasında gerilim. Zorlayıcı ama büyüme potansiyeli taşıyan dinamik.',
+      AspectType.opposition:
+          '$p1 ve $p2 karşıtlığı. Dengelenmesi gereken zıt kutuplar.',
     };
     return interpretations[type]!;
   }
@@ -2492,7 +2898,8 @@ class AdvancedAstrologyService {
     // Calculate nakshatra - deterministic based on sidereal moon
     // Each sign contains approximately 2.25 nakshatras (27 nakshatras / 12 signs)
     // Nakshatra index is derived from moon sign for consistency
-    final nakshatraIndex = ((siderealMoon.index * 27) ~/ 12 + (birthDate.day % 3)) % 27;
+    final nakshatraIndex =
+        ((siderealMoon.index * 27) ~/ 12 + (birthDate.day % 3)) % 27;
     final nakshatra = Nakshatra.all[nakshatraIndex];
 
     // Generate planet positions
@@ -2533,18 +2940,47 @@ class AdvancedAstrologyService {
     return ZodiacSign.values[correctedIndex];
   }
 
-  static List<VedicPlanetPosition> _generateVedicPlanetPositions(Random seededRandom, ZodiacSign ascendant) {
-    final planetNames = ['Güneş', 'Ay', 'Mars', 'Merkür', 'Jüpiter', 'Venüs', 'Satürn', 'Rahu', 'Ketu'];
+  static List<VedicPlanetPosition> _generateVedicPlanetPositions(
+    Random seededRandom,
+    ZodiacSign ascendant,
+  ) {
+    final planetNames = [
+      'Güneş',
+      'Ay',
+      'Mars',
+      'Merkür',
+      'Jüpiter',
+      'Venüs',
+      'Satürn',
+      'Rahu',
+      'Ketu',
+    ];
     final planets = <VedicPlanetPosition>[];
 
     // Traditional planetary offsets from ascendant for approximate Vedic positions
     // These create deterministic but varied positions based on ascendant
-    final planetOffsets = [0, 4, 7, 2, 9, 3, 10, 6, 0]; // Traditional approximate offsets
+    final planetOffsets = [
+      0,
+      4,
+      7,
+      2,
+      9,
+      3,
+      10,
+      6,
+      0,
+    ]; // Traditional approximate offsets
 
     for (int i = 0; i < planetNames.length; i++) {
       // Deterministic sign calculation: ascendant + offset + seed variation
-      final seedVariation = (seededRandom.nextInt(4) - 2); // Small deterministic variation
-      final sign = ZodiacSign.values[(ascendant.index + planetOffsets[i] + seedVariation + 12) % 12];
+      final seedVariation =
+          (seededRandom.nextInt(4) - 2); // Small deterministic variation
+      final sign =
+          ZodiacSign.values[(ascendant.index +
+                  planetOffsets[i] +
+                  seedVariation +
+                  12) %
+              12];
       final house = ((sign.index - ascendant.index + 12) % 12) + 1;
       // Deterministic retrograde based on planet type (outer planets more likely)
       final isRetro = i >= 4 && (seededRandom.nextInt(10) < 3);
@@ -2564,15 +3000,17 @@ class AdvancedAstrologyService {
         dignity = 'Kendi Evi';
       }
 
-      planets.add(VedicPlanetPosition(
-        planet: planetNames[i],
-        sign: sign,
-        house: house,
-        isRetrograde: isRetro,
-        isExalted: isExalted,
-        isDebilitated: isDebilitated,
-        dignity: dignity,
-      ));
+      planets.add(
+        VedicPlanetPosition(
+          planet: planetNames[i],
+          sign: sign,
+          house: house,
+          isRetrograde: isRetro,
+          isExalted: isExalted,
+          isDebilitated: isDebilitated,
+          dignity: dignity,
+        ),
+      );
     }
 
     return planets;
@@ -2638,7 +3076,10 @@ class AdvancedAstrologyService {
     return 'Kala Sarpa Yoga yok.';
   }
 
-  static List<String> _identifyYogas(List<VedicPlanetPosition> planets, Random seededRandom) {
+  static List<String> _identifyYogas(
+    List<VedicPlanetPosition> planets,
+    Random seededRandom,
+  ) {
     final possibleYogas = [
       'Gajakesari Yoga - Jüpiter Ay ile güçlü açıda',
       'Budhaditya Yoga - Merkür Güneş ile kavuşumda',
@@ -2662,15 +3103,29 @@ class AdvancedAstrologyService {
     return selected;
   }
 
-  static Map<String, String> _calculateDasha(Nakshatra nakshatra, DateTime birthDate) {
-    final lords = ['Ketu', 'Venus', 'Sun', 'Moon', 'Mars', 'Rahu', 'Jupiter', 'Saturn', 'Mercury'];
+  static Map<String, String> _calculateDasha(
+    Nakshatra nakshatra,
+    DateTime birthDate,
+  ) {
+    final lords = [
+      'Ketu',
+      'Venus',
+      'Sun',
+      'Moon',
+      'Mars',
+      'Rahu',
+      'Jupiter',
+      'Saturn',
+      'Mercury',
+    ];
     final nakshatraLord = nakshatra.lord;
     final lordIndex = lords.indexOf(nakshatraLord);
 
     final age = DateTime.now().difference(birthDate).inDays ~/ 365;
     final mahadashaIndex = (lordIndex + age ~/ 10) % lords.length;
     final antardashaIndex = (mahadashaIndex + age % 10) % lords.length;
-    final pratyantarIndex = (antardashaIndex + DateTime.now().month) % lords.length;
+    final pratyantarIndex =
+        (antardashaIndex + DateTime.now().month) % lords.length;
 
     return {
       'mahadasha': lords[mahadashaIndex],
@@ -2679,7 +3134,10 @@ class AdvancedAstrologyService {
     };
   }
 
-  static List<String> _getVedicPredictions(ZodiacSign moon, Nakshatra nakshatra) {
+  static List<String> _getVedicPredictions(
+    ZodiacSign moon,
+    Nakshatra nakshatra,
+  ) {
     return [
       '${moon.nameTr} Rasi\'nde Ay ile doğdunuz. ${nakshatra.name} nakshatra\'sının etkileri yaşamınızda belirgindir. ${nakshatra.lord} gezegeni sizin nakshatra lordunuz olarak önemli kararlarınızı yönlendiriyor.',
       'Vedik astrolojiye göre, ${nakshatra.deity} tanrıçasının kutsaması altındasınız. Bu, size ${nakshatra.symbol} sembolünün temsil ettiği nitelikleri veriyor.',
@@ -2697,7 +3155,8 @@ class AdvancedAstrologyService {
   }) {
     final now = DateTime.now();
     final age = now.difference(birthDate).inDays ~/ 365;
-    final seed = birthDate.year * 10000 + birthDate.month * 100 + birthDate.day + age;
+    final seed =
+        birthDate.year * 10000 + birthDate.month * 100 + birthDate.day + age;
     final seededRandom = Random(seed);
 
     // Calculate progressed positions
@@ -2714,18 +3173,30 @@ class AdvancedAstrologyService {
     final progressedAsc = ZodiacSign.values[progressedAscIndex];
 
     // Other planets
-    final progressedMercury = ZodiacSign.values[(natalSun.index + age ~/ 25) % 12];
-    final progressedVenus = ZodiacSign.values[(natalSun.index + age ~/ 20) % 12];
+    final progressedMercury =
+        ZodiacSign.values[(natalSun.index + age ~/ 25) % 12];
+    final progressedVenus =
+        ZodiacSign.values[(natalSun.index + age ~/ 20) % 12];
     final progressedMars = ZodiacSign.values[(natalSun.index + age ~/ 60) % 12];
 
     // Generate content
     final lifePhases = _getLifePhaseContent(age, progressedSun);
     final emotionalThemes = _getProgressedEmotionalTheme(progressedMoon);
     final identityContent = _getIdentityEvolution(natalSun, progressedSun);
-    final upcomingContent = _getUpcomingChanges(progressedSun, progressedMoon, seededRandom);
+    final upcomingContent = _getUpcomingChanges(
+      progressedSun,
+      progressedMoon,
+      seededRandom,
+    );
 
     // Generate aspects
-    final aspects = _generateProgressedAspects(natalSun, progressedSun, natalMoon, progressedMoon, seededRandom);
+    final aspects = _generateProgressedAspects(
+      natalSun,
+      progressedSun,
+      natalMoon,
+      progressedMoon,
+      seededRandom,
+    );
 
     // Generate events
     final events = _generateProgressionEvents(birthDate, age, seededRandom);
@@ -2741,9 +3212,12 @@ class AdvancedAstrologyService {
       progressedVenus: progressedVenus,
       progressedMars: progressedMars,
       currentLifePhase: lifePhases[seededRandom.nextInt(lifePhases.length)],
-      emotionalTheme: emotionalThemes[seededRandom.nextInt(emotionalThemes.length)],
-      identityEvolution: identityContent[seededRandom.nextInt(identityContent.length)],
-      upcomingChanges: upcomingContent[seededRandom.nextInt(upcomingContent.length)],
+      emotionalTheme:
+          emotionalThemes[seededRandom.nextInt(emotionalThemes.length)],
+      identityEvolution:
+          identityContent[seededRandom.nextInt(identityContent.length)],
+      upcomingChanges:
+          upcomingContent[seededRandom.nextInt(upcomingContent.length)],
       activeAspects: aspects,
       significantEvents: events,
     );
@@ -2765,7 +3239,10 @@ class AdvancedAstrologyService {
     ];
   }
 
-  static List<String> _getIdentityEvolution(ZodiacSign natal, ZodiacSign progressed) {
+  static List<String> _getIdentityEvolution(
+    ZodiacSign natal,
+    ZodiacSign progressed,
+  ) {
     if (natal == progressed) {
       return [
         'Güneşiniz hala doğum burcunuzda. Kimliğiniz istikrarlı bir evrimden geçiyor. Temel değerleriniz sağlamlaşıyor.',
@@ -2777,7 +3254,11 @@ class AdvancedAstrologyService {
     ];
   }
 
-  static List<String> _getUpcomingChanges(ZodiacSign sun, ZodiacSign moon, Random seededRandom) {
+  static List<String> _getUpcomingChanges(
+    ZodiacSign sun,
+    ZodiacSign moon,
+    Random seededRandom,
+  ) {
     return [
       'Önümüzdeki dönemde, Ay yeni bir burca ilerleyecek. Bu, duygusal önceliklerinizde bir kayma anlamına gelecek.',
       'İlerlemişş Güneş yeni bir açı oluşturmak üzere. Bu, önemli kararlar ve yeni başlangıçlar için bir işarettir.',
@@ -2794,55 +3275,76 @@ class AdvancedAstrologyService {
   ) {
     final aspects = <ProgressedAspect>[];
 
-    aspects.add(ProgressedAspect(
-      progressedPlanet: 'Güneş',
-      natalPlanet: 'Güneş',
-      type: AspectType.values[seededRandom.nextInt(AspectType.values.length)],
-      interpretation: 'İlerlemişş Güneş, natal Güneşinizle etkileşimde. Kimlik ve yaşam amacı temaları gündemde.',
-      exactDate: DateTime.now().add(Duration(days: seededRandom.nextInt(365))),
-      isApplying: seededRandom.nextBool(),
-    ));
+    aspects.add(
+      ProgressedAspect(
+        progressedPlanet: 'Güneş',
+        natalPlanet: 'Güneş',
+        type: AspectType.values[seededRandom.nextInt(AspectType.values.length)],
+        interpretation:
+            'İlerlemişş Güneş, natal Güneşinizle etkileşimde. Kimlik ve yaşam amacı temaları gündemde.',
+        exactDate: DateTime.now().add(
+          Duration(days: seededRandom.nextInt(365)),
+        ),
+        isApplying: seededRandom.nextBool(),
+      ),
+    );
 
-    aspects.add(ProgressedAspect(
-      progressedPlanet: 'Ay',
-      natalPlanet: 'Ay',
-      type: AspectType.values[seededRandom.nextInt(AspectType.values.length)],
-      interpretation: 'İlerlemişş Ay, natal Ayınızla arada. Duygusal dönem ve iç dünyanız ön planda.',
-      exactDate: DateTime.now().add(Duration(days: seededRandom.nextInt(90))),
-      isApplying: seededRandom.nextBool(),
-    ));
+    aspects.add(
+      ProgressedAspect(
+        progressedPlanet: 'Ay',
+        natalPlanet: 'Ay',
+        type: AspectType.values[seededRandom.nextInt(AspectType.values.length)],
+        interpretation:
+            'İlerlemişş Ay, natal Ayınızla arada. Duygusal dönem ve iç dünyanız ön planda.',
+        exactDate: DateTime.now().add(Duration(days: seededRandom.nextInt(90))),
+        isApplying: seededRandom.nextBool(),
+      ),
+    );
 
     return aspects;
   }
 
-  static List<ProgressionEvent> _generateProgressionEvents(DateTime birthDate, int age, Random seededRandom) {
+  static List<ProgressionEvent> _generateProgressionEvents(
+    DateTime birthDate,
+    int age,
+    Random seededRandom,
+  ) {
     final events = <ProgressionEvent>[];
     final now = DateTime.now();
 
     // Past events
     if (age > 30) {
-      events.add(ProgressionEvent(
-        date: birthDate.add(Duration(days: 30 * 365)),
-        event: 'İlerlemişş Güneş burç değişimi',
-        description: '30 yaşında ilerlemişş Güneşiniz yeni bir burca geçti. Kimliğinizde önemli bir evrim.',
-        type: ProgressionEventType.sunSignChange,
-      ));
+      events.add(
+        ProgressionEvent(
+          date: birthDate.add(Duration(days: 30 * 365)),
+          event: 'İlerlemişş Güneş burç değişimi',
+          description:
+              '30 yaşında ilerlemişş Güneşiniz yeni bir burca geçti. Kimliğinizde önemli bir evrim.',
+          type: ProgressionEventType.sunSignChange,
+        ),
+      );
     }
 
     // Upcoming events
-    events.add(ProgressionEvent(
-      date: now.add(Duration(days: seededRandom.nextInt(365) + 30)),
-      event: 'İlerlemişş Yeni Ay',
-      description: 'İlerlemişş Güneş ve Ay kavuşumu. Yeni başlangıçlar için güçlü bir zaman.',
-      type: ProgressionEventType.newMoon,
-    ));
+    events.add(
+      ProgressionEvent(
+        date: now.add(Duration(days: seededRandom.nextInt(365) + 30)),
+        event: 'İlerlemişş Yeni Ay',
+        description:
+            'İlerlemişş Güneş ve Ay kavuşumu. Yeni başlangıçlar için güçlü bir zaman.',
+        type: ProgressionEventType.newMoon,
+      ),
+    );
 
-    events.add(ProgressionEvent(
-      date: now.add(Duration(days: seededRandom.nextInt(180) + 10)),
-      event: 'Önemli Açı Aktivasyonu',
-      description: 'İlerlemişş bir gezegen natal haritanızda önemli bir noktayla açı yapıyor.',
-      type: ProgressionEventType.majorAspect,
-    ));
+    events.add(
+      ProgressionEvent(
+        date: now.add(Duration(days: seededRandom.nextInt(180) + 10)),
+        event: 'Önemli Açı Aktivasyonu',
+        description:
+            'İlerlemişş bir gezegen natal haritanızda önemli bir noktayla açı yapıyor.',
+        type: ProgressionEventType.majorAspect,
+      ),
+    );
 
     return events;
   }

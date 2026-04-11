@@ -68,7 +68,10 @@ class NumerologyService {
 
   /// Calculate Personal Month Number
   static int calculatePersonalMonthNumber(
-      DateTime birthDate, int currentYear, int currentMonth) {
+    DateTime birthDate,
+    int currentYear,
+    int currentMonth,
+  ) {
     final personalYear = calculatePersonalYearNumber(birthDate, currentYear);
     return _reduceToSingleDigitOrMaster(personalYear + currentMonth);
   }
@@ -95,8 +98,11 @@ class NumerologyService {
 
   /// Calculate Compatibility Score between two people
   static NumerologyCompatibility calculateCompatibility(
-      DateTime date1, DateTime date2,
-      {String? name1, String? name2}) {
+    DateTime date1,
+    DateTime date2, {
+    String? name1,
+    String? name2,
+  }) {
     final lifeP1 = calculateLifePathNumber(date1);
     final lifeP2 = calculateLifePathNumber(date2);
 
@@ -151,9 +157,32 @@ class NumerologyService {
 
   static int _letterToNumber(String letter) {
     const values = {
-      'A': 1, 'B': 2, 'C': 3, 'D': 4, 'E': 5, 'F': 6, 'G': 7, 'H': 8, 'I': 9,
-      'J': 1, 'K': 2, 'L': 3, 'M': 4, 'N': 5, 'O': 6, 'P': 7, 'Q': 8, 'R': 9,
-      'S': 1, 'T': 2, 'U': 3, 'V': 4, 'W': 5, 'X': 6, 'Y': 7, 'Z': 8,
+      'A': 1,
+      'B': 2,
+      'C': 3,
+      'D': 4,
+      'E': 5,
+      'F': 6,
+      'G': 7,
+      'H': 8,
+      'I': 9,
+      'J': 1,
+      'K': 2,
+      'L': 3,
+      'M': 4,
+      'N': 5,
+      'O': 6,
+      'P': 7,
+      'Q': 8,
+      'R': 9,
+      'S': 1,
+      'T': 2,
+      'U': 3,
+      'V': 4,
+      'W': 5,
+      'X': 6,
+      'Y': 7,
+      'Z': 8,
     };
     return values[letter] ?? 0;
   }
@@ -276,8 +305,10 @@ Ruhunuz öncü olmak için tasarlandı. Yeni yollar açmak, ilk adımı atmak, k
 
 Bu sayının golge yönü izolasyon ve kibir. "Ben en iyisini bilirim" düşüncesi yalnızlığa götürebilir. Dengenizi bulmak için işbirliğini ve alçakgönüllülüğü öğrenmeniz gerekir.
 ''',
-          careerPath: 'Girişimcilik, yöneticilik, inovasyon, kendi işini kurma, spor, sanat yönetmenliği',
-          spiritualLesson: 'Ego ile ruh arasındaki dengeyi bulmak. Liderliğin hizmet olduğunu anlamak.',
+          careerPath:
+              'Girişimcilik, yöneticilik, inovasyon, kendi işini kurma, spor, sanat yönetmenliği',
+          spiritualLesson:
+              'Ego ile ruh arasındaki dengeyi bulmak. Liderliğin hizmet olduğunu anlamak.',
           shadowSide: 'Bencillik, diktatörlük, eleştiriye kapalılık, yalnızlık',
           compatibleNumbers: '1, 3, 5, 7',
         );
@@ -300,9 +331,12 @@ Ruhunuz birleştirmek, dengelemek ve uyum yaratmak için tasarlandı. İlişkile
 
 Bu sayının gölge yönü aşırı bağımlılık ve kimlik kaybı. Başkalarını mutlu etme çabasında kendinizi kaybedebilirsiniz. Dengenizi bulmak için kendi sesinizi bulmanız gerekir.
 ''',
-          careerPath: 'Danışmanlık, terapi, insan kaynakları, diplomasi, müzakereci, arabuluculuk',
-          spiritualLesson: 'Kendi kimliğini koruyarak birleşmek. Sınır koymayı öğrenmek.',
-          shadowSide: 'Kararsızlık, çatışmadan kaçış, pasif-agresiflik, kimlik kaybı',
+          careerPath:
+              'Danışmanlık, terapi, insan kaynakları, diplomasi, müzakereci, arabuluculuk',
+          spiritualLesson:
+              'Kendi kimliğini koruyarak birleşmek. Sınır koymayı öğrenmek.',
+          shadowSide:
+              'Kararsızlık, çatışmadan kaçış, pasif-agresiflik, kimlik kaybı',
           compatibleNumbers: '2, 4, 6, 8',
         );
       case 3:
@@ -324,8 +358,10 @@ Ruhunuz yaratmak, iletmek ve neşe yaymak için tasarlandı. Kelimeler, renkler,
 
 Bu sayının gölge yönü dağınıklık ve yüzeysellik. Her şeye dokunup hiçbirini derinleştirmemek tehlikesi. Dengenizi bulmak için odaklanmayı öğrenmeniz gerekir.
 ''',
-          careerPath: 'Sanat, yazarlık, oyunculuk, müzik, pazarlama, iletişim, eğlence sektörü',
-          spiritualLesson: 'Yaratıcılığı disiplinle birleştirmek. İfadenin sorumluluğunu taşımak.',
+          careerPath:
+              'Sanat, yazarlık, oyunculuk, müzik, pazarlama, iletişim, eğlence sektörü',
+          spiritualLesson:
+              'Yaratıcılığı disiplinle birleştirmek. İfadenin sorumluluğunu taşımak.',
           shadowSide: 'Dağınıklık, yüzeysellik, dedikodu, enerjinin israfı',
           compatibleNumbers: '1, 3, 5, 9',
         );
@@ -348,8 +384,10 @@ Ruhunuz kalıcı yapılar kurmak için tasarlandı - fiziksel, duygusal veya zih
 
 Bu sayının gölge yönü katılık ve korkuya dayalı kontrol. Her şeyi planlamaya çalışmak spontanlığı öldürür. Dengenizi bulmak için esnekliği öğrenmeniz gerekir.
 ''',
-          careerPath: 'Mühendislik, mimarlık, muhasebe, proje yönetimi, bankacılık, emlak',
-          spiritualLesson: 'Güvenliğin içeriden geldiğini anlamak. Kontrolü bırakmayı öğrenmek.',
+          careerPath:
+              'Mühendislik, mimarlık, muhasebe, proje yönetimi, bankacılık, emlak',
+          spiritualLesson:
+              'Güvenliğin içeriden geldiğini anlamak. Kontrolü bırakmayı öğrenmek.',
           shadowSide: 'Katılık, işkoliklik, kontrol takıntısı, değişim korkusu',
           compatibleNumbers: '2, 4, 6, 8',
         );
@@ -372,9 +410,12 @@ Ruhunuz keşfetmek, deneyimlemek ve dönüşmek için tasarlandı. Rutin sizin i
 
 Bu sayının gölge yönü dağınıklık ve bağımlılık yapan arayış. Her şeyi deneyip hiçbirinde kalmamak. Dengenizi bulmak için taahhüt etmeyi öğrenmeniz gerekir.
 ''',
-          careerPath: 'Seyahat, satış, medya, pazarlama, girişimcilik, danışmanlık, eğlence',
-          spiritualLesson: 'Özgürlüğün taahhütle birlikte var olabileceğini anlamak.',
-          shadowSide: 'Bağlanma korkusu, aşırı risk alma, bağımlılıklar, huzursuzluk',
+          careerPath:
+              'Seyahat, satış, medya, pazarlama, girişimcilik, danışmanlık, eğlence',
+          spiritualLesson:
+              'Özgürlüğün taahhütle birlikte var olabileceğini anlamak.',
+          shadowSide:
+              'Bağlanma korkusu, aşırı risk alma, bağımlılıklar, huzursuzluk',
           compatibleNumbers: '1, 3, 5, 7, 9',
         );
       case 6:
@@ -396,9 +437,12 @@ Ruhunuz bakım vermek, iyileştirmek ve güzellik yaratmak için tasarlandı. Ai
 
 Bu sayının gölge yönü müdahaleci koruyuculuk ve mükemmeliyetçilik. Herkesi kurtarmaya çalışmak kendinizi ihmal etmenize yol açar. Dengenizi bulmak için sınır koymayı öğrenmeniz gerekir.
 ''',
-          careerPath: 'Sağlık, terapi, eğitim, iç mimari, güzellik, aile danışmanlığı, sosyal hizmet',
-          spiritualLesson: 'Başkalarına bakmadan önce kendine bakmayı öğrenmek.',
-          shadowSide: 'Müdahalecilik, fedakarlık kompleksi, mükemmeliyetçilik, eleştiri',
+          careerPath:
+              'Sağlık, terapi, eğitim, iç mimari, güzellik, aile danışmanlığı, sosyal hizmet',
+          spiritualLesson:
+              'Başkalarına bakmadan önce kendine bakmayı öğrenmek.',
+          shadowSide:
+              'Müdahalecilik, fedakarlık kompleksi, mükemmeliyetçilik, eleştiri',
           compatibleNumbers: '2, 4, 6, 9',
         );
       case 7:
@@ -420,8 +464,10 @@ Ruhunuz gerçeği aramak, derinliklere inmek ve bilgelik bulmak için tasarland�
 
 Bu sayının gölge yönü izolasyon ve şüphecilik. Kafanızdaki dünyada kaybolup gerçek dünyadan kopmak. Dengenizi bulmak için topraklanmayı öğrenmeniz gerekir.
 ''',
-          careerPath: 'Araştırma, akademi, psikoloji, felsefe, yazarlık, spiritüel öğretmenlik, analiz',
-          spiritualLesson: 'İçsel bilgeliği dış dünyayla paylaşmak. Yalnızlık ile izolasyon farkı.',
+          careerPath:
+              'Araştırma, akademi, psikoloji, felsefe, yazarlık, spiritüel öğretmenlik, analiz',
+          spiritualLesson:
+              'İçsel bilgeliği dış dünyayla paylaşmak. Yalnızlık ile izolasyon farkı.',
           shadowSide: 'Aşırı analiz, paranoya, duygusal kapalılık, kibir',
           compatibleNumbers: '1, 5, 7',
         );
@@ -444,8 +490,10 @@ Ruhunuz maddi dünyada ustalaşmak için tasarlandı. Para, güç ve etki sizin 
 
 Bu sayının gölge yönü açgözlülük ve güç sarhoşluğu. Başarı takıntısı, insani değerleri ezebilir. Dengenizi bulmak için gücün sorumluluğunu anlamanız gerekir.
 ''',
-          careerPath: 'Finans, yöneticilik, girişimcilik, bankacılık, hukuk, gayrimenkul',
-          spiritualLesson: 'Maddi ve manevi zenginliği dengelemek. Gücün hizmet için olduğunu anlamak.',
+          careerPath:
+              'Finans, yöneticilik, girişimcilik, bankacılık, hukuk, gayrimenkul',
+          spiritualLesson:
+              'Maddi ve manevi zenginliği dengelemek. Gücün hizmet için olduğunu anlamak.',
           shadowSide: 'Açgözlülük, güç sarhoşluğu, işkoliklik, duygusal körlük',
           compatibleNumbers: '2, 4, 8',
         );
@@ -454,8 +502,7 @@ Bu sayının gölge yönü açgözlülük ve güç sarhoşluğu. Başarı takın
           number: 9,
           title: 'Hümanist',
           keywords: 'Şefkat • Evrensellik • Bilgelik',
-          meaning:
-              'İdealist, şefkatli ve insanlık için çalışan bireylerdir.',
+          meaning: 'İdealist, şefkatli ve insanlık için çalışan bireylerdir.',
           strengths: 'Merhamet, evrensel sevgi, bilgelik, yaratıcılık',
           challenges: 'Hayal kırıklığı, bırakma zorluğu, dağılmışlık',
           loveStyle: 'Koşulsuz seven, fedakar, idealist',
@@ -468,9 +515,12 @@ Ruhunuz insanlığa hizmet etmek için tasarlandı. Bireysel çıkarların ötes
 
 Bu sayının gölge yönü hayal kırıklığı ve tükenmişlik. Dünyayı değiştirmeye çalışırken kendinizi tüketmek. Dengenizi bulmak için sınırlarınızı bilmeniz gerekir.
 ''',
-          careerPath: 'Hayırseverlik, sanat, terapi, uluslararası çalışma, aktivizm, öğretmenlik',
-          spiritualLesson: 'Bırakma ve kabul etmeyi öğrenmek. Dünyayı değiştirmek için önce kendini değiştirmek.',
-          shadowSide: 'Fanatizm, hayal kırıklığı, fedakarlık kompleksi, bitirme zorluğu',
+          careerPath:
+              'Hayırseverlik, sanat, terapi, uluslararası çalışma, aktivizm, öğretmenlik',
+          spiritualLesson:
+              'Bırakma ve kabul etmeyi öğrenmek. Dünyayı değiştirmek için önce kendini değiştirmek.',
+          shadowSide:
+              'Fanatizm, hayal kırıklığı, fedakarlık kompleksi, bitirme zorluğu',
           compatibleNumbers: '3, 5, 6, 9',
         );
       case 11:
@@ -492,9 +542,12 @@ Ruhunuz spiritüel ve maddi dünyalar arasında köprü olmak için tasarlandı.
 
 Bu sayının gölge yönü aşırı hassasiyet ve pratik dünyayla başa çıkamama. Vizyonlarınız büyük ama ayakları yere basmayı unutabilirsiniz. Dengenizi bulmak için topraklanmayı öğrenmeniz gerekir.
 ''',
-          careerPath: 'Spiritüel öğretmenlik, psikoloji, sanat, müzik, şifa, ilham verici konuşmacılık',
-          spiritualLesson: 'Vizyonu pratikle birleştirmek. Hassasiyeti güce dönüştürmek.',
-          shadowSide: 'Sinir gerginliği, gerçeklikten kopuş, aşırı idealizm, karar verememe',
+          careerPath:
+              'Spiritüel öğretmenlik, psikoloji, sanat, müzik, şifa, ilham verici konuşmacılık',
+          spiritualLesson:
+              'Vizyonu pratikle birleştirmek. Hassasiyeti güce dönüştürmek.',
+          shadowSide:
+              'Sinir gerginliği, gerçeklikten kopuş, aşırı idealizm, karar verememe',
           compatibleNumbers: '2, 11, 22',
         );
       case 22:
@@ -516,9 +569,12 @@ Ruhunuz dünyayı kalıcı şekilde değiştirmek için tasarlandı. Sadece rüy
 
 Bu sayının gölge yönü tükenmişlik ve aşırı baskı. Büyük hedefler büyük stres yaratır. Dengenizi bulmak için kendinize de şefkat göstermeniz gerekir.
 ''',
-          careerPath: 'Büyük ölçekli girişimcilik, mimari, uluslararası organizasyonlar, liderlik',
-          spiritualLesson: 'Büyük gücün büyük sorumluluk gerektirdiğini anlamak.',
-          shadowSide: 'Tükenmişlik, mükemmeliyetçilik, başkalarını ezmek, kendini tüketmek',
+          careerPath:
+              'Büyük ölçekli girişimcilik, mimari, uluslararası organizasyonlar, liderlik',
+          spiritualLesson:
+              'Büyük gücün büyük sorumluluk gerektirdiğini anlamak.',
+          shadowSide:
+              'Tükenmişlik, mükemmeliyetçilik, başkalarını ezmek, kendini tüketmek',
           compatibleNumbers: '4, 11, 22, 33',
         );
       case 33:
@@ -540,9 +596,12 @@ Ruhunuz insanlığı yükseltmek için tasarlandı. Koşulsuz sevgi, evrensel ş
 
 Bu sayının gölge yönü aşırı fedakarlık ve martyrdom kompleksi. Herkesi kurtarmaya çalışırken kendinizi kurban edebilirsiniz. Dengenizi bulmak için kendinizi de sevmeniz gerekir.
 ''',
-          careerPath: 'Spiritüel öğretmenlik, terapi, şifa, hayırseverlik, sanat terapisi, danışmanlık',
-          spiritualLesson: 'Başkalarını şifa ederken kendini de şifa etmek. Sınırları koruyarak sevmek.',
-          shadowSide: 'Fedakarlık kompleksi, kurban ruhu, kendini tüketme, sınır koyamama',
+          careerPath:
+              'Spiritüel öğretmenlik, terapi, şifa, hayırseverlik, sanat terapisi, danışmanlık',
+          spiritualLesson:
+              'Başkalarını şifa ederken kendini de şifa etmek. Sınırları koruyarak sevmek.',
+          shadowSide:
+              'Fedakarlık kompleksi, kurban ruhu, kendini tüketme, sınır koyamama',
           compatibleNumbers: '6, 22, 33',
         );
       default:

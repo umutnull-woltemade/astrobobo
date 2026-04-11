@@ -33,7 +33,13 @@ class MoonService {
 
     // Approximate lunar cycle through zodiac (27.32 days sidereal month)
     final siderealMonth = 27.321661;
-    final knownMoonInAries = DateTime.utc(2024, 1, 14, 12, 0); // Reference point
+    final knownMoonInAries = DateTime.utc(
+      2024,
+      1,
+      14,
+      12,
+      0,
+    ); // Reference point
 
     final daysSinceKnown = now.difference(knownMoonInAries).inSeconds / 86400.0;
     final signPosition = (daysSinceKnown % siderealMonth) / siderealMonth * 12;
@@ -74,7 +80,16 @@ class MoonService {
 
   /// Get all currently retrograde planets
   static List<String> getRetrogradePlanets([DateTime? date]) {
-    final planets = ['mercury', 'venus', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune', 'pluto'];
+    final planets = [
+      'mercury',
+      'venus',
+      'mars',
+      'jupiter',
+      'saturn',
+      'uranus',
+      'neptune',
+      'pluto',
+    ];
     return planets.where((p) => isPlanetRetrograde(p, date)).toList();
   }
 
@@ -141,7 +156,12 @@ class MoonService {
   }
 
   /// Outer planets retrograde (approximate)
-  static bool _isOuterPlanetRetrograde(int year, int dayOfYear, int startDay, double months) {
+  static bool _isOuterPlanetRetrograde(
+    int year,
+    int dayOfYear,
+    int startDay,
+    double months,
+  ) {
     final endDay = startDay + (months * 30).toInt();
     return dayOfYear >= startDay && dayOfYear <= endDay;
   }
@@ -202,40 +222,64 @@ enum MoonPhase {
 extension MoonPhaseExtension on MoonPhase {
   String get name {
     switch (this) {
-      case MoonPhase.newMoon: return 'New Moon';
-      case MoonPhase.waxingCrescent: return 'Waxing Crescent';
-      case MoonPhase.firstQuarter: return 'First Quarter';
-      case MoonPhase.waxingGibbous: return 'Waxing Gibbous';
-      case MoonPhase.fullMoon: return 'Full Moon';
-      case MoonPhase.waningGibbous: return 'Waning Gibbous';
-      case MoonPhase.lastQuarter: return 'Last Quarter';
-      case MoonPhase.waningCrescent: return 'Waning Crescent';
+      case MoonPhase.newMoon:
+        return 'New Moon';
+      case MoonPhase.waxingCrescent:
+        return 'Waxing Crescent';
+      case MoonPhase.firstQuarter:
+        return 'First Quarter';
+      case MoonPhase.waxingGibbous:
+        return 'Waxing Gibbous';
+      case MoonPhase.fullMoon:
+        return 'Full Moon';
+      case MoonPhase.waningGibbous:
+        return 'Waning Gibbous';
+      case MoonPhase.lastQuarter:
+        return 'Last Quarter';
+      case MoonPhase.waningCrescent:
+        return 'Waning Crescent';
     }
   }
 
   String get nameTr {
     switch (this) {
-      case MoonPhase.newMoon: return 'Yeni Ay';
-      case MoonPhase.waxingCrescent: return 'Hilal (Büyüyen)';
-      case MoonPhase.firstQuarter: return 'İlk Dördün';
-      case MoonPhase.waxingGibbous: return 'Şişkin Ay (Büyüyen)';
-      case MoonPhase.fullMoon: return 'Dolunay';
-      case MoonPhase.waningGibbous: return 'Şişkin Ay (Küçülen)';
-      case MoonPhase.lastQuarter: return 'Son Dördün';
-      case MoonPhase.waningCrescent: return 'Hilal (Küçülen)';
+      case MoonPhase.newMoon:
+        return 'Yeni Ay';
+      case MoonPhase.waxingCrescent:
+        return 'Hilal (Büyüyen)';
+      case MoonPhase.firstQuarter:
+        return 'İlk Dördün';
+      case MoonPhase.waxingGibbous:
+        return 'Şişkin Ay (Büyüyen)';
+      case MoonPhase.fullMoon:
+        return 'Dolunay';
+      case MoonPhase.waningGibbous:
+        return 'Şişkin Ay (Küçülen)';
+      case MoonPhase.lastQuarter:
+        return 'Son Dördün';
+      case MoonPhase.waningCrescent:
+        return 'Hilal (Küçülen)';
     }
   }
 
   String get emoji {
     switch (this) {
-      case MoonPhase.newMoon: return '🌑';
-      case MoonPhase.waxingCrescent: return '🌒';
-      case MoonPhase.firstQuarter: return '🌓';
-      case MoonPhase.waxingGibbous: return '🌔';
-      case MoonPhase.fullMoon: return '🌕';
-      case MoonPhase.waningGibbous: return '🌖';
-      case MoonPhase.lastQuarter: return '🌗';
-      case MoonPhase.waningCrescent: return '🌘';
+      case MoonPhase.newMoon:
+        return '🌑';
+      case MoonPhase.waxingCrescent:
+        return '🌒';
+      case MoonPhase.firstQuarter:
+        return '🌓';
+      case MoonPhase.waxingGibbous:
+        return '🌔';
+      case MoonPhase.fullMoon:
+        return '🌕';
+      case MoonPhase.waningGibbous:
+        return '🌖';
+      case MoonPhase.lastQuarter:
+        return '🌗';
+      case MoonPhase.waningCrescent:
+        return '🌘';
     }
   }
 
@@ -280,52 +324,88 @@ enum MoonSign {
 extension MoonSignExtension on MoonSign {
   String get name {
     switch (this) {
-      case MoonSign.aries: return 'Aries';
-      case MoonSign.taurus: return 'Taurus';
-      case MoonSign.gemini: return 'Gemini';
-      case MoonSign.cancer: return 'Cancer';
-      case MoonSign.leo: return 'Leo';
-      case MoonSign.virgo: return 'Virgo';
-      case MoonSign.libra: return 'Libra';
-      case MoonSign.scorpio: return 'Scorpio';
-      case MoonSign.sagittarius: return 'Sagittarius';
-      case MoonSign.capricorn: return 'Capricorn';
-      case MoonSign.aquarius: return 'Aquarius';
-      case MoonSign.pisces: return 'Pisces';
+      case MoonSign.aries:
+        return 'Aries';
+      case MoonSign.taurus:
+        return 'Taurus';
+      case MoonSign.gemini:
+        return 'Gemini';
+      case MoonSign.cancer:
+        return 'Cancer';
+      case MoonSign.leo:
+        return 'Leo';
+      case MoonSign.virgo:
+        return 'Virgo';
+      case MoonSign.libra:
+        return 'Libra';
+      case MoonSign.scorpio:
+        return 'Scorpio';
+      case MoonSign.sagittarius:
+        return 'Sagittarius';
+      case MoonSign.capricorn:
+        return 'Capricorn';
+      case MoonSign.aquarius:
+        return 'Aquarius';
+      case MoonSign.pisces:
+        return 'Pisces';
     }
   }
 
   String get nameTr {
     switch (this) {
-      case MoonSign.aries: return 'Koç';
-      case MoonSign.taurus: return 'Boğa';
-      case MoonSign.gemini: return 'İkizler';
-      case MoonSign.cancer: return 'Yengeç';
-      case MoonSign.leo: return 'Aslan';
-      case MoonSign.virgo: return 'Başak';
-      case MoonSign.libra: return 'Terazi';
-      case MoonSign.scorpio: return 'Akrep';
-      case MoonSign.sagittarius: return 'Yay';
-      case MoonSign.capricorn: return 'Oğlak';
-      case MoonSign.aquarius: return 'Kova';
-      case MoonSign.pisces: return 'Balık';
+      case MoonSign.aries:
+        return 'Koç';
+      case MoonSign.taurus:
+        return 'Boğa';
+      case MoonSign.gemini:
+        return 'İkizler';
+      case MoonSign.cancer:
+        return 'Yengeç';
+      case MoonSign.leo:
+        return 'Aslan';
+      case MoonSign.virgo:
+        return 'Başak';
+      case MoonSign.libra:
+        return 'Terazi';
+      case MoonSign.scorpio:
+        return 'Akrep';
+      case MoonSign.sagittarius:
+        return 'Yay';
+      case MoonSign.capricorn:
+        return 'Oğlak';
+      case MoonSign.aquarius:
+        return 'Kova';
+      case MoonSign.pisces:
+        return 'Balık';
     }
   }
 
   String get symbol {
     switch (this) {
-      case MoonSign.aries: return '♈';
-      case MoonSign.taurus: return '♉';
-      case MoonSign.gemini: return '♊';
-      case MoonSign.cancer: return '♋';
-      case MoonSign.leo: return '♌';
-      case MoonSign.virgo: return '♍';
-      case MoonSign.libra: return '♎';
-      case MoonSign.scorpio: return '♏';
-      case MoonSign.sagittarius: return '♐';
-      case MoonSign.capricorn: return '♑';
-      case MoonSign.aquarius: return '♒';
-      case MoonSign.pisces: return '♓';
+      case MoonSign.aries:
+        return '♈';
+      case MoonSign.taurus:
+        return '♉';
+      case MoonSign.gemini:
+        return '♊';
+      case MoonSign.cancer:
+        return '♋';
+      case MoonSign.leo:
+        return '♌';
+      case MoonSign.virgo:
+        return '♍';
+      case MoonSign.libra:
+        return '♎';
+      case MoonSign.scorpio:
+        return '♏';
+      case MoonSign.sagittarius:
+        return '♐';
+      case MoonSign.capricorn:
+        return '♑';
+      case MoonSign.aquarius:
+        return '♒';
+      case MoonSign.pisces:
+        return '♓';
     }
   }
 }
@@ -340,7 +420,7 @@ class RetrogradePeroid {
   bool isActive([DateTime? date]) {
     final now = date ?? DateTime.now();
     return now.isAfter(start.subtract(const Duration(days: 1))) &&
-           now.isBefore(end.add(const Duration(days: 1)));
+        now.isBefore(end.add(const Duration(days: 1)));
   }
 
   int get daysRemaining {
@@ -415,7 +495,9 @@ extension VoidOfCourseMoonExtension on MoonService {
 
     // Calculate when Moon will enter next sign
     final hoursUntilNextSign = (1 - positionInSign) * daysPerSign * 24;
-    final nextSignTime = now.add(Duration(minutes: (hoursUntilNextSign * 60).round()));
+    final nextSignTime = now.add(
+      Duration(minutes: (hoursUntilNextSign * 60).round()),
+    );
     final nextSignIndex = (currentSign.index + 1) % 12;
     final nextSign = MoonSign.values[nextSignIndex];
 
@@ -437,7 +519,8 @@ extension VoidOfCourseMoonExtension on MoonService {
     // few hours before sign change (when no major aspects form)
     // This is an approximation - real VOC requires aspect calculation
     final isNearSignChange = hoursUntilNextSign < 4.0;
-    final isLikelyVoid = isNearSignChange && _isLikelyVoidPeriod(now, currentSign);
+    final isLikelyVoid =
+        isNearSignChange && _isLikelyVoidPeriod(now, currentSign);
 
     if (isLikelyVoid) {
       // Estimate VOC start as ~4 hours before sign change
@@ -550,7 +633,8 @@ extension VoidOfCourseMoonExtension on MoonService {
           periods.add(VocPeriod(start, end));
         }
       }
-      dayProgress += 2.2 + random.nextDouble() * 0.6; // ~2.2-2.8 days between VOCs
+      dayProgress +=
+          2.2 + random.nextDouble() * 0.6; // ~2.2-2.8 days between VOCs
     }
 
     return periods;

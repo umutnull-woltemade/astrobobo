@@ -44,7 +44,8 @@ class AdminAnalyticsService {
 
     if (existingIndex >= 0) {
       // Update existing
-      events[existingIndex]['count'] = (events[existingIndex]['count'] as int) + 1;
+      events[existingIndex]['count'] =
+          (events[existingIndex]['count'] as int) + 1;
       events[existingIndex]['lastFired'] = now.toIso8601String();
 
       // Update daily count
@@ -236,10 +237,10 @@ class AdminAnalyticsService {
     }
 
     await box.put(_sessionsKey, jsonEncode(sessions));
-    await logEvent('session_end', payload: {
-      'duration': duration,
-      'depth': _sessionDepth,
-    });
+    await logEvent(
+      'session_end',
+      payload: {'duration': duration, 'depth': _sessionDepth},
+    );
 
     _currentSessionId = null;
     _sessionStart = null;

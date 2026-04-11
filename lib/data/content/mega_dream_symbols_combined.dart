@@ -54,11 +54,11 @@ class MegaDreamSymbolsCombined {
   static DreamSymbolData? findSymbol(String query) {
     final lowerQuery = query.toLowerCase().trim();
     return allSymbols.cast<DreamSymbolData?>().firstWhere(
-          (s) =>
-              s!.symbol.toLowerCase() == lowerQuery ||
-              s.symbolTr.toLowerCase() == lowerQuery,
-          orElse: () => null,
-        );
+      (s) =>
+          s!.symbol.toLowerCase() == lowerQuery ||
+          s.symbolTr.toLowerCase() == lowerQuery,
+      orElse: () => null,
+    );
   }
 
   /// Kategoriye gore sembolleri getir
@@ -69,10 +69,26 @@ class MegaDreamSymbolsCombined {
   /// En yaygin sembolleri getir
   static List<DreamSymbolData> get commonSymbols {
     final common = [
-      'water', 'flying', 'falling', 'snake', 'teeth_falling',
-      'house', 'chasing', 'death', 'naked', 'lost',
-      'car', 'ocean', 'fire', 'dog', 'cat',
-      'baby', 'mother', 'father', 'school', 'money',
+      'water',
+      'flying',
+      'falling',
+      'snake',
+      'teeth_falling',
+      'house',
+      'chasing',
+      'death',
+      'naked',
+      'lost',
+      'car',
+      'ocean',
+      'fire',
+      'dog',
+      'cat',
+      'baby',
+      'mother',
+      'father',
+      'school',
+      'money',
     ];
     return common
         .map((s) => findSymbol(s))
@@ -253,8 +269,10 @@ class MegaDreamSymbolsCombined {
   static List<DreamSymbolData> getSymbolsForArchetype(String archetype) {
     final lowerArchetype = archetype.toLowerCase();
     return allSymbols
-        .where((s) => s.archetypes.any(
-            (a) => a.toLowerCase().contains(lowerArchetype)))
+        .where(
+          (s) =>
+              s.archetypes.any((a) => a.toLowerCase().contains(lowerArchetype)),
+        )
         .toList();
   }
 

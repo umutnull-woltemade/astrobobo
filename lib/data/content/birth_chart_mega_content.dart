@@ -19,7 +19,13 @@ Evlerin başlangıç noktası (cusp) hangi burçtaysa, o burcun enerjisi o alan�
       number: 1,
       name: 'Yükselen Ev / Ascendant',
       latinName: 'Vita',
-      keywords: ['Benlik', 'Görünüm', 'İlk izlenim', 'Fiziksel beden', 'Başlangıçlar'],
+      keywords: [
+        'Benlik',
+        'Görünüm',
+        'İlk izlenim',
+        'Fiziksel beden',
+        'Başlangıçlar',
+      ],
       lifeArea: 'Kim olduğunuz ve dünyaya nasıl göründüğünüz',
       naturalSign: 'Koç',
       naturalRuler: 'Mars',
@@ -46,7 +52,8 @@ Bazen ego şişkinliği veya kibirle mücadele gerekebilir.
 ''',
           strengths: ['Karizmatik', 'Özgüvenli', 'Lider', 'Canlı enerji'],
           challenges: ['Ego sorunları', 'Dikkat ihtiyacı', 'Bencillik riski'],
-          advice: 'Işığınızı paylaşın ama başkalarının da parlamasına izin verin.',
+          advice:
+              'Işığınızı paylaşın ama başkalarının da parlamasına izin verin.',
         ),
         'Moon': PlanetInHouseInterpretation(
           planet: 'Ay',
@@ -55,8 +62,13 @@ Ay 1. evde duygusal, sezgisel ve değişken bir kişilik verir. Duygular
 yüzeyde, herkes tarafından okunabilir. Bakım verici ama aşırı hassas.
 ''',
           strengths: ['Empatik', 'Sezgisel', 'Bakım verici', 'Adaptif'],
-          challenges: ['Duygu dalgalanmaları', 'Aşırı hassasiyet', 'Kimlik değişkenliği'],
-          advice: 'Duygusal sınırlar koymayı öğrenin, her şeyi içselleştirmeyin.',
+          challenges: [
+            'Duygu dalgalanmaları',
+            'Aşırı hassasiyet',
+            'Kimlik değişkenliği',
+          ],
+          advice:
+              'Duygusal sınırlar koymayı öğrenin, her şeyi içselleştirmeyin.',
         ),
         'Mercury': PlanetInHouseInterpretation(
           planet: 'Merkür',
@@ -126,7 +138,8 @@ Bukalemun gibi ortama uyum sağlar. Spiritüel aura taşır.
 ''',
           strengths: ['Sezgisel', 'Sanatsal', 'Şefkatli', 'İlham verici'],
           challenges: ['Kimlik karışıklığı', 'Aldatılma', 'Kaçış eğilimi'],
-          advice: 'Kim olduğunuzu net tanımlayın, başkalarının sizi tanımlamasına izin vermeyin.',
+          advice:
+              'Kim olduğunuzu net tanımlayın, başkalarının sizi tanımlamasına izin vermeyin.',
         ),
         'Pluto': PlanetInHouseInterpretation(
           planet: 'Plüton',
@@ -141,7 +154,8 @@ bakışlar, güçlü varlık. İnsanları rahatsız edebilir veya büyüleyebili
       },
       signsOnCusp: {
         'Koç': 'Enerjik, cesur, impulsif görünüm. Atletik. Hızlı tepki.',
-        'Boğa': 'Sakin, güvenilir, sağlam görünüm. Güzel ses. Yavaş ama kararlı.',
+        'Boğa':
+            'Sakin, güvenilir, sağlam görünüm. Güzel ses. Yavaş ama kararlı.',
         'İkizler': 'Genç, hareketli, konuşkan görünüm. İnce yapı. Meraklı.',
         'Yengeç': 'Bakım verici, duygusal, değişken görünüm. Yuvarlak yüz.',
         'Aslan': 'Gösterişli, karizmatik, dikkat çekici görünüm. Gür saç.',
@@ -159,7 +173,13 @@ bakışlar, güçlü varlık. İnsanları rahatsız edebilir veya büyüleyebili
       number: 7,
       name: 'İlişkiler Evi / Descendant',
       latinName: 'Uxor',
-      keywords: ['Evlilik', 'Ortaklık', 'Birebir ilişkiler', 'Açık düşmanlar', 'Sözleşmeler'],
+      keywords: [
+        'Evlilik',
+        'Ortaklık',
+        'Birebir ilişkiler',
+        'Açık düşmanlar',
+        'Sözleşmeler',
+      ],
       lifeArea: 'Ciddi ilişkiler ve nasıl partner seçtiğiniz',
       naturalSign: 'Terazi',
       naturalRuler: 'Venüs',
@@ -194,7 +214,11 @@ Ay 7. evde duygusal güvenliğin ilişkilerden geldiğini gösterir. Bakım
 veren/alan partnerlere çekilim. Duygusal bağımlılık riski.
 ''',
           strengths: ['Şefkatli partner', 'Duygusal destek', 'Ev kurmak'],
-          challenges: ['Bağımlılık', 'Ruh hali partnere bağlı', 'Klinger davranış'],
+          challenges: [
+            'Bağımlılık',
+            'Ruh hali partnere bağlı',
+            'Klinger davranış',
+          ],
           advice: 'Duygusal bağımsızlığı koruyun.',
         ),
         'Venus': PlanetInHouseInterpretation(
@@ -204,7 +228,11 @@ Venüs 7. evde güçlü bir konumdur (Terazi'nin doğal evi). İlişkilerde
 uyum, güzellik ve aşk arayışı. Çekici partnerlere çekilim.
 ''',
           strengths: ['Uyumlu ilişkiler', 'Çekici partnerler', 'Evlilik şansı'],
-          challenges: ['İlişki bağımlılığı', 'Yüzeysel seçimler', 'Karar verememe'],
+          challenges: [
+            'İlişki bağımlılığı',
+            'Yüzeysel seçimler',
+            'Karar verememe',
+          ],
           advice: 'İçsel değerleri dış güzellik kadar değerlendirin.',
         ),
         'Mars': PlanetInHouseInterpretation(
@@ -213,7 +241,11 @@ uyum, güzellik ve aşk arayışı. Çekici partnerlere çekilim.
 Mars 7. evde tutkulu, çatışmalı, rekabetçi ilişkiler. Güçlü partnerlere
 çekilim ama güç savaşları riski.
 ''',
-          strengths: ['Tutkulu ilişkiler', 'Koruyucu partner', 'Aktif ortaklık'],
+          strengths: [
+            'Tutkulu ilişkiler',
+            'Koruyucu partner',
+            'Aktif ortaklık',
+          ],
           challenges: ['Çatışma', 'Güç savaşları', 'Saldırgan partnerler'],
           advice: 'Çatışmayı yapıcı kanallara yönlendirin.',
         ),
@@ -272,7 +304,11 @@ Güneş 10. evde kariyer odaklı, hırslı, toplumda tanınmak isteyen biri.
 Liderlik pozisyonları, otorite, şöhret potansiyeli.
 ''',
           strengths: ['Kariyer başarısı', 'Tanınma', 'Liderlik', 'Otorite'],
-          challenges: ['İş bağımlılığı', 'Özel hayat ihmali', 'Statü takıntısı'],
+          challenges: [
+            'İş bağımlılığı',
+            'Özel hayat ihmali',
+            'Statü takıntısı',
+          ],
           advice: 'Başarı tanımınızı genişletin, sadece iş değil.',
         ),
         'Moon': PlanetInHouseInterpretation(
@@ -281,8 +317,15 @@ Liderlik pozisyonları, otorite, şöhret potansiyeli.
 Ay 10. evde kamusal hayatta duygusal yatırım. Halkla ilgili işler,
 bakım/beslenme kariyerleri. Kamusal imaj değişken.
 ''',
-          strengths: ['Halkla bağlantı', 'Bakım kariyerleri', 'Duygusal liderlik'],
-          challenges: ['Duyguların iş yerinde görünmesi', 'İstikrarsız kariyer'],
+          strengths: [
+            'Halkla bağlantı',
+            'Bakım kariyerleri',
+            'Duygusal liderlik',
+          ],
+          challenges: [
+            'Duyguların iş yerinde görünmesi',
+            'İstikrarsız kariyer',
+          ],
           advice: 'Duygusal zekayı profesyonel alanda kullanın.',
         ),
         'Jupiter': PlanetInHouseInterpretation(
@@ -291,7 +334,12 @@ bakım/beslenme kariyerleri. Kamusal imaj değişken.
 Jüpiter 10. evde kariyer şansı, büyük başarı potansiyeli. Yurtdışı
 bağlantılar, eğitim, hukuk, yayıncılık alanlarında parlama.
 ''',
-          strengths: ['Kariyer şansı', 'Genişleme', 'Tanınma', 'Uluslararası başarı'],
+          strengths: [
+            'Kariyer şansı',
+            'Genişleme',
+            'Tanınma',
+            'Uluslararası başarı',
+          ],
           challenges: ['Aşırı büyüme', 'Çok vaatte bulunma', 'Kibirlenme'],
           advice: 'Şansınızı akıllıca kullanın, sürdürülebilir büyüyün.',
         ),
@@ -308,7 +356,8 @@ inşası. Geç gelen ama sağlam başarı. Otorite figürü olma.
       },
       signsOnCusp: {
         'Koç': 'Girişimci, öncü, bağımsız kariyer. Kendi işini kurma.',
-        'Boğa': 'İstikrarlı, finansal odaklı kariyer. Sanat, güzellik sektörleri.',
+        'Boğa':
+            'İstikrarlı, finansal odaklı kariyer. Sanat, güzellik sektörleri.',
         'İkizler': 'İletişim, medya, eğitim kariyerleri. Çok yönlü iş hayatı.',
         'Yengeç': 'Bakım, gıda, emlak kariyerleri. Aile işi potansiyeli.',
         'Aslan': 'Yaratıcı, liderlik, eğlence kariyerleri. Tanınma arzusu.',
@@ -384,8 +433,17 @@ class AspectContent {
 Yeniay doğumu. Ego ve duygular birleşir. Güçlü irade ama tek boyutlu
 bakış açısı riski. Yeni başlangıçlar için doğal yetenek.
 ''',
-      strengths: ['Güçlü irade', 'Tutarlılık', 'Odaklanma', 'Yeni başlangıçlar'],
-      challenges: ['Tek boyutlu', 'Objektiflik zorluğu', 'Kendi kendini görememe'],
+      strengths: [
+        'Güçlü irade',
+        'Tutarlılık',
+        'Odaklanma',
+        'Yeni başlangıçlar',
+      ],
+      challenges: [
+        'Tek boyutlu',
+        'Objektiflik zorluğu',
+        'Kendi kendini görememe',
+      ],
       advice: 'Başkalarının perspektifini almayı öğrenin.',
     ),
     'sun_moon_opposition': AspectInterpretation(
@@ -487,7 +545,11 @@ Eğer üçgen aynı element buruçlarındaysa:
 - Su: Duygusal, sezgisel, şifalı
 ''',
       strengths: ['Doğal yetenek', 'Kolay akış', 'Şans', 'Armoni'],
-      challenges: ['Tembellik', 'Potansiyeli kullanmama', 'Meydan okuma eksikliği'],
+      challenges: [
+        'Tembellik',
+        'Potansiyeli kullanmama',
+        'Meydan okuma eksikliği',
+      ],
       advice: 'Yeteneklerinizi aktif olarak kullanın, konfor alanından çıkın.',
     ),
     't_square': AspectPattern(
@@ -520,7 +582,12 @@ Modaliteye göre:
 - Sabit: Direnç, inatla tutma
 - Değişken: Dağılma, odak sorunu
 ''',
-      strengths: ['Büyük güç', 'Dönüşüm kapasitesi', 'Dayanıklılık', 'Çok yönlülük'],
+      strengths: [
+        'Büyük güç',
+        'Dönüşüm kapasitesi',
+        'Dayanıklılık',
+        'Çok yönlülük',
+      ],
       challenges: ['Sürekli kriz', 'Dağılma', 'Aşırı stres', 'Çatışma'],
       advice: 'Merkez bulun, dengeyi koruyun, bir seferde bir şeye odaklanın.',
     ),
@@ -609,10 +676,14 @@ ne kadar rahat veya zorlayıcı çalıştığını gösterir.
       exaltation: 'Koç',
       detriment: 'Kova',
       fall: 'Terazi',
-      domicileDescription: 'Güneş Aslan\'da evindedir. Tam gücüyle parlar. Özgüven, yaratıcılık, liderlik doğal akar.',
-      exaltationDescription: 'Güneş Koç\'ta yüceltilir. Cesaret, girişimcilik ve bireysellik zirvededir.',
-      detrimentDescription: 'Güneş Kova\'da zorlanır. Bireysellik ve toplum arasında gerilim. Ego farklılıkla ifade bulur.',
-      fallDescription: 'Güneş Terazi\'de düşüşte. Kimlik başkalarına bağlı. Özgüven ilişkilerden gelir.',
+      domicileDescription:
+          'Güneş Aslan\'da evindedir. Tam gücüyle parlar. Özgüven, yaratıcılık, liderlik doğal akar.',
+      exaltationDescription:
+          'Güneş Koç\'ta yüceltilir. Cesaret, girişimcilik ve bireysellik zirvededir.',
+      detrimentDescription:
+          'Güneş Kova\'da zorlanır. Bireysellik ve toplum arasında gerilim. Ego farklılıkla ifade bulur.',
+      fallDescription:
+          'Güneş Terazi\'de düşüşte. Kimlik başkalarına bağlı. Özgüven ilişkilerden gelir.',
     ),
     'moon': DignityTable(
       planet: 'Ay',
@@ -620,10 +691,14 @@ ne kadar rahat veya zorlayıcı çalıştığını gösterir.
       exaltation: 'Boğa',
       detriment: 'Oğlak',
       fall: 'Akrep',
-      domicileDescription: 'Ay Yengeç\'te evindedir. Duygusal zeka, bakım verme, sezgi doğal akar.',
-      exaltationDescription: 'Ay Boğa\'da yüceltilir. Duygusal istikrar, konfor, güvenlik hissi güçlü.',
-      detrimentDescription: 'Ay Oğlak\'ta zorlanır. Duygular bastırılır, sorumluluk ağır basar.',
-      fallDescription: 'Ay Akrep\'te düşüşte. Yoğun, obsesif duygular. Duygusal dönüşüm zorunlu.',
+      domicileDescription:
+          'Ay Yengeç\'te evindedir. Duygusal zeka, bakım verme, sezgi doğal akar.',
+      exaltationDescription:
+          'Ay Boğa\'da yüceltilir. Duygusal istikrar, konfor, güvenlik hissi güçlü.',
+      detrimentDescription:
+          'Ay Oğlak\'ta zorlanır. Duygular bastırılır, sorumluluk ağır basar.',
+      fallDescription:
+          'Ay Akrep\'te düşüşte. Yoğun, obsesif duygular. Duygusal dönüşüm zorunlu.',
     ),
     'venus': DignityTable(
       planet: 'Venüs',
@@ -631,10 +706,14 @@ ne kadar rahat veya zorlayıcı çalıştığını gösterir.
       exaltation: 'Balık',
       detriment: 'Akrep, Koç',
       fall: 'Başak',
-      domicileDescription: 'Venüs Boğa\'da duyusal zevkler, Terazi\'de ilişki uyumunda güçlü.',
-      exaltationDescription: 'Venüs Balık\'ta yüceltilir. Koşulsuz sevgi, romantizm, sanatsal ilham doruğunda.',
-      detrimentDescription: 'Venüs Koç\'ta aceleci aşk, Akrep\'te obsesif tutku ile zorlanır.',
-      fallDescription: 'Venüs Başak\'ta eleştirel, mükemmeliyetçi. Sevgiyi koşullara bağlar.',
+      domicileDescription:
+          'Venüs Boğa\'da duyusal zevkler, Terazi\'de ilişki uyumunda güçlü.',
+      exaltationDescription:
+          'Venüs Balık\'ta yüceltilir. Koşulsuz sevgi, romantizm, sanatsal ilham doruğunda.',
+      detrimentDescription:
+          'Venüs Koç\'ta aceleci aşk, Akrep\'te obsesif tutku ile zorlanır.',
+      fallDescription:
+          'Venüs Başak\'ta eleştirel, mükemmeliyetçi. Sevgiyi koşullara bağlar.',
     ),
   };
 }

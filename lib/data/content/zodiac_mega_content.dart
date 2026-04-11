@@ -513,18 +513,30 @@ bulanıklaşır, yorgunluk ve motivasyon kaybı işaret eder.
       'Tantrik Kral/Kraliçe - Cinsel simyayı güç için kullanan hükümdar',
     ],
     sacredUnion: {
-      'Koç': "Çifte Ateş - İki Mars enerjisinin buluşması, ya büyük patlama ya büyük yaratım. Birlikte Kundalini yükselişi çok güçlü olabilir, ancak ego çatışmaları dengelenmelidir.",
-      'Boğa': "Ateş ve Toprak Simyası - Koç'un ateşi Boğa'nın toprağında form bulur. Tantrik açıdan, Koç'un hızını Boğa'nın sabrıyla dengelemek derin bir dönüşüm yaratır. Duyusal tantra için mükemmel eşleşme.",
-      'İkizler': "Ateş ve Hava Dansı - Hava ateşi besler, alevlendirir. Entelektüel tantrik tartışmalar, nefes çalışmaları, konuşarak uyarılma. Zihinsel ve fiziksel stimülasyonun birleşimi.",
-      'Yengeç': "Ateş ve Su Buharı - Yoğun, duygusal tantrik deneyim. Koç'un tutkusu Yengeç'in duygusal derinliğiyle buluşur. Koruma ve şefkat temaları ön plandadır.",
-      'Aslan': "Çifte Güneş Gücü - İki ateş burcunun muhteşem tantrik uyumu. Yaratıcı cinsel enerji, dramatik ifade, karşılıklı hayranlık. Ego dengelenirse, çok güçlü birlik.",
-      'Başak': "Ateş ve Toprak Arınması - Başak'ın saflık arayışı Koç'un ham enerjisini rafine eder. Tantrik açıdan, vücut bilinci ve bilinçli dokunuş üzerinde çalışma.",
-      'Terazi': "Karşıt Kutuplar - Koç'un bireysel enerjisi Terazi'nin ilişki enerjisiyle buluşur. Shiva-Shakti dengesinin mükemmel yansıması. Kutsal evlilik arketipi.",
-      'Akrep': "Derin Dönüşüm - Her iki burcun da yoğun cinsel enerjisi vardır. Tantrik açıdan, birlikte ölüm ve yeniden doğuş deneyimi. En derin, en transformatif birlik potansiyeli.",
-      'Yay': "Ateşli Macera - İki ateş burcunun özgürlük seven birliği. Tantrik keşifler, kutsal mekan gezileri, spiritüel maceralar. Genişleme ve büyüme temalı.",
-      'Oğlak': "Ateş ve Dağ - Koç'un patlaması Oğlak'ın yapısıyla buluşur. Tantrik disiplin ve uzun vadeli pratik. Zorlu ama ödüllendirici birlik.",
-      'Kova': "Ateş ve Şimşek - Beklenmedik, elektriklendirici tantrik deneyimler. Geleneksel olmayan pratikler, deneysellik. Zihinsel özgürlük temalı.",
-      'Balık': "Ateş ve Okyanus - Koç'un bireysel enerjisi Balık'ın evrensel enerjisiyle erir. Ego kaybı, kozmik birleşme deneyimi. Mistik, rüya gibi tantrik birlik.",
+      'Koç':
+          "Çifte Ateş - İki Mars enerjisinin buluşması, ya büyük patlama ya büyük yaratım. Birlikte Kundalini yükselişi çok güçlü olabilir, ancak ego çatışmaları dengelenmelidir.",
+      'Boğa':
+          "Ateş ve Toprak Simyası - Koç'un ateşi Boğa'nın toprağında form bulur. Tantrik açıdan, Koç'un hızını Boğa'nın sabrıyla dengelemek derin bir dönüşüm yaratır. Duyusal tantra için mükemmel eşleşme.",
+      'İkizler':
+          "Ateş ve Hava Dansı - Hava ateşi besler, alevlendirir. Entelektüel tantrik tartışmalar, nefes çalışmaları, konuşarak uyarılma. Zihinsel ve fiziksel stimülasyonun birleşimi.",
+      'Yengeç':
+          "Ateş ve Su Buharı - Yoğun, duygusal tantrik deneyim. Koç'un tutkusu Yengeç'in duygusal derinliğiyle buluşur. Koruma ve şefkat temaları ön plandadır.",
+      'Aslan':
+          "Çifte Güneş Gücü - İki ateş burcunun muhteşem tantrik uyumu. Yaratıcı cinsel enerji, dramatik ifade, karşılıklı hayranlık. Ego dengelenirse, çok güçlü birlik.",
+      'Başak':
+          "Ateş ve Toprak Arınması - Başak'ın saflık arayışı Koç'un ham enerjisini rafine eder. Tantrik açıdan, vücut bilinci ve bilinçli dokunuş üzerinde çalışma.",
+      'Terazi':
+          "Karşıt Kutuplar - Koç'un bireysel enerjisi Terazi'nin ilişki enerjisiyle buluşur. Shiva-Shakti dengesinin mükemmel yansıması. Kutsal evlilik arketipi.",
+      'Akrep':
+          "Derin Dönüşüm - Her iki burcun da yoğun cinsel enerjisi vardır. Tantrik açıdan, birlikte ölüm ve yeniden doğuş deneyimi. En derin, en transformatif birlik potansiyeli.",
+      'Yay':
+          "Ateşli Macera - İki ateş burcunun özgürlük seven birliği. Tantrik keşifler, kutsal mekan gezileri, spiritüel maceralar. Genişleme ve büyüme temalı.",
+      'Oğlak':
+          "Ateş ve Dağ - Koç'un patlaması Oğlak'ın yapısıyla buluşur. Tantrik disiplin ve uzun vadeli pratik. Zorlu ama ödüllendirici birlik.",
+      'Kova':
+          "Ateş ve Şimşek - Beklenmedik, elektriklendirici tantrik deneyimler. Geleneksel olmayan pratikler, deneysellik. Zihinsel özgürlük temalı.",
+      'Balık':
+          "Ateş ve Okyanus - Koç'un bireysel enerjisi Balık'ın evrensel enerjisiyle erir. Ego kaybı, kozmik birleşme deneyimi. Mistik, rüya gibi tantrik birlik.",
     },
     awakeningMantra: '''
 प्राण शक्ति मंत्र (Prana Shakti Mantra)
@@ -743,16 +755,16 @@ class SpiritualProfile {
 // ════════════════════════════════════════════════════════════════════════════
 
 class TantricProfile {
-  final String kundaliniPattern;        // Kundalini Enerji Kalıbı
-  final String chakraDominance;         // Chakra Hakimiyeti
-  final String sacredSexualityStyle;    // Kutsal Cinsellik Tarzı
-  final String shaktiShivaBalance;      // Shakti/Shiva Dengesi
-  final List<String> suitedPractices;   // Uygun Tantrik Pratikler
-  final String energyBodyTraits;        // Enerji Bedeni Özellikleri
-  final List<String> pastLifeTantric;   // Geçmiş Yaşam Tantrik Temaları
-  final Map<String, String> sacredUnion;// Kutsal Birlik Uyumu
-  final String awakeningMantra;         // Uyanış Mantrası
-  final String yantraSymbol;            // Yantra Sembolü
+  final String kundaliniPattern; // Kundalini Enerji Kalıbı
+  final String chakraDominance; // Chakra Hakimiyeti
+  final String sacredSexualityStyle; // Kutsal Cinsellik Tarzı
+  final String shaktiShivaBalance; // Shakti/Shiva Dengesi
+  final List<String> suitedPractices; // Uygun Tantrik Pratikler
+  final String energyBodyTraits; // Enerji Bedeni Özellikleri
+  final List<String> pastLifeTantric; // Geçmiş Yaşam Tantrik Temaları
+  final Map<String, String> sacredUnion; // Kutsal Birlik Uyumu
+  final String awakeningMantra; // Uyanış Mantrası
+  final String yantraSymbol; // Yantra Sembolü
 
   const TantricProfile({
     required this.kundaliniPattern,
@@ -790,13 +802,31 @@ class FamousAries {
 
 class TaurusContent {
   static const ZodiacProfile profile = ZodiacProfile(
-    name: 'Boğa', englishName: 'Taurus', symbol: '♉', emoji: '🐂',
-    dateRange: '20 Nisan - 20 Mayıs', element: 'Toprak', modality: 'Sabit',
-    rulingPlanet: 'Venüs', exaltedPlanet: 'Ay', detrimentPlanet: 'Mars/Plüton', fallPlanet: 'Uranüs',
-    polarity: 'Feminen/Yin', house: 2,
-    bodyParts: ['Boyun', 'Boğaz', 'Tiroid', 'Ses telleri', 'Alt çene', 'Kulaklar'],
+    name: 'Boğa',
+    englishName: 'Taurus',
+    symbol: '♉',
+    emoji: '🐂',
+    dateRange: '20 Nisan - 20 Mayıs',
+    element: 'Toprak',
+    modality: 'Sabit',
+    rulingPlanet: 'Venüs',
+    exaltedPlanet: 'Ay',
+    detrimentPlanet: 'Mars/Plüton',
+    fallPlanet: 'Uranüs',
+    polarity: 'Feminen/Yin',
+    house: 2,
+    bodyParts: [
+      'Boyun',
+      'Boğaz',
+      'Tiroid',
+      'Ses telleri',
+      'Alt çene',
+      'Kulaklar',
+    ],
     colors: ['Yeşil', 'Pembe', 'Toprak tonları', 'Pastel renkler'],
-    numbers: [2, 6, 9, 12, 24], day: 'Cuma', metal: 'Bakır',
+    numbers: [2, 6, 9, 12, 24],
+    day: 'Cuma',
+    metal: 'Bakır',
     stones: ['Zümrüt', 'Gül Kuvars', 'Safir', 'Akik', 'Lapis Lazuli'],
     flowers: ['Gül', 'Gelincik', 'Papatya', 'Menekşe', 'Sümbül'],
     animals: ['Boğa', 'İnek', 'Baykuş'],
@@ -815,15 +845,79 @@ ve öz değer kavramı. Bize neye değer verdiğimizi ve kalıcı olanı inşa e
 
   static const PersonalityDeepDive personality = PersonalityDeepDive(
     coreTraits: [
-      TraitAnalysis(trait: 'Sabır', description: 'Zamana güvenir, acele etmez, sonuçların olgunlaşmasını bekler', lightExpression: 'Metanetli, kalıcı sonuçlar üreten, uzun vadeli düşünen', shadowExpression: 'Pasif, hareketsiz, fırsatları kaçıran', developmentTip: 'Sabır ile hareketsizlik arasındaki farkı ayırt et'),
-      TraitAnalysis(trait: 'Güvenilirlik', description: 'Sözünün eri, tutarlı, değişmez', lightExpression: 'Sadık, güvenilir, kaya gibi sağlam', shadowExpression: 'Katı, değişime kapalı, esnek olmayan', developmentTip: 'Güvenilirliği korurken esneklik geliştir'),
-      TraitAnalysis(trait: 'Duyusallık', description: 'Beş duyuyla yaşayan, fiziksel zevklere düşkün', lightExpression: 'Hayattan keyif alan, estet, gurme', shadowExpression: 'Aşırı tüketici, tembel, maddeye bağımlı', developmentTip: 'Duyusal zevkleri bilinçli deneyimle'),
-      TraitAnalysis(trait: 'Kararlılık', description: 'Bir kez karar verince geri dönmez', lightExpression: 'Azimli, hedefine ulaşan, sebatkar', shadowExpression: 'İnatçı, fikrini değiştiremeyen, takıntılı', developmentTip: 'İnatçılık ile kararlılık arasındaki çizgiyi bul'),
-      TraitAnalysis(trait: 'Pratiklik', description: 'Somut, gerçekçi, elle tutulur sonuçlar odaklı', lightExpression: 'Ayakları yere basan, çözüm üreten', shadowExpression: 'Hayal gücünden yoksun, sıkıcı', developmentTip: 'Pratikliği yaratıcılıkla harmanlayı'),
-      TraitAnalysis(trait: 'Sahiplenicilik', description: 'Değer verdiği şeyleri koruma içgüdüsü', lightExpression: 'Koruyucu, değer veren, bakım gösteren', shadowExpression: 'Kıskanç, kontrol edici, bağımlı yapan', developmentTip: 'Sevgiyle sahiplenmek ve özgürlük vermek arasında denge kur'),
+      TraitAnalysis(
+        trait: 'Sabır',
+        description:
+            'Zamana güvenir, acele etmez, sonuçların olgunlaşmasını bekler',
+        lightExpression:
+            'Metanetli, kalıcı sonuçlar üreten, uzun vadeli düşünen',
+        shadowExpression: 'Pasif, hareketsiz, fırsatları kaçıran',
+        developmentTip: 'Sabır ile hareketsizlik arasındaki farkı ayırt et',
+      ),
+      TraitAnalysis(
+        trait: 'Güvenilirlik',
+        description: 'Sözünün eri, tutarlı, değişmez',
+        lightExpression: 'Sadık, güvenilir, kaya gibi sağlam',
+        shadowExpression: 'Katı, değişime kapalı, esnek olmayan',
+        developmentTip: 'Güvenilirliği korurken esneklik geliştir',
+      ),
+      TraitAnalysis(
+        trait: 'Duyusallık',
+        description: 'Beş duyuyla yaşayan, fiziksel zevklere düşkün',
+        lightExpression: 'Hayattan keyif alan, estet, gurme',
+        shadowExpression: 'Aşırı tüketici, tembel, maddeye bağımlı',
+        developmentTip: 'Duyusal zevkleri bilinçli deneyimle',
+      ),
+      TraitAnalysis(
+        trait: 'Kararlılık',
+        description: 'Bir kez karar verince geri dönmez',
+        lightExpression: 'Azimli, hedefine ulaşan, sebatkar',
+        shadowExpression: 'İnatçı, fikrini değiştiremeyen, takıntılı',
+        developmentTip: 'İnatçılık ile kararlılık arasındaki çizgiyi bul',
+      ),
+      TraitAnalysis(
+        trait: 'Pratiklik',
+        description: 'Somut, gerçekçi, elle tutulur sonuçlar odaklı',
+        lightExpression: 'Ayakları yere basan, çözüm üreten',
+        shadowExpression: 'Hayal gücünden yoksun, sıkıcı',
+        developmentTip: 'Pratikliği yaratıcılıkla harmanlayı',
+      ),
+      TraitAnalysis(
+        trait: 'Sahiplenicilik',
+        description: 'Değer verdiği şeyleri koruma içgüdüsü',
+        lightExpression: 'Koruyucu, değer veren, bakım gösteren',
+        shadowExpression: 'Kıskanç, kontrol edici, bağımlı yapan',
+        developmentTip:
+            'Sevgiyle sahiplenmek ve özgürlük vermek arasında denge kur',
+      ),
     ],
-    strengths: ['Olağanüstü sabır ve dayanıklılık', 'Güvenilirlik ve sadakat', 'Pratik zeka ve sağduyu', 'Finansal yönetim becerisi', 'Estetik anlayış ve güzellik duygusu', 'Duygusal istikrar', 'Doğayla derin bağ', 'El becerileri ve zanaat yeteneği', 'Konfor ve huzur yaratma kabiliyeti', 'Besleyici ve koruyucu içgüdü', 'Kalıcı değerler inşa etme'],
-    weaknesses: ['Aşırı inatçılık', 'Değişime direnç', 'Maddi güvenliğe takıntı', 'Tembellik eğilimi', 'Aşırı yeme-içme', 'Kıskançlık ve sahiplenicilik', 'Yavaş tepki verme', 'Konfor alanından çıkamama', 'Kin tutma', 'Rutine aşırı bağlılık', 'Risk almaktan kaçınma', 'Duygusal ifade zorluğu'],
+    strengths: [
+      'Olağanüstü sabır ve dayanıklılık',
+      'Güvenilirlik ve sadakat',
+      'Pratik zeka ve sağduyu',
+      'Finansal yönetim becerisi',
+      'Estetik anlayış ve güzellik duygusu',
+      'Duygusal istikrar',
+      'Doğayla derin bağ',
+      'El becerileri ve zanaat yeteneği',
+      'Konfor ve huzur yaratma kabiliyeti',
+      'Besleyici ve koruyucu içgüdü',
+      'Kalıcı değerler inşa etme',
+    ],
+    weaknesses: [
+      'Aşırı inatçılık',
+      'Değişime direnç',
+      'Maddi güvenliğe takıntı',
+      'Tembellik eğilimi',
+      'Aşırı yeme-içme',
+      'Kıskançlık ve sahiplenicilik',
+      'Yavaş tepki verme',
+      'Konfor alanından çıkamama',
+      'Kin tutma',
+      'Rutine aşırı bağlılık',
+      'Risk almaktan kaçınma',
+      'Duygusal ifade zorluğu',
+    ],
     hiddenDepths: '''
 Boğa'nın sakin ve stabil dış görünüşünün altında derin bir hassasiyet yatar. Venüs yönetiminde
 olması, aşk ve güzelliğe olan derin bağlılığını gösterir. Güvenlik ihtiyacının altında geçmiş
@@ -839,20 +933,100 @@ sonra kendini tamamen verir. Romantik ve duyusaldır. Fiziksel temas çok öneml
 arar - duygusal ve maddi. Değişken, güvenilmez partnerlerle zorluk yaşar. Aldatma affedilmez.
 ''',
     compatibilityDetails: {
-      'Koç': CompatibilityDetail(rating: 5, dynamic: 'Hız ve sabır çatışması', strengths: ['Güçlü fiziksel çekim', 'Tamamlayıcı enerjiler'], challenges: ['Tempo farkı', 'İnatçılık çatışması'], advice: 'Koç yavaşlasın, Boğa hızlansın'),
-      'Boğa': CompatibilityDetail(rating: 8, dynamic: 'Huzurlu ve istikrarlı', strengths: ['Karşılıklı anlayış', 'Ortak değerler', 'Duyusal uyum'], challenges: ['Çift inatçılık', 'Durgunluk riski'], advice: 'Birbirinizi harekete geçirin'),
-      'İkizler': CompatibilityDetail(rating: 4, dynamic: 'Farklı dünyalar', strengths: ['Entelektüel stimülasyon', 'Sosyal genişleme'], challenges: ['Güvenilirlik sorunu', 'Değişkenlik vs stabilite'], advice: 'Farklılıkları kutlayın'),
-      'Yengeç': CompatibilityDetail(rating: 9, dynamic: 'Yuva kuran ortaklar', strengths: ['Duygusal güvenlik', 'Aile değerleri', 'Besleyici bağ'], challenges: ['Aşırı korumacılık'], advice: 'Birlikte güvenli dünya yaratın'),
-      'Aslan': CompatibilityDetail(rating: 6, dynamic: 'İki sabit burç', strengths: ['Sadakat', 'Güçlü bağ', 'Karşılıklı hayranlık'], challenges: ['İkisi de fikrini değiştirmez'], advice: 'Uzlaşmayı öğrenin'),
-      'Başak': CompatibilityDetail(rating: 9, dynamic: 'Toprak uyumu', strengths: ['Pratik uyum', 'Ortak hedefler', 'Karşılıklı saygı'], challenges: ['Eleştiriye hassasiyet'], advice: 'Eğlenceyi unutmayın'),
-      'Terazi': CompatibilityDetail(rating: 7, dynamic: 'Venüs kardeşliği', strengths: ['Estetik uyum', 'Romantizm', 'Armoni arayışı'], challenges: ['Karar verme zorluğu'], advice: 'Güzellik ve huzur yaratın'),
-      'Akrep': CompatibilityDetail(rating: 7, dynamic: 'Derin ve yoğun', strengths: ['Sadakat', 'Tutkulu bağ', 'Güvenlik'], challenges: ['Sahiplenicilik', 'Kıskançlık'], advice: 'Güveni inşa edin'),
-      'Yay': CompatibilityDetail(rating: 4, dynamic: 'Ev vs Macera', strengths: ['Tamamlayıcı perspektifler'], challenges: ['Yaşam tarzı çatışması', 'Özgürlük vs güvenlik'], advice: 'Orta yol bulmak zor'),
-      'Oğlak': CompatibilityDetail(rating: 9, dynamic: 'Güç çifti', strengths: ['Ortak hedefler', 'Maddi güvenlik', 'Karşılıklı saygı'], challenges: ['Aşırı ciddiyet'], advice: 'Romantizmi canlı tutun'),
-      'Kova': CompatibilityDetail(rating: 4, dynamic: 'Gelenek vs Yenilik', strengths: ['Entelektüel çeşitlilik'], challenges: ['Temel değer çatışması'], advice: 'Birbirinizden öğrenin'),
-      'Balık': CompatibilityDetail(rating: 8, dynamic: 'Romantik ve destekleyici', strengths: ['Duygusal derinlik', 'Şefkat', 'Yaratıcılık'], challenges: ['Pratik vs hayalci'], advice: 'Denge şart'),
+      'Koç': CompatibilityDetail(
+        rating: 5,
+        dynamic: 'Hız ve sabır çatışması',
+        strengths: ['Güçlü fiziksel çekim', 'Tamamlayıcı enerjiler'],
+        challenges: ['Tempo farkı', 'İnatçılık çatışması'],
+        advice: 'Koç yavaşlasın, Boğa hızlansın',
+      ),
+      'Boğa': CompatibilityDetail(
+        rating: 8,
+        dynamic: 'Huzurlu ve istikrarlı',
+        strengths: ['Karşılıklı anlayış', 'Ortak değerler', 'Duyusal uyum'],
+        challenges: ['Çift inatçılık', 'Durgunluk riski'],
+        advice: 'Birbirinizi harekete geçirin',
+      ),
+      'İkizler': CompatibilityDetail(
+        rating: 4,
+        dynamic: 'Farklı dünyalar',
+        strengths: ['Entelektüel stimülasyon', 'Sosyal genişleme'],
+        challenges: ['Güvenilirlik sorunu', 'Değişkenlik vs stabilite'],
+        advice: 'Farklılıkları kutlayın',
+      ),
+      'Yengeç': CompatibilityDetail(
+        rating: 9,
+        dynamic: 'Yuva kuran ortaklar',
+        strengths: ['Duygusal güvenlik', 'Aile değerleri', 'Besleyici bağ'],
+        challenges: ['Aşırı korumacılık'],
+        advice: 'Birlikte güvenli dünya yaratın',
+      ),
+      'Aslan': CompatibilityDetail(
+        rating: 6,
+        dynamic: 'İki sabit burç',
+        strengths: ['Sadakat', 'Güçlü bağ', 'Karşılıklı hayranlık'],
+        challenges: ['İkisi de fikrini değiştirmez'],
+        advice: 'Uzlaşmayı öğrenin',
+      ),
+      'Başak': CompatibilityDetail(
+        rating: 9,
+        dynamic: 'Toprak uyumu',
+        strengths: ['Pratik uyum', 'Ortak hedefler', 'Karşılıklı saygı'],
+        challenges: ['Eleştiriye hassasiyet'],
+        advice: 'Eğlenceyi unutmayın',
+      ),
+      'Terazi': CompatibilityDetail(
+        rating: 7,
+        dynamic: 'Venüs kardeşliği',
+        strengths: ['Estetik uyum', 'Romantizm', 'Armoni arayışı'],
+        challenges: ['Karar verme zorluğu'],
+        advice: 'Güzellik ve huzur yaratın',
+      ),
+      'Akrep': CompatibilityDetail(
+        rating: 7,
+        dynamic: 'Derin ve yoğun',
+        strengths: ['Sadakat', 'Tutkulu bağ', 'Güvenlik'],
+        challenges: ['Sahiplenicilik', 'Kıskançlık'],
+        advice: 'Güveni inşa edin',
+      ),
+      'Yay': CompatibilityDetail(
+        rating: 4,
+        dynamic: 'Ev vs Macera',
+        strengths: ['Tamamlayıcı perspektifler'],
+        challenges: ['Yaşam tarzı çatışması', 'Özgürlük vs güvenlik'],
+        advice: 'Orta yol bulmak zor',
+      ),
+      'Oğlak': CompatibilityDetail(
+        rating: 9,
+        dynamic: 'Güç çifti',
+        strengths: ['Ortak hedefler', 'Maddi güvenlik', 'Karşılıklı saygı'],
+        challenges: ['Aşırı ciddiyet'],
+        advice: 'Romantizmi canlı tutun',
+      ),
+      'Kova': CompatibilityDetail(
+        rating: 4,
+        dynamic: 'Gelenek vs Yenilik',
+        strengths: ['Entelektüel çeşitlilik'],
+        challenges: ['Temel değer çatışması'],
+        advice: 'Birbirinizden öğrenin',
+      ),
+      'Balık': CompatibilityDetail(
+        rating: 8,
+        dynamic: 'Romantik ve destekleyici',
+        strengths: ['Duygusal derinlik', 'Şefkat', 'Yaratıcılık'],
+        challenges: ['Pratik vs hayalci'],
+        advice: 'Denge şart',
+      ),
     },
-    relationshipAdvice: ['Değişime daha açık ol', 'Kıskançlık duygularını partnerinle konuş', 'Maddi güvenliği ilişkinin önüne koyma', 'İnatçılığını fark et ve yumuşamayı öğren', 'Duygularını sözlerle de ifade et', 'Rutinin dışına çıkmaya cesaret et', 'Kin tutma - affetmeyi öğren'],
+    relationshipAdvice: [
+      'Değişime daha açık ol',
+      'Kıskançlık duygularını partnerinle konuş',
+      'Maddi güvenliği ilişkinin önüne koyma',
+      'İnatçılığını fark et ve yumuşamayı öğren',
+      'Duygularını sözlerle de ifade et',
+      'Rutinin dışına çıkmaya cesaret et',
+      'Kin tutma - affetmeyi öğren',
+    ],
   );
 
   static const CareerProfile career = CareerProfile(
@@ -862,18 +1036,65 @@ eder. Yavaş ama emin adımlarla ilerler. Kalite odaklıdır - yarım iş yapmak
 tercih eder. Ellerini kullanan, somut sonuç üreten işlerde parlar.
 ''',
     idealCareers: [
-      CareerSuggestion(career: 'Finansal Danışman/Bankacı', reason: 'Para yönetimi, güvenlik, uzun vadeli planlama', tips: 'Müşteri ilişkilerinde sıcaklığını göster'),
-      CareerSuggestion(career: 'Şef/Aşçı', reason: 'Duyusal zevkler, el becerisi, yaratıcılık', tips: 'Mutfak trendlerini takip et'),
-      CareerSuggestion(career: 'Mimar/İç Mimar', reason: 'Estetik, kalıcılık, pratik güzellik', tips: 'Deadline baskısına alış'),
-      CareerSuggestion(career: 'Bahçıvan/Peyzaj Tasarımcısı', reason: 'Doğayla bağ, elle çalışma, sabır', tips: 'Pazarlamayı öğren'),
-      CareerSuggestion(career: 'Müzisyen/Ses Sanatçısı', reason: 'Boğaz yönetimi, estetik, duyusal ifade', tips: 'Sahne korkusunun üstesinden gel'),
-      CareerSuggestion(career: 'Emlakçı/Gayrimenkul', reason: 'Maddi güvenlik, mülk, kalıcı değer', tips: 'Hızlı hareket gerektiren piyasaya uyum sağla'),
-      CareerSuggestion(career: 'Kuyumcu/Mücevher Tasarımcısı', reason: 'El becerisi, değerli materyaller, estetik', tips: 'Modern trendleri klasikle harmanlayı'),
-      CareerSuggestion(career: 'Masaj Terapisti/Spa Yöneticisi', reason: 'Dokunsal, rahatlatıcı, duyusal', tips: 'İş-yaşam dengesi kur'),
-      CareerSuggestion(career: 'Çiftçi/Organik Tarım', reason: 'Toprakla bağ, sabır, doğal döngüler', tips: 'Teknolojiye açık ol'),
-      CareerSuggestion(career: 'Antikacı/Sanat Koleksiyoncusu', reason: 'Değer anlayışı, kalıcılık, estetik', tips: 'Piyasa trendlerini takip et'),
+      CareerSuggestion(
+        career: 'Finansal Danışman/Bankacı',
+        reason: 'Para yönetimi, güvenlik, uzun vadeli planlama',
+        tips: 'Müşteri ilişkilerinde sıcaklığını göster',
+      ),
+      CareerSuggestion(
+        career: 'Şef/Aşçı',
+        reason: 'Duyusal zevkler, el becerisi, yaratıcılık',
+        tips: 'Mutfak trendlerini takip et',
+      ),
+      CareerSuggestion(
+        career: 'Mimar/İç Mimar',
+        reason: 'Estetik, kalıcılık, pratik güzellik',
+        tips: 'Deadline baskısına alış',
+      ),
+      CareerSuggestion(
+        career: 'Bahçıvan/Peyzaj Tasarımcısı',
+        reason: 'Doğayla bağ, elle çalışma, sabır',
+        tips: 'Pazarlamayı öğren',
+      ),
+      CareerSuggestion(
+        career: 'Müzisyen/Ses Sanatçısı',
+        reason: 'Boğaz yönetimi, estetik, duyusal ifade',
+        tips: 'Sahne korkusunun üstesinden gel',
+      ),
+      CareerSuggestion(
+        career: 'Emlakçı/Gayrimenkul',
+        reason: 'Maddi güvenlik, mülk, kalıcı değer',
+        tips: 'Hızlı hareket gerektiren piyasaya uyum sağla',
+      ),
+      CareerSuggestion(
+        career: 'Kuyumcu/Mücevher Tasarımcısı',
+        reason: 'El becerisi, değerli materyaller, estetik',
+        tips: 'Modern trendleri klasikle harmanlayı',
+      ),
+      CareerSuggestion(
+        career: 'Masaj Terapisti/Spa Yöneticisi',
+        reason: 'Dokunsal, rahatlatıcı, duyusal',
+        tips: 'İş-yaşam dengesi kur',
+      ),
+      CareerSuggestion(
+        career: 'Çiftçi/Organik Tarım',
+        reason: 'Toprakla bağ, sabır, doğal döngüler',
+        tips: 'Teknolojiye açık ol',
+      ),
+      CareerSuggestion(
+        career: 'Antikacı/Sanat Koleksiyoncusu',
+        reason: 'Değer anlayışı, kalıcılık, estetik',
+        tips: 'Piyasa trendlerini takip et',
+      ),
     ],
-    careerChallenges: ['Hızlı değişen sektörlere uyum sağlamakta zorluk', 'Deadline baskısı altında stres', 'Yeni teknolojileri benimsemede yavaşlık', 'Risk gerektiren kararlardan kaçınma', 'Konfor alanından çıkmayı reddetme', 'Eleştiriyi kişisel alma'],
+    careerChallenges: [
+      'Hızlı değişen sektörlere uyum sağlamakta zorluk',
+      'Deadline baskısı altında stres',
+      'Yeni teknolojileri benimsemede yavaşlık',
+      'Risk gerektiren kararlardan kaçınma',
+      'Konfor alanından çıkmayı reddetme',
+      'Eleştiriyi kişisel alma',
+    ],
     financialTendencies: '''
 Boğa zodyakın en iyi para yöneticilerinden biridir. Biriktirmeyi, yatırım yapmayı sever.
 Güvenlik fonu olmadan rahat edemez. Uzun vadeli yatırımları tercih eder - gayrimenkul,
@@ -882,10 +1103,37 @@ altın, kalıcı değerler. Tavsiye: Aşırı tutumluluktan kaçın, zenginliği
   );
 
   static const HealthProfile health = HealthProfile(
-    bodyRulership: 'Boyun, boğaz, tiroid bezi, ses telleri, alt çene, kulaklar, tonsiller',
-    commonIssues: ['Boğaz enfeksiyonları ve farenjit', 'Tiroid problemleri', 'Ses kısıklığı', 'Boyun tutulması', 'Kilo alma eğilimi', 'Diyabet riski', 'Kulak enfeksiyonları', 'Çene ve diş problemleri'],
-    healthAdvice: ['Boynunu sıcak tut', 'Tiroid kontrollerini düzenli yaptır', 'Şeker tüketimini dengele', 'Boyun egzersizleri yap', 'Yeterli su iç', 'Aşırı yemekten kaçın - porsiyon kontrolü', 'Metabolizmayı hızlandıran aktiviteler ekle'],
-    bestExercises: ['Yürüyüş (özellikle doğada)', 'Yoga', 'Yüzme', 'Bahçe işleri', 'Dans', 'Pilates', 'Tai Chi', 'Ağırlık çalışması'],
+    bodyRulership:
+        'Boyun, boğaz, tiroid bezi, ses telleri, alt çene, kulaklar, tonsiller',
+    commonIssues: [
+      'Boğaz enfeksiyonları ve farenjit',
+      'Tiroid problemleri',
+      'Ses kısıklığı',
+      'Boyun tutulması',
+      'Kilo alma eğilimi',
+      'Diyabet riski',
+      'Kulak enfeksiyonları',
+      'Çene ve diş problemleri',
+    ],
+    healthAdvice: [
+      'Boynunu sıcak tut',
+      'Tiroid kontrollerini düzenli yaptır',
+      'Şeker tüketimini dengele',
+      'Boyun egzersizleri yap',
+      'Yeterli su iç',
+      'Aşırı yemekten kaçın - porsiyon kontrolü',
+      'Metabolizmayı hızlandıran aktiviteler ekle',
+    ],
+    bestExercises: [
+      'Yürüyüş (özellikle doğada)',
+      'Yoga',
+      'Yüzme',
+      'Bahçe işleri',
+      'Dans',
+      'Pilates',
+      'Tai Chi',
+      'Ağırlık çalışması',
+    ],
     stressManagement: '''
 Boğa stresi fiziksel olarak biriktirir - özellikle boyun ve omuzlarda. Düzenli masaj, sıcak
 banyo, aromaterapi, yumuşak müzik rahatlatır. Doğada vakit geçirmek en iyi terapi. Aşırı
@@ -900,24 +1148,73 @@ Maddeyi reddetmek yerine, maddenin içindeki kutsalı görmek. Bedende olmak, du
 yüceltmek Boğa'nın meditasyonudur. Venüs enerjisini yükseltmek: güzelliği yaratmak, sevgiyi
 somutlaştırmak, şükran pratiği. Boğa için minnettarlık en güçlü spiritüel araçtır.
 ''',
-    karmaAndLessons: ['Maddi güvenliği iç güvenliğe dönüştürmek', 'Sahiplenme yerine paylaşmayı öğrenmek', 'Değişimi tehdit değil fırsat olarak görmek', 'Öz değeri dış koşullardan bağımsız bulmak', 'Konfordan çıkarak büyümek', 'Bağlılık ile bağımlılık arasındaki farkı öğrenmek', 'Affetmeyi ve bırakmayı öğrenmek'],
-    pastLifeThemes: ['Zengin tüccar veya banker', 'Çiftçi, toprak sahibi', 'Saray aşçısı veya zanaatkar', 'Müzisyen, ses sanatçısı', 'Tapınak rahibesi (güzellik kültü)', 'Kıtlık döneminde yaşayan', 'Kralın hazinecisi'],
+    karmaAndLessons: [
+      'Maddi güvenliği iç güvenliğe dönüştürmek',
+      'Sahiplenme yerine paylaşmayı öğrenmek',
+      'Değişimi tehdit değil fırsat olarak görmek',
+      'Öz değeri dış koşullardan bağımsız bulmak',
+      'Konfordan çıkarak büyümek',
+      'Bağlılık ile bağımlılık arasındaki farkı öğrenmek',
+      'Affetmeyi ve bırakmayı öğrenmek',
+    ],
+    pastLifeThemes: [
+      'Zengin tüccar veya banker',
+      'Çiftçi, toprak sahibi',
+      'Saray aşçısı veya zanaatkar',
+      'Müzisyen, ses sanatçısı',
+      'Tapınak rahibesi (güzellik kültü)',
+      'Kıtlık döneminde yaşayan',
+      'Kralın hazinecisi',
+    ],
     evolutionPath: '''
 Evrimleşmemiş Boğa: Açgözlü, sahiplenici, değişime kapalı, maddeye bağımlı, hazcı tüketici.
 Evrimleşen Boğa: Cömert, paylaşan, esnek, değerlerin farkında, bilinçli tüketici, doğayla uyumlu.
 Tam evrimleşmiş Boğa: Maddi ve manevi dünyayı birleştiren, bolluğu yaratan ve paylaşan,
 toprak bilinci taşıyan, değişimi kucaklayan, öz değerini bilen.
 ''',
-    recommendedPractices: ['Toprakla temas (çıplak ayakla yürümek)', 'Bahçecilik ve bitkilerle çalışma', 'Şükran günlüğü tutma', 'Kristal meditasyonu (Zümrüt, Gül Kuvars)', 'Bilinçli yeme pratiği', 'Ses çalışması (mantra, şarkı)', 'Doğa yürüyüşleri', 'Cömertlik pratiği - düzenli bağış'],
+    recommendedPractices: [
+      'Toprakla temas (çıplak ayakla yürümek)',
+      'Bahçecilik ve bitkilerle çalışma',
+      'Şükran günlüğü tutma',
+      'Kristal meditasyonu (Zümrüt, Gül Kuvars)',
+      'Bilinçli yeme pratiği',
+      'Ses çalışması (mantra, şarkı)',
+      'Doğa yürüyüşleri',
+      'Cömertlik pratiği - düzenli bağış',
+    ],
   );
 
   static const List<FamousTaurus> famousPeople = [
-    FamousTaurus(name: 'William Shakespeare', birthDate: '23 Nisan 1564', trait: 'Kalıcı eserler, dil ustalığı, zamansız değer'),
-    FamousTaurus(name: 'Adele', birthDate: '5 Mayıs 1988', trait: 'Güçlü ses, duygusal derinlik, kalıcı şarkılar'),
-    FamousTaurus(name: 'David Beckham', birthDate: '2 Mayıs 1975', trait: 'Sebat, estetik, marka değeri'),
-    FamousTaurus(name: 'Queen Elizabeth II', birthDate: '21 Nisan 1926', trait: 'İstikrar, gelenek, kalıcılık'),
-    FamousTaurus(name: 'Salvador Dali', birthDate: '11 Mayıs 1904', trait: 'Görsel estetik, duyusal yoğunluk'),
-    FamousTaurus(name: 'Cher', birthDate: '20 Mayıs 1946', trait: 'Dayanıklılık, güzellik, değişime rağmen kalıcılık'),
+    FamousTaurus(
+      name: 'William Shakespeare',
+      birthDate: '23 Nisan 1564',
+      trait: 'Kalıcı eserler, dil ustalığı, zamansız değer',
+    ),
+    FamousTaurus(
+      name: 'Adele',
+      birthDate: '5 Mayıs 1988',
+      trait: 'Güçlü ses, duygusal derinlik, kalıcı şarkılar',
+    ),
+    FamousTaurus(
+      name: 'David Beckham',
+      birthDate: '2 Mayıs 1975',
+      trait: 'Sebat, estetik, marka değeri',
+    ),
+    FamousTaurus(
+      name: 'Queen Elizabeth II',
+      birthDate: '21 Nisan 1926',
+      trait: 'İstikrar, gelenek, kalıcılık',
+    ),
+    FamousTaurus(
+      name: 'Salvador Dali',
+      birthDate: '11 Mayıs 1904',
+      trait: 'Görsel estetik, duyusal yoğunluk',
+    ),
+    FamousTaurus(
+      name: 'Cher',
+      birthDate: '20 Mayıs 1946',
+      trait: 'Dayanıklılık, güzellik, değişime rağmen kalıcılık',
+    ),
   ];
 
   // ════════════════════════════════════════════════════════════════════════════
@@ -1026,18 +1323,30 @@ katılaşır (savunma mekanizması). Aşırı katılık esneklik sorunlarına i�
       'Antik Mısır Hathor Rahibi - Aşk ve güzellik gizemlerine vakıf',
     ],
     sacredUnion: {
-      'Koç': "Ateş ve Toprak Simyası - Koç'un ateşi Boğa'nın toprağında form bulur. Boğa, Koç'un enerjisini yavaşlatır ve derinleştirir. Koç, Boğa'yı harekete geçirir. Duyusal tantra ve yavaş, bilinçli birleşme için güçlü potansiyel.",
-      'Boğa': "Çifte Toprak Birliği - İki Venüs enerjisinin muhteşem buluşması. Duyusal cennet, uzun süren, derinden tatmin edici tantrik deneyimler. Risk: Durgunluk, konfor alanında kalma. Bilinçli olarak büyümeyi seçmelisiniz.",
-      'İkizler': "Toprak ve Hava Dansı - Zihinsel stimülasyon bedensel deneyimle buluşur. İkizler tantrayı entelektüelleştirir, Boğa onu bedende somutlaştırır. Konuşma ve dokunuş tantrikası için ilginç kombinasyon.",
-      'Yengeç': "Bereket Birliği - İki besleyici enerji, derin duygusal ve fiziksel bağ. Ev ve yuva temalı tantrik alan yaratma. Koruyucu, güvenli, derinden iyileştirici kutsal alan.",
-      'Aslan': "Venüs ve Güneş Birliği - Güzellik güçle, şefkat cesaretle buluşur. Kraliyet tantrikası - görkemli, dramatik, cömert. Birbirini taçlandıran iki sevgili.",
-      'Başak': "Toprak Mükemmeliyeti - Detaylara özen, bilinçli dokunuş, saf farkındalık. En rafine duyusal tantra. Beden tapınağının bakımı ve şereflendirilmesi.",
-      'Terazi': "Çifte Venüs Cenneti - Aşk tanrıçasının iki çocuğu. Estetik, zarif, dengeli tantrik birleşme. Güzellik ritüelleri, sanatsal cinsellik, harmonik enerji alışverişi.",
-      'Akrep': "Derin Dönüşüm Birliği - Boğa'nın yüzey güzelliği Akrep'in derinlikleriyle buluşur. En yoğun, en dönüştürücü tantrik potansiyel. Ölüm ve yeniden doğuş ritüelleri.",
-      'Yay': "Toprak ve Ateş Gerilimi - Macera vs güvenlik. Tantrik açıdan, Yay genişletir ve özgürleştirir, Boğa topraklar ve derinleştirir. Kutsal mekan gezileri, doğada tantra.",
-      'Oğlak': "Çifte Toprak Gücü - Yapı, disiplin, uzun vadeli tantrik pratik. Ustalaşma yolu, sabırlı enerji geliştirme. Tantrik disiplinin meyvelerini toplama.",
-      'Kova': "Gelenek ve Yenilik - Boğa'nın kadim tantra bilgisi Kova'nın yenilikçiliğiyle buluşur. Deneysel ama topraklanmış pratikler. Teknoloji ve beden birleşimi.",
-      'Balık': "Madde ve Ruh Birliği - Boğa'nın bedensel bilgeliği Balık'ın spiritüel derinliğiyle erir. Transcendent duyusallık, rüya gibi tantrik deneyimler, sınırların çözülmesi.",
+      'Koç':
+          "Ateş ve Toprak Simyası - Koç'un ateşi Boğa'nın toprağında form bulur. Boğa, Koç'un enerjisini yavaşlatır ve derinleştirir. Koç, Boğa'yı harekete geçirir. Duyusal tantra ve yavaş, bilinçli birleşme için güçlü potansiyel.",
+      'Boğa':
+          "Çifte Toprak Birliği - İki Venüs enerjisinin muhteşem buluşması. Duyusal cennet, uzun süren, derinden tatmin edici tantrik deneyimler. Risk: Durgunluk, konfor alanında kalma. Bilinçli olarak büyümeyi seçmelisiniz.",
+      'İkizler':
+          "Toprak ve Hava Dansı - Zihinsel stimülasyon bedensel deneyimle buluşur. İkizler tantrayı entelektüelleştirir, Boğa onu bedende somutlaştırır. Konuşma ve dokunuş tantrikası için ilginç kombinasyon.",
+      'Yengeç':
+          "Bereket Birliği - İki besleyici enerji, derin duygusal ve fiziksel bağ. Ev ve yuva temalı tantrik alan yaratma. Koruyucu, güvenli, derinden iyileştirici kutsal alan.",
+      'Aslan':
+          "Venüs ve Güneş Birliği - Güzellik güçle, şefkat cesaretle buluşur. Kraliyet tantrikası - görkemli, dramatik, cömert. Birbirini taçlandıran iki sevgili.",
+      'Başak':
+          "Toprak Mükemmeliyeti - Detaylara özen, bilinçli dokunuş, saf farkındalık. En rafine duyusal tantra. Beden tapınağının bakımı ve şereflendirilmesi.",
+      'Terazi':
+          "Çifte Venüs Cenneti - Aşk tanrıçasının iki çocuğu. Estetik, zarif, dengeli tantrik birleşme. Güzellik ritüelleri, sanatsal cinsellik, harmonik enerji alışverişi.",
+      'Akrep':
+          "Derin Dönüşüm Birliği - Boğa'nın yüzey güzelliği Akrep'in derinlikleriyle buluşur. En yoğun, en dönüştürücü tantrik potansiyel. Ölüm ve yeniden doğuş ritüelleri.",
+      'Yay':
+          "Toprak ve Ateş Gerilimi - Macera vs güvenlik. Tantrik açıdan, Yay genişletir ve özgürleştirir, Boğa topraklar ve derinleştirir. Kutsal mekan gezileri, doğada tantra.",
+      'Oğlak':
+          "Çifte Toprak Gücü - Yapı, disiplin, uzun vadeli tantrik pratik. Ustalaşma yolu, sabırlı enerji geliştirme. Tantrik disiplinin meyvelerini toplama.",
+      'Kova':
+          "Gelenek ve Yenilik - Boğa'nın kadim tantra bilgisi Kova'nın yenilikçiliğiyle buluşur. Deneysel ama topraklanmış pratikler. Teknoloji ve beden birleşimi.",
+      'Balık':
+          "Madde ve Ruh Birliği - Boğa'nın bedensel bilgeliği Balık'ın spiritüel derinliğiyle erir. Transcendent duyusallık, rüya gibi tantrik deneyimler, sınırların çözülmesi.",
     },
     awakeningMantra: '''
 श्रीं मंत्र (Shreem Mantra) - Lakshmi/Venüs Enerjisi
@@ -1087,7 +1396,11 @@ class FamousTaurus {
   final String name;
   final String birthDate;
   final String trait;
-  const FamousTaurus({required this.name, required this.birthDate, required this.trait});
+  const FamousTaurus({
+    required this.name,
+    required this.birthDate,
+    required this.trait,
+  });
 }
 
 // ════════════════════════════════════════════════════════════════════════════
@@ -1109,7 +1422,14 @@ class GeminiContent {
     fallPlanet: 'Güney Ay Düğümü',
     polarity: 'Maskülen/Yang',
     house: 3,
-    bodyParts: ['Eller', 'Kollar', 'Omuzlar', 'Akciğerler', 'Sinir sistemi', 'Bronşlar'],
+    bodyParts: [
+      'Eller',
+      'Kollar',
+      'Omuzlar',
+      'Akciğerler',
+      'Sinir sistemi',
+      'Bronşlar',
+    ],
     colors: ['Sarı', 'Açık mavi', 'Gümüş', 'Lavanta'],
     numbers: [5, 14, 23],
     day: 'Çarşamba',
@@ -1147,30 +1467,35 @@ anahtarıdır.
     coreTraits: [
       TraitAnalysis(
         trait: 'Entelektüel Merak',
-        description: 'Her konuya ilgi duyan, sürekli öğrenen, bilgi koleksiyoncusu',
+        description:
+            'Her konuya ilgi duyan, sürekli öğrenen, bilgi koleksiyoncusu',
         lightExpression: 'Çok yönlü bilgi, adaptasyon, hızlı öğrenme',
         shadowExpression: 'Yüzeysellik, hiçbir şeyde uzmanlaşamama, dağınıklık',
-        developmentTip: 'Derinleşmeyi öğren - bir konuda ustalaş, sonra genişle',
+        developmentTip:
+            'Derinleşmeyi öğren - bir konuda ustalaş, sonra genişle',
       ),
       TraitAnalysis(
         trait: 'İletişim Ustalığı',
         description: 'Sözcüklerle oynayan, ikna eden, hikaye anlatan',
         lightExpression: 'Etkili iletişim, öğretme, bağlantı kurma',
         shadowExpression: 'Manipülasyon, dedikodu, söz tutamama',
-        developmentTip: 'Sözlerinin gücünü bil - kelimeler iyileştirebilir veya yaralayabilir',
+        developmentTip:
+            'Sözlerinin gücünü bil - kelimeler iyileştirebilir veya yaralayabilir',
       ),
       TraitAnalysis(
         trait: 'Zihinsel Çeviklik',
         description: 'Hızlı düşünen, çok görevli, mental akrobat',
         lightExpression: 'Problem çözme, yaratıcılık, hızlı adaptasyon',
         shadowExpression: 'Aşırı analiz, kararsızlık, zihinsel yorgunluk',
-        developmentTip: 'Zihni dinlendirmeyi öğren - meditasyon, sessizlik pratikleri',
+        developmentTip:
+            'Zihni dinlendirmeyi öğren - meditasyon, sessizlik pratikleri',
       ),
       TraitAnalysis(
         trait: 'Sosyal Kelebek',
         description: 'Her ortama uyum sağlayan, networking ustası',
         lightExpression: 'Geniş sosyal çevre, köprü kurma, topluluk oluşturma',
-        shadowExpression: 'Yüzeysel ilişkiler, tutarsızlık, güvenilmezlik algısı',
+        shadowExpression:
+            'Yüzeysel ilişkiler, tutarsızlık, güvenilmezlik algısı',
         developmentTip: 'Derinlik kur - az ama kaliteli ilişkilere yatırım yap',
       ),
       TraitAnalysis(
@@ -1260,7 +1585,11 @@ kişisel algılamamalıdır.
         rating: 7,
         dynamic: 'Zihinsel kaos ve eğlence',
         strengths: ['Karşılıklı anlayış', 'Sonsuz sohbet', 'Eğlence'],
-        challenges: ['Stabilite eksikliği', 'Kim topraklar?', 'Taahhüt zorluğu'],
+        challenges: [
+          'Stabilite eksikliği',
+          'Kim topraklar?',
+          'Taahhüt zorluğu',
+        ],
         advice: 'Bir rutininiz olsun - kaos çok fazla olabilir',
       ),
       'Yengeç': CompatibilityDetail(
@@ -1432,7 +1761,8 @@ oluştur. Anlık kararlar yerine bekle-düşün-harekete geç.
   );
 
   static const HealthProfile health = HealthProfile(
-    bodyRulership: 'Eller, kollar, omuzlar, akciğerler, bronşlar, sinir sistemi',
+    bodyRulership:
+        'Eller, kollar, omuzlar, akciğerler, bronşlar, sinir sistemi',
     commonIssues: [
       'Solunum problemleri (bronşit, astım)',
       'El ve kol yaralanmaları',
@@ -1671,18 +2001,30 @@ hale gelebilir, odak kaybını gösterir. Meditasyonla yoğunlaştırma gerekebi
       'Çifte Ruhlu Şaman - İki dünya arasında köprü kuran',
     ],
     sacredUnion: {
-      'Koç': "Ateş ve Hava Patlaması - Hızlı, heyecanlı, spontan. Zihinsel ve fiziksel stimülasyonun eşzamanlı patlaması. Konuşarak, tartışarak, yarışarak uyarılma. Hızlı tempolu tantra.",
-      'Boğa': "Hava ve Toprak Karşılaşması - Boğa yavaşlatır, İkizler hızlandırır. Zihinsel tantra bedensel tantrayı besler. Boğa'nın duyusallığı İkizler'in zihnini bedene getirir.",
-      'İkizler': "Çifte Merkür Cıvıltısı - Sonsuz sohbet, zihinsel ping-pong, kelime oyunları. Entelektüel orgazm. Risk: Bedeni tamamen unutmak. Sessizlik pratikleri şart.",
-      'Yengeç': "Hava ve Su Buğusu - Duygusal derinlik zihinsel keşifle buluşur. Yengeç'in şefkati İkizler'i kalbine indirir. Besleyici, koruyucu tantrik alan.",
-      'Aslan': "Hava ve Ateş Gösterisi - Dramatik, eğlenceli, canlı. Aslan'ın görkemi İkizler'in esprisini tetikler. Yaratıcı rol yapma, teatral tantra.",
-      'Başak': "Çifte Merkür Detayı - Zihinsel uyum, detaylara özen. Analitik tantra, bilinçli inceleme. Risk: Aşırı düşünme, spontanlığı kaybetme.",
-      'Terazi': "Hava Kardeşliği - Entelektüel ve estetik uyum. Zarif, dengeli, harmonik tantrik dans. İletişim ve güzellik birleşir.",
-      'Akrep': "Yüzey ve Derinlik - İkizler'in hafifliği Akrep'in yoğunluğuyla karşılaşır. Zorlu ama dönüştürücü. Akrep derinleştirir, İkizler havalandırır.",
-      'Yay': "Çapraz Ateşli Hava - Macera, keşif, genişleme. Felsefi tantra tartışmaları. Dünya gezmek, farklı tantra geleneklerini keşfetmek.",
-      'Oğlak': "Hava ve Toprak Yapısı - Oğlak'ın disiplini İkizler'in dağınıklığını toplar. Yapılandırılmış tantrik pratik, uzun vadeli gelişim.",
-      'Kova': "Çifte Hava Devrimi - Deneysel, yenilikçi, geleneksel olmayan tantra. Teknoloji entegrasyonu, uzaktan tantrik bağlantı, zihinsel telepatik seks.",
-      'Balık': "Hava ve Su Rüyası - Balık'ın mistisizmi İkizler'in merakını tetikler. Rüya tantrikası, bilinç genişlemesi, sınırların erimesi.",
+      'Koç':
+          "Ateş ve Hava Patlaması - Hızlı, heyecanlı, spontan. Zihinsel ve fiziksel stimülasyonun eşzamanlı patlaması. Konuşarak, tartışarak, yarışarak uyarılma. Hızlı tempolu tantra.",
+      'Boğa':
+          "Hava ve Toprak Karşılaşması - Boğa yavaşlatır, İkizler hızlandırır. Zihinsel tantra bedensel tantrayı besler. Boğa'nın duyusallığı İkizler'in zihnini bedene getirir.",
+      'İkizler':
+          "Çifte Merkür Cıvıltısı - Sonsuz sohbet, zihinsel ping-pong, kelime oyunları. Entelektüel orgazm. Risk: Bedeni tamamen unutmak. Sessizlik pratikleri şart.",
+      'Yengeç':
+          "Hava ve Su Buğusu - Duygusal derinlik zihinsel keşifle buluşur. Yengeç'in şefkati İkizler'i kalbine indirir. Besleyici, koruyucu tantrik alan.",
+      'Aslan':
+          "Hava ve Ateş Gösterisi - Dramatik, eğlenceli, canlı. Aslan'ın görkemi İkizler'in esprisini tetikler. Yaratıcı rol yapma, teatral tantra.",
+      'Başak':
+          "Çifte Merkür Detayı - Zihinsel uyum, detaylara özen. Analitik tantra, bilinçli inceleme. Risk: Aşırı düşünme, spontanlığı kaybetme.",
+      'Terazi':
+          "Hava Kardeşliği - Entelektüel ve estetik uyum. Zarif, dengeli, harmonik tantrik dans. İletişim ve güzellik birleşir.",
+      'Akrep':
+          "Yüzey ve Derinlik - İkizler'in hafifliği Akrep'in yoğunluğuyla karşılaşır. Zorlu ama dönüştürücü. Akrep derinleştirir, İkizler havalandırır.",
+      'Yay':
+          "Çapraz Ateşli Hava - Macera, keşif, genişleme. Felsefi tantra tartışmaları. Dünya gezmek, farklı tantra geleneklerini keşfetmek.",
+      'Oğlak':
+          "Hava ve Toprak Yapısı - Oğlak'ın disiplini İkizler'in dağınıklığını toplar. Yapılandırılmış tantrik pratik, uzun vadeli gelişim.",
+      'Kova':
+          "Çifte Hava Devrimi - Deneysel, yenilikçi, geleneksel olmayan tantra. Teknoloji entegrasyonu, uzaktan tantrik bağlantı, zihinsel telepatik seks.",
+      'Balık':
+          "Hava ve Su Rüyası - Balık'ın mistisizmi İkizler'in merakını tetikler. Rüya tantrikası, bilinç genişlemesi, sınırların erimesi.",
     },
     awakeningMantra: '''
 बीज मंत्र: "हं" (HAM) - Vishuddha Chakra
@@ -2061,7 +2403,8 @@ bütçesi planla, acil durum fonu oluştur.
   );
 
   static const HealthProfile health = HealthProfile(
-    bodyRulership: 'Göğüs, mide, rahim, sindirim sistemi, pankreas, safra kesesi',
+    bodyRulership:
+        'Göğüs, mide, rahim, sindirim sistemi, pankreas, safra kesesi',
     commonIssues: [
       'Mide sorunları - gastrit, ülser',
       'Sindirim bozuklukları',
@@ -2284,18 +2627,30 @@ kabuk gibi sertleşir (savunma). Aşırı koruma başkalarını uzaklaştırabil
       'İsis Rahibesi - Şifa ve yeniden doğuş gizemlerine adanmış',
     ],
     sacredUnion: {
-      'Koç': "Su ve Ateş Buharı - Yoğun, tutkulu, duygusal fırtına. Koç'un ateşi Yengeç'in sularını buharlaştırabilir. Dikkatli dengeleme gerekir. Koruma ve tutku birleşimi.",
-      'Boğa': "Su ve Toprak Bereketi - Bereket, güvenlik, besleyici aşk. Yengeç'in duyguları Boğa'nın istikrarında güvenle ifade edilir. Yuva tantrikası, ev yaratma.",
-      'İkizler': "Su ve Hava Bulutu - Duygusal derinlik zihinsel ifadeyle buluşur. İkizler duygularını anlamlandırır, Yengeç zihne his katar. İletişim ve empati.",
-      'Yengeç': "Çifte Ay Okyanusu - İki su enerjisinin derin birleşmesi. Sonsuz anlayış, karşılıklı beslenme. Risk: Birlikte boğulma, dünyadan kopuş. Topraklanma şart.",
-      'Aslan': "Su ve Ateş Sanatı - Aslan'ın görkemi Yengeç'in duygusal derinliğiyle buluşur. Yaratıcı, dramatik tantrik ifade. Aslan sahneyi kurar, Yengeç duyguyu getirir.",
-      'Başak': "Su ve Toprak Şifası - Yengeç'in duygusal şifası Başak'ın pratik şifasıyla birleşir. Beden ve ruh birlikte iyileşir. Bakım ve hizmet temalı tantra.",
-      'Terazi': "Su ve Hava Dengesi - Duygusal tutarlılık arayışı. Terazi'nin estetik anlayışı Yengeç'in atmosferik hassasiyetini anlar. Güzellik ve şefkat birleşir.",
-      'Akrep': "Çifte Su Derinliği - İki su burcunun en yoğun birliği. Karanlık derinliklere birlikte dalış, transformasyon, ölüm-yeniden doğuş. Güçlü bağ ve şifa potansiyeli.",
-      'Yay': "Su ve Ateş Macerası - Yengeç eve çağırırken Yay kaçmak ister. Zorlu denge. Evde macera yaratmak, birlikte seyahat, genişlemeyle birlikte kök salmak.",
-      'Oğlak': "Karşıt Kutuplar Birliği - Ay ve Satürn, anne ve baba, duygusal ve yapısal. Derin tamamlayıcılık potansiyeli. Birlikte aile, güvenlik ve başarı inşa etmek.",
-      'Kova': "Su ve Hava Sürprizi - Duygusal ve entelektüel dünyalar buluşur. Yengeç'in gelenekselliği Kova'nın yenilikçiliğiyle karşılaşır. Beklenmedik büyüme fırsatları.",
-      'Balık': "Çifte Su Erimesi - İki su burcunun mistik birliği. Sınırların tamamen erimesi, kozmik birleşme deneyimi. Derin ruhani bağ, telepati, rüya paylaşımı.",
+      'Koç':
+          "Su ve Ateş Buharı - Yoğun, tutkulu, duygusal fırtına. Koç'un ateşi Yengeç'in sularını buharlaştırabilir. Dikkatli dengeleme gerekir. Koruma ve tutku birleşimi.",
+      'Boğa':
+          "Su ve Toprak Bereketi - Bereket, güvenlik, besleyici aşk. Yengeç'in duyguları Boğa'nın istikrarında güvenle ifade edilir. Yuva tantrikası, ev yaratma.",
+      'İkizler':
+          "Su ve Hava Bulutu - Duygusal derinlik zihinsel ifadeyle buluşur. İkizler duygularını anlamlandırır, Yengeç zihne his katar. İletişim ve empati.",
+      'Yengeç':
+          "Çifte Ay Okyanusu - İki su enerjisinin derin birleşmesi. Sonsuz anlayış, karşılıklı beslenme. Risk: Birlikte boğulma, dünyadan kopuş. Topraklanma şart.",
+      'Aslan':
+          "Su ve Ateş Sanatı - Aslan'ın görkemi Yengeç'in duygusal derinliğiyle buluşur. Yaratıcı, dramatik tantrik ifade. Aslan sahneyi kurar, Yengeç duyguyu getirir.",
+      'Başak':
+          "Su ve Toprak Şifası - Yengeç'in duygusal şifası Başak'ın pratik şifasıyla birleşir. Beden ve ruh birlikte iyileşir. Bakım ve hizmet temalı tantra.",
+      'Terazi':
+          "Su ve Hava Dengesi - Duygusal tutarlılık arayışı. Terazi'nin estetik anlayışı Yengeç'in atmosferik hassasiyetini anlar. Güzellik ve şefkat birleşir.",
+      'Akrep':
+          "Çifte Su Derinliği - İki su burcunun en yoğun birliği. Karanlık derinliklere birlikte dalış, transformasyon, ölüm-yeniden doğuş. Güçlü bağ ve şifa potansiyeli.",
+      'Yay':
+          "Su ve Ateş Macerası - Yengeç eve çağırırken Yay kaçmak ister. Zorlu denge. Evde macera yaratmak, birlikte seyahat, genişlemeyle birlikte kök salmak.",
+      'Oğlak':
+          "Karşıt Kutuplar Birliği - Ay ve Satürn, anne ve baba, duygusal ve yapısal. Derin tamamlayıcılık potansiyeli. Birlikte aile, güvenlik ve başarı inşa etmek.",
+      'Kova':
+          "Su ve Hava Sürprizi - Duygusal ve entelektüel dünyalar buluşur. Yengeç'in gelenekselliği Kova'nın yenilikçiliğiyle karşılaşır. Beklenmedik büyüme fırsatları.",
+      'Balık':
+          "Çifte Su Erimesi - İki su burcunun mistik birliği. Sınırların tamamen erimesi, kozmik birleşme deneyimi. Derin ruhani bağ, telepati, rüya paylaşımı.",
     },
     awakeningMantra: '''
 चन्द्र मंत्र (Chandra/Ay Mantrası)
@@ -2367,13 +2722,24 @@ class FamousCancer {
 
 class LeoContent {
   static const ZodiacProfile profile = ZodiacProfile(
-    name: 'Aslan', englishName: 'Leo', symbol: '♌', emoji: '🦁',
-    dateRange: '23 Temmuz - 22 Ağustos', element: 'Ateş', modality: 'Sabit',
-    rulingPlanet: 'Güneş', exaltedPlanet: 'Neptün', detrimentPlanet: 'Satürn/Uranüs', fallPlanet: 'Plüton',
-    polarity: 'Maskülen/Yang', house: 5,
+    name: 'Aslan',
+    englishName: 'Leo',
+    symbol: '♌',
+    emoji: '🦁',
+    dateRange: '23 Temmuz - 22 Ağustos',
+    element: 'Ateş',
+    modality: 'Sabit',
+    rulingPlanet: 'Güneş',
+    exaltedPlanet: 'Neptün',
+    detrimentPlanet: 'Satürn/Uranüs',
+    fallPlanet: 'Plüton',
+    polarity: 'Maskülen/Yang',
+    house: 5,
     bodyParts: ['Kalp', 'Sırt', 'Omurga', 'Dalak', 'Göğüs kafesi'],
     colors: ['Altın', 'Turuncu', 'Sarı', 'Kırmızı', 'Mor'],
-    numbers: [1, 4, 10, 19], day: 'Pazar', metal: 'Altın',
+    numbers: [1, 4, 10, 19],
+    day: 'Pazar',
+    metal: 'Altın',
     stones: ['Elmas', 'Yakut', 'Altın Topaz', 'Kehribar', 'Kaplan Gözü'],
     flowers: ['Ayçiçeği', 'Kadife Çiçeği', 'Dahlia', 'Nergis'],
     animals: ['Aslan', 'Kaplan', 'Tavuskuşu', 'Kartal'],
@@ -2402,15 +2768,75 @@ gücünü simgeler: Aslan'ı yalnızca kendi gücü yenebilir. Gerçek düşman 
 
   static const PersonalityDeepDive personality = PersonalityDeepDive(
     coreTraits: [
-      TraitAnalysis(trait: 'Yaratıcılık', description: 'Doğal sanatçı, özgün ifade, ilham kaynağı', lightExpression: 'Yenilikçi, ilham veren, estetik yaratıcı', shadowExpression: 'Drama queen, dikkat çekme bağımlısı', developmentTip: 'Yaratıcılığı başkaları için de kullan'),
-      TraitAnalysis(trait: 'Liderlik', description: 'Doğal otorite, yol gösterici, koruyucu', lightExpression: 'İlham veren lider, mentor, koruyucu', shadowExpression: 'Despotik, kontrol edici, kibirli', developmentTip: 'Liderliği hizmetle birleştir'),
-      TraitAnalysis(trait: 'Cömertlik', description: 'Büyük kalp, paylaşma sevinci, bolca veren', lightExpression: 'Hayırsever, destekleyici, paylaşımcı', shadowExpression: 'Gösteriş için veren, beklenti yaratan', developmentTip: 'Koşulsuz cömertlik pratik et'),
-      TraitAnalysis(trait: 'Özgüven', description: 'Kendine güvenen, cesur, pozitif benlik algısı', lightExpression: 'Güçlü benlik, cesaret, kararlılık', shadowExpression: 'Kibir, narsisizm, eleştiri kabul edememe', developmentTip: 'Özgüvenle alçakgönüllülüğü dengele'),
-      TraitAnalysis(trait: 'Sadakat', description: 'Kral gibi sadık, koruyucu, vefalı', lightExpression: 'Derin sadakat, koruyuculuk, güvenilirlik', shadowExpression: 'Sahiplenicilik, beklenti, hayal kırıklığı', developmentTip: 'Sadakati koşulsuz sevgiyle birleştir'),
-      TraitAnalysis(trait: 'Drama', description: 'Büyük jestler, teatral ifade, hayatı sahneye çevirme', lightExpression: 'Hikaye anlatıcı, motive edici, çekici', shadowExpression: 'Aşırı dramatik, kriz yaratıcı, yıpratıcı', developmentTip: 'Dramayı sahneyle sınırla, ilişkilere taşıma'),
+      TraitAnalysis(
+        trait: 'Yaratıcılık',
+        description: 'Doğal sanatçı, özgün ifade, ilham kaynağı',
+        lightExpression: 'Yenilikçi, ilham veren, estetik yaratıcı',
+        shadowExpression: 'Drama queen, dikkat çekme bağımlısı',
+        developmentTip: 'Yaratıcılığı başkaları için de kullan',
+      ),
+      TraitAnalysis(
+        trait: 'Liderlik',
+        description: 'Doğal otorite, yol gösterici, koruyucu',
+        lightExpression: 'İlham veren lider, mentor, koruyucu',
+        shadowExpression: 'Despotik, kontrol edici, kibirli',
+        developmentTip: 'Liderliği hizmetle birleştir',
+      ),
+      TraitAnalysis(
+        trait: 'Cömertlik',
+        description: 'Büyük kalp, paylaşma sevinci, bolca veren',
+        lightExpression: 'Hayırsever, destekleyici, paylaşımcı',
+        shadowExpression: 'Gösteriş için veren, beklenti yaratan',
+        developmentTip: 'Koşulsuz cömertlik pratik et',
+      ),
+      TraitAnalysis(
+        trait: 'Özgüven',
+        description: 'Kendine güvenen, cesur, pozitif benlik algısı',
+        lightExpression: 'Güçlü benlik, cesaret, kararlılık',
+        shadowExpression: 'Kibir, narsisizm, eleştiri kabul edememe',
+        developmentTip: 'Özgüvenle alçakgönüllülüğü dengele',
+      ),
+      TraitAnalysis(
+        trait: 'Sadakat',
+        description: 'Kral gibi sadık, koruyucu, vefalı',
+        lightExpression: 'Derin sadakat, koruyuculuk, güvenilirlik',
+        shadowExpression: 'Sahiplenicilik, beklenti, hayal kırıklığı',
+        developmentTip: 'Sadakati koşulsuz sevgiyle birleştir',
+      ),
+      TraitAnalysis(
+        trait: 'Drama',
+        description: 'Büyük jestler, teatral ifade, hayatı sahneye çevirme',
+        lightExpression: 'Hikaye anlatıcı, motive edici, çekici',
+        shadowExpression: 'Aşırı dramatik, kriz yaratıcı, yıpratıcı',
+        developmentTip: 'Dramayı sahneyle sınırla, ilişkilere taşıma',
+      ),
     ],
-    strengths: ['Doğal liderlik yeteneği', 'Büyük kalp ve cömertlik', 'Güçlü özgüven', 'Yaratıcılık ve sanatsal yetenek', 'Sadakat ve vefa', 'Cesaretli ve koruyucu', 'İlham verici kişilik', 'Sıcaklık ve çekicilik', 'Kararlılık ve azim', 'Coşku ve pozitiflik', 'Organizasyon yeteneği'],
-    weaknesses: ['Kibir ve ego problemi', 'Dikkat ve hayranlık bağımlılığı', 'Eleştiriye aşırı hassasiyet', 'İnatçılık (sabit burç)', 'Dramatize etme eğilimi', 'Kendini merkeze koyma', 'Gösterişçilik', 'Kontrol ihtiyacı', 'Sabırsızlık', 'Aşırı harcama', 'Gururdan dolayı yardım istememe'],
+    strengths: [
+      'Doğal liderlik yeteneği',
+      'Büyük kalp ve cömertlik',
+      'Güçlü özgüven',
+      'Yaratıcılık ve sanatsal yetenek',
+      'Sadakat ve vefa',
+      'Cesaretli ve koruyucu',
+      'İlham verici kişilik',
+      'Sıcaklık ve çekicilik',
+      'Kararlılık ve azim',
+      'Coşku ve pozitiflik',
+      'Organizasyon yeteneği',
+    ],
+    weaknesses: [
+      'Kibir ve ego problemi',
+      'Dikkat ve hayranlık bağımlılığı',
+      'Eleştiriye aşırı hassasiyet',
+      'İnatçılık (sabit burç)',
+      'Dramatize etme eğilimi',
+      'Kendini merkeze koyma',
+      'Gösterişçilik',
+      'Kontrol ihtiyacı',
+      'Sabırsızlık',
+      'Aşırı harcama',
+      'Gururdan dolayı yardım istememe',
+    ],
     hiddenDepths: '''
 Aslan'ın parlak dış görünüşünün altında derin bir güvensizlik yatabilir. Sürekli onay ve
 hayranlık arayışı, aslında sevilmeye değer olduğunu teyit etme ihtiyacından kaynaklanır.
@@ -2438,20 +2864,103 @@ Aslan partnerinden hayranlık bekler - onu görmeli, takdir etmeli, desteklemeli
 kabul etmez, özellikle başkalarının önünde. Övgüye ihtiyacı vardır - bu onun sevgi dilidir.
 ''',
     compatibilityDetails: {
-      'Koç': CompatibilityDetail(rating: 9, dynamic: 'Ateşli uyum - güç çifti', strengths: ['Karşılıklı hayranlık', 'Tutku', 'Macera'], challenges: ['Ego savaşları', 'Dikkat çekme yarışı'], advice: 'Birlikte parlamayı öğrenin'),
-      'Boğa': CompatibilityDetail(rating: 6, dynamic: 'İki sabit burç', strengths: ['Sadakat', 'Güçlü bağ'], challenges: ['İnatçılık çatışması', 'Farklı harcama alışkanlıkları'], advice: 'Uzlaşmayı öğrenin'),
-      'İkizler': CompatibilityDetail(rating: 8, dynamic: 'Eğlenceli ve sosyal', strengths: ['Sosyal enerji', 'İletişim', 'Oyunculuk'], challenges: ['Derinlik eksikliği', 'İkizler\'in değişkenliği'], advice: 'Derinleşmeye çalışın'),
-      'Yengeç': CompatibilityDetail(rating: 6, dynamic: 'Güneş ve Ay', strengths: ['Tamamlayıcı güçler', 'Sadakat', 'Aile değerleri'], challenges: ['Dikkat ihtiyacı çatışması'], advice: 'Aslan\'ın Yengeç\'i güneşle ısıtması gerek'),
-      'Aslan': CompatibilityDetail(rating: 7, dynamic: 'Çift güneş', strengths: ['Karşılıklı hayranlık', 'Tutku', 'Sosyal parlaklık'], challenges: ['Dikkat yarışı', 'Ego çatışması'], advice: 'Işığı paylaşmayı öğrenin'),
-      'Başak': CompatibilityDetail(rating: 5, dynamic: 'Farklı dünyalar', strengths: ['Tamamlayıcı güçler'], challenges: ['Başak eleştirir, Aslan incinir', 'Farklı sosyal ihtiyaçlar'], advice: 'Başak şefkatli eleştirsin'),
-      'Terazi': CompatibilityDetail(rating: 8, dynamic: 'Şık çift', strengths: ['Sosyal parlaklık', 'Estetik uyum', 'Karşılıklı hayranlık'], challenges: ['Dikkat paylaşımı', 'Karar verme'], advice: 'Birlikte parlayın'),
-      'Akrep': CompatibilityDetail(rating: 6, dynamic: 'Yoğun ve güçlü', strengths: ['Tutku', 'Sadakat', 'Güç'], challenges: ['Kontrol savaşları', 'İnatçılık'], advice: 'Güvene yatırım yapın'),
-      'Yay': CompatibilityDetail(rating: 9, dynamic: 'Ateş uyumu - macera', strengths: ['Eğlence', 'Özgürlük', 'Büyüme'], challenges: ['Yay\'ın bağımsızlığı Aslan\'ı üzebilir'], advice: 'Birlikte keşfedin'),
-      'Oğlak': CompatibilityDetail(rating: 5, dynamic: 'Güç mücadelesi', strengths: ['Hırs ortaklığı', 'Saygı'], challenges: ['Farklı yaklaşımlar', 'Ego çatışması'], advice: 'Birbirinizin liderlik stiline saygı'),
-      'Kova': CompatibilityDetail(rating: 6, dynamic: 'Karşıt burçlar', strengths: ['Çekim kuvveti', 'Tamamlayıcı güçler'], challenges: ['Bireysel vs toplumsal', 'Dikkat konusu'], advice: 'Farklılıklardan öğrenin'),
-      'Balık': CompatibilityDetail(rating: 6, dynamic: 'Hayal ve gerçek', strengths: ['Romantizm', 'Yaratıcılık'], challenges: ['Balık\'ın hassasiyeti', 'Farklı dünyalar'], advice: 'Aslan koruyucu olsun'),
+      'Koç': CompatibilityDetail(
+        rating: 9,
+        dynamic: 'Ateşli uyum - güç çifti',
+        strengths: ['Karşılıklı hayranlık', 'Tutku', 'Macera'],
+        challenges: ['Ego savaşları', 'Dikkat çekme yarışı'],
+        advice: 'Birlikte parlamayı öğrenin',
+      ),
+      'Boğa': CompatibilityDetail(
+        rating: 6,
+        dynamic: 'İki sabit burç',
+        strengths: ['Sadakat', 'Güçlü bağ'],
+        challenges: ['İnatçılık çatışması', 'Farklı harcama alışkanlıkları'],
+        advice: 'Uzlaşmayı öğrenin',
+      ),
+      'İkizler': CompatibilityDetail(
+        rating: 8,
+        dynamic: 'Eğlenceli ve sosyal',
+        strengths: ['Sosyal enerji', 'İletişim', 'Oyunculuk'],
+        challenges: ['Derinlik eksikliği', 'İkizler\'in değişkenliği'],
+        advice: 'Derinleşmeye çalışın',
+      ),
+      'Yengeç': CompatibilityDetail(
+        rating: 6,
+        dynamic: 'Güneş ve Ay',
+        strengths: ['Tamamlayıcı güçler', 'Sadakat', 'Aile değerleri'],
+        challenges: ['Dikkat ihtiyacı çatışması'],
+        advice: 'Aslan\'ın Yengeç\'i güneşle ısıtması gerek',
+      ),
+      'Aslan': CompatibilityDetail(
+        rating: 7,
+        dynamic: 'Çift güneş',
+        strengths: ['Karşılıklı hayranlık', 'Tutku', 'Sosyal parlaklık'],
+        challenges: ['Dikkat yarışı', 'Ego çatışması'],
+        advice: 'Işığı paylaşmayı öğrenin',
+      ),
+      'Başak': CompatibilityDetail(
+        rating: 5,
+        dynamic: 'Farklı dünyalar',
+        strengths: ['Tamamlayıcı güçler'],
+        challenges: [
+          'Başak eleştirir, Aslan incinir',
+          'Farklı sosyal ihtiyaçlar',
+        ],
+        advice: 'Başak şefkatli eleştirsin',
+      ),
+      'Terazi': CompatibilityDetail(
+        rating: 8,
+        dynamic: 'Şık çift',
+        strengths: ['Sosyal parlaklık', 'Estetik uyum', 'Karşılıklı hayranlık'],
+        challenges: ['Dikkat paylaşımı', 'Karar verme'],
+        advice: 'Birlikte parlayın',
+      ),
+      'Akrep': CompatibilityDetail(
+        rating: 6,
+        dynamic: 'Yoğun ve güçlü',
+        strengths: ['Tutku', 'Sadakat', 'Güç'],
+        challenges: ['Kontrol savaşları', 'İnatçılık'],
+        advice: 'Güvene yatırım yapın',
+      ),
+      'Yay': CompatibilityDetail(
+        rating: 9,
+        dynamic: 'Ateş uyumu - macera',
+        strengths: ['Eğlence', 'Özgürlük', 'Büyüme'],
+        challenges: ['Yay\'ın bağımsızlığı Aslan\'ı üzebilir'],
+        advice: 'Birlikte keşfedin',
+      ),
+      'Oğlak': CompatibilityDetail(
+        rating: 5,
+        dynamic: 'Güç mücadelesi',
+        strengths: ['Hırs ortaklığı', 'Saygı'],
+        challenges: ['Farklı yaklaşımlar', 'Ego çatışması'],
+        advice: 'Birbirinizin liderlik stiline saygı',
+      ),
+      'Kova': CompatibilityDetail(
+        rating: 6,
+        dynamic: 'Karşıt burçlar',
+        strengths: ['Çekim kuvveti', 'Tamamlayıcı güçler'],
+        challenges: ['Bireysel vs toplumsal', 'Dikkat konusu'],
+        advice: 'Farklılıklardan öğrenin',
+      ),
+      'Balık': CompatibilityDetail(
+        rating: 6,
+        dynamic: 'Hayal ve gerçek',
+        strengths: ['Romantizm', 'Yaratıcılık'],
+        challenges: ['Balık\'ın hassasiyeti', 'Farklı dünyalar'],
+        advice: 'Aslan koruyucu olsun',
+      ),
     },
-    relationshipAdvice: ['Partnerin de parlasın - sadece sen değil', 'Eleştiriyi kişisel algılama, büyüme fırsatı olarak gör', 'Gösterişsiz sevgiyi öğren - küçük anlar da değerli', 'Gururunu aşkın önüne koyma', 'Hataları kabul et - bu seni küçültmez', 'Partnere de liderlik alanı ver', 'Beklentileri netleştir - kimse düşüncelerini okuyamaz'],
+    relationshipAdvice: [
+      'Partnerin de parlasın - sadece sen değil',
+      'Eleştiriyi kişisel algılama, büyüme fırsatı olarak gör',
+      'Gösterişsiz sevgiyi öğren - küçük anlar da değerli',
+      'Gururunu aşkın önüne koyma',
+      'Hataları kabul et - bu seni küçültmez',
+      'Partnere de liderlik alanı ver',
+      'Beklentileri netleştir - kimse düşüncelerini okuyamaz',
+    ],
   );
 
   static const CareerProfile career = CareerProfile(
@@ -2464,18 +2973,66 @@ Yaratıcı işler Aslan'a göredir. Sahne, ekran, tasarım, liderlik - kendini i
 edebileceği, iz bırakabileceği her alan. Takım çalışmasında lider rolünü tercih eder.
 ''',
     idealCareers: [
-      CareerSuggestion(career: 'Oyuncu/Performans Sanatçısı', reason: 'Sahne, dikkat, yaratıcı ifade', tips: 'Reddedilmeyle başa çıkmayı öğren'),
-      CareerSuggestion(career: 'CEO/Üst Düzey Yönetici', reason: 'Liderlik, vizyon, karar alma', tips: 'Delegasyonu öğren, her şeyi kontrol etme'),
-      CareerSuggestion(career: 'Yaratıcı Direktör', reason: 'Yaratıcılık, liderlik, vizyon', tips: 'Ekibin fikirlerine de değer ver'),
-      CareerSuggestion(career: 'Girişimci', reason: 'Bağımsızlık, vizyon, marka oluşturma', tips: 'Detaylar için ekip kur'),
-      CareerSuggestion(career: 'Sunucu/Moderatör', reason: 'Sahne, dikkat, iletişim', tips: 'Ego\'yu kontrol altında tut'),
-      CareerSuggestion(career: 'Politikacı', reason: 'Liderlik, etki, görünürlük', tips: 'Eleştiriye hazırlıklı ol'),
-      CareerSuggestion(career: 'Moda/Güzellik Endüstrisi', reason: 'Estetik, dikkat, trend yaratma', tips: 'Değişen trendlere uyum sağla'),
-      CareerSuggestion(career: 'Motivasyon Konuşmacısı', reason: 'İlham verme, sahne, etki', tips: 'Özgün ol, klişelerden kaçın'),
-      CareerSuggestion(career: 'Etkinlik Planlayıcısı', reason: 'Organizasyon, sosyal, gösteriş', tips: 'Bütçe disiplini geliştir'),
-      CareerSuggestion(career: 'Lüks Marka Yöneticisi', reason: 'Estetik, prestij, kalite', tips: 'Mütevaziliği unutma'),
+      CareerSuggestion(
+        career: 'Oyuncu/Performans Sanatçısı',
+        reason: 'Sahne, dikkat, yaratıcı ifade',
+        tips: 'Reddedilmeyle başa çıkmayı öğren',
+      ),
+      CareerSuggestion(
+        career: 'CEO/Üst Düzey Yönetici',
+        reason: 'Liderlik, vizyon, karar alma',
+        tips: 'Delegasyonu öğren, her şeyi kontrol etme',
+      ),
+      CareerSuggestion(
+        career: 'Yaratıcı Direktör',
+        reason: 'Yaratıcılık, liderlik, vizyon',
+        tips: 'Ekibin fikirlerine de değer ver',
+      ),
+      CareerSuggestion(
+        career: 'Girişimci',
+        reason: 'Bağımsızlık, vizyon, marka oluşturma',
+        tips: 'Detaylar için ekip kur',
+      ),
+      CareerSuggestion(
+        career: 'Sunucu/Moderatör',
+        reason: 'Sahne, dikkat, iletişim',
+        tips: 'Ego\'yu kontrol altında tut',
+      ),
+      CareerSuggestion(
+        career: 'Politikacı',
+        reason: 'Liderlik, etki, görünürlük',
+        tips: 'Eleştiriye hazırlıklı ol',
+      ),
+      CareerSuggestion(
+        career: 'Moda/Güzellik Endüstrisi',
+        reason: 'Estetik, dikkat, trend yaratma',
+        tips: 'Değişen trendlere uyum sağla',
+      ),
+      CareerSuggestion(
+        career: 'Motivasyon Konuşmacısı',
+        reason: 'İlham verme, sahne, etki',
+        tips: 'Özgün ol, klişelerden kaçın',
+      ),
+      CareerSuggestion(
+        career: 'Etkinlik Planlayıcısı',
+        reason: 'Organizasyon, sosyal, gösteriş',
+        tips: 'Bütçe disiplini geliştir',
+      ),
+      CareerSuggestion(
+        career: 'Lüks Marka Yöneticisi',
+        reason: 'Estetik, prestij, kalite',
+        tips: 'Mütevaziliği unutma',
+      ),
     ],
-    careerChallenges: ['Liderlik pozisyonu olmadan mutsuzluk', 'Takdir edilmediğini hissetme', 'Eleştiriye aşırı tepki', 'Delegasyon yapamama', 'Her şeyin merkezinde olmaya çalışma', 'Rutin işlerden sıkılma', 'Rekabet yerine işbirliği zorluğu'],
+    careerChallenges: [
+      'Liderlik pozisyonu olmadan mutsuzluk',
+      'Takdir edilmediğini hissetme',
+      'Eleştiriye aşırı tepki',
+      'Delegasyon yapamama',
+      'Her şeyin merkezinde olmaya çalışma',
+      'Rutin işlerden sıkılma',
+      'Rekabet yerine işbirliği zorluğu',
+    ],
     financialTendencies: '''
 Aslan cömertçe harcar - lüks, gösteriş, kalite önemlidir. Kral gibi yaşamak ister, bu da
 bazen bütçe sorunlarına yol açar. Hediye almayı ve vermeyi sever - para mutluluk getirir
@@ -2488,9 +3045,32 @@ plan yap. Cömertliği sürdürülebilir kıl.
 
   static const HealthProfile health = HealthProfile(
     bodyRulership: 'Kalp, sırt, omurga, dalak, göğüs kafesi, kan dolaşımı',
-    commonIssues: ['Kalp problemleri ve tansiyon', 'Sırt ağrıları', 'Omurga sorunları', 'Ateşli hastalıklar', 'Güneş yanıkları', 'Stres kaynaklı kalp çarpıntısı', 'Damar sertliği'],
-    healthAdvice: ['Kalp sağlığına özen göster - kardio egzersizleri', 'Sırt egzersizleri ve duruş düzeltme', 'Güneşten korunma - leke ve yanık riski', 'Stres yönetimi - kalp için kritik', 'Kolesterol kontrolü', 'Yeterli dinlenme - ego için bile', 'Alkol ve sigaradan uzak dur'],
-    bestExercises: ['Dans', 'Tiyatro/Drama dersleri', 'Takım sporları (kaptan olarak)', 'Yüzme', 'Yoga (kalp açıcı pozisyonlar)', 'Tenis/Golf (sosyal sporlar)'],
+    commonIssues: [
+      'Kalp problemleri ve tansiyon',
+      'Sırt ağrıları',
+      'Omurga sorunları',
+      'Ateşli hastalıklar',
+      'Güneş yanıkları',
+      'Stres kaynaklı kalp çarpıntısı',
+      'Damar sertliği',
+    ],
+    healthAdvice: [
+      'Kalp sağlığına özen göster - kardio egzersizleri',
+      'Sırt egzersizleri ve duruş düzeltme',
+      'Güneşten korunma - leke ve yanık riski',
+      'Stres yönetimi - kalp için kritik',
+      'Kolesterol kontrolü',
+      'Yeterli dinlenme - ego için bile',
+      'Alkol ve sigaradan uzak dur',
+    ],
+    bestExercises: [
+      'Dans',
+      'Tiyatro/Drama dersleri',
+      'Takım sporları (kaptan olarak)',
+      'Yüzme',
+      'Yoga (kalp açıcı pozisyonlar)',
+      'Tenis/Golf (sosyal sporlar)',
+    ],
     stressManagement: '''
 Aslan stresi içe atabilir - dışarıda güçlü görünür ama içte yanabilir. Stres kalbe vurur,
 tansiyon yükselir. Aslan için en iyi stres yönetimi: yaratıcı ifade, sahne, alkış.
@@ -2510,24 +3090,70 @@ parlaklık evrensel aydınlanmaya evrilir.
 Aslan için en güçlü pratik, başkalarını aydınlatmaktır. Kendi ışığını paylaşarak, sonsuz
 ışık kaynağına bağlandığını keşfeder. Vererek zenginleşir, parlatarak parlar.
 ''',
-    karmaAndLessons: ['Ego\'yu aşmak - alçakgönüllülük öğrenmek', 'Dış onay bağımlılığından kurtulmak', 'Başkalarının parlamasına izin vermek', 'Kalp ile ego\'yu ayırt etmek', 'Kırılganlığı göstermek - bu güçtür', 'Hizmet etmenin de liderlik olduğunu anlamak'],
-    pastLifeThemes: ['Kral, kraliçe, soylu', 'Ünlü sanatçı, oyuncu', 'Savaşçı kahraman', 'Rahip/Rahibe (güneş kültü)', 'Lider, şef, yönetici', 'Dışlanmış, görünmez kılınan (şifa gereken)'],
+    karmaAndLessons: [
+      'Ego\'yu aşmak - alçakgönüllülük öğrenmek',
+      'Dış onay bağımlılığından kurtulmak',
+      'Başkalarının parlamasına izin vermek',
+      'Kalp ile ego\'yu ayırt etmek',
+      'Kırılganlığı göstermek - bu güçtür',
+      'Hizmet etmenin de liderlik olduğunu anlamak',
+    ],
+    pastLifeThemes: [
+      'Kral, kraliçe, soylu',
+      'Ünlü sanatçı, oyuncu',
+      'Savaşçı kahraman',
+      'Rahip/Rahibe (güneş kültü)',
+      'Lider, şef, yönetici',
+      'Dışlanmış, görünmez kılınan (şifa gereken)',
+    ],
     evolutionPath: '''
 Evrimleşmemiş Aslan: Kibirli, dikkat bağımlısı, narsist, drama yaratan, kontrol edici.
 Evrimleşen Aslan: Cömert lider, ilham veren, destekleyici, yaratıcı, sıcak.
 Tam evrimleşmiş Aslan: Ruhani lider, koşulsuz sevgi veren, başkalarını aydınlatan,
 ego'yu aşmış, içsel güneşi bulan.
 ''',
-    recommendedPractices: ['Kalp çakra meditasyonu', 'Yaratıcı sanat terapisi', 'Cömertlik pratiği - beklentisiz verme', 'Güneş selamı (yoga)', 'Drama/tiyatro terapisi', 'Çocuklarla çalışma (5. ev teması)', 'Liderlik eğitimleri - hizmetkar liderlik odaklı'],
+    recommendedPractices: [
+      'Kalp çakra meditasyonu',
+      'Yaratıcı sanat terapisi',
+      'Cömertlik pratiği - beklentisiz verme',
+      'Güneş selamı (yoga)',
+      'Drama/tiyatro terapisi',
+      'Çocuklarla çalışma (5. ev teması)',
+      'Liderlik eğitimleri - hizmetkar liderlik odaklı',
+    ],
   );
 
   static const List<FamousLeo> famousPeople = [
-    FamousLeo(name: 'Barack Obama', birthDate: '4 Ağustos 1961', trait: 'Karizmatik liderlik, ilham verici konuşma'),
-    FamousLeo(name: 'Madonna', birthDate: '16 Ağustos 1958', trait: 'Sahne hakimiyeti, yenilikçi yaratıcılık'),
-    FamousLeo(name: 'Jennifer Lopez', birthDate: '24 Temmuz 1969', trait: 'Çok yönlü yetenek, parlaklık'),
-    FamousLeo(name: 'Napoleon Bonaparte', birthDate: '15 Ağustos 1769', trait: 'Liderlik, hırs, imparatorluk'),
-    FamousLeo(name: 'Coco Chanel', birthDate: '19 Ağustos 1883', trait: 'Yaratıcı deha, stil ikonu'),
-    FamousLeo(name: 'Mick Jagger', birthDate: '26 Temmuz 1943', trait: 'Sahne enerjisi, karizmatik performans'),
+    FamousLeo(
+      name: 'Barack Obama',
+      birthDate: '4 Ağustos 1961',
+      trait: 'Karizmatik liderlik, ilham verici konuşma',
+    ),
+    FamousLeo(
+      name: 'Madonna',
+      birthDate: '16 Ağustos 1958',
+      trait: 'Sahne hakimiyeti, yenilikçi yaratıcılık',
+    ),
+    FamousLeo(
+      name: 'Jennifer Lopez',
+      birthDate: '24 Temmuz 1969',
+      trait: 'Çok yönlü yetenek, parlaklık',
+    ),
+    FamousLeo(
+      name: 'Napoleon Bonaparte',
+      birthDate: '15 Ağustos 1769',
+      trait: 'Liderlik, hırs, imparatorluk',
+    ),
+    FamousLeo(
+      name: 'Coco Chanel',
+      birthDate: '19 Ağustos 1883',
+      trait: 'Yaratıcı deha, stil ikonu',
+    ),
+    FamousLeo(
+      name: 'Mick Jagger',
+      birthDate: '26 Temmuz 1943',
+      trait: 'Sahne enerjisi, karizmatik performans',
+    ),
   ];
 
   // ════════════════════════════════════════════════════════════════════════════
@@ -2640,18 +3266,30 @@ olmayan bir ışık yayar.
       'Mısır Firavunu - Tanrı-kral, Horus\'un yeryüzü tezahürü',
     ],
     sacredUnion: {
-      'Koç': "Çifte Ateş Krallığı - İki ateş gücünün görkemli birliği. Karşılıklı hayranlık, rekabet ve tutku. Kim kral? Cevap: İkiniz de. Güçlü, dinamik, ateşli tantra.",
-      'Boğa': "Güneş ve Toprak Bolluğu - Aslan'ın ışığı Boğa'nın toprağında çiçek açar. Boğa'nın duyusallığı Aslan'ı bedenine getirir. Güzellik, bereket ve sevgi birleşir.",
-      'İkizler': "Ateş ve Hava Gösterisi - Aslan'ın draması İkizler'in esprisini besler. Eğlenceli, yaratıcı, performatif tantra. Konuşarak uyarılma, rol yapma, oyun.",
-      'Yengeç': "Güneş ve Ay Birliği - Temel astrololik kutuplar buluşur. Aslan parlar, Yengeç yansıtır. Koruma ve cesaret birleşir. Derin sevgi ve sadakat potansiyeli.",
-      'Aslan': "Çifte Güneş Patlaması - İki kral/kraliçe, iki güneş. Muhteşem ama zorlu. Kim merkez? İkisi de! Ego'ları aşarlarsa, koşulsuz sevginin en parlak örneği.",
-      'Başak': "Ateş ve Toprak Mükemmelliyeti - Başak'ın detay odağı Aslan'ın büyük resmini tamamlar. Başak eleştirmeden hizmet etmeyi, Aslan alçakgönüllülükle almayı öğrenir.",
-      'Terazi': "Güneş ve Venüs Aşkı - Güzellik ve parlaklık birleşir. Terazi'nin estetik anlayışı Aslan'ın gösterişini sofistike eder. Zarif, romantik, harmonik tantra.",
-      'Akrep': "Işık ve Gölge - Aslan'ın parlaklığı Akrep'in karanlığıyla yüzleşir. Zorlu ama derinden dönüştürücü. Aslan gölgesini, Akrep ışığını keşfeder.",
-      'Yay': "Çifte Ateş Macerası - İki ateş burcunun coşkulu birliği. Keşif, macera, felsefi tartışmalar. Kutsal mekanları birlikte ziyaret, genişleyen tantra.",
-      'Oğlak': "Güneş ve Satürn Disiplini - Aslan'ın yaratıcılığı Oğlak'ın yapısıyla buluşur. Zorlu ama güçlü. Birlikte imparatorluk kurmak, kalıcı eser bırakmak.",
-      'Kova': "Güneş ve Uranüs Devrimi - Ego ve eşitlik çatışır. Aslan merkez olmak ister, Kova demokrasi ister. Uzlaşırlarsa, yenilikçi liderlik modeli. Deneysel tantra.",
-      'Balık': "Güneş ve Okyanus Erimesi - Aslan'ın bireyselliği Balık'ın evrenselliğinde erir. Ego kaybı korkutucu ama özgürleştirici. Mistik birleşme, sınırların çözülmesi.",
+      'Koç':
+          "Çifte Ateş Krallığı - İki ateş gücünün görkemli birliği. Karşılıklı hayranlık, rekabet ve tutku. Kim kral? Cevap: İkiniz de. Güçlü, dinamik, ateşli tantra.",
+      'Boğa':
+          "Güneş ve Toprak Bolluğu - Aslan'ın ışığı Boğa'nın toprağında çiçek açar. Boğa'nın duyusallığı Aslan'ı bedenine getirir. Güzellik, bereket ve sevgi birleşir.",
+      'İkizler':
+          "Ateş ve Hava Gösterisi - Aslan'ın draması İkizler'in esprisini besler. Eğlenceli, yaratıcı, performatif tantra. Konuşarak uyarılma, rol yapma, oyun.",
+      'Yengeç':
+          "Güneş ve Ay Birliği - Temel astrololik kutuplar buluşur. Aslan parlar, Yengeç yansıtır. Koruma ve cesaret birleşir. Derin sevgi ve sadakat potansiyeli.",
+      'Aslan':
+          "Çifte Güneş Patlaması - İki kral/kraliçe, iki güneş. Muhteşem ama zorlu. Kim merkez? İkisi de! Ego'ları aşarlarsa, koşulsuz sevginin en parlak örneği.",
+      'Başak':
+          "Ateş ve Toprak Mükemmelliyeti - Başak'ın detay odağı Aslan'ın büyük resmini tamamlar. Başak eleştirmeden hizmet etmeyi, Aslan alçakgönüllülükle almayı öğrenir.",
+      'Terazi':
+          "Güneş ve Venüs Aşkı - Güzellik ve parlaklık birleşir. Terazi'nin estetik anlayışı Aslan'ın gösterişini sofistike eder. Zarif, romantik, harmonik tantra.",
+      'Akrep':
+          "Işık ve Gölge - Aslan'ın parlaklığı Akrep'in karanlığıyla yüzleşir. Zorlu ama derinden dönüştürücü. Aslan gölgesini, Akrep ışığını keşfeder.",
+      'Yay':
+          "Çifte Ateş Macerası - İki ateş burcunun coşkulu birliği. Keşif, macera, felsefi tartışmalar. Kutsal mekanları birlikte ziyaret, genişleyen tantra.",
+      'Oğlak':
+          "Güneş ve Satürn Disiplini - Aslan'ın yaratıcılığı Oğlak'ın yapısıyla buluşur. Zorlu ama güçlü. Birlikte imparatorluk kurmak, kalıcı eser bırakmak.",
+      'Kova':
+          "Güneş ve Uranüs Devrimi - Ego ve eşitlik çatışır. Aslan merkez olmak ister, Kova demokrasi ister. Uzlaşırlarsa, yenilikçi liderlik modeli. Deneysel tantra.",
+      'Balık':
+          "Güneş ve Okyanus Erimesi - Aslan'ın bireyselliği Balık'ın evrenselliğinde erir. Ego kaybı korkutucu ama özgürleştirici. Mistik birleşme, sınırların çözülmesi.",
     },
     awakeningMantra: '''
 सूर्य मंत्र (Surya/Güneş Mantrası)
@@ -2707,7 +3345,11 @@ class FamousLeo {
   final String name;
   final String birthDate;
   final String trait;
-  const FamousLeo({required this.name, required this.birthDate, required this.trait});
+  const FamousLeo({
+    required this.name,
+    required this.birthDate,
+    required this.trait,
+  });
 }
 
 // ════════════════════════════════════════════════════════════════════════════
@@ -2729,7 +3371,13 @@ class VirgoContent {
     fallPlanet: 'Venüs',
     polarity: 'Feminen/Yin',
     house: 6,
-    bodyParts: ['Bağırsaklar', 'Sindirim sistemi', 'Dalak', 'Pankreas', 'Sinir sistemi'],
+    bodyParts: [
+      'Bağırsaklar',
+      'Sindirim sistemi',
+      'Dalak',
+      'Pankreas',
+      'Sinir sistemi',
+    ],
     colors: ['Yeşil', 'Kahverengi', 'Bej', 'Toprak tonları', 'Lacivert'],
     numbers: [5, 14, 23],
     day: 'Çarşamba',
@@ -2789,7 +3437,8 @@ hizmet eden ruhtur.
         description: 'Somut, uygulanabilir çözümler arayan',
         lightExpression: 'Çözüm odaklı, verimli, pratik',
         shadowExpression: 'Hayal gücü eksikliği, katılık, sıkıcılık',
-        developmentTip: 'Hayallere de yer aç - her şey pratik olmak zorunda değil',
+        developmentTip:
+            'Hayallere de yer aç - her şey pratik olmak zorunda değil',
       ),
       TraitAnalysis(
         trait: 'Eleştirel Düşünce',
@@ -3041,7 +3690,8 @@ Keyif harcamaları da sağlık harcamasıdır.
   );
 
   static const HealthProfile health = HealthProfile(
-    bodyRulership: 'Bağırsaklar, sindirim sistemi, ince bağırsak, dalak, pankreas',
+    bodyRulership:
+        'Bağırsaklar, sindirim sistemi, ince bağırsak, dalak, pankreas',
     commonIssues: [
       'Sindirim sorunları - IBS, kabızlık',
       'Besin intoleransları',
@@ -3278,18 +3928,30 @@ genişler ama düzeni korur.
       'Tantrik Yazıcı - Kutsal metinleri kopyalayan, koruyan',
     ],
     sacredUnion: {
-      'Koç': "Toprak ve Ateş Çalışması - Başak'ın detayı Koç'un hızıyla karşılaşır. Başak yavaşlatır, rafine eder. Koç Başak'ı gevşetir, spontanlık öğretir. Zorlu ama öğretici.",
-      'Boğa': "Çifte Toprak Harmonisi - İki Merkür/Venüs yönetimi. Duyusal, pratik, beden odaklı tantra. Mükemmel masaj, yavaş birleşme, detaylı bakım. Risk: Çok 'güvenli' kalma.",
-      'İkizler': "Çifte Merkür Zekası - Zihinsel uyum, analitik tantra. Her şeyi konuşma, analiz etme. Teknikleri tartışma, araştırma. Risk: Kafada kalma, bedenle bağlantı kopma.",
-      'Yengeç': "Toprak ve Su Şifası - Yengeç'in duygusal şifası Başak'ın bedensel şifasıyla birleşir. Bütünsel bakım, beslenme ve iyileşme. Nazik, koruyucu tantra.",
-      'Aslan': "Toprak ve Ateş Mükemmeliyeti - Aslan'ın büyük jestleri Başak'ın küçük detaylarıyla buluşur. Başak hizmet eder, Aslan alkışlar. Dengelenirse güzel, aksi halde baskılayıcı.",
-      'Başak': "Çifte Mükemmeliyet - İki analitik zihin, iki detaycı göz. Mükemmeliyete birlikte ulaşma veya birbirini eleştirme. Şefkat ve kabul pratiği kritik.",
-      'Terazi': "Toprak ve Hava Zarafeti - Başak'ın pratikliği Terazi'nin estetiğiyle buluşur. Güzel, uyumlu, rafine tantra. Ortam, atmosfer ve teknik mükemmellik.",
-      'Akrep': "Yüzey ve Derinlik - Başak'ın düzeni Akrep'in kaosuyla yüzleşir. Akrep Başak'ı gölgeyle tanıştırır, kontrol kaybını gösterir. Dönüştürücü, korkutucu, iyileştirici.",
-      'Yay': "Detay ve Büyük Resim - Başak ağaçları görür, Yay ormanı. Birbirini tamamlayan bakış açıları. Kutsal mekan ziyaretleri, tantrik felsefe tartışmaları.",
-      'Oğlak': "Çifte Toprak Disiplini - Pratik, yapılandırılmış, disiplinli tantra. Uzun vadeli pratik, ustalaşma yolu. Birlikte çalışarak zirveye ulaşma.",
-      'Kova': "Düzen ve Kaos - Başak'ın metodolojisi Kova'nın deneyselliğiyle karşılaşır. Başak test eder, Kova hipotez kurar. Bilimsel tantra, araştırma ruhu.",
-      'Balık': "Yapı ve Sonsuzluk - Başak'ın detayı Balık'ın uçsuz bucaksızlığında erir. Başak topraklar, Balık yükseltir. Zorlu ama tam birbirini tamamlayan denge.",
+      'Koç':
+          "Toprak ve Ateş Çalışması - Başak'ın detayı Koç'un hızıyla karşılaşır. Başak yavaşlatır, rafine eder. Koç Başak'ı gevşetir, spontanlık öğretir. Zorlu ama öğretici.",
+      'Boğa':
+          "Çifte Toprak Harmonisi - İki Merkür/Venüs yönetimi. Duyusal, pratik, beden odaklı tantra. Mükemmel masaj, yavaş birleşme, detaylı bakım. Risk: Çok 'güvenli' kalma.",
+      'İkizler':
+          "Çifte Merkür Zekası - Zihinsel uyum, analitik tantra. Her şeyi konuşma, analiz etme. Teknikleri tartışma, araştırma. Risk: Kafada kalma, bedenle bağlantı kopma.",
+      'Yengeç':
+          "Toprak ve Su Şifası - Yengeç'in duygusal şifası Başak'ın bedensel şifasıyla birleşir. Bütünsel bakım, beslenme ve iyileşme. Nazik, koruyucu tantra.",
+      'Aslan':
+          "Toprak ve Ateş Mükemmeliyeti - Aslan'ın büyük jestleri Başak'ın küçük detaylarıyla buluşur. Başak hizmet eder, Aslan alkışlar. Dengelenirse güzel, aksi halde baskılayıcı.",
+      'Başak':
+          "Çifte Mükemmeliyet - İki analitik zihin, iki detaycı göz. Mükemmeliyete birlikte ulaşma veya birbirini eleştirme. Şefkat ve kabul pratiği kritik.",
+      'Terazi':
+          "Toprak ve Hava Zarafeti - Başak'ın pratikliği Terazi'nin estetiğiyle buluşur. Güzel, uyumlu, rafine tantra. Ortam, atmosfer ve teknik mükemmellik.",
+      'Akrep':
+          "Yüzey ve Derinlik - Başak'ın düzeni Akrep'in kaosuyla yüzleşir. Akrep Başak'ı gölgeyle tanıştırır, kontrol kaybını gösterir. Dönüştürücü, korkutucu, iyileştirici.",
+      'Yay':
+          "Detay ve Büyük Resim - Başak ağaçları görür, Yay ormanı. Birbirini tamamlayan bakış açıları. Kutsal mekan ziyaretleri, tantrik felsefe tartışmaları.",
+      'Oğlak':
+          "Çifte Toprak Disiplini - Pratik, yapılandırılmış, disiplinli tantra. Uzun vadeli pratik, ustalaşma yolu. Birlikte çalışarak zirveye ulaşma.",
+      'Kova':
+          "Düzen ve Kaos - Başak'ın metodolojisi Kova'nın deneyselliğiyle karşılaşır. Başak test eder, Kova hipotez kurar. Bilimsel tantra, araştırma ruhu.",
+      'Balık':
+          "Yapı ve Sonsuzluk - Başak'ın detayı Balık'ın uçsuz bucaksızlığında erir. Başak topraklar, Balık yükseltir. Zorlu ama tam birbirini tamamlayan denge.",
     },
     awakeningMantra: '''
 बुध/Merkür Mantrası - Arınma ve Berraklık
@@ -3896,18 +4558,30 @@ kolay birleşir - sınır sorunlarına dikkat.
       'Barış Elçisi - Karşıt güçleri birleştiren, uyum yaratan',
     ],
     sacredUnion: {
-      'Koç': "Karşıt Kutuplar - Terazi'nin diplomasisi Koç'un doğrudanlığıyla buluşur. Zorlu ama çekici. Koç başlatır, Terazi dengeye getirir. Ateşli romantizm ve çatışma dansı.",
-      'Boğa': "Çifte Venüs Cenneti - Aynı yönetici gezegenin iki çocuğu. Duyusal, estetik, romantik tantra. Güzellik, konfor ve sevgi. En harmonik birliklerden biri.",
-      'İkizler': "Hava Kardeşliği - İki hava burcunun zihinsel ve sosyal uyumu. Konuşma, flört, entelektüel bağ. Hafif, eğlenceli, oyuncu tantra. Derinliğe dikkat.",
-      'Yengeç': "Hava ve Su Aşkı - Terazi'nin sosyalliği Yengeç'in yuva odağıyla buluşur. Duygusal güvenlik ve sosyal harmoni dengesi. Besleyici, koruyucu romantizm.",
-      'Aslan': "Güzellik ve Güç - Terazi'nin zarafeti Aslan'ın görkemiyle buluşur. Göz alıcı çift, karşılıklı hayranlık. Sosyal parlama, estetik mükemmellik.",
-      'Başak': "Hava ve Toprak Rafineliği - İki rafine enerji. Detaylara özen, mükemmel estetik, bilinçli seçimler. Pratik romantizm, kaliteli ilişki.",
-      'Terazi': "Çifte Denge Arayışı - İki Terazi sürekli birbirine ayarlanır. Mükemmel harmoni veya kararsızlık kısır döngüsü. Birisi karar vermeli, biri takip etmeli.",
-      'Akrep': "Yüzey ve Derinlik - Terazi'nin hafifliği Akrep'in yoğunluğuyla karşılaşır. Akrep Terazi'yi derinlere çeker, Terazi Akrep'i yumuşatır. Dönüştürücü.",
-      'Yay': "Hava ve Ateş Genişlemesi - Sosyal, maceraperest, optimist birlik. Birlikte dünya gezme, yeni deneyimler. Felsefi tartışmalar, kültürel keşifler.",
-      'Oğlak': "Sosyal ve Profesyonel - Terazi'nin zarafeti Oğlak'ın otoritesiyle buluşur. Güç çifti, sosyal başarı. Romantizmi canlı tutmak önemli.",
-      'Kova': "Hava Devrimi - İki hava burcunun ilerici birliği. Eşitlikçi, arkadaşça, deneysel ilişki. Geleneksel olmayan tantra, zihinsel bağ güçlü.",
-      'Balık': "Hava ve Su Rüyası - Terazi'nin estetiği Balık'ın romantizmiyle buluşur. Rüya gibi, masalsı aşk. Bazen gerçeklikten kopma riski.",
+      'Koç':
+          "Karşıt Kutuplar - Terazi'nin diplomasisi Koç'un doğrudanlığıyla buluşur. Zorlu ama çekici. Koç başlatır, Terazi dengeye getirir. Ateşli romantizm ve çatışma dansı.",
+      'Boğa':
+          "Çifte Venüs Cenneti - Aynı yönetici gezegenin iki çocuğu. Duyusal, estetik, romantik tantra. Güzellik, konfor ve sevgi. En harmonik birliklerden biri.",
+      'İkizler':
+          "Hava Kardeşliği - İki hava burcunun zihinsel ve sosyal uyumu. Konuşma, flört, entelektüel bağ. Hafif, eğlenceli, oyuncu tantra. Derinliğe dikkat.",
+      'Yengeç':
+          "Hava ve Su Aşkı - Terazi'nin sosyalliği Yengeç'in yuva odağıyla buluşur. Duygusal güvenlik ve sosyal harmoni dengesi. Besleyici, koruyucu romantizm.",
+      'Aslan':
+          "Güzellik ve Güç - Terazi'nin zarafeti Aslan'ın görkemiyle buluşur. Göz alıcı çift, karşılıklı hayranlık. Sosyal parlama, estetik mükemmellik.",
+      'Başak':
+          "Hava ve Toprak Rafineliği - İki rafine enerji. Detaylara özen, mükemmel estetik, bilinçli seçimler. Pratik romantizm, kaliteli ilişki.",
+      'Terazi':
+          "Çifte Denge Arayışı - İki Terazi sürekli birbirine ayarlanır. Mükemmel harmoni veya kararsızlık kısır döngüsü. Birisi karar vermeli, biri takip etmeli.",
+      'Akrep':
+          "Yüzey ve Derinlik - Terazi'nin hafifliği Akrep'in yoğunluğuyla karşılaşır. Akrep Terazi'yi derinlere çeker, Terazi Akrep'i yumuşatır. Dönüştürücü.",
+      'Yay':
+          "Hava ve Ateş Genişlemesi - Sosyal, maceraperest, optimist birlik. Birlikte dünya gezme, yeni deneyimler. Felsefi tartışmalar, kültürel keşifler.",
+      'Oğlak':
+          "Sosyal ve Profesyonel - Terazi'nin zarafeti Oğlak'ın otoritesiyle buluşur. Güç çifti, sosyal başarı. Romantizmi canlı tutmak önemli.",
+      'Kova':
+          "Hava Devrimi - İki hava burcunun ilerici birliği. Eşitlikçi, arkadaşça, deneysel ilişki. Geleneksel olmayan tantra, zihinsel bağ güçlü.",
+      'Balık':
+          "Hava ve Su Rüyası - Terazi'nin estetiği Balık'ın romantizmiyle buluşur. Rüya gibi, masalsı aşk. Bazen gerçeklikten kopma riski.",
     },
     awakeningMantra: '''
 शुक्र/Venüs Mantrası - Aşk ve Harmoni
@@ -4015,14 +4689,66 @@ Her Akrep bu evrimi yaşama potansiyeli taşır.
 
   static const PersonalityDeepDive personality = PersonalityDeepDive(
     coreTraits: [
-      TraitAnalysis(trait: 'Yoğunluk', description: 'Derin, kesif, penetran enerji', lightExpression: 'Tutkulu, odaklı, tam bağlılık', shadowExpression: 'Takıntılı, obsesif, tüketen', developmentTip: 'Yoğunluğu bilinçli yönlendir'),
-      TraitAnalysis(trait: 'Gizlilik', description: 'Özel, ketum, sırrını saklayan', lightExpression: 'Güvenilir sırdaş, derin', shadowExpression: 'Manipülatif, güvensiz, paranoyak', developmentTip: 'Açılmayı ve güvenmeyi öğren'),
-      TraitAnalysis(trait: 'Dönüşüm Gücü', description: 'Ölüm ve yeniden doğuş döngüsü', lightExpression: 'Şifacı, psikolog, dönüştürücü', shadowExpression: 'Yıkıcı, kendine zarar veren', developmentTip: 'Dönüşümü bilinçli yönet'),
-      TraitAnalysis(trait: 'Sezgi', description: 'Görünmeyeni gören, hisseden', lightExpression: 'Psişik, dedektif, danışman', shadowExpression: 'Şüpheci, paranoid, yorumlayıcı', developmentTip: 'Sezgiyi doğrulamayla dengele'),
-      TraitAnalysis(trait: 'Tutku', description: 'Her şeyde yoğun, derin hisler', lightExpression: 'Aşık, sadık, bağlı', shadowExpression: 'Kıskanç, sahiplenici, bağımlı', developmentTip: 'Tutkuyu sevgiyle dengele'),
+      TraitAnalysis(
+        trait: 'Yoğunluk',
+        description: 'Derin, kesif, penetran enerji',
+        lightExpression: 'Tutkulu, odaklı, tam bağlılık',
+        shadowExpression: 'Takıntılı, obsesif, tüketen',
+        developmentTip: 'Yoğunluğu bilinçli yönlendir',
+      ),
+      TraitAnalysis(
+        trait: 'Gizlilik',
+        description: 'Özel, ketum, sırrını saklayan',
+        lightExpression: 'Güvenilir sırdaş, derin',
+        shadowExpression: 'Manipülatif, güvensiz, paranoyak',
+        developmentTip: 'Açılmayı ve güvenmeyi öğren',
+      ),
+      TraitAnalysis(
+        trait: 'Dönüşüm Gücü',
+        description: 'Ölüm ve yeniden doğuş döngüsü',
+        lightExpression: 'Şifacı, psikolog, dönüştürücü',
+        shadowExpression: 'Yıkıcı, kendine zarar veren',
+        developmentTip: 'Dönüşümü bilinçli yönet',
+      ),
+      TraitAnalysis(
+        trait: 'Sezgi',
+        description: 'Görünmeyeni gören, hisseden',
+        lightExpression: 'Psişik, dedektif, danışman',
+        shadowExpression: 'Şüpheci, paranoid, yorumlayıcı',
+        developmentTip: 'Sezgiyi doğrulamayla dengele',
+      ),
+      TraitAnalysis(
+        trait: 'Tutku',
+        description: 'Her şeyde yoğun, derin hisler',
+        lightExpression: 'Aşık, sadık, bağlı',
+        shadowExpression: 'Kıskanç, sahiplenici, bağımlı',
+        developmentTip: 'Tutkuyu sevgiyle dengele',
+      ),
     ],
-    strengths: ['Olağanüstü sezgi ve psikolojik derinlik', 'Dönüşüm ve şifa kapasitesi', 'Kararlılık ve azim', 'Sadakat ve derin bağlılık', 'Araştırma ve keşif yeteneği', 'Kriz yönetimi', 'Finansal zeka', 'Stratejik düşünme', 'Sırları koruma', 'Yeniden başlama gücü'],
-    weaknesses: ['Aşırı kıskançlık ve sahiplenicilik', 'Kin tutma ve intikam', 'Güvensizlik ve paranoya', 'Manipülasyon eğilimi', 'Obsesif düşünceler', 'Kontrol ihtiyacı', 'Karanlık düşüncelere dalma', 'Aşırı gizlilik', 'İntikamcılık', 'Kendini yıkma'],
+    strengths: [
+      'Olağanüstü sezgi ve psikolojik derinlik',
+      'Dönüşüm ve şifa kapasitesi',
+      'Kararlılık ve azim',
+      'Sadakat ve derin bağlılık',
+      'Araştırma ve keşif yeteneği',
+      'Kriz yönetimi',
+      'Finansal zeka',
+      'Stratejik düşünme',
+      'Sırları koruma',
+      'Yeniden başlama gücü',
+    ],
+    weaknesses: [
+      'Aşırı kıskançlık ve sahiplenicilik',
+      'Kin tutma ve intikam',
+      'Güvensizlik ve paranoya',
+      'Manipülasyon eğilimi',
+      'Obsesif düşünceler',
+      'Kontrol ihtiyacı',
+      'Karanlık düşüncelere dalma',
+      'Aşırı gizlilik',
+      'İntikamcılık',
+      'Kendini yıkma',
+    ],
     hiddenDepths: '''
 Akrep'in yoğun ve bazen korkutucu dışı görünüşünün altında derin bir hassasiyet yatar.
 Koruyucu zırhın altında, dünyanın en duyarlı kalbi atar. Erken yaralanmalar Akrep'i
@@ -4040,20 +4766,99 @@ birleşme. Aldatmaya tahammülü sıfırdır - bir kez güven kırılırsa, düz
 neredeyse imkansızdır. Akrep affedebilir ama asla unutmaz.
 ''',
     compatibilityDetails: {
-      'Koç': CompatibilityDetail(rating: 7, dynamic: 'Mars kardeşliği', strengths: ['Tutku', 'Enerji', 'Mücadele'], challenges: ['Güç savaşı', 'Sabırsızlık'], advice: 'Birbirinizi yönetmeye çalışmayın'),
-      'Boğa': CompatibilityDetail(rating: 8, dynamic: 'Karşıt kutuplar', strengths: ['Derin sadakat', 'Cinsel uyum', 'Kararlılık'], challenges: ['İnatçılık', 'Sahiplenicilik'], advice: 'Esneklik öğrenin'),
-      'İkizler': CompatibilityDetail(rating: 4, dynamic: 'Yüzey vs derinlik', strengths: ['Entelektüel merak'], challenges: ['Güvensizlik', 'İletişim tarzı'], advice: 'Orta yol zor ama mümkün'),
-      'Yengeç': CompatibilityDetail(rating: 9, dynamic: 'Duygusal derinlik', strengths: ['Anlayış', 'Koruma', 'Sezgi'], challenges: ['Ruh hali dalgalanmaları'], advice: 'Birbirinizi besleyin'),
-      'Aslan': CompatibilityDetail(rating: 6, dynamic: 'Güç mücadelesi', strengths: ['Tutku', 'Sadakat'], challenges: ['Ego çatışması', 'Dikkat ihtiyacı'], advice: 'Alanı paylaşın'),
-      'Başak': CompatibilityDetail(rating: 8, dynamic: 'Derin analiz', strengths: ['Detaylı anlayış', 'Hizmet'], challenges: ['Eleştirellik'], advice: 'Mükemmeliyetçiliği dengeleyin'),
-      'Terazi': CompatibilityDetail(rating: 6, dynamic: 'Yüzey vs derinlik', strengths: ['Çekim', 'Denge'], challenges: ['İletişim tarzı'], advice: 'Terazi açılmalı, Akrep yumuşamalı'),
-      'Akrep': CompatibilityDetail(rating: 8, dynamic: 'Derin birlik', strengths: ['Tam anlayış', 'Tutku'], challenges: ['Güç savaşı', 'Çifte yoğunluk'], advice: 'Kontrolü bırakın'),
-      'Yay': CompatibilityDetail(rating: 5, dynamic: 'Bağlılık vs özgürlük', strengths: ['Macera', 'Büyüme'], challenges: ['Güven', 'Taahhüt'], advice: 'Sabır ve anlayış'),
-      'Oğlak': CompatibilityDetail(rating: 9, dynamic: 'Güç ittifakı', strengths: ['Hedefler', 'Sadakat', 'Güç'], challenges: ['Duygusal mesafe'], advice: 'Duygularınızı paylaşın'),
-      'Kova': CompatibilityDetail(rating: 5, dynamic: 'Geleneksel olmayan', strengths: ['Entellektüel bağ'], challenges: ['Duygusal bağlantı'], advice: 'Farklılıkları kabul edin'),
-      'Balık': CompatibilityDetail(rating: 9, dynamic: 'Mistik birlik', strengths: ['Ruhsal bağ', 'Sezgi', 'Yaratıcılık'], challenges: ['Gerçeklikten kopma'], advice: 'Topraklanmayı unutmayın'),
+      'Koç': CompatibilityDetail(
+        rating: 7,
+        dynamic: 'Mars kardeşliği',
+        strengths: ['Tutku', 'Enerji', 'Mücadele'],
+        challenges: ['Güç savaşı', 'Sabırsızlık'],
+        advice: 'Birbirinizi yönetmeye çalışmayın',
+      ),
+      'Boğa': CompatibilityDetail(
+        rating: 8,
+        dynamic: 'Karşıt kutuplar',
+        strengths: ['Derin sadakat', 'Cinsel uyum', 'Kararlılık'],
+        challenges: ['İnatçılık', 'Sahiplenicilik'],
+        advice: 'Esneklik öğrenin',
+      ),
+      'İkizler': CompatibilityDetail(
+        rating: 4,
+        dynamic: 'Yüzey vs derinlik',
+        strengths: ['Entelektüel merak'],
+        challenges: ['Güvensizlik', 'İletişim tarzı'],
+        advice: 'Orta yol zor ama mümkün',
+      ),
+      'Yengeç': CompatibilityDetail(
+        rating: 9,
+        dynamic: 'Duygusal derinlik',
+        strengths: ['Anlayış', 'Koruma', 'Sezgi'],
+        challenges: ['Ruh hali dalgalanmaları'],
+        advice: 'Birbirinizi besleyin',
+      ),
+      'Aslan': CompatibilityDetail(
+        rating: 6,
+        dynamic: 'Güç mücadelesi',
+        strengths: ['Tutku', 'Sadakat'],
+        challenges: ['Ego çatışması', 'Dikkat ihtiyacı'],
+        advice: 'Alanı paylaşın',
+      ),
+      'Başak': CompatibilityDetail(
+        rating: 8,
+        dynamic: 'Derin analiz',
+        strengths: ['Detaylı anlayış', 'Hizmet'],
+        challenges: ['Eleştirellik'],
+        advice: 'Mükemmeliyetçiliği dengeleyin',
+      ),
+      'Terazi': CompatibilityDetail(
+        rating: 6,
+        dynamic: 'Yüzey vs derinlik',
+        strengths: ['Çekim', 'Denge'],
+        challenges: ['İletişim tarzı'],
+        advice: 'Terazi açılmalı, Akrep yumuşamalı',
+      ),
+      'Akrep': CompatibilityDetail(
+        rating: 8,
+        dynamic: 'Derin birlik',
+        strengths: ['Tam anlayış', 'Tutku'],
+        challenges: ['Güç savaşı', 'Çifte yoğunluk'],
+        advice: 'Kontrolü bırakın',
+      ),
+      'Yay': CompatibilityDetail(
+        rating: 5,
+        dynamic: 'Bağlılık vs özgürlük',
+        strengths: ['Macera', 'Büyüme'],
+        challenges: ['Güven', 'Taahhüt'],
+        advice: 'Sabır ve anlayış',
+      ),
+      'Oğlak': CompatibilityDetail(
+        rating: 9,
+        dynamic: 'Güç ittifakı',
+        strengths: ['Hedefler', 'Sadakat', 'Güç'],
+        challenges: ['Duygusal mesafe'],
+        advice: 'Duygularınızı paylaşın',
+      ),
+      'Kova': CompatibilityDetail(
+        rating: 5,
+        dynamic: 'Geleneksel olmayan',
+        strengths: ['Entellektüel bağ'],
+        challenges: ['Duygusal bağlantı'],
+        advice: 'Farklılıkları kabul edin',
+      ),
+      'Balık': CompatibilityDetail(
+        rating: 9,
+        dynamic: 'Mistik birlik',
+        strengths: ['Ruhsal bağ', 'Sezgi', 'Yaratıcılık'],
+        challenges: ['Gerçeklikten kopma'],
+        advice: 'Topraklanmayı unutmayın',
+      ),
     },
-    relationshipAdvice: ['Güvenmeyi öğren - herkes sana ihanet etmeyecek', 'Kıskançlık duygularını ifade et, bastırma', 'Kontrolü bırak - partner bir mülk değil', 'Affetmeyi öğren - kin seni zehirler', 'Kırılganlık göstermek güçtür', 'Manipülasyon yerine açık iletişim'],
+    relationshipAdvice: [
+      'Güvenmeyi öğren - herkes sana ihanet etmeyecek',
+      'Kıskançlık duygularını ifade et, bastırma',
+      'Kontrolü bırak - partner bir mülk değil',
+      'Affetmeyi öğren - kin seni zehirler',
+      'Kırılganlık göstermek güçtür',
+      'Manipülasyon yerine açık iletişim',
+    ],
   );
 
   static const SpiritualProfile spirituality = SpiritualProfile(
@@ -4067,23 +4872,66 @@ doğuş" deneyimi yaşar - ilişkilerde, kariyerde, kimlikte. Her ölüm, daha d
 bir hakikati ortaya çıkarır. Son hedef: ego'nun tamamen ölümü ve evrensel
 bilincin uyanışı.
 ''',
-    karmaAndLessons: ['Güç istismarından arınmak', 'Kontrolü teslim etmeyi öğrenmek', 'Güveni yeniden inşa etmek', 'Affetme ve bırakma', 'Cinsel enerjiyi kutsal kullanmak', 'Ölümü hayatın parçası olarak kabul etmek'],
-    pastLifeThemes: ['Büyücü, şaman, okültist', 'Casuslar ve gizli ajanlar', 'Katiller ve kurbanlar', 'Cinsel güç istismarcısı veya kurbanı', 'Yeraltı dünyası lideri', 'Ölüm ve dönüşüm ritüelcisi'],
+    karmaAndLessons: [
+      'Güç istismarından arınmak',
+      'Kontrolü teslim etmeyi öğrenmek',
+      'Güveni yeniden inşa etmek',
+      'Affetme ve bırakma',
+      'Cinsel enerjiyi kutsal kullanmak',
+      'Ölümü hayatın parçası olarak kabul etmek',
+    ],
+    pastLifeThemes: [
+      'Büyücü, şaman, okültist',
+      'Casuslar ve gizli ajanlar',
+      'Katiller ve kurbanlar',
+      'Cinsel güç istismarcısı veya kurbanı',
+      'Yeraltı dünyası lideri',
+      'Ölüm ve dönüşüm ritüelcisi',
+    ],
     evolutionPath: '''
 Evrimleşmemiş Akrep: Kıskanç, intikamcı, manipülatif, yıkıcı, obsesif.
 Evrimleşen Akrep: Şifacı, dönüştürücü, derin, sadık, stratejik.
 Tam evrimleşmiş Akrep: Anka kuşu gibi yükselen, ego'yu aşan, evrensel şifa
 taşıyan, karanlık ve aydınlığı bütünleştiren.
 ''',
-    recommendedPractices: ['Gölge çalışması ve derinlik terapisi', 'Kundalini yoga', 'Tantrik pratikler', 'Ölüm meditasyonları', 'Nefes çalışmaları (rebirthing)', 'Şamanik yolculuklar', 'Rüya yorumu', 'Tarot ve gizem çalışmaları'],
+    recommendedPractices: [
+      'Gölge çalışması ve derinlik terapisi',
+      'Kundalini yoga',
+      'Tantrik pratikler',
+      'Ölüm meditasyonları',
+      'Nefes çalışmaları (rebirthing)',
+      'Şamanik yolculuklar',
+      'Rüya yorumu',
+      'Tarot ve gizem çalışmaları',
+    ],
   );
 
   static const List<FamousScorpio> famousPeople = [
-    FamousScorpio(name: 'Marie Curie', birthDate: '7 Kasım 1867', trait: 'Derinlik, keşif, dönüşüm'),
-    FamousScorpio(name: 'Pablo Picasso', birthDate: '25 Ekim 1881', trait: 'Yoğun yaratıcılık, dönüştürücü sanat'),
-    FamousScorpio(name: 'Bill Gates', birthDate: '28 Ekim 1955', trait: 'Stratejik zeka, güç, dönüşüm'),
-    FamousScorpio(name: 'Leonardo DiCaprio', birthDate: '11 Kasım 1974', trait: 'Yoğunluk, derinlik, tutku'),
-    FamousScorpio(name: 'Katy Perry', birthDate: '25 Ekim 1984', trait: 'Dönüşüm, yeniden doğuş teması'),
+    FamousScorpio(
+      name: 'Marie Curie',
+      birthDate: '7 Kasım 1867',
+      trait: 'Derinlik, keşif, dönüşüm',
+    ),
+    FamousScorpio(
+      name: 'Pablo Picasso',
+      birthDate: '25 Ekim 1881',
+      trait: 'Yoğun yaratıcılık, dönüştürücü sanat',
+    ),
+    FamousScorpio(
+      name: 'Bill Gates',
+      birthDate: '28 Ekim 1955',
+      trait: 'Stratejik zeka, güç, dönüşüm',
+    ),
+    FamousScorpio(
+      name: 'Leonardo DiCaprio',
+      birthDate: '11 Kasım 1974',
+      trait: 'Yoğunluk, derinlik, tutku',
+    ),
+    FamousScorpio(
+      name: 'Katy Perry',
+      birthDate: '25 Ekim 1984',
+      trait: 'Dönüşüm, yeniden doğuş teması',
+    ),
   ];
 
   // ════════════════════════════════════════════════════════════════════════════
@@ -4202,18 +5050,30 @@ Aurik Özellikler: Yoğun, manyetik, etkileyici aura. İnsanlar Akrep'in varlı�
       'Yeraltı Gizemleri Rahibi - Eleusis, Osiris kültleri',
     ],
     sacredUnion: {
-      'Koç': "Çifte Mars Tutkusu - İki savaşçı, yoğun tutku ve güç mücadelesi. Cinsel enerji patlayıcı. Kontrol savaşını aşarlarsa, muhteşem dönüşüm potansiyeli.",
-      'Boğa': "Karşıt Kutuplar Çekimi - Boğa'nın yüzey güzelliği Akrep'in derinliğiyle buluşur. En yoğun cinsel çekim potansiyeli. Boğa topraklar, Akrep derinleştirir.",
-      'İkizler': "Derinlik ve Yüzey - İkizler'in hafifliği Akrep için sığ gelebilir. Ancak İkizler, Akrep'in karanlığına hava getirebilir. Zorlayıcı ama öğretici.",
-      'Yengeç': "Çifte Su Derinliği - İki su burcunun en duygusal birliği. Karşılıklı koruma, derin anlayış. Akrep'in yoğunluğu Yengeç'in şefkatiyle yumuşar.",
-      'Aslan': "Işık ve Gölge - Aslan'ın parlaklığı Akrep'in karanlığıyla buluşur. Güç mücadelesi ama aynı zamanda derin çekim. Birbirinin gölgesini aydınlatma potansiyeli.",
-      'Başak': "Analiz ve Sezgi - Başak detayı görür, Akrep bütünü hisseder. Başak Akrep'e hizmet etmeyi sever, Akrep Başak'ı derinliğe götürür.",
-      'Terazi': "Karanlık ve Işık Dengesi - Terazi'nin hafifliği Akrep için yüzeysel, Akrep'in yoğunluğu Terazi için bunaltıcı olabilir. Dengelenirse dönüştürücü.",
-      'Akrep': "Çifte Dönüşüm - İki Akrep birbirinin en derin yerlerine iner. En yoğun, en transformatif, en riskli birlik. Ya tam şifa ya tam yıkım.",
-      'Yay': "Derinlik ve Genişlik - Yay özgürlük ister, Akrep bağlılık. Yay hafifletir, Akrep derinleştirir. Dengelenirse büyüme ve dönüşüm.",
-      'Oğlak': "Güç İttifakı - İki güçlü burç, stratejik birlik. Oğlak yapıyı, Akrep derinliği getirir. Dünyayı fethetme potansiyeli.",
-      'Kova': "Yoğunluk ve Mesafe - Kova'nın soğukluğu Akrep için frustre edici. Ancak Kova farklı bir bakış açısı getirir. Entelektüel tantrik keşifler.",
-      'Balık': "Mistik Birlik - İki su burcunun en spiritüel birliği. Sınırların erimesi, kozmik birleşme. Akrep korur, Balık ilham verir. Rüya gibi tantra.",
+      'Koç':
+          "Çifte Mars Tutkusu - İki savaşçı, yoğun tutku ve güç mücadelesi. Cinsel enerji patlayıcı. Kontrol savaşını aşarlarsa, muhteşem dönüşüm potansiyeli.",
+      'Boğa':
+          "Karşıt Kutuplar Çekimi - Boğa'nın yüzey güzelliği Akrep'in derinliğiyle buluşur. En yoğun cinsel çekim potansiyeli. Boğa topraklar, Akrep derinleştirir.",
+      'İkizler':
+          "Derinlik ve Yüzey - İkizler'in hafifliği Akrep için sığ gelebilir. Ancak İkizler, Akrep'in karanlığına hava getirebilir. Zorlayıcı ama öğretici.",
+      'Yengeç':
+          "Çifte Su Derinliği - İki su burcunun en duygusal birliği. Karşılıklı koruma, derin anlayış. Akrep'in yoğunluğu Yengeç'in şefkatiyle yumuşar.",
+      'Aslan':
+          "Işık ve Gölge - Aslan'ın parlaklığı Akrep'in karanlığıyla buluşur. Güç mücadelesi ama aynı zamanda derin çekim. Birbirinin gölgesini aydınlatma potansiyeli.",
+      'Başak':
+          "Analiz ve Sezgi - Başak detayı görür, Akrep bütünü hisseder. Başak Akrep'e hizmet etmeyi sever, Akrep Başak'ı derinliğe götürür.",
+      'Terazi':
+          "Karanlık ve Işık Dengesi - Terazi'nin hafifliği Akrep için yüzeysel, Akrep'in yoğunluğu Terazi için bunaltıcı olabilir. Dengelenirse dönüştürücü.",
+      'Akrep':
+          "Çifte Dönüşüm - İki Akrep birbirinin en derin yerlerine iner. En yoğun, en transformatif, en riskli birlik. Ya tam şifa ya tam yıkım.",
+      'Yay':
+          "Derinlik ve Genişlik - Yay özgürlük ister, Akrep bağlılık. Yay hafifletir, Akrep derinleştirir. Dengelenirse büyüme ve dönüşüm.",
+      'Oğlak':
+          "Güç İttifakı - İki güçlü burç, stratejik birlik. Oğlak yapıyı, Akrep derinliği getirir. Dünyayı fethetme potansiyeli.",
+      'Kova':
+          "Yoğunluk ve Mesafe - Kova'nın soğukluğu Akrep için frustre edici. Ancak Kova farklı bir bakış açısı getirir. Entelektüel tantrik keşifler.",
+      'Balık':
+          "Mistik Birlik - İki su burcunun en spiritüel birliği. Sınırların erimesi, kozmik birleşme. Akrep korur, Balık ilham verir. Rüya gibi tantra.",
     },
     awakeningMantra: '''
 कालि मंत्र (Kali Mantra) - Dönüşüm ve Güç
@@ -4267,7 +5127,11 @@ class FamousScorpio {
   final String name;
   final String birthDate;
   final String trait;
-  const FamousScorpio({required this.name, required this.birthDate, required this.trait});
+  const FamousScorpio({
+    required this.name,
+    required this.birthDate,
+    required this.trait,
+  });
 }
 
 // ════════════════════════════════════════════════════════════════════════════
@@ -4328,13 +5192,15 @@ hiç bitmez.
         description: 'Sınırlanmaya tahammülsüz, bağımsızlık arayışı',
         lightExpression: 'Maceracı, bağımsız, ilham verici',
         shadowExpression: 'Taahhüt korkusu, sorumsuzluk, kaçış',
-        developmentTip: 'Özgürlük içsel bir durumdur - dış koşullara bağlı değil',
+        developmentTip:
+            'Özgürlük içsel bir durumdur - dış koşullara bağlı değil',
       ),
       TraitAnalysis(
         trait: 'İyimserlik',
         description: 'Her şeyde iyi yanı gören, umut dolu',
         lightExpression: 'Coşku, pozitiflik, motivasyon',
-        shadowExpression: 'Gerçekçi olmayan beklentiler, naiflik, hayal kırıklığı',
+        shadowExpression:
+            'Gerçekçi olmayan beklentiler, naiflik, hayal kırıklığı',
         developmentTip: 'Gerçekçi iyimserlik - gözleri açık umut',
       ),
       TraitAnalysis(
@@ -4342,7 +5208,8 @@ hiç bitmez.
         description: 'Büyük soruları soran, anlam arayan',
         lightExpression: 'Bilgelik, vizyoner düşünce, öğretmen',
         shadowExpression: 'Dogmatizm, bilgiç tavır, pratikten kopukluk',
-        developmentTip: 'Bilgelik alçakgönüllülükle gelir - her zaman öğrenci kal',
+        developmentTip:
+            'Bilgelik alçakgönüllülükle gelir - her zaman öğrenci kal',
       ),
       TraitAnalysis(
         trait: 'Macera Ruhu',
@@ -4844,18 +5711,30 @@ görünür hale gelir. Topraklanma ile yoğunlaştırılmalı.
       'Felsefi Tantrik - Düşünce yoluyla aydınlanmaya ulaşan',
     ],
     sacredUnion: {
-      'Koç': "Çifte Ateş Macerası - İki ateş burcunun coşkulu birliği. Macera, keşif, spontanlık. Birlikte dünyayı fethetme. Taahhüt konusunda ikisi de zorlanabilir.",
-      'Boğa': "Ateş ve Toprak Gerilimi - Yay gitmek ister, Boğa kalmak. Yay genişler, Boğa toplar. Zorlu denge ama birbirinden çok şey öğrenebilirler.",
-      'İkizler': "Karşıt Kutuplar Çekimi - İki öğrenci, iki meraklı zihin. Entelektüel stimülasyon, sonsuz sohbet. Tartışma tantrikası. Dengelenirse muhteşem.",
-      'Yengeç': "Macera ve Yuva - Yay kaçmak ister, Yengeç tutmak. Yengeç'in duygusal derinliği Yay'ı yavaşlatabilir. Evde macera yaratmak mümkün.",
-      'Aslan': "Çifte Ateş Gösterisi - Coşku, yaratıcılık, drama. Birlikte sahneye çıkmak, dünyayı etkilemek. Görkemli romantizm ve macera.",
-      'Başak': "Ateş ve Toprak Disiplini - Başak detaylara, Yay büyük resme bakar. Tamamlayıcı perspektifler. Başak organize eder, Yay ilham verir.",
-      'Terazi': "Ateş ve Hava Genişlemesi - Sosyal, zarif, kültürlü birlik. Birlikte dünyayı gezme, sanat ve güzellik keşfi. Dengelenirse harmonik.",
-      'Akrep': "Macera ve Derinlik - Yay özgürlük ister, Akrep bağlılık. Yay hafifletir, Akrep derinleştirir. Zorlu ama dönüştürücü potansiyel.",
-      'Yay': "Çifte Macera - İki gezgin, iki filozof, iki özgür ruh. Birlikte dünyayı keşfetme. Risk: Hiçbir yerde köklenmeme.",
-      'Oğlak': "Ateş ve Toprak Yapısı - Oğlak'ın disiplini Yay'ın dağınıklığını toplar. Zorlu ama öğretici. Birlikte kalıcı şeyler inşa etme.",
-      'Kova': "Ateş ve Hava Devrimi - İki yenilikçi, iki isyankar. Geleneksel olmayan ilişki, deneysel tantra. Özgürlük içinde birlik.",
-      'Balık': "Ateş ve Su Rüyası - Yay'ın felsefesi Balık'ın mistisizmiyle buluşur. Spiritüel macera, rüya yolculukları. Gerçeklikle bağ önemli.",
+      'Koç':
+          "Çifte Ateş Macerası - İki ateş burcunun coşkulu birliği. Macera, keşif, spontanlık. Birlikte dünyayı fethetme. Taahhüt konusunda ikisi de zorlanabilir.",
+      'Boğa':
+          "Ateş ve Toprak Gerilimi - Yay gitmek ister, Boğa kalmak. Yay genişler, Boğa toplar. Zorlu denge ama birbirinden çok şey öğrenebilirler.",
+      'İkizler':
+          "Karşıt Kutuplar Çekimi - İki öğrenci, iki meraklı zihin. Entelektüel stimülasyon, sonsuz sohbet. Tartışma tantrikası. Dengelenirse muhteşem.",
+      'Yengeç':
+          "Macera ve Yuva - Yay kaçmak ister, Yengeç tutmak. Yengeç'in duygusal derinliği Yay'ı yavaşlatabilir. Evde macera yaratmak mümkün.",
+      'Aslan':
+          "Çifte Ateş Gösterisi - Coşku, yaratıcılık, drama. Birlikte sahneye çıkmak, dünyayı etkilemek. Görkemli romantizm ve macera.",
+      'Başak':
+          "Ateş ve Toprak Disiplini - Başak detaylara, Yay büyük resme bakar. Tamamlayıcı perspektifler. Başak organize eder, Yay ilham verir.",
+      'Terazi':
+          "Ateş ve Hava Genişlemesi - Sosyal, zarif, kültürlü birlik. Birlikte dünyayı gezme, sanat ve güzellik keşfi. Dengelenirse harmonik.",
+      'Akrep':
+          "Macera ve Derinlik - Yay özgürlük ister, Akrep bağlılık. Yay hafifletir, Akrep derinleştirir. Zorlu ama dönüştürücü potansiyel.",
+      'Yay':
+          "Çifte Macera - İki gezgin, iki filozof, iki özgür ruh. Birlikte dünyayı keşfetme. Risk: Hiçbir yerde köklenmeme.",
+      'Oğlak':
+          "Ateş ve Toprak Yapısı - Oğlak'ın disiplini Yay'ın dağınıklığını toplar. Zorlu ama öğretici. Birlikte kalıcı şeyler inşa etme.",
+      'Kova':
+          "Ateş ve Hava Devrimi - İki yenilikçi, iki isyankar. Geleneksel olmayan ilişki, deneysel tantra. Özgürlük içinde birlik.",
+      'Balık':
+          "Ateş ve Su Rüyası - Yay'ın felsefesi Balık'ın mistisizmiyle buluşur. Spiritüel macera, rüya yolculukları. Gerçeklikle bağ önemli.",
     },
     awakeningMantra: '''
 गुरु/Jüpiter Mantrası - Genişleme ve Bilgelik
@@ -5461,18 +6340,30 @@ sınırlar yumuşar, kalp bölgesi genişler.
       'Kemik Kahini - İskelet ve atalara dayalı kehanet yapan',
     ],
     sacredUnion: {
-      'Koç': "Toprak ve Ateş Yapısı - Koç başlatır, Oğlak tamamlar. Zorlu ama güçlü birlik. Koç sabırsız, Oğlak yavaş. Dengelenirse kalıcı başarılar.",
-      'Boğa': "Çifte Toprak Gücü - İki yapıcı, iki sabırlı, iki sadık. Maddi güvenlik, kalıcı ilişki. Risk: Aşırı durağanlık, heyecan eksikliği.",
-      'İkizler': "Toprak ve Hava Yapısı - Oğlak yapıyı, İkizler esnekliği getirir. İkizler hafifletir, Oğlak topraklar. Tamamlayıcı ama zorlu.",
-      'Yengeç': "Karşıt Kutuplar - Oğlak kariyer, Yengeç ev. Baba ve anne arketipleri. Birlikte sağlam aile, güvenli yuva. Derin tamamlayıcılık.",
-      'Aslan': "Toprak ve Ateş Otoritesi - İki otoriter burç, güç mücadelesi potansiyeli. Aslan parlar, Oğlak inşa eder. Dengelenirse imparatorluk kurarlar.",
-      'Başak': "Çifte Toprak Mükemmeliyeti - İki detaycı, iki çalışkan, iki pratik. Birlikte harika işler başarabilir. Eğlenceyi unutmamak önemli.",
-      'Terazi': "Toprak ve Hava Zarafeti - Oğlak'ın gücü Terazi'nin zarafetiyle buluşur. Sosyal ve profesyonel başarı. Oğlak yumuşamalı, Terazi güçlenmeli.",
-      'Akrep': "Güç İttifakı - İki güçlü, iki stratejik, iki kararlı. Derin sadakat ve dönüşüm potansiyeli. Dünyayı fethedebilirler.",
-      'Yay': "Toprak ve Ateş Gerilimi - Yay genişler, Oğlak toplar. Yay özgürlük ister, Oğlak yapı. Zorlu ama öğretici dinamik.",
-      'Oğlak': "Çifte Dağ - İki tırmanıcı, iki disiplinli, iki hırslı. Birlikte zirveye ulaşabilirler. Risk: İş gibi ilişki, romantizm eksikliği.",
-      'Kova': "Satürn Kardeşliği - Her ikisi de Satürn ile bağlantılı. Oğlak geleneksel, Kova devrimci. Geçmiş ve gelecek buluşur.",
-      'Balık': "Toprak ve Su Şefkati - Oğlak'ın sertliği Balık'ın yumuşaklığıyla erir. Balık ilham verir, Oğlak somutlaştırır. Derin tamamlayıcılık.",
+      'Koç':
+          "Toprak ve Ateş Yapısı - Koç başlatır, Oğlak tamamlar. Zorlu ama güçlü birlik. Koç sabırsız, Oğlak yavaş. Dengelenirse kalıcı başarılar.",
+      'Boğa':
+          "Çifte Toprak Gücü - İki yapıcı, iki sabırlı, iki sadık. Maddi güvenlik, kalıcı ilişki. Risk: Aşırı durağanlık, heyecan eksikliği.",
+      'İkizler':
+          "Toprak ve Hava Yapısı - Oğlak yapıyı, İkizler esnekliği getirir. İkizler hafifletir, Oğlak topraklar. Tamamlayıcı ama zorlu.",
+      'Yengeç':
+          "Karşıt Kutuplar - Oğlak kariyer, Yengeç ev. Baba ve anne arketipleri. Birlikte sağlam aile, güvenli yuva. Derin tamamlayıcılık.",
+      'Aslan':
+          "Toprak ve Ateş Otoritesi - İki otoriter burç, güç mücadelesi potansiyeli. Aslan parlar, Oğlak inşa eder. Dengelenirse imparatorluk kurarlar.",
+      'Başak':
+          "Çifte Toprak Mükemmeliyeti - İki detaycı, iki çalışkan, iki pratik. Birlikte harika işler başarabilir. Eğlenceyi unutmamak önemli.",
+      'Terazi':
+          "Toprak ve Hava Zarafeti - Oğlak'ın gücü Terazi'nin zarafetiyle buluşur. Sosyal ve profesyonel başarı. Oğlak yumuşamalı, Terazi güçlenmeli.",
+      'Akrep':
+          "Güç İttifakı - İki güçlü, iki stratejik, iki kararlı. Derin sadakat ve dönüşüm potansiyeli. Dünyayı fethedebilirler.",
+      'Yay':
+          "Toprak ve Ateş Gerilimi - Yay genişler, Oğlak toplar. Yay özgürlük ister, Oğlak yapı. Zorlu ama öğretici dinamik.",
+      'Oğlak':
+          "Çifte Dağ - İki tırmanıcı, iki disiplinli, iki hırslı. Birlikte zirveye ulaşabilirler. Risk: İş gibi ilişki, romantizm eksikliği.",
+      'Kova':
+          "Satürn Kardeşliği - Her ikisi de Satürn ile bağlantılı. Oğlak geleneksel, Kova devrimci. Geçmiş ve gelecek buluşur.",
+      'Balık':
+          "Toprak ve Su Şefkati - Oğlak'ın sertliği Balık'ın yumuşaklığıyla erir. Balık ilham verir, Oğlak somutlaştırır. Derin tamamlayıcılık.",
     },
     awakeningMantra: '''
 शनि/Satürn Mantrası - Disiplin ve Zaman
@@ -5563,7 +6454,8 @@ class AquariusContent {
     tarotCard: 'Yıldız (XVII)',
     bodyParts: ['Bilekler', 'Baldırlar', 'Dolaşım sistemi', 'Sinir sistemi'],
     animals: ['Kartal', 'Tavus Kuşu', 'Papağan'],
-    mythologicalFigure: "Ganymede - Zeus'un kartal kılığında kaçırdığı ve tanrıların sakisi yaptığı güzel genç. İnsanlığa hizmet ve yüksek ideallere ulaşma arzusunu temsil eder.",
+    mythologicalFigure:
+        "Ganymede - Zeus'un kartal kılığında kaçırdığı ve tanrıların sakisi yaptığı güzel genç. İnsanlığa hizmet ve yüksek ideallere ulaşma arzusunu temsil eder.",
   );
 
   static const String essence = '''
@@ -5580,37 +6472,55 @@ Kova'nın yolculuğu, bireysel özgürlük ile kolektif sorumluluk arasındaki d
     coreTraits: [
       TraitAnalysis(
         trait: 'Yenilikçilik',
-        description: 'Kova, sıra dışı düşünce ve devrimci fikirlerle özdeşleşmiş bir burçtur. Geleneksel çözümlerin ötesine geçerek tamamen yeni paradigmalar yaratma kapasitesine sahiptir.',
-        lightExpression: 'Teknoloji, bilim ve sosyal reformda öncü roller; alışılmadık problem çözme yaklaşımları.',
-        shadowExpression: 'Değişim uğruna değişim yapma eğilimi; işe yarayan sistemleri gereksiz yere yıkma.',
-        developmentTip: 'Yenilikçiliği pratiklikle dengele, işe yarayan şeyleri koru',
+        description:
+            'Kova, sıra dışı düşünce ve devrimci fikirlerle özdeşleşmiş bir burçtur. Geleneksel çözümlerin ötesine geçerek tamamen yeni paradigmalar yaratma kapasitesine sahiptir.',
+        lightExpression:
+            'Teknoloji, bilim ve sosyal reformda öncü roller; alışılmadık problem çözme yaklaşımları.',
+        shadowExpression:
+            'Değişim uğruna değişim yapma eğilimi; işe yarayan sistemleri gereksiz yere yıkma.',
+        developmentTip:
+            'Yenilikçiliği pratiklikle dengele, işe yarayan şeyleri koru',
       ),
       TraitAnalysis(
         trait: 'Bağımsızlık',
-        description: 'Özgürlük, Kova için temel bir ihtiyaçtır. Kendi yolunu çizme ve bireyselliğini koruma konusunda kararlıdır.',
-        lightExpression: 'Bağımsız yaşam tarzı; konformist baskılara direnç; özgün düşünce ve ifade.',
-        shadowExpression: 'Aşırı mesafeli olma; yakınlıktan kaçınma; farklı olmak için farklı olma tuzağı.',
-        developmentTip: 'Bağımsızlığı izolasyona dönüştürme, yakınlığa izin ver',
+        description:
+            'Özgürlük, Kova için temel bir ihtiyaçtır. Kendi yolunu çizme ve bireyselliğini koruma konusunda kararlıdır.',
+        lightExpression:
+            'Bağımsız yaşam tarzı; konformist baskılara direnç; özgün düşünce ve ifade.',
+        shadowExpression:
+            'Aşırı mesafeli olma; yakınlıktan kaçınma; farklı olmak için farklı olma tuzağı.',
+        developmentTip:
+            'Bağımsızlığı izolasyona dönüştürme, yakınlığa izin ver',
       ),
       TraitAnalysis(
         trait: 'Hümanizm',
-        description: 'Kova, insanlığın bütününe karşı derin bir sorumluluk hisseder. Sosyal adalet ve eşitlik onun temel değerleridir.',
-        lightExpression: 'Aktivizm; hayırseverlik; toplumsal meselelere aktif katılım; azınlık haklarını savunma.',
-        shadowExpression: 'Soyut idealler için somut ilişkileri ihmal etme; insanlığı sevip insanları sevememe paradoksu.',
-        developmentTip: 'Büyük idealleri küçük eylemlerle destekle, yakın çevreni ihmal etme',
+        description:
+            'Kova, insanlığın bütününe karşı derin bir sorumluluk hisseder. Sosyal adalet ve eşitlik onun temel değerleridir.',
+        lightExpression:
+            'Aktivizm; hayırseverlik; toplumsal meselelere aktif katılım; azınlık haklarını savunma.',
+        shadowExpression:
+            'Soyut idealler için somut ilişkileri ihmal etme; insanlığı sevip insanları sevememe paradoksu.',
+        developmentTip:
+            'Büyük idealleri küçük eylemlerle destekle, yakın çevreni ihmal etme',
       ),
       TraitAnalysis(
         trait: 'Entelektüel Merak',
-        description: "Keskin bir zihin ve sürekli öğrenme arzusu Kova'yı tanımlar. Özellikle bilim, teknoloji ve felsefe alanlarına çekilir.",
-        lightExpression: 'Geniş bilgi yelpazesi; multidisipliner düşünce; karmaşık kavramları anlama kapasitesi.',
-        shadowExpression: 'Duygusal zekayı ihmal etme; aşırı rasyonelleştirme; her şeyi anlama kibri.',
+        description:
+            "Keskin bir zihin ve sürekli öğrenme arzusu Kova'yı tanımlar. Özellikle bilim, teknoloji ve felsefe alanlarına çekilir.",
+        lightExpression:
+            'Geniş bilgi yelpazesi; multidisipliner düşünce; karmaşık kavramları anlama kapasitesi.',
+        shadowExpression:
+            'Duygusal zekayı ihmal etme; aşırı rasyonelleştirme; her şeyi anlama kibri.',
         developmentTip: 'Duygusal zekayı da geliştir, kalpten de öğren',
       ),
       TraitAnalysis(
         trait: 'Otantiklik',
-        description: 'Kova, toplumsal beklentilerden bağımsız olarak kendisi olma cesareti gösterir. Özgünlük onun için bir yaşam biçimidir.',
-        lightExpression: 'Benzersiz stil ve ifade; gelenekleri sorgulama; kalabalıktan sıyrılma.',
-        shadowExpression: 'Kasıtlı dışlanma; provokatif davranışlar; uyum sağlama güçlüğü.',
+        description:
+            'Kova, toplumsal beklentilerden bağımsız olarak kendisi olma cesareti gösterir. Özgünlük onun için bir yaşam biçimidir.',
+        lightExpression:
+            'Benzersiz stil ve ifade; gelenekleri sorgulama; kalabalıktan sıyrılma.',
+        shadowExpression:
+            'Kasıtlı dışlanma; provokatif davranışlar; uyum sağlama güçlüğü.',
         developmentTip: 'Farklılığını kabulle, ama uyum yeteneğini de geliştir',
       ),
     ],
@@ -5659,86 +6569,186 @@ Kova partnerinin en iyi arkadaşı olmak ister. Fiziksel çekimin ötesinde zihi
       'Koç': CompatibilityDetail(
         rating: 8,
         dynamic: 'Dinamik ortaklar',
-        strengths: ['Karşılıklı özgürlük anlayışı', 'Enerjik ve maceracı birliktelik', 'Entelektüel tartışmalar'],
-        challenges: ["Koç'un sabırsızlığı vs Kova'nın mesafesi", 'Duygusal ifade farklılıkları'],
-        advice: 'Hem fiziksel hem zihinsel maceralar planlayın; birbirinizin bağımsızlığına saygı gösterin.',
+        strengths: [
+          'Karşılıklı özgürlük anlayışı',
+          'Enerjik ve maceracı birliktelik',
+          'Entelektüel tartışmalar',
+        ],
+        challenges: [
+          "Koç'un sabırsızlığı vs Kova'nın mesafesi",
+          'Duygusal ifade farklılıkları',
+        ],
+        advice:
+            'Hem fiziksel hem zihinsel maceralar planlayın; birbirinizin bağımsızlığına saygı gösterin.',
       ),
       'Boğa': CompatibilityDetail(
         rating: 5,
         dynamic: 'Sabit çatışma',
-        strengths: ['Sadakat ve bağlılık', 'Tamamlayıcı perspektifler', 'Kararlılık'],
-        challenges: ["Boğa'nın gelenekselliği vs Kova'nın radikalliği", 'Değişime karşı farklı tutumlar'],
-        advice: 'Orta yol bulmayı öğrenin; birbirinizin farklı dünyalarını keşfetmeye açık olun.',
+        strengths: [
+          'Sadakat ve bağlılık',
+          'Tamamlayıcı perspektifler',
+          'Kararlılık',
+        ],
+        challenges: [
+          "Boğa'nın gelenekselliği vs Kova'nın radikalliği",
+          'Değişime karşı farklı tutumlar',
+        ],
+        advice:
+            'Orta yol bulmayı öğrenin; birbirinizin farklı dünyalarını keşfetmeye açık olun.',
       ),
       'İkizler': CompatibilityDetail(
         rating: 9,
         dynamic: 'Hava uyumu',
-        strengths: ['Zihinsel stimülasyon', 'Sosyal uyum', 'Birlikte öğrenme', 'Özgürlük anlayışı'],
-        challenges: ['Her ikisinin de duygusal derinlikten kaçınması', 'Pratik konuların ihmal edilmesi'],
-        advice: 'Duygusal bağı bilinçli olarak geliştirin; sadece kafada değil, kalpte de buluşun.',
+        strengths: [
+          'Zihinsel stimülasyon',
+          'Sosyal uyum',
+          'Birlikte öğrenme',
+          'Özgürlük anlayışı',
+        ],
+        challenges: [
+          'Her ikisinin de duygusal derinlikten kaçınması',
+          'Pratik konuların ihmal edilmesi',
+        ],
+        advice:
+            'Duygusal bağı bilinçli olarak geliştirin; sadece kafada değil, kalpte de buluşun.',
       ),
       'Yengeç': CompatibilityDetail(
         rating: 4,
         dynamic: 'Zorlu denge',
-        strengths: ['Tamamlayıcı bakış açıları', 'Her ikisinin de koruyucu yanı', 'İnsanlık sevgisi'],
-        challenges: ['Duygusal ifade farklılıkları', 'Güvenlik vs özgürlük çatışması'],
-        advice: 'Kova duygusal olarak daha mevcut olmayı, Yengeç daha fazla alan vermeyi öğrenmeli.',
+        strengths: [
+          'Tamamlayıcı bakış açıları',
+          'Her ikisinin de koruyucu yanı',
+          'İnsanlık sevgisi',
+        ],
+        challenges: [
+          'Duygusal ifade farklılıkları',
+          'Güvenlik vs özgürlük çatışması',
+        ],
+        advice:
+            'Kova duygusal olarak daha mevcut olmayı, Yengeç daha fazla alan vermeyi öğrenmeli.',
       ),
       'Aslan': CompatibilityDetail(
         rating: 7,
         dynamic: 'Karşıt kutuplar',
-        strengths: ['Güçlü karşılıklı çekim', 'Yaratıcılık ve vizyon', 'Sosyal enerji'],
-        challenges: ["Ego çatışmaları", "Aslan'ın dikkat ihtiyacı vs Kova'nın bağımsızlığı"],
-        advice: 'Birbirinizin benzersizliğini kutlayın; rekabet yerine işbirliği yapın.',
+        strengths: [
+          'Güçlü karşılıklı çekim',
+          'Yaratıcılık ve vizyon',
+          'Sosyal enerji',
+        ],
+        challenges: [
+          "Ego çatışmaları",
+          "Aslan'ın dikkat ihtiyacı vs Kova'nın bağımsızlığı",
+        ],
+        advice:
+            'Birbirinizin benzersizliğini kutlayın; rekabet yerine işbirliği yapın.',
       ),
       'Başak': CompatibilityDetail(
         rating: 6,
         dynamic: 'Analitik ortaklar',
-        strengths: ['Entelektüel ortak zemin', 'İnsanlığa hizmet arzusu', 'Detay ve büyük resim dengesi'],
-        challenges: ["Başak'ın pratikliği vs Kova'nın idealizmi", 'Eleştiri ve mesafe'],
-        advice: 'Teorik ve pratik yanlarınızı birleştirerek projeler geliştirin.',
+        strengths: [
+          'Entelektüel ortak zemin',
+          'İnsanlığa hizmet arzusu',
+          'Detay ve büyük resim dengesi',
+        ],
+        challenges: [
+          "Başak'ın pratikliği vs Kova'nın idealizmi",
+          'Eleştiri ve mesafe',
+        ],
+        advice:
+            'Teorik ve pratik yanlarınızı birleştirerek projeler geliştirin.',
       ),
       'Terazi': CompatibilityDetail(
         rating: 9,
         dynamic: 'Hava kardeşliği',
-        strengths: ['Sosyal harmoni', 'Adalet ve eşitlik değerleri', 'Entelektüel paylaşım', 'Diplomatik iletişim'],
-        challenges: ['Karar vermede zorluk', 'Her ikisinin de çatışmadan kaçınması'],
-        advice: 'Birlikte sosyal adalete katkıda bulunun; derin konuşmalar için zaman ayırın.',
+        strengths: [
+          'Sosyal harmoni',
+          'Adalet ve eşitlik değerleri',
+          'Entelektüel paylaşım',
+          'Diplomatik iletişim',
+        ],
+        challenges: [
+          'Karar vermede zorluk',
+          'Her ikisinin de çatışmadan kaçınması',
+        ],
+        advice:
+            'Birlikte sosyal adalete katkıda bulunun; derin konuşmalar için zaman ayırın.',
       ),
       'Akrep': CompatibilityDetail(
         rating: 6,
         dynamic: 'Yoğun gerilim',
-        strengths: ['Derin bağlılık potansiyeli', 'Entelektüel merak', 'Sadakat'],
-        challenges: ["Akrep'in yoğunluğu vs Kova'nın mesafesi", 'Kontrol ve özgürlük çatışması'],
-        advice: 'Güven inşa etmek zaman alacak; sabırlı olun ve birbirinizin ihtiyaçlarını anlayın.',
+        strengths: [
+          'Derin bağlılık potansiyeli',
+          'Entelektüel merak',
+          'Sadakat',
+        ],
+        challenges: [
+          "Akrep'in yoğunluğu vs Kova'nın mesafesi",
+          'Kontrol ve özgürlük çatışması',
+        ],
+        advice:
+            'Güven inşa etmek zaman alacak; sabırlı olun ve birbirinizin ihtiyaçlarını anlayın.',
       ),
       'Yay': CompatibilityDetail(
         rating: 8,
         dynamic: 'Macera ortakları',
-        strengths: ['Bağımsızlık anlayışı', 'Felsefi sohbetler', 'Macera ve keşif', 'İyimserlik'],
-        challenges: ['Her ikisinin de bağlanma zorluğu', 'Pratik sorumlulukların ihmal edilmesi'],
-        advice: 'Birlikte dünyayı keşfedin; hem fiziksel hem entelektüel yolculuklara çıkın.',
+        strengths: [
+          'Bağımsızlık anlayışı',
+          'Felsefi sohbetler',
+          'Macera ve keşif',
+          'İyimserlik',
+        ],
+        challenges: [
+          'Her ikisinin de bağlanma zorluğu',
+          'Pratik sorumlulukların ihmal edilmesi',
+        ],
+        advice:
+            'Birlikte dünyayı keşfedin; hem fiziksel hem entelektüel yolculuklara çıkın.',
       ),
       'Oğlak': CompatibilityDetail(
         rating: 5,
         dynamic: 'Satürn bağı',
-        strengths: ['Kararlılık ve azim', 'Uzun vadeli hedefler', 'Sorumluluk anlayışı'],
-        challenges: ["Oğlak'ın gelenekselliği vs Kova'nın radikalliği", 'Duygusal ifade farklılıkları'],
-        advice: 'Ortak hedefler etrafında birleşin; birbirinizin güçlü yanlarını takdir edin.',
+        strengths: [
+          'Kararlılık ve azim',
+          'Uzun vadeli hedefler',
+          'Sorumluluk anlayışı',
+        ],
+        challenges: [
+          "Oğlak'ın gelenekselliği vs Kova'nın radikalliği",
+          'Duygusal ifade farklılıkları',
+        ],
+        advice:
+            'Ortak hedefler etrafında birleşin; birbirinizin güçlü yanlarını takdir edin.',
       ),
       'Kova': CompatibilityDetail(
         rating: 8,
         dynamic: 'Tam anlayış',
-        strengths: ['Tam anlayış', 'Entelektüel uyum', 'Paylaşılan değerler', 'Bağımsızlık saygısı'],
-        challenges: ['Duygusal yakınlık eksikliği', 'Birbirini çok iyi anlama riski'],
-        advice: 'Bilinçli olarak duygusal yakınlık pratik edin; arkadaşlığın ötesine geçin.',
+        strengths: [
+          'Tam anlayış',
+          'Entelektüel uyum',
+          'Paylaşılan değerler',
+          'Bağımsızlık saygısı',
+        ],
+        challenges: [
+          'Duygusal yakınlık eksikliği',
+          'Birbirini çok iyi anlama riski',
+        ],
+        advice:
+            'Bilinçli olarak duygusal yakınlık pratik edin; arkadaşlığın ötesine geçin.',
       ),
       'Balık': CompatibilityDetail(
         rating: 7,
         dynamic: 'Tamamlayıcı',
-        strengths: ['Hümanist değerler', 'Yaratıcılık', 'Ruhsal bağ potansiyeli'],
-        challenges: ['Rasyonel vs duygusal yaklaşım', 'Sınırlar ve belirsizlik'],
-        advice: "Balık'ın duygusal derinliği Kova'yı yumuşatabilir; birlikte insanlığa hizmet edin.",
+        strengths: [
+          'Hümanist değerler',
+          'Yaratıcılık',
+          'Ruhsal bağ potansiyeli',
+        ],
+        challenges: [
+          'Rasyonel vs duygusal yaklaşım',
+          'Sınırlar ve belirsizlik',
+        ],
+        advice:
+            "Balık'ın duygusal derinliği Kova'yı yumuşatabilir; birlikte insanlığa hizmet edin.",
       ),
     },
     relationshipAdvice: [
@@ -5769,7 +6779,8 @@ Kova, insanlığa katkıda bulunduğunu hissettiği işlerde en motive olur. Sad
       ),
       CareerSuggestion(
         career: 'Araştırmacı/Bilim İnsanı',
-        reason: 'Entelektüel merak ve keşif arzusu; bilinmeyeni araştırma tutkusu',
+        reason:
+            'Entelektüel merak ve keşif arzusu; bilinmeyeni araştırma tutkusu',
         tips: 'Sonuçları paylaşma ve uygulama aşamasını ihmal etme',
       ),
       CareerSuggestion(
@@ -5821,7 +6832,8 @@ Kova, finansal kararlarında etik değerlere önem verir. Sosyal sorumlu yatır�
   );
 
   static const HealthProfile health = HealthProfile(
-    bodyRulership: 'Kova burcu bilekleri, baldırları, dolaşım sistemini ve sinir sistemini yönetir. Bu alanlarda hassasiyet gösterebilir.',
+    bodyRulership:
+        'Kova burcu bilekleri, baldırları, dolaşım sistemini ve sinir sistemini yönetir. Bu alanlarda hassasiyet gösterebilir.',
     commonIssues: [
       'Dolaşım sistemi sorunları ve varis',
       'Bilek ve ayak bileği yaralanmaları',
@@ -5900,11 +6912,31 @@ Yüksek evrimli Kova, bireysel özgünlüğü toplumsal hizmete dönüştüren b
   );
 
   static const List<FamousAquarius> famousPeople = [
-    FamousAquarius(name: 'Oprah Winfrey', birthDate: '29 Ocak 1954', contribution: 'Medya moğulu, hayırsever'),
-    FamousAquarius(name: 'Abraham Lincoln', birthDate: '12 Şubat 1809', contribution: 'ABD Başkanı, köleliği kaldıran lider'),
-    FamousAquarius(name: 'Bob Marley', birthDate: '6 Şubat 1945', contribution: 'Reggae müziğin efsanesi, barış aktivisti'),
-    FamousAquarius(name: 'Galileo Galilei', birthDate: '15 Şubat 1564', contribution: 'Astronomi ve fizik öncüsü'),
-    FamousAquarius(name: 'Thomas Edison', birthDate: '11 Şubat 1847', contribution: 'Mucit, yenilikçi'),
+    FamousAquarius(
+      name: 'Oprah Winfrey',
+      birthDate: '29 Ocak 1954',
+      contribution: 'Medya moğulu, hayırsever',
+    ),
+    FamousAquarius(
+      name: 'Abraham Lincoln',
+      birthDate: '12 Şubat 1809',
+      contribution: 'ABD Başkanı, köleliği kaldıran lider',
+    ),
+    FamousAquarius(
+      name: 'Bob Marley',
+      birthDate: '6 Şubat 1945',
+      contribution: 'Reggae müziğin efsanesi, barış aktivisti',
+    ),
+    FamousAquarius(
+      name: 'Galileo Galilei',
+      birthDate: '15 Şubat 1564',
+      contribution: 'Astronomi ve fizik öncüsü',
+    ),
+    FamousAquarius(
+      name: 'Thomas Edison',
+      birthDate: '11 Şubat 1847',
+      contribution: 'Mucit, yenilikçi',
+    ),
   ];
 
   // ════════════════════════════════════════════════════════════════════════════
@@ -6020,18 +7052,30 @@ olabilir. Gruplarda aura başkalarıyla birleşme eğilimi gösterir.
       'Teknoloji ve Ruh Köprücüsü - İkisini birleştiren',
     ],
     sacredUnion: {
-      'Koç': "Hava ve Ateş Devrimi - İki bağımsız, iki özgür ruh. Geleneksel olmayan ilişki, arkadaş-sevgili dinamiği. Birbirinin özgürlüğüne saygı kritik.",
-      'Boğa': "Hava ve Toprak Gerilimi - Kova değişim ister, Boğa stabilite. Kova teorize eder, Boğa somutlaştırır. Zorlu ama öğretici.",
-      'İkizler': "Çifte Hava Akışı - İki zihin, sonsuz sohbet, entelektüel orgazm. Tartışarak, konuşarak, paylaşarak büyüme. Duygusal derinliğe dikkat.",
-      'Yengeç': "Hava ve Su Bulutları - Kova mesafeli, Yengeç yapışık. Yengeç duygu öğretir, Kova perspektif verir. Dengelenirse tamamlayıcı.",
-      'Aslan': "Karşıt Kutuplar - Aslan bireysel parlaklık, Kova kolektif vizyon. Çekim güçlü, ego çatışması potansiyeli. Dengelenirse güçlü liderlik.",
-      'Başak': "Hava ve Toprak Analizi - İki analitik zihin farklı yaklaşımlarla. Başak detayı, Kova sistemi görür. Birlikte harika projeler.",
-      'Terazi': "Hava Kardeşliği - İki hava burcunun harmonik birliği. Sosyal, zarif, entelektüel. Birlikte güzellik ve adalet yaratma.",
-      'Akrep': "Yoğunluk ve Mesafe - Akrep derin bağ ister, Kova özgürlük. Akrep yoğunlaştırır, Kova havalandırır. Zorlu ama transformatif.",
-      'Yay': "Hava ve Ateş Genişlemesi - İki vizyon, iki maceraperest, iki özgür düşünür. Birlikte dünyayı değiştirme hayalleri. Pratiklik eksik olabilir.",
-      'Oğlak': "Satürn Kardeşliği - Geçmiş (Oğlak) ve gelecek (Kova) buluşur. Yapı ve yenilik dengesi. Birlikte kalıcı değişim yaratabilir.",
-      'Kova': "Çifte Devrim - İki deneyci, iki yenilikçi. Tamamen geleneksel olmayan ilişki. Risk: Kimse topraklanmıyor, birisi 'ev'e çağırmalı.",
-      'Balık': "Hava ve Su Rüyası - Kova vizyoner, Balık mistik. Evrensel sevgi ve kolektif bilinç potansiyeli. Gerçeklikle bağ önemli.",
+      'Koç':
+          "Hava ve Ateş Devrimi - İki bağımsız, iki özgür ruh. Geleneksel olmayan ilişki, arkadaş-sevgili dinamiği. Birbirinin özgürlüğüne saygı kritik.",
+      'Boğa':
+          "Hava ve Toprak Gerilimi - Kova değişim ister, Boğa stabilite. Kova teorize eder, Boğa somutlaştırır. Zorlu ama öğretici.",
+      'İkizler':
+          "Çifte Hava Akışı - İki zihin, sonsuz sohbet, entelektüel orgazm. Tartışarak, konuşarak, paylaşarak büyüme. Duygusal derinliğe dikkat.",
+      'Yengeç':
+          "Hava ve Su Bulutları - Kova mesafeli, Yengeç yapışık. Yengeç duygu öğretir, Kova perspektif verir. Dengelenirse tamamlayıcı.",
+      'Aslan':
+          "Karşıt Kutuplar - Aslan bireysel parlaklık, Kova kolektif vizyon. Çekim güçlü, ego çatışması potansiyeli. Dengelenirse güçlü liderlik.",
+      'Başak':
+          "Hava ve Toprak Analizi - İki analitik zihin farklı yaklaşımlarla. Başak detayı, Kova sistemi görür. Birlikte harika projeler.",
+      'Terazi':
+          "Hava Kardeşliği - İki hava burcunun harmonik birliği. Sosyal, zarif, entelektüel. Birlikte güzellik ve adalet yaratma.",
+      'Akrep':
+          "Yoğunluk ve Mesafe - Akrep derin bağ ister, Kova özgürlük. Akrep yoğunlaştırır, Kova havalandırır. Zorlu ama transformatif.",
+      'Yay':
+          "Hava ve Ateş Genişlemesi - İki vizyon, iki maceraperest, iki özgür düşünür. Birlikte dünyayı değiştirme hayalleri. Pratiklik eksik olabilir.",
+      'Oğlak':
+          "Satürn Kardeşliği - Geçmiş (Oğlak) ve gelecek (Kova) buluşur. Yapı ve yenilik dengesi. Birlikte kalıcı değişim yaratabilir.",
+      'Kova':
+          "Çifte Devrim - İki deneyci, iki yenilikçi. Tamamen geleneksel olmayan ilişki. Risk: Kimse topraklanmıyor, birisi 'ev'e çağırmalı.",
+      'Balık':
+          "Hava ve Su Rüyası - Kova vizyoner, Balık mistik. Evrensel sevgi ve kolektif bilinç potansiyeli. Gerçeklikle bağ önemli.",
     },
     awakeningMantra: '''
 उरनुस/Uranüs Mantrası - Devrim ve Uyanış
@@ -6111,7 +7155,13 @@ class PiscesContent {
     fallPlanet: 'Merkür',
     polarity: 'Feminen/Yin',
     house: 12,
-    bodyParts: ['Ayaklar', 'Lenfatik sistem', 'Pineal bez', 'Bağışıklık sistemi', 'Psişik sinir sistemi'],
+    bodyParts: [
+      'Ayaklar',
+      'Lenfatik sistem',
+      'Pineal bez',
+      'Bağışıklık sistemi',
+      'Psişik sinir sistemi',
+    ],
     colors: ['Deniz Mavisi', 'Mor', 'Akuamarin', 'Lavanta', 'Gümüşi Yeşil'],
     numbers: [3, 7, 12, 16, 21],
     day: 'Perşembe',
@@ -6120,7 +7170,8 @@ class PiscesContent {
     flowers: ['Nilüfer', 'Su Zambağı', 'Deniz Şakayığı', 'Orkide', 'Sümbül'],
     animals: ['Balık', 'Yunus', 'Denizatı', 'Deniz Kaplumbağası', 'Kuğu'],
     tarotCard: 'Ay (XVIII)',
-    mythologicalFigure: 'Afrodit ve Eros - Kutsal Aşk ve Birleşme, Typhon\'dan Kaçış',
+    mythologicalFigure:
+        'Afrodit ve Eros - Kutsal Aşk ve Birleşme, Typhon\'dan Kaçış',
   );
 
   static const String essence = '''
@@ -6137,38 +7188,55 @@ Balık'ın yolculuğu, dünyevi ve ilahi arasında denge kurmaktır. Hem ayaklar
     coreTraits: [
       TraitAnalysis(
         trait: 'Sezgisellik',
-        description: 'Balık, zodyağın en sezgisel ve psişik burcudur. Mantığın ötesinde bilme kapasitesine sahiptir ve görünmeyen gerçeklikleri algılayabilir.',
-        lightExpression: 'Güçlü önseziler; rüya yorumlama yeteneği; başkalarının duygularını okuma.',
-        shadowExpression: 'Gerçeklikten kopma; paranoya; aşırı hassasiyet ve savunmasızlık.',
+        description:
+            'Balık, zodyağın en sezgisel ve psişik burcudur. Mantığın ötesinde bilme kapasitesine sahiptir ve görünmeyen gerçeklikleri algılayabilir.',
+        lightExpression:
+            'Güçlü önseziler; rüya yorumlama yeteneği; başkalarının duygularını okuma.',
+        shadowExpression:
+            'Gerçeklikten kopma; paranoya; aşırı hassasiyet ve savunmasızlık.',
         developmentTip: 'Sezgilerini mantıkla dengele, topraklanmayı unutma',
       ),
       TraitAnalysis(
         trait: 'Şefkat',
-        description: "Balık'ın merhameti sınır tanımaz. Başkalarının acılarını derinden hisseder ve yardım etme arzusu taşır.",
-        lightExpression: 'Koşulsuz sevgi; fedakarlık; şifa enerjisi; sosyal hizmet.',
-        shadowExpression: 'Kurban rolü; sınır koyamama; başkalarını kurtarma kompleksi.',
-        developmentTip: 'Sağlıklı sınırlar koyarak hem kendini hem başkalarını koru',
+        description:
+            "Balık'ın merhameti sınır tanımaz. Başkalarının acılarını derinden hisseder ve yardım etme arzusu taşır.",
+        lightExpression:
+            'Koşulsuz sevgi; fedakarlık; şifa enerjisi; sosyal hizmet.',
+        shadowExpression:
+            'Kurban rolü; sınır koyamama; başkalarını kurtarma kompleksi.',
+        developmentTip:
+            'Sağlıklı sınırlar koyarak hem kendini hem başkalarını koru',
       ),
       TraitAnalysis(
         trait: 'Yaratıcılık',
-        description: "Neptün'ün etkisiyle Balık, olağanüstü hayal gücü ve sanatsal yeteneklere sahiptir. Görünmeyeni görünür kılma kapasitesi vardır.",
-        lightExpression: 'Müzik, şiir, dans, görsel sanatlar; ilham dolu yaratıcılık.',
-        shadowExpression: 'Gerçeklikten kaçış; tamamlanmamış projeler; hayal ile gerçek karışıklığı.',
+        description:
+            "Neptün'ün etkisiyle Balık, olağanüstü hayal gücü ve sanatsal yeteneklere sahiptir. Görünmeyeni görünür kılma kapasitesi vardır.",
+        lightExpression:
+            'Müzik, şiir, dans, görsel sanatlar; ilham dolu yaratıcılık.',
+        shadowExpression:
+            'Gerçeklikten kaçış; tamamlanmamış projeler; hayal ile gerçek karışıklığı.',
         developmentTip: 'Yaratıcılığını somut projelerle hayata geçir',
       ),
       TraitAnalysis(
         trait: 'Uyum Sağlama',
-        description: 'Değişken su olarak Balık, her ortama uyum sağlayabilir. Esnek ve akışkan bir kişiliğe sahiptir.',
-        lightExpression: 'Sosyal bukalemun yeteneği; çatışmadan kaçınma; diplomatik yaklaşım.',
-        shadowExpression: 'Kimlik karmaşası; başkalarına aşırı uyum; kendi ihtiyaçlarını ihmal etme.',
-        developmentTip: 'Kendi özünü koru, her duruma aşırı adapte olmak zorunda değilsin',
+        description:
+            'Değişken su olarak Balık, her ortama uyum sağlayabilir. Esnek ve akışkan bir kişiliğe sahiptir.',
+        lightExpression:
+            'Sosyal bukalemun yeteneği; çatışmadan kaçınma; diplomatik yaklaşım.',
+        shadowExpression:
+            'Kimlik karmaşası; başkalarına aşırı uyum; kendi ihtiyaçlarını ihmal etme.',
+        developmentTip:
+            'Kendi özünü koru, her duruma aşırı adapte olmak zorunda değilsin',
       ),
       TraitAnalysis(
         trait: 'Ruhanilik',
-        description: 'Balık, maddi dünyanın ötesine doğal bir çekim hisseder. 12. ev bağlantısıyla bilinçaltı ve ruhsal alemlerin kapısını açar.',
+        description:
+            'Balık, maddi dünyanın ötesine doğal bir çekim hisseder. 12. ev bağlantısıyla bilinçaltı ve ruhsal alemlerin kapısını açar.',
         lightExpression: 'Meditasyon ve dua; mistik deneyimler; ruhsal arayış.',
-        shadowExpression: 'Dünyadan kopuş; spiritüel bypass; kaçış mekanizması olarak maneviyat.',
-        developmentTip: 'Spiritüel pratiği günlük hayatla dengele, dünyadan kaçma',
+        shadowExpression:
+            'Dünyadan kopuş; spiritüel bypass; kaçış mekanizması olarak maneviyat.',
+        developmentTip:
+            'Spiritüel pratiği günlük hayatla dengele, dünyadan kaçma',
       ),
     ],
     strengths: [
@@ -6216,86 +7284,184 @@ Balık, partnerini idealize etme ve gerçekliği görmezden gelme eğilimindedir
       'Koç': CompatibilityDetail(
         rating: 6,
         dynamic: 'Tamamlayıcı zıtlar',
-        strengths: ['Tamamlayıcı özellikler', 'Koruyucu-bakıcı dinamiği', 'Macera ve hayal dengesi'],
-        challenges: ['Hız farkı', 'Hassasiyet vs sertlik', 'İletişim tarzı farklılıkları'],
-        advice: 'Koç yumuşamayı, Balık güçlenmeyi öğrenebilir; birbirinizin zayıf yanlarını dengelemeye odaklanın.',
+        strengths: [
+          'Tamamlayıcı özellikler',
+          'Koruyucu-bakıcı dinamiği',
+          'Macera ve hayal dengesi',
+        ],
+        challenges: [
+          'Hız farkı',
+          'Hassasiyet vs sertlik',
+          'İletişim tarzı farklılıkları',
+        ],
+        advice:
+            'Koç yumuşamayı, Balık güçlenmeyi öğrenebilir; birbirinizin zayıf yanlarını dengelemeye odaklanın.',
       ),
       'Boğa': CompatibilityDetail(
         rating: 8,
         dynamic: 'Sağlam zemin',
-        strengths: ['Duygusal güvenlik', 'Sanatsal ve estetik paylaşım', 'Sadakat ve bağlılık'],
-        challenges: ["Boğa'nın maddiyatçılığı vs Balık'ın idealizmi", 'Pratik vs hayalperest'],
-        advice: "Boğa'nın ayaklarınızı yere basmasına izin verin; onun güvenliğini takdir edin.",
+        strengths: [
+          'Duygusal güvenlik',
+          'Sanatsal ve estetik paylaşım',
+          'Sadakat ve bağlılık',
+        ],
+        challenges: [
+          "Boğa'nın maddiyatçılığı vs Balık'ın idealizmi",
+          'Pratik vs hayalperest',
+        ],
+        advice:
+            "Boğa'nın ayaklarınızı yere basmasına izin verin; onun güvenliğini takdir edin.",
       ),
       'İkizler': CompatibilityDetail(
         rating: 5,
         dynamic: 'Derinlik farkı',
-        strengths: ['Esneklik ve uyum', 'Yaratıcı sohbetler', 'Değişimi kabullenme'],
-        challenges: ["İkizler'in yüzeyselliği vs Balık'ın derinliği", 'Duygusal ihtiyaç farklılıkları'],
-        advice: 'İkizler duygusal derinliğe açılmalı; Balık da zihinsel hafifliği deneyimlemeyi öğrenmeli.',
+        strengths: [
+          'Esneklik ve uyum',
+          'Yaratıcı sohbetler',
+          'Değişimi kabullenme',
+        ],
+        challenges: [
+          "İkizler'in yüzeyselliği vs Balık'ın derinliği",
+          'Duygusal ihtiyaç farklılıkları',
+        ],
+        advice:
+            'İkizler duygusal derinliğe açılmalı; Balık da zihinsel hafifliği deneyimlemeyi öğrenmeli.',
       ),
       'Yengeç': CompatibilityDetail(
         rating: 9,
         dynamic: 'Su uyumu',
-        strengths: ['Empatik bağ', 'Duygusal güvenlik', 'Sezgisel iletişim', 'Ailevi değerler'],
-        challenges: ['Her ikisinin de aşırı hassasiyeti', 'Ruh hali dalgalanmaları'],
-        advice: 'Birbirinizi koruyan bir yuva yaratın; duygusal ihtiyaçlarınızı açıkça paylaşın.',
+        strengths: [
+          'Empatik bağ',
+          'Duygusal güvenlik',
+          'Sezgisel iletişim',
+          'Ailevi değerler',
+        ],
+        challenges: [
+          'Her ikisinin de aşırı hassasiyeti',
+          'Ruh hali dalgalanmaları',
+        ],
+        advice:
+            'Birbirinizi koruyan bir yuva yaratın; duygusal ihtiyaçlarınızı açıkça paylaşın.',
       ),
       'Aslan': CompatibilityDetail(
         rating: 6,
         dynamic: 'Yaratıcı denge',
-        strengths: ['Yaratıcı enerji', 'Romantizm', "Aslan'ın gücü + Balık'ın yumuşaklığı"],
-        challenges: ["Aslan'ın ego ihtiyacı vs Balık'ın fedakarlığı", 'Dikkat dağılımı'],
-        advice: "Aslan'ın güneşine gölge olarak değil, onu yansıtan ay olarak var olun.",
+        strengths: [
+          'Yaratıcı enerji',
+          'Romantizm',
+          "Aslan'ın gücü + Balık'ın yumuşaklığı",
+        ],
+        challenges: [
+          "Aslan'ın ego ihtiyacı vs Balık'ın fedakarlığı",
+          'Dikkat dağılımı',
+        ],
+        advice:
+            "Aslan'ın güneşine gölge olarak değil, onu yansıtan ay olarak var olun.",
       ),
       'Başak': CompatibilityDetail(
         rating: 7,
         dynamic: 'Karşıt kutuplar',
-        strengths: ['Tamamlayıcı yetenekler', 'Hizmet ve şifa ortak değerleri', 'Detay ve büyük resim dengesi'],
+        strengths: [
+          'Tamamlayıcı yetenekler',
+          'Hizmet ve şifa ortak değerleri',
+          'Detay ve büyük resim dengesi',
+        ],
         challenges: ['Eleştiri hassasiyeti', 'Pratik vs idealist dünya görüşü'],
-        advice: "Başak'ın pratikliği Balık'ın hayallerini somutlaştırabilir; birbirinizin farklılıklarına saygı gösterin.",
+        advice:
+            "Başak'ın pratikliği Balık'ın hayallerini somutlaştırabilir; birbirinizin farklılıklarına saygı gösterin.",
       ),
       'Terazi': CompatibilityDetail(
         rating: 7,
         dynamic: 'Romantik harmoni',
-        strengths: ['Romantizm', 'Sanatsal değerler', 'Diplomat iletişim', 'Güzellik takdiri'],
-        challenges: ['Karar vermede zorluk', 'Her ikisinin de çatışmadan kaçınması'],
-        advice: 'Birlikte sanatsal projeler yapın; düşmanlıktan kaçınmak için açık iletişim pratik edin.',
+        strengths: [
+          'Romantizm',
+          'Sanatsal değerler',
+          'Diplomat iletişim',
+          'Güzellik takdiri',
+        ],
+        challenges: [
+          'Karar vermede zorluk',
+          'Her ikisinin de çatışmadan kaçınması',
+        ],
+        advice:
+            'Birlikte sanatsal projeler yapın; düşmanlıktan kaçınmak için açık iletişim pratik edin.',
       ),
       'Akrep': CompatibilityDetail(
         rating: 10,
         dynamic: 'Derin birleşme',
-        strengths: ['Yoğun duygusal bağ', 'Psişik bağlantı', 'Sadakat', 'Dönüşüm potansiyeli'],
-        challenges: ['Aşırı yoğunluk', 'Bağımlılık riski', 'Her ikisinin de karanlık yanları'],
-        advice: 'Yoğunluğu yaratıcı ve ruhsal alanlara kanalize edin; sağlıklı sınırları koruyun.',
+        strengths: [
+          'Yoğun duygusal bağ',
+          'Psişik bağlantı',
+          'Sadakat',
+          'Dönüşüm potansiyeli',
+        ],
+        challenges: [
+          'Aşırı yoğunluk',
+          'Bağımlılık riski',
+          'Her ikisinin de karanlık yanları',
+        ],
+        advice:
+            'Yoğunluğu yaratıcı ve ruhsal alanlara kanalize edin; sağlıklı sınırları koruyun.',
       ),
       'Yay': CompatibilityDetail(
         rating: 6,
         dynamic: 'Jüpiter bağı',
-        strengths: ['Ruhsal arayış', 'İyimserlik', 'Macera ve hayal gücü', 'Felsefi sohbetler'],
-        challenges: ["Yay'ın bağımsızlığı vs Balık'ın birleşme arzusu", 'Pratik sorumluluklar'],
-        advice: 'Birlikte ruhsal yolculuklara çıkın; birbirinizin özgürlük ihtiyacına saygı gösterin.',
+        strengths: [
+          'Ruhsal arayış',
+          'İyimserlik',
+          'Macera ve hayal gücü',
+          'Felsefi sohbetler',
+        ],
+        challenges: [
+          "Yay'ın bağımsızlığı vs Balık'ın birleşme arzusu",
+          'Pratik sorumluluklar',
+        ],
+        advice:
+            'Birlikte ruhsal yolculuklara çıkın; birbirinizin özgürlük ihtiyacına saygı gösterin.',
       ),
       'Oğlak': CompatibilityDetail(
         rating: 7,
         dynamic: 'Yapı ve ruh',
-        strengths: ['Karşılıklı destek', 'Hayal ve gerçeklik dengesi', 'Uzun vadeli bağlılık'],
+        strengths: [
+          'Karşılıklı destek',
+          'Hayal ve gerçeklik dengesi',
+          'Uzun vadeli bağlılık',
+        ],
         challenges: ['Duygusal ifade farklılıkları', 'Pragmatizm vs idealizm'],
-        advice: "Oğlak'ın yapısı içinde yaratıcılığınızı ifade edin; onun pratikliğini takdir edin.",
+        advice:
+            "Oğlak'ın yapısı içinde yaratıcılığınızı ifade edin; onun pratikliğini takdir edin.",
       ),
       'Kova': CompatibilityDetail(
         rating: 7,
         dynamic: 'Hümanist birlik',
-        strengths: ['Hümanist değerler', 'Yaratıcılık', 'Ruhsal bağ potansiyeli'],
-        challenges: ["Kova'nın mesafesi vs Balık'ın yakınlık ihtiyacı", 'Rasyonel vs duygusal'],
-        advice: 'Birlikte insanlığa hizmet projelerinde çalışın; farklı yaklaşımlarınızı birleştirin.',
+        strengths: [
+          'Hümanist değerler',
+          'Yaratıcılık',
+          'Ruhsal bağ potansiyeli',
+        ],
+        challenges: [
+          "Kova'nın mesafesi vs Balık'ın yakınlık ihtiyacı",
+          'Rasyonel vs duygusal',
+        ],
+        advice:
+            'Birlikte insanlığa hizmet projelerinde çalışın; farklı yaklaşımlarınızı birleştirin.',
       ),
       'Balık': CompatibilityDetail(
         rating: 8,
         dynamic: 'Okyanus birliği',
-        strengths: ['Tam empati', 'Ruhsal bağ', 'Yaratıcı sinerji', 'Romantizm'],
-        challenges: ['Gerçeklikten birlikte kaçış', 'Sınır belirsizliği', 'Pratik konuların ihmali'],
-        advice: 'Birbirinizi yukarı çekin, aşağı değil; ayaklarınızı yerde tutacak rutinler oluşturun.',
+        strengths: [
+          'Tam empati',
+          'Ruhsal bağ',
+          'Yaratıcı sinerji',
+          'Romantizm',
+        ],
+        challenges: [
+          'Gerçeklikten birlikte kaçış',
+          'Sınır belirsizliği',
+          'Pratik konuların ihmali',
+        ],
+        advice:
+            'Birbirinizi yukarı çekin, aşağı değil; ayaklarınızı yerde tutacak rutinler oluşturun.',
       ),
     },
     relationshipAdvice: [
@@ -6321,22 +7487,27 @@ Balık, maddi başarıdan çok manevi tatmin arar. Sadece para kazanmak değil, 
     idealCareers: [
       CareerSuggestion(
         career: 'Müzisyen/Şair/Ressam',
-        reason: "Neptün'ün etkisi sanatsal ifade ve hayal gücü ile doğal uyum sağlar",
-        tips: 'Proje tamamlama disiplini geliştir, sadece ilham beklemek yetmez',
+        reason:
+            "Neptün'ün etkisi sanatsal ifade ve hayal gücü ile doğal uyum sağlar",
+        tips:
+            'Proje tamamlama disiplini geliştir, sadece ilham beklemek yetmez',
       ),
       CareerSuggestion(
         career: 'Psikolog/Terapist',
-        reason: 'Derin empati ve şifa enerjisi başkalarına yardım etmede güçlü bir araç',
+        reason:
+            'Derin empati ve şifa enerjisi başkalarına yardım etmede güçlü bir araç',
         tips: 'Kendi sınırlarını koru, danışanların enerjisini üzerine alma',
       ),
       CareerSuggestion(
         career: 'Meditasyon/Yoga Öğretmeni',
-        reason: 'Doğal psişik yetenekler ve ruhsal derinlik bu alanlarda parlar',
+        reason:
+            'Doğal psişik yetenekler ve ruhsal derinlik bu alanlarda parlar',
         tips: 'İş yönünü de öğren, sadece spiritüel olmak yetmez',
       ),
       CareerSuggestion(
         career: 'Yönetmen/Senarist',
-        reason: 'Neptün sinema ve illüzyonlarla ilişkilidir; hikaye anlatma tutkusu',
+        reason:
+            'Neptün sinema ve illüzyonlarla ilişkilidir; hikaye anlatma tutkusu',
         tips: 'Pratik ve teknik detayları da öğren',
       ),
       CareerSuggestion(
@@ -6378,7 +7549,8 @@ Balık, etik ve ruhsal değerlere uygun yatırımlar yapmak ister. Sanata, hayı
   );
 
   static const HealthProfile health = HealthProfile(
-    bodyRulership: 'Balık burcu ayakları, lenfatik sistemi, pineal bezi ve bağışıklık sistemini yönetir. Bu alanlarda hassasiyet gösterebilir.',
+    bodyRulership:
+        'Balık burcu ayakları, lenfatik sistemi, pineal bezi ve bağışıklık sistemini yönetir. Bu alanlarda hassasiyet gösterebilir.',
     commonIssues: [
       'Ayak sorunları (nasır, mantar, düz taban)',
       'Lenfatik sistem tıkanıklıkları',
@@ -6457,11 +7629,31 @@ Yüksek evrimli Balık, koşulsuz sevginin somut bir ifadesi olur. Ruhsal derinl
   );
 
   static const List<FamousPisces> famousPeople = [
-    FamousPisces(name: 'Albert Einstein', birthDate: '14 Mart 1879', contribution: 'Fizikçi, görelilik teorisi'),
-    FamousPisces(name: 'Michelangelo', birthDate: '6 Mart 1475', contribution: 'Rönesans sanatçısı, heykeltıraş'),
-    FamousPisces(name: 'Rihanna', birthDate: '20 Şubat 1988', contribution: 'Şarkıcı, girişimci'),
-    FamousPisces(name: 'Steve Jobs', birthDate: '24 Şubat 1955', contribution: 'Apple kurucusu, vizyoner'),
-    FamousPisces(name: 'George Washington', birthDate: '22 Şubat 1732', contribution: 'ABD\'nin ilk başkanı'),
+    FamousPisces(
+      name: 'Albert Einstein',
+      birthDate: '14 Mart 1879',
+      contribution: 'Fizikçi, görelilik teorisi',
+    ),
+    FamousPisces(
+      name: 'Michelangelo',
+      birthDate: '6 Mart 1475',
+      contribution: 'Rönesans sanatçısı, heykeltıraş',
+    ),
+    FamousPisces(
+      name: 'Rihanna',
+      birthDate: '20 Şubat 1988',
+      contribution: 'Şarkıcı, girişimci',
+    ),
+    FamousPisces(
+      name: 'Steve Jobs',
+      birthDate: '24 Şubat 1955',
+      contribution: 'Apple kurucusu, vizyoner',
+    ),
+    FamousPisces(
+      name: 'George Washington',
+      birthDate: '22 Şubat 1732',
+      contribution: 'ABD\'nin ilk başkanı',
+    ),
   ];
 
   // ════════════════════════════════════════════════════════════════════════════
@@ -6581,18 +7773,30 @@ Koruma pratikleri kritik - aura "kabarcığı" visualizasyonu, enerji kalkanı.
       'Okyanus Tanrıçası Rahibesi - Su elementinin kutsal hizmetkarı',
     ],
     sacredUnion: {
-      'Koç': "Su ve Ateş Mistik Birliği - Koç'un ateşi Balık'ın sularında söner veya buhar olur. Koç topraklar, Balık yükseltir. Zorlu ama potansiyel dolu.",
-      'Boğa': "Su ve Toprak Cenneti - Boğa'nın sağlamlığı Balık'a güvenli liman verir. Balık'ın rüyaları Boğa'nın toprağında çiçek açar. Şifa birliği.",
-      'İkizler': "Su ve Hava Bulutları - Zihinsel stimülasyon ama duygusal bağlantı zorluğu. İkizler anlamlandırır, Balık hisseder. Tamamlayıcı ama zorlu.",
-      'Yengeç': "Çifte Su Okyanusu - En derin duygusal bağ potansiyeli. Karşılıklı anlayış, empati, rüya paylaşımı. Risk: Birlikte boğulma.",
-      'Aslan': "Su ve Güneş - Aslan parlar, Balık yansıtır ve yumuşatır. Aslan ego verir, Balık egoyu eritir. Dönüştürücü potansiyel.",
-      'Başak': "Karşıt Kutuplar Birliği - Başak detaycı, Balık bütünsel. Başak somutlaştırır, Balık ilham verir. Birlikte harika şifa çalışması.",
-      'Terazi': "Su ve Hava Güzelliği - Estetik duyarlılık, romantizm, sanatsal birlik. Her ikisi de çatışmadan kaçınır - denge için bilinçli çaba gerekir.",
-      'Akrep': "Çifte Su Derinliği - En yoğun, en dönüştürücü birlik. Ölüm-yeniden doğuş, mutlak teslim, total birleşme. Riskli ama muhteşem potansiyel.",
-      'Yay': "Su ve Ateş Macerası - Yay'ın felsefesi Balık'ın mistisizmiyle buluşur. Spiritüel macera, ruhani seyahat. Gerçeklikle bağ önemli.",
-      'Oğlak': "Su ve Toprak Yapısı - Oğlak yapı verir, Balık ruh verir. Pratik ve mistik birleşir. Oğlak yumuşamalı, Balık güçlenmeli.",
-      'Kova': "Su ve Hava Kozmik Birliği - İnsanlığa hizmet, kolektif bilinç, evrensel sevgi. Her ikisi de 'bireysel'den 'kolektif'e geçebilir.",
-      'Balık': "Çifte Okyanus - İki mistik, iki rüya görücü, iki empat. Sınırsız birleşme, kozmik erime. Büyük risk: Gerçeklikten tamamen kopma.",
+      'Koç':
+          "Su ve Ateş Mistik Birliği - Koç'un ateşi Balık'ın sularında söner veya buhar olur. Koç topraklar, Balık yükseltir. Zorlu ama potansiyel dolu.",
+      'Boğa':
+          "Su ve Toprak Cenneti - Boğa'nın sağlamlığı Balık'a güvenli liman verir. Balık'ın rüyaları Boğa'nın toprağında çiçek açar. Şifa birliği.",
+      'İkizler':
+          "Su ve Hava Bulutları - Zihinsel stimülasyon ama duygusal bağlantı zorluğu. İkizler anlamlandırır, Balık hisseder. Tamamlayıcı ama zorlu.",
+      'Yengeç':
+          "Çifte Su Okyanusu - En derin duygusal bağ potansiyeli. Karşılıklı anlayış, empati, rüya paylaşımı. Risk: Birlikte boğulma.",
+      'Aslan':
+          "Su ve Güneş - Aslan parlar, Balık yansıtır ve yumuşatır. Aslan ego verir, Balık egoyu eritir. Dönüştürücü potansiyel.",
+      'Başak':
+          "Karşıt Kutuplar Birliği - Başak detaycı, Balık bütünsel. Başak somutlaştırır, Balık ilham verir. Birlikte harika şifa çalışması.",
+      'Terazi':
+          "Su ve Hava Güzelliği - Estetik duyarlılık, romantizm, sanatsal birlik. Her ikisi de çatışmadan kaçınır - denge için bilinçli çaba gerekir.",
+      'Akrep':
+          "Çifte Su Derinliği - En yoğun, en dönüştürücü birlik. Ölüm-yeniden doğuş, mutlak teslim, total birleşme. Riskli ama muhteşem potansiyel.",
+      'Yay':
+          "Su ve Ateş Macerası - Yay'ın felsefesi Balık'ın mistisizmiyle buluşur. Spiritüel macera, ruhani seyahat. Gerçeklikle bağ önemli.",
+      'Oğlak':
+          "Su ve Toprak Yapısı - Oğlak yapı verir, Balık ruh verir. Pratik ve mistik birleşir. Oğlak yumuşamalı, Balık güçlenmeli.",
+      'Kova':
+          "Su ve Hava Kozmik Birliği - İnsanlığa hizmet, kolektif bilinç, evrensel sevgi. Her ikisi de 'bireysel'den 'kolektif'e geçebilir.",
+      'Balık':
+          "Çifte Okyanus - İki mistik, iki rüya görücü, iki empat. Sınırsız birleşme, kozmik erime. Büyük risk: Gerçeklikten tamamen kopma.",
     },
     awakeningMantra: '''
 नेप्च्यून/Neptün ve Evrensel Bilinç Mantrası

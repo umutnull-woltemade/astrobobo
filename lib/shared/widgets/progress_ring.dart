@@ -38,8 +38,11 @@ class ProgressRing extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final progress = total > 0 ? (current / total).clamp(0.0, 1.0) : 0.0;
     final color = progressColor ?? _getProgressColor(progress);
-    final bgColor = backgroundColor ??
-        (isDark ? Colors.white.withOpacity(0.1) : Colors.black.withOpacity(0.08));
+    final bgColor =
+        backgroundColor ??
+        (isDark
+            ? Colors.white.withOpacity(0.1)
+            : Colors.black.withOpacity(0.08));
 
     Widget ring = SizedBox(
       width: size,
@@ -59,7 +62,9 @@ class ProgressRing extends StatelessWidget {
           // Progress ring
           TweenAnimationBuilder<double>(
             tween: Tween(begin: 0, end: progress),
-            duration: animate ? const Duration(milliseconds: 1000) : Duration.zero,
+            duration: animate
+                ? const Duration(milliseconds: 1000)
+                : Duration.zero,
             curve: Curves.easeOutCubic,
             builder: (context, value, child) {
               return CustomPaint(
@@ -84,7 +89,9 @@ class ProgressRing extends StatelessWidget {
                       style: TextStyle(
                         fontSize: size * 0.2,
                         fontWeight: FontWeight.bold,
-                        color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
+                        color: isDark
+                            ? AppColors.textPrimary
+                            : AppColors.lightTextPrimary,
                       ),
                     )
                   else
@@ -101,7 +108,9 @@ class ProgressRing extends StatelessWidget {
                       label,
                       style: TextStyle(
                         fontSize: size * 0.12,
-                        color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
+                        color: isDark
+                            ? AppColors.textMuted
+                            : AppColors.lightTextMuted,
                       ),
                       textAlign: TextAlign.center,
                     ),
@@ -112,10 +121,10 @@ class ProgressRing extends StatelessWidget {
     );
 
     if (animate) {
-      ring = ring.animate().fadeIn(duration: 400.ms).scale(
-            begin: const Offset(0.8, 0.8),
-            duration: 400.ms,
-          );
+      ring = ring
+          .animate()
+          .fadeIn(duration: 400.ms)
+          .scale(begin: const Offset(0.8, 0.8), duration: 400.ms);
     }
 
     return Column(
@@ -128,7 +137,9 @@ class ProgressRing extends StatelessWidget {
             sublabel!,
             style: TextStyle(
               fontSize: 12,
-              color: isDark ? AppColors.textSecondary : AppColors.lightTextSecondary,
+              color: isDark
+                  ? AppColors.textSecondary
+                  : AppColors.lightTextSecondary,
             ),
           ),
         ],
@@ -230,18 +241,15 @@ class StreakDisplay extends StatelessWidget {
           ],
         ),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(
-          color: displayColor.withOpacity(0.4),
-        ),
+        border: Border.all(color: displayColor.withOpacity(0.4)),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           if (showFire) ...[
-            Text(
-              _getFireEmoji(streak),
-              style: TextStyle(fontSize: size * 0.5),
-            ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(
+            Text(_getFireEmoji(streak), style: TextStyle(fontSize: size * 0.5))
+                .animate(onPlay: (c) => c.repeat(reverse: true))
+                .scale(
                   begin: const Offset(1, 1),
                   end: const Offset(1.1, 1.1),
                   duration: 1000.ms,
@@ -265,7 +273,9 @@ class StreakDisplay extends StatelessWidget {
                   label!,
                   style: TextStyle(
                     fontSize: 11,
-                    color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
+                    color: isDark
+                        ? AppColors.textMuted
+                        : AppColors.lightTextMuted,
                   ),
                 ),
             ],
@@ -296,11 +306,7 @@ class StatsCard extends StatelessWidget {
   final List<StatItem> stats;
   final String? title;
 
-  const StatsCard({
-    super.key,
-    required this.stats,
-    this.title,
-  });
+  const StatsCard({super.key, required this.stats, this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -312,7 +318,9 @@ class StatsCard extends StatelessWidget {
         color: isDark ? AppColors.surfaceLight.withOpacity(0.5) : Colors.white,
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: isDark ? Colors.white.withOpacity(0.1) : Colors.black.withOpacity(0.05),
+          color: isDark
+              ? Colors.white.withOpacity(0.1)
+              : Colors.black.withOpacity(0.05),
         ),
         boxShadow: [
           BoxShadow(
@@ -331,7 +339,9 @@ class StatsCard extends StatelessWidget {
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
-                color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
+                color: isDark
+                    ? AppColors.textPrimary
+                    : AppColors.lightTextPrimary,
               ),
             ),
             const SizedBox(height: 16),
@@ -367,7 +377,9 @@ class _StatColumn extends StatelessWidget {
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            color: stat.color ?? (isDark ? AppColors.textPrimary : AppColors.lightTextPrimary),
+            color:
+                stat.color ??
+                (isDark ? AppColors.textPrimary : AppColors.lightTextPrimary),
           ),
         ),
         const SizedBox(height: 4),

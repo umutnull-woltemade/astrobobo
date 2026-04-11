@@ -138,14 +138,14 @@ class SymbolInterpretation {
   });
 
   Map<String, dynamic> toJson() => {
-        'symbol': symbol,
-        'symbolEmoji': symbolEmoji,
-        'universalMeaning': universalMeaning,
-        'personalContext': personalContext,
-        'shadowAspect': shadowAspect,
-        'lightAspect': lightAspect,
-        'relatedSymbols': relatedSymbols,
-      };
+    'symbol': symbol,
+    'symbolEmoji': symbolEmoji,
+    'universalMeaning': universalMeaning,
+    'personalContext': personalContext,
+    'shadowAspect': shadowAspect,
+    'lightAspect': lightAspect,
+    'relatedSymbols': relatedSymbols,
+  };
 
   factory SymbolInterpretation.fromJson(Map<String, dynamic> json) =>
       SymbolInterpretation(
@@ -176,17 +176,18 @@ class EmotionalReading {
   });
 
   Map<String, dynamic> toJson() => {
-        'dominantEmotion': dominantEmotion.name,
-        'surfaceMessage': surfaceMessage,
-        'deeperMeaning': deeperMeaning,
-        'shadowQuestion': shadowQuestion,
-        'integrationPath': integrationPath,
-      };
+    'dominantEmotion': dominantEmotion.name,
+    'surfaceMessage': surfaceMessage,
+    'deeperMeaning': deeperMeaning,
+    'shadowQuestion': shadowQuestion,
+    'integrationPath': integrationPath,
+  };
 
   factory EmotionalReading.fromJson(Map<String, dynamic> json) =>
       EmotionalReading(
-        dominantEmotion: EmotionalTone.values
-            .firstWhere((e) => e.name == json['dominantEmotion']),
+        dominantEmotion: EmotionalTone.values.firstWhere(
+          (e) => e.name == json['dominantEmotion'],
+        ),
         surfaceMessage: json['surfaceMessage'],
         deeperMeaning: json['deeperMeaning'],
         shadowQuestion: json['shadowQuestion'],
@@ -213,23 +214,22 @@ class AstroTiming {
   });
 
   Map<String, dynamic> toJson() => {
-        'moonPhase': moonPhase.name,
-        'moonSign': moonSign,
-        'relevantTransit': relevantTransit,
-        'timingMessage': timingMessage,
-        'whyNow': whyNow,
-        'isRetrograde': isRetrograde,
-      };
+    'moonPhase': moonPhase.name,
+    'moonSign': moonSign,
+    'relevantTransit': relevantTransit,
+    'timingMessage': timingMessage,
+    'whyNow': whyNow,
+    'isRetrograde': isRetrograde,
+  };
 
   factory AstroTiming.fromJson(Map<String, dynamic> json) => AstroTiming(
-        moonPhase:
-            MoonPhase.values.firstWhere((e) => e.name == json['moonPhase']),
-        moonSign: json['moonSign'],
-        relevantTransit: json['relevantTransit'],
-        timingMessage: json['timingMessage'],
-        whyNow: json['whyNow'],
-        isRetrograde: json['isRetrograde'] ?? false,
-      );
+    moonPhase: MoonPhase.values.firstWhere((e) => e.name == json['moonPhase']),
+    moonSign: json['moonSign'],
+    relevantTransit: json['relevantTransit'],
+    timingMessage: json['timingMessage'],
+    whyNow: json['whyNow'],
+    isRetrograde: json['isRetrograde'] ?? false,
+  );
 }
 
 /// Işık/Gölge okuması
@@ -247,11 +247,11 @@ class LightShadowReading {
   });
 
   Map<String, dynamic> toJson() => {
-        'lightMessage': lightMessage,
-        'shadowMessage': shadowMessage,
-        'integrationPath': integrationPath,
-        'archetype': archetype,
-      };
+    'lightMessage': lightMessage,
+    'shadowMessage': shadowMessage,
+    'integrationPath': integrationPath,
+    'archetype': archetype,
+  };
 
   factory LightShadowReading.fromJson(Map<String, dynamic> json) =>
       LightShadowReading(
@@ -277,11 +277,11 @@ class PracticalGuidance {
   });
 
   Map<String, dynamic> toJson() => {
-        'todayAction': todayAction,
-        'reflectionQuestion': reflectionQuestion,
-        'weeklyFocus': weeklyFocus,
-        'avoidance': avoidance,
-      };
+    'todayAction': todayAction,
+    'reflectionQuestion': reflectionQuestion,
+    'weeklyFocus': weeklyFocus,
+    'avoidance': avoidance,
+  };
 
   factory PracticalGuidance.fromJson(Map<String, dynamic> json) =>
       PracticalGuidance(
@@ -307,16 +307,16 @@ class ShareableCard {
   String get fullShareText => '$emoji "$quote" — Rüya Yorumu | venusone.com';
 
   Map<String, dynamic> toJson() => {
-        'emoji': emoji,
-        'quote': quote,
-        'category': category,
-      };
+    'emoji': emoji,
+    'quote': quote,
+    'category': category,
+  };
 
   factory ShareableCard.fromJson(Map<String, dynamic> json) => ShareableCard(
-        emoji: json['emoji'],
-        quote: json['quote'],
-        category: json['category'],
-      );
+    emoji: json['emoji'],
+    quote: json['quote'],
+    category: json['category'],
+  );
 }
 
 /// Keşif linki
@@ -336,12 +336,12 @@ class DreamExplorationLink {
   });
 
   Map<String, dynamic> toJson() => {
-        'title': title,
-        'description': description,
-        'route': route,
-        'emoji': emoji,
-        'category': category,
-      };
+    'title': title,
+    'description': description,
+    'route': route,
+    'emoji': emoji,
+    'category': category,
+  };
 
   factory DreamExplorationLink.fromJson(Map<String, dynamic> json) =>
       DreamExplorationLink(
@@ -436,30 +436,30 @@ class FullDreamInterpretation {
   });
 
   Map<String, dynamic> toJson() => {
-        'dreamId': dreamId,
-        'userId': oderId,
-        'dreamText': dreamText,
-        'interpretedAt': interpretedAt.toIso8601String(),
-        'ancientIntro': ancientIntro,
-        'coreMessage': coreMessage,
-        'symbols': symbols.map((s) => s.toJson()).toList(),
-        'archetypeConnection': archetypeConnection,
-        'archetypeName': archetypeName,
-        'emotionalReading': emotionalReading.toJson(),
-        'astroTiming': astroTiming.toJson(),
-        'lightShadow': lightShadow.toJson(),
-        'guidance': guidance.toJson(),
-        'whisperQuote': whisperQuote,
-        'shareCard': shareCard.toJson(),
-        'explorationLinks': explorationLinks.map((l) => l.toJson()).toList(),
-        'userRole': userRole?.name,
-        'timeLayer': timeLayer?.name,
-        'isRecurring': isRecurring,
-        'recurringCount': recurringCount,
-        'recurringPattern': recurringPattern,
-        'nightmareType': nightmareType,
-        'lucidPotential': lucidPotential,
-      };
+    'dreamId': dreamId,
+    'userId': oderId,
+    'dreamText': dreamText,
+    'interpretedAt': interpretedAt.toIso8601String(),
+    'ancientIntro': ancientIntro,
+    'coreMessage': coreMessage,
+    'symbols': symbols.map((s) => s.toJson()).toList(),
+    'archetypeConnection': archetypeConnection,
+    'archetypeName': archetypeName,
+    'emotionalReading': emotionalReading.toJson(),
+    'astroTiming': astroTiming.toJson(),
+    'lightShadow': lightShadow.toJson(),
+    'guidance': guidance.toJson(),
+    'whisperQuote': whisperQuote,
+    'shareCard': shareCard.toJson(),
+    'explorationLinks': explorationLinks.map((l) => l.toJson()).toList(),
+    'userRole': userRole?.name,
+    'timeLayer': timeLayer?.name,
+    'isRecurring': isRecurring,
+    'recurringCount': recurringCount,
+    'recurringPattern': recurringPattern,
+    'nightmareType': nightmareType,
+    'lucidPotential': lucidPotential,
+  };
 
   factory FullDreamInterpretation.fromJson(Map<String, dynamic> json) =>
       FullDreamInterpretation(
@@ -526,16 +526,16 @@ class DreamInput {
   });
 
   Map<String, dynamic> toJson() => {
-        'dreamDescription': dreamDescription,
-        'mainSymbols': mainSymbols,
-        'dominantEmotion': dominantEmotion?.name,
-        'wakingFeeling': wakingFeeling,
-        'isRecurring': isRecurring,
-        'recurringCount': recurringCount,
-        'birthDate': birthDate?.toIso8601String(),
-        'currentLifeSituation': currentLifeSituation,
-        'perceivedRole': perceivedRole?.name,
-      };
+    'dreamDescription': dreamDescription,
+    'mainSymbols': mainSymbols,
+    'dominantEmotion': dominantEmotion?.name,
+    'wakingFeeling': wakingFeeling,
+    'isRecurring': isRecurring,
+    'recurringCount': recurringCount,
+    'birthDate': birthDate?.toIso8601String(),
+    'currentLifeSituation': currentLifeSituation,
+    'perceivedRole': perceivedRole?.name,
+  };
 }
 
 // ════════════════════════════════════════════════════════════════

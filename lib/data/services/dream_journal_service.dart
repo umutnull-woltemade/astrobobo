@@ -82,88 +82,92 @@ class DreamEntry {
   });
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'dreamDate': dreamDate.toIso8601String(),
-        'recordedAt': recordedAt.toIso8601String(),
-        'title': title,
-        'content': content,
-        'detectedSymbols': detectedSymbols,
-        'userTags': userTags,
-        'dominantEmotion': dominantEmotion.name,
-        'emotionalIntensity': emotionalIntensity,
-        'isRecurring': isRecurring,
-        'isLucid': isLucid,
-        'isNightmare': isNightmare,
-        'moonPhase': moonPhase.name,
-        'moonSign': moonSign,
-        'relevantTransits': relevantTransits,
-        'interpretation': interpretation?.toJson(),
-        'voiceRecordingPath': voiceRecordingPath,
-        'imageUrls': imageUrls,
-        'metadata': metadata,
-        'userRole': userRole?.name,
-        'timeLayer': timeLayer?.name,
-        'characters': characters,
-        'locations': locations,
-        'dreamSeriesId': dreamSeriesId,
-        'clarity': clarity,
-        'sleepQuality': sleepQuality,
-        'sleepDuration': sleepDuration?.inMinutes,
-        'wakeTime': wakeTime?.toIso8601String(),
-        'lifeSituation': lifeSituation,
-      };
+    'id': id,
+    'dreamDate': dreamDate.toIso8601String(),
+    'recordedAt': recordedAt.toIso8601String(),
+    'title': title,
+    'content': content,
+    'detectedSymbols': detectedSymbols,
+    'userTags': userTags,
+    'dominantEmotion': dominantEmotion.name,
+    'emotionalIntensity': emotionalIntensity,
+    'isRecurring': isRecurring,
+    'isLucid': isLucid,
+    'isNightmare': isNightmare,
+    'moonPhase': moonPhase.name,
+    'moonSign': moonSign,
+    'relevantTransits': relevantTransits,
+    'interpretation': interpretation?.toJson(),
+    'voiceRecordingPath': voiceRecordingPath,
+    'imageUrls': imageUrls,
+    'metadata': metadata,
+    'userRole': userRole?.name,
+    'timeLayer': timeLayer?.name,
+    'characters': characters,
+    'locations': locations,
+    'dreamSeriesId': dreamSeriesId,
+    'clarity': clarity,
+    'sleepQuality': sleepQuality,
+    'sleepDuration': sleepDuration?.inMinutes,
+    'wakeTime': wakeTime?.toIso8601String(),
+    'lifeSituation': lifeSituation,
+  };
 
   factory DreamEntry.fromJson(Map<String, dynamic> json) => DreamEntry(
-        id: json['id'],
-        dreamDate: DateTime.parse(json['dreamDate']),
-        recordedAt: DateTime.parse(json['recordedAt']),
-        title: json['title'],
-        content: json['content'],
-        detectedSymbols: List<String>.from(json['detectedSymbols'] ?? []),
-        userTags: List<String>.from(json['userTags'] ?? []),
-        dominantEmotion: EmotionalTone.values.firstWhere(
-          (e) => e.name == json['dominantEmotion'],
-          orElse: () => EmotionalTone.merak,
-        ),
-        emotionalIntensity: json['emotionalIntensity'] ?? 5,
-        isRecurring: json['isRecurring'] ?? false,
-        isLucid: json['isLucid'] ?? false,
-        isNightmare: json['isNightmare'] ?? false,
-        moonPhase: MoonPhase.values.firstWhere(
-          (e) => e.name == json['moonPhase'],
-          orElse: () => MoonPhaseCalculator.today,
-        ),
-        moonSign: json['moonSign'],
-        relevantTransits: json['relevantTransits'] != null
-            ? List<String>.from(json['relevantTransits'])
-            : null,
-        interpretation: json['interpretation'] != null
-            ? FullDreamInterpretation.fromJson(json['interpretation'])
-            : null,
-        voiceRecordingPath: json['voiceRecordingPath'],
-        imageUrls:
-            json['imageUrls'] != null ? List<String>.from(json['imageUrls']) : null,
-        metadata: json['metadata'],
-        userRole: json['userRole'] != null
-            ? DreamRole.values.firstWhere((e) => e.name == json['userRole'])
-            : null,
-        timeLayer: json['timeLayer'] != null
-            ? TimeLayer.values.firstWhere((e) => e.name == json['timeLayer'])
-            : null,
-        characters:
-            json['characters'] != null ? List<String>.from(json['characters']) : null,
-        locations:
-            json['locations'] != null ? List<String>.from(json['locations']) : null,
-        dreamSeriesId: json['dreamSeriesId'],
-        clarity: json['clarity'],
-        sleepQuality: json['sleepQuality'],
-        sleepDuration: json['sleepDuration'] != null
-            ? Duration(minutes: json['sleepDuration'])
-            : null,
-        wakeTime:
-            json['wakeTime'] != null ? DateTime.parse(json['wakeTime']) : null,
-        lifeSituation: json['lifeSituation'],
-      );
+    id: json['id'],
+    dreamDate: DateTime.parse(json['dreamDate']),
+    recordedAt: DateTime.parse(json['recordedAt']),
+    title: json['title'],
+    content: json['content'],
+    detectedSymbols: List<String>.from(json['detectedSymbols'] ?? []),
+    userTags: List<String>.from(json['userTags'] ?? []),
+    dominantEmotion: EmotionalTone.values.firstWhere(
+      (e) => e.name == json['dominantEmotion'],
+      orElse: () => EmotionalTone.merak,
+    ),
+    emotionalIntensity: json['emotionalIntensity'] ?? 5,
+    isRecurring: json['isRecurring'] ?? false,
+    isLucid: json['isLucid'] ?? false,
+    isNightmare: json['isNightmare'] ?? false,
+    moonPhase: MoonPhase.values.firstWhere(
+      (e) => e.name == json['moonPhase'],
+      orElse: () => MoonPhaseCalculator.today,
+    ),
+    moonSign: json['moonSign'],
+    relevantTransits: json['relevantTransits'] != null
+        ? List<String>.from(json['relevantTransits'])
+        : null,
+    interpretation: json['interpretation'] != null
+        ? FullDreamInterpretation.fromJson(json['interpretation'])
+        : null,
+    voiceRecordingPath: json['voiceRecordingPath'],
+    imageUrls: json['imageUrls'] != null
+        ? List<String>.from(json['imageUrls'])
+        : null,
+    metadata: json['metadata'],
+    userRole: json['userRole'] != null
+        ? DreamRole.values.firstWhere((e) => e.name == json['userRole'])
+        : null,
+    timeLayer: json['timeLayer'] != null
+        ? TimeLayer.values.firstWhere((e) => e.name == json['timeLayer'])
+        : null,
+    characters: json['characters'] != null
+        ? List<String>.from(json['characters'])
+        : null,
+    locations: json['locations'] != null
+        ? List<String>.from(json['locations'])
+        : null,
+    dreamSeriesId: json['dreamSeriesId'],
+    clarity: json['clarity'],
+    sleepQuality: json['sleepQuality'],
+    sleepDuration: json['sleepDuration'] != null
+        ? Duration(minutes: json['sleepDuration'])
+        : null,
+    wakeTime: json['wakeTime'] != null
+        ? DateTime.parse(json['wakeTime'])
+        : null,
+    lifeSituation: json['lifeSituation'],
+  );
 
   DreamEntry copyWith({
     String? id,
@@ -195,38 +199,37 @@ class DreamEntry {
     Duration? sleepDuration,
     DateTime? wakeTime,
     String? lifeSituation,
-  }) =>
-      DreamEntry(
-        id: id ?? this.id,
-        dreamDate: dreamDate ?? this.dreamDate,
-        recordedAt: recordedAt ?? this.recordedAt,
-        title: title ?? this.title,
-        content: content ?? this.content,
-        detectedSymbols: detectedSymbols ?? this.detectedSymbols,
-        userTags: userTags ?? this.userTags,
-        dominantEmotion: dominantEmotion ?? this.dominantEmotion,
-        emotionalIntensity: emotionalIntensity ?? this.emotionalIntensity,
-        isRecurring: isRecurring ?? this.isRecurring,
-        isLucid: isLucid ?? this.isLucid,
-        isNightmare: isNightmare ?? this.isNightmare,
-        moonPhase: moonPhase ?? this.moonPhase,
-        moonSign: moonSign ?? this.moonSign,
-        relevantTransits: relevantTransits ?? this.relevantTransits,
-        interpretation: interpretation ?? this.interpretation,
-        voiceRecordingPath: voiceRecordingPath ?? this.voiceRecordingPath,
-        imageUrls: imageUrls ?? this.imageUrls,
-        metadata: metadata ?? this.metadata,
-        userRole: userRole ?? this.userRole,
-        timeLayer: timeLayer ?? this.timeLayer,
-        characters: characters ?? this.characters,
-        locations: locations ?? this.locations,
-        dreamSeriesId: dreamSeriesId ?? this.dreamSeriesId,
-        clarity: clarity ?? this.clarity,
-        sleepQuality: sleepQuality ?? this.sleepQuality,
-        sleepDuration: sleepDuration ?? this.sleepDuration,
-        wakeTime: wakeTime ?? this.wakeTime,
-        lifeSituation: lifeSituation ?? this.lifeSituation,
-      );
+  }) => DreamEntry(
+    id: id ?? this.id,
+    dreamDate: dreamDate ?? this.dreamDate,
+    recordedAt: recordedAt ?? this.recordedAt,
+    title: title ?? this.title,
+    content: content ?? this.content,
+    detectedSymbols: detectedSymbols ?? this.detectedSymbols,
+    userTags: userTags ?? this.userTags,
+    dominantEmotion: dominantEmotion ?? this.dominantEmotion,
+    emotionalIntensity: emotionalIntensity ?? this.emotionalIntensity,
+    isRecurring: isRecurring ?? this.isRecurring,
+    isLucid: isLucid ?? this.isLucid,
+    isNightmare: isNightmare ?? this.isNightmare,
+    moonPhase: moonPhase ?? this.moonPhase,
+    moonSign: moonSign ?? this.moonSign,
+    relevantTransits: relevantTransits ?? this.relevantTransits,
+    interpretation: interpretation ?? this.interpretation,
+    voiceRecordingPath: voiceRecordingPath ?? this.voiceRecordingPath,
+    imageUrls: imageUrls ?? this.imageUrls,
+    metadata: metadata ?? this.metadata,
+    userRole: userRole ?? this.userRole,
+    timeLayer: timeLayer ?? this.timeLayer,
+    characters: characters ?? this.characters,
+    locations: locations ?? this.locations,
+    dreamSeriesId: dreamSeriesId ?? this.dreamSeriesId,
+    clarity: clarity ?? this.clarity,
+    sleepQuality: sleepQuality ?? this.sleepQuality,
+    sleepDuration: sleepDuration ?? this.sleepDuration,
+    wakeTime: wakeTime ?? this.wakeTime,
+    lifeSituation: lifeSituation ?? this.lifeSituation,
+  );
 }
 
 // ════════════════════════════════════════════════════════════════
@@ -258,18 +261,19 @@ class RecurringPattern {
   });
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'patternType': patternType,
-        'patternValue': patternValue,
-        'occurrenceCount': occurrenceCount,
-        'firstSeen': firstSeen.toIso8601String(),
-        'lastSeen': lastSeen.toIso8601String(),
-        'dreamIds': dreamIds,
-        'evolutionNote': evolutionNote,
-        'significance': significance,
-      };
+    'id': id,
+    'patternType': patternType,
+    'patternValue': patternValue,
+    'occurrenceCount': occurrenceCount,
+    'firstSeen': firstSeen.toIso8601String(),
+    'lastSeen': lastSeen.toIso8601String(),
+    'dreamIds': dreamIds,
+    'evolutionNote': evolutionNote,
+    'significance': significance,
+  };
 
-  factory RecurringPattern.fromJson(Map<String, dynamic> json) => RecurringPattern(
+  factory RecurringPattern.fromJson(Map<String, dynamic> json) =>
+      RecurringPattern(
         id: json['id'],
         patternType: json['patternType'],
         patternValue: json['patternValue'],
@@ -311,32 +315,32 @@ class DreamSeries {
   });
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'title': title,
-        'description': description,
-        'dreamIds': dreamIds,
-        'startDate': startDate.toIso8601String(),
-        'endDate': endDate?.toIso8601String(),
-        'isActive': isActive,
-        'commonSymbols': commonSymbols,
-        'commonThemes': commonThemes,
-        'storyArc': storyArc,
-        'resolution': resolution,
-      };
+    'id': id,
+    'title': title,
+    'description': description,
+    'dreamIds': dreamIds,
+    'startDate': startDate.toIso8601String(),
+    'endDate': endDate?.toIso8601String(),
+    'isActive': isActive,
+    'commonSymbols': commonSymbols,
+    'commonThemes': commonThemes,
+    'storyArc': storyArc,
+    'resolution': resolution,
+  };
 
   factory DreamSeries.fromJson(Map<String, dynamic> json) => DreamSeries(
-        id: json['id'],
-        title: json['title'],
-        description: json['description'],
-        dreamIds: List<String>.from(json['dreamIds']),
-        startDate: DateTime.parse(json['startDate']),
-        endDate: json['endDate'] != null ? DateTime.parse(json['endDate']) : null,
-        isActive: json['isActive'] ?? true,
-        commonSymbols: List<String>.from(json['commonSymbols'] ?? []),
-        commonThemes: List<String>.from(json['commonThemes'] ?? []),
-        storyArc: json['storyArc'],
-        resolution: json['resolution'],
-      );
+    id: json['id'],
+    title: json['title'],
+    description: json['description'],
+    dreamIds: List<String>.from(json['dreamIds']),
+    startDate: DateTime.parse(json['startDate']),
+    endDate: json['endDate'] != null ? DateTime.parse(json['endDate']) : null,
+    isActive: json['isActive'] ?? true,
+    commonSymbols: List<String>.from(json['commonSymbols'] ?? []),
+    commonThemes: List<String>.from(json['commonThemes'] ?? []),
+    storyArc: json['storyArc'],
+    resolution: json['resolution'],
+  );
 }
 
 /// Weekly/Monthly dream insights
@@ -378,25 +382,27 @@ class DreamInsights {
   });
 
   Map<String, dynamic> toJson() => {
-        'period': period,
-        'startDate': startDate.toIso8601String(),
-        'endDate': endDate.toIso8601String(),
-        'totalDreams': totalDreams,
-        'lucidCount': lucidCount,
-        'nightmareCount': nightmareCount,
-        'recurringCount': recurringCount,
-        'topSymbols': topSymbols,
-        'emotionDistribution':
-            emotionDistribution.map((k, v) => MapEntry(k.name, v)),
-        'averageIntensity': averageIntensity,
-        'dominantTheme': dominantTheme,
-        'insightMessage': insightMessage,
-        'recommendations': recommendations,
-        'shadowWorkProgress': shadowWorkProgress,
-        'archetypeJourney': archetypeJourney,
-        'moonPhaseDistribution':
-            moonPhaseDistribution.map((k, v) => MapEntry(k.name, v)),
-      };
+    'period': period,
+    'startDate': startDate.toIso8601String(),
+    'endDate': endDate.toIso8601String(),
+    'totalDreams': totalDreams,
+    'lucidCount': lucidCount,
+    'nightmareCount': nightmareCount,
+    'recurringCount': recurringCount,
+    'topSymbols': topSymbols,
+    'emotionDistribution': emotionDistribution.map(
+      (k, v) => MapEntry(k.name, v),
+    ),
+    'averageIntensity': averageIntensity,
+    'dominantTheme': dominantTheme,
+    'insightMessage': insightMessage,
+    'recommendations': recommendations,
+    'shadowWorkProgress': shadowWorkProgress,
+    'archetypeJourney': archetypeJourney,
+    'moonPhaseDistribution': moonPhaseDistribution.map(
+      (k, v) => MapEntry(k.name, v),
+    ),
+  };
 }
 
 /// Dream statistics
@@ -444,28 +450,30 @@ class DreamStatistics {
   });
 
   Map<String, dynamic> toJson() => {
-        'totalDreams': totalDreams,
-        'totalDaysRecording': totalDaysRecording,
-        'dreamsPerWeek': dreamsPerWeek,
-        'dreamsPerMonth': dreamsPerMonth,
-        'longestStreak': longestStreak,
-        'currentStreak': currentStreak,
-        'symbolFrequency': symbolFrequency,
-        'emotionDistribution':
-            emotionDistribution.map((k, v) => MapEntry(k.name, v)),
-        'lucidPercentage': lucidPercentage,
-        'nightmarePercentage': nightmarePercentage,
-        'recurringPercentage': recurringPercentage,
-        'moonPhaseDistribution':
-            moonPhaseDistribution.map((k, v) => MapEntry(k.name, v)),
-        'weekdayDistribution': weekdayDistribution,
-        'averageClarity': averageClarity,
-        'averageIntensity': averageIntensity,
-        'bestMoonPhaseForLucid': bestMoonPhaseForLucid,
-        'mostCommonWakeTime': mostCommonWakeTime,
-        'topLocations': topLocations,
-        'topCharacters': topCharacters,
-      };
+    'totalDreams': totalDreams,
+    'totalDaysRecording': totalDaysRecording,
+    'dreamsPerWeek': dreamsPerWeek,
+    'dreamsPerMonth': dreamsPerMonth,
+    'longestStreak': longestStreak,
+    'currentStreak': currentStreak,
+    'symbolFrequency': symbolFrequency,
+    'emotionDistribution': emotionDistribution.map(
+      (k, v) => MapEntry(k.name, v),
+    ),
+    'lucidPercentage': lucidPercentage,
+    'nightmarePercentage': nightmarePercentage,
+    'recurringPercentage': recurringPercentage,
+    'moonPhaseDistribution': moonPhaseDistribution.map(
+      (k, v) => MapEntry(k.name, v),
+    ),
+    'weekdayDistribution': weekdayDistribution,
+    'averageClarity': averageClarity,
+    'averageIntensity': averageIntensity,
+    'bestMoonPhaseForLucid': bestMoonPhaseForLucid,
+    'mostCommonWakeTime': mostCommonWakeTime,
+    'topLocations': topLocations,
+    'topCharacters': topCharacters,
+  };
 }
 
 /// Personal dream dictionary entry
@@ -495,17 +503,17 @@ class PersonalSymbolEntry {
   });
 
   Map<String, dynamic> toJson() => {
-        'symbol': symbol,
-        'personalMeaning': personalMeaning,
-        'associatedEmotions': associatedEmotions,
-        'associatedDreamIds': associatedDreamIds,
-        'firstAppeared': firstAppeared.toIso8601String(),
-        'lastAppeared': lastAppeared.toIso8601String(),
-        'occurrenceCount': occurrenceCount,
-        'evolutionNote': evolutionNote,
-        'isShadowSymbol': isShadowSymbol,
-        'isHealingSymbol': isHealingSymbol,
-      };
+    'symbol': symbol,
+    'personalMeaning': personalMeaning,
+    'associatedEmotions': associatedEmotions,
+    'associatedDreamIds': associatedDreamIds,
+    'firstAppeared': firstAppeared.toIso8601String(),
+    'lastAppeared': lastAppeared.toIso8601String(),
+    'occurrenceCount': occurrenceCount,
+    'evolutionNote': evolutionNote,
+    'isShadowSymbol': isShadowSymbol,
+    'isHealingSymbol': isHealingSymbol,
+  };
 
   factory PersonalSymbolEntry.fromJson(Map<String, dynamic> json) =>
       PersonalSymbolEntry(
@@ -543,15 +551,16 @@ class DreamJournalExport {
   });
 
   Map<String, dynamic> toJson() => {
-        'dreams': dreams.map((d) => d.toJson()).toList(),
-        'statistics': statistics.toJson(),
-        'patterns': patterns.map((p) => p.toJson()).toList(),
-        'personalDictionary':
-            personalDictionary.map((k, v) => MapEntry(k, v.toJson())),
-        'dreamSeries': dreamSeries.map((s) => s.toJson()).toList(),
-        'exportDate': exportDate.toIso8601String(),
-        'userNotes': userNotes,
-      };
+    'dreams': dreams.map((d) => d.toJson()).toList(),
+    'statistics': statistics.toJson(),
+    'patterns': patterns.map((p) => p.toJson()).toList(),
+    'personalDictionary': personalDictionary.map(
+      (k, v) => MapEntry(k, v.toJson()),
+    ),
+    'dreamSeries': dreamSeries.map((s) => s.toJson()).toList(),
+    'exportDate': exportDate.toIso8601String(),
+    'userNotes': userNotes,
+  };
 }
 
 // ════════════════════════════════════════════════════════════════
@@ -570,7 +579,7 @@ class DreamJournalService {
   final DreamMemoryService? _memoryService;
 
   DreamJournalService(this._prefs, {DreamMemoryService? memoryService})
-      : _memoryService = memoryService;
+    : _memoryService = memoryService;
 
   /// Initialize service with SharedPreferences
   static Future<DreamJournalService> init({
@@ -736,16 +745,21 @@ class DreamJournalService {
     }
     for (final entry in symbolCounts.entries) {
       if (entry.value.length >= 3) {
-        patterns.add(RecurringPattern(
-          id: uuid.v4(),
-          patternType: 'symbol',
-          patternValue: entry.key,
-          occurrenceCount: entry.value.length,
-          firstSeen: entry.value.last.dreamDate,
-          lastSeen: entry.value.first.dreamDate,
-          dreamIds: entry.value.map((d) => d.id).toList(),
-          significance: _calculateSignificance(entry.value.length, dreams.length),
-        ));
+        patterns.add(
+          RecurringPattern(
+            id: uuid.v4(),
+            patternType: 'symbol',
+            patternValue: entry.key,
+            occurrenceCount: entry.value.length,
+            firstSeen: entry.value.last.dreamDate,
+            lastSeen: entry.value.first.dreamDate,
+            dreamIds: entry.value.map((d) => d.id).toList(),
+            significance: _calculateSignificance(
+              entry.value.length,
+              dreams.length,
+            ),
+          ),
+        );
       }
     }
 
@@ -756,16 +770,21 @@ class DreamJournalService {
     }
     for (final entry in emotionCounts.entries) {
       if (entry.value.length >= 3) {
-        patterns.add(RecurringPattern(
-          id: uuid.v4(),
-          patternType: 'emotion',
-          patternValue: entry.key.label,
-          occurrenceCount: entry.value.length,
-          firstSeen: entry.value.last.dreamDate,
-          lastSeen: entry.value.first.dreamDate,
-          dreamIds: entry.value.map((d) => d.id).toList(),
-          significance: _calculateSignificance(entry.value.length, dreams.length),
-        ));
+        patterns.add(
+          RecurringPattern(
+            id: uuid.v4(),
+            patternType: 'emotion',
+            patternValue: entry.key.label,
+            occurrenceCount: entry.value.length,
+            firstSeen: entry.value.last.dreamDate,
+            lastSeen: entry.value.first.dreamDate,
+            dreamIds: entry.value.map((d) => d.id).toList(),
+            significance: _calculateSignificance(
+              entry.value.length,
+              dreams.length,
+            ),
+          ),
+        );
       }
     }
 
@@ -780,16 +799,21 @@ class DreamJournalService {
     }
     for (final entry in locationCounts.entries) {
       if (entry.value.length >= 2) {
-        patterns.add(RecurringPattern(
-          id: uuid.v4(),
-          patternType: 'location',
-          patternValue: entry.key,
-          occurrenceCount: entry.value.length,
-          firstSeen: entry.value.last.dreamDate,
-          lastSeen: entry.value.first.dreamDate,
-          dreamIds: entry.value.map((d) => d.id).toList(),
-          significance: _calculateSignificance(entry.value.length, dreams.length),
-        ));
+        patterns.add(
+          RecurringPattern(
+            id: uuid.v4(),
+            patternType: 'location',
+            patternValue: entry.key,
+            occurrenceCount: entry.value.length,
+            firstSeen: entry.value.last.dreamDate,
+            lastSeen: entry.value.first.dreamDate,
+            dreamIds: entry.value.map((d) => d.id).toList(),
+            significance: _calculateSignificance(
+              entry.value.length,
+              dreams.length,
+            ),
+          ),
+        );
       }
     }
 
@@ -804,16 +828,21 @@ class DreamJournalService {
     }
     for (final entry in characterCounts.entries) {
       if (entry.value.length >= 2) {
-        patterns.add(RecurringPattern(
-          id: uuid.v4(),
-          patternType: 'character',
-          patternValue: entry.key,
-          occurrenceCount: entry.value.length,
-          firstSeen: entry.value.last.dreamDate,
-          lastSeen: entry.value.first.dreamDate,
-          dreamIds: entry.value.map((d) => d.id).toList(),
-          significance: _calculateSignificance(entry.value.length, dreams.length),
-        ));
+        patterns.add(
+          RecurringPattern(
+            id: uuid.v4(),
+            patternType: 'character',
+            patternValue: entry.key,
+            occurrenceCount: entry.value.length,
+            firstSeen: entry.value.last.dreamDate,
+            lastSeen: entry.value.first.dreamDate,
+            dreamIds: entry.value.map((d) => d.id).toList(),
+            significance: _calculateSignificance(
+              entry.value.length,
+              dreams.length,
+            ),
+          ),
+        );
       }
     }
 
@@ -862,16 +891,18 @@ class DreamJournalService {
           significance: _calculateSignificance(updatedDreamIds.length, 100),
         );
       } else {
-        patterns.add(RecurringPattern(
-          id: const Uuid().v4(),
-          patternType: 'symbol',
-          patternValue: symbol,
-          occurrenceCount: 1,
-          firstSeen: dream.dreamDate,
-          lastSeen: dream.dreamDate,
-          dreamIds: [dream.id],
-          significance: 0.1,
-        ));
+        patterns.add(
+          RecurringPattern(
+            id: const Uuid().v4(),
+            patternType: 'symbol',
+            patternValue: symbol,
+            occurrenceCount: 1,
+            firstSeen: dream.dreamDate,
+            lastSeen: dream.dreamDate,
+            dreamIds: [dream.id],
+            significance: 0.1,
+          ),
+        );
       }
     }
 
@@ -900,7 +931,9 @@ class DreamJournalService {
   DreamInsights generateWeeklyInsights(List<DreamEntry> dreams) {
     final now = DateTime.now();
     final weekAgo = now.subtract(const Duration(days: 7));
-    final weekDreams = dreams.where((d) => d.dreamDate.isAfter(weekAgo)).toList();
+    final weekDreams = dreams
+        .where((d) => d.dreamDate.isAfter(weekAgo))
+        .toList();
 
     return _generateInsights(weekDreams, 'weekly', weekAgo, now);
   }
@@ -909,7 +942,9 @@ class DreamJournalService {
   DreamInsights generateMonthlyInsights(List<DreamEntry> dreams) {
     final now = DateTime.now();
     final monthAgo = now.subtract(const Duration(days: 30));
-    final monthDreams = dreams.where((d) => d.dreamDate.isAfter(monthAgo)).toList();
+    final monthDreams = dreams
+        .where((d) => d.dreamDate.isAfter(monthAgo))
+        .toList();
 
     return _generateInsights(monthDreams, 'monthly', monthAgo, now);
   }
@@ -931,7 +966,7 @@ class DreamJournalService {
     final avgIntensity = dreams.isEmpty
         ? 5.0
         : dreams.map((d) => d.emotionalIntensity).reduce((a, b) => a + b) /
-            dreams.length;
+              dreams.length;
 
     final topSymbols = symbolFreq.entries.take(5).map((e) => e.key).toList();
     final dominantTheme = _detectDominantTheme(dreams);
@@ -1027,20 +1062,26 @@ class DreamJournalService {
     }
 
     if (lucidCount == 0 && totalDreams >= 7) {
-      recommendations.add('Reality check teknigini dene - lucid ruya potansiyelin var.');
+      recommendations.add(
+        'Reality check teknigini dene - lucid ruya potansiyelin var.',
+      );
     }
 
     if (emotions.isNotEmpty) {
       final dominant = emotions.entries.first.key;
       if (dominant == EmotionalTone.korku) {
-        recommendations.add('Korku temasini incele - golge calismasi yapabilirsin.');
+        recommendations.add(
+          'Korku temasini incele - golge calismasi yapabilirsin.',
+        );
       } else if (dominant == EmotionalTone.ozlem) {
         recommendations.add('Ozlem duygusu uzerine yansitma gunlugu tut.');
       }
     }
 
     if (recommendations.isEmpty) {
-      recommendations.add('Ruya yolculugun harika gidiyor. Kaydetmeye devam et!');
+      recommendations.add(
+        'Ruya yolculugun harika gidiyor. Kaydetmeye devam et!',
+      );
     }
 
     return recommendations;
@@ -1055,13 +1096,16 @@ class DreamJournalService {
         themeCounts['Farkindalik'] = (themeCounts['Farkindalik'] ?? 0) + 1;
       }
       if (dream.isNightmare) {
-        themeCounts['Golge Calismasi'] = (themeCounts['Golge Calismasi'] ?? 0) + 1;
+        themeCounts['Golge Calismasi'] =
+            (themeCounts['Golge Calismasi'] ?? 0) + 1;
       }
       if (dream.isRecurring) {
-        themeCounts['Tekrarlayan Kalip'] = (themeCounts['Tekrarlayan Kalip'] ?? 0) + 1;
+        themeCounts['Tekrarlayan Kalip'] =
+            (themeCounts['Tekrarlayan Kalip'] ?? 0) + 1;
       }
       if (dream.userRole == DreamRole.kahraman) {
-        themeCounts['Kahraman Yolculugu'] = (themeCounts['Kahraman Yolculugu'] ?? 0) + 1;
+        themeCounts['Kahraman Yolculugu'] =
+            (themeCounts['Kahraman Yolculugu'] ?? 0) + 1;
       }
       if (dream.userRole == DreamRole.arayan) {
         themeCounts['Arayis'] = (themeCounts['Arayis'] ?? 0) + 1;
@@ -1080,11 +1124,15 @@ class DreamJournalService {
     if (nightmares.isEmpty) return 'Golge henuz belirgin degil.';
 
     final recentNightmares = nightmares.where((d) {
-      return d.dreamDate.isAfter(DateTime.now().subtract(const Duration(days: 7)));
+      return d.dreamDate.isAfter(
+        DateTime.now().subtract(const Duration(days: 7)),
+      );
     }).length;
 
     final olderNightmares = nightmares.where((d) {
-      return d.dreamDate.isBefore(DateTime.now().subtract(const Duration(days: 7)));
+      return d.dreamDate.isBefore(
+        DateTime.now().subtract(const Duration(days: 7)),
+      );
     }).length;
 
     if (recentNightmares < olderNightmares) {
@@ -1155,14 +1203,16 @@ class DreamJournalService {
           .intersection(dream3.detectedSymbols.toSet());
 
       if (common.isNotEmpty) {
-        series.add(DreamSeries(
-          id: uuid.v4(),
-          title: 'Seri: ${common.first}',
-          dreamIds: [dream1.id, dream2.id, dream3.id],
-          startDate: dream3.dreamDate,
-          commonSymbols: common.toList(),
-          storyArc: _detectStoryArc([dream1, dream2, dream3]),
-        ));
+        series.add(
+          DreamSeries(
+            id: uuid.v4(),
+            title: 'Seri: ${common.first}',
+            dreamIds: [dream1.id, dream2.id, dream3.id],
+            startDate: dream3.dreamDate,
+            commonSymbols: common.toList(),
+            storyArc: _detectStoryArc([dream1, dream2, dream3]),
+          ),
+        );
       }
     }
 
@@ -1173,9 +1223,11 @@ class DreamJournalService {
     if (dreams.length < 2) return 'Tek bolum';
 
     final intensities = dreams.map((d) => d.emotionalIntensity).toList();
-    final avgFirst = intensities.take(dreams.length ~/ 2).reduce((a, b) => a + b) /
+    final avgFirst =
+        intensities.take(dreams.length ~/ 2).reduce((a, b) => a + b) /
         (dreams.length ~/ 2);
-    final avgSecond = intensities.skip(dreams.length ~/ 2).reduce((a, b) => a + b) /
+    final avgSecond =
+        intensities.skip(dreams.length ~/ 2).reduce((a, b) => a + b) /
         (dreams.length - dreams.length ~/ 2);
 
     if (avgSecond > avgFirst) {
@@ -1187,7 +1239,10 @@ class DreamJournalService {
   }
 
   /// Find similar dreams to a given dream
-  List<DreamEntry> findSimilarDreams(DreamEntry dream, List<DreamEntry> allDreams) {
+  List<DreamEntry> findSimilarDreams(
+    DreamEntry dream,
+    List<DreamEntry> allDreams,
+  ) {
     final similar = <DreamEntry>[];
     final targetSymbols = dream.detectedSymbols.toSet();
     final targetEmotion = dream.dominantEmotion;
@@ -1238,7 +1293,8 @@ class DreamJournalService {
 
     for (final dream in dreams) {
       if (dream.isLucid) {
-        lucidByPhase[dream.moonPhase] = (lucidByPhase[dream.moonPhase] ?? 0) + 1;
+        lucidByPhase[dream.moonPhase] =
+            (lucidByPhase[dream.moonPhase] ?? 0) + 1;
       }
     }
 
@@ -1312,17 +1368,28 @@ class DreamJournalService {
     };
     for (final dream in dreams) {
       final dayIndex = dream.dreamDate.weekday;
-      final dayName = ['Pazartesi', 'Sali', 'Carsamba', 'Persembe', 'Cuma', 'Cumartesi', 'Pazar'][dayIndex - 1];
+      final dayName = [
+        'Pazartesi',
+        'Sali',
+        'Carsamba',
+        'Persembe',
+        'Cuma',
+        'Cumartesi',
+        'Pazar',
+      ][dayIndex - 1];
       weekdays[dayName] = weekdays[dayName]! + 1;
     }
 
     // Averages
-    final clarityValues = dreams.where((d) => d.clarity != null).map((d) => d.clarity!);
+    final clarityValues = dreams
+        .where((d) => d.clarity != null)
+        .map((d) => d.clarity!);
     final avgClarity = clarityValues.isEmpty
         ? 0.0
         : clarityValues.reduce((a, b) => a + b) / clarityValues.length;
 
-    final avgIntensity = dreams.map((d) => d.emotionalIntensity).reduce((a, b) => a + b) /
+    final avgIntensity =
+        dreams.map((d) => d.emotionalIntensity).reduce((a, b) => a + b) /
         dreams.length;
 
     // Locations and characters
@@ -1362,7 +1429,8 @@ class DreamJournalService {
     final wakeTimes = <int, int>{};
     for (final dream in dreams) {
       if (dream.wakeTime != null) {
-        wakeTimes[dream.wakeTime!.hour] = (wakeTimes[dream.wakeTime!.hour] ?? 0) + 1;
+        wakeTimes[dream.wakeTime!.hour] =
+            (wakeTimes[dream.wakeTime!.hour] ?? 0) + 1;
       }
     }
     String? commonWake;
@@ -1381,9 +1449,12 @@ class DreamJournalService {
       currentStreak: streaks['current']!,
       symbolFrequency: getSymbolFrequency(dreams),
       emotionDistribution: getEmotionDistribution(dreams),
-      lucidPercentage: (dreams.where((d) => d.isLucid).length / dreams.length) * 100,
-      nightmarePercentage: (dreams.where((d) => d.isNightmare).length / dreams.length) * 100,
-      recurringPercentage: (dreams.where((d) => d.isRecurring).length / dreams.length) * 100,
+      lucidPercentage:
+          (dreams.where((d) => d.isLucid).length / dreams.length) * 100,
+      nightmarePercentage:
+          (dreams.where((d) => d.isNightmare).length / dreams.length) * 100,
+      recurringPercentage:
+          (dreams.where((d) => d.isRecurring).length / dreams.length) * 100,
       moonPhaseDistribution: _getMoonPhaseDistribution(dreams),
       weekdayDistribution: weekdays,
       averageClarity: avgClarity,
@@ -1403,7 +1474,9 @@ class DreamJournalService {
     int tempStreak = 1;
 
     for (int i = 1; i < sortedDreams.length; i++) {
-      final diff = sortedDreams[i].dreamDate.difference(sortedDreams[i - 1].dreamDate).inDays;
+      final diff = sortedDreams[i].dreamDate
+          .difference(sortedDreams[i - 1].dreamDate)
+          .inDays;
       if (diff <= 1) {
         tempStreak++;
         if (tempStreak > longestStreak) longestStreak = tempStreak;
@@ -1419,8 +1492,9 @@ class DreamJournalService {
       if (diff <= 1) {
         currentStreak = sortedDreams.length - i;
         for (int j = i - 1; j >= 0; j--) {
-          final innerDiff =
-              sortedDreams[j + 1].dreamDate.difference(sortedDreams[j].dreamDate).inDays;
+          final innerDiff = sortedDreams[j + 1].dreamDate
+              .difference(sortedDreams[j].dreamDate)
+              .inDays;
           if (innerDiff <= 1) {
             currentStreak++;
           } else {
@@ -1515,7 +1589,9 @@ class DreamJournalService {
     }
   }
 
-  Future<void> _saveDictionary(Map<String, PersonalSymbolEntry> dictionary) async {
+  Future<void> _saveDictionary(
+    Map<String, PersonalSymbolEntry> dictionary,
+  ) async {
     await _prefs.setString(
       _dictionaryKey,
       jsonEncode(dictionary.map((k, v) => MapEntry(k, v.toJson()))),
@@ -1534,7 +1610,9 @@ class DreamJournalService {
     return dreams.where((d) {
       return d.title.toLowerCase().contains(lowercaseKeyword) ||
           d.content.toLowerCase().contains(lowercaseKeyword) ||
-          d.detectedSymbols.any((s) => s.toLowerCase().contains(lowercaseKeyword)) ||
+          d.detectedSymbols.any(
+            (s) => s.toLowerCase().contains(lowercaseKeyword),
+          ) ||
           d.userTags.any((t) => t.toLowerCase().contains(lowercaseKeyword));
     }).toList();
   }
@@ -1552,7 +1630,10 @@ class DreamJournalService {
   }
 
   /// Filter by date range
-  Future<List<DreamEntry>> filterByDateRange(DateTime start, DateTime end) async {
+  Future<List<DreamEntry>> filterByDateRange(
+    DateTime start,
+    DateTime end,
+  ) async {
     return getDreamsByDateRange(start, end);
   }
 
@@ -1616,10 +1697,14 @@ class DreamJournalService {
       dreams = dreams.where((d) => d.dreamDate.isBefore(endDate)).toList();
     }
     if (minIntensity != null) {
-      dreams = dreams.where((d) => d.emotionalIntensity >= minIntensity).toList();
+      dreams = dreams
+          .where((d) => d.emotionalIntensity >= minIntensity)
+          .toList();
     }
     if (maxIntensity != null) {
-      dreams = dreams.where((d) => d.emotionalIntensity <= maxIntensity).toList();
+      dreams = dreams
+          .where((d) => d.emotionalIntensity <= maxIntensity)
+          .toList();
     }
     if (role != null) {
       dreams = dreams.where((d) => d.userRole == role).toList();
@@ -1667,16 +1752,20 @@ class DreamJournalService {
   /// Generate timeline data for visualization
   Future<List<Map<String, dynamic>>> generateTimelineData() async {
     final dreams = await getAllDreams();
-    return dreams.map((d) => {
-      'date': d.dreamDate.toIso8601String(),
-      'title': d.title,
-      'emotion': d.dominantEmotion.name,
-      'intensity': d.emotionalIntensity,
-      'isLucid': d.isLucid,
-      'isNightmare': d.isNightmare,
-      'symbols': d.detectedSymbols,
-      'moonPhase': d.moonPhase.name,
-    }).toList();
+    return dreams
+        .map(
+          (d) => {
+            'date': d.dreamDate.toIso8601String(),
+            'title': d.title,
+            'emotion': d.dominantEmotion.name,
+            'intensity': d.emotionalIntensity,
+            'isLucid': d.isLucid,
+            'isNightmare': d.isNightmare,
+            'symbols': d.detectedSymbols,
+            'moonPhase': d.moonPhase.name,
+          },
+        )
+        .toList();
   }
 
   /// Get symbol glossary (all unique symbols with counts)
@@ -1807,9 +1896,11 @@ class DreamJournalService {
     if (dreams.isEmpty) return false;
 
     final today = DateTime.now();
-    return dreams.any((d) =>
-        d.dreamDate.year == today.year &&
-        d.dreamDate.month == today.month &&
-        d.dreamDate.day == today.day);
+    return dreams.any(
+      (d) =>
+          d.dreamDate.year == today.year &&
+          d.dreamDate.month == today.month &&
+          d.dreamDate.day == today.day,
+    );
   }
 }

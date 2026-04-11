@@ -66,7 +66,8 @@ class _TimingScreenState extends ConsumerState<TimingScreen> {
                     KadimNotCard(
                       category: KadimCategory.astrology,
                       title: 'Elektional Astroloji',
-                      content: 'Kadim astrologlar, her anın eşsiz bir kozmik imzası olduğunu bilirdi. '
+                      content:
+                          'Kadim astrologlar, her anın eşsiz bir kozmik imzası olduğunu bilirdi. '
                           'Elektional astroloji - doğru zamanı seçme sanatı - krallıkların taç giyme '
                           'törenlerinden evliliklere kadar her önemli olay için kullanılırdı. '
                           'Gezegen saatleri ve Ay\'ın boş seyir dönemleri, başarılı eylemlerin anahtarıydı.',
@@ -140,7 +141,11 @@ class _TimingScreenState extends ConsumerState<TimingScreen> {
               ),
               shape: BoxShape.circle,
             ),
-            child: const Icon(Icons.access_time, color: AppColors.celestialGold, size: 24),
+            child: const Icon(
+              Icons.access_time,
+              color: AppColors.celestialGold,
+              size: 24,
+            ),
           ),
         ],
       ),
@@ -163,12 +168,22 @@ class _TimingScreenState extends ConsumerState<TimingScreen> {
             child: GestureDetector(
               onTap: () => setState(() => _selectedCategory = category),
               child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 10,
+                ),
                 decoration: BoxDecoration(
                   gradient: isSelected
-                      ? LinearGradient(colors: [category.color.withAlpha(60), category.color.withAlpha(30)])
+                      ? LinearGradient(
+                          colors: [
+                            category.color.withAlpha(60),
+                            category.color.withAlpha(30),
+                          ],
+                        )
                       : null,
-                  color: isSelected ? null : AppColors.surfaceLight.withAlpha(20),
+                  color: isSelected
+                      ? null
+                      : AppColors.surfaceLight.withAlpha(20),
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(
                     color: isSelected ? category.color : Colors.white12,
@@ -178,13 +193,23 @@ class _TimingScreenState extends ConsumerState<TimingScreen> {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Icon(category.icon, size: 16, color: isSelected ? category.color : AppColors.textSecondary),
+                    Icon(
+                      category.icon,
+                      size: 16,
+                      color: isSelected
+                          ? category.color
+                          : AppColors.textSecondary,
+                    ),
                     const SizedBox(width: 6),
                     Text(
                       category.nameTr,
                       style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                        color: isSelected ? category.color : AppColors.textSecondary,
-                        fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+                        color: isSelected
+                            ? category.color
+                            : AppColors.textSecondary,
+                        fontWeight: isSelected
+                            ? FontWeight.bold
+                            : FontWeight.normal,
                       ),
                     ),
                   ],
@@ -207,10 +232,15 @@ class _TimingScreenState extends ConsumerState<TimingScreen> {
     int score = 70;
     if (vocStatus.isVoid) score -= 20;
     if (retrogrades.contains('mercury')) score -= 10;
-    if (moonPhase.name.contains('full') || moonPhase.name.contains('new')) score += 10;
+    if (moonPhase.name.contains('full') || moonPhase.name.contains('new'))
+      score += 10;
     score = score.clamp(0, 100);
 
-    final Color scoreColor = score >= 70 ? Colors.green : score >= 50 ? Colors.orange : Colors.red;
+    final Color scoreColor = score >= 70
+        ? Colors.green
+        : score >= 50
+        ? Colors.orange
+        : Colors.red;
 
     return Container(
       padding: const EdgeInsets.all(AppConstants.spacingLg),
@@ -237,7 +267,10 @@ class _TimingScreenState extends ConsumerState<TimingScreen> {
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   gradient: RadialGradient(
-                    colors: [scoreColor.withAlpha(100), scoreColor.withAlpha(30)],
+                    colors: [
+                      scoreColor.withAlpha(100),
+                      scoreColor.withAlpha(30),
+                    ],
                   ),
                 ),
                 child: Center(
@@ -293,7 +326,9 @@ class _TimingScreenState extends ConsumerState<TimingScreen> {
                 GestureDetector(
                   onTap: () => context.push('/void-of-course'),
                   child: _MiniIndicator(
-                    icon: vocStatus.isVoid ? Icons.do_not_disturb : Icons.check_circle,
+                    icon: vocStatus.isVoid
+                        ? Icons.do_not_disturb
+                        : Icons.check_circle,
                     label: 'VOC',
                     value: vocStatus.isVoid ? 'Aktif' : 'Yok',
                     color: vocStatus.isVoid ? Colors.purple : Colors.green,
@@ -329,46 +364,57 @@ class _TimingScreenState extends ConsumerState<TimingScreen> {
 
     // VOC Warning
     if (vocStatus.isVoid) {
-      conditions.add(_ConditionItem(
-        icon: Icons.do_not_disturb_on,
-        title: 'Ay Boş Seyir',
-        description: 'Önemli başlangıçları erteleyin. ${vocStatus.timeRemainingFormatted ?? "Bitiş zamanı yaklaşıyor"}',
-        color: Colors.purple,
-        severity: 2,
-      ));
+      conditions.add(
+        _ConditionItem(
+          icon: Icons.do_not_disturb_on,
+          title: 'Ay Boş Seyir',
+          description:
+              'Önemli başlangıçları erteleyin. ${vocStatus.timeRemainingFormatted ?? "Bitiş zamanı yaklaşıyor"}',
+          color: Colors.purple,
+          severity: 2,
+        ),
+      );
     }
 
     // Mercury Retrograde
     if (retrogrades.contains('mercury')) {
-      conditions.add(_ConditionItem(
-        icon: Icons.chat_bubble_outline,
-        title: 'Merkür Retrosu',
-        description: 'İletişim ve sözleşmelerde dikkatli olun. Eski bağlantılar dönebilir.',
-        color: Colors.orange,
-        severity: 2,
-      ));
+      conditions.add(
+        _ConditionItem(
+          icon: Icons.chat_bubble_outline,
+          title: 'Merkür Retrosu',
+          description:
+              'İletişim ve sözleşmelerde dikkatli olun. Eski bağlantılar dönebilir.',
+          color: Colors.orange,
+          severity: 2,
+        ),
+      );
     }
 
     // Other Retrogrades
     final otherRetros = retrogrades.where((p) => p != 'mercury').toList();
     if (otherRetros.isNotEmpty) {
-      conditions.add(_ConditionItem(
-        icon: Icons.replay,
-        title: 'Diğer Retrolar',
-        description: '${otherRetros.map((p) => _getPlanetNameTr(p)).join(", ")} retroda. İlgili alanlarda yavaşlık.',
-        color: Colors.amber,
-        severity: 1,
-      ));
+      conditions.add(
+        _ConditionItem(
+          icon: Icons.replay,
+          title: 'Diğer Retrolar',
+          description:
+              '${otherRetros.map((p) => _getPlanetNameTr(p)).join(", ")} retroda. İlgili alanlarda yavaşlık.',
+          color: Colors.amber,
+          severity: 1,
+        ),
+      );
     }
 
     if (conditions.isEmpty) {
-      conditions.add(_ConditionItem(
-        icon: Icons.check_circle_outline,
-        title: 'Temiz Gökyüzü',
-        description: 'Önemli bir uyarı bulunmuyor. Harika bir gün!',
-        color: Colors.green,
-        severity: 0,
-      ));
+      conditions.add(
+        _ConditionItem(
+          icon: Icons.check_circle_outline,
+          title: 'Temiz Gökyüzü',
+          description: 'Önemli bir uyarı bulunmuyor. Harika bir gün!',
+          color: Colors.green,
+          severity: 0,
+        ),
+      );
     }
 
     return Column(
@@ -376,7 +422,11 @@ class _TimingScreenState extends ConsumerState<TimingScreen> {
       children: [
         Row(
           children: [
-            const Icon(Icons.warning_amber_rounded, color: AppColors.textSecondary, size: 20),
+            const Icon(
+              Icons.warning_amber_rounded,
+              color: AppColors.textSecondary,
+              size: 20,
+            ),
             const SizedBox(width: 8),
             Text(
               'Güncel Koşullar',
@@ -388,7 +438,9 @@ class _TimingScreenState extends ConsumerState<TimingScreen> {
           ],
         ),
         const SizedBox(height: AppConstants.spacingMd),
-        ...conditions.map((condition) => _buildConditionCard(context, condition)),
+        ...conditions.map(
+          (condition) => _buildConditionCard(context, condition),
+        ),
       ],
     ).animate().fadeIn(delay: 300.ms, duration: 400.ms);
   }
@@ -439,13 +491,20 @@ class _TimingScreenState extends ConsumerState<TimingScreen> {
     );
   }
 
-  Widget _buildRecommendations(BuildContext context, List<TimingRecommendation> recommendations) {
+  Widget _buildRecommendations(
+    BuildContext context,
+    List<TimingRecommendation> recommendations,
+  ) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           children: [
-            const Icon(Icons.lightbulb_outline, color: AppColors.celestialGold, size: 20),
+            const Icon(
+              Icons.lightbulb_outline,
+              color: AppColors.celestialGold,
+              size: 20,
+            ),
             const SizedBox(width: 8),
             Text(
               'İyi Zamanlar',
@@ -466,8 +525,16 @@ class _TimingScreenState extends ConsumerState<TimingScreen> {
     ).animate().fadeIn(delay: 400.ms, duration: 400.ms);
   }
 
-  Widget _buildRecommendationCard(BuildContext context, TimingRecommendation rec, int index) {
-    final Color ratingColor = rec.rating >= 4 ? Colors.green : rec.rating >= 3 ? Colors.amber : Colors.red;
+  Widget _buildRecommendationCard(
+    BuildContext context,
+    TimingRecommendation rec,
+    int index,
+  ) {
+    final Color ratingColor = rec.rating >= 4
+        ? Colors.green
+        : rec.rating >= 3
+        ? Colors.amber
+        : Colors.red;
 
     return Container(
       margin: const EdgeInsets.only(bottom: AppConstants.spacingMd),
@@ -476,10 +543,7 @@ class _TimingScreenState extends ConsumerState<TimingScreen> {
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [
-            rec.category.color.withAlpha(25),
-            AppColors.surfaceDark,
-          ],
+          colors: [rec.category.color.withAlpha(25), AppColors.surfaceDark],
         ),
         borderRadius: BorderRadius.circular(AppConstants.radiusMd),
         border: Border.all(color: rec.category.color.withAlpha(40)),
@@ -495,7 +559,11 @@ class _TimingScreenState extends ConsumerState<TimingScreen> {
                   color: rec.category.color.withAlpha(40),
                   shape: BoxShape.circle,
                 ),
-                child: Icon(rec.category.icon, color: rec.category.color, size: 18),
+                child: Icon(
+                  rec.category.icon,
+                  color: rec.category.color,
+                  size: 18,
+                ),
               ),
               const SizedBox(width: AppConstants.spacingMd),
               Expanded(
@@ -542,7 +610,10 @@ class _TimingScreenState extends ConsumerState<TimingScreen> {
           Row(
             children: [
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 4,
+                ),
                 decoration: BoxDecoration(
                   color: Colors.white10,
                   borderRadius: BorderRadius.circular(12),
@@ -550,7 +621,11 @@ class _TimingScreenState extends ConsumerState<TimingScreen> {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const Icon(Icons.schedule, size: 12, color: AppColors.textMuted),
+                    const Icon(
+                      Icons.schedule,
+                      size: 12,
+                      color: AppColors.textMuted,
+                    ),
                     const SizedBox(width: 4),
                     Text(
                       rec.bestTime,
@@ -565,7 +640,10 @@ class _TimingScreenState extends ConsumerState<TimingScreen> {
               if (rec.tip.isNotEmpty)
                 Expanded(
                   child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 4,
+                    ),
                     decoration: BoxDecoration(
                       color: AppColors.celestialGold.withAlpha(20),
                       borderRadius: BorderRadius.circular(12),
@@ -573,14 +651,17 @@ class _TimingScreenState extends ConsumerState<TimingScreen> {
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        const Icon(Icons.tips_and_updates, size: 12, color: AppColors.celestialGold),
+                        const Icon(
+                          Icons.tips_and_updates,
+                          size: 12,
+                          color: AppColors.celestialGold,
+                        ),
                         const SizedBox(width: 4),
                         Flexible(
                           child: Text(
                             rec.tip,
-                            style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                              color: AppColors.celestialGold,
-                            ),
+                            style: Theme.of(context).textTheme.labelSmall
+                                ?.copyWith(color: AppColors.celestialGold),
                             overflow: TextOverflow.ellipsis,
                           ),
                         ),
@@ -603,7 +684,11 @@ class _TimingScreenState extends ConsumerState<TimingScreen> {
       children: [
         Row(
           children: [
-            const Icon(Icons.calendar_month, color: AppColors.moonSilver, size: 20),
+            const Icon(
+              Icons.calendar_month,
+              color: AppColors.moonSilver,
+              size: 20,
+            ),
             const SizedBox(width: 8),
             Text(
               'Önümüzdeki 7 Gün',
@@ -630,7 +715,12 @@ class _TimingScreenState extends ConsumerState<TimingScreen> {
                 padding: const EdgeInsets.all(AppConstants.spacingSm),
                 decoration: BoxDecoration(
                   gradient: isToday
-                      ? LinearGradient(colors: [AppColors.celestialGold.withAlpha(40), AppColors.starGold.withAlpha(20)])
+                      ? LinearGradient(
+                          colors: [
+                            AppColors.celestialGold.withAlpha(40),
+                            AppColors.starGold.withAlpha(20),
+                          ],
+                        )
                       : null,
                   color: isToday ? null : AppColors.surfaceLight.withAlpha(20),
                   borderRadius: BorderRadius.circular(AppConstants.radiusMd),
@@ -645,8 +735,12 @@ class _TimingScreenState extends ConsumerState<TimingScreen> {
                     Text(
                       day.dayName,
                       style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                        color: isToday ? AppColors.celestialGold : AppColors.textMuted,
-                        fontWeight: isToday ? FontWeight.bold : FontWeight.normal,
+                        color: isToday
+                            ? AppColors.celestialGold
+                            : AppColors.textMuted,
+                        fontWeight: isToday
+                            ? FontWeight.bold
+                            : FontWeight.normal,
                       ),
                     ),
                     const SizedBox(height: 4),
@@ -660,10 +754,11 @@ class _TimingScreenState extends ConsumerState<TimingScreen> {
                       child: Center(
                         child: Text(
                           '${day.score}',
-                          style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                            color: day.color,
-                            fontWeight: FontWeight.bold,
-                          ),
+                          style: Theme.of(context).textTheme.titleMedium
+                              ?.copyWith(
+                                color: day.color,
+                                fontWeight: FontWeight.bold,
+                              ),
                         ),
                       ),
                     ),
@@ -674,7 +769,10 @@ class _TimingScreenState extends ConsumerState<TimingScreen> {
                     ),
                   ],
                 ),
-              ).animate().fadeIn(delay: (600 + index * 50).ms, duration: 300.ms);
+              ).animate().fadeIn(
+                delay: (600 + index * 50).ms,
+                duration: 300.ms,
+              );
             },
           ),
         ),
@@ -684,15 +782,24 @@ class _TimingScreenState extends ConsumerState<TimingScreen> {
 
   String _getPlanetNameTr(String planet) {
     switch (planet.toLowerCase()) {
-      case 'mercury': return 'Merkür';
-      case 'venus': return 'Venüs';
-      case 'mars': return 'Mars';
-      case 'jupiter': return 'Jüpiter';
-      case 'saturn': return 'Satürn';
-      case 'uranus': return 'Uranüs';
-      case 'neptune': return 'Neptün';
-      case 'pluto': return 'Plüton';
-      default: return planet;
+      case 'mercury':
+        return 'Merkür';
+      case 'venus':
+        return 'Venüs';
+      case 'mars':
+        return 'Mars';
+      case 'jupiter':
+        return 'Jüpiter';
+      case 'saturn':
+        return 'Satürn';
+      case 'uranus':
+        return 'Uranüs';
+      case 'neptune':
+        return 'Neptün';
+      case 'pluto':
+        return 'Plüton';
+      default:
+        return planet;
     }
   }
 
@@ -748,19 +855,23 @@ class _TimingScreenState extends ConsumerState<TimingScreen> {
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      planetaryHours[currentHour % planetaryHours.length].color.withAlpha(40),
+                      planetaryHours[currentHour % planetaryHours.length].color
+                          .withAlpha(40),
                       AppColors.surfaceDark,
                     ],
                   ),
                   borderRadius: BorderRadius.circular(AppConstants.radiusSm),
                   border: Border.all(
-                    color: planetaryHours[currentHour % planetaryHours.length].color.withAlpha(60),
+                    color: planetaryHours[currentHour % planetaryHours.length]
+                        .color
+                        .withAlpha(60),
                   ),
                 ),
                 child: Row(
                   children: [
                     Text(
-                      planetaryHours[currentHour % planetaryHours.length].symbol,
+                      planetaryHours[currentHour % planetaryHours.length]
+                          .symbol,
                       style: const TextStyle(fontSize: 28),
                     ),
                     const SizedBox(width: AppConstants.spacingMd),
@@ -770,16 +881,20 @@ class _TimingScreenState extends ConsumerState<TimingScreen> {
                         children: [
                           Text(
                             '${planetaryHours[currentHour % planetaryHours.length].planetTr} Saati',
-                            style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                              color: planetaryHours[currentHour % planetaryHours.length].color,
-                              fontWeight: FontWeight.bold,
-                            ),
+                            style: Theme.of(context).textTheme.titleSmall
+                                ?.copyWith(
+                                  color:
+                                      planetaryHours[currentHour %
+                                              planetaryHours.length]
+                                          .color,
+                                  fontWeight: FontWeight.bold,
+                                ),
                           ),
                           Text(
-                            planetaryHours[currentHour % planetaryHours.length].meaning,
-                            style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                              color: AppColors.textSecondary,
-                            ),
+                            planetaryHours[currentHour % planetaryHours.length]
+                                .meaning,
+                            style: Theme.of(context).textTheme.bodySmall
+                                ?.copyWith(color: AppColors.textSecondary),
                           ),
                         ],
                       ),
@@ -794,7 +909,8 @@ class _TimingScreenState extends ConsumerState<TimingScreen> {
                   scrollDirection: Axis.horizontal,
                   itemCount: 6,
                   itemBuilder: (context, index) {
-                    final hourIndex = (currentHour + index + 1) % planetaryHours.length;
+                    final hourIndex =
+                        (currentHour + index + 1) % planetaryHours.length;
                     final hour = planetaryHours[hourIndex];
                     final displayHour = (currentHour + index + 1) % 24;
 
@@ -810,21 +926,24 @@ class _TimingScreenState extends ConsumerState<TimingScreen> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(hour.symbol, style: const TextStyle(fontSize: 18)),
+                          Text(
+                            hour.symbol,
+                            style: const TextStyle(fontSize: 18),
+                          ),
                           const SizedBox(height: 4),
                           Text(
                             '${displayHour.toString().padLeft(2, '0')}:00',
-                            style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                              color: AppColors.textMuted,
-                            ),
+                            style: Theme.of(context).textTheme.labelSmall
+                                ?.copyWith(color: AppColors.textMuted),
                           ),
                           Text(
                             hour.planetTr,
-                            style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                              color: hour.color,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 10,
-                            ),
+                            style: Theme.of(context).textTheme.labelSmall
+                                ?.copyWith(
+                                  color: hour.color,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 10,
+                                ),
                             overflow: TextOverflow.ellipsis,
                           ),
                         ],
@@ -840,7 +959,11 @@ class _TimingScreenState extends ConsumerState<TimingScreen> {
     ).animate().fadeIn(delay: 600.ms, duration: 400.ms);
   }
 
-  Widget _buildLuckyElements(BuildContext context, ZodiacSign sign, DateTime birthDate) {
+  Widget _buildLuckyElements(
+    BuildContext context,
+    ZodiacSign sign,
+    DateTime birthDate,
+  ) {
     final lucky = TimingService.getLuckyElements(sign, birthDate);
 
     return Column(
@@ -866,10 +989,7 @@ class _TimingScreenState extends ConsumerState<TimingScreen> {
             gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-              colors: [
-                AppColors.starGold.withAlpha(20),
-                AppColors.surfaceDark,
-              ],
+              colors: [AppColors.starGold.withAlpha(20), AppColors.surfaceDark],
             ),
             borderRadius: BorderRadius.circular(AppConstants.radiusLg),
             border: Border.all(color: AppColors.starGold.withAlpha(40)),
@@ -1013,7 +1133,11 @@ class _TimingScreenState extends ConsumerState<TimingScreen> {
                 ),
                 child: Row(
                   children: [
-                    Icon(Icons.info_outline, size: 16, color: AppColors.textMuted),
+                    Icon(
+                      Icons.info_outline,
+                      size: 16,
+                      color: AppColors.textMuted,
+                    ),
                     const SizedBox(width: 8),
                     Expanded(
                       child: Text(
@@ -1054,76 +1178,85 @@ class _TimingScreenState extends ConsumerState<TimingScreen> {
           ],
         ),
         const SizedBox(height: AppConstants.spacingMd),
-        ...aspects.map((aspect) => Container(
-          margin: const EdgeInsets.only(bottom: AppConstants.spacingSm),
-          padding: const EdgeInsets.all(AppConstants.spacingMd),
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.centerLeft,
-              end: Alignment.centerRight,
-              colors: [
-                aspect.color.withAlpha(30),
-                AppColors.surfaceDark,
-              ],
+        ...aspects.map(
+          (aspect) => Container(
+            margin: const EdgeInsets.only(bottom: AppConstants.spacingSm),
+            padding: const EdgeInsets.all(AppConstants.spacingMd),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.centerLeft,
+                end: Alignment.centerRight,
+                colors: [aspect.color.withAlpha(30), AppColors.surfaceDark],
+              ),
+              borderRadius: BorderRadius.circular(AppConstants.radiusMd),
+              border: Border.all(color: aspect.color.withAlpha(50)),
             ),
-            borderRadius: BorderRadius.circular(AppConstants.radiusMd),
-            border: Border.all(color: aspect.color.withAlpha(50)),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                    decoration: BoxDecoration(
-                      color: aspect.color.withAlpha(40),
-                      borderRadius: BorderRadius.circular(8),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 8,
+                        vertical: 4,
+                      ),
+                      decoration: BoxDecoration(
+                        color: aspect.color.withAlpha(40),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Text(
+                        aspect.time,
+                        style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                          color: aspect.color,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
-                    child: Text(
-                      aspect.time,
-                      style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                        color: aspect.color,
+                    const SizedBox(width: 8),
+                    Text(
+                      aspect.planets,
+                      style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                        color: AppColors.textPrimary,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                  ),
-                  const SizedBox(width: 8),
-                  Text(
-                    aspect.planets,
-                    style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      color: AppColors.textPrimary,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const Spacer(),
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                    decoration: BoxDecoration(
-                      color: aspect.isHarmonious ? Colors.green.withAlpha(40) : Colors.orange.withAlpha(40),
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                    child: Text(
-                      aspect.aspectName,
-                      style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                        color: aspect.isHarmonious ? Colors.green : Colors.orange,
-                        fontSize: 10,
+                    const Spacer(),
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 6,
+                        vertical: 2,
+                      ),
+                      decoration: BoxDecoration(
+                        color: aspect.isHarmonious
+                            ? Colors.green.withAlpha(40)
+                            : Colors.orange.withAlpha(40),
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                      child: Text(
+                        aspect.aspectName,
+                        style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                          color: aspect.isHarmonious
+                              ? Colors.green
+                              : Colors.orange,
+                          fontSize: 10,
+                        ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 8),
-              Text(
-                aspect.interpretation,
-                style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: AppColors.textSecondary,
-                  height: 1.4,
+                  ],
                 ),
-              ),
-            ],
+                const SizedBox(height: 8),
+                Text(
+                  aspect.interpretation,
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                    color: AppColors.textSecondary,
+                    height: 1.4,
+                  ),
+                ),
+              ],
+            ),
           ),
-        )),
+        ),
       ],
     ).animate().fadeIn(delay: 900.ms, duration: 400.ms);
   }
@@ -1451,103 +1584,129 @@ class TimingService {
     // Love recommendations
     if (category == TimingCategory.all || category == TimingCategory.love) {
       int loveRating = 3 + random.nextInt(2);
-      if (moonSign == MoonSign.libra || moonSign == MoonSign.taurus) loveRating++;
+      if (moonSign == MoonSign.libra || moonSign == MoonSign.taurus)
+        loveRating++;
       if (vocStatus.isVoid) loveRating--;
       if (retrogrades.contains('venus')) loveRating--;
       loveRating = loveRating.clamp(1, 5);
 
-      allRecommendations.add(TimingRecommendation(
-        category: TimingCategory.love,
-        activity: 'Romantik Anlaşma',
-        description: _getLoveDescription(moonSign, vocStatus.isVoid, retrogrades),
-        rating: loveRating,
-        bestTime: _getBestLoveTime(moonSign),
-        tip: loveRating >= 4 ? 'Duygularını ifade et' : 'Sabırla bekle',
-      ));
+      allRecommendations.add(
+        TimingRecommendation(
+          category: TimingCategory.love,
+          activity: 'Romantik Anlaşma',
+          description: _getLoveDescription(
+            moonSign,
+            vocStatus.isVoid,
+            retrogrades,
+          ),
+          rating: loveRating,
+          bestTime: _getBestLoveTime(moonSign),
+          tip: loveRating >= 4 ? 'Duygularını ifade et' : 'Sabırla bekle',
+        ),
+      );
     }
 
     // Career recommendations
     if (category == TimingCategory.all || category == TimingCategory.career) {
       int careerRating = 3 + random.nextInt(2);
-      if (moonSign == MoonSign.capricorn || moonSign == MoonSign.virgo) careerRating++;
+      if (moonSign == MoonSign.capricorn || moonSign == MoonSign.virgo)
+        careerRating++;
       if (vocStatus.isVoid) careerRating -= 2;
       if (retrogrades.contains('mercury')) careerRating--;
       careerRating = careerRating.clamp(1, 5);
 
-      allRecommendations.add(TimingRecommendation(
-        category: TimingCategory.career,
-        activity: 'İş Görüşmeleri',
-        description: _getCareerDescription(moonSign, vocStatus.isVoid, retrogrades),
-        rating: careerRating,
-        bestTime: _getBestCareerTime(moonSign),
-        tip: careerRating >= 4 ? 'İnisiyatif al' : 'Araştırma yap',
-      ));
+      allRecommendations.add(
+        TimingRecommendation(
+          category: TimingCategory.career,
+          activity: 'İş Görüşmeleri',
+          description: _getCareerDescription(
+            moonSign,
+            vocStatus.isVoid,
+            retrogrades,
+          ),
+          rating: careerRating,
+          bestTime: _getBestCareerTime(moonSign),
+          tip: careerRating >= 4 ? 'İnisiyatif al' : 'Araştırma yap',
+        ),
+      );
     }
 
     // Money recommendations
     if (category == TimingCategory.all || category == TimingCategory.money) {
       int moneyRating = 3 + random.nextInt(2);
-      if (moonSign == MoonSign.taurus || moonSign == MoonSign.scorpio) moneyRating++;
+      if (moonSign == MoonSign.taurus || moonSign == MoonSign.scorpio)
+        moneyRating++;
       if (vocStatus.isVoid) moneyRating--;
       moneyRating = moneyRating.clamp(1, 5);
 
-      allRecommendations.add(TimingRecommendation(
-        category: TimingCategory.money,
-        activity: 'Finansal Kararlar',
-        description: _getMoneyDescription(moonSign, vocStatus.isVoid),
-        rating: moneyRating,
-        bestTime: _getBestMoneyTime(moonSign),
-        tip: moneyRating >= 4 ? 'Yatırım zamanı' : 'Biriktir',
-      ));
+      allRecommendations.add(
+        TimingRecommendation(
+          category: TimingCategory.money,
+          activity: 'Finansal Kararlar',
+          description: _getMoneyDescription(moonSign, vocStatus.isVoid),
+          rating: moneyRating,
+          bestTime: _getBestMoneyTime(moonSign),
+          tip: moneyRating >= 4 ? 'Yatırım zamanı' : 'Biriktir',
+        ),
+      );
     }
 
     // Health recommendations
     if (category == TimingCategory.all || category == TimingCategory.health) {
       int healthRating = 3 + random.nextInt(2);
-      if (moonSign == MoonSign.virgo || moonSign == MoonSign.pisces) healthRating++;
+      if (moonSign == MoonSign.virgo || moonSign == MoonSign.pisces)
+        healthRating++;
       healthRating = healthRating.clamp(1, 5);
 
-      allRecommendations.add(TimingRecommendation(
-        category: TimingCategory.health,
-        activity: 'Sağlık Aktiviteleri',
-        description: _getHealthDescription(moonSign),
-        rating: healthRating,
-        bestTime: _getBestHealthTime(moonSign),
-        tip: healthRating >= 4 ? 'Yeni rutinler başlat' : 'Dinlen',
-      ));
+      allRecommendations.add(
+        TimingRecommendation(
+          category: TimingCategory.health,
+          activity: 'Sağlık Aktiviteleri',
+          description: _getHealthDescription(moonSign),
+          rating: healthRating,
+          bestTime: _getBestHealthTime(moonSign),
+          tip: healthRating >= 4 ? 'Yeni rutinler başlat' : 'Dinlen',
+        ),
+      );
     }
 
     // Travel recommendations
     if (category == TimingCategory.all || category == TimingCategory.travel) {
       int travelRating = 3 + random.nextInt(2);
-      if (moonSign == MoonSign.sagittarius || moonSign == MoonSign.gemini) travelRating++;
+      if (moonSign == MoonSign.sagittarius || moonSign == MoonSign.gemini)
+        travelRating++;
       if (retrogrades.contains('mercury')) travelRating -= 2;
       travelRating = travelRating.clamp(1, 5);
 
-      allRecommendations.add(TimingRecommendation(
-        category: TimingCategory.travel,
-        activity: 'Seyahat Planlama',
-        description: _getTravelDescription(moonSign, retrogrades),
-        rating: travelRating,
-        bestTime: _getBestTravelTime(moonSign),
-        tip: travelRating >= 4 ? 'Maceraya atıl' : 'Yerel kal',
-      ));
+      allRecommendations.add(
+        TimingRecommendation(
+          category: TimingCategory.travel,
+          activity: 'Seyahat Planlama',
+          description: _getTravelDescription(moonSign, retrogrades),
+          rating: travelRating,
+          bestTime: _getBestTravelTime(moonSign),
+          tip: travelRating >= 4 ? 'Maceraya atıl' : 'Yerel kal',
+        ),
+      );
     }
 
     // Creative recommendations
     if (category == TimingCategory.all || category == TimingCategory.creative) {
       int creativeRating = 3 + random.nextInt(2);
-      if (moonSign == MoonSign.leo || moonSign == MoonSign.pisces) creativeRating++;
+      if (moonSign == MoonSign.leo || moonSign == MoonSign.pisces)
+        creativeRating++;
       creativeRating = creativeRating.clamp(1, 5);
 
-      allRecommendations.add(TimingRecommendation(
-        category: TimingCategory.creative,
-        activity: 'Yaratici Projeler',
-        description: _getCreativeDescription(moonSign),
-        rating: creativeRating,
-        bestTime: _getBestCreativeTime(moonSign),
-        tip: creativeRating >= 4 ? 'İlham doruklarda' : 'İzle ve öğren',
-      ));
+      allRecommendations.add(
+        TimingRecommendation(
+          category: TimingCategory.creative,
+          activity: 'Yaratici Projeler',
+          description: _getCreativeDescription(moonSign),
+          rating: creativeRating,
+          bestTime: _getBestCreativeTime(moonSign),
+          tip: creativeRating >= 4 ? 'İlham doruklarda' : 'İzle ve öğren',
+        ),
+      );
     }
 
     // Sort by rating descending
@@ -1567,18 +1726,26 @@ class TimingService {
       final random = Random(seed);
 
       final score = 50 + random.nextInt(40);
-      final Color color = score >= 70 ? Colors.green : score >= 50 ? Colors.amber : Colors.red;
+      final Color color = score >= 70
+          ? Colors.green
+          : score >= 50
+          ? Colors.amber
+          : Colors.red;
 
       // Approximate moon sign for the day
       final moonIndex = (date.day + date.month) % 12;
       final moonSign = MoonSign.values[moonIndex];
 
-      days.add(DayForecast(
-        dayName: i < dayNames.length ? dayNames[i] : _getShortDayName(date.weekday),
-        score: score,
-        color: color,
-        moonSign: moonSign,
-      ));
+      days.add(
+        DayForecast(
+          dayName: i < dayNames.length
+              ? dayNames[i]
+              : _getShortDayName(date.weekday),
+          score: score,
+          color: color,
+          moonSign: moonSign,
+        ),
+      );
     }
 
     return days;
@@ -1590,68 +1757,107 @@ class TimingService {
   }
 
   // Description generators
-  static String _getLoveDescription(MoonSign moon, bool voc, List<String> retros) {
-    if (voc) return 'Boş seyir nedeniyle duygusal kararlar ertelenmeli. Mevcut ilişkilere odaklanın.';
-    if (retros.contains('venus')) return 'Venüs retrosu eski aşklar hakkında düşündürür. Yeni başlangıçlar için beklemeniz uygun.';
+  static String _getLoveDescription(
+    MoonSign moon,
+    bool voc,
+    List<String> retros,
+  ) {
+    if (voc)
+      return 'Boş seyir nedeniyle duygusal kararlar ertelenmeli. Mevcut ilişkilere odaklanın.';
+    if (retros.contains('venus'))
+      return 'Venüs retrosu eski aşklar hakkında düşündürür. Yeni başlangıçlar için beklemeniz uygun.';
 
     switch (moon) {
-      case MoonSign.libra: return 'İlişki enerjisi yüksek. Partner ile uyum ve romantizm için ideal bir zaman.';
-      case MoonSign.taurus: return 'Fiziksel yakınlık ve güvenlik önemli. Samimi anlar için uygun.';
-      case MoonSign.cancer: return 'Duygusal derinlik artıyor. Ailenizle ve sevilenlerle kaliteli zaman geçirin.';
-      case MoonSign.scorpio: return 'Tutkulu ve yoğun duygular hakim. Derin bağlantı kurmak için cesur olun.';
-      default: return 'Aşk hayatında yeni fırsatlar belirebilir. Açık olmak önemli.';
+      case MoonSign.libra:
+        return 'İlişki enerjisi yüksek. Partner ile uyum ve romantizm için ideal bir zaman.';
+      case MoonSign.taurus:
+        return 'Fiziksel yakınlık ve güvenlik önemli. Samimi anlar için uygun.';
+      case MoonSign.cancer:
+        return 'Duygusal derinlik artıyor. Ailenizle ve sevilenlerle kaliteli zaman geçirin.';
+      case MoonSign.scorpio:
+        return 'Tutkulu ve yoğun duygular hakim. Derin bağlantı kurmak için cesur olun.';
+      default:
+        return 'Aşk hayatında yeni fırsatlar belirebilir. Açık olmak önemli.';
     }
   }
 
-  static String _getCareerDescription(MoonSign moon, bool voc, List<String> retros) {
-    if (voc) return 'Önemli iş kararları ertelenmeli. Mevcut projelere devam edin.';
-    if (retros.contains('mercury')) return 'İletişim hatalarına dikkat. Sözleşmeleri dikkatli inceleyin.';
+  static String _getCareerDescription(
+    MoonSign moon,
+    bool voc,
+    List<String> retros,
+  ) {
+    if (voc)
+      return 'Önemli iş kararları ertelenmeli. Mevcut projelere devam edin.';
+    if (retros.contains('mercury'))
+      return 'İletişim hatalarına dikkat. Sözleşmeleri dikkatli inceleyin.';
 
     switch (moon) {
-      case MoonSign.capricorn: return 'Kariyer hedefleri netleşir. Uzun vadeli planlar yapmak için ideal.';
-      case MoonSign.virgo: return 'Detaylara odaklanın. Analiz ve organizasyon işleri destekleniyor.';
-      case MoonSign.aries: return 'Liderlik enerjisi yüksek. Yeni projeler başlatmak için cesaret edin.';
-      default: return 'İş hayatında stabil bir gün. Rutinlere bağlı kalmak faydalı.';
+      case MoonSign.capricorn:
+        return 'Kariyer hedefleri netleşir. Uzun vadeli planlar yapmak için ideal.';
+      case MoonSign.virgo:
+        return 'Detaylara odaklanın. Analiz ve organizasyon işleri destekleniyor.';
+      case MoonSign.aries:
+        return 'Liderlik enerjisi yüksek. Yeni projeler başlatmak için cesaret edin.';
+      default:
+        return 'İş hayatında stabil bir gün. Rutinlere bağlı kalmak faydalı.';
     }
   }
 
   static String _getMoneyDescription(MoonSign moon, bool voc) {
-    if (voc) return 'Büyük finansal kararlar ertelenmeli. Araştırma ve planlama için kullanın.';
+    if (voc)
+      return 'Büyük finansal kararlar ertelenmeli. Araştırma ve planlama için kullanın.';
 
     switch (moon) {
-      case MoonSign.taurus: return 'Finansal istikrar önemli. Uzun vadeli yatırımlar düşünülebilir.';
-      case MoonSign.scorpio: return 'Gizli fırsatlar ortaya çıkabilir. Araştırma ve analiz yapın.';
-      case MoonSign.capricorn: return 'Pratik finansal kararlar için ideal. Bütçe planlaması yapın.';
-      default: return 'Para konularında dikkatli ilerleyin. Büyük harcamalardan kaçının.';
+      case MoonSign.taurus:
+        return 'Finansal istikrar önemli. Uzun vadeli yatırımlar düşünülebilir.';
+      case MoonSign.scorpio:
+        return 'Gizli fırsatlar ortaya çıkabilir. Araştırma ve analiz yapın.';
+      case MoonSign.capricorn:
+        return 'Pratik finansal kararlar için ideal. Bütçe planlaması yapın.';
+      default:
+        return 'Para konularında dikkatli ilerleyin. Büyük harcamalardan kaçının.';
     }
   }
 
   static String _getHealthDescription(MoonSign moon) {
     switch (moon) {
-      case MoonSign.virgo: return 'Detoks ve temizlik için ideal. Sağlıklı rutinler oluşturun.';
-      case MoonSign.pisces: return 'Ruhsal denge önemli. Meditasyon ve rahatlama önerilir.';
-      case MoonSign.aries: return 'Fiziksel aktivite için yüksek enerji. Spor ve egzersiz yapın.';
-      case MoonSign.cancer: return 'Duygusal sağlık ön planda. Kendinize şefkat gösterin.';
-      default: return 'Genel sağlık için uygun. Dengeli beslenme ve dinlenme önemli.';
+      case MoonSign.virgo:
+        return 'Detoks ve temizlik için ideal. Sağlıklı rutinler oluşturun.';
+      case MoonSign.pisces:
+        return 'Ruhsal denge önemli. Meditasyon ve rahatlama önerilir.';
+      case MoonSign.aries:
+        return 'Fiziksel aktivite için yüksek enerji. Spor ve egzersiz yapın.';
+      case MoonSign.cancer:
+        return 'Duygusal sağlık ön planda. Kendinize şefkat gösterin.';
+      default:
+        return 'Genel sağlık için uygun. Dengeli beslenme ve dinlenme önemli.';
     }
   }
 
   static String _getTravelDescription(MoonSign moon, List<String> retros) {
-    if (retros.contains('mercury')) return 'Seyahat aksaklıklarına hazırlıklı olun. Plan B hazır tutun.';
+    if (retros.contains('mercury'))
+      return 'Seyahat aksaklıklarına hazırlıklı olun. Plan B hazır tutun.';
 
     switch (moon) {
-      case MoonSign.sagittarius: return 'Macera ruhu yüksek! Yeni yerler keşfetmek için mükemmel.';
-      case MoonSign.gemini: return 'Kısa seyahatler ve yerel keşifler için ideal bir dönem.';
-      default: return 'Seyahat planlaması için uygun. Detayları önceden belirleyin.';
+      case MoonSign.sagittarius:
+        return 'Macera ruhu yüksek! Yeni yerler keşfetmek için mükemmel.';
+      case MoonSign.gemini:
+        return 'Kısa seyahatler ve yerel keşifler için ideal bir dönem.';
+      default:
+        return 'Seyahat planlaması için uygun. Detayları önceden belirleyin.';
     }
   }
 
   static String _getCreativeDescription(MoonSign moon) {
     switch (moon) {
-      case MoonSign.leo: return 'Yaratıcı ifade dorukta! Sanatsal projeler ve performans için ideal.';
-      case MoonSign.pisces: return 'Hayal gücü ve ilham yüksek. Sezgisel yaratıcılık destekleniyor.';
-      case MoonSign.aquarius: return 'Yenilikçi fikirler akıyor. Alternatif yaklaşımlar deneyin.';
-      default: return 'Yaratıcı enerji stabil. Mevcut projelere devam etmek için uygun.';
+      case MoonSign.leo:
+        return 'Yaratıcı ifade dorukta! Sanatsal projeler ve performans için ideal.';
+      case MoonSign.pisces:
+        return 'Hayal gücü ve ilham yüksek. Sezgisel yaratıcılık destekleniyor.';
+      case MoonSign.aquarius:
+        return 'Yenilikçi fikirler akıyor. Alternatif yaklaşımlar deneyin.';
+      default:
+        return 'Yaratıcı enerji stabil. Mevcut projelere devam etmek için uygun.';
     }
   }
 
@@ -1732,13 +1938,55 @@ class TimingService {
 
     // Day rulers in order: Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn
     final dayRulers = [
-      PlanetaryHour(planet: 'Sun', planetTr: 'Güneş', symbol: '☀️', color: Colors.amber, meaning: 'Liderlik, başarı, canlılık'),
-      PlanetaryHour(planet: 'Moon', planetTr: 'Ay', symbol: '🌙', color: Colors.blueGrey, meaning: 'Duygular, sezgi, ev işleri'),
-      PlanetaryHour(planet: 'Mars', planetTr: 'Mars', symbol: '♂️', color: Colors.red, meaning: 'Enerji, cesaret, rekabet'),
-      PlanetaryHour(planet: 'Mercury', planetTr: 'Merkür', symbol: '☿️', color: Colors.cyan, meaning: 'İletişim, öğrenme, ticaret'),
-      PlanetaryHour(planet: 'Jupiter', planetTr: 'Jüpiter', symbol: '♃', color: Colors.purple, meaning: 'Şans, genişleme, bilgelik'),
-      PlanetaryHour(planet: 'Venus', planetTr: 'Venüs', symbol: '♀️', color: Colors.pink, meaning: 'Aşk, güzellik, sanat'),
-      PlanetaryHour(planet: 'Saturn', planetTr: 'Satürn', symbol: '♄', color: Colors.brown, meaning: 'Disiplin, sorumluluk, sınırlar'),
+      PlanetaryHour(
+        planet: 'Sun',
+        planetTr: 'Güneş',
+        symbol: '☀️',
+        color: Colors.amber,
+        meaning: 'Liderlik, başarı, canlılık',
+      ),
+      PlanetaryHour(
+        planet: 'Moon',
+        planetTr: 'Ay',
+        symbol: '🌙',
+        color: Colors.blueGrey,
+        meaning: 'Duygular, sezgi, ev işleri',
+      ),
+      PlanetaryHour(
+        planet: 'Mars',
+        planetTr: 'Mars',
+        symbol: '♂️',
+        color: Colors.red,
+        meaning: 'Enerji, cesaret, rekabet',
+      ),
+      PlanetaryHour(
+        planet: 'Mercury',
+        planetTr: 'Merkür',
+        symbol: '☿️',
+        color: Colors.cyan,
+        meaning: 'İletişim, öğrenme, ticaret',
+      ),
+      PlanetaryHour(
+        planet: 'Jupiter',
+        planetTr: 'Jüpiter',
+        symbol: '♃',
+        color: Colors.purple,
+        meaning: 'Şans, genişleme, bilgelik',
+      ),
+      PlanetaryHour(
+        planet: 'Venus',
+        planetTr: 'Venüs',
+        symbol: '♀️',
+        color: Colors.pink,
+        meaning: 'Aşk, güzellik, sanat',
+      ),
+      PlanetaryHour(
+        planet: 'Saturn',
+        planetTr: 'Satürn',
+        symbol: '♄',
+        color: Colors.brown,
+        meaning: 'Disiplin, sorumluluk, sınırlar',
+      ),
     ];
 
     // Rotate based on day of week
@@ -1784,8 +2032,22 @@ class TimingService {
       ZodiacSign.pisces: (Colors.teal, 'Deniz Mavisi'),
     };
 
-    final directions = ['Kuzey', 'Güney', 'Doğu', 'Batı', 'Kuzeydoğu', 'Güneybatı'];
-    final times = ['06:00-09:00', '09:00-12:00', '12:00-15:00', '15:00-18:00', '18:00-21:00', '21:00-24:00'];
+    final directions = [
+      'Kuzey',
+      'Güney',
+      'Doğu',
+      'Batı',
+      'Kuzeydoğu',
+      'Güneybatı',
+    ];
+    final times = [
+      '06:00-09:00',
+      '09:00-12:00',
+      '12:00-15:00',
+      '15:00-18:00',
+      '18:00-21:00',
+      '21:00-24:00',
+    ];
 
     final signFlowers = {
       ZodiacSign.aries: 'Gelincik',
@@ -1846,7 +2108,8 @@ class TimingService {
     final avgPositive = (physical + emotional + intellectual) / 3;
 
     if (avgPositive > 0.5) {
-      summary = 'Bugün tüm döngüleriniz yüksekte! Enerjinizi akıllıca kullanın.';
+      summary =
+          'Bugün tüm döngüleriniz yüksekte! Enerjinizi akıllıca kullanın.';
     } else if (avgPositive > 0) {
       summary = 'Dengeli bir gün. Fiziksel ve zihinsel aktiviteler için uygun.';
     } else if (avgPositive > -0.5) {
@@ -1912,20 +2175,31 @@ class TimingService {
       String interpretation;
       if (aspectType.$2) {
         // Harmonious
-        interpretation = _getHarmoniousInterpretation(pair.$1, pair.$2, aspectType.$1);
+        interpretation = _getHarmoniousInterpretation(
+          pair.$1,
+          pair.$2,
+          aspectType.$1,
+        );
       } else {
         // Challenging
-        interpretation = _getChallengingInterpretation(pair.$1, pair.$2, aspectType.$1);
+        interpretation = _getChallengingInterpretation(
+          pair.$1,
+          pair.$2,
+          aspectType.$1,
+        );
       }
 
-      aspects.add(DailyAspect(
-        time: '${hour.toString().padLeft(2, '0')}:${(random.nextInt(4) * 15).toString().padLeft(2, '0')}',
-        planets: '${pair.$1} - ${pair.$2}',
-        aspectName: aspectType.$1,
-        isHarmonious: aspectType.$2,
-        interpretation: interpretation,
-        color: aspectType.$3,
-      ));
+      aspects.add(
+        DailyAspect(
+          time:
+              '${hour.toString().padLeft(2, '0')}:${(random.nextInt(4) * 15).toString().padLeft(2, '0')}',
+          planets: '${pair.$1} - ${pair.$2}',
+          aspectName: aspectType.$1,
+          isHarmonious: aspectType.$2,
+          interpretation: interpretation,
+          color: aspectType.$3,
+        ),
+      );
     }
 
     // Sort by time
@@ -1934,7 +2208,11 @@ class TimingService {
     return aspects;
   }
 
-  static String _getHarmoniousInterpretation(String p1, String p2, String aspect) {
+  static String _getHarmoniousInterpretation(
+    String p1,
+    String p2,
+    String aspect,
+  ) {
     if (p1 == 'Güneş' || p2 == 'Güneş') {
       return 'Canlılık ve özgüven artıyor. Liderlik yeteneklerinizi kullanmak için ideal zaman.';
     }
@@ -1950,7 +2228,11 @@ class TimingService {
     return 'Uyumlu enerji akışı. İş birliği ve uyum için olumlu bir zaman.';
   }
 
-  static String _getChallengingInterpretation(String p1, String p2, String aspect) {
+  static String _getChallengingInterpretation(
+    String p1,
+    String p2,
+    String aspect,
+  ) {
     if (p1 == 'Mars' || p2 == 'Mars') {
       return 'Gerginlik ve çatışma potansiyeli var. Sabırlı olun ve tepkileri kontrol edin.';
     }

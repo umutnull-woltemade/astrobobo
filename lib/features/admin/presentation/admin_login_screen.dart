@@ -118,9 +118,9 @@ class _AdminLoginScreenState extends ConsumerState<AdminLoginScreen> {
         Flexible(
           child: Text(
             'Admin Access',
-            style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                  color: AppColors.starGold,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.headlineMedium?.copyWith(color: AppColors.starGold),
             overflow: TextOverflow.ellipsis,
           ),
         ),
@@ -181,11 +181,11 @@ class _AdminLoginScreenState extends ConsumerState<AdminLoginScreen> {
           Text(
             isLocked ? 'Account Locked' : 'Enter Admin PIN',
             style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  color: isDark
-                      ? AppColors.textPrimary
-                      : AppColors.lightTextPrimary,
-                  fontWeight: FontWeight.bold,
-                ),
+              color: isDark
+                  ? AppColors.textPrimary
+                  : AppColors.lightTextPrimary,
+              fontWeight: FontWeight.bold,
+            ),
           ),
           const SizedBox(height: AppConstants.spacingSm),
 
@@ -195,10 +195,10 @@ class _AdminLoginScreenState extends ConsumerState<AdminLoginScreen> {
                 ? 'Too many failed attempts. Please wait.'
                 : 'Secure admin access required',
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: isDark
-                      ? AppColors.textSecondary
-                      : AppColors.lightTextSecondary,
-                ),
+              color: isDark
+                  ? AppColors.textSecondary
+                  : AppColors.lightTextSecondary,
+            ),
           ),
           const SizedBox(height: AppConstants.spacingXl),
 
@@ -216,15 +216,17 @@ class _AdminLoginScreenState extends ConsumerState<AdminLoginScreen> {
               enabled: !_isLoading,
               inputFormatters: [FilteringTextInputFormatter.digitsOnly],
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    letterSpacing: 8,
-                    color: isDark
-                        ? AppColors.textPrimary
-                        : AppColors.lightTextPrimary,
-                  ),
+                letterSpacing: 8,
+                color: isDark
+                    ? AppColors.textPrimary
+                    : AppColors.lightTextPrimary,
+              ),
               decoration: InputDecoration(
                 hintText: '••••',
                 hintStyle: TextStyle(
-                  color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
+                  color: isDark
+                      ? AppColors.textMuted
+                      : AppColors.lightTextMuted,
                   letterSpacing: 8,
                 ),
                 counterText: '',
@@ -238,15 +240,14 @@ class _AdminLoginScreenState extends ConsumerState<AdminLoginScreen> {
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(AppConstants.radiusMd),
-                  borderSide: BorderSide(
-                    color: AppColors.starGold,
-                    width: 2,
-                  ),
+                  borderSide: BorderSide(color: AppColors.starGold, width: 2),
                 ),
                 suffixIcon: IconButton(
                   icon: Icon(
                     _obscurePin ? Icons.visibility_off : Icons.visibility,
-                    color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
+                    color: isDark
+                        ? AppColors.textMuted
+                        : AppColors.lightTextMuted,
                   ),
                   onPressed: () => setState(() => _obscurePin = !_obscurePin),
                 ),
@@ -278,9 +279,9 @@ class _AdminLoginScreenState extends ConsumerState<AdminLoginScreen> {
                     Text(
                       '$remainingAttempts attempts remaining',
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                            color: AppColors.warning,
-                            fontWeight: FontWeight.w500,
-                          ),
+                        color: AppColors.warning,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                   ],
                 ),
@@ -303,9 +304,9 @@ class _AdminLoginScreenState extends ConsumerState<AdminLoginScreen> {
                     Expanded(
                       child: Text(
                         _error!,
-                        style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                              color: AppColors.error,
-                            ),
+                        style: Theme.of(
+                          context,
+                        ).textTheme.bodySmall?.copyWith(color: AppColors.error),
                       ),
                     ),
                   ],
@@ -335,8 +336,9 @@ class _AdminLoginScreenState extends ConsumerState<AdminLoginScreen> {
                         height: 24,
                         child: CircularProgressIndicator(
                           strokeWidth: 2,
-                          valueColor:
-                              AlwaysStoppedAnimation(AppColors.deepSpace),
+                          valueColor: AlwaysStoppedAnimation(
+                            AppColors.deepSpace,
+                          ),
                         ),
                       )
                     : Row(
@@ -346,9 +348,7 @@ class _AdminLoginScreenState extends ConsumerState<AdminLoginScreen> {
                           const SizedBox(width: 8),
                           Text(
                             'Access Dashboard',
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleMedium
+                            style: Theme.of(context).textTheme.titleMedium
                                 ?.copyWith(
                                   color: AppColors.deepSpace,
                                   fontWeight: FontWeight.bold,
@@ -371,28 +371,24 @@ class _AdminLoginScreenState extends ConsumerState<AdminLoginScreen> {
 
     return Column(
       children: [
-        const Icon(
-          Icons.timer_outlined,
-          size: 48,
-          color: AppColors.error,
-        ),
+        const Icon(Icons.timer_outlined, size: 48, color: AppColors.error),
         const SizedBox(height: AppConstants.spacingMd),
         Text(
           '${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}',
           style: Theme.of(context).textTheme.displaySmall?.copyWith(
-                color: AppColors.error,
-                fontWeight: FontWeight.bold,
-                fontFamily: 'monospace',
-              ),
+            color: AppColors.error,
+            fontWeight: FontWeight.bold,
+            fontFamily: 'monospace',
+          ),
         ),
         const SizedBox(height: AppConstants.spacingMd),
         Text(
           'Please wait before trying again',
           style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                color: isDark
-                    ? AppColors.textSecondary
-                    : AppColors.lightTextSecondary,
-              ),
+            color: isDark
+                ? AppColors.textSecondary
+                : AppColors.lightTextSecondary,
+          ),
         ),
       ],
     );
@@ -412,20 +408,16 @@ class _AdminLoginScreenState extends ConsumerState<AdminLoginScreen> {
         children: [
           Row(
             children: [
-              Icon(
-                Icons.security,
-                color: AppColors.auroraStart,
-                size: 20,
-              ),
+              Icon(Icons.security, color: AppColors.auroraStart, size: 20),
               const SizedBox(width: 8),
               Text(
                 'Security Features',
                 style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      color: isDark
-                          ? AppColors.textPrimary
-                          : AppColors.lightTextPrimary,
-                      fontWeight: FontWeight.w600,
-                    ),
+                  color: isDark
+                      ? AppColors.textPrimary
+                      : AppColors.lightTextPrimary,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ],
           ),
@@ -479,10 +471,10 @@ class _AdminLoginScreenState extends ConsumerState<AdminLoginScreen> {
             child: Text(
               text,
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: isDark
-                        ? AppColors.textSecondary
-                        : AppColors.lightTextSecondary,
-                  ),
+                color: isDark
+                    ? AppColors.textSecondary
+                    : AppColors.lightTextSecondary,
+              ),
             ),
           ),
         ],

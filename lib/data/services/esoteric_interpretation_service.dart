@@ -4,7 +4,6 @@ import '../models/house.dart';
 
 /// Service for generating personalized esoteric interpretations
 class EsotericInterpretationService {
-
   /// Get personalized sun sign interpretation
   static String getSunInterpretation(ZodiacSign sign) {
     final interpretations = {
@@ -330,7 +329,10 @@ Yükselen Balık olarak öğrenme alanın: sınır koymak, rüyalar ile gerçekl
   }
 
   /// Get esoteric interpretation for a house with planets
-  static String getHouseInterpretation(House house, List<PlanetPosition> planets) {
+  static String getHouseInterpretation(
+    House house,
+    List<PlanetPosition> planets,
+  ) {
     if (planets.isEmpty) {
       return 'Bu ev şu anda boş - ama bu "aktif değil" anlamına gelmez. Evin yönetici gezegeni ve yönetici gezegenin konumu bu alanı aktive eder.';
     }
@@ -356,13 +358,22 @@ Yükselen Balık olarak öğrenme alanın: sınır koymak, rüyalar ile gerçekl
   }
 
   /// Get aspect interpretation
-  static String getAspectInterpretation(String aspectType, String planet1, String planet2) {
+  static String getAspectInterpretation(
+    String aspectType,
+    String planet1,
+    String planet2,
+  ) {
     final aspectMeanings = {
-      'conjunction': '$planet1 ve $planet2 birleşimi - bu iki enerji senin içinde kaynaşmış durumda. Birini kullandığında diğeri de aktive oluyor.',
-      'opposition': '$planet1 ve $planet2 karşıtlığı - bu iki enerji arasında sürekli bir gerilim var. Denge noktası bulmak senin öğrenme alanın.',
-      'trine': '$planet1 ve $planet2 üçgeni - bu iki enerji doğal uyum içinde. Kolayca birlikte çalışıyorlar, doğuştan gelen yeteneklerini temsil ediyorlar.',
-      'square': '$planet1 ve $planet2 karesi - bu iki enerji arasında sürtüşme var. Bu gerilim seni büyümeye zorluyor.',
-      'sextile': '$planet1 ve $planet2 altıgeni - bu iki enerji birbirini destekliyor. Fırsatları değerlendirdiğinde güzel sonuçlar alırsın.',
+      'conjunction':
+          '$planet1 ve $planet2 birleşimi - bu iki enerji senin içinde kaynaşmış durumda. Birini kullandığında diğeri de aktive oluyor.',
+      'opposition':
+          '$planet1 ve $planet2 karşıtlığı - bu iki enerji arasında sürekli bir gerilim var. Denge noktası bulmak senin öğrenme alanın.',
+      'trine':
+          '$planet1 ve $planet2 üçgeni - bu iki enerji doğal uyum içinde. Kolayca birlikte çalışıyorlar, doğuştan gelen yeteneklerini temsil ediyorlar.',
+      'square':
+          '$planet1 ve $planet2 karesi - bu iki enerji arasında sürtüşme var. Bu gerilim seni büyümeye zorluyor.',
+      'sextile':
+          '$planet1 ve $planet2 altıgeni - bu iki enerji birbirini destekliyor. Fırsatları değerlendirdiğinde güzel sonuçlar alırsın.',
     };
 
     return aspectMeanings[aspectType] ?? '';
@@ -694,144 +705,264 @@ Cinsel enerjin romantik ve fantezi dolu. Duygusal ve ruhsal bağ şart.
     final key = '${planet.name}_$houseNumber';
     final interpretations = {
       // Sun in Houses
-      'sun_1': 'Güneşin 1. evde - Kimliğin ve benlik ifaden çok güçlü. Liderlik doğanda var, parlıyorsun.',
-      'sun_2': 'Güneşin 2. evde - Öz değerin ve para kazanma potansiyelin yüksek. Maddi güvenlik kimliğinle bağlı.',
-      'sun_3': 'Güneşin 3. evde - İletişimci doğan güçlü. Yazar, konuşmacı, öğretmen potansiyelin var.',
-      'sun_4': 'Güneşin 4. evde - Aile ve yuva senin sarayın. Köklerin güçlü, ev sana enerji veriyor.',
-      'sun_5': 'Güneşin 5. evde - Yaratıcılığın ve kendin olma kapasiten parlıyor. Sahnede parlarsın.',
-      'sun_6': 'Güneşin 6. evde - Hizmet ve iş kimliğinle bağlı. Faydalı olmak seni var ediyor.',
-      'sun_7': 'Güneşin 7. evde - İlişkiler kimliğinin aynası. Partner seçimlerinde kendini buluyorsun.',
-      'sun_8': 'Güneşin 8. evde - Dönüşüm ve derinlik senin doğan. Krizlerden güçlenerek çıkarsın.',
-      'sun_9': 'Güneşin 9. evde - Anlam arayışı ve felsefe kimliğinle bağlı. Öğretmen, gezgin ruhu.',
-      'sun_10': 'Güneşin 10. evde - Kariyer ve toplumsal başarı çok önemli. Tanınmak istiyorsun.',
-      'sun_11': 'Güneşin 11. evde - Topluluk ve idealler seni tanımlıyor. İnsanlık için bir şeyler yapmalısın.',
-      'sun_12': 'Güneşin 12. evde - Ruhsal derinlik ve gizem seni tanımlıyor. Görünmez şifacı potansiyeli.',
+      'sun_1':
+          'Güneşin 1. evde - Kimliğin ve benlik ifaden çok güçlü. Liderlik doğanda var, parlıyorsun.',
+      'sun_2':
+          'Güneşin 2. evde - Öz değerin ve para kazanma potansiyelin yüksek. Maddi güvenlik kimliğinle bağlı.',
+      'sun_3':
+          'Güneşin 3. evde - İletişimci doğan güçlü. Yazar, konuşmacı, öğretmen potansiyelin var.',
+      'sun_4':
+          'Güneşin 4. evde - Aile ve yuva senin sarayın. Köklerin güçlü, ev sana enerji veriyor.',
+      'sun_5':
+          'Güneşin 5. evde - Yaratıcılığın ve kendin olma kapasiten parlıyor. Sahnede parlarsın.',
+      'sun_6':
+          'Güneşin 6. evde - Hizmet ve iş kimliğinle bağlı. Faydalı olmak seni var ediyor.',
+      'sun_7':
+          'Güneşin 7. evde - İlişkiler kimliğinin aynası. Partner seçimlerinde kendini buluyorsun.',
+      'sun_8':
+          'Güneşin 8. evde - Dönüşüm ve derinlik senin doğan. Krizlerden güçlenerek çıkarsın.',
+      'sun_9':
+          'Güneşin 9. evde - Anlam arayışı ve felsefe kimliğinle bağlı. Öğretmen, gezgin ruhu.',
+      'sun_10':
+          'Güneşin 10. evde - Kariyer ve toplumsal başarı çok önemli. Tanınmak istiyorsun.',
+      'sun_11':
+          'Güneşin 11. evde - Topluluk ve idealler seni tanımlıyor. İnsanlık için bir şeyler yapmalısın.',
+      'sun_12':
+          'Güneşin 12. evde - Ruhsal derinlik ve gizem seni tanımlıyor. Görünmez şifacı potansiyeli.',
 
       // Moon in Houses
-      'moon_1': 'Ayın 1. evde - Duygularını yüzünden okurlar. Hassas, sezgisel, değişken bir dış imajın var.',
-      'moon_2': 'Ayın 2. evde - Duygusal güvenliğin paraya bağlı. Maddi konular ruh halini etkiler.',
-      'moon_3': 'Ayın 3. evde - Duygularını konuşarak işlersin. Yazı sana iyi geliyor.',
-      'moon_4': 'Ayın 4. evde - Ay kendi evinde! Aile ve yuva duygusal merkezin. Köklerin çok güçlü.',
-      'moon_5': 'Ayın 5. evde - Yaratıcılık duygusal ifaden. Çocuklarla özel bir bağın var.',
-      'moon_6': 'Ayın 6. evde - Duygusal sağlığın fiziksel sağlığını etkiler. Rutin seni rahatlatıyor.',
-      'moon_7': 'Ayın 7. evde - Duygusal ihtiyaçlarını ilişkilerde ararsın. Partner anne/baba figürü olabilir.',
-      'moon_8': 'Ayın 8. evde - Derin, yoğun, dönüştürücü duygular. Gizli dünyaları hissedersin.',
-      'moon_9': 'Ayın 9. evde - Duygusal olarak anlam ve keşfe ihtiyaç duyarsın. Yolculuklar şifa.',
-      'moon_10': 'Ayın 10. evde - Kamusal imajın duygusal. Herkes annen/baban gibi hissedebilir.',
-      'moon_11': 'Ayın 11. evde - Arkadaşlar ailen gibi. Topluluk içinde duygusal doyum bulursun.',
-      'moon_12': 'Ayın 12. evde - Derin empati ve psişik yetenekler. Yalnızlıkta şarj olursun.',
+      'moon_1':
+          'Ayın 1. evde - Duygularını yüzünden okurlar. Hassas, sezgisel, değişken bir dış imajın var.',
+      'moon_2':
+          'Ayın 2. evde - Duygusal güvenliğin paraya bağlı. Maddi konular ruh halini etkiler.',
+      'moon_3':
+          'Ayın 3. evde - Duygularını konuşarak işlersin. Yazı sana iyi geliyor.',
+      'moon_4':
+          'Ayın 4. evde - Ay kendi evinde! Aile ve yuva duygusal merkezin. Köklerin çok güçlü.',
+      'moon_5':
+          'Ayın 5. evde - Yaratıcılık duygusal ifaden. Çocuklarla özel bir bağın var.',
+      'moon_6':
+          'Ayın 6. evde - Duygusal sağlığın fiziksel sağlığını etkiler. Rutin seni rahatlatıyor.',
+      'moon_7':
+          'Ayın 7. evde - Duygusal ihtiyaçlarını ilişkilerde ararsın. Partner anne/baba figürü olabilir.',
+      'moon_8':
+          'Ayın 8. evde - Derin, yoğun, dönüştürücü duygular. Gizli dünyaları hissedersin.',
+      'moon_9':
+          'Ayın 9. evde - Duygusal olarak anlam ve keşfe ihtiyaç duyarsın. Yolculuklar şifa.',
+      'moon_10':
+          'Ayın 10. evde - Kamusal imajın duygusal. Herkes annen/baban gibi hissedebilir.',
+      'moon_11':
+          'Ayın 11. evde - Arkadaşlar ailen gibi. Topluluk içinde duygusal doyum bulursun.',
+      'moon_12':
+          'Ayın 12. evde - Derin empati ve psişik yetenekler. Yalnızlıkta şarj olursun.',
 
       // Mercury in Houses
-      'mercury_1': 'Merkür 1. evde - Zihinsel ve konuşkan bir dış imajın var. İlk izlenim "zeki".',
-      'mercury_2': 'Merkür 2. evde - Para zihinsel yeteneklerinden gelir. Yazı, ticaret, iletişim kazanç kaynağı.',
-      'mercury_3': 'Merkür 3. evde - Kendi evinde! İletişim yeteneğin olağanüstü. Yazar, gazeteci potansiyeli.',
-      'mercury_4': 'Merkür 4. evde - Evde çok konuşulur. Aile iletişimi önemli. Evden çalışma uygun.',
-      'mercury_5': 'Merkür 5. evde - Yaratıcı yazarlık, dramatik ifade yeteneğin var. Çocuklarla iyi iletişim.',
-      'mercury_6': 'Merkür 6. evde - Analitik iş becerileri güçlü. Detaylı çalışma sana göre.',
-      'mercury_7': 'Merkür 7. evde - İlişkilerde iletişim çok önemli. Entelektüel partner ararsın.',
-      'mercury_8': 'Merkür 8. evde - Derin araştırmacı. Gizemleri çözme yeteneğin var. Psikoloji ilgin.',
-      'mercury_9': 'Merkür 9. evde - Felsefi zihin, yabancı dil yeteneği, akademik potansiyel.',
-      'mercury_10': 'Merkür 10. evde - Kariyer iletişimle bağlı. Konuşmacı, yazar, medya yolu.',
-      'mercury_11': 'Merkür 11. evde - Sosyal ağlarda güçlüsün. Gruplarla iletişim kolay.',
-      'mercury_12': 'Merkür 12. evde - Sezgisel düşünce, meditasyonda cevaplar, gizli yazarlık yeteneği.',
+      'mercury_1':
+          'Merkür 1. evde - Zihinsel ve konuşkan bir dış imajın var. İlk izlenim "zeki".',
+      'mercury_2':
+          'Merkür 2. evde - Para zihinsel yeteneklerinden gelir. Yazı, ticaret, iletişim kazanç kaynağı.',
+      'mercury_3':
+          'Merkür 3. evde - Kendi evinde! İletişim yeteneğin olağanüstü. Yazar, gazeteci potansiyeli.',
+      'mercury_4':
+          'Merkür 4. evde - Evde çok konuşulur. Aile iletişimi önemli. Evden çalışma uygun.',
+      'mercury_5':
+          'Merkür 5. evde - Yaratıcı yazarlık, dramatik ifade yeteneğin var. Çocuklarla iyi iletişim.',
+      'mercury_6':
+          'Merkür 6. evde - Analitik iş becerileri güçlü. Detaylı çalışma sana göre.',
+      'mercury_7':
+          'Merkür 7. evde - İlişkilerde iletişim çok önemli. Entelektüel partner ararsın.',
+      'mercury_8':
+          'Merkür 8. evde - Derin araştırmacı. Gizemleri çözme yeteneğin var. Psikoloji ilgin.',
+      'mercury_9':
+          'Merkür 9. evde - Felsefi zihin, yabancı dil yeteneği, akademik potansiyel.',
+      'mercury_10':
+          'Merkür 10. evde - Kariyer iletişimle bağlı. Konuşmacı, yazar, medya yolu.',
+      'mercury_11':
+          'Merkür 11. evde - Sosyal ağlarda güçlüsün. Gruplarla iletişim kolay.',
+      'mercury_12':
+          'Merkür 12. evde - Sezgisel düşünce, meditasyonda cevaplar, gizli yazarlık yeteneği.',
 
       // Venus in Houses
-      'venus_1': 'Venüs 1. evde - Çekici ve sevimli bir görünümün var. İnsanlar sana doğal olarak çekiliyor.',
-      'venus_2': 'Venüs 2. evde - Kendi evinde! Para ve güzel şeylerle doğal bir ilişkin var. Çekim yasası güçlü.',
-      'venus_3': 'Venüs 3. evde - Hoş konuşursun, diplomatiğsin. Kardeşlerle güzel ilişkiler.',
-      'venus_4': 'Venüs 4. evde - Güzel bir ev çok önemli. Aile içinde barış ve uyum yaratırsın.',
-      'venus_5': 'Venüs 5. evde - Romantik ve yaratıcı. Aşk hayatın renkli, sanat yeteneğin var.',
-      'venus_6': 'Venüs 6. evde - İş yerinde sevilen biri. Güzellik/sağlık sektörlerine yatkınlık.',
-      'venus_7': 'Venüs 7. evde - Kendi evinde! İlişkilerde şanslısın. Çekici partnerler çekersin.',
-      'venus_8': 'Venüs 8. evde - Yoğun, dönüştürücü aşklar. Ortak finans konularında şans.',
-      'venus_9': 'Venüs 9. evde - Yabancı kültürler ve uzak yerlerle aşk. Yurtdışı romantizm.',
-      'venus_10': 'Venüs 10. evde - Kariyerde güzellik ve uyum. Sanatta veya diplomatik alanda başarı.',
-      'venus_11': 'Venüs 11. evde - Arkadaşlıktan aşka geçişler. Sosyal çevrede popülersin.',
-      'venus_12': 'Venüs 12. evde - Gizli aşklar, fedakarlık, ruhsal aşk. Sanat şifa aracın.',
+      'venus_1':
+          'Venüs 1. evde - Çekici ve sevimli bir görünümün var. İnsanlar sana doğal olarak çekiliyor.',
+      'venus_2':
+          'Venüs 2. evde - Kendi evinde! Para ve güzel şeylerle doğal bir ilişkin var. Çekim yasası güçlü.',
+      'venus_3':
+          'Venüs 3. evde - Hoş konuşursun, diplomatiğsin. Kardeşlerle güzel ilişkiler.',
+      'venus_4':
+          'Venüs 4. evde - Güzel bir ev çok önemli. Aile içinde barış ve uyum yaratırsın.',
+      'venus_5':
+          'Venüs 5. evde - Romantik ve yaratıcı. Aşk hayatın renkli, sanat yeteneğin var.',
+      'venus_6':
+          'Venüs 6. evde - İş yerinde sevilen biri. Güzellik/sağlık sektörlerine yatkınlık.',
+      'venus_7':
+          'Venüs 7. evde - Kendi evinde! İlişkilerde şanslısın. Çekici partnerler çekersin.',
+      'venus_8':
+          'Venüs 8. evde - Yoğun, dönüştürücü aşklar. Ortak finans konularında şans.',
+      'venus_9':
+          'Venüs 9. evde - Yabancı kültürler ve uzak yerlerle aşk. Yurtdışı romantizm.',
+      'venus_10':
+          'Venüs 10. evde - Kariyerde güzellik ve uyum. Sanatta veya diplomatik alanda başarı.',
+      'venus_11':
+          'Venüs 11. evde - Arkadaşlıktan aşka geçişler. Sosyal çevrede popülersin.',
+      'venus_12':
+          'Venüs 12. evde - Gizli aşklar, fedakarlık, ruhsal aşk. Sanat şifa aracın.',
 
       // Mars in Houses
-      'mars_1': 'Mars 1. evde - Güçlü fiziksel enerji, cesur görünüm, atletik yapı. Savaşçı ruhu.',
-      'mars_2': 'Mars 2. evde - Para için savaşırsın. Kazanma azmin yüksek, harcama da öyle.',
-      'mars_3': 'Mars 3. evde - Keskin dil, tartışmacı. Yazıda ve konuşmada güç.',
-      'mars_4': 'Mars 4. evde - Evde çatışmalar olabilir. Aile için savaşırsın, ev işlerine enerji.',
-      'mars_5': 'Mars 5. evde - Tutkulu romantizm, rekabetçi sporlar, cesur yaratıcılık.',
-      'mars_6': 'Mars 6. evde - İşkolik eğilim. Çalışmada çok verimli. Fiziksel aktivite şart.',
-      'mars_7': 'Mars 7. evde - İlişkilerde çatışma ve tutku bir arada. Güçlü partnerler çekersin.',
-      'mars_8': 'Mars 8. evde - Yoğun cinsel enerji. Krizlerde güçlenirsin. Dönüşüm cesareti.',
-      'mars_9': 'Mars 9. evde - İnançların için savaşırsın. Maceracı gezgin, felsefi tartışmacı.',
-      'mars_10': 'Mars 10. evde - Kariyer hırsın yüksek. Liderlik pozisyonlarına yatkınlık.',
-      'mars_11': 'Mars 11. evde - Gruplar için savaşırsın. Aktivist potansiyeli, sosyal hareketlilik.',
-      'mars_12': 'Mars 12. evde - Gizli öfke, bastırılmış enerji. Spiritüel savaşçı, şifacı güç.',
+      'mars_1':
+          'Mars 1. evde - Güçlü fiziksel enerji, cesur görünüm, atletik yapı. Savaşçı ruhu.',
+      'mars_2':
+          'Mars 2. evde - Para için savaşırsın. Kazanma azmin yüksek, harcama da öyle.',
+      'mars_3':
+          'Mars 3. evde - Keskin dil, tartışmacı. Yazıda ve konuşmada güç.',
+      'mars_4':
+          'Mars 4. evde - Evde çatışmalar olabilir. Aile için savaşırsın, ev işlerine enerji.',
+      'mars_5':
+          'Mars 5. evde - Tutkulu romantizm, rekabetçi sporlar, cesur yaratıcılık.',
+      'mars_6':
+          'Mars 6. evde - İşkolik eğilim. Çalışmada çok verimli. Fiziksel aktivite şart.',
+      'mars_7':
+          'Mars 7. evde - İlişkilerde çatışma ve tutku bir arada. Güçlü partnerler çekersin.',
+      'mars_8':
+          'Mars 8. evde - Yoğun cinsel enerji. Krizlerde güçlenirsin. Dönüşüm cesareti.',
+      'mars_9':
+          'Mars 9. evde - İnançların için savaşırsın. Maceracı gezgin, felsefi tartışmacı.',
+      'mars_10':
+          'Mars 10. evde - Kariyer hırsın yüksek. Liderlik pozisyonlarına yatkınlık.',
+      'mars_11':
+          'Mars 11. evde - Gruplar için savaşırsın. Aktivist potansiyeli, sosyal hareketlilik.',
+      'mars_12':
+          'Mars 12. evde - Gizli öfke, bastırılmış enerji. Spiritüel savaşçı, şifacı güç.',
 
       // Jupiter in Houses
-      'jupiter_1': 'Jüpiter 1. evde - Şanslı ve iyimser bir görünümün var. İnsanlar sana doğal olarak güveniyor, fırsatlar kapına geliyor.',
-      'jupiter_2': 'Jüpiter 2. evde - Maddi bolluk potansiyelin yüksek. Para konusunda şanslısın, değer yarattığında kazanırsın.',
-      'jupiter_3': 'Jüpiter 3. evde - İletişim ve öğrenme alanında genişleme. Yazar, öğretmen, çok dil bilen potansiyeli.',
-      'jupiter_4': 'Jüpiter 4. evde - Aile ve ev konusunda şans. Geniş bir ev, bereketli bir aile yaşamı. Gayrimenkul şansı.',
-      'jupiter_5': 'Jüpiter 5. evde - Yaratıcılık ve romantizmde şans. Çocuklarla güzel ilişki, sanat ve eğlencede başarı.',
-      'jupiter_6': 'Jüpiter 6. evde - İş ve sağlık konusunda koruma. İş bulma şansın yüksek, şifa yeteneklerin olabilir.',
-      'jupiter_7': 'Jüpiter 7. evde - İlişkilerde ve ortaklıklarda şans. Zenginleştiren partnerler çekersin.',
-      'jupiter_8': 'Jüpiter 8. evde - Miras, ortak finans ve dönüşümde şans. Krizlerden güçlenerek çıkarsın.',
-      'jupiter_9': 'Jüpiter 9. evde - Kendi evinde! Yurtdışı, eğitim ve felsefede büyük şans. Öğretmen, gezgin ruhu.',
-      'jupiter_10': 'Jüpiter 10. evde - Kariyer ve toplumsal başarıda şans. Tanınma, yükselme potansiyeli yüksek.',
-      'jupiter_11': 'Jüpiter 11. evde - Arkadaşlık ve gruplardan şans. Hayırsever, topluluk lideri potansiyeli.',
-      'jupiter_12': 'Jüpiter 12. evde - Gizli koruma, spiritüel şans. Meditasyon ve içsel çalışmalardan büyüme.',
+      'jupiter_1':
+          'Jüpiter 1. evde - Şanslı ve iyimser bir görünümün var. İnsanlar sana doğal olarak güveniyor, fırsatlar kapına geliyor.',
+      'jupiter_2':
+          'Jüpiter 2. evde - Maddi bolluk potansiyelin yüksek. Para konusunda şanslısın, değer yarattığında kazanırsın.',
+      'jupiter_3':
+          'Jüpiter 3. evde - İletişim ve öğrenme alanında genişleme. Yazar, öğretmen, çok dil bilen potansiyeli.',
+      'jupiter_4':
+          'Jüpiter 4. evde - Aile ve ev konusunda şans. Geniş bir ev, bereketli bir aile yaşamı. Gayrimenkul şansı.',
+      'jupiter_5':
+          'Jüpiter 5. evde - Yaratıcılık ve romantizmde şans. Çocuklarla güzel ilişki, sanat ve eğlencede başarı.',
+      'jupiter_6':
+          'Jüpiter 6. evde - İş ve sağlık konusunda koruma. İş bulma şansın yüksek, şifa yeteneklerin olabilir.',
+      'jupiter_7':
+          'Jüpiter 7. evde - İlişkilerde ve ortaklıklarda şans. Zenginleştiren partnerler çekersin.',
+      'jupiter_8':
+          'Jüpiter 8. evde - Miras, ortak finans ve dönüşümde şans. Krizlerden güçlenerek çıkarsın.',
+      'jupiter_9':
+          'Jüpiter 9. evde - Kendi evinde! Yurtdışı, eğitim ve felsefede büyük şans. Öğretmen, gezgin ruhu.',
+      'jupiter_10':
+          'Jüpiter 10. evde - Kariyer ve toplumsal başarıda şans. Tanınma, yükselme potansiyeli yüksek.',
+      'jupiter_11':
+          'Jüpiter 11. evde - Arkadaşlık ve gruplardan şans. Hayırsever, topluluk lideri potansiyeli.',
+      'jupiter_12':
+          'Jüpiter 12. evde - Gizli koruma, spiritüel şans. Meditasyon ve içsel çalışmalardan büyüme.',
 
       // Saturn in Houses
-      'saturn_1': 'Satürn 1. evde - Olgun ve ciddi bir görünüm. Erken yaşta sorumluluk, ama zamanla güvenilir otorite olursun.',
-      'saturn_2': 'Satürn 2. evde - Para konusunda dersler. Erken zorluklar ama disiplinle kalıcı zenginlik yaratırsın.',
-      'saturn_3': 'Satürn 3. evde - İletişimde zorluklar veya gecikmeler. Ama zamanla bilge öğretmen, usta yazar olursun.',
-      'saturn_4': 'Satürn 4. evde - Aile konusunda karmik dersler. Kısıtlayıcı ev ortamı ama kendi sağlam temellerini kurarsın.',
-      'saturn_5': 'Satürn 5. evde - Yaratıcılık ve romantizmde engeller. Ama disiplinle ustalaşırsın, geç gelen aşk kalıcıdır.',
-      'saturn_6': 'Satürn 6. evde - İş ve sağlıkta sorumluluk. Kronik sağlık konuları olabilir ama disiplinle yönetirsin.',
-      'saturn_7': 'Satürn 7. evde - İlişkilerde gecikmeler veya karmik partnerler. Ama olgun, kalıcı ilişkiler kurarsın.',
-      'saturn_8': 'Satürn 8. evde - Dönüşüm ve ortak finans konusunda dersler. Derin korkularla yüzleşme, güç ustası olma.',
-      'saturn_9': 'Satürn 9. evde - İnanç ve eğitimde kısıtlamalar. Ama pratik bilgelik geliştirirsin, gerçek öğretmen olursun.',
-      'saturn_10': 'Satürn 10. evde - Kendi evinde! Kariyer yükselişi yavaş ama kalıcı. Otorite figürü, lider potansiyeli.',
-      'saturn_11': 'Satürn 11. evde - Arkadaşlıkta zorluklar, az ama kaliteli dostlar. Topluluk sorumluluğu alırsın.',
-      'saturn_12': 'Satürn 12. evde - Gizli korkular, bilinçaltı sınırlamalar. Ama spiritüel disiplinle derin bilgelik.',
+      'saturn_1':
+          'Satürn 1. evde - Olgun ve ciddi bir görünüm. Erken yaşta sorumluluk, ama zamanla güvenilir otorite olursun.',
+      'saturn_2':
+          'Satürn 2. evde - Para konusunda dersler. Erken zorluklar ama disiplinle kalıcı zenginlik yaratırsın.',
+      'saturn_3':
+          'Satürn 3. evde - İletişimde zorluklar veya gecikmeler. Ama zamanla bilge öğretmen, usta yazar olursun.',
+      'saturn_4':
+          'Satürn 4. evde - Aile konusunda karmik dersler. Kısıtlayıcı ev ortamı ama kendi sağlam temellerini kurarsın.',
+      'saturn_5':
+          'Satürn 5. evde - Yaratıcılık ve romantizmde engeller. Ama disiplinle ustalaşırsın, geç gelen aşk kalıcıdır.',
+      'saturn_6':
+          'Satürn 6. evde - İş ve sağlıkta sorumluluk. Kronik sağlık konuları olabilir ama disiplinle yönetirsin.',
+      'saturn_7':
+          'Satürn 7. evde - İlişkilerde gecikmeler veya karmik partnerler. Ama olgun, kalıcı ilişkiler kurarsın.',
+      'saturn_8':
+          'Satürn 8. evde - Dönüşüm ve ortak finans konusunda dersler. Derin korkularla yüzleşme, güç ustası olma.',
+      'saturn_9':
+          'Satürn 9. evde - İnanç ve eğitimde kısıtlamalar. Ama pratik bilgelik geliştirirsin, gerçek öğretmen olursun.',
+      'saturn_10':
+          'Satürn 10. evde - Kendi evinde! Kariyer yükselişi yavaş ama kalıcı. Otorite figürü, lider potansiyeli.',
+      'saturn_11':
+          'Satürn 11. evde - Arkadaşlıkta zorluklar, az ama kaliteli dostlar. Topluluk sorumluluğu alırsın.',
+      'saturn_12':
+          'Satürn 12. evde - Gizli korkular, bilinçaltı sınırlamalar. Ama spiritüel disiplinle derin bilgelik.',
 
       // Uranus in Houses
-      'uranus_1': 'Uranüs 1. evde - Benzersiz, sıra dışı bir görünüm. Orijinal, isyankar, trende karşı. Elektriksel bir varlık.',
-      'uranus_2': 'Uranüs 2. evde - Finanslarda beklenmedik iniş çıkışlar. Sıra dışı para kazanma yolları, teknoloji/yenilik sektörleri.',
-      'uranus_3': 'Uranüs 3. evde - Orijinal düşünce tarzı, sıra dışı iletişim. Parlak fikirler, mucit zihni.',
-      'uranus_4': 'Uranüs 4. evde - Aile yapısında sıra dışılık, taşınmalar, köksüzlük hissi. Alternatif ev kavramı.',
-      'uranus_5': 'Uranüs 5. evde - Yaratıcılıkta orijinallik, sıra dışı romantizm. Beklenmedik aşklar, farklı sanat.',
-      'uranus_6': 'Uranüs 6. evde - İşte özgürlük ihtiyacı, rutin düşmanı. Serbest çalışma, teknoloji sektörü uygun.',
-      'uranus_7': 'Uranüs 7. evde - İlişkilerde özgürlük ihtiyacı, sıra dışı partnerler. Geleneksel olmayan birliktelikler.',
-      'uranus_8': 'Uranüs 8. evde - Ani dönüşümler, beklenmedik krizler. Sıra dışı seksüalite, okült ilgisi.',
-      'uranus_9': 'Uranüs 9. evde - Radikal felsefe, alternatif eğitim, ani yurtdışı deneyimleri. Bağımsız düşünür.',
-      'uranus_10': 'Uranüs 10. evde - Kariyer değişiklikleri, sıra dışı meslekler. Teknoloji/yenilik alanında öncü.',
-      'uranus_11': 'Uranüs 11. evde - Kendi evinde! Sıra dışı arkadaşlıklar, radikal gruplar. Sosyal değişim öncüsü.',
-      'uranus_12': 'Uranüs 12. evde - Ani spiritüel uyanışlar, bilinçaltında devrimler. Mistik deneyimler.',
+      'uranus_1':
+          'Uranüs 1. evde - Benzersiz, sıra dışı bir görünüm. Orijinal, isyankar, trende karşı. Elektriksel bir varlık.',
+      'uranus_2':
+          'Uranüs 2. evde - Finanslarda beklenmedik iniş çıkışlar. Sıra dışı para kazanma yolları, teknoloji/yenilik sektörleri.',
+      'uranus_3':
+          'Uranüs 3. evde - Orijinal düşünce tarzı, sıra dışı iletişim. Parlak fikirler, mucit zihni.',
+      'uranus_4':
+          'Uranüs 4. evde - Aile yapısında sıra dışılık, taşınmalar, köksüzlük hissi. Alternatif ev kavramı.',
+      'uranus_5':
+          'Uranüs 5. evde - Yaratıcılıkta orijinallik, sıra dışı romantizm. Beklenmedik aşklar, farklı sanat.',
+      'uranus_6':
+          'Uranüs 6. evde - İşte özgürlük ihtiyacı, rutin düşmanı. Serbest çalışma, teknoloji sektörü uygun.',
+      'uranus_7':
+          'Uranüs 7. evde - İlişkilerde özgürlük ihtiyacı, sıra dışı partnerler. Geleneksel olmayan birliktelikler.',
+      'uranus_8':
+          'Uranüs 8. evde - Ani dönüşümler, beklenmedik krizler. Sıra dışı seksüalite, okült ilgisi.',
+      'uranus_9':
+          'Uranüs 9. evde - Radikal felsefe, alternatif eğitim, ani yurtdışı deneyimleri. Bağımsız düşünür.',
+      'uranus_10':
+          'Uranüs 10. evde - Kariyer değişiklikleri, sıra dışı meslekler. Teknoloji/yenilik alanında öncü.',
+      'uranus_11':
+          'Uranüs 11. evde - Kendi evinde! Sıra dışı arkadaşlıklar, radikal gruplar. Sosyal değişim öncüsü.',
+      'uranus_12':
+          'Uranüs 12. evde - Ani spiritüel uyanışlar, bilinçaltında devrimler. Mistik deneyimler.',
 
       // Neptune in Houses
-      'neptune_1': 'Neptün 1. evde - Mistik, hayalperest görünüm. Karizmatik ama anlaşılması zor. Sanatçı, şifacı aurası.',
-      'neptune_2': 'Neptün 2. evde - Para konusunda bulanıklık. Ya spiritüel zenginlik ya finansal karmaşa. Sanat/müzik geliri.',
-      'neptune_3': 'Neptün 3. evde - Sezgisel düşünce, şiirsel iletişim. Hayal gücü güçlü ama bazen net ifade zor.',
-      'neptune_4': 'Neptün 4. evde - Aile geçmişinde gizem veya kayıp. Ev spiritüel sığınak. Atalarla mistik bağ.',
-      'neptune_5': 'Neptün 5. evde - Romantizmde idealizm, hayal kırıklığı riski. Sanatsal yaratıcılık çok güçlü.',
-      'neptune_6': 'Neptün 6. evde - İş ve sağlıkta belirsizlik. Şifa meslekleri, hayır işleri uygun. Psikosomatik eğilim.',
-      'neptune_7': 'Neptün 7. evde - İlişkilerde idealizm, illüzyon riski. Ruh eşi arayışı, spiritüel partnerlik.',
-      'neptune_8': 'Neptün 8. evde - Mistik deneyimler, bilinçaltına dalış. Psişik yetenekler, ölüm ötesiyle ilgi.',
-      'neptune_9': 'Neptün 9. evde - Spiritüel arayış, mistik felsefe. Yurtdışı hayalleri, kozmik bilinç.',
-      'neptune_10': 'Neptün 10. evde - Kariyer vizyonu bulanık veya sanatsal. Şöhret illüzyonları, ideal meslek arayışı.',
-      'neptune_11': 'Neptün 11. evde - İdealist arkadaşlıklar, hayırsever gruplar. Kolektif rüyalar, ütopyacı vizyonlar.',
-      'neptune_12': 'Neptün 12. evde - Kendi evinde! Güçlü psişik yetenekler, mistik deneyimler. Spiritüel derinlik.',
+      'neptune_1':
+          'Neptün 1. evde - Mistik, hayalperest görünüm. Karizmatik ama anlaşılması zor. Sanatçı, şifacı aurası.',
+      'neptune_2':
+          'Neptün 2. evde - Para konusunda bulanıklık. Ya spiritüel zenginlik ya finansal karmaşa. Sanat/müzik geliri.',
+      'neptune_3':
+          'Neptün 3. evde - Sezgisel düşünce, şiirsel iletişim. Hayal gücü güçlü ama bazen net ifade zor.',
+      'neptune_4':
+          'Neptün 4. evde - Aile geçmişinde gizem veya kayıp. Ev spiritüel sığınak. Atalarla mistik bağ.',
+      'neptune_5':
+          'Neptün 5. evde - Romantizmde idealizm, hayal kırıklığı riski. Sanatsal yaratıcılık çok güçlü.',
+      'neptune_6':
+          'Neptün 6. evde - İş ve sağlıkta belirsizlik. Şifa meslekleri, hayır işleri uygun. Psikosomatik eğilim.',
+      'neptune_7':
+          'Neptün 7. evde - İlişkilerde idealizm, illüzyon riski. Ruh eşi arayışı, spiritüel partnerlik.',
+      'neptune_8':
+          'Neptün 8. evde - Mistik deneyimler, bilinçaltına dalış. Psişik yetenekler, ölüm ötesiyle ilgi.',
+      'neptune_9':
+          'Neptün 9. evde - Spiritüel arayış, mistik felsefe. Yurtdışı hayalleri, kozmik bilinç.',
+      'neptune_10':
+          'Neptün 10. evde - Kariyer vizyonu bulanık veya sanatsal. Şöhret illüzyonları, ideal meslek arayışı.',
+      'neptune_11':
+          'Neptün 11. evde - İdealist arkadaşlıklar, hayırsever gruplar. Kolektif rüyalar, ütopyacı vizyonlar.',
+      'neptune_12':
+          'Neptün 12. evde - Kendi evinde! Güçlü psişik yetenekler, mistik deneyimler. Spiritüel derinlik.',
 
       // Pluto in Houses
-      'pluto_1': 'Plüton 1. evde - Yoğun, manyetik, dönüştürücü varlık. Derin gözler, güçlü etki. Kendi kendini yeniden yaratma.',
-      'pluto_2': 'Plüton 2. evde - Para ve değerlerde dönüşüm. Finansal ölüm ve yeniden doğuş. Güç ve para ilişkisi.',
-      'pluto_3': 'Plüton 3. evde - Derin, araştırmacı zihin. Güçlü sözler, ikna kabiliyeti. Gizli bilgilere ilgi.',
-      'pluto_4': 'Plüton 4. evde - Aile karmasi, kök dönüşümü. Derin aile sırları, ev ortamında güç dinamikleri.',
-      'pluto_5': 'Plüton 5. evde - Tutkulu romantizm, yoğun yaratıcılık. Aşkta obsesyon riski, dönüştürücü sanat.',
-      'pluto_6': 'Plüton 6. evde - İş ve sağlıkta dönüşüm. Şifa güçleri, krizlerde regenerasyon. İş yerinde güç oyunları.',
-      'pluto_7': 'Plüton 7. evde - İlişkilerde derin dönüşüm. Yoğun partnerlikler, güç mücadeleleri. Terapötik ilişkiler.',
-      'pluto_8': 'Plüton 8. evde - Kendi evinde! Derin dönüşüm gücü, ölüm/yeniden doğuş uzmanlığı. Psikolog, şifacı.',
-      'pluto_9': 'Plüton 9. evde - İnanç ve felsefede radikal dönüşüm. Dogmalarla yüzleşme, hakikat arayışı.',
-      'pluto_10': 'Plüton 10. evde - Kariyer ve otoritede güç. Toplumsal dönüşüm ajanı. Liderlikte yoğunluk.',
-      'pluto_11': 'Plüton 11. evde - Gruplar ve ideallerde dönüşüm. Güçlü sosyal etki, kolektif karmayı dönüştürme.',
-      'pluto_12': 'Plüton 12. evde - Bilinçaltında derin güç. Geçmiş yaşam karması, spiritüel dönüşüm. Şifacı potansiyeli.',
+      'pluto_1':
+          'Plüton 1. evde - Yoğun, manyetik, dönüştürücü varlık. Derin gözler, güçlü etki. Kendi kendini yeniden yaratma.',
+      'pluto_2':
+          'Plüton 2. evde - Para ve değerlerde dönüşüm. Finansal ölüm ve yeniden doğuş. Güç ve para ilişkisi.',
+      'pluto_3':
+          'Plüton 3. evde - Derin, araştırmacı zihin. Güçlü sözler, ikna kabiliyeti. Gizli bilgilere ilgi.',
+      'pluto_4':
+          'Plüton 4. evde - Aile karmasi, kök dönüşümü. Derin aile sırları, ev ortamında güç dinamikleri.',
+      'pluto_5':
+          'Plüton 5. evde - Tutkulu romantizm, yoğun yaratıcılık. Aşkta obsesyon riski, dönüştürücü sanat.',
+      'pluto_6':
+          'Plüton 6. evde - İş ve sağlıkta dönüşüm. Şifa güçleri, krizlerde regenerasyon. İş yerinde güç oyunları.',
+      'pluto_7':
+          'Plüton 7. evde - İlişkilerde derin dönüşüm. Yoğun partnerlikler, güç mücadeleleri. Terapötik ilişkiler.',
+      'pluto_8':
+          'Plüton 8. evde - Kendi evinde! Derin dönüşüm gücü, ölüm/yeniden doğuş uzmanlığı. Psikolog, şifacı.',
+      'pluto_9':
+          'Plüton 9. evde - İnanç ve felsefede radikal dönüşüm. Dogmalarla yüzleşme, hakikat arayışı.',
+      'pluto_10':
+          'Plüton 10. evde - Kariyer ve otoritede güç. Toplumsal dönüşüm ajanı. Liderlikte yoğunluk.',
+      'pluto_11':
+          'Plüton 11. evde - Gruplar ve ideallerde dönüşüm. Güçlü sosyal etki, kolektif karmayı dönüştürme.',
+      'pluto_12':
+          'Plüton 12. evde - Bilinçaltında derin güç. Geçmiş yaşam karması, spiritüel dönüşüm. Şifacı potansiyeli.',
     };
     return interpretations[key] ?? '';
   }
@@ -1412,21 +1543,32 @@ Gölge çalışması: Kaçış, illüzyon, kurban psikolojisi. Topraklanmış a�
   }
 
   /// Get element balance interpretation
-  static String getElementBalanceInterpretation(Map<Element, int> elementCounts) {
+  static String getElementBalanceInterpretation(
+    Map<Element, int> elementCounts,
+  ) {
     final total = elementCounts.values.fold(0, (sum, count) => sum + count);
     if (total == 0) return '';
 
-    final dominant = elementCounts.entries.reduce((a, b) => a.value > b.value ? a : b);
-    final lacking = elementCounts.entries.where((e) => e.value == 0).map((e) => e.key).toList();
+    final dominant = elementCounts.entries.reduce(
+      (a, b) => a.value > b.value ? a : b,
+    );
+    final lacking = elementCounts.entries
+        .where((e) => e.value == 0)
+        .map((e) => e.key)
+        .toList();
 
     String result = '';
 
     // Dominant element
     final dominantMeanings = {
-      Element.fire: 'Ateş elementi baskın - tutkulu, enerjik, girişimci bir doğan var. Eylem odaklısın.',
-      Element.earth: 'Toprak elementi baskın - pratik, güvenilir, somut düşünen bir doğan var. Sonuç odaklısın.',
-      Element.air: 'Hava elementi baskın - zihinsel, iletişimci, sosyal bir doğan var. Fikir odaklısın.',
-      Element.water: 'Su elementi baskın - duygusal, sezgisel, empatik bir doğan var. His odaklısın.',
+      Element.fire:
+          'Ateş elementi baskın - tutkulu, enerjik, girişimci bir doğan var. Eylem odaklısın.',
+      Element.earth:
+          'Toprak elementi baskın - pratik, güvenilir, somut düşünen bir doğan var. Sonuç odaklısın.',
+      Element.air:
+          'Hava elementi baskın - zihinsel, iletişimci, sosyal bir doğan var. Fikir odaklısın.',
+      Element.water:
+          'Su elementi baskın - duygusal, sezgisel, empatik bir doğan var. His odaklısın.',
     };
 
     result += dominantMeanings[dominant.key] ?? '';
@@ -1434,10 +1576,14 @@ Gölge çalışması: Kaçış, illüzyon, kurban psikolojisi. Topraklanmış a�
     // Lacking elements
     if (lacking.isNotEmpty) {
       final lackingMeanings = {
-        Element.fire: 'Ateş eksikliği - motivasyon ve enerji bulma konusunda bazen zorlanabilirsin.',
-        Element.earth: 'Toprak eksikliği - pratik konular ve somut sonuçlar alma konusunda ekstra çaba gerekebilir.',
-        Element.air: 'Hava eksikliği - iletişim ve zihinsel analiz konusunda bilinçli çalışman gerekebilir.',
-        Element.water: 'Su eksikliği - duygusal ifade ve empati konusunda farkındalık geliştirmen gerekebilir.',
+        Element.fire:
+            'Ateş eksikliği - motivasyon ve enerji bulma konusunda bazen zorlanabilirsin.',
+        Element.earth:
+            'Toprak eksikliği - pratik konular ve somut sonuçlar alma konusunda ekstra çaba gerekebilir.',
+        Element.air:
+            'Hava eksikliği - iletişim ve zihinsel analiz konusunda bilinçli çalışman gerekebilir.',
+        Element.water:
+            'Su eksikliği - duygusal ifade ve empati konusunda farkındalık geliştirmen gerekebilir.',
       };
 
       for (var element in lacking) {

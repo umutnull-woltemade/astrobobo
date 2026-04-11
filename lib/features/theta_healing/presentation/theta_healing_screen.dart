@@ -79,16 +79,16 @@ class _ThetaHealingScreenState extends State<ThetaHealingScreen>
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text(
-                          '🧠',
-                          style: TextStyle(fontSize: 24),
-                        ),
+                        const Text('🧠', style: TextStyle(fontSize: 24)),
                         const SizedBox(width: 8),
                         Text(
                           'Theta Healing',
-                          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                          style: Theme.of(context).textTheme.headlineSmall
+                              ?.copyWith(
                                 fontWeight: FontWeight.bold,
-                                color: isDark ? Colors.white : AppColors.textDark,
+                                color: isDark
+                                    ? Colors.white
+                                    : AppColors.textDark,
                               ),
                         ),
                       ],
@@ -175,7 +175,8 @@ class _ThetaHealingScreenState extends State<ThetaHealingScreen>
         children: [
           _buildInfoCard(
             title: 'Theta Durumu Nedir?',
-            content: 'Theta beyin dalgaları (4-7 Hz), derin meditasyon, rüya görme ve yaratıcılık anlarında aktif olur. Bu durumda bilinçaltına doğrudan erişim mümkündür ve köklü değişimler yapılabilir.',
+            content:
+                'Theta beyin dalgaları (4-7 Hz), derin meditasyon, rüya görme ve yaratıcılık anlarında aktif olur. Bu durumda bilinçaltına doğrudan erişim mümkündür ve köklü değişimler yapılabilir.',
             icon: '🌊',
             color: const Color(0xFF7C4DFF),
             isDark: isDark,
@@ -183,7 +184,8 @@ class _ThetaHealingScreenState extends State<ThetaHealingScreen>
           const SizedBox(height: AppConstants.spacingMd),
           _buildInfoCard(
             title: 'Sınırlayıcı İnançlar',
-            content: 'Çocukluk döneminde oluşan ve farkında olmadan hayatımızı etkileyen inanç kalıpları vardır. Theta Healing ile bu inançları tespit edip dönüştürebilirsiniz.',
+            content:
+                'Çocukluk döneminde oluşan ve farkında olmadan hayatımızı etkileyen inanç kalıpları vardır. Theta Healing ile bu inançları tespit edip dönüştürebilirsiniz.',
             icon: '🔓',
             color: const Color(0xFFE040FB),
             isDark: isDark,
@@ -191,7 +193,8 @@ class _ThetaHealingScreenState extends State<ThetaHealingScreen>
           const SizedBox(height: AppConstants.spacingMd),
           _buildInfoCard(
             title: 'Enerji Dönüşümü',
-            content: 'Bedensel, zihinsel ve ruhsal seviyedeki enerji blokları çözülür. Şifalanma süreci hücresel düzeyde başlar ve tüm varlığınıza yayılır.',
+            content:
+                'Bedensel, zihinsel ve ruhsal seviyedeki enerji blokları çözülür. Şifalanma süreci hücresel düzeyde başlar ve tüm varlığınıza yayılır.',
             icon: '✨',
             color: const Color(0xFF00BCD4),
             isDark: isDark,
@@ -199,7 +202,8 @@ class _ThetaHealingScreenState extends State<ThetaHealingScreen>
           const SizedBox(height: AppConstants.spacingMd),
           _buildInfoCard(
             title: '7 Düzlem Bağlantısı',
-            content: 'Theta Healing, evrenin 7 varoluş düzlemiyle çalışır: Mineraller, Bitkiler, Hayvanlar, İnsanlar, Ruhlar, Yasalar ve Yaratıcı Enerji.',
+            content:
+                'Theta Healing, evrenin 7 varoluş düzlemiyle çalışır: Mineraller, Bitkiler, Hayvanlar, İnsanlar, Ruhlar, Yasalar ve Yaratıcı Enerji.',
             icon: '🌌',
             color: const Color(0xFFFFD700),
             isDark: isDark,
@@ -218,7 +222,8 @@ class _ThetaHealingScreenState extends State<ThetaHealingScreen>
     final techniques = [
       _TechniqueTile(
         title: 'Kazı Tekniği (Digging)',
-        description: 'Sınırlayıcı inancın kök nedenini bulmak için bilinçaltına iner ve temel inancı keşfedersiniz.',
+        description:
+            'Sınırlayıcı inancın kök nedenini bulmak için bilinçaltına iner ve temel inancı keşfedersiniz.',
         steps: [
           'Güncel sorunu tespit edin',
           '"Bu inanç nereden geliyor?" sorusuyla derinleşin',
@@ -230,7 +235,8 @@ class _ThetaHealingScreenState extends State<ThetaHealingScreen>
       ),
       _TechniqueTile(
         title: 'İnanç Değiştirme',
-        description: 'Olumsuz bir inancı pozitif bir inançla değiştirme sürecidir.',
+        description:
+            'Olumsuz bir inancı pozitif bir inançla değiştirme sürecidir.',
         steps: [
           'Sınırlayıcı inancı tanımlayın',
           'Yeni, güçlendirici bir inanç oluşturun',
@@ -242,7 +248,8 @@ class _ThetaHealingScreenState extends State<ThetaHealingScreen>
       ),
       _TechniqueTile(
         title: 'Duygu Yükleme',
-        description: 'Hiç deneyimlemediğiniz pozitif duyguları hücresel düzeyde öğretme tekniği.',
+        description:
+            'Hiç deneyimlemediğiniz pozitif duyguları hücresel düzeyde öğretme tekniği.',
         steps: [
           'Eksik duyguyu belirleyin (örn: güvende hissetmek)',
           'Yaratıcıya bağlanın',
@@ -254,7 +261,8 @@ class _ThetaHealingScreenState extends State<ThetaHealingScreen>
       ),
       _TechniqueTile(
         title: 'Bedensel Tarama',
-        description: 'Bedeninizdeki enerji bloklarını ve hastalık kaynaklarını tespit etme.',
+        description:
+            'Bedeninizdeki enerji bloklarını ve hastalık kaynaklarını tespit etme.',
         steps: [
           'Theta durumuna geçin',
           'Bedeni tepeden tırnağa tarayın',
@@ -283,28 +291,32 @@ class _ThetaHealingScreenState extends State<ThetaHealingScreen>
       _MeditationTile(
         title: 'Theta Durumuna Geçiş',
         duration: '10 dk',
-        description: 'Theta beyin dalgası durumuna güvenli bir şekilde geçiş yapın.',
+        description:
+            'Theta beyin dalgası durumuna güvenli bir şekilde geçiş yapın.',
         icon: '🌊',
         color: const Color(0xFF7C4DFF),
       ),
       _MeditationTile(
         title: 'Yedinci Düzlem Bağlantısı',
         duration: '15 dk',
-        description: 'Yaratıcı enerjiye bağlanın ve koşulsuz sevgiyi deneyimleyin.',
+        description:
+            'Yaratıcı enerjiye bağlanın ve koşulsuz sevgiyi deneyimleyin.',
         icon: '🌌',
         color: const Color(0xFFFFD700),
       ),
       _MeditationTile(
         title: 'İç Çocuk Şifası',
         duration: '20 dk',
-        description: 'Çocukluk travmalarını şefkatle iyileştirin ve iç çocuğunuzla barışın.',
+        description:
+            'Çocukluk travmalarını şefkatle iyileştirin ve iç çocuğunuzla barışın.',
         icon: '👶',
         color: const Color(0xFFFF6B9D),
       ),
       _MeditationTile(
         title: 'Ata Temizliği',
         duration: '25 dk',
-        description: 'Atalardan gelen karma kalıpları ve genetik inançları temizleyin.',
+        description:
+            'Atalardan gelen karma kalıpları ve genetik inançları temizleyin.',
         icon: '🌳',
         color: const Color(0xFF4CAF50),
       ),
@@ -328,9 +340,10 @@ class _ThetaHealingScreenState extends State<ThetaHealingScreen>
       padding: const EdgeInsets.all(AppConstants.spacingLg),
       itemCount: meditations.length,
       itemBuilder: (context, index) {
-        return _buildMeditationCard(meditations[index], isDark)
-            .animate(delay: (80 * index).ms)
-            .fadeIn(duration: 400.ms);
+        return _buildMeditationCard(
+          meditations[index],
+          isDark,
+        ).animate(delay: (80 * index).ms).fadeIn(duration: 400.ms);
       },
     );
   }
@@ -354,9 +367,7 @@ class _ThetaHealingScreenState extends State<ThetaHealingScreen>
           ],
         ),
         borderRadius: BorderRadius.circular(AppConstants.radiusLg),
-        border: Border.all(
-          color: color.withValues(alpha: 0.3),
-        ),
+        border: Border.all(color: color.withValues(alpha: 0.3)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -423,10 +434,7 @@ class _ThetaHealingScreenState extends State<ThetaHealingScreen>
             borderRadius: BorderRadius.circular(12),
           ),
           child: Center(
-            child: Text(
-              technique.icon,
-              style: const TextStyle(fontSize: 22),
-            ),
+            child: Text(technique.icon, style: const TextStyle(fontSize: 22)),
           ),
         ),
         title: Text(
@@ -526,9 +534,7 @@ class _ThetaHealingScreenState extends State<ThetaHealingScreen>
           ],
         ),
         borderRadius: BorderRadius.circular(AppConstants.radiusLg),
-        border: Border.all(
-          color: meditation.color.withValues(alpha: 0.3),
-        ),
+        border: Border.all(color: meditation.color.withValues(alpha: 0.3)),
       ),
       child: Row(
         children: [

@@ -7,7 +7,8 @@ import 'package:go_router/go_router.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'dart:io';
+import '../../../data/services/io_stub.dart'
+    if (dart.library.io) '../../../data/services/io_real.dart';
 import '../../../core/theme/mystical_colors.dart';
 import '../../../data/models/zodiac_sign.dart' as zodiac;
 import '../../../data/providers/app_providers.dart';
@@ -40,9 +41,9 @@ class _ShareSummaryScreenState extends ConsumerState<ShareSummaryScreen> {
         ),
         title: Text(
           'Kozmik Paylaşım',
-          style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                color: MysticalColors.textPrimary,
-              ),
+          style: Theme.of(
+            context,
+          ).textTheme.titleLarge?.copyWith(color: MysticalColors.textPrimary),
         ),
         centerTitle: true,
       ),
@@ -52,15 +53,18 @@ class _ShareSummaryScreenState extends ConsumerState<ShareSummaryScreen> {
           children: [
             // Instagram Story Card (9:16 aspect ratio - NEW DESIGN)
             RepaintBoundary(
-              key: _cardKey,
-              child: InstagramStoryCard(
-                name: userProfile?.name ?? sign.nameTr,
-                sign: sign,
-                moonSign: userProfile?.moonSign,
-                risingSign: userProfile?.risingSign,
-                birthDate: userProfile?.birthDate,
-              ),
-            ).animate().fadeIn(duration: 500.ms).scale(begin: const Offset(0.95, 0.95)),
+                  key: _cardKey,
+                  child: InstagramStoryCard(
+                    name: userProfile?.name ?? sign.nameTr,
+                    sign: sign,
+                    moonSign: userProfile?.moonSign,
+                    risingSign: userProfile?.risingSign,
+                    birthDate: userProfile?.birthDate,
+                  ),
+                )
+                .animate()
+                .fadeIn(duration: 500.ms)
+                .scale(begin: const Offset(0.95, 0.95)),
 
             const SizedBox(height: 24),
 
@@ -76,8 +80,8 @@ class _ShareSummaryScreenState extends ConsumerState<ShareSummaryScreen> {
             Text(
               'Instagram hikayende kozmik enerjini paylaş!',
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: MysticalColors.textSecondary,
-                  ),
+                color: MysticalColors.textSecondary,
+              ),
             ).animate().fadeIn(delay: 500.ms),
 
             const SizedBox(height: 32),
@@ -95,7 +99,8 @@ class _ShareSummaryScreenState extends ConsumerState<ShareSummaryScreen> {
       await Future.delayed(const Duration(milliseconds: 100));
 
       // Find RenderRepaintBoundary
-      final boundary = _cardKey.currentContext?.findRenderObject() as RenderRepaintBoundary?;
+      final boundary =
+          _cardKey.currentContext?.findRenderObject() as RenderRepaintBoundary?;
       if (boundary == null) return;
 
       // Capture image
@@ -113,12 +118,13 @@ class _ShareSummaryScreenState extends ConsumerState<ShareSummaryScreen> {
       // Share
       await Share.shareXFiles(
         [XFile(file.path)],
-        text: 'Bugünün kozmik enerjisi benimle! ✨🔮 Evrenin fısıltılarını dinle... #venusone #astroloji #burçyorumu #kozmikenerji',
+        text:
+            'Bugünün kozmik enerjisi benimle! ✨🔮 Evrenin fısıltılarını dinle... #venusone #astroloji #burçyorumu #kozmikenerji',
       );
     } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Paylaşım hatası: $e')),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text('Paylaşım hatası: $e')));
     } finally {
       setState(() => _isCapturing = false);
     }
@@ -129,16 +135,14 @@ class _ShareButton extends StatefulWidget {
   final bool isLoading;
   final VoidCallback onPressed;
 
-  const _ShareButton({
-    required this.isLoading,
-    required this.onPressed,
-  });
+  const _ShareButton({required this.isLoading, required this.onPressed});
 
   @override
   State<_ShareButton> createState() => _ShareButtonState();
 }
 
-class _ShareButtonState extends State<_ShareButton> with TickerProviderStateMixin {
+class _ShareButtonState extends State<_ShareButton>
+    with TickerProviderStateMixin {
   late AnimationController _shimmerController;
   late AnimationController _pulseController;
   late AnimationController _gradientController;
@@ -175,7 +179,11 @@ class _ShareButtonState extends State<_ShareButton> with TickerProviderStateMixi
     return GestureDetector(
       onTap: widget.isLoading ? null : widget.onPressed,
       child: ListenableBuilder(
-        listenable: Listenable.merge([_shimmerController, _pulseController, _gradientController]),
+        listenable: Listenable.merge([
+          _shimmerController,
+          _pulseController,
+          _gradientController,
+        ]),
         builder: (context, child) {
           final pulseValue = 1.0 + (_pulseController.value * 0.03);
           final gradientShift = _gradientController.value;
@@ -204,13 +212,17 @@ class _ShareButtonState extends State<_ShareButton> with TickerProviderStateMixi
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: const Color(0xFFFF3CAC).withAlpha((100 + 50 * _pulseController.value).toInt()),
+                    color: const Color(
+                      0xFFFF3CAC,
+                    ).withAlpha((100 + 50 * _pulseController.value).toInt()),
                     blurRadius: 25 + 10 * _pulseController.value,
                     offset: const Offset(-3, 6),
                     spreadRadius: 2,
                   ),
                   BoxShadow(
-                    color: const Color(0xFF2B86C5).withAlpha((100 + 50 * _pulseController.value).toInt()),
+                    color: const Color(
+                      0xFF2B86C5,
+                    ).withAlpha((100 + 50 * _pulseController.value).toInt()),
                     blurRadius: 25 + 10 * _pulseController.value,
                     offset: const Offset(3, 6),
                     spreadRadius: 2,
@@ -250,8 +262,14 @@ class _ShareButtonState extends State<_ShareButton> with TickerProviderStateMixi
                       child: ShaderMask(
                         shaderCallback: (bounds) {
                           return LinearGradient(
-                            begin: Alignment(-1.5 + 3 * _shimmerController.value, 0),
-                            end: Alignment(-0.5 + 3 * _shimmerController.value, 0),
+                            begin: Alignment(
+                              -1.5 + 3 * _shimmerController.value,
+                              0,
+                            ),
+                            end: Alignment(
+                              -0.5 + 3 * _shimmerController.value,
+                              0,
+                            ),
                             colors: [
                               Colors.white.withAlpha(0),
                               Colors.white.withAlpha(80),
@@ -316,7 +334,10 @@ class _ShareButtonState extends State<_ShareButton> with TickerProviderStateMixi
                                 height: 38,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(11),
-                                  border: Border.all(color: Colors.white, width: 2),
+                                  border: Border.all(
+                                    color: Colors.white,
+                                    width: 2,
+                                  ),
                                 ),
                               ),
                               // Camera icon
@@ -366,7 +387,10 @@ class _ShareButtonState extends State<_ShareButton> with TickerProviderStateMixi
                                   ),
                                 ),
                                 const SizedBox(width: 6),
-                                const Text('💫', style: TextStyle(fontSize: 14)),
+                                const Text(
+                                  '💫',
+                                  style: TextStyle(fontSize: 14),
+                                ),
                               ],
                             ),
                             const SizedBox(height: 3),

@@ -66,7 +66,9 @@ class BreadcrumbNavigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final defaultActiveColor = isDark ? AppColors.textPrimary : AppColors.lightTextPrimary;
+    final defaultActiveColor = isDark
+        ? AppColors.textPrimary
+        : AppColors.lightTextPrimary;
     final defaultInactiveColor = isDark
         ? AppColors.textSecondary.withOpacity(0.7)
         : AppColors.lightTextSecondary.withOpacity(0.8);
@@ -88,7 +90,10 @@ class BreadcrumbNavigation extends StatelessWidget {
               GestureDetector(
                 onTap: isClickable ? () => context.push(item.route!) : null,
                 child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 8,
+                    vertical: 4,
+                  ),
                   decoration: isClickable
                       ? BoxDecoration(
                           borderRadius: BorderRadius.circular(4),
@@ -133,10 +138,7 @@ class BreadcrumbItem {
   final String label;
   final String? route;
 
-  const BreadcrumbItem({
-    required this.label,
-    this.route,
-  });
+  const BreadcrumbItem({required this.label, this.route});
 }
 
 /// Compact breadcrumb for mobile views
@@ -175,7 +177,9 @@ class BreadcrumbNavigationCompact extends StatelessWidget {
             Icon(
               Icons.arrow_back_ios,
               size: 12,
-              color: isDark ? AppColors.textSecondary : AppColors.lightTextSecondary,
+              color: isDark
+                  ? AppColors.textSecondary
+                  : AppColors.lightTextSecondary,
             ),
             const SizedBox(width: 4),
             Text(
@@ -183,7 +187,9 @@ class BreadcrumbNavigationCompact extends StatelessWidget {
               style: GoogleFonts.raleway(
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
-                color: isDark ? AppColors.textSecondary : AppColors.lightTextSecondary,
+                color: isDark
+                    ? AppColors.textSecondary
+                    : AppColors.lightTextSecondary,
               ),
             ),
           ],

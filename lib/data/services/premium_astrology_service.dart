@@ -24,7 +24,7 @@ class PremiumAstrologyService {
       'Venüs',
       'Mars',
       'Jüpiter',
-      'Satürn'
+      'Satürn',
     ];
 
     final planetaryLines = <PlanetaryLine>[];
@@ -33,21 +33,25 @@ class PremiumAstrologyService {
         // Generate line coordinates across the globe
         final coordinates = <GeoPoint>[];
         for (int i = 0; i < 20; i++) {
-          coordinates.add(GeoPoint(
-            latitude: -90 + (i * 9.0) + random.nextDouble() * 5,
-            longitude: random.nextDouble() * 360 - 180,
-          ));
+          coordinates.add(
+            GeoPoint(
+              latitude: -90 + (i * 9.0) + random.nextDouble() * 5,
+              longitude: random.nextDouble() * 360 - 180,
+            ),
+          );
         }
         coordinates.sort((a, b) => a.latitude.compareTo(b.latitude));
 
-        planetaryLines.add(PlanetaryLine(
-          planet: planet,
-          lineType: lineType,
-          coordinates: coordinates,
-          meaning: _getPlanetaryLineMeaning(planet, lineType),
-          advice: _getPlanetaryLineAdvice(planet, lineType),
-          isPositive: _isPlanetaryLinePositive(planet, lineType),
-        ));
+        planetaryLines.add(
+          PlanetaryLine(
+            planet: planet,
+            lineType: lineType,
+            coordinates: coordinates,
+            meaning: _getPlanetaryLineMeaning(planet, lineType),
+            advice: _getPlanetaryLineAdvice(planet, lineType),
+            isPositive: _isPlanetaryLinePositive(planet, lineType),
+          ),
+        );
       }
     }
 
@@ -89,11 +93,10 @@ class PremiumAstrologyService {
       'Merkür': {
         LineType.ascendant:
             'İletişim becerileri zirve yapar. Öğrenme ve öğretme için ideal.',
-        LineType.descendant:
-            'İş ortaklıkları ve müzakereler için güçlü konum.',
-        LineType.midheaven:
-            'Yazarlık, medya ve eğitim kariyeri için mükemmel.',
-        LineType.imumCoeli: 'Ev ofis çalışması için ideal. Ailede iletişim güçlü.',
+        LineType.descendant: 'İş ortaklıkları ve müzakereler için güçlü konum.',
+        LineType.midheaven: 'Yazarlık, medya ve eğitim kariyeri için mükemmel.',
+        LineType.imumCoeli:
+            'Ev ofis çalışması için ideal. Ailede iletişim güçlü.',
       },
       'Venüs': {
         LineType.ascendant:
@@ -102,8 +105,7 @@ class PremiumAstrologyService {
             'Romantik ilişkiler için muhteşem konum. Aşk burada çiçek açar.',
         LineType.midheaven:
             'Sanat, moda ve güzellik sektörlerinde kariyer fırsatları.',
-        LineType.imumCoeli:
-            'Güzel ve huzurlu bir ev ortamı. Aile içi uyum.',
+        LineType.imumCoeli: 'Güzel ve huzurlu bir ev ortamı. Aile içi uyum.',
       },
       'Mars': {
         LineType.ascendant:
@@ -120,24 +122,21 @@ class PremiumAstrologyService {
             'Şans ve bereket sizi takip eder. Büyüme fırsatları.',
         LineType.descendant:
             'İş ortaklıkları genişler. Yabancılarla bağlantılar.',
-        LineType.midheaven:
-            'Kariyer zirve yapar. Uluslararası fırsatlar.',
-        LineType.imumCoeli:
-            'Geniş aile. Miras ve mülk konularında bereket.',
+        LineType.midheaven: 'Kariyer zirve yapar. Uluslararası fırsatlar.',
+        LineType.imumCoeli: 'Geniş aile. Miras ve mülk konularında bereket.',
       },
       'Satürn': {
         LineType.ascendant:
             'Disiplin ve olgunluk gerektirir. Zorluklar büyüme getirir.',
-        LineType.descendant:
-            'İlişkilerde ciddiyet. Uzun vadeli bağlılıklar.',
+        LineType.descendant: 'İlişkilerde ciddiyet. Uzun vadeli bağlılıklar.',
         LineType.midheaven:
             'Kariyer zaman alır ama kalıcı başarı. Otorite pozisyonları.',
-        LineType.imumCoeli:
-            'Aile sorumlulukları. Geleneklerle yüzleşme.',
+        LineType.imumCoeli: 'Aile sorumlulukları. Geleneklerle yüzleşme.',
       },
     };
 
-    return meanings[planet]?[lineType] ?? 'Bu konum sizin için özel anlamlar taşır.';
+    return meanings[planet]?[lineType] ??
+        'Bu konum sizin için özel anlamlar taşır.';
   }
 
   String _getPlanetaryLineAdvice(String planet, LineType lineType) {
@@ -145,18 +144,14 @@ class PremiumAstrologyService {
       'Güneş': {
         LineType.ascendant:
             'Bu bölgede kendinizi ifade edin ve liderlik rollerini üstlenin.',
-        LineType.descendant:
-            'İş ortaklıkları için bu bölgeleri değerlendirin.',
+        LineType.descendant: 'İş ortaklıkları için bu bölgeleri değerlendirin.',
         LineType.midheaven:
             'Kariyer atılımları için bu bölgelerde fırsatları takip edin.',
-        LineType.imumCoeli:
-            'Emeklilik veya aile yuvası kurmak için düşünün.',
+        LineType.imumCoeli: 'Emeklilik veya aile yuvası kurmak için düşünün.',
       },
       'Ay': {
-        LineType.ascendant:
-            'Duygusal şifa için bu bölgeleri ziyaret edin.',
-        LineType.descendant:
-            'Ruh eşinizi bu bölgelerde bulabilirsiniz.',
+        LineType.ascendant: 'Duygusal şifa için bu bölgeleri ziyaret edin.',
+        LineType.descendant: 'Ruh eşinizi bu bölgelerde bulabilirsiniz.',
         LineType.midheaven:
             'Terapi veya şifa meslekleri için bu bölgeler idealdir.',
         LineType.imumCoeli:
@@ -165,22 +160,17 @@ class PremiumAstrologyService {
       'Venüs': {
         LineType.ascendant:
             'Kişisel stil ve güzellik işleri için bu bölgeler mükemmel.',
-        LineType.descendant:
-            'Romantik tatiller ve balayı için ideal yerler.',
-        LineType.midheaven:
-            'Sanat galerisi açmak veya moda işi için düşünün.',
+        LineType.descendant: 'Romantik tatiller ve balayı için ideal yerler.',
+        LineType.midheaven: 'Sanat galerisi açmak veya moda işi için düşünün.',
         LineType.imumCoeli:
             'Güzel bir ev dekorasyonu bu bölgelerde ilham verir.',
       },
       'Jüpiter': {
         LineType.ascendant:
             'Yeni başlangıçlar için şanslı bölgeler. Risk alın!',
-        LineType.descendant:
-            'Uluslararası iş ortaklıkları kurun.',
-        LineType.midheaven:
-            'Global kariyer fırsatlarını değerlendirin.',
-        LineType.imumCoeli:
-            'Mülk yatırımları için değerlendirin.',
+        LineType.descendant: 'Uluslararası iş ortaklıkları kurun.',
+        LineType.midheaven: 'Global kariyer fırsatlarını değerlendirin.',
+        LineType.imumCoeli: 'Mülk yatırımları için değerlendirin.',
       },
     };
 
@@ -201,16 +191,41 @@ class PremiumAstrologyService {
 
   List<PowerPlace> _generatePowerPlaces(DateTime birthDate, Random random) {
     final cities = [
-      {'name': 'İstanbul', 'country': 'Türkiye', 'lat': 41.0082, 'lng': 28.9784},
+      {
+        'name': 'İstanbul',
+        'country': 'Türkiye',
+        'lat': 41.0082,
+        'lng': 28.9784,
+      },
       {'name': 'Paris', 'country': 'Fransa', 'lat': 48.8566, 'lng': 2.3522},
-      {'name': 'Londra', 'country': 'İngiltere', 'lat': 51.5074, 'lng': -0.1278},
+      {
+        'name': 'Londra',
+        'country': 'İngiltere',
+        'lat': 51.5074,
+        'lng': -0.1278,
+      },
       {'name': 'New York', 'country': 'ABD', 'lat': 40.7128, 'lng': -74.0060},
       {'name': 'Tokyo', 'country': 'Japonya', 'lat': 35.6762, 'lng': 139.6503},
       {'name': 'Dubai', 'country': 'BAE', 'lat': 25.2048, 'lng': 55.2708},
-      {'name': 'Barselona', 'country': 'İspanya', 'lat': 41.3851, 'lng': 2.1734},
+      {
+        'name': 'Barselona',
+        'country': 'İspanya',
+        'lat': 41.3851,
+        'lng': 2.1734,
+      },
       {'name': 'Roma', 'country': 'İtalya', 'lat': 41.9028, 'lng': 12.4964},
-      {'name': 'Amsterdam', 'country': 'Hollanda', 'lat': 52.3676, 'lng': 4.9041},
-      {'name': 'Sidney', 'country': 'Avustralya', 'lat': -33.8688, 'lng': 151.2093},
+      {
+        'name': 'Amsterdam',
+        'country': 'Hollanda',
+        'lat': 52.3676,
+        'lng': 4.9041,
+      },
+      {
+        'name': 'Sidney',
+        'country': 'Avustralya',
+        'lat': -33.8688,
+        'lng': 151.2093,
+      },
     ];
 
     final energyTypes = [
@@ -222,7 +237,15 @@ class PremiumAstrologyService {
       'Sağlık ve Şifa',
     ];
 
-    final planets = ['Güneş', 'Ay', 'Venüs', 'Mars', 'Jüpiter', 'Satürn', 'Merkür'];
+    final planets = [
+      'Güneş',
+      'Ay',
+      'Venüs',
+      'Mars',
+      'Jüpiter',
+      'Satürn',
+      'Merkür',
+    ];
 
     return cities.map((city) {
       final activePlanets = <String>[];
@@ -243,14 +266,20 @@ class PremiumAstrologyService {
         activePlanets: activePlanets,
         energyType: energyType,
         description: _getPowerPlaceDescription(
-            city['name'] as String, energyType, activePlanets),
+          city['name'] as String,
+          energyType,
+          activePlanets,
+        ),
         powerRating: 3 + random.nextInt(3),
       );
     }).toList();
   }
 
   String _getPowerPlaceDescription(
-      String city, String energyType, List<String> planets) {
+    String city,
+    String energyType,
+    List<String> planets,
+  ) {
     return '$city, sizin için $energyType enerjisi taşıyor. '
         '${planets.join(", ")} gezegenleri burada güçleniyor. '
         'Bu şehri ziyaret etmek veya burada zaman geçirmek, '
@@ -312,8 +341,13 @@ Tavsiye: Seyahat planlarınızı yaparken veya taşınma düşünürken bu harit
       unfavorableWindows: unfavorableWindows.take(5).toList(),
       moonPhaseAdvice: _getMoonPhaseAdvice(purpose, startDate),
       retrogradeWarning: _getRetrogradeWarning(startDate),
-      overallRecommendation: _getOverallRecommendation(purpose, favorableWindows),
-      optimalScore: favorableWindows.isNotEmpty ? favorableWindows.first.score : 50,
+      overallRecommendation: _getOverallRecommendation(
+        purpose,
+        favorableWindows,
+      ),
+      optimalScore: favorableWindows.isNotEmpty
+          ? favorableWindows.first.score
+          : 50,
     );
   }
 
@@ -341,7 +375,8 @@ Tavsiye: Seyahat planlarınızı yaparken veya taşınma düşünürken bu harit
       ],
     };
 
-    final purposeDescs = descriptions[purpose] ??
+    final purposeDescs =
+        descriptions[purpose] ??
         ['Genel olarak olumlu koşullar mevcut', 'Gezegen enerjileri uyumlu'];
 
     return purposeDescs[random.nextInt(purposeDescs.length)];
@@ -360,7 +395,10 @@ Tavsiye: Seyahat planlarınızı yaparken veya taşınma düşünürken bu harit
   }
 
   List<String> _getAspects(
-      ElectionalPurpose purpose, bool isFavorable, Random random) {
+    ElectionalPurpose purpose,
+    bool isFavorable,
+    Random random,
+  ) {
     final favorable = [
       'Venüs üçgen Jüpiter',
       'Ay altıgen Güneş',
@@ -424,15 +462,16 @@ Tavsiye: Seyahat planlarınızı yaparken veya taşınma düşünürken bu harit
   }
 
   String _getOverallRecommendation(
-      ElectionalPurpose purpose, List<ElectionalWindow> windows) {
+    ElectionalPurpose purpose,
+    List<ElectionalWindow> windows,
+  ) {
     if (windows.isEmpty) {
       return 'Seçilen tarih aralığında uygun zaman penceresi bulunamadı. '
           'Farklı tarihler denemeyi düşünün.';
     }
 
     final best = windows.first;
-    final dateStr =
-        '${best.start.day}/${best.start.month}/${best.start.year}';
+    final dateStr = '${best.start.day}/${best.start.month}/${best.start.year}';
     final timeStr =
         '${best.start.hour.toString().padLeft(2, '0')}:${best.start.minute.toString().padLeft(2, '0')}';
 
@@ -455,10 +494,8 @@ Tavsiye: Seyahat planlarınızı yaparken veya taşınma düşünürken bu harit
     // This shifts all positions by the natal North Node position
     final nodeOffset = random.nextInt(12);
 
-    final draconicSun =
-        ZodiacSign.values[(natalSun.index + nodeOffset) % 12];
-    final draconicMoon =
-        ZodiacSign.values[(natalMoon.index + nodeOffset) % 12];
+    final draconicSun = ZodiacSign.values[(natalSun.index + nodeOffset) % 12];
+    final draconicMoon = ZodiacSign.values[(natalMoon.index + nodeOffset) % 12];
     final draconicAscendant =
         ZodiacSign.values[(natalAscendant.index + nodeOffset) % 12];
 
@@ -479,7 +516,10 @@ Tavsiye: Seyahat planlarınızı yaparken veya taşınma düşünürken bu harit
   }
 
   List<DraconicPlanet> _generateDraconicPlanets(
-      DateTime birthDate, int offset, Random random) {
+    DateTime birthDate,
+    int offset,
+    Random random,
+  ) {
     final planetNames = [
       'Güneş',
       'Ay',
@@ -490,7 +530,7 @@ Tavsiye: Seyahat planlarınızı yaparken veya taşınma düşünürken bu harit
       'Satürn',
       'Uranüs',
       'Neptün',
-      'Pluto'
+      'Pluto',
     ];
 
     return planetNames.map((name) {
@@ -510,23 +550,26 @@ Tavsiye: Seyahat planlarınızı yaparken veya taşınma düşünürken bu harit
   }
 
   String _getDraconicPlanetInterpretation(
-      String planet, ZodiacSign sign, int house) {
+    String planet,
+    ZodiacSign sign,
+    int house,
+  ) {
     final interpretations = {
       'Güneş':
           'Ruhunuzun özü ${sign.nameTr} enerjisi taşıyor. $house. ev konumu, '
-              'yaşam amacınızın bu alanla derinden bağlantılı olduğunu gösterir.',
+          'yaşam amacınızın bu alanla derinden bağlantılı olduğunu gösterir.',
       'Ay':
           'Ruhsal duygusal doğanız ${sign.nameTr} kalitelerini yansıtıyor. '
-              '$house. evde, geçmiş yaşam duygusal kalıplarınız bu alanda açığa çıkıyor.',
+          '$house. evde, geçmiş yaşam duygusal kalıplarınız bu alanda açığa çıkıyor.',
       'Venüs':
           'Ruhsal sevgi diliniz ${sign.nameTr} üzerinden ifade buluyor. '
-              '$house. ev, karmik ilişki temalarınızı işaret ediyor.',
+          '$house. ev, karmik ilişki temalarınızı işaret ediyor.',
       'Mars':
           'Ruhsal irade gücünüz ${sign.nameTr} enerjisiyle besleniyor. '
-              '$house. evde, geçmiş yaşam mücadelelerinizin izleri var.',
+          '$house. evde, geçmiş yaşam mücadelelerinizin izleri var.',
       'Jüpiter':
           'Ruhsal bilgeliğiniz ${sign.nameTr} felsefesini taşıyor. '
-              '$house. ev, spiritüel büyüme alanınızı gösteriyor.',
+          '$house. ev, spiritüel büyüme alanınızı gösteriyor.',
     };
 
     return interpretations[planet] ??
@@ -538,40 +581,40 @@ Tavsiye: Seyahat planlarınızı yaparken veya taşınma düşünürken bu harit
     final purposes = {
       ZodiacSign.aries:
           'Ruhunuz cesaret ve öncülük için buraya geldi. Yeni yollar açmak ve '
-              'başkalarına ilham vermek sizin kutsal göreviniz.',
+          'başkalarına ilham vermek sizin kutsal göreviniz.',
       ZodiacSign.taurus:
           'Ruhunuz değer ve istikrar yaratmak için enkarne oldu. '
-              'Güzellik ve bolluk manifestasyonu sizin spiritüel hediyeniz.',
+          'Güzellik ve bolluk manifestasyonu sizin spiritüel hediyeniz.',
       ZodiacSign.gemini:
           'Ruhunuz iletişim köprüleri kurmak için burada. '
-              'Bilgiyi yaymak ve bağlantılar oluşturmak kutsal amacınız.',
+          'Bilgiyi yaymak ve bağlantılar oluşturmak kutsal amacınız.',
       ZodiacSign.cancer:
           'Ruhunuz şifa ve koruma için geldi. Başkalarını beslemek ve '
-              'güvenli alanlar yaratmak sizin spiritüel misyonunuz.',
+          'güvenli alanlar yaratmak sizin spiritüel misyonunuz.',
       ZodiacSign.leo:
           'Ruhunuz yaratıcı ifade ve liderlik için enkarne oldu. '
-              'Işığınızla başkalarını aydınlatmak kutsal hediyeniz.',
+          'Işığınızla başkalarını aydınlatmak kutsal hediyeniz.',
       ZodiacSign.virgo:
           'Ruhunuz hizmet ve iyileştirme için burada. Mükemmelliği arayış ve '
-              'başkalarına yardım etmek spiritüel amacınız.',
+          'başkalarına yardım etmek spiritüel amacınız.',
       ZodiacSign.libra:
           'Ruhunuz denge ve uyum yaratmak için geldi. İlişkilerde barış ve '
-              'adalet getirmek kutsal göreviniz.',
+          'adalet getirmek kutsal göreviniz.',
       ZodiacSign.scorpio:
           'Ruhunuz dönüşüm ve şifa için enkarne oldu. Derin hakikatleri '
-              'ortaya çıkarmak ve başkalarını dönüştürmek misyonunuz.',
+          'ortaya çıkarmak ve başkalarını dönüştürmek misyonunuz.',
       ZodiacSign.sagittarius:
           'Ruhunuz bilgelik arayışı ve öğretme için burada. '
-              'Yüksek gerçekleri paylaşmak spiritüel hediyeniz.',
+          'Yüksek gerçekleri paylaşmak spiritüel hediyeniz.',
       ZodiacSign.capricorn:
           'Ruhunuz kalıcı yapılar kurmak için geldi. '
-              'Topluma katkı sağlayan başarılar kutsal amacınız.',
+          'Topluma katkı sağlayan başarılar kutsal amacınız.',
       ZodiacSign.aquarius:
           'Ruhunuz insanlığa hizmet ve yenilik için enkarne oldu. '
-              'Geleceği şekillendirmek spiritüel misyonunuz.',
+          'Geleceği şekillendirmek spiritüel misyonunuz.',
       ZodiacSign.pisces:
           'Ruhunuz evrensel şefkat ve spiritüel birlik için burada. '
-              'Sınırları aşan sevgi yaymak kutsal hediyeniz.',
+          'Sınırları aşan sevgi yaymak kutsal hediyeniz.',
     };
 
     return purposes[draconicSun] ??
@@ -670,9 +713,13 @@ Her zorluk, daha yüksek bir bilinç seviyesine adımdır.''';
       );
     }).toList();
 
-    final chironPos = asteroids.firstWhere((a) => a.asteroid == Asteroid.chiron);
+    final chironPos = asteroids.firstWhere(
+      (a) => a.asteroid == Asteroid.chiron,
+    );
     final ceresPos = asteroids.firstWhere((a) => a.asteroid == Asteroid.ceres);
-    final pallasPos = asteroids.firstWhere((a) => a.asteroid == Asteroid.pallas);
+    final pallasPos = asteroids.firstWhere(
+      (a) => a.asteroid == Asteroid.pallas,
+    );
     final junoPos = asteroids.firstWhere((a) => a.asteroid == Asteroid.juno);
     final vestaPos = asteroids.firstWhere((a) => a.asteroid == Asteroid.vesta);
 
@@ -689,7 +736,10 @@ Her zorluk, daha yüksek bir bilinç seviyesine adımdır.''';
   }
 
   String _getAsteroidInterpretation(
-      Asteroid asteroid, ZodiacSign sign, int house) {
+    Asteroid asteroid,
+    ZodiacSign sign,
+    int house,
+  ) {
     return '${asteroid.nameTr} ${sign.nameTr} burcunda, $house. evde. '
         '${asteroid.theme} Bu konum, ${sign.element.nameTr} elementi üzerinden '
         'ifade buluyor ve $house. ev konularında özellikle aktif.';

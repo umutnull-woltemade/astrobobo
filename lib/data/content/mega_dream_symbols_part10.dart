@@ -10,7 +10,6 @@ class MegaDreamSymbolsPart10 {
     // ════════════════════════════════════════════════════════════════════════
     // DINI VE SPIRITUEL - 30+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'prayer',
       symbolTr: 'Dua',
@@ -314,7 +313,6 @@ class MegaDreamSymbolsPart10 {
     // ════════════════════════════════════════════════════════════════════════
     // MISTIK VE OKULT - 25+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'third_eye',
       symbolTr: 'Ucuncu Goz',
@@ -543,7 +541,6 @@ class MegaDreamSymbolsPart10 {
     // ════════════════════════════════════════════════════════════════════════
     // KOZMIK VE EVRENSEL - 20+ Sembol
     // ════════════════════════════════════════════════════════════════════════
-
     DreamSymbolData(
       symbol: 'cosmos',
       symbolTr: 'Kozmik Evren',

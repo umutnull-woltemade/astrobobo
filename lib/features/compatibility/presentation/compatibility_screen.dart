@@ -75,7 +75,10 @@ class _CompatibilityScreenState extends ConsumerState<CompatibilityScreen> {
     }
 
     // Fallback to local calculation
-    final compatibility = HoroscopeService.calculateCompatibility(_sign1!, _sign2!);
+    final compatibility = HoroscopeService.calculateCompatibility(
+      _sign1!,
+      _sign2!,
+    );
     setState(() {
       _result = compatibility;
       _isLoading = false;
@@ -87,48 +90,48 @@ class _CompatibilityScreenState extends ConsumerState<CompatibilityScreen> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final language = ref.watch(languageProvider);
     return Scaffold(
-      backgroundColor: isDark ? const Color(0xFF1F1A2E) : const Color(0xFFFFF0F5),
+      backgroundColor: isDark
+          ? const Color(0xFF1F1A2E)
+          : const Color(0xFFFFF0F5),
       body: Stack(
         children: [
           // Kalpli arka plan - tüm sayfayı kaplar
-          Positioned.fill(
-            child: _HeartPatternBackground(isDark: isDark),
-          ),
+          Positioned.fill(child: _HeartPatternBackground(isDark: isDark)),
           SafeArea(
             child: SingleChildScrollView(
               child: Column(
-              children: [
-                _buildHeader(context, language),
-                Padding(
-                  padding: const EdgeInsets.all(AppConstants.spacingLg),
-                  child: Column(
-                    children: [
-                      _buildSignSelectors(),
-                      const SizedBox(height: AppConstants.spacingXl),
-                      if (_sign1 != null && _sign2 != null)
-                        _isLoading
-                            ? const Center(
-                                child: CircularProgressIndicator(
-                                  color: AppColors.starGold,
-                                ),
-                              )
-                            : GradientButton(
-                                label: 'Uyumu Hesapla',
-                                icon: Icons.favorite,
-                                width: double.infinity,
-                                onPressed: _calculateCompatibility,
-                              ).animate().fadeIn(duration: 300.ms),
-                      if (_result != null) ...[
-                        const SizedBox(height: AppConstants.spacingXxl),
-                        _buildResult(),
+                children: [
+                  _buildHeader(context, language),
+                  Padding(
+                    padding: const EdgeInsets.all(AppConstants.spacingLg),
+                    child: Column(
+                      children: [
+                        _buildSignSelectors(),
+                        const SizedBox(height: AppConstants.spacingXl),
+                        if (_sign1 != null && _sign2 != null)
+                          _isLoading
+                              ? const Center(
+                                  child: CircularProgressIndicator(
+                                    color: AppColors.starGold,
+                                  ),
+                                )
+                              : GradientButton(
+                                  label: 'Uyumu Hesapla',
+                                  icon: Icons.favorite,
+                                  width: double.infinity,
+                                  onPressed: _calculateCompatibility,
+                                ).animate().fadeIn(duration: 300.ms),
+                        if (_result != null) ...[
+                          const SizedBox(height: AppConstants.spacingXxl),
+                          _buildResult(),
+                        ],
                       ],
-                    ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
-        ),
         ],
       ),
     );
@@ -170,7 +173,9 @@ class _CompatibilityScreenState extends ConsumerState<CompatibilityScreen> {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: AppConstants.spacingMd),
+          padding: const EdgeInsets.symmetric(
+            horizontal: AppConstants.spacingMd,
+          ),
           child: Container(
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
@@ -210,41 +215,41 @@ class _CompatibilityScreenState extends ConsumerState<CompatibilityScreen> {
       children: [
         // Score circle
         Container(
-          padding: const EdgeInsets.all(24),
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            gradient: RadialGradient(
-              colors: [
-                scoreColor.withValues(alpha: 0.3),
-                Colors.transparent,
-              ],
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: scoreColor.withValues(alpha: 0.4),
-                blurRadius: 40,
-                spreadRadius: 10,
+              padding: const EdgeInsets.all(24),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: RadialGradient(
+                  colors: [
+                    scoreColor.withValues(alpha: 0.3),
+                    Colors.transparent,
+                  ],
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: scoreColor.withValues(alpha: 0.4),
+                    blurRadius: 40,
+                    spreadRadius: 10,
+                  ),
+                ],
               ),
-            ],
-          ),
-          child: Column(
-            children: [
-              Text(
-                '${result.overallScore}%',
-                style: Theme.of(context).textTheme.displayLarge?.copyWith(
+              child: Column(
+                children: [
+                  Text(
+                    '${result.overallScore}%',
+                    style: Theme.of(context).textTheme.displayLarge?.copyWith(
                       color: scoreColor,
                       fontWeight: FontWeight.bold,
                     ),
+                  ),
+                  Text(
+                    _getScoreLabel(result.overallScore),
+                    style: Theme.of(
+                      context,
+                    ).textTheme.titleMedium?.copyWith(color: scoreColor),
+                  ),
+                ],
               ),
-              Text(
-                _getScoreLabel(result.overallScore),
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      color: scoreColor,
-                    ),
-              ),
-            ],
-          ),
-        )
+            )
             .animate()
             .fadeIn(duration: 600.ms)
             .scale(begin: const Offset(0.5, 0.5), curve: Curves.elasticOut),
@@ -309,8 +314,8 @@ class _CompatibilityScreenState extends ConsumerState<CompatibilityScreen> {
                     child: Text(
                       '${_sign1!.nameTr} & ${_sign2!.nameTr}',
                       style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                            color: AppColors.textPrimary,
-                          ),
+                        color: AppColors.textPrimary,
+                      ),
                     ),
                   ),
                 ],
@@ -319,9 +324,9 @@ class _CompatibilityScreenState extends ConsumerState<CompatibilityScreen> {
               Text(
                 result.summary,
                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      color: AppColors.textSecondary,
-                      height: 1.6,
-                    ),
+                  color: AppColors.textSecondary,
+                  height: 1.6,
+                ),
               ),
             ],
           ),
@@ -359,7 +364,8 @@ class _CompatibilityScreenState extends ConsumerState<CompatibilityScreen> {
         // Kadim Not - Uyum bilgeliği
         const KadimNotCard(
           title: 'Kozmik Kimya',
-          content: 'İki burç arasındaki uyum, sadece element ve modalite hesabı değildir. Her ilişki, iki ruhun birbirini tamamlama ve dönüştürme potansiyelini taşır. Zorluklar, en büyük öğretmenlerdir.',
+          content:
+              'İki burç arasındaki uyum, sadece element ve modalite hesabı değildir. Her ilişki, iki ruhun birbirini tamamlama ve dönüştürme potansiyelini taşır. Zorluklar, en büyük öğretmenlerdir.',
           category: KadimCategory.astrology,
           source: 'Astrolojik Uyum',
         ),
@@ -370,9 +376,9 @@ class _CompatibilityScreenState extends ConsumerState<CompatibilityScreen> {
         const SizedBox(height: AppConstants.spacingXl),
 
         // Next Blocks - keşfetmeye devam et
-        NextBlocks(currentPage: 'compatibility')
-            .animate()
-            .fadeIn(delay: 1000.ms, duration: 400.ms),
+        NextBlocks(
+          currentPage: 'compatibility',
+        ).animate().fadeIn(delay: 1000.ms, duration: 400.ms),
         const SizedBox(height: AppConstants.spacingLg),
         // Disclaimer
         const PageFooterWithDisclaimer(
@@ -383,28 +389,34 @@ class _CompatibilityScreenState extends ConsumerState<CompatibilityScreen> {
     );
   }
 
-  Widget _buildSignDescriptions(BuildContext context, ZodiacSign sign1, ZodiacSign sign2) {
+  Widget _buildSignDescriptions(
+    BuildContext context,
+    ZodiacSign sign1,
+    ZodiacSign sign2,
+  ) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           'Burç Profilleri',
-          style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                color: AppColors.starGold,
-              ),
+          style: Theme.of(
+            context,
+          ).textTheme.titleMedium?.copyWith(color: AppColors.starGold),
         ).animate().fadeIn(delay: 700.ms, duration: 400.ms),
         const SizedBox(height: AppConstants.spacingMd),
 
         // Sign 1 description
-        _buildSignDescriptionCard(context, sign1)
-            .animate()
-            .fadeIn(delay: 800.ms, duration: 400.ms),
+        _buildSignDescriptionCard(
+          context,
+          sign1,
+        ).animate().fadeIn(delay: 800.ms, duration: 400.ms),
         const SizedBox(height: AppConstants.spacingMd),
 
         // Sign 2 description
-        _buildSignDescriptionCard(context, sign2)
-            .animate()
-            .fadeIn(delay: 900.ms, duration: 400.ms),
+        _buildSignDescriptionCard(
+          context,
+          sign2,
+        ).animate().fadeIn(delay: 900.ms, duration: 400.ms),
       ],
     );
   }
@@ -417,10 +429,7 @@ class _CompatibilityScreenState extends ConsumerState<CompatibilityScreen> {
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [
-            sign.color.withValues(alpha: 0.15),
-            AppColors.surfaceDark,
-          ],
+          colors: [sign.color.withValues(alpha: 0.15), AppColors.surfaceDark],
         ),
         borderRadius: BorderRadius.circular(AppConstants.radiusMd),
         border: Border.all(color: sign.color.withValues(alpha: 0.3)),
@@ -448,15 +457,15 @@ class _CompatibilityScreenState extends ConsumerState<CompatibilityScreen> {
                   children: [
                     Text(
                       sign.nameTr,
-                      style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                            color: sign.color,
-                          ),
+                      style: Theme.of(
+                        context,
+                      ).textTheme.titleSmall?.copyWith(color: sign.color),
                     ),
                     Text(
                       '${sign.element.nameTr} elementi • ${sign.modality.nameTr}',
                       style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                            color: AppColors.textMuted,
-                          ),
+                        color: AppColors.textMuted,
+                      ),
                     ),
                   ],
                 ),
@@ -467,35 +476,47 @@ class _CompatibilityScreenState extends ConsumerState<CompatibilityScreen> {
           Text(
             sign.detailedDescriptionTr,
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: AppColors.textSecondary,
-                  height: 1.7,
-                ),
+              color: AppColors.textSecondary,
+              height: 1.7,
+            ),
           ),
           const SizedBox(height: AppConstants.spacingMd),
           Wrap(
             spacing: 8,
             runSpacing: 8,
-            children: sign.traits.map((trait) => Container(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-              decoration: BoxDecoration(
-                color: sign.color.withValues(alpha: 0.15),
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Text(
-                trait,
-                style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                      color: sign.color,
+            children: sign.traits
+                .map(
+                  (trait) => Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 4,
                     ),
-              ),
-            )).toList(),
+                    decoration: BoxDecoration(
+                      color: sign.color.withValues(alpha: 0.15),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Text(
+                      trait,
+                      style: Theme.of(
+                        context,
+                      ).textTheme.labelSmall?.copyWith(color: sign.color),
+                    ),
+                  ),
+                )
+                .toList(),
           ),
         ],
       ),
     );
   }
 
-  Widget _buildListSection(BuildContext context, String title, IconData icon,
-      Color color, List<String> items) {
+  Widget _buildListSection(
+    BuildContext context,
+    String title,
+    IconData icon,
+    Color color,
+    List<String> items,
+  ) {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(AppConstants.spacingLg),
@@ -513,30 +534,32 @@ class _CompatibilityScreenState extends ConsumerState<CompatibilityScreen> {
               const SizedBox(width: 8),
               Text(
                 title,
-                style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      color: color,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleSmall?.copyWith(color: color),
               ),
             ],
           ),
           const SizedBox(height: AppConstants.spacingMd),
-          ...items.map((item) => Padding(
-                padding: const EdgeInsets.only(bottom: 8),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('• ', style: TextStyle(color: color)),
-                    Expanded(
-                      child: Text(
-                        item,
-                        style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                              color: AppColors.textSecondary,
-                            ),
+          ...items.map(
+            (item) => Padding(
+              padding: const EdgeInsets.only(bottom: 8),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('• ', style: TextStyle(color: color)),
+                  Expanded(
+                    child: Text(
+                      item,
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        color: AppColors.textSecondary,
                       ),
                     ),
-                  ],
-                ),
-              )),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
@@ -589,9 +612,9 @@ class _SignSelector extends StatelessWidget {
           children: [
             Text(
               label,
-              style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                    color: AppColors.textMuted,
-                  ),
+              style: Theme.of(
+                context,
+              ).textTheme.labelSmall?.copyWith(color: AppColors.textMuted),
             ),
             const SizedBox(height: AppConstants.spacingMd),
             if (selectedSign != null) ...[
@@ -602,9 +625,9 @@ class _SignSelector extends StatelessWidget {
               const SizedBox(height: 8),
               Text(
                 selectedSign!.nameTr,
-                style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      color: selectedSign!.color,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleSmall?.copyWith(color: selectedSign!.color),
               ),
             ] else ...[
               Container(
@@ -622,9 +645,9 @@ class _SignSelector extends StatelessWidget {
               const SizedBox(height: 8),
               Text(
                 'Seç',
-                style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      color: AppColors.textMuted,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleSmall?.copyWith(color: AppColors.textMuted),
               ),
             ],
           ],
@@ -655,10 +678,7 @@ class _SignSelector extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: AppConstants.spacingLg),
-              Text(
-                'Burç Seç',
-                style: Theme.of(context).textTheme.titleMedium,
-              ),
+              Text('Burç Seç', style: Theme.of(context).textTheme.titleMedium),
               const SizedBox(height: AppConstants.spacingLg),
               SizedBox(
                 height: 300,
@@ -705,9 +725,7 @@ class _SignSelector extends StatelessWidget {
                             const SizedBox(height: 4),
                             Text(
                               sign.nameTr,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .labelSmall
+                              style: Theme.of(context).textTheme.labelSmall
                                   ?.copyWith(
                                     color: isSelected
                                         ? sign.color
@@ -759,15 +777,15 @@ class _ScoreCategory extends StatelessWidget {
         Text(
           '$score%',
           style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                color: color,
-                fontWeight: FontWeight.bold,
-              ),
+            color: color,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         Text(
           label,
-          style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                color: AppColors.textMuted,
-              ),
+          style: Theme.of(
+            context,
+          ).textTheme.labelSmall?.copyWith(color: AppColors.textMuted),
         ),
       ],
     );
@@ -822,7 +840,9 @@ class _HeartPatternPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = (isDark ? Colors.pink : Colors.pink.shade200).withAlpha(isDark ? 15 : 25)
+      ..color = (isDark ? Colors.pink : Colors.pink.shade200).withAlpha(
+        isDark ? 15 : 25,
+      )
       ..style = PaintingStyle.fill;
 
     final random = math.Random(42); // Deterministic random for consistency
@@ -843,14 +863,20 @@ class _HeartPatternPainter extends CustomPainter {
     // Basit kalp şekli
     path.moveTo(center.dx, center.dy + size * 0.3);
     path.cubicTo(
-      center.dx - size * 0.5, center.dy - size * 0.3,
-      center.dx - size * 0.5, center.dy - size * 0.7,
-      center.dx, center.dy - size * 0.3,
+      center.dx - size * 0.5,
+      center.dy - size * 0.3,
+      center.dx - size * 0.5,
+      center.dy - size * 0.7,
+      center.dx,
+      center.dy - size * 0.3,
     );
     path.cubicTo(
-      center.dx + size * 0.5, center.dy - size * 0.7,
-      center.dx + size * 0.5, center.dy - size * 0.3,
-      center.dx, center.dy + size * 0.3,
+      center.dx + size * 0.5,
+      center.dy - size * 0.7,
+      center.dx + size * 0.5,
+      center.dy - size * 0.3,
+      center.dx,
+      center.dy + size * 0.3,
     );
 
     canvas.drawPath(path, paint);

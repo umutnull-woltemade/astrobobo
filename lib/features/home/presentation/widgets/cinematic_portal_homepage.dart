@@ -165,9 +165,7 @@ class _CinematicPortalHomepageState
                     ),
 
                     // LAYER 1 — Scene stack.
-                    Positioned.fill(
-                      child: _buildSceneStack(size),
-                    ),
+                    Positioned.fill(child: _buildSceneStack(size)),
 
                     // LAYER 2 — Floating minimal nav.
                     Positioned(
@@ -234,25 +232,13 @@ class _CinematicPortalHomepageState
         _sceneLayer(0, _Scene0(proximity: _coreProximity)),
         _sceneLayer(
           1,
-          _Scene1(
-            proximity: _coreProximity,
-            revealLevel: _revealLevel,
-          ),
+          _Scene1(proximity: _coreProximity, revealLevel: _revealLevel),
         ),
         _sceneLayer(
           2,
-          _Scene2(
-            revealLevel: _revealLevel,
-            visible: _sceneProgress >= 1.5,
-          ),
+          _Scene2(revealLevel: _revealLevel, visible: _sceneProgress >= 1.5),
         ),
-        _sceneLayer(
-          3,
-          _Scene3(
-            proximity: _coreProximity,
-            onWarp: _onWarp,
-          ),
-        ),
+        _sceneLayer(3, _Scene3(proximity: _coreProximity, onWarp: _onWarp)),
       ],
     );
   }
@@ -269,10 +255,7 @@ class _CinematicPortalHomepageState
         opacity: opacity,
         child: Transform.translate(
           offset: Offset(0, translateY),
-          child: Transform.scale(
-            scale: scale,
-            child: child,
-          ),
+          child: Transform.scale(scale: scale, child: child),
         ),
       ),
     );
@@ -429,10 +412,7 @@ class _Scene3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: PortalGateWidget(
-        proximity: proximity,
-        onWarp: onWarp,
-      ),
+      child: PortalGateWidget(proximity: proximity, onWarp: onWarp),
     );
   }
 }
@@ -470,10 +450,7 @@ class _Whisper extends StatelessWidget {
             letterSpacing: 4,
             fontWeight: FontWeight.w300,
             shadows: [
-              Shadow(
-                color: Color.fromRGBO(124, 58, 237, 0.65),
-                blurRadius: 24,
-              ),
+              Shadow(color: Color.fromRGBO(124, 58, 237, 0.65), blurRadius: 24),
             ],
           ),
         ),

@@ -166,11 +166,7 @@ class _OrbitToolsWidgetState extends State<OrbitToolsWidget>
     );
   }
 
-  Widget _buildNode(
-    BuildContext context,
-    _OrbitNode node,
-    double globalAngle,
-  ) {
+  Widget _buildNode(BuildContext context, _OrbitNode node, double globalAngle) {
     final angle = globalAngle + (node.angle * math.pi / 180);
     final dx = math.cos(angle) * widget.radiusX;
     final dy = math.sin(angle) * widget.radiusY;
@@ -330,22 +326,17 @@ class _OrbitPathPainter extends CustomPainter {
     final outer = Paint()
       ..style = PaintingStyle.stroke
       ..strokeWidth = 1
-      ..shader = const LinearGradient(
-        colors: [
-          Color.fromRGBO(167, 139, 250, 0.45),
-          Color.fromRGBO(34, 211, 238, 0.45),
-        ],
-      ).createShader(Rect.fromCenter(
-        center: center,
-        width: rx * 2,
-        height: ry * 2,
-      ));
+      ..shader =
+          const LinearGradient(
+            colors: [
+              Color.fromRGBO(167, 139, 250, 0.45),
+              Color.fromRGBO(34, 211, 238, 0.45),
+            ],
+          ).createShader(
+            Rect.fromCenter(center: center, width: rx * 2, height: ry * 2),
+          );
     final path = Path()
-      ..addOval(Rect.fromCenter(
-        center: center,
-        width: rx * 2,
-        height: ry * 2,
-      ));
+      ..addOval(Rect.fromCenter(center: center, width: rx * 2, height: ry * 2));
     _drawDashed(canvas, path, outer, dashWidth: 1.2, dashSpace: 6);
 
     final inner = Paint()
@@ -353,11 +344,13 @@ class _OrbitPathPainter extends CustomPainter {
       ..strokeWidth = 1
       ..color = const Color.fromRGBO(167, 139, 250, 0.22);
     final innerPath = Path()
-      ..addOval(Rect.fromCenter(
-        center: center,
-        width: rx * 2 * 0.78,
-        height: ry * 2 * 0.76,
-      ));
+      ..addOval(
+        Rect.fromCenter(
+          center: center,
+          width: rx * 2 * 0.78,
+          height: ry * 2 * 0.76,
+        ),
+      );
     _drawDashed(canvas, innerPath, inner, dashWidth: 1, dashSpace: 10);
   }
 

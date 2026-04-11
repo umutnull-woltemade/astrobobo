@@ -6,7 +6,9 @@ class SeoMetaService {
   /// Get page-specific meta data for a given route
   static PageMeta getMetaForRoute(String route) {
     // Normalize route
-    final normalizedRoute = route.replaceAll(RegExp(r'^/+|/+$'), '').toLowerCase();
+    final normalizedRoute = route
+        .replaceAll(RegExp(r'^/+|/+$'), '')
+        .toLowerCase();
 
     return _pageMetas[normalizedRoute] ?? _pageMetas['home']!;
   }
@@ -16,8 +18,16 @@ class SeoMetaService {
     // Ana Sayfa
     'home': PageMeta(
       title: 'Venus One — Kişisel Kozmik Rehberiniz | Ücretsiz Doğum Haritası',
-      description: 'Ücretsiz doğum haritası, günlük burç yorumları, synastry uyum analizi ve gezegen transitleri. Swiss Ephemeris ile hesaplanan profesyonel astroloji.',
-      keywords: ['astroloji', 'doğum haritası', 'burç yorumu', 'natal chart', 'synastry', 'transit'],
+      description:
+          'Ücretsiz doğum haritası, günlük burç yorumları, synastry uyum analizi ve gezegen transitleri. Swiss Ephemeris ile hesaplanan profesyonel astroloji.',
+      keywords: [
+        'astroloji',
+        'doğum haritası',
+        'burç yorumu',
+        'natal chart',
+        'synastry',
+        'transit',
+      ],
       canonicalPath: '/',
       ogType: 'website',
       schemaType: SchemaType.webApplication,
@@ -26,8 +36,15 @@ class SeoMetaService {
     // Doğum Haritası
     'birth-chart': PageMeta(
       title: 'Ücretsiz Doğum Haritası Hesaplama | Venus One',
-      description: 'Profesyonel doğum haritası hesaplayıcı. Gezegen pozisyonları, ev yerleşimleri, açılar ve yükselen burç analizi. Swiss Ephemeris hassasiyetinde.',
-      keywords: ['doğum haritası', 'natal chart', 'yükselen burç', 'gezegen pozisyonları', 'astroloji haritası'],
+      description:
+          'Profesyonel doğum haritası hesaplayıcı. Gezegen pozisyonları, ev yerleşimleri, açılar ve yükselen burç analizi. Swiss Ephemeris hassasiyetinde.',
+      keywords: [
+        'doğum haritası',
+        'natal chart',
+        'yükselen burç',
+        'gezegen pozisyonları',
+        'astroloji haritası',
+      ],
       canonicalPath: '/birth-chart',
       ogType: 'website',
       schemaType: SchemaType.webApplication,
@@ -36,8 +53,15 @@ class SeoMetaService {
     // Günlük Burç Yorumu
     'horoscope': PageMeta(
       title: 'Günlük Burç Yorumları — 12 Burç İçin Detaylı Yorum | Venus One',
-      description: 'Günlük, haftalık ve aylık burç yorumları. Aşk, kariyer, sağlık ve para konularında kozmik enerji analizi. Tüm burçlar için kişiselleştirilmiş yorumlar.',
-      keywords: ['günlük burç yorumu', 'haftalık burç', 'aylık burç', 'burç falı', 'burç analizi'],
+      description:
+          'Günlük, haftalık ve aylık burç yorumları. Aşk, kariyer, sağlık ve para konularında kozmik enerji analizi. Tüm burçlar için kişiselleştirilmiş yorumlar.',
+      keywords: [
+        'günlük burç yorumu',
+        'haftalık burç',
+        'aylık burç',
+        'burç falı',
+        'burç analizi',
+      ],
       canonicalPath: '/horoscope',
       ogType: 'article',
       schemaType: SchemaType.article,
@@ -46,8 +70,15 @@ class SeoMetaService {
     // Synastry (İlişki Uyumu)
     'synastry': PageMeta(
       title: 'Synastry — İlişki Uyumu Analizi | Venus One',
-      description: 'İki kişinin doğum haritaları arasındaki uyumu keşfedin. Synastry açıları, gezegen etkileşimleri ve ilişki dinamikleri analizi.',
-      keywords: ['synastry', 'burç uyumu', 'ilişki uyumu', 'astroloji uyum', 'partner uyumu'],
+      description:
+          'İki kişinin doğum haritaları arasındaki uyumu keşfedin. Synastry açıları, gezegen etkileşimleri ve ilişki dinamikleri analizi.',
+      keywords: [
+        'synastry',
+        'burç uyumu',
+        'ilişki uyumu',
+        'astroloji uyum',
+        'partner uyumu',
+      ],
       canonicalPath: '/synastry',
       ogType: 'website',
       schemaType: SchemaType.webApplication,
@@ -56,8 +87,15 @@ class SeoMetaService {
     // Kompozit Harita
     'composite': PageMeta(
       title: 'Kompozit Harita — İlişkinin Doğum Haritası | Venus One',
-      description: 'İki kişinin birleşik haritası. İlişkinizin ortak enerjisi, potansiyeli ve dinamikleri. Kompozit analiz ile ilişkinizi derinlemesine keşfedin.',
-      keywords: ['kompozit harita', 'composite chart', 'ilişki haritası', 'birleşik harita', 'çift analizi'],
+      description:
+          'İki kişinin birleşik haritası. İlişkinizin ortak enerjisi, potansiyeli ve dinamikleri. Kompozit analiz ile ilişkinizi derinlemesine keşfedin.',
+      keywords: [
+        'kompozit harita',
+        'composite chart',
+        'ilişki haritası',
+        'birleşik harita',
+        'çift analizi',
+      ],
       canonicalPath: '/composite',
       ogType: 'website',
       schemaType: SchemaType.webApplication,
@@ -66,8 +104,15 @@ class SeoMetaService {
     // Solar Return
     'solar-return': PageMeta(
       title: 'Solar Return — Güneş Dönüşü Haritası | Venus One',
-      description: 'Yıllık Solar Return haritanız. Doğum gününüzde Güneşin konumuna göre yılın enerjisini, temalarını ve potansiyellerini keşfedin.',
-      keywords: ['solar return', 'güneş dönüşü', 'yıllık harita', 'doğum günü astroloji', 'yıllık analiz'],
+      description:
+          'Yıllık Solar Return haritanız. Doğum gününüzde Güneşin konumuna göre yılın enerjisini, temalarını ve potansiyellerini keşfedin.',
+      keywords: [
+        'solar return',
+        'güneş dönüşü',
+        'yıllık harita',
+        'doğum günü astroloji',
+        'yıllık analiz',
+      ],
       canonicalPath: '/solar-return',
       ogType: 'website',
       schemaType: SchemaType.webApplication,
@@ -76,8 +121,15 @@ class SeoMetaService {
     // Progresyonlar
     'progressions': PageMeta(
       title: 'İkincil Progresyonlar — İç Evrim Haritası | Venus One',
-      description: 'Secondary Progressions ile içsel gelişiminizi takip edin. Progrese Ay fazları, gezegen ilerlemeleri ve kişisel evrim döngüleri.',
-      keywords: ['progresyon', 'secondary progressions', 'progrese ay', 'astroloji progresyon', 'içsel evrim'],
+      description:
+          'Secondary Progressions ile içsel gelişiminizi takip edin. Progrese Ay fazları, gezegen ilerlemeleri ve kişisel evrim döngüleri.',
+      keywords: [
+        'progresyon',
+        'secondary progressions',
+        'progrese ay',
+        'astroloji progresyon',
+        'içsel evrim',
+      ],
       canonicalPath: '/progressions',
       ogType: 'website',
       schemaType: SchemaType.webApplication,
@@ -86,8 +138,15 @@ class SeoMetaService {
     // Transitler
     'transits': PageMeta(
       title: 'Gezegen Transitleri — Güncel Kozmik Akış | Venus One',
-      description: 'Şu anki gezegen transitlerinin doğum haritanıza etkileri. Transit Satürn, Jüpiter, Pluto ve diğer gezegenlerin kişisel etkileri.',
-      keywords: ['transit', 'gezegen transiti', 'satürn transiti', 'jüpiter transiti', 'güncel astroloji'],
+      description:
+          'Şu anki gezegen transitlerinin doğum haritanıza etkileri. Transit Satürn, Jüpiter, Pluto ve diğer gezegenlerin kişisel etkileri.',
+      keywords: [
+        'transit',
+        'gezegen transiti',
+        'satürn transiti',
+        'jüpiter transiti',
+        'güncel astroloji',
+      ],
       canonicalPath: '/transits',
       ogType: 'website',
       schemaType: SchemaType.webApplication,
@@ -96,8 +155,16 @@ class SeoMetaService {
     // Vedik Astroloji
     'vedic': PageMeta(
       title: 'Vedik Astroloji — Hint Astrolojisi Haritası | Venus One',
-      description: 'Jyotish (Vedik Astroloji) haritanız. Sidereal zodiac, Nakshatra analizi, Dasha dönemleri ve Hint astroloji yorumları.',
-      keywords: ['vedik astroloji', 'jyotish', 'nakshatra', 'dasha', 'hint astrolojisi', 'sidereal'],
+      description:
+          'Jyotish (Vedik Astroloji) haritanız. Sidereal zodiac, Nakshatra analizi, Dasha dönemleri ve Hint astroloji yorumları.',
+      keywords: [
+        'vedik astroloji',
+        'jyotish',
+        'nakshatra',
+        'dasha',
+        'hint astrolojisi',
+        'sidereal',
+      ],
       canonicalPath: '/vedic',
       ogType: 'website',
       schemaType: SchemaType.webApplication,
@@ -106,8 +173,15 @@ class SeoMetaService {
     // Drakonik Harita
     'draconic': PageMeta(
       title: 'Drakonik Harita — Ruhsal Köken Haritası | Venus One',
-      description: 'Ay Düğümüne dayalı drakonik haritanız. Ruhsal kökeniniz, karma mirasınız ve yaşam amacınızı keşfedin.',
-      keywords: ['drakonik harita', 'draconic chart', 'ruhsal harita', 'karma astroloji', 'ay düğümü'],
+      description:
+          'Ay Düğümüne dayalı drakonik haritanız. Ruhsal kökeniniz, karma mirasınız ve yaşam amacınızı keşfedin.',
+      keywords: [
+        'drakonik harita',
+        'draconic chart',
+        'ruhsal harita',
+        'karma astroloji',
+        'ay düğümü',
+      ],
       canonicalPath: '/draconic',
       ogType: 'website',
       schemaType: SchemaType.webApplication,
@@ -116,8 +190,17 @@ class SeoMetaService {
     // Asteroidler
     'asteroids': PageMeta(
       title: 'Asteroidler — Chiron, Lilith, Juno, Ceres | Venus One',
-      description: 'Asteroitlerin doğum haritanızdaki etkileri. Chiron yaraları, Lilith gölgesi, Juno ilişki kalıpları ve Ceres bakım tarzı.',
-      keywords: ['asteroit', 'chiron', 'lilith', 'juno', 'ceres', 'pallas', 'vesta'],
+      description:
+          'Asteroitlerin doğum haritanızdaki etkileri. Chiron yaraları, Lilith gölgesi, Juno ilişki kalıpları ve Ceres bakım tarzı.',
+      keywords: [
+        'asteroit',
+        'chiron',
+        'lilith',
+        'juno',
+        'ceres',
+        'pallas',
+        'vesta',
+      ],
       canonicalPath: '/asteroids',
       ogType: 'website',
       schemaType: SchemaType.webApplication,
@@ -126,8 +209,15 @@ class SeoMetaService {
     // Local Space
     'local-space': PageMeta(
       title: 'Local Space — Mekansal Astroloji | Venus One',
-      description: 'Bulunduğunuz konumun astrolojik analizi. Gezegen yönleri, enerji hatları ve mekansal etkilerin haritası.',
-      keywords: ['local space', 'mekansal astroloji', 'astrokartografi', 'yer astrolojisi', 'konum analizi'],
+      description:
+          'Bulunduğunuz konumun astrolojik analizi. Gezegen yönleri, enerji hatları ve mekansal etkilerin haritası.',
+      keywords: [
+        'local space',
+        'mekansal astroloji',
+        'astrokartografi',
+        'yer astrolojisi',
+        'konum analizi',
+      ],
       canonicalPath: '/local-space',
       ogType: 'website',
       schemaType: SchemaType.webApplication,
@@ -136,8 +226,15 @@ class SeoMetaService {
     // Zamanlama (Timing)
     'timing': PageMeta(
       title: 'Astrolojik Zamanlama — Electional Astrology | Venus One',
-      description: 'Önemli kararlarınız için en uygun zamanları keşfedin. İş başlangıçları, evlilik, seyahat ve yatırım için ideal tarihler.',
-      keywords: ['electional astroloji', 'uygun zaman', 'muhurta', 'astrolojik zamanlama', 'tarih seçimi'],
+      description:
+          'Önemli kararlarınız için en uygun zamanları keşfedin. İş başlangıçları, evlilik, seyahat ve yatırım için ideal tarihler.',
+      keywords: [
+        'electional astroloji',
+        'uygun zaman',
+        'muhurta',
+        'astrolojik zamanlama',
+        'tarih seçimi',
+      ],
       canonicalPath: '/timing',
       ogType: 'website',
       schemaType: SchemaType.webApplication,
@@ -146,8 +243,15 @@ class SeoMetaService {
     // Yıllık Önizleme
     'year-ahead': PageMeta(
       title: 'Yıllık Astroloji Önizlemesi — 2026 Analizi | Venus One',
-      description: '2026 yılı için kişisel astroloji önizlemeniz. Major transitler, tutulmalar ve önemli dönemlerin analizi.',
-      keywords: ['2026 astroloji', 'yıllık burç', 'yıl önizleme', 'yıllık transit', '2026 burç yorumu'],
+      description:
+          '2026 yılı için kişisel astroloji önizlemeniz. Major transitler, tutulmalar ve önemli dönemlerin analizi.',
+      keywords: [
+        '2026 astroloji',
+        'yıllık burç',
+        'yıl önizleme',
+        'yıllık transit',
+        '2026 burç yorumu',
+      ],
       canonicalPath: '/year-ahead',
       ogType: 'article',
       schemaType: SchemaType.article,
@@ -155,9 +259,16 @@ class SeoMetaService {
 
     // Haftalık Burç
     'weekly-horoscope': PageMeta(
-      title: 'Haftalık Burç Yorumları — Bu Hafta Burçları Neler Bekliyor | Venus One',
-      description: 'Haftalık burç yorumları. Haftanın öne çıkan günleri, kozmik enerjileri ve 12 burç için detaylı haftalık analiz.',
-      keywords: ['haftalık burç', 'bu hafta burçlar', 'haftalık yorum', 'haftalık astroloji'],
+      title:
+          'Haftalık Burç Yorumları — Bu Hafta Burçları Neler Bekliyor | Venus One',
+      description:
+          'Haftalık burç yorumları. Haftanın öne çıkan günleri, kozmik enerjileri ve 12 burç için detaylı haftalık analiz.',
+      keywords: [
+        'haftalık burç',
+        'bu hafta burçlar',
+        'haftalık yorum',
+        'haftalık astroloji',
+      ],
       canonicalPath: '/weekly-horoscope',
       ogType: 'article',
       schemaType: SchemaType.article,
@@ -166,8 +277,14 @@ class SeoMetaService {
     // Aylık Burç
     'monthly-horoscope': PageMeta(
       title: 'Aylık Burç Yorumları — Bu Ay Burçları Neler Bekliyor | Venus One',
-      description: 'Aylık burç yorumları. Ayın önemli transitleri, dolunay/yeniay etkileri ve 12 burç için detaylı aylık analiz.',
-      keywords: ['aylık burç', 'bu ay burçlar', 'aylık yorum', 'aylık astroloji'],
+      description:
+          'Aylık burç yorumları. Ayın önemli transitleri, dolunay/yeniay etkileri ve 12 burç için detaylı aylık analiz.',
+      keywords: [
+        'aylık burç',
+        'bu ay burçlar',
+        'aylık yorum',
+        'aylık astroloji',
+      ],
       canonicalPath: '/monthly-horoscope',
       ogType: 'article',
       schemaType: SchemaType.article,
@@ -175,9 +292,16 @@ class SeoMetaService {
 
     // Yıllık Burç
     'yearly-horoscope': PageMeta(
-      title: 'Yıllık Burç Yorumları 2026 — Yılın Astrolojik Analizi | Venus One',
-      description: '2026 yılı burç yorumları. Major gezegenler, tutulmalar ve yılın dönüm noktaları. Tüm burçlar için kapsamlı yıllık analiz.',
-      keywords: ['yıllık burç 2026', 'yıllık burç yorumu', '2026 burçlar', 'yıl burcu'],
+      title:
+          'Yıllık Burç Yorumları 2026 — Yılın Astrolojik Analizi | Venus One',
+      description:
+          '2026 yılı burç yorumları. Major gezegenler, tutulmalar ve yılın dönüm noktaları. Tüm burçlar için kapsamlı yıllık analiz.',
+      keywords: [
+        'yıllık burç 2026',
+        'yıllık burç yorumu',
+        '2026 burçlar',
+        'yıl burcu',
+      ],
       canonicalPath: '/yearly-horoscope',
       ogType: 'article',
       schemaType: SchemaType.article,
@@ -186,8 +310,14 @@ class SeoMetaService {
     // Ünlüler
     'celebrities': PageMeta(
       title: 'Ünlü Doğum Haritaları — Celebrity Astrology | Venus One',
-      description: 'Ünlülerin doğum haritaları ve astrolojik analizleri. Dünya liderlerinden sanatçılara, sporculardan iş dünyasına ünlü haritaları.',
-      keywords: ['ünlü doğum haritası', 'celebrity astrology', 'ünlü burç', 'ünlü astroloji'],
+      description:
+          'Ünlülerin doğum haritaları ve astrolojik analizleri. Dünya liderlerinden sanatçılara, sporculardan iş dünyasına ünlü haritaları.',
+      keywords: [
+        'ünlü doğum haritası',
+        'celebrity astrology',
+        'ünlü burç',
+        'ünlü astroloji',
+      ],
       canonicalPath: '/celebrities',
       ogType: 'website',
       schemaType: SchemaType.collectionPage,
@@ -196,8 +326,14 @@ class SeoMetaService {
     // Glossary (Sözlük)
     'glossary': PageMeta(
       title: 'Astroloji Sözlüğü — Terimler ve Kavramlar | Venus One',
-      description: 'A\'dan Z\'ye astroloji terimleri sözlüğü. Açı, ev, burç, gezegen ve diğer kavramların detaylı açıklamaları.',
-      keywords: ['astroloji sözlüğü', 'astroloji terimleri', 'astroloji kavramları', 'astroloji rehberi'],
+      description:
+          'A\'dan Z\'ye astroloji terimleri sözlüğü. Açı, ev, burç, gezegen ve diğer kavramların detaylı açıklamaları.',
+      keywords: [
+        'astroloji sözlüğü',
+        'astroloji terimleri',
+        'astroloji kavramları',
+        'astroloji rehberi',
+      ],
       canonicalPath: '/glossary',
       ogType: 'website',
       schemaType: SchemaType.definedTermSet,
@@ -206,8 +342,15 @@ class SeoMetaService {
     // Tarot
     'tarot': PageMeta(
       title: 'Tarot Falı — Günlük Tarot Kartı | Venus One',
-      description: 'Ücretsiz tarot falı. Günlük kart, 3 kart açılımı, aşk tarot ve Celtic Cross. 78 kartın detaylı anlamları.',
-      keywords: ['tarot', 'tarot falı', 'günlük tarot', 'tarot kartları', 'tarot açılımı'],
+      description:
+          'Ücretsiz tarot falı. Günlük kart, 3 kart açılımı, aşk tarot ve Celtic Cross. 78 kartın detaylı anlamları.',
+      keywords: [
+        'tarot',
+        'tarot falı',
+        'günlük tarot',
+        'tarot kartları',
+        'tarot açılımı',
+      ],
       canonicalPath: '/tarot',
       ogType: 'website',
       schemaType: SchemaType.webApplication,
@@ -216,8 +359,15 @@ class SeoMetaService {
     // Numeroloji
     'numerology': PageMeta(
       title: 'Numeroloji — Sayılarla Kişilik Analizi | Venus One',
-      description: 'Yaşam yolu sayınız, kişilik sayınız ve ruh sayınız. İsim numerolojisi ve doğum tarihi analizleri.',
-      keywords: ['numeroloji', 'yaşam yolu sayısı', 'kişilik sayısı', 'isim numeroloji', 'sayı falı'],
+      description:
+          'Yaşam yolu sayınız, kişilik sayınız ve ruh sayınız. İsim numerolojisi ve doğum tarihi analizleri.',
+      keywords: [
+        'numeroloji',
+        'yaşam yolu sayısı',
+        'kişilik sayısı',
+        'isim numeroloji',
+        'sayı falı',
+      ],
       canonicalPath: '/numerology',
       ogType: 'website',
       schemaType: SchemaType.webApplication,
@@ -226,8 +376,15 @@ class SeoMetaService {
     // Satürn Dönüşü
     'saturn-return': PageMeta(
       title: 'Satürn Dönüşü — 29 Yaş Krizi Astrolojisi | Venus One',
-      description: 'Satürn Dönüşü nedir ve sizi nasıl etkiler? 27-30 ve 57-60 yaş dönemleri, hayat dersleri ve olgunlaşma süreci.',
-      keywords: ['satürn dönüşü', 'saturn return', '29 yaş krizi', 'satürn transiti', 'olgunlaşma'],
+      description:
+          'Satürn Dönüşü nedir ve sizi nasıl etkiler? 27-30 ve 57-60 yaş dönemleri, hayat dersleri ve olgunlaşma süreci.',
+      keywords: [
+        'satürn dönüşü',
+        'saturn return',
+        '29 yaş krizi',
+        'satürn transiti',
+        'olgunlaşma',
+      ],
       canonicalPath: '/saturn-return',
       ogType: 'article',
       schemaType: SchemaType.article,
@@ -236,7 +393,8 @@ class SeoMetaService {
     // Premium
     'premium': PageMeta(
       title: 'Venus One Premium — Gelişmiş Astroloji Özellikleri',
-      description: 'Premium özelliklere erişin: Detaylı transit raporları, karşılaştırmalı analizler, sınırsız harita ve daha fazlası.',
+      description:
+          'Premium özelliklere erişin: Detaylı transit raporları, karşılaştırmalı analizler, sınırsız harita ve daha fazlası.',
       keywords: ['astroloji premium', 'venusone premium', 'gelişmiş astroloji'],
       canonicalPath: '/premium',
       ogType: 'website',
@@ -246,7 +404,8 @@ class SeoMetaService {
     // Profil
     'profile': PageMeta(
       title: 'Profilim — Astroloji Profilim | Venus One',
-      description: 'Kişisel astroloji profiliniz. Kayıtlı haritalarınız, favorileriniz ve astrolojik tercihleriniz.',
+      description:
+          'Kişisel astroloji profiliniz. Kayıtlı haritalarınız, favorileriniz ve astrolojik tercihleriniz.',
       keywords: ['astroloji profil', 'doğum bilgisi', 'kişisel harita'],
       canonicalPath: '/profile',
       ogType: 'profile',
@@ -256,7 +415,8 @@ class SeoMetaService {
     // Ayarlar
     'settings': PageMeta(
       title: 'Ayarlar | Venus One',
-      description: 'Uygulama ayarları. Ev sistemi, zodiac tipi, tema ve bildirim tercihleri.',
+      description:
+          'Uygulama ayarları. Ev sistemi, zodiac tipi, tema ve bildirim tercihleri.',
       keywords: ['ayarlar', 'tercihler', 'uygulama ayarları'],
       canonicalPath: '/settings',
       ogType: 'website',
@@ -266,7 +426,8 @@ class SeoMetaService {
     // Kozmoz (Cosmic Discovery)
     'kozmoz': PageMeta(
       title: 'Kozmoz — Günlük Kozmik Keşif | Venus One',
-      description: 'Her gün yeni bir kozmik mesaj. Günün enerjisi, ay fazı etkisi ve kişisel kozmik rehberlik.',
+      description:
+          'Her gün yeni bir kozmik mesaj. Günün enerjisi, ay fazı etkisi ve kişisel kozmik rehberlik.',
       keywords: ['kozmik mesaj', 'günlük enerji', 'ay fazı', 'kozmik rehber'],
       canonicalPath: '/kozmoz',
       ogType: 'article',
@@ -276,8 +437,14 @@ class SeoMetaService {
     // Rüyalar
     'dreams': PageMeta(
       title: 'Rüya Yorumu — Sembolik Rüya Analizi | Venus One',
-      description: 'Rüyalarınızın sembolik anlamlarını keşfedin. Arketipsel imgeler, bilinçaltı mesajlar ve kişisel içgörüler.',
-      keywords: ['rüya yorumu', 'rüya analizi', 'rüya sembolleri', 'bilinçaltı'],
+      description:
+          'Rüyalarınızın sembolik anlamlarını keşfedin. Arketipsel imgeler, bilinçaltı mesajlar ve kişisel içgörüler.',
+      keywords: [
+        'rüya yorumu',
+        'rüya analizi',
+        'rüya sembolleri',
+        'bilinçaltı',
+      ],
       canonicalPath: '/dreams',
       ogType: 'website',
       schemaType: SchemaType.webApplication,
@@ -286,8 +453,15 @@ class SeoMetaService {
     // Chakra
     'chakra': PageMeta(
       title: 'Chakra Analizi — Enerji Merkezi Dengesi | Venus One',
-      description: 'Yedi ana chakranızın analizi. Enerji blokajları, denge durumu ve chakra uyumlaştırma önerileri.',
-      keywords: ['chakra', 'enerji merkezi', 'chakra dengesi', 'kundalini', 'enerji analizi'],
+      description:
+          'Yedi ana chakranızın analizi. Enerji blokajları, denge durumu ve chakra uyumlaştırma önerileri.',
+      keywords: [
+        'chakra',
+        'enerji merkezi',
+        'chakra dengesi',
+        'kundalini',
+        'enerji analizi',
+      ],
       canonicalPath: '/chakra',
       ogType: 'website',
       schemaType: SchemaType.webApplication,
@@ -296,8 +470,15 @@ class SeoMetaService {
     // Ritüeller
     'rituals': PageMeta(
       title: 'Kozmik Ritüeller — Ay Fazı Ritüelleri | Venus One',
-      description: 'Yeniay ve dolunay ritüelleri. Niyet belirleme, manifestasyon ve enerji temizliği pratikleri.',
-      keywords: ['ritüel', 'yeniay ritüeli', 'dolunay ritüeli', 'manifestasyon', 'ay ritüeli'],
+      description:
+          'Yeniay ve dolunay ritüelleri. Niyet belirleme, manifestasyon ve enerji temizliği pratikleri.',
+      keywords: [
+        'ritüel',
+        'yeniay ritüeli',
+        'dolunay ritüeli',
+        'manifestasyon',
+        'ay ritüeli',
+      ],
       canonicalPath: '/rituals',
       ogType: 'article',
       schemaType: SchemaType.howTo,
@@ -308,96 +489,168 @@ class SeoMetaService {
     // ════════════════════════════════════════════════════════════════
     'ruya/dusmek': PageMeta(
       title: 'Rüyada Düşmek Ne Demek? | Rüya İzi — Venus One',
-      description: 'Rüyada düşmek kontrol kaybı hissini yansıtır. Hayatta bir şeylerin elimizden kaydığını düşündüğümüzde ortaya çıkar. Düşme rüyalarının psikolojik anlamı.',
-      keywords: ['rüyada düşmek', 'düşme rüyası', 'rüyada düşmek ne anlama gelir', 'rüya yorumu'],
+      description:
+          'Rüyada düşmek kontrol kaybı hissini yansıtır. Hayatta bir şeylerin elimizden kaydığını düşündüğümüzde ortaya çıkar. Düşme rüyalarının psikolojik anlamı.',
+      keywords: [
+        'rüyada düşmek',
+        'düşme rüyası',
+        'rüyada düşmek ne anlama gelir',
+        'rüya yorumu',
+      ],
       canonicalPath: '/ruya/dusmek',
       ogType: 'article',
       schemaType: SchemaType.faqPage,
     ),
     'ruya/su-gormek': PageMeta(
       title: 'Rüyada Su Görmek Ne Anlama Gelir? | Rüya İzi — Venus One',
-      description: 'Rüyada su görmek bilinçaltını ve duyguları simgeler. Suyun durumu iç dünyanın durumunu yansıtır. Durgun su huzuru, dalgalı su karmaşayı gösterir.',
-      keywords: ['rüyada su görmek', 'su rüyası', 'rüyada deniz görmek', 'rüya yorumu'],
+      description:
+          'Rüyada su görmek bilinçaltını ve duyguları simgeler. Suyun durumu iç dünyanın durumunu yansıtır. Durgun su huzuru, dalgalı su karmaşayı gösterir.',
+      keywords: [
+        'rüyada su görmek',
+        'su rüyası',
+        'rüyada deniz görmek',
+        'rüya yorumu',
+      ],
       canonicalPath: '/ruya/su-gormek',
       ogType: 'article',
       schemaType: SchemaType.faqPage,
     ),
     'ruya/tekrar-eden': PageMeta(
       title: 'Tekrar Eden Rüyalar Neden Olur? | Rüya İzi — Venus One',
-      description: 'Tekrar eden rüyalar çözülmemiş bir duygusal konuyu işaret eder. Bilinçaltının dikkatinizi çekmek istediği mesajlar. Tekrarlayan rüya kalıpları.',
-      keywords: ['tekrar eden rüya', 'tekrarlayan rüyalar', 'aynı rüyayı görmek', 'rüya yorumu'],
+      description:
+          'Tekrar eden rüyalar çözülmemiş bir duygusal konuyu işaret eder. Bilinçaltının dikkatinizi çekmek istediği mesajlar. Tekrarlayan rüya kalıpları.',
+      keywords: [
+        'tekrar eden rüya',
+        'tekrarlayan rüyalar',
+        'aynı rüyayı görmek',
+        'rüya yorumu',
+      ],
       canonicalPath: '/ruya/tekrar-eden',
       ogType: 'article',
       schemaType: SchemaType.faqPage,
     ),
     'ruya/kosmak': PageMeta(
       title: 'Rüyada Koşmak Ne Anlama Gelir? | Rüya İzi — Venus One',
-      description: 'Rüyada koşmak bir şeyden kaçma veya bir şeye ulaşma arzusunu gösterir. Koşma hızı ve yönü duygusal durumu yansıtır.',
-      keywords: ['rüyada koşmak', 'koşma rüyası', 'rüyada kaçmak', 'rüya yorumu'],
+      description:
+          'Rüyada koşmak bir şeyden kaçma veya bir şeye ulaşma arzusunu gösterir. Koşma hızı ve yönü duygusal durumu yansıtır.',
+      keywords: [
+        'rüyada koşmak',
+        'koşma rüyası',
+        'rüyada kaçmak',
+        'rüya yorumu',
+      ],
       canonicalPath: '/ruya/kosmak',
       ogType: 'article',
       schemaType: SchemaType.faqPage,
     ),
     'ruya/ucmak': PageMeta(
       title: 'Rüyada Uçmak Ne Demek? | Rüya İzi — Venus One',
-      description: 'Rüyada uçmak özgürlük, başarı ve engelleri aşma arzusunu simgeler. Uçuş yüksekliği ve kontrolü öz güveni yansıtır.',
-      keywords: ['rüyada uçmak', 'uçma rüyası', 'rüyada gökyüzünde uçmak', 'rüya yorumu'],
+      description:
+          'Rüyada uçmak özgürlük, başarı ve engelleri aşma arzusunu simgeler. Uçuş yüksekliği ve kontrolü öz güveni yansıtır.',
+      keywords: [
+        'rüyada uçmak',
+        'uçma rüyası',
+        'rüyada gökyüzünde uçmak',
+        'rüya yorumu',
+      ],
       canonicalPath: '/ruya/ucmak',
       ogType: 'article',
       schemaType: SchemaType.faqPage,
     ),
     'ruya/karanlik': PageMeta(
       title: 'Rüyada Karanlık Görmek Ne Anlama Gelir? | Rüya İzi — Venus One',
-      description: 'Rüyada karanlık bilinmeyeni, korkulaı ve belirsizliği simgeler. Karanlıkta kaybolmak veya yol bulmak duygusal durumu yansıtır.',
-      keywords: ['rüyada karanlık', 'karanlık rüyası', 'rüyada gece', 'rüya yorumu'],
+      description:
+          'Rüyada karanlık bilinmeyeni, korkulaı ve belirsizliği simgeler. Karanlıkta kaybolmak veya yol bulmak duygusal durumu yansıtır.',
+      keywords: [
+        'rüyada karanlık',
+        'karanlık rüyası',
+        'rüyada gece',
+        'rüya yorumu',
+      ],
       canonicalPath: '/ruya/karanlik',
       ogType: 'article',
       schemaType: SchemaType.faqPage,
     ),
     'ruya/kaybolmak': PageMeta(
       title: 'Rüyada Kaybolmak Ne Anlama Gelir? | Rüya İzi — Venus One',
-      description: 'Rüyada kaybolmak yön kaybını ve belirsizliği simgeler. Hayatta rotanı kaybetmiş hissetmek bilinçaltının uyarısı olabilir.',
-      keywords: ['rüyada kaybolmak', 'kaybolma rüyası', 'rüyada yolunu kaybetmek', 'rüya yorumu'],
+      description:
+          'Rüyada kaybolmak yön kaybını ve belirsizliği simgeler. Hayatta rotanı kaybetmiş hissetmek bilinçaltının uyarısı olabilir.',
+      keywords: [
+        'rüyada kaybolmak',
+        'kaybolma rüyası',
+        'rüyada yolunu kaybetmek',
+        'rüya yorumu',
+      ],
       canonicalPath: '/ruya/kaybolmak',
       ogType: 'article',
       schemaType: SchemaType.faqPage,
     ),
     'ruya/sessiz-kalmak': PageMeta(
       title: 'Rüyada Ses Çıkaramamak Ne Demek? | Rüya İzi — Venus One',
-      description: 'Rüyada bağıramamak veya konuşamamak ifade edilememiş duyguları simgeler. İletişim zorlukları ve bastırılmış düşünceler.',
-      keywords: ['rüyada ses çıkaramamak', 'konuşamama rüyası', 'rüyada bağıramamak', 'rüya yorumu'],
+      description:
+          'Rüyada bağıramamak veya konuşamamak ifade edilememiş duyguları simgeler. İletişim zorlukları ve bastırılmış düşünceler.',
+      keywords: [
+        'rüyada ses çıkaramamak',
+        'konuşamama rüyası',
+        'rüyada bağıramamak',
+        'rüya yorumu',
+      ],
       canonicalPath: '/ruya/sessiz-kalmak',
       ogType: 'article',
       schemaType: SchemaType.faqPage,
     ),
     'ruya/aramak': PageMeta(
       title: 'Rüyada Bir Şey Aramak Ne Anlama Gelir? | Rüya İzi — Venus One',
-      description: 'Rüyada aramak eksiklik hissini ve tamamlanmamış bir arayışı simgeler. Neyi aradığınız bilinçaltının mesajını ortaya koyar.',
-      keywords: ['rüyada aramak', 'arama rüyası', 'rüyada kayıp eşya', 'rüya yorumu'],
+      description:
+          'Rüyada aramak eksiklik hissini ve tamamlanmamış bir arayışı simgeler. Neyi aradığınız bilinçaltının mesajını ortaya koyar.',
+      keywords: [
+        'rüyada aramak',
+        'arama rüyası',
+        'rüyada kayıp eşya',
+        'rüya yorumu',
+      ],
       canonicalPath: '/ruya/aramak',
       ogType: 'article',
       schemaType: SchemaType.faqPage,
     ),
     'ruya/gecmis': PageMeta(
       title: 'Rüyada Geçmiş Görmek Ne Demek? | Rüya İzi — Venus One',
-      description: 'Rüyada geçmişi görmek çözülmemiş duygular ve nostaljik bağları simgeler. Eski yerler, kişiler ve anıların anlamı.',
-      keywords: ['rüyada geçmiş', 'geçmiş rüyası', 'rüyada eski sevgili', 'rüya yorumu'],
+      description:
+          'Rüyada geçmişi görmek çözülmemiş duygular ve nostaljik bağları simgeler. Eski yerler, kişiler ve anıların anlamı.',
+      keywords: [
+        'rüyada geçmiş',
+        'geçmiş rüyası',
+        'rüyada eski sevgili',
+        'rüya yorumu',
+      ],
       canonicalPath: '/ruya/gecmis',
       ogType: 'article',
       schemaType: SchemaType.faqPage,
     ),
     'ruya/ucamamak': PageMeta(
       title: 'Rüyada Uçamamak Ne Demek? | Rüya İzi — Venus One',
-      description: 'Rüyada uçmaya çalışıp uçamamak engellenmişlik hissini yansıtır. Hedeflere ulaşmakta zorluk ve sınırlanmış hissetme.',
-      keywords: ['rüyada uçamamak', 'uçamama rüyası', 'rüyada uçmaya çalışmak', 'rüya yorumu'],
+      description:
+          'Rüyada uçmaya çalışıp uçamamak engellenmişlik hissini yansıtır. Hedeflere ulaşmakta zorluk ve sınırlanmış hissetme.',
+      keywords: [
+        'rüyada uçamamak',
+        'uçamama rüyası',
+        'rüyada uçmaya çalışmak',
+        'rüya yorumu',
+      ],
       canonicalPath: '/ruya/ucamamak',
       ogType: 'article',
       schemaType: SchemaType.faqPage,
     ),
     'ruya/kaybetmek': PageMeta(
       title: 'Rüyada Bir Şey Kaybetmek Ne Anlama Gelir? | Rüya İzi — Venus One',
-      description: 'Rüyada kaybetmek değerli bir şeyi yitirme korkusunu simgeler. Kaybedilen nesne veya kişi duygusal bağı ortaya koyar.',
-      keywords: ['rüyada kaybetmek', 'kayıp rüyası', 'rüyada eşya kaybetmek', 'rüya yorumu'],
+      description:
+          'Rüyada kaybetmek değerli bir şeyi yitirme korkusunu simgeler. Kaybedilen nesne veya kişi duygusal bağı ortaya koyar.',
+      keywords: [
+        'rüyada kaybetmek',
+        'kayıp rüyası',
+        'rüyada eşya kaybetmek',
+        'rüya yorumu',
+      ],
       canonicalPath: '/ruya/kaybetmek',
       ogType: 'article',
       schemaType: SchemaType.faqPage,
@@ -457,14 +710,15 @@ class FaqSchemaGenerator {
     String? pageUrl,
     String? pageName,
   }) {
-    final faqItems = items.map((item) => {
-      '@type': 'Question',
-      'name': item.question,
-      'acceptedAnswer': {
-        '@type': 'Answer',
-        'text': item.answer,
-      },
-    }).toList();
+    final faqItems = items
+        .map(
+          (item) => {
+            '@type': 'Question',
+            'name': item.question,
+            'acceptedAnswer': {'@type': 'Answer', 'text': item.answer},
+          },
+        )
+        .toList();
 
     final schema = {
       '@context': 'https://schema.org',
@@ -516,14 +770,15 @@ class FaqSchemaGenerator {
         },
         {
           '@type': 'FAQPage',
-          'mainEntity': faqItems.map((item) => {
-            '@type': 'Question',
-            'name': item.question,
-            'acceptedAnswer': {
-              '@type': 'Answer',
-              'text': item.answer,
-            },
-          }).toList(),
+          'mainEntity': faqItems
+              .map(
+                (item) => {
+                  '@type': 'Question',
+                  'name': item.question,
+                  'acceptedAnswer': {'@type': 'Answer', 'text': item.answer},
+                },
+              )
+              .toList(),
         },
       ],
     };
@@ -535,12 +790,18 @@ class FaqSchemaGenerator {
   static String generateBreadcrumbSchema({
     required List<BreadcrumbItem> items,
   }) {
-    final listItems = items.asMap().entries.map((entry) => {
-      '@type': 'ListItem',
-      'position': entry.key + 1,
-      'name': entry.value.name,
-      'item': entry.value.url,
-    }).toList();
+    final listItems = items
+        .asMap()
+        .entries
+        .map(
+          (entry) => {
+            '@type': 'ListItem',
+            'position': entry.key + 1,
+            'name': entry.value.name,
+            'item': entry.value.url,
+          },
+        )
+        .toList();
 
     final schema = {
       '@context': 'https://schema.org',
@@ -568,6 +829,7 @@ class FaqSchemaGenerator {
       }
       return '"$value"';
     }
+
     return encodeValue(data);
   }
 }
@@ -577,10 +839,7 @@ class FaqSchemaItem {
   final String question;
   final String answer;
 
-  const FaqSchemaItem({
-    required this.question,
-    required this.answer,
-  });
+  const FaqSchemaItem({required this.question, required this.answer});
 }
 
 /// Breadcrumb item model for schema generation
@@ -588,10 +847,7 @@ class BreadcrumbItem {
   final String name;
   final String url;
 
-  const BreadcrumbItem({
-    required this.name,
-    required this.url,
-  });
+  const BreadcrumbItem({required this.name, required this.url});
 }
 
 // ═══════════════════════════════════════════════════════════════
@@ -669,7 +925,8 @@ class DiscoverContentTemplates {
     final now = DateTime.now();
     return DiscoverMeta(
       title: '$signEmoji $sign Burcu Bu Hafta: $highlight',
-      description: 'Bu hafta $sign burcu için aşk, kariyer ve sağlık yorumları. Haftanın şanslı günleri ve dikkat edilmesi gerekenler.',
+      description:
+          'Bu hafta $sign burcu için aşk, kariyer ve sağlık yorumları. Haftanın şanslı günleri ve dikkat edilmesi gerekenler.',
       ogImage: 'https://venusone.com/images/discover/weekly-$sign.webp',
       ogImageAlt: '$sign burcu haftalık yorum görseli',
       articlePublishedTime: now.toIso8601String(),
@@ -687,7 +944,8 @@ class DiscoverContentTemplates {
     final now = DateTime.now();
     return DiscoverMeta(
       title: '$symbolEmoji Rüyanda $symbol Görmek Ne Anlama Gelir?',
-      description: 'Rüyada $symbol görmek: $meaning. Psikolojik ve spiritüel yorumlar, farklı kültürlerde anlamları.',
+      description:
+          'Rüyada $symbol görmek: $meaning. Psikolojik ve spiritüel yorumlar, farklı kültürlerde anlamları.',
       ogImage: 'https://venusone.com/images/discover/dream-$symbol.webp',
       ogImageAlt: 'Rüyada $symbol görmek görseli',
       articlePublishedTime: now.toIso8601String(),
@@ -704,7 +962,8 @@ class DiscoverContentTemplates {
     final now = DateTime.now();
     return DiscoverMeta(
       title: '🔢 $number Sayısının Gizemi: $title',
-      description: '$number sayısının numerolojik anlamı, kişilik özellikleri ve hayat yolu. Sayınız $number ise bu özellikleri taşıyorsunuz.',
+      description:
+          '$number sayısının numerolojik anlamı, kişilik özellikleri ve hayat yolu. Sayınız $number ise bu özellikleri taşıyorsunuz.',
       ogImage: 'https://venusone.com/images/discover/numerology-$number.webp',
       ogImageAlt: '$number sayısı numeroloji görseli',
       articlePublishedTime: now.toIso8601String(),
@@ -722,8 +981,10 @@ class DiscoverContentTemplates {
     final now = DateTime.now();
     return DiscoverMeta(
       title: '$cardEmoji $cardName Tarot Kartı: $meaning',
-      description: '$cardName kartının anlamı, düz ve ters pozisyon yorumları. Aşk, kariyer ve kişisel gelişim için mesajları.',
-      ogImage: 'https://venusone.com/images/discover/tarot-${cardName.toLowerCase().replaceAll(' ', '-')}.webp',
+      description:
+          '$cardName kartının anlamı, düz ve ters pozisyon yorumları. Aşk, kariyer ve kişisel gelişim için mesajları.',
+      ogImage:
+          'https://venusone.com/images/discover/tarot-${cardName.toLowerCase().replaceAll(' ', '-')}.webp',
       ogImageAlt: '$cardName tarot kartı görseli',
       articlePublishedTime: now.toIso8601String(),
       articleModifiedTime: now.toIso8601String(),
@@ -740,7 +1001,8 @@ class DiscoverContentTemplates {
     final now = DateTime.now();
     return DiscoverMeta(
       title: '💕 $sign1 ve $sign2 Aşk Uyumu: $compatibility',
-      description: '$sign1 ve $sign2 burçlarının ilişki dinamikleri, güçlü ve zayıf yönleri. Bu çift uyumlu mu?',
+      description:
+          '$sign1 ve $sign2 burçlarının ilişki dinamikleri, güçlü ve zayıf yönleri. Bu çift uyumlu mu?',
       ogImage: 'https://venusone.com/images/discover/love-$sign1-$sign2.webp',
       ogImageAlt: '$sign1 ve $sign2 aşk uyumu görseli',
       articlePublishedTime: now.toIso8601String(),

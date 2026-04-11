@@ -28,7 +28,13 @@ class SavedProfilesScreen extends ConsumerWidget {
               Expanded(
                 child: profiles.isEmpty
                     ? _buildEmptyState(context, isDark)
-                    : _buildProfilesList(context, ref, profiles, primaryId, isDark),
+                    : _buildProfilesList(
+                        context,
+                        ref,
+                        profiles,
+                        primaryId,
+                        isDark,
+                      ),
               ),
             ],
           ),
@@ -52,7 +58,9 @@ class SavedProfilesScreen extends ConsumerWidget {
             onPressed: () => context.pop(),
             icon: Icon(
               Icons.arrow_back_ios_new,
-              color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
+              color: isDark
+                  ? AppColors.textPrimary
+                  : AppColors.lightTextPrimary,
             ),
           ),
           const SizedBox(width: AppConstants.spacingSm),
@@ -63,15 +71,17 @@ class SavedProfilesScreen extends ConsumerWidget {
                 Text(
                   'Kayıtlı Profiller',
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        color: AppColors.starGold,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    color: AppColors.starGold,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 Text(
                   'Karşılaştırma için profil ekle',
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
-                      ),
+                    color: isDark
+                        ? AppColors.textMuted
+                        : AppColors.lightTextMuted,
+                  ),
                 ),
               ],
             ),
@@ -82,11 +92,18 @@ class SavedProfilesScreen extends ConsumerWidget {
               padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [Colors.pink.withAlpha(40), Colors.purple.withAlpha(30)],
+                  colors: [
+                    Colors.pink.withAlpha(40),
+                    Colors.purple.withAlpha(30),
+                  ],
                 ),
                 shape: BoxShape.circle,
               ),
-              child: const Icon(Icons.compare_arrows, color: Colors.pink, size: 20),
+              child: const Icon(
+                Icons.compare_arrows,
+                color: Colors.pink,
+                size: 20,
+              ),
             ),
           ),
         ],
@@ -115,16 +132,18 @@ class SavedProfilesScreen extends ConsumerWidget {
           Text(
             'Henüz profil eklenmedi',
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
-                ),
+              color: isDark
+                  ? AppColors.textPrimary
+                  : AppColors.lightTextPrimary,
+            ),
           ),
           const SizedBox(height: AppConstants.spacingSm),
           Text(
             'Partner, arkadas veya aile ekleyerek\nburç uyumunuzu keşfedin',
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
-                ),
+              color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
+            ),
           ),
         ],
       ),
@@ -146,12 +165,16 @@ class SavedProfilesScreen extends ConsumerWidget {
         final isPrimary = profile.id == primaryId;
 
         return _ProfileCard(
-          profile: profile,
-          isPrimary: isPrimary,
-          isDark: isDark,
-          onTap: () => _showProfileOptions(context, ref, profile, isPrimary),
-          onCompare: () => _startComparison(context, ref, profile),
-        ).animate().fadeIn(delay: (index * 100).ms, duration: 400.ms).slideX(begin: 0.1);
+              profile: profile,
+              isPrimary: isPrimary,
+              isDark: isDark,
+              onTap: () =>
+                  _showProfileOptions(context, ref, profile, isPrimary),
+              onCompare: () => _startComparison(context, ref, profile),
+            )
+            .animate()
+            .fadeIn(delay: (index * 100).ms, duration: 400.ms)
+            .slideX(begin: 0.1);
       },
     );
   }
@@ -170,7 +193,12 @@ class SavedProfilesScreen extends ConsumerWidget {
     );
   }
 
-  void _showProfileOptions(BuildContext context, WidgetRef ref, UserProfile profile, bool isPrimary) {
+  void _showProfileOptions(
+    BuildContext context,
+    WidgetRef ref,
+    UserProfile profile,
+    bool isPrimary,
+  ) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     showModalBottomSheet(
@@ -221,16 +249,19 @@ class SavedProfilesScreen extends ConsumerWidget {
                     children: [
                       Text(
                         profile.name ?? 'İsimsiz',
-                        style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                              color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
+                        style: Theme.of(context).textTheme.titleMedium
+                            ?.copyWith(
+                              color: isDark
+                                  ? AppColors.textPrimary
+                                  : AppColors.lightTextPrimary,
                               fontWeight: FontWeight.bold,
                             ),
                       ),
                       Text(
                         '${profile.sunSign.nameTr} ${profile.relationshipLabel}',
                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                              color: profile.sunSign.color,
-                            ),
+                          color: profile.sunSign.color,
+                        ),
                       ),
                     ],
                   ),
@@ -240,15 +271,22 @@ class SavedProfilesScreen extends ConsumerWidget {
             const SizedBox(height: AppConstants.spacingLg),
             if (!isPrimary)
               ListTile(
-                leading: const Icon(Icons.star_outline, color: AppColors.starGold),
+                leading: const Icon(
+                  Icons.star_outline,
+                  color: AppColors.starGold,
+                ),
                 title: Text(
                   'Ana Profil Yap',
                   style: TextStyle(
-                    color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
+                    color: isDark
+                        ? AppColors.textPrimary
+                        : AppColors.lightTextPrimary,
                   ),
                 ),
                 onTap: () {
-                  ref.read(savedProfilesProvider.notifier).setPrimary(profile.id);
+                  ref
+                      .read(savedProfilesProvider.notifier)
+                      .setPrimary(profile.id);
                   Navigator.pop(context);
                 },
               ),
@@ -257,7 +295,9 @@ class SavedProfilesScreen extends ConsumerWidget {
               title: Text(
                 'Karşılaştır',
                 style: TextStyle(
-                  color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
+                  color: isDark
+                      ? AppColors.textPrimary
+                      : AppColors.lightTextPrimary,
                 ),
               ),
               onTap: () {
@@ -283,13 +323,19 @@ class SavedProfilesScreen extends ConsumerWidget {
     );
   }
 
-  void _confirmDelete(BuildContext context, WidgetRef ref, UserProfile profile) {
+  void _confirmDelete(
+    BuildContext context,
+    WidgetRef ref,
+    UserProfile profile,
+  ) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        backgroundColor: isDark ? AppColors.surfaceDark : AppColors.lightSurface,
+        backgroundColor: isDark
+            ? AppColors.surfaceDark
+            : AppColors.lightSurface,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppConstants.radiusLg),
         ),
@@ -302,7 +348,9 @@ class SavedProfilesScreen extends ConsumerWidget {
         content: Text(
           '${profile.name ?? "Bu profil"} silinecek. Emin misiniz?',
           style: TextStyle(
-            color: isDark ? AppColors.textSecondary : AppColors.lightTextSecondary,
+            color: isDark
+                ? AppColors.textSecondary
+                : AppColors.lightTextSecondary,
           ),
         ),
         actions: [
@@ -317,7 +365,9 @@ class SavedProfilesScreen extends ConsumerWidget {
           ),
           TextButton(
             onPressed: () {
-              ref.read(savedProfilesProvider.notifier).removeProfile(profile.id);
+              ref
+                  .read(savedProfilesProvider.notifier)
+                  .removeProfile(profile.id);
               Navigator.pop(context);
             },
             child: const Text('Sil', style: TextStyle(color: AppColors.error)),
@@ -327,7 +377,11 @@ class SavedProfilesScreen extends ConsumerWidget {
     );
   }
 
-  void _startComparison(BuildContext context, WidgetRef ref, UserProfile profile) {
+  void _startComparison(
+    BuildContext context,
+    WidgetRef ref,
+    UserProfile profile,
+  ) {
     ref.read(comparisonProfile2Provider.notifier).state = profile;
     context.push('/comparison');
   }
@@ -400,7 +454,11 @@ class _ProfileCard extends StatelessWidget {
                         color: AppColors.starGold,
                         shape: BoxShape.circle,
                       ),
-                      child: const Icon(Icons.star, size: 12, color: Colors.white),
+                      child: const Icon(
+                        Icons.star,
+                        size: 12,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
               ],
@@ -414,24 +472,34 @@ class _ProfileCard extends StatelessWidget {
                     children: [
                       Text(
                         profile.name ?? 'İsimsiz',
-                        style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                              color: isDark ? AppColors.textPrimary : AppColors.lightTextPrimary,
+                        style: Theme.of(context).textTheme.titleMedium
+                            ?.copyWith(
+                              color: isDark
+                                  ? AppColors.textPrimary
+                                  : AppColors.lightTextPrimary,
                               fontWeight: FontWeight.w600,
                             ),
                       ),
                       if (profile.relationship != null) ...[
                         const SizedBox(width: 8),
                         Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 8,
+                            vertical: 2,
+                          ),
                           decoration: BoxDecoration(
-                            color: _getRelationshipColor(profile.relationship!).withAlpha(30),
+                            color: _getRelationshipColor(
+                              profile.relationship!,
+                            ).withAlpha(30),
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Text(
                             profile.relationshipLabel,
                             style: TextStyle(
                               fontSize: 10,
-                              color: _getRelationshipColor(profile.relationship!),
+                              color: _getRelationshipColor(
+                                profile.relationship!,
+                              ),
                               fontWeight: FontWeight.w600,
                             ),
                           ),
@@ -450,15 +518,17 @@ class _ProfileCard extends StatelessWidget {
                       Text(
                         profile.sunSign.nameTr,
                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                              color: profile.sunSign.color,
-                            ),
+                          color: profile.sunSign.color,
+                        ),
                       ),
                       const SizedBox(width: 8),
                       Text(
                         '${profile.age} yas',
                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                              color: isDark ? AppColors.textMuted : AppColors.lightTextMuted,
-                            ),
+                          color: isDark
+                              ? AppColors.textMuted
+                              : AppColors.lightTextMuted,
+                        ),
                       ),
                     ],
                   ),

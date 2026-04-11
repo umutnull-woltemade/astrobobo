@@ -84,9 +84,9 @@ class _ArticlesScreenState extends State<ArticlesScreen> {
             child: Text(
               _selectedArticle != null ? 'Makale' : 'Makaleler & Rehberler',
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                    fontWeight: FontWeight.bold,
-                    color: isDark ? Colors.white : AppColors.textDark,
-                  ),
+                fontWeight: FontWeight.bold,
+                color: isDark ? Colors.white : AppColors.textDark,
+              ),
               textAlign: TextAlign.center,
             ),
           ),
@@ -114,7 +114,11 @@ class _ArticlesScreenState extends State<ArticlesScreen> {
   }
 
   Widget _buildCategoryChip(
-      ArticleCategory? category, String label, String icon, bool isDark) {
+    ArticleCategory? category,
+    String label,
+    String icon,
+    bool isDark,
+  ) {
     final isSelected = _selectedCategory == category;
 
     return Padding(
@@ -123,11 +127,7 @@ class _ArticlesScreenState extends State<ArticlesScreen> {
         selected: isSelected,
         label: Row(
           mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(icon),
-            const SizedBox(width: 4),
-            Text(label),
-          ],
+          children: [Text(icon), const SizedBox(width: 4), Text(label)],
         ),
         onSelected: (_) {
           setState(() {
@@ -256,11 +256,7 @@ class _ArticlesScreenState extends State<ArticlesScreen> {
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              Icon(
-                                Icons.star,
-                                size: 12,
-                                color: AppColors.gold,
-                              ),
+                              Icon(Icons.star, size: 12, color: AppColors.gold),
                               const SizedBox(width: 4),
                               Text(
                                 'Premium',
@@ -577,9 +573,7 @@ class _ArticlesScreenState extends State<ArticlesScreen> {
                     ),
                   ),
                   const SizedBox(width: 8),
-                  Expanded(
-                    child: _buildFormattedText(match.group(2)!, isDark),
-                  ),
+                  Expanded(child: _buildFormattedText(match.group(2)!, isDark)),
                 ],
               ),
             ),
@@ -621,8 +615,6 @@ class _ArticlesScreenState extends State<ArticlesScreen> {
       );
     }
 
-    return RichText(
-      text: TextSpan(children: spans),
-    );
+    return RichText(text: TextSpan(children: spans));
   }
 }

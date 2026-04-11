@@ -28,9 +28,9 @@ class LifePathDetailScreen extends StatelessWidget {
           child: Center(
             child: Text(
               'Yaşam yolu sayısı bulunamadı',
-              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                color: AppColors.textSecondary,
-              ),
+              style: Theme.of(
+                context,
+              ).textTheme.bodyLarge?.copyWith(color: AppColors.textSecondary),
             ),
           ),
         ),
@@ -50,7 +50,10 @@ class LifePathDetailScreen extends StatelessWidget {
                 expandedHeight: 200,
                 flexibleSpace: _buildHeader(context, content),
                 leading: IconButton(
-                  icon: const Icon(Icons.arrow_back, color: AppColors.textPrimary),
+                  icon: const Icon(
+                    Icons.arrow_back,
+                    color: AppColors.textPrimary,
+                  ),
                   onPressed: () => context.pop(),
                 ),
               ),
@@ -212,33 +215,35 @@ class LifePathDetailScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: AppConstants.spacingMd),
-          ...bullets.map((bullet) => Padding(
-            padding: const EdgeInsets.only(bottom: 8),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  width: 6,
-                  height: 6,
-                  margin: const EdgeInsets.only(top: 7),
-                  decoration: BoxDecoration(
-                    color: color,
-                    shape: BoxShape.circle,
-                  ),
-                ),
-                const SizedBox(width: 10),
-                Expanded(
-                  child: Text(
-                    bullet,
-                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      color: AppColors.textPrimary,
-                      height: 1.5,
+          ...bullets.map(
+            (bullet) => Padding(
+              padding: const EdgeInsets.only(bottom: 8),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    width: 6,
+                    height: 6,
+                    margin: const EdgeInsets.only(top: 7),
+                    decoration: BoxDecoration(
+                      color: color,
+                      shape: BoxShape.circle,
                     ),
                   ),
-                ),
-              ],
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: Text(
+                      bullet,
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        color: AppColors.textPrimary,
+                        height: 1.5,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
-          )),
+          ),
         ],
       ),
     ).animate().fadeIn(duration: 400.ms);
@@ -292,11 +297,12 @@ class LifePathDetailScreen extends StatelessWidget {
         'Başkalarına hizmet etmek ruhsal misyondur.',
       ],
     };
-    return bullets[number] ?? [
-      'Bu sayı özel bir enerji taşır.',
-      'Potansiyelin keşfedilmeyi bekliyor.',
-      'Yaşam yolculuğun benzersizdir.',
-    ];
+    return bullets[number] ??
+        [
+          'Bu sayı özel bir enerji taşır.',
+          'Potansiyelin keşfedilmeyi bekliyor.',
+          'Yaşam yolculuğun benzersizdir.',
+        ];
   }
 
   Widget _buildHeader(BuildContext context, LifePathContent content) {
@@ -307,10 +313,7 @@ class LifePathDetailScreen extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [
-              color.withValues(alpha: 0.3),
-              Colors.transparent,
-            ],
+            colors: [color.withValues(alpha: 0.3), Colors.transparent],
           ),
         ),
         child: Column(
@@ -318,7 +321,9 @@ class LifePathDetailScreen extends StatelessWidget {
           children: [
             // AI-QUOTABLE: H1 Soru formatı
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: AppConstants.spacingLg),
+              padding: const EdgeInsets.symmetric(
+                horizontal: AppConstants.spacingLg,
+              ),
               child: Text(
                 'Yaşam yolu ${content.number} ne demek?',
                 style: Theme.of(context).textTheme.headlineSmall?.copyWith(
@@ -360,7 +365,9 @@ class LifePathDetailScreen extends StatelessWidget {
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: _getColorForNumber(content.number).withValues(alpha: 0.5),
+                    color: _getColorForNumber(
+                      content.number,
+                    ).withValues(alpha: 0.5),
                     blurRadius: 20,
                     spreadRadius: 5,
                   ),
@@ -407,7 +414,12 @@ class LifePathDetailScreen extends StatelessWidget {
       runSpacing: 8,
       alignment: WrapAlignment.center,
       children: [
-        _buildInfoPill(context, content.symbol, content.element, _getElementColor(content.element)),
+        _buildInfoPill(
+          context,
+          content.symbol,
+          content.element,
+          _getElementColor(content.element),
+        ),
         _buildInfoPill(context, '☿', content.planet, AppColors.auroraStart),
         _buildInfoPill(context, '🎴', content.tarotCard, AppColors.auroraEnd),
         _buildInfoPill(context, '🎨', content.color, AppColors.starGold),
@@ -416,7 +428,12 @@ class LifePathDetailScreen extends StatelessWidget {
     ).animate().fadeIn(duration: 400.ms);
   }
 
-  Widget _buildInfoPill(BuildContext context, String emoji, String label, Color color) {
+  Widget _buildInfoPill(
+    BuildContext context,
+    String emoji,
+    String label,
+    Color color,
+  ) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
       decoration: BoxDecoration(
@@ -431,9 +448,9 @@ class LifePathDetailScreen extends StatelessWidget {
           const SizedBox(width: 6),
           Text(
             label,
-            style: Theme.of(context).textTheme.labelSmall?.copyWith(
-              color: color,
-            ),
+            style: Theme.of(
+              context,
+            ).textTheme.labelSmall?.copyWith(color: color),
           ),
         ],
       ),
@@ -453,10 +470,7 @@ class LifePathDetailScreen extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [
-            color.withValues(alpha: 0.15),
-            AppColors.surfaceDark,
-          ],
+          colors: [color.withValues(alpha: 0.15), AppColors.surfaceDark],
         ),
         borderRadius: BorderRadius.circular(AppConstants.radiusMd),
         border: Border.all(color: color.withValues(alpha: 0.3)),
@@ -523,7 +537,11 @@ class LifePathDetailScreen extends StatelessWidget {
                   color: AppColors.error.withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: const Icon(Icons.nights_stay, color: AppColors.error, size: 20),
+                child: const Icon(
+                  Icons.nights_stay,
+                  color: AppColors.error,
+                  size: 20,
+                ),
               ),
               const SizedBox(width: 12),
               Text(
@@ -552,7 +570,11 @@ class LifePathDetailScreen extends StatelessWidget {
             ),
             child: Row(
               children: [
-                const Icon(Icons.info_outline, color: AppColors.textMuted, size: 16),
+                const Icon(
+                  Icons.info_outline,
+                  color: AppColors.textMuted,
+                  size: 16,
+                ),
                 const SizedBox(width: 8),
                 Expanded(
                   child: Text(
@@ -571,7 +593,10 @@ class LifePathDetailScreen extends StatelessWidget {
     ).animate().fadeIn(duration: 400.ms);
   }
 
-  Widget _buildCompatibilitySection(BuildContext context, LifePathContent content) {
+  Widget _buildCompatibilitySection(
+    BuildContext context,
+    LifePathContent content,
+  ) {
     return Container(
       padding: const EdgeInsets.all(AppConstants.spacingLg),
       decoration: BoxDecoration(
@@ -626,9 +651,9 @@ class LifePathDetailScreen extends StatelessWidget {
       children: [
         Text(
           label,
-          style: Theme.of(context).textTheme.labelMedium?.copyWith(
-            color: color,
-          ),
+          style: Theme.of(
+            context,
+          ).textTheme.labelMedium?.copyWith(color: color),
         ),
         const SizedBox(height: 8),
         Wrap(
@@ -676,9 +701,9 @@ class LifePathDetailScreen extends StatelessWidget {
               const SizedBox(width: 8),
               Text(
                 'Bu Yaşam Yolundaki Ünlüler',
-                style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                  color: AppColors.starGold,
-                ),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleSmall?.copyWith(color: AppColors.starGold),
               ),
             ],
           ),
@@ -688,16 +713,19 @@ class LifePathDetailScreen extends StatelessWidget {
             runSpacing: 8,
             children: people.map((person) {
               return Container(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 6,
+                ),
                 decoration: BoxDecoration(
                   color: AppColors.starGold.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: Text(
                   person.trim(),
-                  style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                    color: AppColors.starGold,
-                  ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.labelSmall?.copyWith(color: AppColors.starGold),
                 ),
               );
             }).toList(),
@@ -726,11 +754,7 @@ class LifePathDetailScreen extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Icon(
-            Icons.format_quote,
-            color: _getColorForNumber(number),
-            size: 32,
-          ),
+          Icon(Icons.format_quote, color: _getColorForNumber(number), size: 32),
           const SizedBox(height: AppConstants.spacingMd),
           Text(
             affirmation,
@@ -744,9 +768,9 @@ class LifePathDetailScreen extends StatelessWidget {
           const SizedBox(height: AppConstants.spacingMd),
           Text(
             'Günlük Olumlamanız',
-            style: Theme.of(context).textTheme.labelSmall?.copyWith(
-              color: AppColors.textMuted,
-            ),
+            style: Theme.of(
+              context,
+            ).textTheme.labelSmall?.copyWith(color: AppColors.textMuted),
           ),
         ],
       ),

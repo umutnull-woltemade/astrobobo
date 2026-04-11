@@ -1311,8 +1311,7 @@ class TekrarlayanRuyaKaliplari {
       ],
       evolutionNotes:
           'Duygusal ifade öğrenildiğinde, su rüyaları sakinleşir - sakin göller, berrak akarsular.',
-      breakingAdvice:
-          'Duygular bataklık değil, akarsudur. Akmasına izin ver.',
+      breakingAdvice: 'Duygular bataklık değil, akarsudur. Akmasına izin ver.',
     ),
     RecurringDreamPattern(
       patternId: 'death-loved',
@@ -1348,8 +1347,11 @@ class TekrarlayanRuyaKaliplari {
   /// Sembole göre kalıp bul
   static List<RecurringDreamPattern> findBySymbol(String symbol) {
     return kaliplar
-        .where((k) => k.commonSymbols.any(
-            (s) => s.toLowerCase().contains(symbol.toLowerCase())))
+        .where(
+          (k) => k.commonSymbols.any(
+            (s) => s.toLowerCase().contains(symbol.toLowerCase()),
+          ),
+        )
         .toList();
   }
 }
@@ -1550,100 +1552,420 @@ class NightmareGuide {
 class GenisletilmisAlintilar {
   static const List<ShareableCard> ekAlintilar = [
     // GÖLGE & DÖNÜŞÜM
-    ShareableCard(emoji: '🌑', quote: 'Gölgeni tanımadan ışığını bilemezsin.', category: 'Gölge'),
-    ShareableCard(emoji: '🦋', quote: 'Değişim acıtır, değişmemek daha çok.', category: 'Dönüşüm'),
-    ShareableCard(emoji: '🔥', quote: 'Anka kuşu önce yanar, sonra yükselir.', category: 'Yenilenme'),
-    ShareableCard(emoji: '🌙', quote: 'Ay bile her gece yeniden doğar.', category: 'Döngü'),
-    ShareableCard(emoji: '🌊', quote: 'Dalga olmak ister misin, okyanus olmak mı?', category: 'Derinlik'),
-    ShareableCard(emoji: '⚡', quote: 'Fırtına geçer, sen kalırsın.', category: 'Dayanıklılık'),
-    ShareableCard(emoji: '🗝️', quote: 'Kilit değişmez, anahtar ararız.', category: 'Çözüm'),
-    ShareableCard(emoji: '🪞', quote: 'Ayna yalan söylemez, sen yorumlarsın.', category: 'Gerçek'),
-    ShareableCard(emoji: '🌅', quote: 'Her gece bir şafağa gebedir.', category: 'Umut'),
-    ShareableCard(emoji: '🧭', quote: 'Kaybolmak bazen yolu bulmanın ta kendisidir.', category: 'Yolculuk'),
+    ShareableCard(
+      emoji: '🌑',
+      quote: 'Gölgeni tanımadan ışığını bilemezsin.',
+      category: 'Gölge',
+    ),
+    ShareableCard(
+      emoji: '🦋',
+      quote: 'Değişim acıtır, değişmemek daha çok.',
+      category: 'Dönüşüm',
+    ),
+    ShareableCard(
+      emoji: '🔥',
+      quote: 'Anka kuşu önce yanar, sonra yükselir.',
+      category: 'Yenilenme',
+    ),
+    ShareableCard(
+      emoji: '🌙',
+      quote: 'Ay bile her gece yeniden doğar.',
+      category: 'Döngü',
+    ),
+    ShareableCard(
+      emoji: '🌊',
+      quote: 'Dalga olmak ister misin, okyanus olmak mı?',
+      category: 'Derinlik',
+    ),
+    ShareableCard(
+      emoji: '⚡',
+      quote: 'Fırtına geçer, sen kalırsın.',
+      category: 'Dayanıklılık',
+    ),
+    ShareableCard(
+      emoji: '🗝️',
+      quote: 'Kilit değişmez, anahtar ararız.',
+      category: 'Çözüm',
+    ),
+    ShareableCard(
+      emoji: '🪞',
+      quote: 'Ayna yalan söylemez, sen yorumlarsın.',
+      category: 'Gerçek',
+    ),
+    ShareableCard(
+      emoji: '🌅',
+      quote: 'Her gece bir şafağa gebedir.',
+      category: 'Umut',
+    ),
+    ShareableCard(
+      emoji: '🧭',
+      quote: 'Kaybolmak bazen yolu bulmanın ta kendisidir.',
+      category: 'Yolculuk',
+    ),
 
     // BİLGELİK & SEZGİ
-    ShareableCard(emoji: '🦉', quote: 'Bilgelik susmayı bilmekle başlar.', category: 'Bilgelik'),
-    ShareableCard(emoji: '🔮', quote: 'Gelecek sezende, geçmiş hafızanda yaşar.', category: 'Sezgi'),
-    ShareableCard(emoji: '📿', quote: 'Her nefes bir dua, her adım bir meditasyondur.', category: 'Spiritüellik'),
-    ShareableCard(emoji: '🌳', quote: 'Köklerin derinliği, dalların yüksekliğini belirler.', category: 'Temel'),
-    ShareableCard(emoji: '💫', quote: 'Evren seninle değil, senin aracılığınla konuşur.', category: 'Bağlantı'),
-    ShareableCard(emoji: '🕯️', quote: 'Tek bir mum bin karanlığı aydınlatır.', category: 'Işık'),
-    ShareableCard(emoji: '📜', quote: 'Kadim bilgelik modern sorunlara da yanıt verir.', category: 'Zamansız'),
-    ShareableCard(emoji: '🧘', quote: 'Dışarı bakarak arar, içeri bakarak bulursun.', category: 'İçsel'),
-    ShareableCard(emoji: '🎋', quote: 'Bambu rüzgârda eğilir ama kırılmaz.', category: 'Esneklik'),
-    ShareableCard(emoji: '⏳', quote: 'Zaman en iyi öğretmen, ama öğrencilerini öldürür.', category: 'Zaman'),
+    ShareableCard(
+      emoji: '🦉',
+      quote: 'Bilgelik susmayı bilmekle başlar.',
+      category: 'Bilgelik',
+    ),
+    ShareableCard(
+      emoji: '🔮',
+      quote: 'Gelecek sezende, geçmiş hafızanda yaşar.',
+      category: 'Sezgi',
+    ),
+    ShareableCard(
+      emoji: '📿',
+      quote: 'Her nefes bir dua, her adım bir meditasyondur.',
+      category: 'Spiritüellik',
+    ),
+    ShareableCard(
+      emoji: '🌳',
+      quote: 'Köklerin derinliği, dalların yüksekliğini belirler.',
+      category: 'Temel',
+    ),
+    ShareableCard(
+      emoji: '💫',
+      quote: 'Evren seninle değil, senin aracılığınla konuşur.',
+      category: 'Bağlantı',
+    ),
+    ShareableCard(
+      emoji: '🕯️',
+      quote: 'Tek bir mum bin karanlığı aydınlatır.',
+      category: 'Işık',
+    ),
+    ShareableCard(
+      emoji: '📜',
+      quote: 'Kadim bilgelik modern sorunlara da yanıt verir.',
+      category: 'Zamansız',
+    ),
+    ShareableCard(
+      emoji: '🧘',
+      quote: 'Dışarı bakarak arar, içeri bakarak bulursun.',
+      category: 'İçsel',
+    ),
+    ShareableCard(
+      emoji: '🎋',
+      quote: 'Bambu rüzgârda eğilir ama kırılmaz.',
+      category: 'Esneklik',
+    ),
+    ShareableCard(
+      emoji: '⏳',
+      quote: 'Zaman en iyi öğretmen, ama öğrencilerini öldürür.',
+      category: 'Zaman',
+    ),
 
     // CESARET & GÜÇ
-    ShareableCard(emoji: '🦁', quote: 'İçindeki aslan uyumuyor, sessiz bekliyor.', category: 'Güç'),
-    ShareableCard(emoji: '⚔️', quote: 'Gerçek savaşçı önce kendini fetheder.', category: 'Zafer'),
-    ShareableCard(emoji: '🛡️', quote: 'En iyi savunma, saldırı değil farkındalıktır.', category: 'Koruma'),
-    ShareableCard(emoji: '🏹', quote: 'Ok geriye çekilmeden ileriye gidemez.', category: 'Hazırlık'),
-    ShareableCard(emoji: '💪', quote: 'Güç kaslarında değil, niyetinde saklı.', category: 'İrade'),
-    ShareableCard(emoji: '🌋', quote: 'Sessiz yanardağ en tehlikelisidir - patlama zamanını bekle.', category: 'Potansiyel'),
-    ShareableCard(emoji: '🔱', quote: 'Üç kol: Düşünce, söz, eylem - üçü bir olsun.', category: 'Bütünlük'),
-    ShareableCard(emoji: '👑', quote: 'Taç ağırdır, ama başın dik olsun.', category: 'Sorumluluk'),
-    ShareableCard(emoji: '🐉', quote: 'Ejderhayla savaşma, ejderha ol.', category: 'Dönüşüm'),
-    ShareableCard(emoji: '🏔️', quote: 'Dağ yerinden oynamaz, sen tırman.', category: 'Azim'),
+    ShareableCard(
+      emoji: '🦁',
+      quote: 'İçindeki aslan uyumuyor, sessiz bekliyor.',
+      category: 'Güç',
+    ),
+    ShareableCard(
+      emoji: '⚔️',
+      quote: 'Gerçek savaşçı önce kendini fetheder.',
+      category: 'Zafer',
+    ),
+    ShareableCard(
+      emoji: '🛡️',
+      quote: 'En iyi savunma, saldırı değil farkındalıktır.',
+      category: 'Koruma',
+    ),
+    ShareableCard(
+      emoji: '🏹',
+      quote: 'Ok geriye çekilmeden ileriye gidemez.',
+      category: 'Hazırlık',
+    ),
+    ShareableCard(
+      emoji: '💪',
+      quote: 'Güç kaslarında değil, niyetinde saklı.',
+      category: 'İrade',
+    ),
+    ShareableCard(
+      emoji: '🌋',
+      quote: 'Sessiz yanardağ en tehlikelisidir - patlama zamanını bekle.',
+      category: 'Potansiyel',
+    ),
+    ShareableCard(
+      emoji: '🔱',
+      quote: 'Üç kol: Düşünce, söz, eylem - üçü bir olsun.',
+      category: 'Bütünlük',
+    ),
+    ShareableCard(
+      emoji: '👑',
+      quote: 'Taç ağırdır, ama başın dik olsun.',
+      category: 'Sorumluluk',
+    ),
+    ShareableCard(
+      emoji: '🐉',
+      quote: 'Ejderhayla savaşma, ejderha ol.',
+      category: 'Dönüşüm',
+    ),
+    ShareableCard(
+      emoji: '🏔️',
+      quote: 'Dağ yerinden oynamaz, sen tırman.',
+      category: 'Azim',
+    ),
 
     // AŞK & İLİŞKİLER
-    ShareableCard(emoji: '💕', quote: 'Gerçek aşk, maskelerin düştüğü yerde başlar.', category: 'Aşk'),
-    ShareableCard(emoji: '🌹', quote: 'Gül dikensiz olmaz, aşk acısız.', category: 'Kabullenme'),
-    ShareableCard(emoji: '🔗', quote: 'Bağ, bağımlılık değil; özgürlükte birlikteliktir.', category: 'İlişki'),
-    ShareableCard(emoji: '💑', quote: 'Ruh eşi bulmak değil, ruhunu paylaşmaktır.', category: 'Birlik'),
-    ShareableCard(emoji: '❤️‍🔥', quote: 'Yanmadan ısıtmak, aşkın sırrıdır.', category: 'Denge'),
-    ShareableCard(emoji: '🤝', quote: 'El ele değil, yan yana yürümek sevgidir.', category: 'Ortaklık'),
-    ShareableCard(emoji: '💔', quote: 'Kırık kalp, daha geniş sevebilir.', category: 'Şifa'),
-    ShareableCard(emoji: '🕊️', quote: 'Özgür bıraktığın döner, tuttuğun kaçar.', category: 'Özgürlük'),
-    ShareableCard(emoji: '🌺', quote: 'Çiçek sulanmadan açmaz, ilişki beslenme ister.', category: 'Bakım'),
-    ShareableCard(emoji: '🪢', quote: 'Düğümü çözmek, kesmekten zordur ama değerlidir.', category: 'Sabır'),
+    ShareableCard(
+      emoji: '💕',
+      quote: 'Gerçek aşk, maskelerin düştüğü yerde başlar.',
+      category: 'Aşk',
+    ),
+    ShareableCard(
+      emoji: '🌹',
+      quote: 'Gül dikensiz olmaz, aşk acısız.',
+      category: 'Kabullenme',
+    ),
+    ShareableCard(
+      emoji: '🔗',
+      quote: 'Bağ, bağımlılık değil; özgürlükte birlikteliktir.',
+      category: 'İlişki',
+    ),
+    ShareableCard(
+      emoji: '💑',
+      quote: 'Ruh eşi bulmak değil, ruhunu paylaşmaktır.',
+      category: 'Birlik',
+    ),
+    ShareableCard(
+      emoji: '❤️‍🔥',
+      quote: 'Yanmadan ısıtmak, aşkın sırrıdır.',
+      category: 'Denge',
+    ),
+    ShareableCard(
+      emoji: '🤝',
+      quote: 'El ele değil, yan yana yürümek sevgidir.',
+      category: 'Ortaklık',
+    ),
+    ShareableCard(
+      emoji: '💔',
+      quote: 'Kırık kalp, daha geniş sevebilir.',
+      category: 'Şifa',
+    ),
+    ShareableCard(
+      emoji: '🕊️',
+      quote: 'Özgür bıraktığın döner, tuttuğun kaçar.',
+      category: 'Özgürlük',
+    ),
+    ShareableCard(
+      emoji: '🌺',
+      quote: 'Çiçek sulanmadan açmaz, ilişki beslenme ister.',
+      category: 'Bakım',
+    ),
+    ShareableCard(
+      emoji: '🪢',
+      quote: 'Düğümü çözmek, kesmekten zordur ama değerlidir.',
+      category: 'Sabır',
+    ),
 
     // KORKU & KARANLIK
-    ShareableCard(emoji: '👁️', quote: 'Korku, görmek istemediğinin gölgesidir.', category: 'Korku'),
-    ShareableCard(emoji: '🕳️', quote: 'Karanlık delik değil, bilinmeyen kapıdır.', category: 'Bilinmeyen'),
-    ShareableCard(emoji: '🌫️', quote: 'Sis kalkar, yol görünür. Bekle.', category: 'Belirsizlik'),
-    ShareableCard(emoji: '🕸️', quote: 'Örümcek ağında mahsur olan, hareket edendir.', category: 'Sabır'),
-    ShareableCard(emoji: '🦇', quote: 'Karanlıkta görmek, ışıktan daha zordur ama öğrenilir.', category: 'Adaptasyon'),
-    ShareableCard(emoji: '👤', quote: 'Gölgenden kaçma, ona isim ver.', category: 'Yüzleşme'),
-    ShareableCard(emoji: '🌑', quote: 'Yeni ayın karanlığı, dolunayın hazırlığıdır.', category: 'Döngü'),
-    ShareableCard(emoji: '🗡️', quote: 'Korkularını kesme, onları anla.', category: 'Entegrasyon'),
-    ShareableCard(emoji: '🎃', quote: 'Korkunç olan, anlaşılmayandır.', category: 'Anlayış'),
-    ShareableCard(emoji: '💀', quote: 'Ölüm düşmanın değil, dönüşümün habercisi.', category: 'Geçiş'),
+    ShareableCard(
+      emoji: '👁️',
+      quote: 'Korku, görmek istemediğinin gölgesidir.',
+      category: 'Korku',
+    ),
+    ShareableCard(
+      emoji: '🕳️',
+      quote: 'Karanlık delik değil, bilinmeyen kapıdır.',
+      category: 'Bilinmeyen',
+    ),
+    ShareableCard(
+      emoji: '🌫️',
+      quote: 'Sis kalkar, yol görünür. Bekle.',
+      category: 'Belirsizlik',
+    ),
+    ShareableCard(
+      emoji: '🕸️',
+      quote: 'Örümcek ağında mahsur olan, hareket edendir.',
+      category: 'Sabır',
+    ),
+    ShareableCard(
+      emoji: '🦇',
+      quote: 'Karanlıkta görmek, ışıktan daha zordur ama öğrenilir.',
+      category: 'Adaptasyon',
+    ),
+    ShareableCard(
+      emoji: '👤',
+      quote: 'Gölgenden kaçma, ona isim ver.',
+      category: 'Yüzleşme',
+    ),
+    ShareableCard(
+      emoji: '🌑',
+      quote: 'Yeni ayın karanlığı, dolunayın hazırlığıdır.',
+      category: 'Döngü',
+    ),
+    ShareableCard(
+      emoji: '🗡️',
+      quote: 'Korkularını kesme, onları anla.',
+      category: 'Entegrasyon',
+    ),
+    ShareableCard(
+      emoji: '🎃',
+      quote: 'Korkunç olan, anlaşılmayandır.',
+      category: 'Anlayış',
+    ),
+    ShareableCard(
+      emoji: '💀',
+      quote: 'Ölüm düşmanın değil, dönüşümün habercisi.',
+      category: 'Geçiş',
+    ),
 
     // ZAMAN & DÖNGÜLER
-    ShareableCard(emoji: '⌛', quote: 'Kum tanesi kum tanesi, çöl olur.', category: 'Sabır'),
-    ShareableCard(emoji: '🔄', quote: 'Döngü kırılmaz, anlaşılır ve aşılır.', category: 'Döngü'),
-    ShareableCard(emoji: '📅', quote: 'Dün geçti, yarın yok, şimdi var.', category: 'Şimdi'),
-    ShareableCard(emoji: '🌗', quote: 'Yarı dolu, yarı boş - ikisi de sen.', category: 'Denge'),
-    ShareableCard(emoji: '🎡', quote: 'Dönme dolap: Bazen tepede, bazen dipte - ikisi de geçici.', category: 'Döngüsellik'),
-    ShareableCard(emoji: '🌱', quote: 'Tohum zamanında çatlat, mevsimi bekle.', category: 'Zamanlama'),
-    ShareableCard(emoji: '🍂', quote: 'Yaprak düşer ki ağaç yaşasın.', category: 'Bırakma'),
-    ShareableCard(emoji: '❄️', quote: 'Kış olmadan bahar bilinmez.', category: 'Kontrast'),
-    ShareableCard(emoji: '🌾', quote: 'Hasat sabırlı ekenin hakkıdır.', category: 'Emek'),
-    ShareableCard(emoji: '🌛', quote: 'Ay affetmez, sadece döner.', category: 'Döngü'),
+    ShareableCard(
+      emoji: '⌛',
+      quote: 'Kum tanesi kum tanesi, çöl olur.',
+      category: 'Sabır',
+    ),
+    ShareableCard(
+      emoji: '🔄',
+      quote: 'Döngü kırılmaz, anlaşılır ve aşılır.',
+      category: 'Döngü',
+    ),
+    ShareableCard(
+      emoji: '📅',
+      quote: 'Dün geçti, yarın yok, şimdi var.',
+      category: 'Şimdi',
+    ),
+    ShareableCard(
+      emoji: '🌗',
+      quote: 'Yarı dolu, yarı boş - ikisi de sen.',
+      category: 'Denge',
+    ),
+    ShareableCard(
+      emoji: '🎡',
+      quote: 'Dönme dolap: Bazen tepede, bazen dipte - ikisi de geçici.',
+      category: 'Döngüsellik',
+    ),
+    ShareableCard(
+      emoji: '🌱',
+      quote: 'Tohum zamanında çatlat, mevsimi bekle.',
+      category: 'Zamanlama',
+    ),
+    ShareableCard(
+      emoji: '🍂',
+      quote: 'Yaprak düşer ki ağaç yaşasın.',
+      category: 'Bırakma',
+    ),
+    ShareableCard(
+      emoji: '❄️',
+      quote: 'Kış olmadan bahar bilinmez.',
+      category: 'Kontrast',
+    ),
+    ShareableCard(
+      emoji: '🌾',
+      quote: 'Hasat sabırlı ekenin hakkıdır.',
+      category: 'Emek',
+    ),
+    ShareableCard(
+      emoji: '🌛',
+      quote: 'Ay affetmez, sadece döner.',
+      category: 'Döngü',
+    ),
 
     // ÖZ-DEĞER & KİMLİK
-    ShareableCard(emoji: '💎', quote: 'Elmas baskı altında oluşur, parlak doğmaz.', category: 'Değer'),
-    ShareableCard(emoji: '🪶', quote: 'Kuş tüyü kadar hafif, dağ kadar sağlam ol.', category: 'Denge'),
-    ShareableCard(emoji: '🎭', quote: 'Maske düşünce, gerçek yüz kalır.', category: 'Otantiklik'),
-    ShareableCard(emoji: '🏛️', quote: 'Tapınak içeride, dışarıda aramayı bırak.', category: 'İçsel'),
-    ShareableCard(emoji: '🪷', quote: 'Nilüfer çamurda doğar, gökte açar.', category: 'Yükseliş'),
-    ShareableCard(emoji: '🌟', quote: 'Yıldız olmak için karanlık gerek.', category: 'Parlaklık'),
-    ShareableCard(emoji: '🦚', quote: 'Tavus kuşu tüylerini değil, duruşunu sergiler.', category: 'Özgüven'),
-    ShareableCard(emoji: '🪻', quote: 'Çiçek başkası için açmaz, kendi için.', category: 'Öz-sevgi'),
-    ShareableCard(emoji: '🐚', quote: 'İnci, tahriş edilen istiridyenin eseridir.', category: 'Dönüşüm'),
-    ShareableCard(emoji: '🏆', quote: 'Kupa dışarıda, zafer içeride.', category: 'Başarı'),
+    ShareableCard(
+      emoji: '💎',
+      quote: 'Elmas baskı altında oluşur, parlak doğmaz.',
+      category: 'Değer',
+    ),
+    ShareableCard(
+      emoji: '🪶',
+      quote: 'Kuş tüyü kadar hafif, dağ kadar sağlam ol.',
+      category: 'Denge',
+    ),
+    ShareableCard(
+      emoji: '🎭',
+      quote: 'Maske düşünce, gerçek yüz kalır.',
+      category: 'Otantiklik',
+    ),
+    ShareableCard(
+      emoji: '🏛️',
+      quote: 'Tapınak içeride, dışarıda aramayı bırak.',
+      category: 'İçsel',
+    ),
+    ShareableCard(
+      emoji: '🪷',
+      quote: 'Nilüfer çamurda doğar, gökte açar.',
+      category: 'Yükseliş',
+    ),
+    ShareableCard(
+      emoji: '🌟',
+      quote: 'Yıldız olmak için karanlık gerek.',
+      category: 'Parlaklık',
+    ),
+    ShareableCard(
+      emoji: '🦚',
+      quote: 'Tavus kuşu tüylerini değil, duruşunu sergiler.',
+      category: 'Özgüven',
+    ),
+    ShareableCard(
+      emoji: '🪻',
+      quote: 'Çiçek başkası için açmaz, kendi için.',
+      category: 'Öz-sevgi',
+    ),
+    ShareableCard(
+      emoji: '🐚',
+      quote: 'İnci, tahriş edilen istiridyenin eseridir.',
+      category: 'Dönüşüm',
+    ),
+    ShareableCard(
+      emoji: '🏆',
+      quote: 'Kupa dışarıda, zafer içeride.',
+      category: 'Başarı',
+    ),
 
     // ASTROLOJİK
-    ShareableCard(emoji: '☿', quote: 'Merkür retro: Geri değil, içeri git.', category: 'Retro'),
-    ShareableCard(emoji: '♀', quote: 'Venüs der ki: Güzellik bakanın gözündedir.', category: 'Güzellik'),
-    ShareableCard(emoji: '♂', quote: 'Mars der ki: Enerji yönlendirilmezse yakar.', category: 'Enerji'),
-    ShareableCard(emoji: '♃', quote: 'Jüpiter genişletir - neyi genişlettiğine dikkat et.', category: 'Büyüme'),
-    ShareableCard(emoji: '♄', quote: 'Satürn sıkıştırır ki özün ortaya çıksın.', category: 'Disiplin'),
-    ShareableCard(emoji: '♅', quote: 'Uranüs beklenmedik kapılar açar - cesaret et.', category: 'Sürpriz'),
-    ShareableCard(emoji: '♆', quote: 'Neptün sis verir ki sezgini kullan.', category: 'Sezgi'),
-    ShareableCard(emoji: '♇', quote: 'Plüton öldürür ki yeniden doğasın.', category: 'Dönüşüm'),
-    ShareableCard(emoji: '☊', quote: 'Kuzey Node: Korktuğun yönde git.', category: 'Kader'),
-    ShareableCard(emoji: '☋', quote: 'Güney Node: Bildiğini bırak, bilinmeyene adım at.', category: 'Geçmiş'),
+    ShareableCard(
+      emoji: '☿',
+      quote: 'Merkür retro: Geri değil, içeri git.',
+      category: 'Retro',
+    ),
+    ShareableCard(
+      emoji: '♀',
+      quote: 'Venüs der ki: Güzellik bakanın gözündedir.',
+      category: 'Güzellik',
+    ),
+    ShareableCard(
+      emoji: '♂',
+      quote: 'Mars der ki: Enerji yönlendirilmezse yakar.',
+      category: 'Enerji',
+    ),
+    ShareableCard(
+      emoji: '♃',
+      quote: 'Jüpiter genişletir - neyi genişlettiğine dikkat et.',
+      category: 'Büyüme',
+    ),
+    ShareableCard(
+      emoji: '♄',
+      quote: 'Satürn sıkıştırır ki özün ortaya çıksın.',
+      category: 'Disiplin',
+    ),
+    ShareableCard(
+      emoji: '♅',
+      quote: 'Uranüs beklenmedik kapılar açar - cesaret et.',
+      category: 'Sürpriz',
+    ),
+    ShareableCard(
+      emoji: '♆',
+      quote: 'Neptün sis verir ki sezgini kullan.',
+      category: 'Sezgi',
+    ),
+    ShareableCard(
+      emoji: '♇',
+      quote: 'Plüton öldürür ki yeniden doğasın.',
+      category: 'Dönüşüm',
+    ),
+    ShareableCard(
+      emoji: '☊',
+      quote: 'Kuzey Node: Korktuğun yönde git.',
+      category: 'Kader',
+    ),
+    ShareableCard(
+      emoji: '☋',
+      quote: 'Güney Node: Bildiğini bırak, bilinmeyene adım at.',
+      category: 'Geçmiş',
+    ),
   ];
 
   /// Tüm alıntıları getir (orijinal + ek)

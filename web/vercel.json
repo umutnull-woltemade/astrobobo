@@ -1,9 +1,11 @@
 {
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/", "destination": "/universe/home", "permanent": false }
+  ],
   "rewrites": [
     { "source": "/api/health", "destination": "/api/health.json" },
     { "source": "/r/:lang/:slug", "destination": "/r/:lang/:slug.html" },
-    { "source": "/", "destination": "https://astrobobo.vercel.app/universe/home" },
     { "source": "/universe", "destination": "https://astrobobo.vercel.app/universe" },
     { "source": "/universe/:path*", "destination": "https://astrobobo.vercel.app/universe/:path*" },
     { "source": "/_next/:path*", "destination": "https://astrobobo.vercel.app/_next/:path*" },
@@ -53,7 +55,8 @@
     { "source": "/articles", "destination": "/index.html" },
     { "source": "/articles/:path*", "destination": "/index.html" },
     { "source": "/ruya/:path*", "destination": "/index.html" },
-    { "source": "/en/:path*", "destination": "/index.html" }
+    { "source": "/en/:path*", "destination": "/index.html" },
+    { "source": "/((?!api|_next|assets|canvaskit|icons|fonts|.well-known|r/|admin/|llms.txt|llms-full.txt|sitemap.xml|robots.txt|favicon|manifest.json|main\\.dart\\.js|flutter|version\\.json).*)", "destination": "/index.html" }
   ],
   "headers": [
     {

@@ -58,11 +58,6 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
   }
 
   void _completeOnboarding() async {
-    // ignore: avoid_print
-    print(
-      '[VenusOne] _completeOnboarding called, kIsWeb=$kIsWeb, date=$_selectedDate',
-    );
-
     // WEB: Build profile from form fields, persist via shared_preferences
     if (kIsWeb) {
       final name = (_userName?.trim().isNotEmpty == true)
@@ -88,10 +83,6 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
       } catch (_) {}
 
       if (mounted) {
-        // ignore: avoid_print
-        print(
-          '[VenusOne] WEB: Navigating to home with profile: $name / $birthDate',
-        );
         context.go(Routes.home);
       }
       return;
@@ -130,12 +121,9 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // ignore: avoid_print
-    print('🌐 OnboardingScreen.build() called, kIsWeb=$kIsWeb');
-
     // ═══════════════════════════════════════════════════════════════════════════
-    // WEB: Ultra-simple onboarding - bypass complex widget tree
-    // CosmicBackground, SafeArea, PageView, _WelcomePage all have issues on web
+    // WEB: Streamlined onboarding form (bypasses PageView/CosmicBackground
+    // which historically caused white-screen issues on Flutter web).
     // ═══════════════════════════════════════════════════════════════════════════
     if (kIsWeb) {
       final currentLang = ref.watch(languageProvider);
@@ -431,7 +419,7 @@ class _WelcomePageState extends State<_WelcomePage>
               const SizedBox(height: 24),
               // App name
               const Text(
-                'Venus One',
+                'Astrobobo',
                 style: TextStyle(
                   fontSize: 48,
                   fontWeight: FontWeight.w100,
@@ -484,7 +472,7 @@ class _WelcomePageState extends State<_WelcomePage>
 
             // App name - ultra thin font
             const Text(
-              'Venus One',
+              'Astrobobo',
               style: TextStyle(
                 fontSize: 56,
                 fontWeight: FontWeight.w100,
@@ -2338,16 +2326,58 @@ class _WebOnboardingFormState extends State<_WebOnboardingForm> {
                       ? Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Expanded(flex: 5, child: _buildFormCard()),
+                            Expanded(
+                              flex: 5,
+                              child: _buildFormCard()
+                                  .animate()
+                                  .fadeIn(
+                                    duration: 600.ms,
+                                    curve: Curves.easeOut,
+                                  )
+                                  .slideY(
+                                    begin: 0.04,
+                                    end: 0,
+                                    duration: 700.ms,
+                                    curve: Curves.easeOutCubic,
+                                  ),
+                            ),
                             const SizedBox(width: 32),
-                            Expanded(flex: 6, child: _buildPreviewPanel()),
+                            Expanded(
+                              flex: 6,
+                              child: _buildPreviewPanel()
+                                  .animate()
+                                  .fadeIn(
+                                    delay: 200.ms,
+                                    duration: 600.ms,
+                                    curve: Curves.easeOut,
+                                  )
+                                  .slideY(
+                                    begin: 0.04,
+                                    end: 0,
+                                    delay: 200.ms,
+                                    duration: 700.ms,
+                                    curve: Curves.easeOutCubic,
+                                  ),
+                            ),
                           ],
                         )
                       : Column(
                           children: [
-                            _buildFormCard(),
+                            _buildFormCard()
+                                .animate()
+                                .fadeIn(duration: 600.ms, curve: Curves.easeOut)
+                                .slideY(
+                                  begin: 0.04,
+                                  end: 0,
+                                  duration: 700.ms,
+                                  curve: Curves.easeOutCubic,
+                                ),
                             const SizedBox(height: 32),
-                            _buildPreviewPanel(),
+                            _buildPreviewPanel().animate().fadeIn(
+                              delay: 200.ms,
+                              duration: 600.ms,
+                              curve: Curves.easeOut,
+                            ),
                           ],
                         ),
                 ),
@@ -2472,7 +2502,7 @@ class _WebOnboardingFormState extends State<_WebOnboardingForm> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
-                      'Venus One',
+                      'Astrobobo',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 26,

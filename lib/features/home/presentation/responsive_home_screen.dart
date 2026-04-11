@@ -1,13 +1,15 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'widgets/mobile_lite_homepage.dart';
-import 'widgets/desktop_rich_homepage.dart';
+import 'widgets/cinematic_portal_homepage.dart';
 
 /// RESPONSIVE HOME SCREEN ROUTER
 ///
 /// Detects device type and serves appropriate homepage:
-/// - Mobile (<768px): MobileLiteHomepage - ultra fast, no heavy effects
-/// - Desktop (>=768px): DesktopRichHomepage - visual, immersive, animated
+/// - Mobile (<768px): MobileLiteHomepage — ultra fast, no heavy effects
+/// - Desktop (>=768px): CinematicPortalHomepage — interactive cosmic portal
+///   (was DesktopRichHomepage; replaced 2026-04-12 to surface the cinematic
+///    Pro layer as the primary entry point)
 ///
 /// Also considers:
 /// - Platform (web, iOS, Android)
@@ -27,12 +29,12 @@ class ResponsiveHomeScreen extends StatelessWidget {
         final isMobile = _shouldUseMobileLayout(context, screenWidth);
 
         // Return appropriate homepage.
-        // Desktop: DesktopRichHomepage (original informational home).
+        // Desktop: CinematicPortalHomepage (interactive cosmic portal).
         // Mobile:  MobileLiteHomepage (ultra-light, fast).
         if (isMobile) {
           return const MobileLiteHomepage();
         } else {
-          return const DesktopRichHomepage();
+          return const CinematicPortalHomepage();
         }
       },
     );

@@ -1,14 +1,8 @@
 {
   "trailingSlash": false,
-  "redirects": [
-    { "source": "/", "destination": "/universe/home", "permanent": false }
-  ],
   "rewrites": [
     { "source": "/api/health", "destination": "/api/health.json" },
     { "source": "/r/:lang/:slug", "destination": "/r/:lang/:slug.html" },
-    { "source": "/universe", "destination": "https://astrobobo.vercel.app/universe" },
-    { "source": "/universe/:path*", "destination": "https://astrobobo.vercel.app/universe/:path*" },
-    { "source": "/_next/:path*", "destination": "https://astrobobo.vercel.app/_next/:path*" },
     { "source": "/birth-chart", "destination": "/index.html" },
     { "source": "/horoscope", "destination": "/index.html" },
     { "source": "/horoscope/:path*", "destination": "/index.html" },

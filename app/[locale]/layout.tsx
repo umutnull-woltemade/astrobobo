@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { locales, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import "@/styles/globals.css";
-import LanguageSwitcher from "@/components/language-switcher";
+import SiteNav from "@/components/layout/site-nav";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -104,37 +104,14 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
         <meta name="theme-color" content="#0D0D1A" />
       </head>
       <body className="bg-cosmic-bg text-cosmic-text antialiased font-body min-h-screen">
-        <nav className="border-b border-cosmic-border bg-cosmic-surface/80 backdrop-blur-md sticky top-0 z-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between h-16">
-              <a href={`${localePath}/`} className="text-cosmic-accent font-display text-xl font-bold">
-                Astrobobo
-              </a>
-
-              {/* Desktop Nav */}
-              <div className="hidden md:flex items-center space-x-8">
-                <a href={`${localePath}/zodiac`} className="text-cosmic-muted hover:text-cosmic-text transition-colors">
-                  {dict.nav.zodiacSigns}
-                </a>
-                <a href={`${localePath}/articles`} className="text-cosmic-muted hover:text-cosmic-text transition-colors">
-                  {dict.nav.articles}
-                </a>
-                <LanguageSwitcher isEn={isEn} />
-              </div>
-
-              {/* Mobile Nav Toggle + Links */}
-              <div className="flex md:hidden items-center space-x-4">
-                <a href={`${localePath}/zodiac`} className="text-cosmic-muted hover:text-cosmic-text transition-colors text-sm">
-                  {dict.nav.zodiacSigns}
-                </a>
-                <a href={`${localePath}/articles`} className="text-cosmic-muted hover:text-cosmic-text transition-colors text-sm">
-                  {dict.nav.articles}
-                </a>
-                <LanguageSwitcher isEn={isEn} small />
-              </div>
-            </div>
-          </div>
-        </nav>
+        <SiteNav
+          localePath={localePath}
+          isEn={isEn}
+          dict={{
+            zodiacSigns: dict.nav.zodiacSigns,
+            articles: dict.nav.articles,
+          }}
+        />
         <main>{children}</main>
         <footer className="border-t border-cosmic-border bg-cosmic-surface mt-auto py-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { locales, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { getZodiacSigns } from "@/content/zodiac";
+import { CinematicEntryLink } from "@/components/pro/CinematicEntryLink";
 
 interface PageProps {
   params: Promise<{ locale: string; sign: string }>;
@@ -96,6 +97,13 @@ export default async function ZodiacSignPage({ params }: PageProps) {
                 {kw}
               </span>
             ))}
+          </div>
+          {/* Opt-in entry into the cinematic archetype view. Canonical
+              stays pointing at this cosmic route for SEO. */}
+          <div className="mt-6 flex justify-center">
+            <CinematicEntryLink
+              href={`${localePath}/zodiac/${sign.slug}/pro`}
+            />
           </div>
         </header>
 

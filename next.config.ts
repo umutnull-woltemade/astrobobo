@@ -3,6 +3,11 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   output: "standalone",
 
+  // Pin the workspace root to this project so Next doesn't pick up the
+  // stray ~/package-lock.json (unrelated Anthropic SDK experiment in the
+  // home directory).
+  outputFileTracingRoot: process.cwd(),
+
   images: {
     formats: ["image/avif", "image/webp"],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],

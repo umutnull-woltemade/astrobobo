@@ -6,11 +6,14 @@ const PUBLIC_FILE = /\.(.*)$/;
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Skip public files, api routes, and Next.js internals
+  // Skip public files, api routes, Next.js internals, and the Pro universe
+  // route (which lives outside the [locale] tree).
   if (
     PUBLIC_FILE.test(pathname) ||
     pathname.startsWith("/api/") ||
-    pathname.startsWith("/_next/")
+    pathname.startsWith("/_next/") ||
+    pathname === "/universe" ||
+    pathname.startsWith("/universe/")
   ) {
     return NextResponse.next();
   }

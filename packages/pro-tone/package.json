@@ -1,0 +1,20 @@
+{
+  "name": "@astrobobo/pro-tone",
+  "version": "0.1.0",
+  "description": "Shared tone-engine contract for Astrobobo Web Pro and Covara. Pure TypeScript, no framework dependencies.",
+  "type": "module",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": {
+      "types": "./index.ts",
+      "import": "./index.ts"
+    }
+  },
+  "files": [
+    "index.ts"
+  ],
+  "sideEffects": false,
+  "license": "UNLICENSED",
+  "private": true
+}

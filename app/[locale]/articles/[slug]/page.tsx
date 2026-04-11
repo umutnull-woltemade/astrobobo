@@ -4,6 +4,7 @@ import { locales, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { getArticles } from "@/content/articles";
 import { getZodiacSigns } from "@/content/zodiac";
+import { CinematicEntryLink } from "@/components/pro/CinematicEntryLink";
 
 interface PageProps {
   params: Promise<{ locale: string; slug: string }>;
@@ -126,6 +127,10 @@ export default async function ArticlePage({ params }: PageProps) {
               </span>
             ))}
           </div>
+          {/* Opt-in entry into the Pro cinematic reader. Canonical stays
+              pointing at the cosmic route so SEO is preserved. Prefetches
+              the Three.js scene chunk on hover so first-click is instant. */}
+          <CinematicEntryLink href={`${localePath}/articles/${article.slug}/pro`} />
         </header>
 
         <div className="article-prose">{sections}</div>

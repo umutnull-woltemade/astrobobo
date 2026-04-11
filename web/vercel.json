@@ -1,0 +1,109 @@
+{
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/api/health", "destination": "/api/health.json" },
+    { "source": "/r/:lang/:slug", "destination": "/r/:lang/:slug.html" },
+    { "source": "/universe", "destination": "https://astrobobo.vercel.app/universe" },
+    { "source": "/universe/:path*", "destination": "https://astrobobo.vercel.app/universe/:path*" },
+    { "source": "/_next/:path*", "destination": "https://astrobobo.vercel.app/_next/:path*" },
+    { "source": "/birth-chart", "destination": "/index.html" },
+    { "source": "/horoscope", "destination": "/index.html" },
+    { "source": "/horoscope/:path*", "destination": "/index.html" },
+    { "source": "/synastry", "destination": "/index.html" },
+    { "source": "/composite", "destination": "/index.html" },
+    { "source": "/solar-return", "destination": "/index.html" },
+    { "source": "/progressions", "destination": "/index.html" },
+    { "source": "/transits", "destination": "/index.html" },
+    { "source": "/vedic", "destination": "/index.html" },
+    { "source": "/draconic", "destination": "/index.html" },
+    { "source": "/asteroids", "destination": "/index.html" },
+    { "source": "/local-space", "destination": "/index.html" },
+    { "source": "/timing", "destination": "/index.html" },
+    { "source": "/year-ahead", "destination": "/index.html" },
+    { "source": "/weekly-horoscope", "destination": "/index.html" },
+    { "source": "/monthly-horoscope", "destination": "/index.html" },
+    { "source": "/yearly-horoscope", "destination": "/index.html" },
+    { "source": "/celebrities", "destination": "/index.html" },
+    { "source": "/glossary", "destination": "/index.html" },
+    { "source": "/tarot", "destination": "/index.html" },
+    { "source": "/tarot/:path*", "destination": "/index.html" },
+    { "source": "/numerology", "destination": "/index.html" },
+    { "source": "/numerology/:path*", "destination": "/index.html" },
+    { "source": "/saturn-return", "destination": "/index.html" },
+    { "source": "/premium", "destination": "/index.html" },
+    { "source": "/kozmoz", "destination": "/index.html" },
+    { "source": "/dreams", "destination": "/index.html" },
+    { "source": "/dreams/:path*", "destination": "/index.html" },
+    { "source": "/chakra", "destination": "/index.html" },
+    { "source": "/rituals", "destination": "/index.html" },
+    { "source": "/aura", "destination": "/index.html" },
+    { "source": "/kabbalah", "destination": "/index.html" },
+    { "source": "/compatibility", "destination": "/index.html" },
+    { "source": "/tum-cozumlemeler", "destination": "/index.html" },
+    { "source": "/tantra", "destination": "/index.html" },
+    { "source": "/love-horoscope", "destination": "/index.html" },
+    { "source": "/dream-glossary", "destination": "/index.html" },
+    { "source": "/cosmic-share", "destination": "/index.html" },
+    { "source": "/profile", "destination": "/index.html" },
+    { "source": "/settings", "destination": "/index.html" },
+    { "source": "/onboarding", "destination": "/index.html" },
+    { "source": "/home", "destination": "/index.html" },
+    { "source": "/admin/:path*", "destination": "/index.html" },
+    { "source": "/articles", "destination": "/index.html" },
+    { "source": "/articles/:path*", "destination": "/index.html" },
+    { "source": "/ruya/:path*", "destination": "/index.html" },
+    { "source": "/en/:path*", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/main.dart.js",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=86400" }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/icons/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/canvaskit/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/flutter_service_worker.js",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/index.html",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        { "key": "Content-Type", "value": "application/xml; charset=utf-8" },
+        { "key": "Cache-Control", "value": "public, max-age=600, s-maxage=3600" }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "headers": [
+        { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
+        { "key": "Cache-Control", "value": "public, max-age=600, s-maxage=3600" }
+      ]
+    }
+  ]
+}

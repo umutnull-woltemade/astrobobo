@@ -187,11 +187,13 @@ class StorageService {
 
     String? json;
     if (kIsWeb) {
-      json = _getProfile(_profileKey) as String?;
+      final raw = _getProfile(_profileKey);
+      json = raw is String ? raw : null;
     } else {
       final box = _profileBox;
       if (box == null) return null;
-      json = box.get(_profileKey) as String?;
+      final raw = box.get(_profileKey);
+      json = raw is String ? raw : null;
     }
 
     if (json == null) return null;
@@ -265,11 +267,13 @@ class StorageService {
 
     String? json;
     if (kIsWeb) {
-      json = _getProfile(_allProfilesKey) as String?;
+      final raw = _getProfile(_allProfilesKey);
+      json = raw is String ? raw : null;
     } else {
       final box = _profileBox;
       if (box == null) return [];
-      json = box.get(_allProfilesKey) as String?;
+      final raw = box.get(_allProfilesKey);
+      json = raw is String ? raw : null;
     }
 
     if (json == null) {
@@ -326,9 +330,11 @@ class StorageService {
   static String? getPrimaryProfileId() {
     _warnIfNotInitialized('getPrimaryProfileId');
     if (kIsWeb) {
-      return _getProfile(_primaryProfileIdKey) as String?;
+      final raw = _getProfile(_primaryProfileIdKey);
+      return raw is String ? raw : null;
     }
-    return _profileBox?.get(_primaryProfileIdKey) as String?;
+    final raw = _profileBox?.get(_primaryProfileIdKey);
+    return raw is String ? raw : null;
   }
 
   static UserProfile? getPrimaryProfile() {
@@ -365,14 +371,15 @@ class StorageService {
   static bool loadOnboardingComplete() {
     _warnIfNotInitialized('loadOnboardingComplete');
 
-    bool isComplete;
+    bool isComplete = false;
     if (kIsWeb) {
-      isComplete =
-          (_get(_onboardingKey, defaultValue: false) as bool?) ?? false;
+      final raw = _get(_onboardingKey, defaultValue: false);
+      isComplete = raw is bool ? raw : false;
     } else {
       final box = _settingsBox;
       if (box == null) return false;
-      isComplete = box.get(_onboardingKey, defaultValue: false) as bool;
+      final raw = box.get(_onboardingKey, defaultValue: false);
+      isComplete = raw is bool ? raw : false;
     }
 
     // If onboarding is marked complete but there's no valid profile, reset it
@@ -407,11 +414,13 @@ class StorageService {
   static bool loadDisclaimerAccepted() {
     _warnIfNotInitialized('loadDisclaimerAccepted');
     if (kIsWeb) {
-      return (_get(_disclaimerKey, defaultValue: false) as bool?) ?? false;
+      final raw = _get(_disclaimerKey, defaultValue: false);
+      return raw is bool ? raw : false;
     }
     final box = _settingsBox;
     if (box == null) return false;
-    return box.get(_disclaimerKey, defaultValue: false) as bool;
+    final raw = box.get(_disclaimerKey, defaultValue: false);
+    return raw is bool ? raw : false;
   }
 
   // ========== LANGUAGE ==========
@@ -429,15 +438,15 @@ class StorageService {
   /// Load selected language
   static AppLanguage loadLanguage() {
     _warnIfNotInitialized('loadLanguage');
-    int index;
+    int index = AppLanguage.tr.index;
     if (kIsWeb) {
-      index =
-          (_get(_languageKey, defaultValue: AppLanguage.tr.index) as int?) ??
-          AppLanguage.tr.index;
+      final raw = _get(_languageKey, defaultValue: AppLanguage.tr.index);
+      index = raw is int ? raw : AppLanguage.tr.index;
     } else {
       final box = _settingsBox;
       if (box == null) return AppLanguage.tr;
-      index = box.get(_languageKey, defaultValue: AppLanguage.tr.index) as int;
+      final raw = box.get(_languageKey, defaultValue: AppLanguage.tr.index);
+      index = raw is int ? raw : AppLanguage.tr.index;
     }
     if (index >= 0 && index < AppLanguage.values.length) {
       return AppLanguage.values[index];
@@ -460,15 +469,15 @@ class StorageService {
   /// Load theme mode (defaults to dark)
   static ThemeMode loadThemeMode() {
     _warnIfNotInitialized('loadThemeMode');
-    int index;
+    int index = ThemeMode.dark.index;
     if (kIsWeb) {
-      index =
-          (_get(_themeModeKey, defaultValue: ThemeMode.dark.index) as int?) ??
-          ThemeMode.dark.index;
+      final raw = _get(_themeModeKey, defaultValue: ThemeMode.dark.index);
+      index = raw is int ? raw : ThemeMode.dark.index;
     } else {
       final box = _settingsBox;
       if (box == null) return ThemeMode.dark;
-      index = box.get(_themeModeKey, defaultValue: ThemeMode.dark.index) as int;
+      final raw = box.get(_themeModeKey, defaultValue: ThemeMode.dark.index);
+      index = raw is int ? raw : ThemeMode.dark.index;
     }
     if (index >= 0 && index < ThemeMode.values.length) {
       return ThemeMode.values[index];
@@ -494,11 +503,13 @@ class StorageService {
   static int loadHouseSystemIndex() {
     _warnIfNotInitialized('loadHouseSystemIndex');
     if (kIsWeb) {
-      return (_get(_houseSystemKey, defaultValue: 0) as int?) ?? 0;
+      final raw = _get(_houseSystemKey, defaultValue: 0);
+      return raw is int ? raw : 0;
     }
     final box = _settingsBox;
     if (box == null) return 0;
-    return box.get(_houseSystemKey, defaultValue: 0) as int;
+    final raw = box.get(_houseSystemKey, defaultValue: 0);
+    return raw is int ? raw : 0;
   }
 
   // ========== CLEAR ALL DATA ==========

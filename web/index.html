@@ -12,31 +12,9 @@
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 
-  <!-- Cache Control - Force reload -->
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
-
-  <!-- Unregister any existing service workers (they cause white screen due to cache.addAll failure) -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.getRegistrations().then(function(registrations) {
-        registrations.forEach(function(registration) {
-          registration.unregister();
-          console.log('Service worker unregistered:', registration.scope);
-        });
-      });
-      // Also clear all caches
-      if ('caches' in window) {
-        caches.keys().then(function(names) {
-          names.forEach(function(name) {
-            caches.delete(name);
-            console.log('Cache deleted:', name);
-          });
-        });
-      }
-    }
-  </script>
+  <!-- Cache headers managed by Vercel — DO NOT add no-cache here. -->
+  <!-- Service worker is now ENABLED via flutter_bootstrap.js for offline + instant reload. -->
+  <!-- (We previously unregistered it because legacy 80+ HTML files broke addAll(). Those are gone now.) -->
 
   <!-- Dynamic SEO Meta Tags - Will be updated based on route -->
   <title id="page-title">Venus One — Kişisel Kozmik Rehberiniz | Ücretsiz Doğum Haritası</title>
@@ -44,7 +22,35 @@
   <meta id="page-keywords" name="keywords" content="astroloji, doğum haritası, burç yorumu, natal chart, synastry, transit, tarot, numeroloji">
   <meta name="author" content="Venus One">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <link id="page-canonical" rel="canonical" href="https://venusone.app/">
+  <link id="page-canonical" rel="canonical" href="https://astrobobo.com/">
+
+  <!-- Open Graph (Facebook, LinkedIn, WhatsApp, Telegram) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://astrobobo.com/">
+  <meta property="og:site_name" content="Venus One">
+  <meta property="og:title" content="Venus One — Kişisel Kozmik Rehberiniz">
+  <meta property="og:description" content="Ücretsiz doğum haritası, günlük burç yorumları, tarot, numeroloji ve daha 80+ astroloji aracı. Swiss Ephemeris hassasiyetinde.">
+  <meta property="og:image" content="https://astrobobo.com/icons/Icon-512.png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:locale" content="tr_TR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Venus One — Kişisel Kozmik Rehberiniz">
+  <meta name="twitter:description" content="Ücretsiz doğum haritası, günlük burç yorumları, tarot, numeroloji ve 80+ astroloji aracı.">
+  <meta name="twitter:image" content="https://astrobobo.com/icons/Icon-512.png">
+
+  <!-- PWA / Mobile -->
+  <meta name="theme-color" content="#0D0D1A">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Venus One">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Plausible Analytics (cookie-free, privacy-first) -->
+  <script defer data-domain="astrobobo.com" src="https://plausible.io/js/script.js"></script>
 
   <!-- Route-based Meta Injection Script -->
   <script>
@@ -458,7 +464,7 @@
 
       var path = window.location.pathname.replace(/^\/|\/$/g, '').toLowerCase();
       var meta = pageMetas[path] || pageMetas[''];
-      var baseUrl = 'https://venusone.app';
+      var baseUrl = 'https://astrobobo.com';
 
       document.getElementById('page-title').textContent = meta.title;
       document.getElementById('page-description').setAttribute('content', meta.description);
@@ -578,10 +584,10 @@
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://venusone.app/">
+  <meta property="og:url" content="https://astrobobo.com/">
   <meta property="og:title" content="Venus One - Astroloji, Numeroloji ve Tarot Uygulaması">
   <meta property="og:description" content="Günlük burç yorumları, kişiselleştirilmiş doğum haritası, tarot falı ve numeroloji. Yıldızların sana ne söylediğini keşfet.">
-  <meta property="og:image" content="https://venusone.app/images/og-image.png">
+  <meta property="og:image" content="https://astrobobo.com/images/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="tr_TR">
@@ -590,16 +596,16 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://venusone.app/">
+  <meta name="twitter:url" content="https://astrobobo.com/">
   <meta name="twitter:title" content="Venus One - Burç Yorumları ve Doğum Haritası">
   <meta name="twitter:description" content="Günlük burç yorumları, tarot, numeroloji ve kişiselleştirilmiş astroloji analizleri.">
-  <meta name="twitter:image" content="https://venusone.app/images/twitter-image.png">
+  <meta name="twitter:image" content="https://astrobobo.com/images/twitter-image.png">
   <meta name="twitter:creator" content="@venusoneapp">
 
   <!-- Language Alternates -->
-  <link rel="alternate" hreflang="tr" href="https://venusone.app/">
-  <link rel="alternate" hreflang="en" href="https://venusone.app/en/">
-  <link rel="alternate" hreflang="x-default" href="https://venusone.app/">
+  <link rel="alternate" hreflang="tr" href="https://astrobobo.com/">
+  <link rel="alternate" hreflang="en" href="https://astrobobo.com/en/">
+  <link rel="alternate" hreflang="x-default" href="https://astrobobo.com/">
 
   <!-- iOS Meta Tags & Icons -->
   <meta name="mobile-web-app-capable" content="yes">
@@ -638,7 +644,7 @@
     "applicationCategory": "LifestyleApplication",
     "operatingSystem": "Web, iOS, Android",
     "description": "Günlük burç yorumları, kişiselleştirilmiş doğum haritası, tarot falı, numeroloji, kabala ve aura analizi sunan kapsamlı astroloji uygulaması.",
-    "url": "https://venusone.app",
+    "url": "https://astrobobo.com",
     "author": {
       "@type": "Organization",
       "name": "Venus One"
@@ -665,7 +671,7 @@
       "Burç Uyumu",
       "Gezegen Transitleri"
     ],
-    "screenshot": "https://venusone.app/images/screenshot.png",
+    "screenshot": "https://astrobobo.com/images/screenshot.png",
     "softwareVersion": "1.0.0",
     "inLanguage": ["tr", "en"]
   }
@@ -677,11 +683,11 @@
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Venus One",
-    "url": "https://venusone.app",
+    "url": "https://astrobobo.com",
     "description": "Türkiye'nin en kapsamlı astroloji, numeroloji ve tarot uygulaması",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://venusone.app/horoscope/{search_term_string}",
+      "target": "https://astrobobo.com/horoscope/{search_term_string}",
       "query-input": "required name=search_term_string"
     },
     "inLanguage": "tr-TR"
@@ -694,8 +700,8 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Venus One",
-    "url": "https://venusone.app",
-    "logo": "https://venusone.app/icons/Icon-512.png",
+    "url": "https://astrobobo.com",
+    "logo": "https://astrobobo.com/icons/Icon-512.png",
     "sameAs": [
       "https://twitter.com/venusoneapp",
       "https://instagram.com/venusoneapp",
@@ -719,25 +725,25 @@
         "@type": "ListItem",
         "position": 1,
         "name": "Ana Sayfa",
-        "item": "https://venusone.app/"
+        "item": "https://astrobobo.com/"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Burç Yorumları",
-        "item": "https://venusone.app/horoscope"
+        "item": "https://astrobobo.com/horoscope"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "Doğum Haritası",
-        "item": "https://venusone.app/birth-chart"
+        "item": "https://astrobobo.com/birth-chart"
       },
       {
         "@type": "ListItem",
         "position": 4,
         "name": "Tarot",
-        "item": "https://venusone.app/tarot"
+        "item": "https://astrobobo.com/tarot"
       }
     ]
   }
@@ -846,94 +852,103 @@
       configurable: false
     });
 
-    // Flag to track if loading screen has been removed
+    // ═══════════════════════════════════════════════════════════════
+    // LOADING SCREEN LOGIC — NEVER remove until app actually renders
+    // OLD BUG: Removed on <flutter-view> detection → white screen
+    // FIX: Only remove on flutter-first-frame (real content rendered)
+    // ═══════════════════════════════════════════════════════════════
     var loadingRemoved = false;
 
-    // Function to remove loading screen
     function removeLoadingScreen() {
       if (loadingRemoved) return;
       loadingRemoved = true;
-
       var loading = document.getElementById('loading');
       if (loading) {
         loading.style.opacity = '0';
-        loading.style.transition = 'opacity 0.3s ease-out';
-        setTimeout(function() {
-          loading.remove();
-        }, 300);
+        loading.style.transition = 'opacity 0.5s ease-out';
+        setTimeout(function() { loading.remove(); }, 500);
       }
-      console.log('Loading screen removed');
+      console.log('[VenusOne] Loading screen removed');
     }
 
-    // Remove loading indicator when Flutter loads
+    // ONLY remove loading on flutter-first-frame — this fires AFTER
+    // the widget tree actually renders pixels, not just engine init
     window.addEventListener('flutter-first-frame', function() {
-      console.log('Flutter first frame received');
+      console.log('[VenusOne] First frame rendered — safe to remove loading');
       removeLoadingScreen();
     });
 
-    // Fallback: Remove loading screen when DOM content is interactive
-    // This catches cases where flutter-first-frame doesn't fire
-    var checkCount = 0;
-    var checkInterval = setInterval(function() {
-      checkCount++;
+    // DO NOT detect flutter-view — that fires before widgets render!
+    // Instead, use a longer timeout with error UI
 
-      // Check if Flutter app root exists
-      var flutterView = document.querySelector('flutter-view') ||
-                       document.querySelector('flt-glass-pane') ||
-                       document.querySelector('[flt-view-id]');
-
-      if (flutterView) {
-        console.log('Flutter view detected, removing loading screen');
-        clearInterval(checkInterval);
-        removeLoadingScreen();
-      }
-
-      // Stop checking after 30 seconds
-      if (checkCount > 60) {
-        clearInterval(checkInterval);
-      }
-    }, 500);
-
-    // Add timeout to show error if Flutter doesn't load
+    // After 20 seconds, if still loading, show error + reload button
     setTimeout(function() {
       if (!loadingRemoved) {
+        console.warn('[VenusOne] App did not render within 20s');
         var loading = document.getElementById('loading');
         if (loading) {
-          var errorMsg = loading.querySelector('.error-msg');
-          if (!errorMsg) {
-            errorMsg = document.createElement('div');
-            errorMsg.className = 'error-msg';
-            errorMsg.style.cssText = 'font-size: 12px; color: #ff6b6b; margin-top: 20px; text-align: center; max-width: 400px; display: flex; flex-direction: column; gap: 10px;';
-
-            var msg1 = document.createElement('span');
-            msg1.textContent = 'Yükleme uzun sürüyor. Lütfen bekleyin...';
-            errorMsg.appendChild(msg1);
-
-            var msg2 = document.createElement('span');
-            msg2.textContent = 'Sorun devam ederse sayfayı yenileyiniz veya tarayıcı önbelleğini temizleyiniz.';
-            msg2.style.fontSize = '11px';
-            msg2.style.color = '#888';
-            errorMsg.appendChild(msg2);
-
-            var reloadBtn = document.createElement('button');
-            reloadBtn.textContent = 'Sayfayı Yenile';
-            reloadBtn.style.cssText = 'margin-top: 10px; padding: 8px 16px; background: #FFD700; color: #0D0D1A; border: none; border-radius: 4px; cursor: pointer; font-size: 12px;';
-            reloadBtn.onclick = function() { window.location.reload(); };
-            errorMsg.appendChild(reloadBtn);
-
-            loading.appendChild(errorMsg);
-          }
+          // Change loading text to error state
+          loading.innerHTML = '<span>✨ Venus One</span>' +
+            '<span style="font-size:13px;color:#ff6b6b;margin-top:12px;">Uygulama yüklenemedi.</span>' +
+            '<button onclick="window.location.reload()" style="margin-top:16px;padding:10px 24px;background:#FFD700;color:#0D0D1A;border:none;border-radius:6px;cursor:pointer;font-size:14px;font-weight:600;">Sayfayı Yenile</button>' +
+            '<span style="font-size:11px;color:#666;margin-top:8px;">Sorun devam ederse tarayıcı önbelleğini temizleyin.</span>';
         }
       }
-    }, 15000);
+    }, 20000);
 
-    // Log any errors for debugging
+    // Catch JS-level errors for debugging
     window.addEventListener('error', function(e) {
-      console.error('Global error:', e.message, e.filename, e.lineno);
+      console.error('[VenusOne] JS Error:', e.message, e.filename, e.lineno);
+    });
+    window.addEventListener('unhandledrejection', function(e) {
+      console.error('[VenusOne] Unhandled Promise:', e.reason);
     });
 
-    // Log when script loads
-    console.log('Venus One: Loading script initialized');
+    // ═══════════════════════════════════════════════════════════════
+    // PWA INSTALL PROMPT — capture beforeinstallprompt and stash it.
+    // The Flutter app can trigger it via window.__venusInstallPWA().
+    // ═══════════════════════════════════════════════════════════════
+    window.__venusDeferredInstallPrompt = null;
+    window.addEventListener('beforeinstallprompt', function(e) {
+      e.preventDefault();
+      window.__venusDeferredInstallPrompt = e;
+      console.log('[VenusOne] PWA install prompt available');
+      // Show a small floating install banner after 30s if user hasn't dismissed
+      setTimeout(showPwaInstallBanner, 30000);
+    });
+
+    window.addEventListener('appinstalled', function() {
+      console.log('[VenusOne] PWA installed');
+      window.__venusDeferredInstallPrompt = null;
+      var banner = document.getElementById('pwa-banner');
+      if (banner) banner.remove();
+    });
+
+    window.__venusInstallPWA = function() {
+      var prompt = window.__venusDeferredInstallPrompt;
+      if (!prompt) return Promise.resolve('unavailable');
+      prompt.prompt();
+      return prompt.userChoice.then(function(result) {
+        window.__venusDeferredInstallPrompt = null;
+        return result.outcome;
+      });
+    };
+
+    function showPwaInstallBanner() {
+      if (!window.__venusDeferredInstallPrompt) return;
+      if (localStorage.getItem('venus_pwa_dismissed') === '1') return;
+      if (document.getElementById('pwa-banner')) return;
+      var banner = document.createElement('div');
+      banner.id = 'pwa-banner';
+      banner.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#1a1a2e;color:#fff;padding:14px 20px;border-radius:14px;border:1px solid rgba(255,215,0,0.3);box-shadow:0 8px 32px rgba(0,0,0,0.5);z-index:99999;display:flex;align-items:center;gap:12px;font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:14px;max-width:90%;';
+      banner.innerHTML = '<span style="font-size:20px;">✨</span>' +
+        '<span style="flex:1;">Venus One\'ı ana ekranınıza ekleyin</span>' +
+        '<button onclick="window.__venusInstallPWA().then(()=>{var b=document.getElementById(\'pwa-banner\');if(b)b.remove();})" style="background:#FFD700;color:#0D0D1A;border:none;padding:8px 16px;border-radius:8px;font-weight:600;cursor:pointer;font-size:13px;">Yükle</button>' +
+        '<button onclick="localStorage.setItem(\'venus_pwa_dismissed\',\'1\');document.getElementById(\'pwa-banner\').remove();" style="background:transparent;color:#888;border:none;cursor:pointer;font-size:18px;padding:0 4px;">×</button>';
+      document.body.appendChild(banner);
+    }
+
+    console.log('[VenusOne] Loading script initialized');
   </script>
 
   <script src="flutter_bootstrap.js" async></script>

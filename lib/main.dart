@@ -121,16 +121,21 @@ Future<void> _initializeAndRunApp() async {
     _webLog('ENV skip: $e');
   }
 
-  // Initialize Supabase (MOBILE ONLY — web skips entirely)
-  if (!kIsWeb) {
-    try {
+  // Initialize Supabase (all platforms including web)
+  try {
+    final supabaseUrl = dotenv.env['SUPABASE_URL'] ?? 'https://placeholder.supabase.co';
+    final supabaseKey = dotenv.env['SUPABASE_ANON_KEY'] ?? 'placeholder-key';
+    if (supabaseUrl != 'https://placeholder.supabase.co') {
       await Supabase.initialize(
-        url: dotenv.env['SUPABASE_URL'] ?? 'https://placeholder.supabase.co',
-        anonKey: dotenv.env['SUPABASE_ANON_KEY'] ?? 'placeholder-key',
+        url: supabaseUrl,
+        anonKey: supabaseKey,
       ).timeout(const Duration(seconds: 5));
-    } catch (e) {
-      debugPrint('⚠️ Supabase init failed: $e');
+      _webLog('Supabase OK');
+    } else {
+      _webLog('Supabase skipped (placeholder config)');
     }
+  } catch (e) {
+    _webLog('Supabase init failed: $e');
   }
 
   // Glossary cache (MOBILE ONLY)

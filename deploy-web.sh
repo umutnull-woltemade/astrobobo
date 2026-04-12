@@ -174,6 +174,17 @@ for d in r admin .well-known; do
 done
 echo
 
+# ─── 7b. Post-build: patch Flutter SW to cache offline.html ────────────────
+if [ -f "build/web/flutter_service_worker.js" ] && [ -f "build/web/offline.html" ]; then
+  # Add offline.html to the RESOURCES map if not already there
+  if ! grep -q "offline.html" build/web/flutter_service_worker.js; then
+    OFFLINE_HASH=$(md5 -q build/web/offline.html 2>/dev/null || md5sum build/web/offline.html | cut -d' ' -f1)
+    sed -i.bak "s|const RESOURCES = {|const RESOURCES = {\"offline.html\": \"${OFFLINE_HASH}\",|" build/web/flutter_service_worker.js
+    rm -f build/web/flutter_service_worker.js.bak
+    ok "Patched SW to cache offline.html"
+  fi
+fi
+
 # ─── 8. Strip any leftover junk from build/web/ ────────────────────────────
 step "Cleaning build/web/ output"
 rm -rf build/web/node_modules build/web/.next build/web/package-lock.json build/web/next-env.d.ts 2>/dev/null || true

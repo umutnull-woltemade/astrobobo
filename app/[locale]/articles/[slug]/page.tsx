@@ -34,6 +34,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       type: "article",
       url: isEn ? `/articles/${article.slug}` : `/${locale}/articles/${article.slug}`,
       publishedTime: article.publishedAt,
+      images: [{
+        url: `/api/og?title=${encodeURIComponent(article.title)}&subtitle=${encodeURIComponent(article.description.slice(0, 100))}`,
+        width: 1200,
+        height: 630,
+      }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.description,
+      images: [`/api/og?title=${encodeURIComponent(article.title)}`],
     },
     alternates: {
       canonical: isEn ? `/articles/${article.slug}` : `/${locale}/articles/${article.slug}`,

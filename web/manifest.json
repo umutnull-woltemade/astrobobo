@@ -60,6 +60,13 @@
             "description": "Doğum haritanı gör",
             "url": "/birth-chart",
             "icons": [{"src": "icons/Icon-192.png", "sizes": "192x192"}]
+        },
+        {
+            "name": "Rüya Tabiri",
+            "short_name": "Rüya",
+            "description": "Rüyanda gördüklerinin anlamını öğren",
+            "url": "/dreams",
+            "icons": [{"src": "icons/Icon-192.png", "sizes": "192x192"}]
         }
     ],
     "related_applications": [

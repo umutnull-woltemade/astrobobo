@@ -4,6 +4,7 @@ import { locales, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import "@/styles/globals.css";
 import SiteNav from "@/components/layout/site-nav";
+import { WebVitals } from "@/app/web-vitals";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -108,6 +109,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
         <link rel="dns-prefetch" href="https://astrobobo.com" />
       </head>
       <body className="bg-cosmic-bg text-cosmic-text antialiased font-body min-h-screen">
+        <WebVitals />
         <SiteNav
           localePath={localePath}
           isEn={isEn}

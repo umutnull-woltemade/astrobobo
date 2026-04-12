@@ -4,6 +4,7 @@ import { locales, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { getZodiacSigns } from "@/content/zodiac";
 import { CinematicEntryLink } from "@/components/pro/CinematicEntryLink";
+import { FEATURED_DREAMS, dreamHubPath, dreamArticlePath } from "@/lib/dreams/constants";
 
 interface PageProps {
   params: Promise<{ locale: string; sign: string }>;
@@ -198,17 +199,17 @@ export default async function ZodiacSignPage({ params }: PageProps) {
               : 'Rüyalarınızdaki gizli mesajları derinlemesine rüya tabiri rehberlerimizle çözün.'}
           </p>
           <div className="flex flex-wrap gap-2">
-            {['ruyada-araba', 'ruyada-yilan', 'ruyada-ucmak', 'ruyada-su', 'ruyada-dusmek'].map(slug => (
+            {FEATURED_DREAMS.slice(0, 5).map(d => (
               <a
-                key={slug}
-                href={`/r/${isEn ? 'en' : locale}/${slug}`}
+                key={d.slug}
+                href={dreamArticlePath(locale as string, d.slug)}
                 className="text-xs px-3 py-1.5 rounded-full bg-white/[0.06] border border-white/[0.1] hover:border-purple-500/40 text-cosmic-text transition-colors"
               >
-                {slug.replace('ruyada-', '').replace(/-/g, ' ')}
+                {isEn ? d.en : d.tr}
               </a>
             ))}
             <a
-              href={`/r/${isEn ? 'en' : locale}`}
+              href={dreamHubPath(locale as string)}
               className="text-xs px-3 py-1.5 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 hover:bg-purple-500/30 transition-colors"
             >
               {isEn ? 'All dreams →' : 'Tümü →'}

@@ -105,8 +105,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
         <meta name="theme-color" content="#0D0D1A" />
         {/* Plausible Analytics — cookie-free, privacy-first */}
         <script defer data-domain="astrobobo.com" src="https://plausible.io/js/script.js" />
-        {/* DNS prefetch for OG image edge function */}
-        <link rel="dns-prefetch" href="https://astrobobo.com" />
+        <link rel="dns-prefetch" href="https://plausible.io" />
       </head>
       <body className="bg-cosmic-bg text-cosmic-text antialiased font-body min-h-screen">
         <WebVitals />

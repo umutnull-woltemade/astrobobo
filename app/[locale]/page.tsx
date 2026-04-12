@@ -71,6 +71,48 @@ export default async function HomePage({ params }: PageProps) {
               </p>
             </a>
           </div>
+
+          {/* Dream interpretation hub — links to /r/ SEO pages */}
+          <div className="mt-16 pt-12 border-t border-cosmic-border/40">
+            <h2 className="cosmic-heading text-2xl mb-4">
+              {isEn ? 'Dream Dictionary' : 'Rüya Tabiri Sözlüğü'}
+            </h2>
+            <p className="text-cosmic-muted mb-6 text-sm">
+              {isEn
+                ? 'Explore the hidden meanings behind your dreams. In-depth guides grounded in psychology, culture, and astrology.'
+                : 'Rüyalarınızın arkasındaki gizli anlamları keşfedin. Psikoloji, kültür ve astrolojiyle desteklenmiş derinlemesine rehberler.'}
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+              {[
+                { slug: 'ruyada-araba', tr: 'Araba', en: 'Car' },
+                { slug: 'ruyada-bebek', tr: 'Bebek', en: 'Baby' },
+                { slug: 'ruyada-dusmek', tr: 'Düşmek', en: 'Falling' },
+                { slug: 'ruyada-ucmak', tr: 'Uçmak', en: 'Flying' },
+                { slug: 'ruyada-yilan', tr: 'Yılan', en: 'Snake' },
+                { slug: 'ruyada-su', tr: 'Su', en: 'Water' },
+                { slug: 'ruyada-olum', tr: 'Ölüm', en: 'Death' },
+                { slug: 'ruyada-ev', tr: 'Ev', en: 'House' },
+                { slug: 'ruyada-para', tr: 'Para', en: 'Money' },
+                { slug: 'ruyada-kovalanmak', tr: 'Kovalanmak', en: 'Being Chased' },
+              ].map(d => (
+                <a
+                  key={d.slug}
+                  href={`/r/${isEn ? 'en' : 'tr'}/${d.slug}`}
+                  className="block px-4 py-3 rounded-xl bg-white/[0.04] border border-white/[0.08] hover:border-purple-500/40 hover:bg-white/[0.07] transition-all text-sm text-cosmic-text text-center"
+                >
+                  {isEn ? d.en : d.tr}
+                </a>
+              ))}
+            </div>
+            <div className="mt-4 text-center">
+              <a
+                href={`/r/${isEn ? 'en' : 'tr'}`}
+                className="text-purple-400 hover:text-purple-300 text-sm font-medium"
+              >
+                {isEn ? 'View all dream interpretations →' : 'Tüm rüya tabirlerini gör →'}
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </div>

@@ -6,14 +6,17 @@ const PUBLIC_FILE = /\.(.*)$/;
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Skip public files, api routes, Next.js internals, and the Pro universe
-  // route (which lives outside the [locale] tree).
+  // Skip public files, api routes, Next.js internals, the Pro universe
+  // route, and SEO pre-rendered pages under /r/ (served as static HTML
+  // from public/r/ via vercel.json rewrites).
   if (
     PUBLIC_FILE.test(pathname) ||
     pathname.startsWith("/api/") ||
     pathname.startsWith("/_next/") ||
     pathname === "/universe" ||
-    pathname.startsWith("/universe/")
+    pathname.startsWith("/universe/") ||
+    pathname.startsWith("/r/") ||
+    pathname.startsWith("/admin/")
   ) {
     return NextResponse.next();
   }

@@ -16,6 +16,7 @@ type Dict = {
   zodiacSigns: string;
   articles: string;
   dreams?: string;
+  read?: string;
 };
 
 export default function SiteNav({
@@ -90,11 +91,11 @@ export default function SiteNav({
               {dict.zodiacSigns}
             </a>
             <a
-              href={`${localePath}/articles`}
+              href={`${localePath}/read`}
               className="text-cosmic-muted hover:text-cosmic-text transition-colors"
             >
               {dict.articles}
-            </a>
+</a>
             <a
               href={`/r/${isEn ? 'en' : 'tr'}`}
               className="text-cosmic-muted hover:text-cosmic-text transition-colors"

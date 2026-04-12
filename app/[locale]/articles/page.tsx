@@ -86,18 +86,16 @@ export default async function ArticlesPage({ params }: PageProps) {
       {/* Dream Dictionary Cross-Link */}
       <div className="mt-16 pt-12 border-t border-cosmic-border/40 text-center">
         <h2 className="text-2xl font-display text-cosmic-accent mb-3">
-          {isEn ? '🌙 Dream Interpretation Guide' : '🌙 Rüya Tabiri Rehberi'}
+          {dict.dreams.guideTitle}
         </h2>
         <p className="text-cosmic-muted text-sm mb-6 max-w-lg mx-auto">
-          {isEn
-            ? 'Discover what your dreams really mean. 15 in-depth guides covering the most common dream symbols.'
-            : 'Rüyalarınızın gerçek anlamını keşfedin. En yaygın 15 rüya sembolünü derinlemesine inceleyen rehberler.'}
+          {dict.dreams.guideSubtitle}
         </p>
         <a
           href={dreamHubPath(locale as string)}
           className="inline-block px-8 py-3 rounded-xl bg-purple-500/20 border border-purple-500/30 text-purple-300 hover:bg-purple-500/30 transition-all font-medium"
         >
-          {isEn ? 'Explore Dream Dictionary →' : 'Rüya Tabiri Sözlüğüne Git →'}
+          {dict.dreams.explore}
         </a>
       </div>
     </div>

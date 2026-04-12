@@ -76,12 +76,10 @@ export default async function HomePage({ params }: PageProps) {
           {/* Dream interpretation hub — links to /r/ SEO pages */}
           <div className="mt-16 pt-12 border-t border-cosmic-border/40">
             <h2 className="cosmic-heading text-2xl mb-4">
-              {isEn ? 'Dream Dictionary' : 'Rüya Tabiri Sözlüğü'}
+              {dict.dreams.title}
             </h2>
             <p className="text-cosmic-muted mb-6 text-sm">
-              {isEn
-                ? 'Explore the hidden meanings behind your dreams. In-depth guides grounded in psychology, culture, and astrology.'
-                : 'Rüyalarınızın arkasındaki gizli anlamları keşfedin. Psikoloji, kültür ve astrolojiyle desteklenmiş derinlemesine rehberler.'}
+              {dict.dreams.subtitle}
             </p>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
               {FEATURED_DREAMS.map(d => (
@@ -99,7 +97,7 @@ export default async function HomePage({ params }: PageProps) {
                 href={dreamHubPath(locale as string)}
                 className="text-purple-400 hover:text-purple-300 text-sm font-medium"
               >
-                {isEn ? 'View all dream interpretations →' : 'Tüm rüya tabirlerini gör →'}
+                {dict.dreams.viewAll}
               </a>
             </div>
           </div>

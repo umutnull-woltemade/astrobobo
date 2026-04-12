@@ -112,6 +112,19 @@ const tr: Dictionary = {
     Fixed: "Sabit",
     Mutable: "Değişken",
   },
+  dreams: {
+    title: "Rüya Tabiri Sözlüğü",
+    subtitle: "Rüyalarınızın arkasındaki gizli anlamları keşfedin. Psikoloji, kültür ve astrolojiyle desteklenmiş derinlemesine rehberler.",
+    guideTitle: "Rüya Tabiri Rehberi",
+    guideSubtitle: "Rüyalarınızın gerçek anlamını keşfedin. En yaygın 15 rüya sembolünü derinlemesine inceleyen rehberler.",
+    viewAll: "Tüm rüya tabirlerini gör →",
+    allDreams: "Tümü →",
+    explore: "Rüya Tabiri Sözlüğüne Git →",
+    zodiacTitle: "🌙 Rüya Tabiri Sözlüğü",
+    zodiacSubtitle: "Rüyalarınızdaki gizli mesajları derinlemesine rüya tabiri rehberlerimizle çözün.",
+    navLabel: "Rüyalar",
+    footerLabel: "Rüya Tabiri",
+  },
 };
 
 export default tr;

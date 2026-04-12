@@ -110,6 +110,19 @@ const en = {
     Fixed: "Fixed",
     Mutable: "Mutable",
   },
+  dreams: {
+    title: "Dream Dictionary",
+    subtitle: "Explore the hidden meanings behind your dreams. In-depth guides grounded in psychology, culture, and astrology.",
+    guideTitle: "Dream Interpretation Guide",
+    guideSubtitle: "Discover what your dreams really mean. 15 in-depth guides covering the most common dream symbols.",
+    viewAll: "View all dream interpretations →",
+    allDreams: "All dreams →",
+    explore: "Explore Dream Dictionary →",
+    zodiacTitle: "🌙 Dream Dictionary",
+    zodiacSubtitle: "Decode the hidden messages in your dreams with our in-depth dream interpretation guides.",
+    navLabel: "Dreams",
+    footerLabel: "Dream Dictionary",
+  },
 };
 
 // Recursive type that converts all literal string values to `string`

@@ -191,12 +191,10 @@ export default async function ZodiacSignPage({ params }: PageProps) {
         {/* Dream Dictionary Cross-Link */}
         <section className="cosmic-card mt-8 bg-gradient-to-r from-purple-900/20 to-cyan-900/20 border-purple-500/20">
           <h2 className="cosmic-heading text-xl mb-3">
-            {isEn ? '🌙 Dream Dictionary' : '🌙 Rüya Tabiri Sözlüğü'}
+            {dict.dreams.zodiacTitle}
           </h2>
           <p className="text-cosmic-muted text-sm mb-4">
-            {isEn
-              ? 'Decode the hidden messages in your dreams with our in-depth dream interpretation guides.'
-              : 'Rüyalarınızdaki gizli mesajları derinlemesine rüya tabiri rehberlerimizle çözün.'}
+            {dict.dreams.zodiacSubtitle}
           </p>
           <div className="flex flex-wrap gap-2">
             {FEATURED_DREAMS.slice(0, 5).map(d => (
@@ -212,7 +210,7 @@ export default async function ZodiacSignPage({ params }: PageProps) {
               href={dreamHubPath(locale as string)}
               className="text-xs px-3 py-1.5 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 hover:bg-purple-500/30 transition-colors"
             >
-              {isEn ? 'All dreams →' : 'Tümü →'}
+              {dict.dreams.allDreams}
             </a>
           </div>
         </section>

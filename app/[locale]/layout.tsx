@@ -131,6 +131,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
                 <ul className="space-y-2 text-sm text-cosmic-muted">
                   <li><a href={`${localePath}/zodiac`} className="hover:text-cosmic-text">{dict.nav.zodiacSigns}</a></li>
                   <li><a href={`${localePath}/articles`} className="hover:text-cosmic-text">{dict.nav.articles}</a></li>
+                  <li><a href={`/r/${isEn ? 'en' : locale}`} className="hover:text-cosmic-text">{isEn ? 'Dream Dictionary' : 'Rüya Tabiri'}</a></li>
                 </ul>
               </div>
               <div>

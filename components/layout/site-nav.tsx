@@ -94,6 +94,12 @@ export default function SiteNav({
             >
               {dict.articles}
             </a>
+            <a
+              href={`/r/${isEn ? 'en' : 'tr'}`}
+              className="text-cosmic-muted hover:text-cosmic-text transition-colors"
+            >
+              {isEn ? 'Dreams' : 'Rüyalar'}
+            </a>
             <LanguageSwitcher isEn={isEn} />
           </div>
 
@@ -109,6 +115,12 @@ export default function SiteNav({
               className="text-cosmic-muted hover:text-cosmic-text transition-colors text-sm"
             >
               {dict.articles}
+            </a>
+            <a
+              href={`/r/${isEn ? 'en' : 'tr'}`}
+              className="text-cosmic-muted hover:text-cosmic-text transition-colors text-sm"
+            >
+              {isEn ? 'Dreams' : 'Rüyalar'}
             </a>
             <LanguageSwitcher isEn={isEn} small />
           </div>

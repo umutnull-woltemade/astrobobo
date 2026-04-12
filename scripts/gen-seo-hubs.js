@@ -243,6 +243,7 @@ function renderHub({ lang, slug, title, description, h1, intro, articles, isClus
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
   <link rel="icon" type="image/png" sizes="512x512" href="${baseUrl}/icons/Icon-512.png">
   <link rel="apple-touch-icon" href="${baseUrl}/icons/Icon-512.png">
+  <script defer data-domain="astrobobo.com" src="https://plausible.io/js/script.js"></script>
   <script type="application/ld+json">${JSON.stringify(ldJson)}</script>
   <style>
     *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}

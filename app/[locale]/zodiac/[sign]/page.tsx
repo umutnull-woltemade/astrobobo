@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: `${sign.name} | Astrobobo`,
       description: sign.overview.slice(0, 155) + "...",
       url: isEn ? `/zodiac/${sign.slug}` : `/${locale}/zodiac/${sign.slug}`,
-      images: [{ url: `/images/zodiac/${sign.slug}-og.png`, width: 1200, height: 630 }],
+      images: [{ url: `/api/og?title=${encodeURIComponent(sign.name)}&subtitle=${encodeURIComponent(sign.overview.slice(0, 100))}&sign=${sign.slug}`, width: 1200, height: 630 }],
     },
     alternates: {
       canonical: isEn ? `/zodiac/${sign.slug}` : `/${locale}/zodiac/${sign.slug}`,
@@ -185,6 +185,35 @@ export default async function ZodiacSignPage({ params }: PageProps) {
         <section className="cosmic-card">
           <h2 className="cosmic-heading text-2xl mb-4">{dict.zodiac.cosmicContext}</h2>
           <p className="text-cosmic-text/90 leading-relaxed">{sign.cosmicExplanation}</p>
+        </section>
+
+        {/* Dream Dictionary Cross-Link */}
+        <section className="cosmic-card mt-8 bg-gradient-to-r from-purple-900/20 to-cyan-900/20 border-purple-500/20">
+          <h2 className="cosmic-heading text-xl mb-3">
+            {isEn ? '🌙 Dream Dictionary' : '🌙 Rüya Tabiri Sözlüğü'}
+          </h2>
+          <p className="text-cosmic-muted text-sm mb-4">
+            {isEn
+              ? 'Decode the hidden messages in your dreams with our in-depth dream interpretation guides.'
+              : 'Rüyalarınızdaki gizli mesajları derinlemesine rüya tabiri rehberlerimizle çözün.'}
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {['ruyada-araba', 'ruyada-yilan', 'ruyada-ucmak', 'ruyada-su', 'ruyada-dusmek'].map(slug => (
+              <a
+                key={slug}
+                href={`/r/${isEn ? 'en' : locale}/${slug}`}
+                className="text-xs px-3 py-1.5 rounded-full bg-white/[0.06] border border-white/[0.1] hover:border-purple-500/40 text-cosmic-text transition-colors"
+              >
+                {slug.replace('ruyada-', '').replace(/-/g, ' ')}
+              </a>
+            ))}
+            <a
+              href={`/r/${isEn ? 'en' : locale}`}
+              className="text-xs px-3 py-1.5 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 hover:bg-purple-500/30 transition-colors"
+            >
+              {isEn ? 'All dreams →' : 'Tümü →'}
+            </a>
+          </div>
         </section>
 
         {/* Navigation - Circular */}

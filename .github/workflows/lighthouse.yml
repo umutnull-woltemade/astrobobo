@@ -1,0 +1,48 @@
+name: Lighthouse Performance Budget
+
+on:
+  push:
+    branches: [main, astrobobo-restore]
+  workflow_dispatch:
+
+jobs:
+  lighthouse:
+    name: Lighthouse on production
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Lighthouse CI
+        run: npm install -g @lhci/cli@0.13.x
+
+      - name: Run Lighthouse
+        run: |
+          lhci collect \
+            --url=https://astrobobo.com \
+            --url=https://astrobobo.com/r/tr/ruyada-araba.html \
+            --url=https://astrobobo.com/admin/seo.html \
+            --numberOfRuns=2 \
+            --settings.preset=desktop || true
+
+          lhci assert \
+            --assertions.categories:performance=warn \
+            --assertions.categories:accessibility=warn \
+            --assertions.categories:best-practices=warn \
+            --assertions.categories:seo=warn \
+            || echo "Lighthouse assertions completed (non-blocking)"
+
+      - name: Upload reports
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lighthouse-reports
+          path: .lighthouseci/
+          retention-days: 14

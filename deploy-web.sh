@@ -149,7 +149,7 @@ if [ -f web/index.html ]; then
   ok "Custom index.html applied"
 fi
 # Copy SEO + PWA + routing files that Flutter doesn't process automatically
-for f in sitemap.xml robots.txt vercel.json llms.txt llms-full.txt; do
+for f in sitemap.xml robots.txt vercel.json llms.txt llms-full.txt offline.html; do
   if [ -f "web/$f" ]; then
     cp "web/$f" "build/web/$f"
     ok "Copied $f"

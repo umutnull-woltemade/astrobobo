@@ -64,12 +64,20 @@ for pattern in "${STALE_PATTERNS[@]}"; do
   fi
 done
 
-# Also remove any stray .html files in web/ except index.html
+# Also remove any stray .html files in web/ except known good ones.
+# Whitelist: index.html (main entry), offline.html (PWA fallback)
+KEEP_HTML="index.html offline.html"
 for f in web/*.html; do
-  if [ -e "$f" ] && [ "$(basename "$f")" != "index.html" ]; then
-    warn "Removing stale HTML: $f"
-    rm -f "$f"
-    STALE_FOUND=1
+  if [ -e "$f" ]; then
+    base=$(basename "$f")
+    case " $KEEP_HTML " in
+      *" $base "*) ;;  # whitelisted, skip
+      *)
+        warn "Removing stale HTML: $f"
+        rm -f "$f"
+        STALE_FOUND=1
+        ;;
+    esac
   fi
 done
 

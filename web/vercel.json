@@ -1,6 +1,8 @@
 {
   "trailingSlash": false,
   "rewrites": [
+    { "source": "/r/:lang", "destination": "/r/:lang/index.html" },
+    { "source": "/r/:lang/", "destination": "/r/:lang/index.html" },
     { "source": "/r/:lang/:slug", "destination": "/r/:lang/:slug.html" },
     { "source": "/birth-chart", "destination": "/index.html" },
     { "source": "/horoscope", "destination": "/index.html" },

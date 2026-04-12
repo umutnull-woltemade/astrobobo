@@ -62,7 +62,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       description: dict.meta.ogDescription,
       images: [
         {
-          url: "/images/og/og-default.png",
+          url: `/api/og?title=${encodeURIComponent(dict.meta.siteTitle)}&subtitle=${encodeURIComponent(dict.meta.ogDescription?.slice(0, 100) || '')}`,
           width: 1200,
           height: 630,
           alt: isEn ? "Astrobobo - Cosmic Self-Discovery" : "Astrobobo - Kozmik Kendini Keşfetme",
@@ -73,7 +73,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       card: "summary_large_image",
       title: dict.meta.siteTitle,
       description: dict.meta.ogDescription,
-      images: ["/images/og/og-default.png"],
+      images: [`/api/og?title=${encodeURIComponent(dict.meta.siteTitle)}`],
       creator: "@astrobobo",
     },
     alternates: {
@@ -102,6 +102,10 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
         <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#0D0D1A" />
+        {/* Plausible Analytics — cookie-free, privacy-first */}
+        <script defer data-domain="astrobobo.com" src="https://plausible.io/js/script.js" />
+        {/* DNS prefetch for OG image edge function */}
+        <link rel="dns-prefetch" href="https://astrobobo.com" />
       </head>
       <body className="bg-cosmic-bg text-cosmic-text antialiased font-body min-h-screen">
         <SiteNav

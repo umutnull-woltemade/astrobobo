@@ -1,0 +1,19 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": ["8RBH9ALBH6.com.umut.astrologyApp"],
+        "components": [
+          {
+            "/": "/*",
+            "comment": "Matches all paths"
+          }
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": ["8RBH9ALBH6.com.umut.astrologyApp"]
+  }
+}

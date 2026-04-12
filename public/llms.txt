@@ -1,0 +1,188 @@
+# Astrobobo
+
+> Astrobobo — astrology, dream interpretation, and personal exploration. Definition-first content with Swiss Ephemeris precision.
+
+Astrobobo is a multilingual editorial platform covering astrology, dream interpretation, zodiac signs, birth charts, tarot, and numerology. Content is published in tr, en, es, de, fr, it, pt-br, ru, ar and is updated continuously. All articles use definition-first structure for AI extraction.
+
+## English (EN) (16 articles)
+
+### Dream Interpretation
+- [Dreaming Your Teeth Are Falling Out — What It Really Means](https://astrobobo.com/r/en/ruyada-dis-dokulmesi)
+- [Dreaming of Being Chased — What Are You Really Running From?](https://astrobobo.com/r/en/ruyada-kovalanmak)
+- [Dreaming of Being Lost — Your Inner Compass Is Trying to Recalibrate](https://astrobobo.com/r/en/ruyada-kaybolmak)
+- [Dreaming of Death — Why This Dream Rarely Means What You Think](https://astrobobo.com/r/en/ruyada-olum)
+- [Dreaming of Dogs — What Your Loyalty and Trust Instincts Are Telling You](https://astrobobo.com/r/en/ruyada-kopek)
+- [Dreaming of Drowning — When Your Emotions Become Overwhelming](https://astrobobo.com/r/en/ruyada-bogulmak)
+- [Dreaming of Falling — Fear of Losing Control, or the Start of Something New?](https://astrobobo.com/r/en/ruyada-dusmek)
+- [Dreaming of Flying — Are You Seeking Freedom or Running Away?](https://astrobobo.com/r/en/ruyada-ucmak)
+- [Dreaming of Money — What Your Self-Worth Is Trying to Say](https://astrobobo.com/r/en/ruyada-para)
+- [Dreaming of Snakes — Transformation, Warning, or Something Deeper?](https://astrobobo.com/r/en/ruyada-yilan)
+- [Dreaming of Water — What Your Subconscious Is Really Telling You](https://astrobobo.com/r/en/ruyada-su)
+- [Dreaming of a Baby — New Beginnings Your Unconscious Wants You to Notice](https://astrobobo.com/r/en/ruyada-bebek)
+- [Dreaming of a Car — Who's Really Driving Your Life?](https://astrobobo.com/r/en/ruyada-araba)
+- [Dreaming of a House — The Architecture of Your Inner Self](https://astrobobo.com/r/en/ruyada-ev)
+- [Dreaming of an Ex — What Unfinished Emotions Are Resurfacing](https://astrobobo.com/r/en/ruyada-eski-sevgili)
+
+### Other
+- [About Astrobobo — Our Editorial Line and Mission](https://astrobobo.com/r/en/about)
+
+## Turkish (TR) (16 articles)
+
+### Dream Interpretation
+- [Rüyada Araba Görmek — Hayat Yolculuğunuzun Direksiyonunda Kim Var?](https://astrobobo.com/r/tr/ruyada-araba)
+- [Rüyada Bebek Görmek — Yeni Başlangıçların ve Masumiyetin Sesi](https://astrobobo.com/r/tr/ruyada-bebek)
+- [Rüyada Boğulmak — Duygusal Aşırı Yüklenmenin Bilinçdışı Çığlığı](https://astrobobo.com/r/tr/ruyada-bogulmak)
+- [Rüyada Diş Dökülmesi — Kayıp Korkusu mu, Değişim Sinyali mi?](https://astrobobo.com/r/tr/ruyada-dis-dokulmesi)
+- [Rüyada Düşmek — Kontrolü Kaybetme Korkusu mu, Yeni Bir Başlangıç mı?](https://astrobobo.com/r/tr/ruyada-dusmek)
+- [Rüyada Eski Sevgili Görmek — Kapanmamış Bir Sayfanın Sesi](https://astrobobo.com/r/tr/ruyada-eski-sevgili)
+- [Rüyada Ev Görmek — Benliğinizin İç Mimarisi](https://astrobobo.com/r/tr/ruyada-ev)
+- [Rüyada Kaybolmak — Yön Arayışınızın Bilinçdışı Haritası](https://astrobobo.com/r/tr/ruyada-kaybolmak)
+- [Rüyada Kovalanmak — Kaçtığınız Şey Aslında Ne?](https://astrobobo.com/r/tr/ruyada-kovalanmak)
+- [Rüyada Köpek Görmek — Sadakat, İçgüdü ve Güven Haritanız](https://astrobobo.com/r/tr/ruyada-kopek)
+- [Rüyada Para Görmek — Değer, Güç ve Öz-Kıymet Haritanız](https://astrobobo.com/r/tr/ruyada-para)
+- [Rüyada Su Görmek — İç Dünyanızdan Gelen Derin Bir Mesaj](https://astrobobo.com/r/tr/ruyada-su)
+- [Rüyada Uçmak — Özgürlük Arayışı mı, Kaçış mı?](https://astrobobo.com/r/tr/ruyada-ucmak)
+- [Rüyada Yılan Görmek — Dönüşüm mü, Uyarı mı?](https://astrobobo.com/r/tr/ruyada-yilan)
+- [Rüyada Ölüm Görmek — Son mu, Yeni Başlangıç mı?](https://astrobobo.com/r/tr/ruyada-olum)
+
+### Other
+- [Astrobobo Hakkında — Editöryel Çizgimiz ve Misyonumuz](https://astrobobo.com/r/tr/about)
+
+## Spanish (ES) (15 articles)
+
+### Dream Interpretation
+- [Perderse en un Sueno — El mapa inconsciente de tu busqueda de direccion](https://astrobobo.com/r/es/ruyada-kaybolmak)
+- [Ser Perseguido en Sueños — ¿De qué estás huyendo realmente?](https://astrobobo.com/r/es/ruyada-kovalanmak)
+- [Sonar con un Coche — Quien conduce tu vida?](https://astrobobo.com/r/es/ruyada-araba)
+- [Sonar con un Ex — La voz de un capitulo sin cerrar](https://astrobobo.com/r/es/ruyada-eski-sevgili)
+- [Soñar con Ahogarse — El grito inconsciente de la sobrecarga emocional](https://astrobobo.com/r/es/ruyada-bogulmak)
+- [Soñar con Dinero — Tu mapa de valor, poder y autoestima](https://astrobobo.com/r/es/ruyada-para)
+- [Soñar con agua — Un mensaje profundo de tu mundo interior](https://astrobobo.com/r/es/ruyada-su)
+- [Soñar con caer — ¿Miedo a perder el control o un nuevo comienzo?](https://astrobobo.com/r/es/ruyada-dusmek)
+- [Soñar con la Muerte — ¿Final o nuevo comienzo?](https://astrobobo.com/r/es/ruyada-olum)
+- [Soñar con serpientes — ¿Transformación o advertencia?](https://astrobobo.com/r/es/ruyada-yilan)
+- [Soñar con un Bebé — La voz de los nuevos comienzos y la inocencia](https://astrobobo.com/r/es/ruyada-bebek)
+- [Soñar con un Perro — Tu mapa de lealtad, instinto y confianza](https://astrobobo.com/r/es/ruyada-kopek)
+- [Soñar con una Casa — La arquitectura interior de tu ser](https://astrobobo.com/r/es/ruyada-ev)
+- [Soñar con volar — ¿Búsqueda de libertad o huida?](https://astrobobo.com/r/es/ruyada-ucmak)
+- [Soñar que se caen los dientes — ¿Miedo a la pérdida o señal de cambio?](https://astrobobo.com/r/es/ruyada-dis-dokulmesi)
+
+## German (DE) (15 articles)
+
+### Dream Interpretation
+- [Auto im Traum — Wer sitzt am Steuer Ihres Lebens?](https://astrobobo.com/r/de/ruyada-araba)
+- [Baby im Traum — Die Stimme neuer Anfänge und der Unschuld](https://astrobobo.com/r/de/ruyada-bebek)
+- [Ertrinken im Traum — Der unbewusste Schrei emotionaler Überlastung](https://astrobobo.com/r/de/ruyada-bogulmak)
+- [Ex-Partner im Traum sehen — Unabgeschlossene Gefühle und innere Muster](https://astrobobo.com/r/de/ruyada-eski-sevgili)
+- [Geld im Traum — Ihre Landkarte von Wert, Macht und Selbstwert](https://astrobobo.com/r/de/ruyada-para)
+- [Haus im Traum — Die innere Architektur Ihres Selbst](https://astrobobo.com/r/de/ruyada-ev)
+- [Hund im Traum sehen — Treue, Vertrauen und Beziehungen](https://astrobobo.com/r/de/ruyada-kopek)
+- [Im Traum fallen — Angst vor Kontrollverlust oder ein Neuanfang?](https://astrobobo.com/r/de/ruyada-dusmek)
+- [Im Traum fliegen — Freiheitssuche oder Flucht?](https://astrobobo.com/r/de/ruyada-ucmak)
+- [Im Traum verloren gehen — Orientierungslosigkeit oder Selbstsuche?](https://astrobobo.com/r/de/ruyada-kaybolmak)
+- [Schlange im Traum sehen — Transformation oder Warnung?](https://astrobobo.com/r/de/ruyada-yilan)
+- [Tod im Traum — Ende oder Neuanfang?](https://astrobobo.com/r/de/ruyada-olum)
+- [Verfolgt werden im Traum — Wovor laufen Sie wirklich davon?](https://astrobobo.com/r/de/ruyada-kovalanmak)
+- [Wasser im Traum sehen — Eine tiefe Botschaft aus Ihrem Inneren](https://astrobobo.com/r/de/ruyada-su)
+- [Zahnausfall im Traum — Verlustangst oder Zeichen des Wandels?](https://astrobobo.com/r/de/ruyada-dis-dokulmesi)
+
+## French (FR) (15 articles)
+
+### Dream Interpretation
+- [Rêver d'Argent — Votre carte de la valeur, du pouvoir et de l'estime de soi](https://astrobobo.com/r/fr/ruyada-para)
+- [Rêver d'eau — Un message profond de votre monde intérieur](https://astrobobo.com/r/fr/ruyada-su)
+- [Rêver d'un Bébé — La voix des nouveaux départs et de l'innocence](https://astrobobo.com/r/fr/ruyada-bebek)
+- [Rêver d'un Chien — Votre carte de la loyauté, de l'instinct et de la confiance](https://astrobobo.com/r/fr/ruyada-kopek)
+- [Rêver d'une Maison — L'architecture intérieure de votre être](https://astrobobo.com/r/fr/ruyada-ev)
+- [Rêver de Mort — Fin ou nouveau départ ?](https://astrobobo.com/r/fr/ruyada-olum)
+- [Rêver de Noyade — Le cri inconscient de la surcharge émotionnelle](https://astrobobo.com/r/fr/ruyada-bogulmak)
+- [Rêver de perdre ses dents — Peur de la perte ou signal de changement ?](https://astrobobo.com/r/fr/ruyada-dis-dokulmesi)
+- [Rêver de serpent — Transformation ou avertissement ?](https://astrobobo.com/r/fr/ruyada-yilan)
+- [Rêver de son ex — La voix d'un chapitre inachevé](https://astrobobo.com/r/fr/ruyada-eski-sevgili)
+- [Rêver de tomber — Peur de perdre le contrôle ou nouveau départ ?](https://astrobobo.com/r/fr/ruyada-dusmek)
+- [Rêver de voiture — Qui est au volant de votre vie ?](https://astrobobo.com/r/fr/ruyada-araba)
+- [Rêver de voler — Quête de liberté ou évasion ?](https://astrobobo.com/r/fr/ruyada-ucmak)
+- [Se perdre en rêve — La carte inconsciente de votre quête de direction](https://astrobobo.com/r/fr/ruyada-kaybolmak)
+- [Être Poursuivi en Rêve — De quoi fuyez-vous vraiment ?](https://astrobobo.com/r/fr/ruyada-kovalanmak)
+
+## Italian (IT) (15 articles)
+
+### Dream Interpretation
+- [Essere Inseguiti in Sogno — Da cosa stai davvero fuggendo?](https://astrobobo.com/r/it/ruyada-kovalanmak)
+- [Perdersi in Sogno — La mappa inconscia della tua ricerca di direzione](https://astrobobo.com/r/it/ruyada-kaybolmak)
+- [Sognare Denaro — La tua mappa di valore, potere e autostima](https://astrobobo.com/r/it/ruyada-para)
+- [Sognare che cadono i denti — Paura della perdita o segnale di cambiamento?](https://astrobobo.com/r/it/ruyada-dis-dokulmesi)
+- [Sognare di Annegare — Il grido inconscio del sovraccarico emotivo](https://astrobobo.com/r/it/ruyada-bogulmak)
+- [Sognare di cadere — Paura di perdere il controllo o un nuovo inizio?](https://astrobobo.com/r/it/ruyada-dusmek)
+- [Sognare di volare — Ricerca di liberta o fuga?](https://astrobobo.com/r/it/ruyada-ucmak)
+- [Sognare l'Ex — La voce di un capitolo incompiuto](https://astrobobo.com/r/it/ruyada-eski-sevgili)
+- [Sognare l'acqua — Un messaggio profondo dal tuo mondo interiore](https://astrobobo.com/r/it/ruyada-su)
+- [Sognare la Morte — Fine o nuovo inizio?](https://astrobobo.com/r/it/ruyada-olum)
+- [Sognare un Cane — La tua mappa di lealtà, istinto e fiducia](https://astrobobo.com/r/it/ruyada-kopek)
+- [Sognare un Neonato — La voce dei nuovi inizi e dell'innocenza](https://astrobobo.com/r/it/ruyada-bebek)
+- [Sognare un serpente — Trasformazione o avvertimento?](https://astrobobo.com/r/it/ruyada-yilan)
+- [Sognare un'Auto — Chi e al volante della tua vita?](https://astrobobo.com/r/it/ruyada-araba)
+- [Sognare una Casa — L'architettura interiore del tuo essere](https://astrobobo.com/r/it/ruyada-ev)
+
+## Portuguese (BR) (15 articles)
+
+### Dream Interpretation
+- [Se Perder em Sonho — O mapa inconsciente da sua busca por direcao](https://astrobobo.com/r/pt-br/ruyada-kaybolmak)
+- [Ser Perseguido em Sonho — Do que você realmente está fugindo?](https://astrobobo.com/r/pt-br/ruyada-kovalanmak)
+- [Sonhar com Afogamento — O grito inconsciente da sobrecarga emocional](https://astrobobo.com/r/pt-br/ruyada-bogulmak)
+- [Sonhar com Bebê — A voz dos novos começos e da inocência](https://astrobobo.com/r/pt-br/ruyada-bebek)
+- [Sonhar com Cachorro — Seu mapa de lealdade, instinto e confiança](https://astrobobo.com/r/pt-br/ruyada-kopek)
+- [Sonhar com Carro — Quem esta no volante da sua vida?](https://astrobobo.com/r/pt-br/ruyada-araba)
+- [Sonhar com Casa — A arquitetura interior do seu ser](https://astrobobo.com/r/pt-br/ruyada-ev)
+- [Sonhar com Dinheiro — Seu mapa de valor, poder e autoestima](https://astrobobo.com/r/pt-br/ruyada-para)
+- [Sonhar com Morte — Fim ou novo começo?](https://astrobobo.com/r/pt-br/ruyada-olum)
+- [Sonhar com cobras — Transformação ou aviso?](https://astrobobo.com/r/pt-br/ruyada-yilan)
+- [Sonhar com o Ex — A voz de um capitulo inacabado](https://astrobobo.com/r/pt-br/ruyada-eski-sevgili)
+- [Sonhar com água — Uma mensagem profunda do seu mundo interior](https://astrobobo.com/r/pt-br/ruyada-su)
+- [Sonhar que está caindo — Medo de perder o controle ou um novo começo?](https://astrobobo.com/r/pt-br/ruyada-dusmek)
+- [Sonhar que está voando — Busca de liberdade ou fuga?](https://astrobobo.com/r/pt-br/ruyada-ucmak)
+- [Sonhar que os dentes estão caindo — Medo de perda ou sinal de mudança?](https://astrobobo.com/r/pt-br/ruyada-dis-dokulmesi)
+
+## Russian (RU) (15 articles)
+
+### Dream Interpretation
+- [Автомобиль во сне — Кто за рулём вашей жизни?](https://astrobobo.com/r/ru/ruyada-araba)
+- [Бывший партнёр во сне — Голос незакрытой страницы](https://astrobobo.com/r/ru/ruyada-eski-sevgili)
+- [Видеть воду во сне — Глубокое послание из вашего внутреннего мира](https://astrobobo.com/r/ru/ruyada-su)
+- [Видеть змею во сне — Трансформация или предупреждение?](https://astrobobo.com/r/ru/ruyada-yilan)
+- [Выпадение зубов во сне — Страх потери или сигнал перемен?](https://astrobobo.com/r/ru/ruyada-dis-dokulmesi)
+- [Деньги во сне — Ваша карта ценности, власти и самооценки](https://astrobobo.com/r/ru/ruyada-para)
+- [Дом во сне — Внутренняя архитектура вашего «я»](https://astrobobo.com/r/ru/ruyada-ev)
+- [Летать во сне — Поиск свободы или бегство?](https://astrobobo.com/r/ru/ruyada-ucmak)
+- [Падать во сне — Страх потери контроля или новое начало?](https://astrobobo.com/r/ru/ruyada-dusmek)
+- [Погоня во сне — От чего вы на самом деле убегаете?](https://astrobobo.com/r/ru/ruyada-kovalanmak)
+- [Потеряться во сне — Бессознательная карта вашего поиска направления](https://astrobobo.com/r/ru/ruyada-kaybolmak)
+- [Ребёнок во сне — Голос новых начинаний и невинности](https://astrobobo.com/r/ru/ruyada-bebek)
+- [Смерть во сне — Конец или новое начало?](https://astrobobo.com/r/ru/ruyada-olum)
+- [Собака во сне — Ваша карта верности, инстинкта и доверия](https://astrobobo.com/r/ru/ruyada-kopek)
+- [Утопление во сне — Бессознательный крик эмоциональной перегрузки](https://astrobobo.com/r/ru/ruyada-bogulmak)
+
+## Arabic (AR) (15 articles)
+
+### Dream Interpretation
+- [السقوط في المنام — خوف من فقدان السيطرة أم بداية جديدة؟](https://astrobobo.com/r/ar/ruyada-dusmek)
+- [الضياع في المنام — خريطة اللاوعي لبحثك عن الاتجاه](https://astrobobo.com/r/ar/ruyada-kaybolmak)
+- [الطيران في المنام — بحث عن الحرية أم هروب؟](https://astrobobo.com/r/ar/ruyada-ucmak)
+- [المطاردة في المنام — ممّا تهرب حقاً؟](https://astrobobo.com/r/ar/ruyada-kovalanmak)
+- [تساقط الأسنان في المنام — خوف من الفقدان أم إشارة للتغيير؟](https://astrobobo.com/r/ar/ruyada-dis-dokulmesi)
+- [رؤية الثعبان في المنام — تحوّل أم تحذير؟](https://astrobobo.com/r/ar/ruyada-yilan)
+- [رؤية الحبيب السابق في المنام — صوت صفحة لم تُطوَ](https://astrobobo.com/r/ar/ruyada-eski-sevgili)
+- [رؤية السيارة في المنام — من يقود حياتك؟](https://astrobobo.com/r/ar/ruyada-araba)
+- [رؤية الطفل في المنام — صوت البدايات الجديدة والبراءة](https://astrobobo.com/r/ar/ruyada-bebek)
+- [رؤية الغرق في المنام — صرخة اللاوعي من الحمل العاطفي الزائد](https://astrobobo.com/r/ar/ruyada-bogulmak)
+- [رؤية الكلب في المنام — خريطتك للوفاء والغريزة والثقة](https://astrobobo.com/r/ar/ruyada-kopek)
+- [رؤية الماء في المنام — رسالة عميقة من عالمك الداخلي](https://astrobobo.com/r/ar/ruyada-su)
+- [رؤية المال في المنام — خريطتك للقيمة والقوة وتقدير الذات](https://astrobobo.com/r/ar/ruyada-para)
+- [رؤية المنزل في المنام — الهندسة الداخلية لذاتك](https://astrobobo.com/r/ar/ruyada-ev)
+- [رؤية الموت في المنام — نهاية أم بداية جديدة؟](https://astrobobo.com/r/ar/ruyada-olum)
+
+## Optional
+
+- [About](https://astrobobo.com/r/en/about): About Astrobobo, editorial principles, and contact information
+- [Sitemap](https://astrobobo.com/sitemap.xml): Full XML sitemap with hreflang alternates
+- [AI content policy](https://astrobobo.com/.well-known/ai-content.txt): Citation policy for AI systems

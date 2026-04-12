@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SEO Pulse — Astrobobo Admin</title>
+  <style>
+    :root{
+      --bg:#0a0814; --card:#15112a; --line:#2a2440; --fg:#f5f0e6;
+      --muted:#a89f91; --accent:#d4af37; --green:#2e7d52; --red:#c62828; --blue:#5a8dee;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+      background:var(--bg); color:var(--fg); padding:20px; min-height:100vh;
+    }
+    .wrap{max-width:1280px;margin:0 auto}
+    h1{font-size:1.6rem;margin-bottom:6px;color:var(--accent)}
+    .sub{color:var(--muted);margin-bottom:24px;font-size:.9rem}
+    .auth{
+      background:var(--card);padding:16px;border-radius:8px;
+      border:1px solid var(--line);margin-bottom:24px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;
+    }
+    .auth input{
+      flex:1;min-width:280px;background:#0a0814;border:1px solid var(--line);
+      color:var(--fg);padding:8px 12px;border-radius:6px;font-family:monospace;font-size:12px;
+    }
+    .auth button{
+      background:var(--accent);color:#0a0814;border:none;padding:8px 18px;
+      border-radius:6px;cursor:pointer;font-weight:600;
+    }
+    .auth button:hover{opacity:.9}
+    .grid{
+      display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+      gap:12px;margin-bottom:24px;
+    }
+    .stat{
+      background:var(--card);padding:14px 16px;border-radius:8px;
+      border:1px solid var(--line);
+    }
+    .stat-label{color:var(--muted);font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+    .stat-value{font-size:1.5rem;font-weight:700;color:var(--fg)}
+    .stat-value.green{color:var(--green)}
+    .stat-value.red{color:var(--red)}
+    .section{
+      background:var(--card);padding:18px;border-radius:8px;
+      border:1px solid var(--line);margin-bottom:20px;
+    }
+    .section h2{font-size:1rem;color:var(--accent);margin-bottom:14px;display:flex;justify-content:space-between;align-items:center}
+    .section h2 button{
+      background:transparent;border:1px solid var(--accent);color:var(--accent);
+      padding:4px 12px;border-radius:4px;cursor:pointer;font-size:.75rem;
+    }
+    table{width:100%;border-collapse:collapse;font-size:.85rem}
+    th{text-align:left;color:var(--muted);font-weight:500;padding:8px 12px;border-bottom:1px solid var(--line);text-transform:uppercase;font-size:.7rem;letter-spacing:.05em}
+    td{padding:10px 12px;border-bottom:1px solid #1f1a35}
+    tr:hover{background:#1a1530}
+    a{color:var(--blue);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.7rem;font-weight:600}
+    .badge-green{background:rgba(46,125,82,.2);color:#5fdd9b}
+    .badge-red{background:rgba(198,40,40,.2);color:#ff6b6b}
+    .badge-yellow{background:rgba(212,175,55,.2);color:var(--accent)}
+    .badge-gray{background:#2a2440;color:var(--muted)}
+    .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    .actions button{
+      background:#1a1530;border:1px solid var(--line);color:var(--fg);
+      padding:6px 12px;border-radius:4px;cursor:pointer;font-size:.8rem;
+    }
+    .actions button:hover{border-color:var(--accent);color:var(--accent)}
+    .err{color:#ff6b6b;padding:8px;background:rgba(198,40,40,.1);border-radius:4px;margin-top:8px;font-size:.8rem}
+    .ok{color:#5fdd9b;padding:8px;background:rgba(46,125,82,.1);border-radius:4px;margin-top:8px;font-size:.8rem}
+    .loading{color:var(--muted);font-style:italic}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <h1>🚀 SEO Pulse</h1>
+  <div class="sub">Astrobobo autonomous SEO machine — live dashboard</div>
+
+  <div class="auth">
+    <input id="url"     placeholder="Supabase URL (https://xxx.supabase.co)">
+    <input id="key" type="password" placeholder="service_role key">
+    <button onclick="connect()">Connect</button>
+  </div>
+
+  <div id="status"></div>
+
+  <div class="grid" id="stats"></div>
+
+  <div class="section">
+    <h2>Cron Health <button onclick="loadCron()">↻ Refresh</button></h2>
+    <div id="cron"><span class="loading">Connect to load…</span></div>
+  </div>
+
+  <div class="section">
+    <h2>Last 10 Published <button onclick="loadPosts()">↻ Refresh</button></h2>
+    <div id="posts"><span class="loading">Connect to load…</span></div>
+  </div>
+
+  <div class="section">
+    <h2>Pending Backlinks (Outreach Queue) <button onclick="loadBacklinks()">↻ Refresh</button></h2>
+    <div id="backlinks"><span class="loading">Connect to load…</span></div>
+  </div>
+
+  <div class="section">
+    <h2>Pending Viral Drafts <button onclick="loadViral()">↻ Refresh</button></h2>
+    <div id="viral"><span class="loading">Connect to load…</span></div>
+  </div>
+
+  <div class="section">
+    <h2>Manual Citation Logger</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr 2fr;gap:8px;margin-bottom:8px">
+      <select id="cit_source" style="background:#0a0814;border:1px solid var(--line);color:var(--fg);padding:8px;border-radius:4px">
+        <option>chatgpt</option><option>perplexity</option><option>google_ai_overview</option>
+        <option>bing_chat</option><option>bard</option><option>gemini</option><option>claude</option>
+        <option>copilot</option><option>meta_ai</option><option>manual</option>
+      </select>
+      <input id="cit_query" placeholder="user query (optional)" style="background:#0a0814;border:1px solid var(--line);color:var(--fg);padding:8px;border-radius:4px">
+      <input id="cit_url" placeholder="cited URL (https://astrobobo.com/r/tr/foo)" style="background:#0a0814;border:1px solid var(--line);color:var(--fg);padding:8px;border-radius:4px">
+    </div>
+    <textarea id="cit_snippet" placeholder="snippet (optional)" rows="2" style="width:100%;background:#0a0814;border:1px solid var(--line);color:var(--fg);padding:8px;border-radius:4px;font-family:inherit"></textarea>
+    <div class="actions"><button onclick="logCitation()">Log Citation</button></div>
+    <div id="cit_result"></div>
+  </div>
+
+  <div class="section">
+    <h2>Manual Trigger</h2>
+    <div class="actions">
+      <button onclick="invoke('trend-scanner', {langs:['tr','en','es','de','fr','it','pt-br']})">Refill keyword queue</button>
+      <button onclick="invoke('content-generator', {batch:5})">Generate 5 posts</button>
+      <button onclick="invoke('quality-gate', {max:50})">Run quality gate</button>
+      <button onclick="invoke('publisher', {max:10})">Publish drafts</button>
+      <button onclick="invoke('indexer', {})">Ping search engines</button>
+      <button onclick="invoke('translator', {source_lang:'tr',max:3})">Translate 3 TR posts</button>
+      <button onclick="invoke('og-image-gen', {max:5})">Generate 5 OG images</button>
+      <button onclick="invoke('topic-cluster-builder', {})">Rebuild pillars</button>
+      <button onclick="invoke('content-refresh', {max:2})">Refresh 2 stale posts</button>
+      <button onclick="invoke('viral-gen', {lookback_hours:48})">Generate viral drafts</button>
+    </div>
+    <div id="invoke_result"></div>
+  </div>
+</div>
+
+<script>
+let SUPABASE_URL = '';
+let SERVICE_KEY = '';
+
+// Restore from localStorage
+window.addEventListener('load', () => {
+  const u = localStorage.getItem('seo_url');
+  const k = localStorage.getItem('seo_key');
+  if (u && k) {
+    document.getElementById('url').value = u;
+    document.getElementById('key').value = k;
+    connect();
+  }
+});
+
+function connect() {
+  SUPABASE_URL = document.getElementById('url').value.replace(/\/+$/, '');
+  SERVICE_KEY = document.getElementById('key').value;
+  if (!SUPABASE_URL || !SERVICE_KEY) return;
+  localStorage.setItem('seo_url', SUPABASE_URL);
+  localStorage.setItem('seo_key', SERVICE_KEY);
+  loadAll();
+}
+
+function rest(path) {
+  return fetch(`${SUPABASE_URL}/rest/v1/${path}`, {
+    headers: { apikey: SERVICE_KEY, Authorization: `Bearer ${SERVICE_KEY}` },
+  }).then(r => r.json());
+}
+
+function func(name, body) {
+  const fnUrl = SUPABASE_URL.replace('.supabase.co', '.functions.supabase.co');
+  return fetch(`${fnUrl}/${name}`, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${SERVICE_KEY}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify(body || {}),
+  }).then(r => r.json());
+}
+
+async function loadAll() {
+  setStatus('Loading…');
+  try {
+    await loadStats();
+    await loadCron();
+    await loadPosts();
+    await loadBacklinks();
+    await loadViral();
+    setStatus('Connected ✓', 'ok');
+  } catch (e) {
+    setStatus('Error: ' + e.message, 'err');
+  }
+}
+
+async function loadStats() {
+  const data = await rest('seo_pulse?select=*');
+  const row = data[0] || {};
+  const labels = {
+    total_pages: 'Total pages',
+    weekly_new: 'This week',
+    daily_new: 'Today',
+    queue_depth: 'Queue depth',
+    weekly_impressions: 'Impressions 7d',
+    weekly_clicks: 'Clicks 7d',
+    avg_position: 'Avg position',
+    live_backlinks: 'Live backlinks',
+    pending_backlinks: 'Pending backlinks',
+    live_viral: 'Live viral',
+    pending_viral: 'Pending viral',
+    weekly_citations: 'Citations 7d',
+    open_alerts: 'Open alerts',
+    active_langs: 'Active langs',
+    with_og_image: 'With OG image',
+    total_revenue_usd: 'Revenue $',
+  };
+  const html = Object.entries(labels)
+    .filter(([k]) => row[k] !== undefined)
+    .map(([k, label]) => {
+      const v = row[k] ?? 0;
+      const cls = (k === 'open_alerts' && v > 0) ? 'red' : (k === 'live_backlinks' || k === 'weekly_clicks') ? 'green' : '';
+      return `<div class="stat"><div class="stat-label">${label}</div><div class="stat-value ${cls}">${v}</div></div>`;
+    })
+    .join('');
+  document.getElementById('stats').innerHTML = html;
+}
+
+async function loadCron() {
+  const data = await rest('seo_cron_health?select=*');
+  if (!data?.length) {
+    document.getElementById('cron').innerHTML = '<span class="loading">No cron data yet.</span>';
+    return;
+  }
+  const rows = data.map(j => {
+    const status = j.status || 'never';
+    const cls = status === 'succeeded' ? 'badge-green' : status === 'failed' ? 'badge-red' : 'badge-gray';
+    return `<tr>
+      <td><b>${j.jobname}</b></td>
+      <td><code>${j.schedule}</code></td>
+      <td><span class="badge ${cls}">${status}</span></td>
+      <td>${j.duration_s ?? '—'}s</td>
+      <td>${j.start_time ? new Date(j.start_time).toLocaleString() : '—'}</td>
+    </tr>`;
+  }).join('');
+  document.getElementById('cron').innerHTML =
+    `<table><thead><tr><th>Job</th><th>Schedule</th><th>Status</th><th>Dur</th><th>Last run</th></tr></thead><tbody>${rows}</tbody></table>`;
+}
+
+async function loadPosts() {
+  const data = await rest('posts?select=lang,slug,title,quality_score,word_count,published_at,citation_count,og_image_url&status=eq.published&order=published_at.desc&limit=10');
+  const rows = data.map(p => `<tr>
+    <td><span class="badge badge-gray">${p.lang}</span></td>
+    <td><a href="https://astrobobo.com/r/${p.lang}/${p.slug}" target="_blank">${p.title}</a></td>
+    <td>${p.quality_score ?? '—'}</td>
+    <td>${p.word_count}</td>
+    <td>${p.citation_count ?? 0}</td>
+    <td>${p.og_image_url ? '✓' : '—'}</td>
+    <td>${new Date(p.published_at).toLocaleString()}</td>
+  </tr>`).join('');
+  document.getElementById('posts').innerHTML =
+    `<table><thead><tr><th>Lang</th><th>Title</th><th>Q</th><th>Words</th><th>Cit</th><th>OG</th><th>Published</th></tr></thead><tbody>${rows}</tbody></table>`;
+}
+
+async function loadBacklinks() {
+  const data = await rest('backlink_tasks?select=*&status=eq.pending&order=created_at.desc&limit=10');
+  if (!data?.length) {
+    document.getElementById('backlinks').innerHTML = '<span class="loading">No pending backlinks.</span>';
+    return;
+  }
+  const rows = data.map(b => `<tr>
+    <td><span class="badge badge-yellow">${b.channel}</span></td>
+    <td>${b.title || '—'}</td>
+    <td>${b.target_url || '—'}</td>
+    <td><a href="#" onclick="copyDraft(${b.id});return false">Copy draft</a></td>
+  </tr>`).join('');
+  document.getElementById('backlinks').innerHTML =
+    `<table><thead><tr><th>Channel</th><th>Title</th><th>Target</th><th>Action</th></tr></thead><tbody>${rows}</tbody></table>`;
+}
+
+async function copyDraft(id) {
+  const data = await rest(`backlink_tasks?select=draft_md&id=eq.${id}`);
+  if (data?.[0]?.draft_md) {
+    await navigator.clipboard.writeText(data[0].draft_md);
+    alert('Draft copied to clipboard');
+  }
+}
+
+async function loadViral() {
+  const data = await rest('viral_drafts?select=*&status=eq.pending&order=created_at.desc&limit=10');
+  if (!data?.length) {
+    document.getElementById('viral').innerHTML = '<span class="loading">No pending viral drafts.</span>';
+    return;
+  }
+  const rows = data.map(v => `<tr>
+    <td><span class="badge badge-yellow">${v.channel}</span></td>
+    <td>${v.hook?.slice(0, 80) || '—'}</td>
+    <td>${v.duration_s ? v.duration_s + 's' : '—'}</td>
+    <td><a href="#" onclick="copyViral(${v.id});return false">Copy script</a></td>
+  </tr>`).join('');
+  document.getElementById('viral').innerHTML =
+    `<table><thead><tr><th>Channel</th><th>Hook</th><th>Dur</th><th>Action</th></tr></thead><tbody>${rows}</tbody></table>`;
+}
+
+async function copyViral(id) {
+  const data = await rest(`viral_drafts?select=script_md,hashtags,cta_url&id=eq.${id}`);
+  if (data?.[0]) {
+    const v = data[0];
+    const text = `${v.script_md}\n\n${(v.hashtags || []).join(' ')}\n\n${v.cta_url}`;
+    await navigator.clipboard.writeText(text);
+    alert('Viral draft copied');
+  }
+}
+
+async function logCitation() {
+  const out = document.getElementById('cit_result');
+  out.innerHTML = '<span class="loading">Logging…</span>';
+  try {
+    const result = await func('citation-tracker', {
+      action: 'log',
+      source: document.getElementById('cit_source').value,
+      query: document.getElementById('cit_query').value,
+      cited_url: document.getElementById('cit_url').value,
+      snippet: document.getElementById('cit_snippet').value,
+    });
+    out.innerHTML = `<div class="${result.ok ? 'ok' : 'err'}">${JSON.stringify(result)}</div>`;
+    if (result.ok) {
+      document.getElementById('cit_query').value = '';
+      document.getElementById('cit_url').value = '';
+      document.getElementById('cit_snippet').value = '';
+    }
+  } catch (e) {
+    out.innerHTML = `<div class="err">${e.message}</div>`;
+  }
+}
+
+async function invoke(fn, body) {
+  const out = document.getElementById('invoke_result');
+  out.innerHTML = `<span class="loading">Invoking ${fn}…</span>`;
+  try {
+    const result = await func(fn, body);
+    out.innerHTML = `<div class="${result.ok ? 'ok' : 'err'}">${fn}: ${JSON.stringify(result)}</div>`;
+  } catch (e) {
+    out.innerHTML = `<div class="err">${fn}: ${e.message}</div>`;
+  }
+}
+
+function setStatus(msg, cls) {
+  const el = document.getElementById('status');
+  el.innerHTML = cls ? `<div class="${cls}">${msg}</div>` : `<div class="loading">${msg}</div>`;
+}
+</script>
+</body>
+</html>

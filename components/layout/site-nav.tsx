@@ -15,6 +15,7 @@ import LanguageSwitcher from "@/components/language-switcher";
 type Dict = {
   zodiacSigns: string;
   articles: string;
+  dreams?: string;
 };
 
 export default function SiteNav({
@@ -98,7 +99,7 @@ export default function SiteNav({
               href={`/r/${isEn ? 'en' : 'tr'}`}
               className="text-cosmic-muted hover:text-cosmic-text transition-colors"
             >
-              {isEn ? 'Dreams' : 'Rüyalar'}
+              {dict.dreams ?? (isEn ? 'Dreams' : 'Rüyalar')}
             </a>
             <LanguageSwitcher isEn={isEn} />
           </div>
@@ -120,7 +121,7 @@ export default function SiteNav({
               href={`/r/${isEn ? 'en' : 'tr'}`}
               className="text-cosmic-muted hover:text-cosmic-text transition-colors text-sm"
             >
-              {isEn ? 'Dreams' : 'Rüyalar'}
+              {dict.dreams ?? (isEn ? 'Dreams' : 'Rüyalar')}
             </a>
             <LanguageSwitcher isEn={isEn} small />
           </div>

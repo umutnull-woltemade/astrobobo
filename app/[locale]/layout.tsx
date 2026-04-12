@@ -115,6 +115,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
           dict={{
             zodiacSigns: dict.nav.zodiacSigns,
             articles: dict.nav.articles,
+            dreams: dict.dreams.navLabel,
           }}
         />
         <main>{children}</main>

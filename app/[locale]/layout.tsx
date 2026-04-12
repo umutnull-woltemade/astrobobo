@@ -130,7 +130,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
                 <h4 className="text-cosmic-text font-semibold mb-4">{dict.footer.explore}</h4>
                 <ul className="space-y-2 text-sm text-cosmic-muted">
                   <li><a href={`${localePath}/zodiac`} className="hover:text-cosmic-text">{dict.nav.zodiacSigns}</a></li>
-                  <li><a href={`${localePath}/articles`} className="hover:text-cosmic-text">{dict.nav.articles}</a></li>
+                  <li><a href={`${localePath}/read`} className="hover:text-cosmic-text">{dict.nav.articles}</a></li>
                   <li><a href={`/r/${locale}`} className="hover:text-cosmic-text">{dict.dreams.footerLabel}</a></li>
                 </ul>
               </div>

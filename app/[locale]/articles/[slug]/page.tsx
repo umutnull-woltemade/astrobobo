@@ -5,6 +5,7 @@ import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { getArticles } from "@/content/articles";
 import { getZodiacSigns } from "@/content/zodiac";
 import { CinematicEntryLink } from "@/components/pro/CinematicEntryLink";
+import { FEATURED_DREAMS, dreamHubPath, dreamArticlePath } from "@/lib/dreams/constants";
 
 interface PageProps {
   params: Promise<{ locale: string; slug: string }>;
@@ -162,6 +163,28 @@ export default async function ArticlePage({ params }: PageProps) {
             </div>
           </aside>
         )}
+        {/* Dream Dictionary Cross-Link */}
+        <aside className="mt-12 cosmic-card bg-gradient-to-r from-purple-900/20 to-cyan-900/20 border-purple-500/20">
+          <h3 className="cosmic-heading text-lg mb-2">{dict.dreams.zodiacTitle}</h3>
+          <p className="text-cosmic-muted text-sm mb-4">{dict.dreams.zodiacSubtitle}</p>
+          <div className="flex flex-wrap gap-2">
+            {FEATURED_DREAMS.slice(0, 5).map(d => (
+              <a
+                key={d.slug}
+                href={dreamArticlePath(locale, d.slug)}
+                className="text-xs px-3 py-1.5 rounded-full bg-white/[0.06] border border-white/[0.1] hover:border-purple-500/40 text-cosmic-text transition-colors"
+              >
+                {isEn ? d.en : d.tr}
+              </a>
+            ))}
+            <a
+              href={dreamHubPath(locale)}
+              className="text-xs px-3 py-1.5 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 hover:bg-purple-500/30 transition-colors"
+            >
+              {dict.dreams.allDreams}
+            </a>
+          </div>
+        </aside>
       </article>
     </>
   );

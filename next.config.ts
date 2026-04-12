@@ -69,11 +69,8 @@ const nextConfig: NextConfig = {
     },
   ],
 
-  rewrites: async () => [
-    // SEO article pages — serve static HTML from /public/r/{lang}/{slug}.html
-    { source: '/r/:lang', destination: '/r/:lang/index.html' },
-    { source: '/r/:lang/:slug', destination: '/r/:lang/:slug.html' },
-  ],
+  // SEO article page rewrites are in vercel.json (platform-level),
+  // NOT here — Next.js rewrites don't resolve public/ static files.
 
   experimental: {
     optimizePackageImports: ["fuse.js"],

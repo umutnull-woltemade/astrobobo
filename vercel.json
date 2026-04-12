@@ -39,8 +39,9 @@
     }
   ],
   "rewrites": [
-    { "source": "/sitemap.xml", "destination": "/api/sitemap" },
-    { "source": "/robots.txt", "destination": "/api/robots" }
+    { "source": "/r/:lang", "destination": "/r/:lang/index.html" },
+    { "source": "/r/:lang/", "destination": "/r/:lang/index.html" },
+    { "source": "/r/:lang/:slug", "destination": "/r/:lang/:slug.html" }
   ],
   "env": {
     "NEXT_PUBLIC_SITE_URL": "https://astrobobo.com"

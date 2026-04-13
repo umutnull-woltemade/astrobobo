@@ -35,10 +35,10 @@ const TOOLS = [
   { slug: "zodiac-compatibility", icon: "♥️", en: "Zodiac Compatibility", tr: "Burç Uyumu", desc_en: "Element-based love & friendship match", desc_tr: "Element bazlı aşk & arkadaşlık uyumu" },
   { slug: "moon-phase", icon: "🌙", en: "Moon Phase Today", tr: "Bugünün Ay Fazı", desc_en: "Lunar energy + ritual guidance", desc_tr: "Ay enerjisi + ritüel rehberliği" },
   { slug: "biorhythm", icon: "📊", en: "Biorhythm", tr: "Biyoritm", desc_en: "Physical, emotional, intellectual cycles", desc_tr: "Fiziksel, duygusal, entelektüel döngüler" },
+  { slug: "birth-chart", icon: "🌐", en: "Birth Chart", tr: "Doğum Haritası", desc_en: "Swiss Ephemeris professional precision", desc_tr: "Swiss Ephemeris profesyonel hassasiyeti" },
 ];
 
 const COMING_SOON = [
-  { icon: "🌐", en: "Birth Chart", tr: "Doğum Haritası", desc_en: "Swiss Ephemeris precision", desc_tr: "Swiss Ephemeris hassasiyeti" },
   { icon: "☀️", en: "Daily Horoscope", tr: "Günlük Burç", desc_en: "Personalized forecasts", desc_tr: "Kişisel tahminler" },
   { icon: "🌙", en: "Dream Interpreter", tr: "Rüya Yorumcusu", desc_en: "AI-powered analysis", desc_tr: "AI destekli analiz" },
   { icon: "🔮", en: "Chakra Analysis", tr: "Chakra Analizi", desc_en: "Energy center balance", desc_tr: "Enerji merkezi dengesi" },

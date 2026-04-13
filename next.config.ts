@@ -72,6 +72,8 @@ const nextConfig: NextConfig = {
   // SEO article page rewrites are in vercel.json (platform-level),
   // NOT here — Next.js rewrites don't resolve public/ static files.
 
+  serverExternalPackages: ['sweph'],
+
   experimental: {
     optimizePackageImports: ["fuse.js"],
   },

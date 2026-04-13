@@ -24,9 +24,14 @@ echo "▶ Deploying to Vercel..."
 DEPLOY_URL=$(vercel --prod --yes 2>&1 | grep -oE 'https://astrobobo-[a-z0-9]+-umutnull[^ ]*' | head -1)
 echo "  Deploy: $DEPLOY_URL"
 
-# Alias
+# Alias (retry up to 3 times — "web" project keeps stealing the domain)
 echo "▶ Setting astrobobo.com alias..."
-vercel alias set "$DEPLOY_URL" astrobobo.com 2>&1 | tail -1
+for attempt in 1 2 3; do
+  vercel alias set "$DEPLOY_URL" astrobobo.com 2>&1 | tail -1
+  CODE=$(curl -sL -o /dev/null -w "%{http_code}" "https://astrobobo.com/")
+  if [ "$CODE" = "200" ]; then break; fi
+  echo "  Retry $attempt..."
+done
 
 # Smoke test
 echo "▶ Smoke testing..."

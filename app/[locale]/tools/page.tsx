@@ -32,12 +32,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 const TOOLS = [
   { slug: "tarot", icon: "🃏", en: "Daily Tarot", tr: "Günlük Tarot", desc_en: "Pull a Major Arcana card", desc_tr: "Major Arcana kartı çek" },
   { slug: "numerology", icon: "🔢", en: "Life Path Number", tr: "Yaşam Yolu Sayısı", desc_en: "Calculate from your birth date", desc_tr: "Doğum tarihinden hesapla" },
+  { slug: "zodiac-compatibility", icon: "♥️", en: "Zodiac Compatibility", tr: "Burç Uyumu", desc_en: "Element-based love & friendship match", desc_tr: "Element bazlı aşk & arkadaşlık uyumu" },
+  { slug: "moon-phase", icon: "🌙", en: "Moon Phase Today", tr: "Bugünün Ay Fazı", desc_en: "Lunar energy + ritual guidance", desc_tr: "Ay enerjisi + ritüel rehberliği" },
 ];
 
 const COMING_SOON = [
   { icon: "🌐", en: "Birth Chart", tr: "Doğum Haritası", desc_en: "Swiss Ephemeris precision", desc_tr: "Swiss Ephemeris hassasiyeti" },
   { icon: "☀️", en: "Daily Horoscope", tr: "Günlük Burç", desc_en: "Personalized forecasts", desc_tr: "Kişisel tahminler" },
-  { icon: "♥️", en: "Compatibility", tr: "İlişki Uyumu", desc_en: "Synastry analysis", desc_tr: "Synastry analizi" },
   { icon: "🌙", en: "Dream Interpreter", tr: "Rüya Yorumcusu", desc_en: "AI-powered analysis", desc_tr: "AI destekli analiz" },
   { icon: "🔮", en: "Chakra Analysis", tr: "Chakra Analizi", desc_en: "Energy center balance", desc_tr: "Enerji merkezi dengesi" },
 ];

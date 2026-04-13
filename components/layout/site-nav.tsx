@@ -91,6 +91,12 @@ export default function SiteNav({
               {dict.zodiacSigns}
             </a>
             <a
+              href={`${localePath}/tools`}
+              className="text-cosmic-accent hover:text-cosmic-accent/80 transition-colors font-medium"
+            >
+              Tools
+            </a>
+            <a
               href={`${localePath}/read`}
               className="text-cosmic-muted hover:text-cosmic-text transition-colors"
             >

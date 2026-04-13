@@ -107,7 +107,8 @@ export async function GET(req: NextRequest) {
     let mc = 0;
     try {
       const houseResult = sw.houses(jd, lat, lng, 'P'); // P = Placidus
-      houses = houseResult.data.house.map((cusp: number, i: number) => {
+      const houseArray = houseResult.data.houses || houseResult.data.house || [];
+      houses = houseArray.map((cusp: number, i: number) => {
         const signIndex = Math.floor(cusp / 30);
         return {
           house: i + 1,
@@ -116,8 +117,9 @@ export async function GET(req: NextRequest) {
           signSymbol: SIGN_SYMBOLS[signIndex],
         };
       });
-      ascendant = houseResult.data.points[0]; // Ascendant
-      mc = houseResult.data.points[1]; // MC (Midheaven)
+      const points = houseResult.data.points || [];
+      ascendant = points[0] || 0;
+      mc = points[1] || 0;
     } catch {
       // Houses need valid lat/lng + birth time
     }

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { locales, type Locale } from "@/lib/i18n/config";
 import NumerologyClient from "./numerology-client";
+import MoreTools from "@/components/tools/more-tools";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -15,6 +16,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { locale } = await params;
   if (!locales.includes(locale as Locale)) return {};
   const isEn = locale === "en";
+  const localePath = isEn ? "" : "/" + locale;
   return {
     title: isEn ? "Life Path Number Calculator" : "Yaşam Yolu Sayısı Hesaplama",
     description: isEn
@@ -34,6 +36,7 @@ export default async function NumerologyPage({ params }: PageProps) {
   const { locale } = await params;
   if (!locales.includes(locale as Locale)) notFound();
   const isEn = locale === "en";
+  const localePath = isEn ? "" : "/" + locale;
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-12">
@@ -48,6 +51,7 @@ export default async function NumerologyPage({ params }: PageProps) {
         </p>
       </div>
       <NumerologyClient locale={isEn ? "en" : "tr"} />
+      <MoreTools currentSlug="numerology" locale={locale as string} localePath={localePath} />
     </div>
   );
 }

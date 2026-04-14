@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { locales, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import TarotClient from "./tarot-client";
+import MoreTools from "@/components/tools/more-tools";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -16,6 +17,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { locale } = await params;
   if (!locales.includes(locale as Locale)) return {};
   const isEn = locale === "en";
+  const localePath = isEn ? "" : "/" + locale;
   return {
     title: isEn ? "Daily Tarot Card — Pull Your Card" : "Günlük Tarot Kartı — Kartını Çek",
     description: isEn
@@ -36,6 +38,7 @@ export default async function TarotPage({ params }: PageProps) {
   if (!locales.includes(locale as Locale)) notFound();
   const dict = await getDictionary(locale as Locale);
   const isEn = locale === "en";
+  const localePath = isEn ? "" : "/" + locale;
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-12">
@@ -50,6 +53,7 @@ export default async function TarotPage({ params }: PageProps) {
         </p>
       </div>
       <TarotClient locale={isEn ? "en" : "tr"} />
+      <MoreTools currentSlug="tarot" locale={locale as string} localePath={localePath} />
     </div>
   );
 }

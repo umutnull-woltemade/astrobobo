@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { locales, type Locale } from "@/lib/i18n/config";
 import MoonPhaseClient from "./moon-client";
+import MoreTools from "@/components/tools/more-tools";
 
 interface PageProps { params: Promise<{ locale: string }> }
 
@@ -13,6 +14,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { locale } = await params;
   if (!locales.includes(locale as Locale)) return {};
   const isEn = locale === "en";
+  const localePath = isEn ? "" : "/" + locale;
   return {
     title: isEn ? "Moon Phase Today — Lunar Energy Guide" : "Bugünün Ay Fazı — Ay Enerjisi Rehberi",
     description: isEn
@@ -28,6 +30,7 @@ export default async function MoonPhasePage({ params }: PageProps) {
   const { locale } = await params;
   if (!locales.includes(locale as Locale)) notFound();
   const isEn = locale === "en";
+  const localePath = isEn ? "" : "/" + locale;
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-12">
@@ -40,6 +43,7 @@ export default async function MoonPhasePage({ params }: PageProps) {
         </p>
       </div>
       <MoonPhaseClient locale={isEn ? "en" : "tr"} />
+      <MoreTools currentSlug="moon-phase" locale={locale as string} localePath={localePath} />
     </div>
   );
 }

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { locales, type Locale } from "@/lib/i18n/config";
 import BirthChartClient from "./birth-chart-client";
+import MoreTools from "@/components/tools/more-tools";
 
 interface PageProps { params: Promise<{ locale: string }> }
 
@@ -13,6 +14,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { locale } = await params;
   if (!locales.includes(locale as Locale)) return {};
   const isEn = locale === "en";
+  const localePath = isEn ? "" : "/" + locale;
   return {
     title: isEn ? "Free Birth Chart Calculator — Swiss Ephemeris Precision" : "Ücretsiz Doğum Haritası — Swiss Ephemeris Hassasiyeti",
     description: isEn
@@ -28,6 +30,7 @@ export default async function BirthChartPage({ params }: PageProps) {
   const { locale } = await params;
   if (!locales.includes(locale as Locale)) notFound();
   const isEn = locale === "en";
+  const localePath = isEn ? "" : "/" + locale;
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-12">
@@ -42,6 +45,7 @@ export default async function BirthChartPage({ params }: PageProps) {
         </p>
       </div>
       <BirthChartClient locale={isEn ? "en" : "tr"} />
+      <MoreTools currentSlug="birth-chart" locale={locale as string} localePath={localePath} />
     </div>
   );
 }

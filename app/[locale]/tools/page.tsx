@@ -38,11 +38,13 @@ const TOOLS = [
   { slug: "birth-chart", icon: "🌐", en: "Birth Chart", tr: "Doğum Haritası", desc_en: "Swiss Ephemeris professional precision", desc_tr: "Swiss Ephemeris profesyonel hassasiyeti" },
   { slug: "synastry", icon: "💫", en: "Synastry", tr: "Synastry Analizi", desc_en: "Relationship compatibility via aspects", desc_tr: "Açılar üzerinden ilişki uyumu" },
   { slug: "transits", icon: "🌌", en: "Live Transits", tr: "Canlı Transitler", desc_en: "Real-time planetary positions", desc_tr: "Gerçek zamanlı gezegen pozisyonları" },
+  { slug: "solar-return", icon: "☀️", en: "Solar Return", tr: "Solar Return", desc_en: "Your year ahead — annual chart", desc_tr: "Yılın haritası — yıllık döngü" },
+  { slug: "daily-horoscope", icon: "⭐", en: "Daily Horoscope", tr: "Günlük Burç", desc_en: "Based on real planetary transits", desc_tr: "Gerçek gezegen transitelerine dayalı" },
 ];
 
 const COMING_SOON = [
-  { icon: "☀️", en: "Daily Horoscope", tr: "Günlük Burç", desc_en: "Personalized forecasts", desc_tr: "Kişisel tahminler" },
   { icon: "🔮", en: "Chakra Analysis", tr: "Chakra Analizi", desc_en: "Energy center balance", desc_tr: "Enerji merkezi dengesi" },
+  { icon: "🧘", en: "Meditation Timer", tr: "Meditasyon Zamanlayıcı", desc_en: "Cosmic-themed meditation", desc_tr: "Kozmik temalı meditasyon" },
 ];
 
 export default async function ToolsPage({ params }: PageProps) {

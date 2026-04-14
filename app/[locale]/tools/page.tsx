@@ -42,11 +42,12 @@ const TOOLS = [
   { slug: "daily-horoscope", icon: "⭐", en: "Daily Horoscope", tr: "Günlük Burç", desc_en: "Based on real planetary transits", desc_tr: "Gerçek gezegen transitelerine dayalı" },
   { slug: "progressions", icon: "🌀", en: "Progressions", tr: "Progresyonlar", desc_en: "Inner evolution — 1 day = 1 year", desc_tr: "İçsel evrim — 1 gün = 1 yıl" },
   { slug: "chakra", icon: "🔮", en: "Chakra Quiz", tr: "Chakra Testi", desc_en: "7-question energy balance", desc_tr: "7 soruluk enerji dengesi" },
+  { slug: "meditation", icon: "🧘", en: "Meditation", tr: "Meditasyon", desc_en: "Cosmic breathing timer", desc_tr: "Kozmik nefes zamanlayıcı" },
+  { slug: "chinese-zodiac", icon: "🐉", en: "Chinese Zodiac", tr: "Çin Burcu", desc_en: "Your animal by birth year", desc_tr: "Doğum yılına göre hayvanın" },
+  { slug: "aura", icon: "✨", en: "Aura Reading", tr: "Aura Okuma", desc_en: "Discover your energy color", desc_tr: "Enerji rengini keşfet" },
 ];
 
-const COMING_SOON = [
-  { icon: "🧘", en: "Meditation Timer", tr: "Meditasyon Zamanlayıcı", desc_en: "Cosmic-themed sessions", desc_tr: "Kozmik temalı seanslar" },
-];
+const COMING_SOON: typeof TOOLS = [];
 
 export default async function ToolsPage({ params }: PageProps) {
   const { locale } = await params;

@@ -73,6 +73,38 @@ export default async function HomePage({ params }: PageProps) {
             </a>
           </div>
 
+          {/* Interactive Tools */}
+          <div className="mt-16 pt-12 border-t border-cosmic-border/40">
+            <h2 className="cosmic-heading text-2xl mb-4">
+              {isEn ? '✨ Interactive Cosmic Tools' : '✨ İnteraktif Kozmik Araçlar'}
+            </h2>
+            <p className="text-cosmic-muted mb-6 text-sm">
+              {isEn
+                ? '15 free tools powered by Swiss Ephemeris — from birth charts to tarot.'
+                : 'Swiss Ephemeris ile güçlendirilmiş 15 ücretsiz araç — doğum haritasından tarota.'}
+            </p>
+            <div className="grid grid-cols-3 md:grid-cols-5 gap-2">
+              {[
+                { slug: 'birth-chart', icon: '🌐', en: 'Birth Chart', tr: 'Doğum Haritası' },
+                { slug: 'daily-horoscope', icon: '⭐', en: 'Horoscope', tr: 'Burç Yorumu' },
+                { slug: 'tarot', icon: '🃏', en: 'Tarot', tr: 'Tarot' },
+                { slug: 'synastry', icon: '💫', en: 'Synastry', tr: 'Synastry' },
+                { slug: 'transits', icon: '🌌', en: 'Transits', tr: 'Transitler' },
+              ].map(t => (
+                <a key={t.slug} href={`${localePath}/tools/${t.slug}`}
+                  className="block p-3 rounded-xl bg-white/[0.04] border border-white/[0.08] hover:border-purple-500/40 hover:bg-white/[0.07] transition-all text-center">
+                  <div className="text-2xl mb-1">{t.icon}</div>
+                  <div className="text-xs text-cosmic-text">{isEn ? t.en : t.tr}</div>
+                </a>
+              ))}
+            </div>
+            <div className="mt-4 text-center">
+              <a href={`${localePath}/tools`} className="text-purple-400 hover:text-purple-300 text-sm font-medium">
+                {isEn ? 'View all 15 tools →' : 'Tüm 15 aracı gör →'}
+              </a>
+            </div>
+          </div>
+
           {/* Dream interpretation hub — links to /r/ SEO pages */}
           <div className="mt-16 pt-12 border-t border-cosmic-border/40">
             <h2 className="cosmic-heading text-2xl mb-4">

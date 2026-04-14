@@ -12,10 +12,17 @@ const TR_SLUGS = [
   'ruyada-su', 'ruyada-ucmak', 'ruyada-yilan',
 ];
 
+const TOOL_SLUGS = [
+  'tarot', 'numerology', 'birth-chart', 'synastry', 'transits',
+  'daily-horoscope', 'solar-return', 'progressions', 'zodiac-compatibility',
+  'moon-phase', 'biorhythm', 'chakra', 'meditation', 'chinese-zodiac', 'aura',
+];
+
 const SEO_URLS = [
+  '/', '/tools', '/read',
+  ...TOOL_SLUGS.map(s => `/tools/${s}`),
   ...LANGS.flatMap(lang => [`/r/${lang}`, `/r/${lang}/cluster-ruya`]),
   ...LANGS.flatMap(lang => TR_SLUGS.map(slug => `/r/${lang}/${slug}`)),
-  '/',
 ];
 
 export async function GET() {

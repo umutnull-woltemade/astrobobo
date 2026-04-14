@@ -45,6 +45,11 @@ const TOOLS = [
   { slug: "meditation", icon: "🧘", en: "Meditation", tr: "Meditasyon", desc_en: "Cosmic breathing timer", desc_tr: "Kozmik nefes zamanlayıcı" },
   { slug: "chinese-zodiac", icon: "🐉", en: "Chinese Zodiac", tr: "Çin Burcu", desc_en: "Your animal by birth year", desc_tr: "Doğum yılına göre hayvanın" },
   { slug: "aura", icon: "✨", en: "Aura Reading", tr: "Aura Okuma", desc_en: "Discover your energy color", desc_tr: "Enerji rengini keşfet" },
+  { slug: "vedic", icon: "🕉️", en: "Vedic Chart", tr: "Vedik Harita", desc_en: "Sidereal + Nakshatra (Jyotish)", desc_tr: "Sidereal + Nakshatra (Jyotish)" },
+  { slug: "draconic", icon: "🐉", en: "Draconic Chart", tr: "Drakonik Harita", desc_en: "Soul-level positions", desc_tr: "Ruh düzeyi pozisyonları" },
+  { slug: "composite", icon: "🔗", en: "Composite Chart", tr: "Kompozit Harita", desc_en: "Relationship midpoint chart", desc_tr: "İlişki orta nokta haritası" },
+  { slug: "retrogrades", icon: "℞", en: "Retrograde Calendar", tr: "Retrograde Takvimi", desc_en: "All retrogrades this year", desc_tr: "Bu yılın tüm retrograde'leri" },
+  { slug: "eclipses", icon: "🌑", en: "Eclipse Calendar", tr: "Tutulma Takvimi", desc_en: "Solar & lunar eclipses", desc_tr: "Güneş & ay tutulmaları" },
 ];
 
 const COMING_SOON: typeof TOOLS = [];

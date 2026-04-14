@@ -19,6 +19,11 @@ const ALL_TOOLS = [
   { slug: "meditation", icon: "🧘", en: "Meditation", tr: "Meditasyon" },
   { slug: "chinese-zodiac", icon: "🐉", en: "Chinese Zodiac", tr: "Çin Burcu" },
   { slug: "aura", icon: "✨", en: "Aura", tr: "Aura" },
+  { slug: "vedic", icon: "🕉️", en: "Vedic", tr: "Vedik" },
+  { slug: "draconic", icon: "🐉", en: "Draconic", tr: "Drakonik" },
+  { slug: "composite", icon: "🔗", en: "Composite", tr: "Kompozit" },
+  { slug: "retrogrades", icon: "℞", en: "Retrogrades", tr: "Retrograde" },
+  { slug: "eclipses", icon: "🌑", en: "Eclipses", tr: "Tutulmalar" },
 ];
 
 // Deterministic shuffle seeded by current tool slug
@@ -68,7 +73,7 @@ export default function MoreTools({
       </div>
       <div className="text-center mt-3">
         <a href={`${localePath}/tools`} className="text-xs text-purple-400 hover:text-purple-300">
-          {isEn ? "All 15 tools →" : "Tüm 15 araç →"}
+          {isEn ? "All 20 tools →" : "Tüm 20 araç →"}
         </a>
       </div>
     </div>

@@ -40,11 +40,12 @@ const TOOLS = [
   { slug: "transits", icon: "🌌", en: "Live Transits", tr: "Canlı Transitler", desc_en: "Real-time planetary positions", desc_tr: "Gerçek zamanlı gezegen pozisyonları" },
   { slug: "solar-return", icon: "☀️", en: "Solar Return", tr: "Solar Return", desc_en: "Your year ahead — annual chart", desc_tr: "Yılın haritası — yıllık döngü" },
   { slug: "daily-horoscope", icon: "⭐", en: "Daily Horoscope", tr: "Günlük Burç", desc_en: "Based on real planetary transits", desc_tr: "Gerçek gezegen transitelerine dayalı" },
+  { slug: "progressions", icon: "🌀", en: "Progressions", tr: "Progresyonlar", desc_en: "Inner evolution — 1 day = 1 year", desc_tr: "İçsel evrim — 1 gün = 1 yıl" },
+  { slug: "chakra", icon: "🔮", en: "Chakra Quiz", tr: "Chakra Testi", desc_en: "7-question energy balance", desc_tr: "7 soruluk enerji dengesi" },
 ];
 
 const COMING_SOON = [
-  { icon: "🔮", en: "Chakra Analysis", tr: "Chakra Analizi", desc_en: "Energy center balance", desc_tr: "Enerji merkezi dengesi" },
-  { icon: "🧘", en: "Meditation Timer", tr: "Meditasyon Zamanlayıcı", desc_en: "Cosmic-themed meditation", desc_tr: "Kozmik temalı meditasyon" },
+  { icon: "🧘", en: "Meditation Timer", tr: "Meditasyon Zamanlayıcı", desc_en: "Cosmic-themed sessions", desc_tr: "Kozmik temalı seanslar" },
 ];
 
 export default async function ToolsPage({ params }: PageProps) {

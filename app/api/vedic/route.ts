@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { localToUtcDecimalHours } from '@/lib/ephemeris/tz';
 export const runtime = 'nodejs';
 
 let sweph: any = null;
@@ -57,15 +58,15 @@ export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const dateStr = searchParams.get('date');
   const timeStr = searchParams.get('time') || '12:00';
+  const tz = searchParams.get('tz') || '';
   const lang = searchParams.get('lang') || 'en';
 
   if (!dateStr) return NextResponse.json({ error: 'Missing date' }, { status: 400 });
 
   try {
     const sw = getSweph();
-    const [y, m, d] = dateStr.split('-').map(Number);
-    const [h, min] = timeStr.split(':').map(Number);
-    const jd = sw.julday(y, m, d, h + min / 60, 1);
+    const L = localToUtcDecimalHours(dateStr, timeStr, tz);
+    const jd = sw.julday(L.year, L.month, L.day, L.decimalHours, 1);
 
     // Get Lahiri ayanamsa
     const ayanamsa = sw.get_ayanamsa_ut(jd);

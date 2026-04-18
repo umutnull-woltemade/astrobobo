@@ -11,6 +11,7 @@
 
 import { usePathname } from "next/navigation";
 import LanguageSwitcher from "@/components/language-switcher";
+import BirthDataBadge from "@/components/layout/birth-data-badge";
 
 type Dict = {
   zodiacSigns: string;
@@ -108,6 +109,7 @@ export default function SiteNav({
             >
               {dict.dreams ?? (isEn ? 'Dreams' : 'Rüyalar')}
             </a>
+            <BirthDataBadge isEn={isEn} localePath={localePath} />
             <LanguageSwitcher isEn={isEn} />
           </div>
 

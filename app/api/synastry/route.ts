@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { localToUtcDecimalHours } from '@/lib/ephemeris/tz';
 
 export const runtime = 'nodejs';
 
@@ -80,8 +81,10 @@ export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const date1 = searchParams.get('date1');
   const time1 = searchParams.get('time1') || '12:00';
+  const tz1 = searchParams.get('tz1') || '';
   const date2 = searchParams.get('date2');
   const time2 = searchParams.get('time2') || '12:00';
+  const tz2 = searchParams.get('tz2') || '';
   const lang = searchParams.get('lang') || 'en';
 
   if (!date1 || !date2) {
@@ -90,13 +93,11 @@ export async function GET(req: NextRequest) {
 
   try {
     const sw = getSweph();
-    const [y1, m1, d1] = date1.split('-').map(Number);
-    const [h1, min1] = time1.split(':').map(Number);
-    const [y2, m2, d2] = date2.split('-').map(Number);
-    const [h2, min2] = time2.split(':').map(Number);
+    const l1 = localToUtcDecimalHours(date1, time1, tz1);
+    const l2 = localToUtcDecimalHours(date2, time2, tz2);
 
-    const jd1 = sw.julday(y1, m1, d1, h1 + min1 / 60, 1);
-    const jd2 = sw.julday(y2, m2, d2, h2 + min2 / 60, 1);
+    const jd1 = sw.julday(l1.year, l1.month, l1.day, l1.decimalHours, 1);
+    const jd2 = sw.julday(l2.year, l2.month, l2.day, l2.decimalHours, 1);
 
     const planets1 = calcPlanets(sw, jd1, lang);
     const planets2 = calcPlanets(sw, jd2, lang);

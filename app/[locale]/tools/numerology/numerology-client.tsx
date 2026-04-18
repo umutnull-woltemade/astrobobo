@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { useBirthData } from "@/lib/birth-data/store";
 
 const LIFE_PATH_MEANINGS: Record<number, { en: string; tr: string; keyword_en: string; keyword_tr: string }> = {
   1: { keyword_en: "The Leader", keyword_tr: "Lider", en: "Independent, ambitious, pioneering. You're here to forge your own path and lead by example. Trust your originality.", tr: "Bağımsız, hırslı, öncü. Kendi yolunu açmak ve örnek olarak liderlik etmek için buradasın. Özgünlüğüne güven." },
@@ -32,16 +33,20 @@ function calculateLifePath(year: number, month: number, day: number): number {
 }
 
 export default function NumerologyClient({ locale }: { locale: "en" | "tr" }) {
-  const [birthDate, setBirthDate] = useState("");
+  const { data: saved } = useBirthData();
+  const [birthDate, setBirthDate] = useState(saved?.date || "");
   const [result, setResult] = useState<number | null>(null);
   const isEn = locale === "en";
 
-  const calculate = useCallback(() => {
-    if (!birthDate) return;
-    const [year, month, day] = birthDate.split("-").map(Number);
+  const calculate = useCallback((d?: string) => {
+    const dateToUse = d || birthDate;
+    if (!dateToUse) return;
+    const [year, month, day] = dateToUse.split("-").map(Number);
     if (!year || !month || !day) return;
     setResult(calculateLifePath(year, month, day));
   }, [birthDate]);
+
+  useEffect(() => { if (saved?.date && !result) { setBirthDate(saved.date); calculate(saved.date); } /* eslint-disable-next-line */ }, []);
 
   const meaning = result ? LIFE_PATH_MEANINGS[result] : null;
 
@@ -60,7 +65,7 @@ export default function NumerologyClient({ locale }: { locale: "en" | "tr" }) {
           max={new Date().toISOString().split("T")[0]}
         />
         <button
-          onClick={calculate}
+          onClick={() => calculate()}
           disabled={!birthDate}
           className="w-full mt-4 px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-purple-800 text-white font-semibold disabled:opacity-40 hover:from-purple-500 hover:to-purple-700 transition-all"
         >

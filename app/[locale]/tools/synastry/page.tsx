@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { locales, type Locale } from "@/lib/i18n/config";
 import SynastryClient from "./synastry-client";
 import MoreTools from "@/components/tools/more-tools";
+import ToolBreadcrumbs from "@/components/tools/tool-breadcrumbs";
 
 interface PageProps { params: Promise<{ locale: string }> }
 export async function generateStaticParams() { return locales.map(locale => ({ locale })); }
@@ -28,6 +29,7 @@ export default async function SynastryPage({ params }: PageProps) {
   const localePath = isEn ? "" : "/" + locale;
   return (
     <div className="max-w-5xl mx-auto px-4 py-12">
+      <ToolBreadcrumbs toolName={isEn ? "Synastry Analysis" : "Synastry Analizi"} toolSlug="synastry" locale={locale as string} />
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-display text-cosmic-accent mb-4">
           {isEn ? '💫 Synastry Analysis' : '💫 Synastry Analizi'}

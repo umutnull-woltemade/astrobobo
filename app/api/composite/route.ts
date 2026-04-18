@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { localToUtcDecimalHours } from '@/lib/ephemeris/tz';
 export const runtime = 'nodejs';
 
 let sweph: any = null;
@@ -30,18 +31,18 @@ function midpoint(a: number, b: number): number {
  */
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
-  const d1 = searchParams.get('date1'), t1 = searchParams.get('time1') || '12:00';
-  const d2 = searchParams.get('date2'), t2 = searchParams.get('time2') || '12:00';
+  const d1 = searchParams.get('date1'), t1 = searchParams.get('time1') || '12:00', tz1 = searchParams.get('tz1') || '';
+  const d2 = searchParams.get('date2'), t2 = searchParams.get('time2') || '12:00', tz2 = searchParams.get('tz2') || '';
   const lang = searchParams.get('lang') || 'en';
 
   if (!d1 || !d2) return NextResponse.json({ error: 'Missing date1/date2' }, { status: 400 });
 
   try {
     const sw = getSweph();
-    const [y1,m1,dy1] = d1.split('-').map(Number); const [h1,mn1] = t1.split(':').map(Number);
-    const [y2,m2,dy2] = d2.split('-').map(Number); const [h2,mn2] = t2.split(':').map(Number);
-    const jd1 = sw.julday(y1,m1,dy1,h1+mn1/60,1);
-    const jd2 = sw.julday(y2,m2,dy2,h2+mn2/60,1);
+    const L1 = localToUtcDecimalHours(d1, t1, tz1);
+    const L2 = localToUtcDecimalHours(d2, t2, tz2);
+    const jd1 = sw.julday(L1.year, L1.month, L1.day, L1.decimalHours, 1);
+    const jd2 = sw.julday(L2.year, L2.month, L2.day, L2.decimalHours, 1);
 
     const composite = PLANETS.map(p => {
       const r1 = sw.calc_ut(jd1, p.id, 256).data[0];

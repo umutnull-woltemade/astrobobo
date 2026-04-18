@@ -1,38 +1,54 @@
 "use client";
-import { useState, useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
+import BirthDataForm from "@/components/tools/birth-data-form";
+import { useBirthData, birthDataQuery, type BirthData } from "@/lib/birth-data/store";
 
 interface Planet { name: string; symbol: string; sign: string; signSymbol: string; degree: number }
 interface ProgData { age: number; natal: Planet[]; progressed: Planet[]; signChanges: { planet: string; symbol: string; from: string; fromSymbol: string; to: string; toSymbol: string }[] }
 
-export default function ProgressionsClient({ locale }: { locale: "en" | "tr" }) {
-  const [date, setDate] = useState(""); const [age, setAge] = useState("30");
-  const [loading, setLoading] = useState(false); const [data, setData] = useState<ProgData | null>(null);
-  const isEn = locale === "en";
+function yearsSince(date: string): number {
+  const [y, m, d] = date.split('-').map(Number);
+  const now = new Date();
+  let age = now.getFullYear() - y;
+  if (now.getMonth() + 1 < m || (now.getMonth() + 1 === m && now.getDate() < d)) age--;
+  return Math.max(0, age);
+}
 
-  const calc = useCallback(async () => {
-    if (!date) return; setLoading(true);
-    try { const r = await fetch(`/api/progressions?date=${date}&age=${age}&lang=${locale}`); setData(await r.json()); }
-    catch {} finally { setLoading(false); }
-  }, [date, age, locale]);
+export default function ProgressionsClient({ locale }: { locale: "en" | "tr" }) {
+  const isEn = locale === "en";
+  const { data: saved } = useBirthData();
+  const [age, setAge] = useState("30");
+  const [loading, setLoading] = useState(false);
+  const [data, setData] = useState<ProgData | null>(null);
+
+  const calc = useCallback(async (d: BirthData, ageOverride?: string) => {
+    setLoading(true);
+    try {
+      const a = ageOverride ?? age;
+      const r = await fetch(`/api/progressions?${birthDataQuery(d, locale)}&age=${a}`);
+      setData(await r.json());
+    } catch {} finally { setLoading(false); }
+  }, [age, locale]);
+
+  useEffect(() => {
+    if (saved && !data) {
+      const a = String(yearsSince(saved.date));
+      setAge(a);
+      calc(saved, a);
+    }
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <div className="space-y-8">
-      <div className="cosmic-card max-w-md mx-auto">
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <label className="block text-xs text-cosmic-muted mb-1 uppercase tracking-wider">{isEn ? "Birth Date" : "Doğum Tarihi"}</label>
-            <input type="date" value={date} onChange={e => { setDate(e.target.value); setData(null); }}
-              className="w-full px-3 py-2.5 rounded-xl bg-white/[0.05] border border-white/[0.12] text-white focus:border-purple-500 focus:outline-none text-sm" max={new Date().toISOString().split("T")[0]} />
-          </div>
-          <div>
-            <label className="block text-xs text-cosmic-muted mb-1 uppercase tracking-wider">{isEn ? "Current Age" : "Yaş"}</label>
-            <input type="number" value={age} onChange={e => { setAge(e.target.value); setData(null); }} min="1" max="120"
-              className="w-full px-3 py-2.5 rounded-xl bg-white/[0.05] border border-white/[0.12] text-white focus:border-purple-500 focus:outline-none text-sm" />
-          </div>
-        </div>
-        <button onClick={calc} disabled={!date || loading}
-          className="w-full mt-4 px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-700 text-white font-semibold disabled:opacity-40 transition-all">
-          {loading ? "..." : (isEn ? "Calculate Progressions" : "Progresyonları Hesapla")}
+      <BirthDataForm locale={locale} onReady={(d) => calc(d)} submitLabel={isEn ? "Use Birth Data" : "Doğum Verilerini Kullan"} />
+      <div className="cosmic-card max-w-xs mx-auto">
+        <label className="block text-xs text-cosmic-muted mb-1 uppercase tracking-wider">{isEn ? "Current Age" : "Yaş"}</label>
+        <input type="number" value={age} onChange={(e) => setAge(e.target.value)} min="1" max="120"
+          className="w-full px-3 py-2.5 rounded-xl bg-white/[0.05] border border-white/[0.12] text-white focus:border-purple-500 focus:outline-none text-sm" />
+        <button onClick={() => saved && calc(saved)} disabled={!saved || loading}
+          className="w-full mt-3 px-6 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-700 text-white text-sm font-semibold disabled:opacity-40 transition-all">
+          {loading ? "..." : (isEn ? "Recalculate" : "Yeniden Hesapla")}
         </button>
       </div>
 
@@ -51,7 +67,6 @@ export default function ProgressionsClient({ locale }: { locale: "en" | "tr" }) 
               ))}
             </div>
           )}
-
           <div className="cosmic-card">
             <h3 className="text-sm uppercase tracking-widest text-cosmic-accent mb-4">{isEn ? "Natal → Progressed" : "Doğum → Progrese"}</h3>
             <table className="w-full text-sm">

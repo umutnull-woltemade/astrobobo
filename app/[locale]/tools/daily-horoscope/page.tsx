@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { locales, type Locale } from "@/lib/i18n/config";
 import DailyHoroscopeClient from "./daily-horoscope-client";
 import MoreTools from "@/components/tools/more-tools";
+import ToolBreadcrumbs from "@/components/tools/tool-breadcrumbs";
 
 interface PageProps { params: Promise<{ locale: string }> }
 export async function generateStaticParams() { return locales.map(locale => ({ locale })); }
@@ -28,6 +29,7 @@ export default async function DailyHoroscopePage({ params }: PageProps) {
   const localePath = isEn ? "" : "/" + locale;
   return (
     <div className="max-w-4xl mx-auto px-4 py-12">
+      <ToolBreadcrumbs toolName={isEn ? "Daily Horoscope" : "Günlük Burç Yorumu"} toolSlug="daily-horoscope" locale={locale as string} />
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-display text-cosmic-accent mb-4">
           {isEn ? '⭐ Daily Horoscope' : '⭐ Günlük Burç Yorumu'}

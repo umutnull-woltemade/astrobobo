@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { locales, type Locale } from "@/lib/i18n/config";
 import MoonPhaseClient from "./moon-client";
 import MoreTools from "@/components/tools/more-tools";
+import ToolBreadcrumbs from "@/components/tools/tool-breadcrumbs";
 
 interface PageProps { params: Promise<{ locale: string }> }
 
@@ -34,6 +35,7 @@ export default async function MoonPhasePage({ params }: PageProps) {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-12">
+      <ToolBreadcrumbs toolName={isEn ? "Moon Phase Today" : "Bugünün Ay Fazı"} toolSlug="moon-phase" locale={locale as string} />
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-display text-cosmic-accent mb-4">
           {isEn ? '🌙 Moon Phase Today' : '🌙 Bugünün Ay Fazı'}

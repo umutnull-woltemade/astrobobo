@@ -1,25 +1,27 @@
 "use client";
-import { useState, useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
+import BirthDataForm from "@/components/tools/birth-data-form";
+import { useBirthData, birthDataQuery, type BirthData } from "@/lib/birth-data/store";
 
 interface VedicPlanet { name: string; symbol: string; sign: string; signSymbol: string; degree: number; nakshatra: string; nakshatraRuler: string; pada: number }
 
 export default function VedicClient({ locale }: { locale: "en" | "tr" }) {
-  const [date, setDate] = useState(""); const [loading, setLoading] = useState(false);
-  const [data, setData] = useState<{ ayanamsa: number; planets: VedicPlanet[] } | null>(null);
   const isEn = locale === "en";
+  const { data: saved } = useBirthData();
+  const [loading, setLoading] = useState(false);
+  const [data, setData] = useState<{ ayanamsa: number; planets: VedicPlanet[] } | null>(null);
 
-  const calc = useCallback(async () => {
-    if (!date) return; setLoading(true);
-    try { const r = await fetch(`/api/vedic?date=${date}&lang=${locale}`); setData(await r.json()); }
+  const calc = useCallback(async (d: BirthData) => {
+    setLoading(true);
+    try { const r = await fetch(`/api/vedic?${birthDataQuery(d, locale)}`); setData(await r.json()); }
     catch {} finally { setLoading(false); }
-  }, [date, locale]);
+  }, [locale]);
+
+  useEffect(() => { if (saved && !data) calc(saved); /* eslint-disable-next-line */ }, []);
 
   return (<div className="space-y-8">
-    <div className="cosmic-card max-w-sm mx-auto">
-      <label className="block text-xs text-cosmic-muted mb-1 uppercase tracking-wider">{isEn ? "Birth Date" : "Doğum Tarihi"}</label>
-      <input type="date" value={date} onChange={e => { setDate(e.target.value); setData(null); }} className="w-full px-3 py-2.5 rounded-xl bg-white/[0.05] border border-white/[0.12] text-white focus:border-orange-500 focus:outline-none text-sm" max={new Date().toISOString().split("T")[0]} />
-      <button onClick={calc} disabled={!date || loading} className="w-full mt-4 px-6 py-3 rounded-xl bg-gradient-to-r from-orange-600 to-amber-700 text-white font-semibold disabled:opacity-40 transition-all">{loading ? "..." : (isEn ? "Calculate Vedic Chart" : "Vedik Harita Hesapla")}</button>
-    </div>
+    <BirthDataForm locale={locale} onReady={calc} accent="orange" submitLabel={isEn ? "Calculate Vedic Chart" : "Vedik Harita Hesapla"} />
+    {loading && <div className="text-center text-cosmic-muted text-sm">...</div>}
     {data && (<div className="space-y-4 animate-in fade-in max-w-2xl mx-auto">
       <div className="text-center text-xs text-cosmic-muted mb-4">Ayanamsa: {data.ayanamsa}° (Lahiri)</div>
       <div className="cosmic-card overflow-x-auto">

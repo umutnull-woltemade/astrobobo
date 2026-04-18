@@ -64,6 +64,7 @@ for (const lang of langs) {
       );
     }
 
+    html = html.replace("</head>", "  <!-- OG_IMAGE_INJECTED -->\n</head>");
     fs.writeFileSync(filePath, html);
     injected++;
   }

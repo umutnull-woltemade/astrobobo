@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { locales, type Locale } from "@/lib/i18n/config";
 import AuraClient from "./aura-client";
 import MoreTools from "@/components/tools/more-tools";
+import ToolBreadcrumbs from "@/components/tools/tool-breadcrumbs";
 interface PageProps { params: Promise<{ locale: string }> }
 export async function generateStaticParams() { return locales.map(locale => ({ locale })); }
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -23,6 +24,7 @@ export default async function AuraPage({ params }: PageProps) {
   const localePath = isEn ? "" : "/" + locale;
   return (
     <div className="max-w-4xl mx-auto px-4 py-12">
+      <ToolBreadcrumbs toolName={isEn ? "Aura Reading" : "Aura Okuma"} toolSlug="aura" locale={locale as string} />
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-display text-cosmic-accent mb-4">{isEn ? '✨ Aura Reading' : '✨ Aura Okuma'}</h1>
         <p className="text-cosmic-muted max-w-xl mx-auto">{isEn ? "Choose what resonates with you to reveal your aura color." : "Sana en yakın hissettiren seçenekleri seç, aura rengini ortaya çıkar."}</p>

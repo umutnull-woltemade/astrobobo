@@ -103,6 +103,32 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
         <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#0D0D1A" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Astrobobo",
+              url: "https://astrobobo.com",
+              description: isEn
+                ? "Free interactive astrology tools — birth charts, tarot, synastry, transits, and 33 cosmic tools powered by Swiss Ephemeris."
+                : "Ücretsiz interaktif astroloji araçları — doğum haritası, tarot, synastry, transitler ve Swiss Ephemeris ile güçlendirilmiş 33 kozmik araç.",
+              inLanguage: isEn ? "en" : "tr",
+              publisher: {
+                "@type": "Organization",
+                name: "Astrobobo",
+                url: "https://astrobobo.com",
+                logo: { "@type": "ImageObject", url: "https://astrobobo.com/images/icons/icon.svg" },
+              },
+              potentialAction: {
+                "@type": "SearchAction",
+                target: `https://astrobobo.com${localePath}/zodiac/{search_term_string}`,
+                "query-input": "required name=search_term_string",
+              },
+            }),
+          }}
+        />
         {/* Plausible Analytics — cookie-free, privacy-first */}
         <script defer data-domain="astrobobo.com" src="https://plausible.io/js/script.js" />
         <link rel="dns-prefetch" href="https://plausible.io" />

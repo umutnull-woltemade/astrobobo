@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { localToUtcDecimalHours } from '@/lib/ephemeris/tz';
 
 export const runtime = 'nodejs';
 
@@ -31,6 +32,8 @@ const PLANETS = [
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const birthDate = searchParams.get('date');
+  const birthTime = searchParams.get('time') || '12:00';
+  const tz = searchParams.get('tz') || '';
   const returnYear = parseInt(searchParams.get('year') || String(new Date().getFullYear()));
   const lat = parseFloat(searchParams.get('lat') || '41.0082');
   const lng = parseFloat(searchParams.get('lng') || '28.9784');
@@ -42,10 +45,11 @@ export async function GET(req: NextRequest) {
 
   try {
     const sw = getSweph();
-    const [by, bm, bd] = birthDate.split('-').map(Number);
+    const L = localToUtcDecimalHours(birthDate, birthTime, tz);
+    const by = L.year, bm = L.month, bd = L.day;
 
     // Get natal Sun position
-    const natalJd = sw.julday(by, bm, bd, 12, 1);
+    const natalJd = sw.julday(by, bm, bd, L.decimalHours, 1);
     const natalSun = sw.calc_ut(natalJd, 0, 256).data[0];
 
     // Find when Sun returns to natal position in the return year

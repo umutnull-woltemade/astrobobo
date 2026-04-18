@@ -50,6 +50,19 @@ const TOOLS = [
   { slug: "composite", icon: "🔗", en: "Composite Chart", tr: "Kompozit Harita", desc_en: "Relationship midpoint chart", desc_tr: "İlişki orta nokta haritası" },
   { slug: "retrogrades", icon: "℞", en: "Retrograde Calendar", tr: "Retrograde Takvimi", desc_en: "All retrogrades this year", desc_tr: "Bu yılın tüm retrograde'leri" },
   { slug: "eclipses", icon: "🌑", en: "Eclipse Calendar", tr: "Tutulma Takvimi", desc_en: "Solar & lunar eclipses", desc_tr: "Güneş & ay tutulmaları" },
+  { slug: "saturn-return", icon: "🪐", en: "Saturn Return", tr: "Satürn Dönüşü", desc_en: "Your ~29 & ~58 year transit", desc_tr: "~29 ve ~58 yaş transitin" },
+  { slug: "lucky-numbers", icon: "🎰", en: "Lucky Numbers", tr: "Şanslı Sayılar", desc_en: "Numerology + today's date", desc_tr: "Numeroloji + bugünün tarihi" },
+  { slug: "void-of-course", icon: "🌙", en: "Void of Course Moon", tr: "Yörüngesiz Ay", desc_en: "When the Moon rests between signs", desc_tr: "Ay burçlar arası dinlenirken" },
+  { slug: "element-balance", icon: "🔥", en: "Element Balance", tr: "Element Dengesi", desc_en: "Fire · Earth · Air · Water", desc_tr: "Ateş · Toprak · Hava · Su" },
+  { slug: "crystal-guide", icon: "💎", en: "Crystal Guide", tr: "Kristal Rehberi", desc_en: "Stones by zodiac & intention", desc_tr: "Burç ve niyet bazlı taşlar" },
+  { slug: "rising-sign", icon: "⬆️", en: "Rising Sign Calculator", tr: "Yükselen Burç Hesaplama", desc_en: "What is my ascendant?", desc_tr: "Yükselenim ne?" },
+  { slug: "moon-sign-calculator", icon: "🌙", en: "Moon Sign Calculator", tr: "Ay Burcu Hesaplama", desc_en: "What is my Moon sign?", desc_tr: "Ay burcum ne?" },
+  { slug: "planetary-hours", icon: "🕐", en: "Planetary Hours", tr: "Gezegen Saatleri", desc_en: "Chaldean hours — today", desc_tr: "Keldani saatleri — bugün" },
+  { slug: "aspect-patterns", icon: "🔺", en: "Aspect Patterns", tr: "Açı Kalıpları", desc_en: "Grand Trine, T-Square, Yod, Stellium", desc_tr: "Büyük Üçgen, T-Kare, Yod, Stellium" },
+  { slug: "profection-year", icon: "🎯", en: "Profection Year", tr: "Profeksiyon Yılı", desc_en: "Which house rules your current year?", desc_tr: "Mevcut yılına hangi ev hükmediyor?" },
+  { slug: "my-day", icon: "🌅", en: "My Cosmic Day", tr: "Kozmik Günüm", desc_en: "All your daily cosmic data in one place", desc_tr: "Tüm günlük kozmik verin tek yerde" },
+  { slug: "sabian-symbols", icon: "🔮", en: "Sabian Symbols", tr: "Sabian Sembolleri", desc_en: "Symbolic image for each degree", desc_tr: "Her derece için sembolik imge" },
+  { slug: "age-harmonic", icon: "🔄", en: "Age Harmonic", tr: "Yaş Harmonik", desc_en: "Harmonic chart for your age", desc_tr: "Yaşınız için harmonik harita" },
 ];
 
 const COMING_SOON: typeof TOOLS = [];

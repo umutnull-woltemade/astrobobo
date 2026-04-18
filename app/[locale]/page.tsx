@@ -13,6 +13,7 @@ import { notFound } from "next/navigation";
 import { locales, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import HomePortal from "@/components/pro/home-portal";
+import CosmicSnapshot from "@/components/home/cosmic-snapshot";
 import { FEATURED_DREAMS, dreamHubPath, dreamArticlePath } from "@/lib/dreams/constants";
 
 interface PageProps {
@@ -73,6 +74,9 @@ export default async function HomePage({ params }: PageProps) {
             </a>
           </div>
 
+          {/* Cosmic Snapshot — auto-loaded from saved birth data */}
+          <CosmicSnapshot locale={isEn ? "en" : "tr"} localePath={localePath} />
+
           {/* Interactive Tools */}
           <div className="mt-16 pt-12 border-t border-cosmic-border/40">
             <h2 className="cosmic-heading text-2xl mb-4">
@@ -80,8 +84,8 @@ export default async function HomePage({ params }: PageProps) {
             </h2>
             <p className="text-cosmic-muted mb-6 text-sm">
               {isEn
-                ? '15 free tools powered by Swiss Ephemeris — from birth charts to tarot.'
-                : 'Swiss Ephemeris ile güçlendirilmiş 15 ücretsiz araç — doğum haritasından tarota.'}
+                ? '33 free tools powered by Swiss Ephemeris — from birth charts to tarot.'
+                : 'Swiss Ephemeris ile güçlendirilmiş 25 ücretsiz araç — doğum haritasından tarota.'}
             </p>
             <div className="grid grid-cols-3 md:grid-cols-5 gap-2">
               {[
@@ -100,7 +104,7 @@ export default async function HomePage({ params }: PageProps) {
             </div>
             <div className="mt-4 text-center">
               <a href={`${localePath}/tools`} className="text-purple-400 hover:text-purple-300 text-sm font-medium">
-                {isEn ? 'View all 15 tools →' : 'Tüm 15 aracı gör →'}
+                {isEn ? 'View all 33 tools →' : 'Tüm 33 aracı gör →'}
               </a>
             </div>
           </div>

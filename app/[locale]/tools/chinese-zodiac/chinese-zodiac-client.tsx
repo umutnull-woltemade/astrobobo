@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useBirthData } from "@/lib/birth-data/store";
 
 const ANIMALS = [
   { emoji: "🐀", en: "Rat", tr: "Sıçan", trait_en: "Quick-witted, resourceful, adaptable", trait_tr: "Hazırcevap, becerikli, uyumlu", element: "Water" },
@@ -20,7 +21,9 @@ function getAnimal(year: number) { return ANIMALS[(year - 4) % 12]; }
 function getYinYang(year: number) { return year % 2 === 0 ? 'Yang' : 'Yin'; }
 
 export default function ChineseZodiacClient({ locale }: { locale: "en" | "tr" }) {
-  const [year, setYear] = useState("");
+  const { data: saved } = useBirthData();
+  const [year, setYear] = useState(saved?.date ? saved.date.split("-")[0] : "");
+  useEffect(() => { if (saved?.date && !year) setYear(saved.date.split("-")[0]); /* eslint-disable-next-line */ }, [saved?.date]);
   const isEn = locale === "en";
   const animal = year ? getAnimal(parseInt(year)) : null;
   const yinYang = year ? getYinYang(parseInt(year)) : null;

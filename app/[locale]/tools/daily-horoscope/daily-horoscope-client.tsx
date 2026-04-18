@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useEffect, useState } from "react";
+import { useBirthData } from "@/lib/birth-data/store";
 
 const SIGNS = [
   { slug: "aries", symbol: "♈", en: "Aries", tr: "Koç", start: [3, 21], end: [4, 19] },
@@ -20,16 +21,120 @@ const SIGNS = [
 // Daily horoscope templates — seeded by date + sign for consistency
 const THEMES = {
   en: {
-    love: ["Open your heart to unexpected connections today.", "A meaningful conversation deepens a relationship.", "Express your feelings — vulnerability is courage.", "Someone close needs your attention and warmth."],
-    career: ["A bold move at work pays off — trust your instincts.", "Focus on long-term goals rather than quick wins.", "Collaboration brings breakthroughs you couldn't achieve alone.", "Your creative ideas are noticed by the right people."],
-    wellness: ["Your body asks for rest — honor it.", "Physical activity clears mental fog today.", "Nourish yourself with something that feeds your soul.", "Find balance between giving and receiving."],
-    cosmic: ["The current planetary alignment supports transformation.", "Mercury's position enhances communication — speak your truth.", "Venus invites you to appreciate beauty in small things.", "Mars energizes your ambitions — channel it wisely."],
+    love: [
+      "Open your heart to unexpected connections today.",
+      "A meaningful conversation deepens a relationship.",
+      "Express your feelings — vulnerability is courage.",
+      "Someone close needs your attention and warmth.",
+      "Old patterns in love are ready to be released.",
+      "A gentle gesture speaks louder than grand declarations.",
+      "Trust the timing — not every connection needs to rush.",
+      "Self-love is the foundation of every relationship you build.",
+      "A past wound begins to heal through honest dialogue.",
+      "Today favors deep listening over quick advice.",
+      "Boundaries you set today protect the love you value most.",
+      "Romance finds you when you stop looking and start being.",
+    ],
+    career: [
+      "A bold move at work pays off — trust your instincts.",
+      "Focus on long-term goals rather than quick wins.",
+      "Collaboration brings breakthroughs you couldn't achieve alone.",
+      "Your creative ideas are noticed by the right people.",
+      "A mentor figure appears — stay open to unlikely teachers.",
+      "Financial discipline planted now bears fruit within months.",
+      "Delegate what drains you; protect what energizes you.",
+      "An old skill becomes relevant again in a new context.",
+      "Patience today prevents a costly mistake tomorrow.",
+      "Your reputation builds quietly — consistency is your currency.",
+      "A side project deserves more attention than you think.",
+      "Strategic rest is not laziness; it's preparation for the sprint.",
+    ],
+    wellness: [
+      "Your body asks for rest — honor it.",
+      "Physical activity clears mental fog today.",
+      "Nourish yourself with something that feeds your soul.",
+      "Find balance between giving and receiving.",
+      "Pay attention to dreams tonight — they carry messages.",
+      "Hydration and simple movement transform your mood today.",
+      "The tension you carry is not yours — release what isn't serving you.",
+      "A walk in nature recalibrates your nervous system.",
+      "Journaling for ten minutes brings surprising clarity.",
+      "Breathwork is your secret weapon today — try box breathing.",
+      "Your energy is a limited resource; spend it on what matters.",
+      "Sleep quality matters more than quantity — protect your evening ritual.",
+    ],
+    cosmic: [
+      "The current planetary alignment supports transformation.",
+      "Mercury's position enhances communication — speak your truth.",
+      "Venus invites you to appreciate beauty in small things.",
+      "Mars energizes your ambitions — channel it wisely.",
+      "The Moon's journey today highlights emotional intelligence.",
+      "Jupiter expands whatever you focus on — choose wisely.",
+      "Saturn reminds you that structure creates freedom.",
+      "Uranus sends a jolt of insight — don't dismiss sudden ideas.",
+      "Neptune heightens intuition but blurs boundaries — stay grounded.",
+      "Pluto's deep current asks: what are you still holding onto?",
+      "Today's sky favors beginnings over endings.",
+      "A cosmic reset is underway — trust the process.",
+    ],
   },
   tr: {
-    love: ["Bugün beklenmedik bağlantılara kalbini aç.", "Anlamlı bir sohbet bir ilişkiyi derinleştirir.", "Duygularını ifade et — kırılganlık cesarettir.", "Yakınlarından biri ilgine ve sıcaklığına ihtiyaç duyuyor."],
-    career: ["İşteki cesur bir hamle karşılığını verir — içgüdülerine güven.", "Hızlı kazanımlar yerine uzun vadeli hedeflere odaklan.", "İşbirliği tek başına başaramayacağın çığırlar açar.", "Yaratıcı fikirlerin doğru kişiler tarafından fark ediliyor."],
-    wellness: ["Bedenin dinlenme istiyor — ona saygı göster.", "Fiziksel aktivite bugün zihinsel sisi temizler.", "Kendini ruhunu besleyen bir şeyle besle.", "Verme ve alma arasında denge bul."],
-    cosmic: ["Mevcut gezegen dizilimi dönüşümü destekliyor.", "Merkür'ün pozisyonu iletişimi güçlendirir — hakikatini söyle.", "Venüs küçük şeylerdeki güzelliği takdir etmeye davet eder.", "Mars tutkularını enerjilendiriyor — bilgece yönlendir."],
+    love: [
+      "Bugün beklenmedik bağlantılara kalbini aç.",
+      "Anlamlı bir sohbet bir ilişkiyi derinleştirir.",
+      "Duygularını ifade et — kırılganlık cesarettir.",
+      "Yakınlarından biri ilgine ve sıcaklığına ihtiyaç duyuyor.",
+      "Aşktaki eski kalıplar bırakılmaya hazır.",
+      "Nazik bir jest büyük söylemlerden daha güçlü konuşur.",
+      "Zamana güven — her bağın acele etmesi gerekmez.",
+      "Özsevgi kurduğun her ilişkinin temelidir.",
+      "Geçmiş bir yara dürüst diyalogla iyileşmeye başlıyor.",
+      "Bugün hızlı tavsiye yerine derin dinlemeyi destekliyor.",
+      "Bugün koyduğun sınırlar en değer verdiğin sevgiyi korur.",
+      "Romantizm aramayı bırakıp olmaya başladığında seni bulur.",
+    ],
+    career: [
+      "İşteki cesur bir hamle karşılığını verir — içgüdülerine güven.",
+      "Hızlı kazanımlar yerine uzun vadeli hedeflere odaklan.",
+      "İşbirliği tek başına başaramayacağın çığırlar açar.",
+      "Yaratıcı fikirlerin doğru kişiler tarafından fark ediliyor.",
+      "Bir mentor figürü beliriyor — beklenmedik öğretmenlere açık ol.",
+      "Şimdi ekilen finansal disiplin aylar içinde meyve verir.",
+      "Seni tüketeni delege et; seni enerjilendireni koru.",
+      "Eski bir beceri yeni bir bağlamda tekrar alakalı oluyor.",
+      "Bugünkü sabır yarınki maliyetli hatayı önler.",
+      "İtibarın sessizce inşa oluyor — tutarlılık senin paran.",
+      "Bir yan proje düşündüğünden daha fazla ilgiyi hak ediyor.",
+      "Stratejik dinlenme tembellik değil; sprint hazırlığıdır.",
+    ],
+    wellness: [
+      "Bedenin dinlenme istiyor — ona saygı göster.",
+      "Fiziksel aktivite bugün zihinsel sisi temizler.",
+      "Kendini ruhunu besleyen bir şeyle besle.",
+      "Verme ve alma arasında denge bul.",
+      "Bu gece rüyalarına dikkat et — mesajlar taşıyorlar.",
+      "Su ve basit hareket bugün ruh halini dönüştürür.",
+      "Taşıdığın gerilim sana ait değil — hizmet etmeyeni bırak.",
+      "Doğada bir yürüyüş sinir sistemini yeniden kalibre eder.",
+      "On dakikalık günlük yazma şaşırtıcı netlik getirir.",
+      "Nefes çalışması bugün gizli silahın — kutu nefesini dene.",
+      "Enerjin sınırlı bir kaynak; önemli olana harca.",
+      "Uyku kalitesi miktardan önemlidir — akşam ritüelini koru.",
+    ],
+    cosmic: [
+      "Mevcut gezegen dizilimi dönüşümü destekliyor.",
+      "Merkür'ün pozisyonu iletişimi güçlendirir — hakikatini söyle.",
+      "Venüs küçük şeylerdeki güzelliği takdir etmeye davet eder.",
+      "Mars tutkularını enerjilendiriyor — bilgece yönlendir.",
+      "Ay'ın bugünkü yolculuğu duygusal zekayı öne çıkarıyor.",
+      "Jüpiter odaklandığın her şeyi genişletir — akıllıca seç.",
+      "Satürn yapının özgürlük yarattığını hatırlatıyor.",
+      "Uranüs bir anlık içgörü gönderiyor — ani fikirleri reddetme.",
+      "Neptün sezgiyi artırır ama sınırları bulanıklaştırır — topraklı kal.",
+      "Plüton'un derin akıntısı soruyor: hala neye tutunuyorsun?",
+      "Bugünün gökyüzü bitişler yerine başlangıçları destekliyor.",
+      "Kozmik bir sıfırlama sürecinde — sürece güven.",
+    ],
   },
 };
 
@@ -51,10 +156,33 @@ interface TransitPlanet {
   name: string; symbol: string; sign: string; signSymbol: string; degree: number; retrograde: boolean;
 }
 
+function signIndexForDate(date: string): number | null {
+  const parts = date.split("-").map(Number);
+  if (parts.length !== 3) return null;
+  const [, m, d] = parts;
+  for (let i = 0; i < SIGNS.length; i++) {
+    const s = SIGNS[i];
+    const [sm, sd] = s.start; const [em, ed] = s.end;
+    if (sm === em) { if (m === sm && d >= sd && d <= ed) return i; }
+    else {
+      if ((m === sm && d >= sd) || (m === em && d <= ed)) return i;
+    }
+  }
+  return null;
+}
+
 export default function DailyHoroscopeClient({ locale }: { locale: "en" | "tr" }) {
+  const { data: saved } = useBirthData();
   const [selected, setSelected] = useState<number | null>(null);
   const [transits, setTransits] = useState<TransitPlanet[]>([]);
   const isEn = locale === "en";
+
+  useEffect(() => {
+    if (saved?.date && selected === null) {
+      const idx = signIndexForDate(saved.date);
+      if (idx !== null) setSelected(idx);
+    }
+  }, [saved?.date, selected]);
 
   useEffect(() => {
     fetch(`/api/transits?lang=${locale}`)

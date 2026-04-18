@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { localToUtcDecimalHours } from '@/lib/ephemeris/tz';
 
 export const runtime = 'nodejs';
 
@@ -27,6 +28,7 @@ export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const birthDate = searchParams.get('date');
   const birthTime = searchParams.get('time') || '12:00';
+  const tz = searchParams.get('tz') || '';
   const age = parseInt(searchParams.get('age') || '30');
   const lang = searchParams.get('lang') || 'en';
 
@@ -34,11 +36,10 @@ export async function GET(req: NextRequest) {
 
   try {
     const sw = getSweph();
-    const [y, m, d] = birthDate.split('-').map(Number);
-    const [h, min] = birthTime.split(':').map(Number);
+    const L = localToUtcDecimalHours(birthDate, birthTime, tz);
 
     // Natal JD
-    const natalJd = sw.julday(y, m, d, h + min / 60, 1);
+    const natalJd = sw.julday(L.year, L.month, L.day, L.decimalHours, 1);
     // Progressed JD = natal + age days
     const progJd = natalJd + age;
 

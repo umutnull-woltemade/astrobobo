@@ -2,19 +2,22 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { locales, type Locale } from "@/lib/i18n/config";
 import MoreTools from "@/components/tools/more-tools";
+import ToolBreadcrumbs from "@/components/tools/tool-breadcrumbs";
 import EclipsesClient from "./eclipses-client";
 interface PageProps { params: Promise<{ locale: string }> }
 export async function generateStaticParams() { return locales.map(locale => ({ locale })); }
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params; if (!locales.includes(locale as Locale)) return {};
   const isEn = locale === "en";
-  return { title: isEn ? "Eclipse Calendar 2026" : "Tutulma Takvimi 2026",
+  return { title: isEn ? "Eclipse Calendar 2025–2027 — Solar & Lunar" : "Tutulma Takvimi 2025–2027 — Güneş & Ay",
+    description: isEn ? "Solar and lunar eclipses for 2025–2027. Dates, signs, degrees, and proximity to your natal chart." : "2025–2027 güneş ve ay tutulmaları. Tarihler, burçlar, dereceler ve doğum haritanıza yakınlığı.",
     openGraph: { images: [{ url: `/api/og?title=${encodeURIComponent(isEn ? 'Eclipse Calendar' : 'Tutulma Takvimi')}`, width: 1200, height: 630 }] } };
 }
 export default async function EclipsesPage({ params }: PageProps) {
   const { locale } = await params; if (!locales.includes(locale as Locale)) notFound();
   const isEn = locale === "en"; const localePath = isEn ? "" : "/" + locale;
   return (<div className="max-w-4xl mx-auto px-4 py-12">
+    <ToolBreadcrumbs toolName={isEn ? "Eclipse Calendar" : "Tutulma Takvimi"} toolSlug="eclipses" locale={locale as string} />
     <div className="text-center mb-12">
       <h1 className="text-4xl md:text-5xl font-display text-cosmic-accent mb-4">{isEn ? '🌑 Eclipse Calendar' : '🌑 Tutulma Takvimi'}</h1>
       <p className="text-cosmic-muted max-w-xl mx-auto">{isEn ? "Solar and lunar eclipses — cosmic turning points." : "Güneş ve ay tutulmaları — kozmik dönüm noktaları."}</p>

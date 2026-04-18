@@ -1,6 +1,33 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useBirthData } from "@/lib/birth-data/store";
+
+const SIGN_RANGES: { slug: string; start: [number, number]; end: [number, number] }[] = [
+  { slug: "aries", start: [3, 21], end: [4, 19] },
+  { slug: "taurus", start: [4, 20], end: [5, 20] },
+  { slug: "gemini", start: [5, 21], end: [6, 20] },
+  { slug: "cancer", start: [6, 21], end: [7, 22] },
+  { slug: "leo", start: [7, 23], end: [8, 22] },
+  { slug: "virgo", start: [8, 23], end: [9, 22] },
+  { slug: "libra", start: [9, 23], end: [10, 22] },
+  { slug: "scorpio", start: [10, 23], end: [11, 21] },
+  { slug: "sagittarius", start: [11, 22], end: [12, 21] },
+  { slug: "capricorn", start: [12, 22], end: [1, 19] },
+  { slug: "aquarius", start: [1, 20], end: [2, 18] },
+  { slug: "pisces", start: [2, 19], end: [3, 20] },
+];
+
+function signForDate(date: string): string | null {
+  const [, m, d] = date.split("-").map(Number);
+  if (!m || !d) return null;
+  for (const s of SIGN_RANGES) {
+    const [sm, sd] = s.start; const [em, ed] = s.end;
+    if (sm === em) { if (m === sm && d >= sd && d <= ed) return s.slug; }
+    else if ((m === sm && d >= sd) || (m === em && d <= ed)) return s.slug;
+  }
+  return null;
+}
 
 const SIGNS = [
   { slug: "aries", en: "Aries", tr: "Koç", symbol: "♈", element: "fire" },
@@ -45,9 +72,17 @@ const ELEMENT_COMPAT: Record<string, Record<string, { score: number; en: string;
 };
 
 export default function CompatibilityClient({ locale }: { locale: "en" | "tr" }) {
+  const { data: saved } = useBirthData();
   const [sign1, setSign1] = useState<string>("");
   const [sign2, setSign2] = useState<string>("");
   const isEn = locale === "en";
+
+  useEffect(() => {
+    if (saved?.date && !sign1) {
+      const s = signForDate(saved.date);
+      if (s) setSign1(s);
+    }
+  }, [saved?.date, sign1]);
 
   const s1 = SIGNS.find(s => s.slug === sign1);
   const s2 = SIGNS.find(s => s.slug === sign2);

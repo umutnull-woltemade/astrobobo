@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { getTzOffsetHours } from '@/lib/ephemeris/tz';
 
 // Node.js runtime required for native sweph binding
 export const runtime = 'nodejs';
@@ -53,9 +54,10 @@ const ELEMENTS: Record<string, string> = {
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const dateStr = searchParams.get('date');    // YYYY-MM-DD
-  const timeStr = searchParams.get('time');    // HH:MM
+  const timeStr = searchParams.get('time');    // HH:MM (local)
   const latStr = searchParams.get('lat');      // decimal latitude
   const lngStr = searchParams.get('lng');      // decimal longitude
+  const tz = searchParams.get('tz') || '';     // IANA zone, e.g. Europe/Istanbul
   const lang = searchParams.get('lang') || 'en';
 
   if (!dateStr) {
@@ -66,7 +68,9 @@ export async function GET(req: NextRequest) {
   const [hours, minutes] = (timeStr || '12:00').split(':').map(Number);
   const lat = latStr ? parseFloat(latStr) : 41.0082;  // default Istanbul
   const lng = lngStr ? parseFloat(lngStr) : 28.9784;
-  const decimalHours = hours + minutes / 60;
+  // Convert local birth time to UTC via tz offset (fallback 0)
+  const tzOffsetHours = tz ? getTzOffsetHours(tz, year, month, day, hours, minutes) : 0;
+  const decimalHours = hours + minutes / 60 - tzOffsetHours;
 
   try {
     const sw = getSweph();
@@ -128,16 +132,63 @@ export async function GET(req: NextRequest) {
     const sunSign = planets.find(p => p.id === 0);
     const moonSign = planets.find(p => p.id === 1);
 
+    // Natal aspects
+    const ASPECT_DEFS = [
+      { angle: 0,   name: lang === 'tr' ? 'Kavuşum'  : 'Conjunction', symbol: '☌', nature: 'neutral',     orb: 8 },
+      { angle: 60,  name: lang === 'tr' ? 'Sekstil'  : 'Sextile',    symbol: '⚹', nature: 'harmonious',  orb: 5 },
+      { angle: 90,  name: lang === 'tr' ? 'Kare'     : 'Square',     symbol: '□', nature: 'challenging', orb: 7 },
+      { angle: 120, name: lang === 'tr' ? 'Üçgen'    : 'Trine',      symbol: '△', nature: 'harmonious',  orb: 7 },
+      { angle: 180, name: lang === 'tr' ? 'Karşıt'   : 'Opposition', symbol: '☍', nature: 'challenging', orb: 8 },
+      { angle: 150, name: lang === 'tr' ? 'Quincunx' : 'Quincunx',   symbol: '⚻', nature: 'challenging', orb: 3 },
+    ];
+    const validPlanets = planets.filter(p => !('error' in p) && 'longitude' in p) as Array<{id:number;name:string;symbol:string;longitude:number;[k:string]:any}>;
+    const aspects: any[] = [];
+    for (let i = 0; i < validPlanets.length; i++) {
+      for (let j = i + 1; j < validPlanets.length; j++) {
+        const a = validPlanets[i], b = validPlanets[j];
+        let diff = Math.abs(a.longitude - b.longitude) % 360;
+        if (diff > 180) diff = 360 - diff;
+        for (const asp of ASPECT_DEFS) {
+          const orb = Math.abs(diff - asp.angle);
+          if (orb <= asp.orb) {
+            aspects.push({
+              planet1: { name: a.name, symbol: a.symbol },
+              planet2: { name: b.name, symbol: b.symbol },
+              aspect: asp.name,
+              symbol: asp.symbol,
+              nature: asp.nature,
+              orb: Math.round(orb * 10) / 10,
+              exact: orb < 1,
+            });
+          }
+        }
+      }
+    }
+    aspects.sort((a: any, b: any) => a.orb - b.orb);
+
+    // Modality balance
+    const MODALITIES: Record<string, string> = {
+      Aries: 'cardinal', Cancer: 'cardinal', Libra: 'cardinal', Capricorn: 'cardinal',
+      Taurus: 'fixed', Leo: 'fixed', Scorpio: 'fixed', Aquarius: 'fixed',
+      Gemini: 'mutable', Virgo: 'mutable', Sagittarius: 'mutable', Pisces: 'mutable',
+    };
+    const modalityCounts: Record<string, number> = { cardinal: 0, fixed: 0, mutable: 0 };
+
     // Element balance
     const elementCounts: Record<string, number> = { fire: 0, earth: 0, air: 0, water: 0 };
     planets.forEach(p => {
       if ('element' in p && p.element) elementCounts[p.element]++;
+      if ('signIndex' in p && typeof p.signIndex === 'number') {
+        const modality = MODALITIES[SIGNS[p.signIndex]];
+        if (modality) modalityCounts[modality]++;
+      }
     });
 
     return NextResponse.json({
-      input: { date: dateStr, time: timeStr || '12:00', lat, lng },
+      input: { date: dateStr, time: timeStr || '12:00', lat, lng, tz, tzOffsetHours },
       julianDay: jd,
       planets: planets.filter(p => !('error' in p)),
+      aspects,
       houses,
       summary: {
         sunSign: sunSign ? { name: sunSign.sign, symbol: sunSign.signSymbol, degree: sunSign.degree } : null,
@@ -150,6 +201,8 @@ export async function GET(req: NextRequest) {
         mc: mc > 0 ? Math.round(mc * 100) / 100 : null,
         dominantElement: Object.entries(elementCounts).sort((a, b) => b[1] - a[1])[0][0],
         elementBalance: elementCounts,
+        dominantModality: Object.entries(modalityCounts).sort((a, b) => b[1] - a[1])[0][0],
+        modalityBalance: modalityCounts,
       },
     }, {
       headers: {

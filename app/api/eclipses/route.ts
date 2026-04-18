@@ -5,6 +5,7 @@ let sweph: any = null;
 function getSweph() { if (!sweph) sweph = require('sweph'); return sweph; }
 
 const SIGNS = ['Aries','Taurus','Gemini','Cancer','Leo','Virgo','Libra','Scorpio','Sagittarius','Capricorn','Aquarius','Pisces'];
+const SIGNS_TR = ['Koç','Boğa','İkizler','Yengeç','Aslan','Başak','Terazi','Akrep','Yay','Oğlak','Kova','Balık'];
 
 /**
  * GET /api/eclipses?year=2026&lang=tr
@@ -44,7 +45,8 @@ export async function GET(req: NextRequest) {
               type: lang === 'tr' ? 'Güneş Tutulması' : 'Solar Eclipse',
               emoji: '🌑',
               date: dateStr,
-              sign: SIGNS[si],
+              sign: lang === 'tr' ? SIGNS_TR[si] : SIGNS[si],
+              signEn: SIGNS[si],
               degree: Math.round((sun % 30) * 10) / 10,
               nodeDist: Math.round(nodeDist * 10) / 10,
               total: nodeDist < 10,
@@ -72,7 +74,8 @@ export async function GET(req: NextRequest) {
               type: lang === 'tr' ? 'Ay Tutulması' : 'Lunar Eclipse',
               emoji: '🌕',
               date: dateStr,
-              sign: SIGNS[si],
+              sign: lang === 'tr' ? SIGNS_TR[si] : SIGNS[si],
+              signEn: SIGNS[si],
               degree: Math.round((moon % 30) * 10) / 10,
               nodeDist: Math.round(minNodeDist * 10) / 10,
               total: minNodeDist < 5,

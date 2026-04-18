@@ -24,6 +24,19 @@ const ALL_TOOLS = [
   { slug: "composite", icon: "🔗", en: "Composite", tr: "Kompozit" },
   { slug: "retrogrades", icon: "℞", en: "Retrogrades", tr: "Retrograde" },
   { slug: "eclipses", icon: "🌑", en: "Eclipses", tr: "Tutulmalar" },
+  { slug: "saturn-return", icon: "🪐", en: "Saturn Return", tr: "Satürn Dönüşü" },
+  { slug: "lucky-numbers", icon: "🎰", en: "Lucky Numbers", tr: "Şanslı Sayılar" },
+  { slug: "void-of-course", icon: "🌙", en: "Void Moon", tr: "Yörüngesiz Ay" },
+  { slug: "element-balance", icon: "🔥", en: "Elements", tr: "Elementler" },
+  { slug: "crystal-guide", icon: "💎", en: "Crystals", tr: "Kristaller" },
+  { slug: "rising-sign", icon: "⬆️", en: "Rising Sign", tr: "Yükselen" },
+  { slug: "moon-sign-calculator", icon: "🌙", en: "Moon Sign", tr: "Ay Burcu" },
+  { slug: "planetary-hours", icon: "🕐", en: "Planetary Hours", tr: "Gezegen Saatleri" },
+  { slug: "aspect-patterns", icon: "🔺", en: "Patterns", tr: "Kalıplar" },
+  { slug: "profection-year", icon: "🎯", en: "Profection", tr: "Profeksiyon" },
+  { slug: "my-day", icon: "🌅", en: "My Day", tr: "Günüm" },
+  { slug: "sabian-symbols", icon: "🔮", en: "Sabian", tr: "Sabian" },
+  { slug: "age-harmonic", icon: "🔄", en: "Harmonic", tr: "Harmonik" },
 ];
 
 // Deterministic shuffle seeded by current tool slug
@@ -73,7 +86,7 @@ export default function MoreTools({
       </div>
       <div className="text-center mt-3">
         <a href={`${localePath}/tools`} className="text-xs text-purple-400 hover:text-purple-300">
-          {isEn ? "All 20 tools →" : "Tüm 20 araç →"}
+          {isEn ? "All 33 tools →" : "Tüm 31 araç →"}
         </a>
       </div>
     </div>

@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { useBirthData } from "@/lib/birth-data/store";
 
 const CYCLES = [
   { key: "physical", period: 23, color: "#FF6B6B", en: "Physical", tr: "Fiziksel", desc_en: "Energy, strength, endurance, coordination", desc_tr: "Enerji, güç, dayanıklılık, koordinasyon" },
@@ -27,16 +28,20 @@ function getAdvice(val: number, isEn: boolean): string {
 }
 
 export default function BiorhythmClient({ locale }: { locale: "en" | "tr" }) {
-  const [birthDate, setBirthDate] = useState("");
+  const { data: saved } = useBirthData();
+  const [birthDate, setBirthDate] = useState(saved?.date || "");
   const [results, setResults] = useState<{ key: string; value: number }[] | null>(null);
   const isEn = locale === "en";
 
-  const calculate = useCallback(() => {
-    if (!birthDate) return;
-    const days = daysSinceBirth(birthDate);
+  const calculate = useCallback((d?: string) => {
+    const dateToUse = d || birthDate;
+    if (!dateToUse) return;
+    const days = daysSinceBirth(dateToUse);
     if (days < 0) return;
     setResults(CYCLES.map(c => ({ key: c.key, value: biorhythmValue(days, c.period) })));
   }, [birthDate]);
+
+  useEffect(() => { if (saved?.date && !results) { setBirthDate(saved.date); calculate(saved.date); } /* eslint-disable-next-line */ }, []);
 
   return (
     <div className="flex flex-col items-center gap-8">
@@ -52,7 +57,7 @@ export default function BiorhythmClient({ locale }: { locale: "en" | "tr" }) {
           max={new Date().toISOString().split("T")[0]}
         />
         <button
-          onClick={calculate}
+          onClick={() => calculate()}
           disabled={!birthDate}
           className="w-full mt-4 px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-purple-800 text-white font-semibold disabled:opacity-40 hover:from-purple-500 hover:to-purple-700 transition-all"
         >

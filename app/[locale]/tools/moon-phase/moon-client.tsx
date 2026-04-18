@@ -1,4 +1,6 @@
 "use client";
+import { useEffect, useState } from "react";
+import { useBirthData, birthDataQuery } from "@/lib/birth-data/store";
 
 const MOON_PHASES = [
   { emoji: "🌑", en: "New Moon", tr: "Yeni Ay", energy_en: "Plant seeds of intention. A time for fresh starts, quiet planning, and setting goals.", energy_tr: "Niyet tohumları ek. Taze başlangıçlar, sessiz planlama ve hedef belirleme zamanı.", ritual_en: "Write down 3 intentions for this cycle. Light a candle and visualize.", ritual_tr: "Bu döngü için 3 niyet yaz. Bir mum yak ve görselleştir." },
@@ -36,6 +38,16 @@ export default function MoonPhaseClient({ locale }: { locale: "en" | "tr" }) {
   const phase = MOON_PHASES[phaseIndex];
   const illumination = getIllumination();
   const isEn = locale === "en";
+  const { data: saved } = useBirthData();
+  const [natalMoon, setNatalMoon] = useState<{ name: string; symbol: string; degree: number } | null>(null);
+
+  useEffect(() => {
+    if (!saved) { setNatalMoon(null); return; }
+    fetch(`/api/chart?${birthDataQuery(saved, locale)}`)
+      .then(r => r.json())
+      .then(d => setNatalMoon(d.summary?.moonSign || null))
+      .catch(() => {});
+  }, [saved, locale]);
 
   return (
     <div className="flex flex-col items-center gap-8">
@@ -54,6 +66,13 @@ export default function MoonPhaseClient({ locale }: { locale: "en" | "tr" }) {
           {illumination}% {isEn ? "illuminated" : "aydınlanmış"}
         </div>
       </div>
+
+      {natalMoon && (
+        <div className="cosmic-card max-w-lg w-full bg-gradient-to-r from-indigo-900/30 to-purple-900/30 border-indigo-500/30 text-center">
+          <div className="text-xs uppercase tracking-wider text-cosmic-muted mb-1">{isEn ? "Your Natal Moon" : "Doğum Ay'ın"}</div>
+          <div className="text-2xl">{natalMoon.symbol} <span className="font-display text-white">{natalMoon.name}</span> <span className="text-sm text-cosmic-muted">{natalMoon.degree.toFixed(1)}°</span></div>
+        </div>
+      )}
 
       {/* Energy */}
       <div className="cosmic-card max-w-lg w-full">
